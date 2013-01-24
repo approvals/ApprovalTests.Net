@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<project name="ApprovalTests" default="createZip" basedir=".">
+  <property name="version" value="021" /> <!-- this is the last one published -->
+  <target name="clean">
+    <delete dir="output" failonerror="false" />
+    <mkdir dir="output" />
+  </target>
+  <target name="createZip" depends="clean">
+    <zip zipfile="output/ApprovalTests${version}.zip">
+      <fileset basedir=".">
+        <include name="../ApprovalTests/bin/debug/*.dll" />
+		<include name="Documentation/*.pdf" />
+      </fileset>
+    </zip>
+  </target>
+  
+</project>
