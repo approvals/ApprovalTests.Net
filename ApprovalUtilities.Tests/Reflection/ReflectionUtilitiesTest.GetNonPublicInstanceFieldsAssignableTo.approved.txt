@@ -1,0 +1,3 @@
+[0] = System.EventHandler MyEvent
+[1] = System.Func`1[System.Boolean] Truth
+[2] = System.ComponentModel.PropertyChangedEventHandler PropertyChanged

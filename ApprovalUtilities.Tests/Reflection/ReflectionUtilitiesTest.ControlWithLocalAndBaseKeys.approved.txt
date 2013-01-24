@@ -1,0 +1,7 @@
+[0] = EVENT_CHECKEDCHANGED:
+	[0] Void AnotherStandardCallback(System.Object, System.EventArgs)
+
+[1] = EventClick:
+	[0] Void AnotherStandardCallback(System.Object, System.EventArgs)
+	[1] Void StandardCallback(System.Object, System.EventArgs)
+

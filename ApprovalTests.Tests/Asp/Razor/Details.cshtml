@@ -1,0 +1,110 @@
+﻿@{
+	ViewBag.Title = "Details";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Header {
+	<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/default.css")" />
+	<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/Request.css")" />
+
+}
+
+<h1>Request Details</h1>
+<p id="RightErrorMessage" runat="server" visible="false"></p>
+<div class="RightContent">
+	<p><span class="InfoLabel">PATIENT:</span>      @ViewBag.PatientName </p>
+	<p><span class="InfoLabel">REQUEST ID:</span>    @ViewBag.RequestID    </p>
+	<p><span class="InfoLabel">DOB:</span>          @ViewBag.PartialDOB </p>
+		
+	<div class="LineBreak"><br /></div>
+
+	<p class="InfoLeftFloat"><span class="InfoLabel">ORIGINATED:</span> @ViewBag.OriginationDate </p>
+	<p class="InfoFloats"><span class="InfoLabel">PAGES:</span>         @ViewBag.Pages </p>
+	<p class="InfoFloats"><span class="InfoLabel">STATUS:</span>        @ViewBag.Status </p>
+	<br class="ClearBoth" />
+
+	<div class="LineBreak"><br /></div>
+
+	<p class="InfoLeftFloat"><span class="InfoLabel">CLINIC:</span>  </p>
+	<p class="InfoFloats">
+		@ViewBag.ClinicName  <br />
+		@ViewBag.ClinicAddress1  <br />
+		@if (ViewBag.ClinicAddress2.Length > 0)
+		  { 
+			<text>
+				@ViewBag.ClinicAddress2   <br />
+
+			</text>
+		  }
+		@ViewBag.ClinicCity ,
+		@ViewBag.ClinicState
+		@ViewBag.ClinicZip
+	</p>
+	<br class="ClearBoth" />
+
+	<div class="LineBreak"><br /></div>
+
+	<p class="InfoLeftFloat"><span class="InfoLabel">REQUESTOR:</span></p>
+	<p class="InfoFloats">
+		@ViewBag.RequestorName  <br />
+		@ViewBag.RequestorAddress1  <br />
+		@if (ViewBag.RequestorAddress2.Length > 0)
+		  { 
+			<text>
+				@ViewBag.RequestorAddress2   <br />
+
+			</text>
+		  }
+		@ViewBag.RequestorCity ,
+		@ViewBag.RequestorState
+		@ViewBag.RequestorZip
+	</p>
+	<br class="ClearBoth" />
+
+
+		<div class="LineBreak"><br /></div>
+
+		<p><span class="InfoLabel">STATUS HISTORY:</span></p>
+		<table class="CommentsTable">
+			<tr>
+				<td>1/1/1990</td>
+				<td>Demo</td>
+				<td>Test</td>
+			</tr> 
+			<tr>
+				<td>1/1/1990</td>
+				<td>Demo</td>
+				<td>Test</td>
+			</tr> 
+			<tr>
+				<td>1/1/1990</td>
+				<td>Demo</td>
+				<td>Test</td>
+			</tr>        
+		</table>
+	
+
+
+		
+		<!--
+		<div class="LineBreak"><br /></div>
+		<p><span class="InfoLabel">COMMENTS:</span></p>
+		<table class="CommentsTable">
+			<tr>
+				<td>1/1/1990</td>
+				<td>Demo</td>
+				<td>Test</td>
+			</tr> 
+			<tr>
+				<td>1/1/1990</td>
+				<td>Demo</td>
+				<td>Test</td>
+			</tr> 
+			<tr>
+				<td>1/1/1990</td>
+				<td>Demo</td>
+				<td>Test</td>
+			</tr>        
+		</table>
+		-->
+</div>

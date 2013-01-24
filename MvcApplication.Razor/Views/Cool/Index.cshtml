@@ -1,0 +1,23 @@
+﻿@using MvcApplication1.Views
+@model MvcApplication1.Models.Person
+@{
+    ViewBag.Title = "title";
+    Layout = Config.DefaultLayout;
+}
+
+<div>
+    @using (Html.BeginForm("SaveName", "Cool", FormMethod.Post))
+    {
+        <fieldset>
+            <div>
+                @Html.LabelFor(m => m.Name)
+            </div>
+            <div>
+                @Html.TextBoxFor(m => m.Name)
+            </div>
+            <div>
+                <input type="submit" value="Send"/>
+            </div>
+        </fieldset>
+    }
+</div>

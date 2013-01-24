@@ -1,0 +1,4 @@
+TestingObject
+{
+	ReadWriteInt: 10
+}

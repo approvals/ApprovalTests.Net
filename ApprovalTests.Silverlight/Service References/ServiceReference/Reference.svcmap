@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7bb651d2-bbce-42eb-a199-729c8cec9702" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:4607/ApprovalService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ApprovalService.xsd" MetadataType="Schema" ID="a4729990-afa8-4954-a540-dd55001f1c29" SourceId="1" SourceUrl="http://localhost:4607/ApprovalService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ApprovalService1.xsd" MetadataType="Schema" ID="ffe9a0d3-e98a-45a7-8a54-0a5244678d17" SourceId="1" SourceUrl="http://localhost:4607/ApprovalService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ApprovalService.wsdl" MetadataType="Wsdl" ID="00872f49-bd1a-4014-8b50-b28463cf0f59" SourceId="1" SourceUrl="http://localhost:4607/ApprovalService.svc?wsdl" />
+    <MetadataFile FileName="ApprovalService.disco" MetadataType="Disco" ID="7222afff-ceba-4ea1-90e9-b1041722be9b" SourceId="1" SourceUrl="http://localhost:4607/ApprovalService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

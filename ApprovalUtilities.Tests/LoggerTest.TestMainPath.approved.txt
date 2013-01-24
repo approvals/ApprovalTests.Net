@@ -1,0 +1,13 @@
+=> LoggerTest.TestMainPath()
+    Event: Starting
+    Variable: name = 'Llewellyn'
+    Message: I Got here
+    Sql: Select * From table_name
+**************************************************************************************
+*                                                                                    *
+* Exception: 'Void TestMainPath()' | 'ApprovalUtilities.Tests'
+*  Problem
+*    at ApprovalUtilities.Tests.LoggerTest.TestMainPath() in ...\LoggerTest.cs:line 27
+*                                                                                    *
+**************************************************************************************
+<= LoggerTest.TestMainPath()

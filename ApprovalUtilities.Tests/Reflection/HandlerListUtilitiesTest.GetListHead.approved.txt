@@ -1,0 +1,12 @@
+HandlerListEntry
+{
+	Handler: System.EventHandler
+	Key: System.Object
+	Next: HandlerListEntry
+{
+	Handler: System.EventHandler
+	Key: System.Object
+	Next: NULL
+}
+
+}

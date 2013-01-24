@@ -1,0 +1,20 @@
+Event Configuration for DemoForm 
+
+EVENT_LOAD:
+	[0] Void DemoForm_Load(System.Object, System.EventArgs)
+
+Event Configuration for Button (DemoForm.button1)
+
+EventClick:
+	[0] Void button1_Click(System.Object, System.EventArgs)
+
+Event Configuration for CheckBox (DemoForm.checkBox1)
+
+EVENT_CHECKEDCHANGED:
+	[0] Void checkBox1_CheckedChanged(System.Object, System.EventArgs)
+
+Event Configuration for Timer (DemoForm.timer1)
+
+onTimer:
+	[0] Void timer1_Tick(System.Object, System.EventArgs)
+

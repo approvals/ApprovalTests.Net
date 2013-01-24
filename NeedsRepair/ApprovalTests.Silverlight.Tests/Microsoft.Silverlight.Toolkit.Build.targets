@@ -1,0 +1,314 @@
+<!--
+// (c) Copyright Microsoft Corporation.
+// This source is subject to [###LICENSE_NAME###].
+// Please see [###LICENSE_LINK###] for details.
+// All other rights reserved.
+-->
+
+<!--
+//
+// Silverlight Toolkit Build Tasks and Targets
+// Quality Band: "Experimental"
+//
+// WARNING:  DO NOT MODIFY this file unless you are knowledgeable about MSBuild
+// and have created a backup copy. Incorrect changes to this file will make it
+// impossible to load or build your projects from the command-line or the IDE.
+//
+-->
+
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--
+  //
+  // Custom build task references
+  //
+  -->
+  <PropertyGroup>
+    <SilverlightToolkitTasksNamespace>Microsoft.Silverlight.Toolkit.Build.Tasks</SilverlightToolkitTasksNamespace>
+    <SilverlightToolkitTasksAssemblyFile>$(SilverlightToolkitTasksNamespace).dll</SilverlightToolkitTasksAssemblyFile>
+  </PropertyGroup>
+  <UsingTask TaskName="$(SilverlightToolkitTasksNamespace).MergeDefaultStylesTask" AssemblyFile="$(SilverlightToolkitTasksAssemblyFile)" />
+  <UsingTask TaskName="$(SilverlightToolkitTasksNamespace).RunUnitTestsTask" AssemblyFile="$(SilverlightToolkitTasksAssemblyFile)" />
+  <UsingTask TaskName="$(SilverlightToolkitTasksNamespace).XapFileReplacementTask" AssemblyFile="$(SilverlightToolkitTasksAssemblyFile)" />
+  <UsingTask TaskName="$(SilverlightToolkitTasksNamespace).GetSilverlightToolkitToolsPath" AssemblyFile="$(SilverlightToolkitTasksAssemblyFile)" />
+  <UsingTask TaskName="$(SilverlightToolkitTasksNamespace).MsilRebuildTask" AssemblyFile="$(SilverlightToolkitTasksAssemblyFile)" />
+  <UsingTask TaskName="$(SilverlightToolkitTasksNamespace).NetFramework4Check" AssemblyFile="$(SilverlightToolkitTasksAssemblyFile)" />
+
+  <!--
+  //
+  // Project specific test properties (the InstrumentedAssemblies and 
+  // InstrumentedXaps properties are required for code coverage but optional 
+  // for just running tests)
+  //
+  -->
+  <PropertyGroup>
+    <TestPage Condition="$(TestPageFileName)==''">TestPage.html</TestPage>
+    <TestPage Condition="$(TestPageFileName)!=''">$(TestPageFileName)</TestPage>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TestPageTemporary>Runtime$(TestPage)</TestPageTemporary>
+    <InstrumentedAssemblies />
+    <InstrumentedXaps />
+  </PropertyGroup>
+
+  <!--
+  // 
+  // Tag expressions. By default, the special name of RequiresFocus is excluded
+  // if no tag expression is provided. This Tag should be added to tests that
+  // fail if the browser does not have the focus during execution.
+  // 
+  -->
+  <PropertyGroup>
+    <TagExpression Condition="$(TagExpression) == ''">All-RequiresFocus</TagExpression>
+  </PropertyGroup>
+
+  <!--
+  //
+  // Web browser selection
+  // Default: ie
+  // Supported: ie, chrome, firefox, or the path to an executable
+  //
+  -->
+  <PropertyGroup>
+    <Browser Condition="$(Browser) == ''">ie</Browser>
+  </PropertyGroup>
+  
+  <!-- 
+  //
+  // Test execution properties
+  //
+  -->
+  <PropertyGroup>
+    <TreatTestFailuresAsErrors Condition="$(TreatTestFailuresAsErrors) == ''">false</TreatTestFailuresAsErrors>
+  </PropertyGroup>
+
+  <!--
+  //
+  // Additional options
+  //
+  -->
+  <PropertyGroup>
+    <!-- If Team Foundation Server is being used, the default style task can
+         use it to automatically check out Generic.xaml when it is updated -->
+    <EnableTfsInfrastructureIntegration>false</EnableTfsInfrastructureIntegration>
+  </PropertyGroup>
+  
+  <!--
+  //
+  // Standard coverage target properties
+  //
+  -->
+  <PropertyGroup>
+    <CoverageOutputPath>$(MSBuildProjectDirectory)\$(OutputPath)</CoverageOutputPath>
+    <CoverageInstrumentedAssemblySuffix>.Coverage.dll</CoverageInstrumentedAssemblySuffix>
+    <CoverageStandardAssemblySuffix>.dll</CoverageStandardAssemblySuffix>
+    <CoverageInstrumentedSymbolSuffix>.Coverage.pdb</CoverageInstrumentedSymbolSuffix>
+  </PropertyGroup>
+  
+  <!--
+  //
+  // Standard unit test and code coverage targets
+  //
+  -->
+  <Target Name="Test" DependsOnTargets="RunTests" />
+
+  <Target
+    Name="CoverageTest"
+    Condition=" '@(InstrumentSilverlightAssemblies)' != '' "
+    DependsOnTargets="CoverageInstrument;RunTests;MergeCoverageData" />
+
+  <Target
+    Name="CoverageView"
+    Condition=" '@(InstrumentSilverlightAssemblies)' != '' "
+    DependsOnTargets="CoverageTest;ViewCoverageData" />
+
+
+  <!--
+  //
+  // Run the unit tests
+  //
+  -->
+  <Target Name="RunTests">
+    <PropertyGroup>
+      <TestDirectory>$(CoverageOutputPath)</TestDirectory>
+    </PropertyGroup>
+    <Copy
+      SourceFiles="$(TestDirectory)\$(TestPage)"
+      DestinationFiles="$(TestDirectory)\$(TestPageTemporary)"/>
+
+    <!-- Windowless -->
+    <StringReplaceTask
+      Condition="$(Windowless) != ''"
+      SourceFiles="$(TestDirectory)\$(TestPageTemporary)"
+      TokenText="&lt;param name=&quot;background&quot; value=&quot;white&quot; /&gt;"
+      ReplacementText="&lt;param name=&quot;background&quot; value=&quot;white&quot; /&gt; &lt;param name=&quot;windowless&quot; value=&quot;true&quot;/&gt;"/>
+    <VerifyTextPresentTask
+      Condition="$(Windowless) != ''"
+      SourceFiles="$(TestDirectory)\$(TestPageTemporary)"
+      TokenText="&lt;param name=&quot;windowless&quot; value=&quot;true&quot;/&gt;" />
+
+    <!-- CachedComposition -->
+    <StringReplaceTask
+      Condition="$(CachedComposition) != ''"
+      SourceFiles="$(TestDirectory)\$(TestPageTemporary)"
+      TokenText="&lt;param name=&quot;background&quot; value=&quot;white&quot; /&gt;"
+      ReplacementText="&lt;param name=&quot;background&quot; value=&quot;white&quot; /&gt; &lt;param name=&quot;enableGPUAcceleration&quot; value=&quot;true&quot;/&gt;"/>
+    <VerifyTextPresentTask
+      Condition="$(CachedComposition) != ''"
+      SourceFiles="$(TestDirectory)\$(TestPageTemporary)"
+      TokenText="&lt;param name=&quot;enableGPUAcceleration&quot; value=&quot;true&quot;/&gt;" />
+
+    <RunUnitTestsTask
+      TestPages="$(TestDirectory)\$(TestPageTemporary)"
+      TagExpression="$(TagExpression)"
+      Browser="$(Browser)"
+      TreatTestFailuresAsErrors="$(TreatTestFailuresAsErrors)"
+      DeleteLogFiles="false"
+      ContinueOnError="true" />
+  </Target>
+
+  <!--
+  //
+  // Code Coverage Instrumentation
+  // - - -
+  // The coverage task takes the assembly built and injects calls to the 
+  // Silverlight Unit Test Framework, which manages the visited block 
+  // data at runtime.
+  //
+  -->
+  <Target Name="CoverageInstrument">
+    <GetSilverlightToolkitToolsPath>
+      <Output TaskParameter="ToolsPath" PropertyName="CoverageToolsPath" />
+    </GetSilverlightToolkitToolsPath>
+
+    <NetFramework4Check>
+      <Output TaskParameter="FrameworkFound" PropertyName="NetFramework4Found" />
+    </NetFramework4Check>
+
+    <Error Text="This release of Silverlight Code Coverage requires that .NET 4 be present on the machine."
+           Condition="$(NetFramework4Found)!=True" />
+
+    <Message Importance="high" Text="This experimental feature requires many tools for successful operation." />
+    <Message Text="Please verify that your machine has Visual Studio 2010 Beta 2, including Static Analysis Tools, ILDASM and ILASM tools." />
+
+    <Error Text="The Static Analysis dependencies for instrumentation could not be located." Condition="$(NetFramework4Found)==True and !Exists('$(CoverageToolsPath)\phx.dll')" />
+
+    <PropertyGroup>
+      <CoverageInstrumentationTool Condition="$(NetFramework4Found)!=True">$(CoverageToolsPath)\CodeCoverage.exe</CoverageInstrumentationTool>
+      <CoverageInstrumentationTool Condition="$(NetFramework4Found)==True">$(CoverageToolsPath)\CodeCoverage2010.exe</CoverageInstrumentationTool>
+    </PropertyGroup>
+
+    <Error
+      Condition="!Exists('$(CoverageInstrumentationTool)')"
+      Text="The Code Coverage Instrumentation tool could not be located: $(CoverageInstrumentationTool)"/>
+
+    <Exec Command="&quot;$(CoverageInstrumentationTool)&quot; /out &quot;$(CoverageOutputPath)%(InstrumentSilverlightAssemblies.identity)$(CoverageInstrumentedAssemblySuffix)&quot; /pdbout &quot;$(CoverageOutputPath)%(InstrumentSilverlightAssemblies.identity)$(CoverageInstrumentedSymbolSuffix)&quot; /in &quot;$(CoverageOutputPath)%(InstrumentSilverlightAssemblies.identity)$(CoverageStandardAssemblySuffix)&quot;"/>
+
+    <!-- Rebuild assembly on .NET 4 only -->
+    <MsilRebuildTask Condition="$(NetFramework4Found)==True"
+                     Assembly="$(CoverageOutputPath)%(InstrumentSilverlightAssemblies.identity)$(CoverageInstrumentedAssemblySuffix)" />
+
+    <!-- Replace the original Xap file with the instrumented assemblies -->
+    <XapFileReplacementTask
+      XapFile="$(CoverageOutputPath)$(XapFilename)"
+      Files="$(CoverageOutputPath)%(InstrumentSilverlightAssemblies.identity)$(CoverageInstrumentedAssemblySuffix)"
+      FileReplacementToken=".Coverage"
+      />
+
+  </Target>
+
+  <!--
+  //
+  // Code Coverage Data Tools
+  //
+  -->
+  <Target Name="MergeCoverageData">
+    <GetSilverlightToolkitToolsPath>
+      <Output TaskParameter="ToolsPath" PropertyName="CoverageToolsPath" />
+    </GetSilverlightToolkitToolsPath>
+
+    <NetFramework4Check>
+      <Output TaskParameter="FrameworkFound" PropertyName="NetFramework4Found" />
+    </NetFramework4Check>
+
+    <PropertyGroup>
+      <CoverageInstrumentationTool Condition="$(NetFramework4Found)!=True">$(CoverageToolsPath)\CodeCoverage.exe</CoverageInstrumentationTool>
+      <CoverageInstrumentationTool Condition="$(NetFramework4Found)==True">$(CoverageToolsPath)\CodeCoverage2010.exe</CoverageInstrumentationTool>
+    </PropertyGroup>
+
+    <Delete Files="$(CoverageOutputPath)Coverage.xml" ContinueOnError="true"/>
+
+    <Message Text="Processing $(CoverageOutputPath)RawCodeCoverage.txt data and storing in $(CoverageOutputPath)Coverage.xml" />
+    <Exec Command="&quot;$(CoverageInstrumentationTool)&quot; /merge &quot;$(CoverageOutputPath)%(InstrumentSilverlightAssemblies.identity).Coverage.xml&quot; &quot;$(CoverageOutputPath)RawCodeCoverage.txt&quot; &quot;$(CoverageOutputPath)Coverage.xml&quot; &quot;$(MSBuildProjectDirectory)&quot;" />
+
+    <Delete Files="$(CoverageOutputPath)RawCodeCoverage.txt" ContinueOnError="true" />
+  </Target>
+
+  <Target Name="ViewCoverageData">
+    <GetSilverlightToolkitToolsPath>
+      <Output TaskParameter="ToolsPath" PropertyName="CoverageToolsPath" />
+    </GetSilverlightToolkitToolsPath>
+
+    <Warning Condition="!Exists('$(CoverageOutputPath)\Coverage.xml')"
+             Text="Could not locate final coverage information file $(CoverageOutputPath)\Coverage.xml" />
+    
+    <Exec Command="&quot;$(CoverageToolsPath)\CodeCoverageViewer.exe&quot; &quot;$(CoverageOutputPath)\Coverage.xml&quot;"/>
+  </Target>
+
+  <!--
+  //
+  // DefaultStyle Task
+  // Merge default styles into generic.xaml
+  //
+  -->
+  
+  <!-- Add "DefaultStyle" as a Build Action in Visual Studio -->
+  <ItemGroup Condition="'$(BuildingInsideVisualStudio)'=='true'">
+    <AvailableItemName Include="DefaultStyle" />
+  </ItemGroup>
+
+  <!--
+  Merge the default styles of controls (only if any of the DefaultStyle files is
+  more recent than the project's generic.xaml file) before compilation
+  dependencies are processed.
+  -->
+  <PropertyGroup>
+    <PrepareResourcesDependsOn>
+      MergeDefaultStyles;
+      $(PrepareResourcesDependsOn);
+    </PrepareResourcesDependsOn>
+  </PropertyGroup>
+  <Target
+    Name="MergeDefaultStyles"
+    Inputs="@(DefaultStyle)"
+    Outputs="$(MSBuildProjectDirectory)\Themes\Generic.xaml">
+    <MergeDefaultStylesTask
+      DefaultStyles="@(DefaultStyle)"
+      ProjectDirectory="$(MSBuildProjectDirectory)"
+      EnableTfs="$(EnableTfsInfrastructureIntegration)" />
+  </Target>
+  
+  <!--
+  Touch DefaultStyles on Rebuild to force generation of generic.xaml.
+  -->
+  <PropertyGroup>
+    <RebuildDependsOn>
+      TouchDefaultStyles;
+      $(RebuildDependsOn);
+    </RebuildDependsOn>
+  </PropertyGroup>
+  <Target Name="TouchDefaultStyles">
+    <Touch Files="@(DefaultStyle)" ForceTouch="true" />
+  </Target>
+
+  <!--
+  //
+  // After build hook for enabling automatic instrumentation or other 
+  // scenarios
+  //
+  -->
+  <Target Name="SilverlightToolkitAfterBuild">
+
+  </Target>
+
+</Project>

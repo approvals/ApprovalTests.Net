@@ -1,0 +1,6 @@
+[0] = MyEvent:
+	[0] Void StandardCallback(System.Object, System.EventArgs)
+
+[1] = PropertyChanged:
+	[0] Void PropertyChagnedHandler(System.Object, System.ComponentModel.PropertyChangedEventArgs)
+

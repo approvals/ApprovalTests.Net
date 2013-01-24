@@ -1,0 +1,5 @@
+<>f__AnonymousType0`2
+{
+	SomeString: Hello
+	SomeInt: 10
+}

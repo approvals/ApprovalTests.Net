@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Service="ApprovalTests.Silverlight.Service.ApprovalService" %>

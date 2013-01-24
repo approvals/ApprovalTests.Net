@@ -1,0 +1,6 @@
+Event Configuration for TestingPoco 
+
+MyEvent:
+	[0] Void AnotherStandardCallback(System.Object, System.EventArgs)
+	[1] Void StandardCallback(System.Object, System.EventArgs)
+

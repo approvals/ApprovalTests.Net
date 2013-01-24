@@ -1,0 +1,6 @@
+HandlerListEntry
+{
+	Handler: NULL
+	Key: NULL
+	Next: NULL
+}

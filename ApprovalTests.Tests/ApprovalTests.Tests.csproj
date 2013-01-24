@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7B8D265D-35BB-4817-B074-F5056E5A9B4E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ApprovalTests.Tests</RootNamespace>
+    <AssemblyName>ApprovalTests.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Gallio, Version=3.0.6.0, Culture=neutral, PublicKeyToken=eb9cfa67ee6ab36e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common\mbunit\Gallio.dll</HintPath>
+    </Reference>
+    <Reference Include="MbUnit, Version=3.0.6.749, Culture=neutral, PublicKeyToken=eb9cfa67ee6ab36e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common\mbunit\MbUnit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CompilerServices.AsyncTargetingPack.Net4">
+      <HintPath>..\packages\Microsoft.CompilerServices.AsyncTargetingPack.1.0.0\lib\net40\Microsoft.CompilerServices.AsyncTargetingPack.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework">
+      <HintPath>..\..\..\..\..\..\Program Files\Microsoft Visual Studio 10.0\Common7\IDE\PublicAssemblies\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\Common\NUnit 2.5.10\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="RazorEngine">
+      <HintPath>..\Common\RazorEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\Common\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="xunit, Version=1.9.1.1600, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\xunit.1.9.1\lib\net20\xunit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApprovalsTest.cs" />
+    <Compile Include="Asp\RoutingTest.cs" />
+    <Compile Include="Asp\Mvc\MvcTest.cs" />
+    <Compile Include="Asp\Razor\RazorTest.cs" />
+    <Compile Include="Asp\RenderHtmlTest.cs" />
+    <Compile Include="CleanupReporter.cs" />
+    <Compile Include="Email\EmailTest.cs" />
+    <Compile Include="EntityFramework\CompanyList.cs" />
+    <Compile Include="EntityFramework\CompanyLoaderByName.cs" />
+    <Compile Include="EntityFramework\CompanyLoaderByName2.cs" />
+    <Compile Include="EntityFramework\CompanyListTest.cs" />
+    <Compile Include="EntityFramework\LoaderUtils.cs" />
+    <Compile Include="EntityFramework\MultiLoader.cs" />
+    <Compile Include="EntityFramework\EntityFrameworkLoaderTest.cs" />
+    <Compile Include="EntityFramework\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Namer\NamerFactoryTest.cs" />
+    <Compile Include="Reporters\NonNUnitReporterTest.cs" />
+    <Compile Include="WinForms\DemoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Events\EventApprovalsTest.cs" />
+    <Compile Include="Events\TestingControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Events\TestingListener.cs" />
+    <Compile Include="Events\TestingPoco.cs" />
+    <Compile Include="Excutable\ExcutableTest.cs" />
+    <Compile Include="FailedApprovalTests.cs" />
+    <Compile Include="Html\HtmlTest.cs" />
+    <Compile Include="LockDownTest.cs" />
+    <Compile Include="Namer\VsTestStackTraceNamerTests.cs" />
+    <Compile Include="FileApproverTests.cs" />
+    <Compile Include="Namer\XunitStackTraceNamerTest.cs" />
+    <Compile Include="Persistence\Datasets\DatasetTest.cs" />
+    <Compile Include="Persistence\WeatherTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Namer\NunitStackTraceNamerTests.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Reporters\AppConfigReporterTest.cs" />
+    <Compile Include="Reporters\AssemblyLevelTest.cs" />
+    <Compile Include="Reporters\FirstWorkingReporterTest.cs" />
+    <Compile Include="Reporters\GenericDiffReporterTest.cs" />
+    <Compile Include="Reporters\IntroductionReporterTest.cs" />
+    <Compile Include="Reporters\MultiReporterTest.cs" />
+    <Compile Include="Reporters\NUnitReporterTest.cs" />
+    <Compile Include="Reporters\RecordingReporter.cs" />
+    <Compile Include="Reporters\ReporterFactoryTest.cs" />
+    <Compile Include="ExampleUsages.cs" />
+    <Compile Include="Reporters\TortoiseImageDiffTest.cs" />
+    <Compile Include="WinForms\ApprovalsTest.cs" />
+    <Compile Include="Wpf\ApprovalsTest.cs" />
+    <Compile Include="Writers\ExistingFileTest.cs" />
+    <Compile Include="Xml\XmlTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="a.png" />
+    <Content Include="b.png" />
+    <Content Include="b.txt" />
+    <Content Include="EntityFramework\CreateDatabase.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <EntityDeploy Include="EntityFramework\Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Asp\Razor\Details.cshtml" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\ApprovalTests.Tests.EntityFramework.ModelContainer.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ApprovalTests\ApprovalTests.csproj">
+      <Project>{F70C9A76-F797-4167-8178-14821F8634BC}</Project>
+      <Name>ApprovalTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ApprovalUtilities\ApprovalUtilities.csproj">
+      <Project>{E9683C33-7A71-4776-B7C9-E89C565AC16B}</Project>
+      <Name>ApprovalUtilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Asp.Net.Demo\Asp.Net.Demo.csproj">
+      <Project>{4A185DA2-D6DA-4E45-A4E8-1DC67B849EAE}</Project>
+      <Name>Asp.Net.Demo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MvcApplication.Razor\MvcApplication.Razor.csproj">
+      <Project>{350DD60C-8C32-449C-9029-9E0195C756AA}</Project>
+      <Name>MvcApplication.Razor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ReportingDemo\ReportingDemo.csproj">
+      <Project>{F50278FC-C888-4DD3-898D-CFCF99147E3D}</Project>
+      <Name>ReportingDemo</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\" />
+    <Folder Include="StackTraceParsers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
