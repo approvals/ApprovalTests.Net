@@ -42,25 +42,39 @@ Available on NuGet
 
 Examples
 ---
+[Sample Code](https://github.com/approvals/ApprovalTests.Net/tree/master/ApprovalDemos/GettingStartedDemos)
 
+   	[UseReporter(typeof(DiffReporter))]
+	[TestFixture]
+	public class SampleTest
+	{
+		[Test]
+		public void TestList()
+		{
+			var names = new[] {"Llewellyn", "James", "Dan", "Jason", "Katrina"};
+			Array.Sort(names);
+			Approvals.VerifyAll(names, "");
+		}
+	}
 
-    using ApprovalTests.Reporters;
-    using CompositionTests;
+Will Produce a File 
 
-    [TestClass]
-    [UseReporter(typeof(DiffReporter))]
-    public class IntegrationTest
-    {
-        [TestMethod]
-        public void VerifyComposition()
-        {
-            var catalog = new TypeCatalog(typeof(Ford));
-            MefComposition.VerifyCompositionInfo(catalog);
-        }
-    }
+    SampleTest.TestList.recieved.txt
+    [0] = Dan
+    [1] = James
+    [2] = Jason
+    [3] = Katrina
+    [4] = Llewellyn
+
+Simply rename this to SampleTest.TestList.**approved**.txt and the test will now pass.
+
 
 More Info
 ---
+
+- [Website](http://approvaltests.sourceforge.net/)
+- [Blog](http://blog.approvaltests.com/)
+- [Getting Started Doc](https://github.com/approvals/ApprovalTests.Net/blob/master/build/Documentation/Approval%20Tests%20-%20Getting%20Started.pdf?raw=true)
 
 	
 ## LICENSE
