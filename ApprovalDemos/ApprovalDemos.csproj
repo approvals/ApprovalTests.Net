@@ -47,12 +47,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CombinationTest.cs" />
     <Compile Include="Database\Loaders\InsultLoaderShortAndSweet.cs" />
     <Compile Include="Database\LoaderTests.cs" />
     <Compile Include="Data\AdoLoaderWrapper.cs" />
     <Compile Include="Data\Author.cs" />
     <Compile Include="Data\AuthorLoader.cs" />
-    <Compile Include="CombinationTest.cs" />
+    <Compile Include="GettingStartedDemos\SampleTest.cs" />
     <Compile Include="Data\DatabaseHelper.cs" />
     <Compile Include="Data\DatabaseTest.cs" />
     <Compile Include="Data\IAdoLoader.cs" />
