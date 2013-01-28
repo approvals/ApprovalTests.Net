@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Asp\Mvc\MvcUtilites.cs" />
     <Compile Include="CallStack\Caller.cs" />
+    <Compile Include="Persistence\Database\DatabaseToExecuteableQueryAdaptor.cs" />
     <Compile Include="Persistence\Database\DatabaseUtils.cs" />
     <Compile Include="Persistence\Database\SqlLoader.cs" />
     <Compile Include="Persistence\Database\SqlLoaderUtils.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="Persistence\EntityFramework\LambdaEnumerableLoader.cs" />
     <Compile Include="Persistence\EntityFramework\LambdaSingleLoader.cs" />
     <Compile Include="Persistence\EntityFramework\Loaders.cs" />
+    <Compile Include="Persistence\EntityFramework\ObjectContextAdaptor.cs" />
     <Compile Include="Persistence\IExecutableQuery.cs" />
     <Compile Include="Persistence\LambdaLoader.cs" />
     <Compile Include="Persistence\Loader.cs" />

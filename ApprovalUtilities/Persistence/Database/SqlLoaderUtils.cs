@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Common;
 using System.Text;
 using ApprovalUtilities.Utilities;
@@ -8,6 +9,14 @@ namespace ApprovalUtilities.Persistence.Database
 {
 	public class SqlLoaderUtils
 	{
+		public static string ExecuteQueryToDisplayString(string query, DbConnection conn)
+		{
+			if (conn.State == ConnectionState.Closed)
+			{
+				conn.Open();
+			}
+			return ExecuteQueryToDisplayString(query, null, conn.CreateCommand);
+		}
 		public static string ExecuteQueryToDisplayString(string query, string connectionString,
 														 Func<DbCommand> commandCreator)
 		{
@@ -52,5 +61,7 @@ namespace ApprovalUtilities.Persistence.Database
 			}
 			return String.Join(", ", output.ToArray());
 		}
+
+		
 	}
 }

@@ -5,8 +5,8 @@ using NUnit.Framework;
 
 namespace ApprovalDemos.GettingStartedDemos
 {
+	[UseReporter(typeof(DiffReporter))]
 	[TestFixture]
-	[UseReporter(typeof (DiffReporter))]
 	public class SampleTest
 	{
 		[Test]

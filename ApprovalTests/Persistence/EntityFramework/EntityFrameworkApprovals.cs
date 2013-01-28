@@ -8,7 +8,7 @@ namespace ApprovalTests.Persistence.EntityFramework
 	{
 		public static void Verify<T>(ObjectContext db, IQueryable<T> queryable)
 		{
-			Approvals.Verify(new LambdaEnumerableLoader<T,ObjectContext>(db,_=> queryable));
+			DatabaseApprovals.Verify(new ObjectContextAdaptor<T>(db, queryable));
 		}
 	}
 }
