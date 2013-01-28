@@ -35,6 +35,8 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -116,6 +118,7 @@
     <Compile Include="Persistence\EntityFramework\EntityFrameworkApprovals.cs" />
     <Compile Include="Persistence\DataSets\ColumnDefaults.cs" />
     <Compile Include="Persistence\DataSets\DataSetTestingUtilities.cs" />
+    <Compile Include="Persistence\NHibernate\NHibernateApprovals.cs" />
     <Compile Include="RdlcReports\RdlcApprovals.cs" />
     <Compile Include="Reporters\AppConfigReporter.cs" />
     <Compile Include="Reporters\AssertReporter.cs" />
@@ -207,10 +210,9 @@
       <Name>ApprovalUtilities</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Persistence\NHibernate\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

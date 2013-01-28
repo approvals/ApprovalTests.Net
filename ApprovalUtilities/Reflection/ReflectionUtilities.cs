@@ -1,3 +1,5 @@
+using NHibernate;
+
 namespace ApprovalUtilities.Reflection
 {
     using System;
@@ -117,5 +119,11 @@ namespace ApprovalUtilities.Reflection
                 typeInfo = includeInherited ? typeInfo.BaseType : null;
             }
         }
+
+	    public static T GetValueForProperty<T>(object instance, string propertyName)
+	    {
+		    var propertyInfo = instance.NonPublicInstanceProperties().First(p => p.Name == propertyName);
+				return propertyInfo.GetValue<T>(instance,null);
+	    }
     }
 }
