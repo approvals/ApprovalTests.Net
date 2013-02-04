@@ -57,8 +57,7 @@ Recieved {0} ({1}, {2}, {3})"
     		return string.IsNullOrEmpty(output) ? fullPath: output;
     	}
 
-    	#region IEnvironmentAwareReporter Members
-			
+    	
         public virtual void Report(string approved, string received)
         {
             if (!File.Exists(diffProgram))
@@ -69,13 +68,13 @@ Recieved {0} ({1}, {2}, {3})"
             DiffReporter.Launch(GetLaunchArguments(approved, received));
         }
 
+		
 
-        public virtual bool IsWorkingInThisEnvironment(string forFile)
+	    public virtual bool IsWorkingInThisEnvironment(string forFile)
         {
             return File.Exists(diffProgram) && IsFileOneOf(forFile, fileTypes);
         }
 
-        #endregion
 
         public LaunchArgs GetLaunchArguments(string approved, string received)
         {

@@ -1,4 +1,4 @@
-[0] = MyEvent:
+﻿[0] = MyEvent:
 	[0] Void StandardCallback(System.Object, System.EventArgs)
 
 [1] = PropertyChanged:

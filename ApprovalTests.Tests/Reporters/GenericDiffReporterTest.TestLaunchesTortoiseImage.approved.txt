@@ -1,1 +1,1 @@
-"C:\Program Files\TortoiseSVN\bin\TortoiseIDiff.exe" /left:"../../b.png" /right:"../../a.png"
+﻿"C:\Program Files\TortoiseSVN\bin\TortoiseIDiff.exe" /left:"../../b.png" /right:"../../a.png"

@@ -1,4 +1,4 @@
-Event Configuration for DemoForm 
+﻿Event Configuration for DemoForm 
 
 EVENT_LOAD:
 	[0] Void DemoForm_Load(System.Object, System.EventArgs)

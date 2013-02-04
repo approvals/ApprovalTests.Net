@@ -1,4 +1,4 @@
-image.png  => True
+﻿image.png  => True
 image.gif  => True
 image.jpg  => True
 image.jpeg  => True

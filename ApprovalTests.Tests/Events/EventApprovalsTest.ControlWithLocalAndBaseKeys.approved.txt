@@ -1,4 +1,4 @@
-Event Configuration for CheckBox 
+﻿Event Configuration for CheckBox 
 
 EVENT_CHECKEDCHANGED:
 	[0] Void AnotherStandardCallback(System.Object, System.EventArgs)

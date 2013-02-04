@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Reflection;
+using ApprovalTests.Core;
 using ApprovalUtilities.Utilities;
 using Microsoft.Reporting.WinForms;
 
@@ -80,8 +80,8 @@ namespace ApprovalTests.RdlcReports
 			const string warning =
 				@"Please Note: there is a slight variation between the Page size of a PDF and a multipage Tiff. 
 If your report is very tight to the page, the page rendering might be different.";
-			Console.WriteLine(warning);
-			Debug.WriteLine(warning);
+			ConsoleUtilities.WriteLine(warning);
+
 			using (var report = new ReportViewer())
 			{
 				var method = typeof(LocalReport).GetMethod("SetEmbeddedResourceAsReportDefinition",
@@ -104,6 +104,7 @@ If your report is very tight to the page, the page rendering might be different.
 																out streams, out warnings);
 		}
 	}
+
 	public class DataPairs:Dictionary<string,object>
 	{
 		

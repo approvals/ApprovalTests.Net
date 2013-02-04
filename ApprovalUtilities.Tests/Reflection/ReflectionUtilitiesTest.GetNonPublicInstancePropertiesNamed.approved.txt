@@ -1,1 +1,1 @@
-[0] = System.ComponentModel.EventHandlerList Events
+﻿[0] = System.ComponentModel.EventHandlerList Events

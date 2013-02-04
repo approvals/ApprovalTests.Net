@@ -1,4 +1,4 @@
-HandlerListEntry
+﻿HandlerListEntry
 {
 	Handler: NULL
 	Key: NULL

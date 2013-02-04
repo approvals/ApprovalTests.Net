@@ -1,4 +1,4 @@
-[0] = HandlerListEntry
+﻿[0] = HandlerListEntry
 {
 	Handler: System.EventHandler
 	Key: System.Object

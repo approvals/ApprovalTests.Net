@@ -119,6 +119,7 @@
     <Compile Include="Persistence\DataSets\ColumnDefaults.cs" />
     <Compile Include="Persistence\DataSets\DataSetTestingUtilities.cs" />
     <Compile Include="Persistence\NHibernate\NHibernateApprovals.cs" />
+    <Compile Include="Core\ConsoleUtilities.cs" />
     <Compile Include="RdlcReports\RdlcApprovals.cs" />
     <Compile Include="Reporters\AppConfigReporter.cs" />
     <Compile Include="Reporters\AssertReporter.cs" />

@@ -1,4 +1,4 @@
-2nd In Command => Zoey
+﻿2nd In Command => Zoey
 Caption => Mal
 Companion => Inara
 Doctor => Simon

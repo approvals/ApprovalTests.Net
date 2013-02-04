@@ -1,2 +1,2 @@
-/Home/Index/Hello => [[controller, Home], [action, Index], [id, Hello]] 
+﻿/Home/Index/Hello => [[controller, Home], [action, Index], [id, Hello]] 
 / => [[controller, Cool], [action, Index], [id, ]] 

@@ -21,7 +21,6 @@ namespace ApprovalTests.Tests.NHibernate
 					from a in session.Query<Company>()
 					where a.Name.StartsWith("Mic")
 					select a;
-				Console.WriteLine(query.First());
 				NHibernateApprovals.Verify((NhQueryable<Company>)query);
 			}
 		}

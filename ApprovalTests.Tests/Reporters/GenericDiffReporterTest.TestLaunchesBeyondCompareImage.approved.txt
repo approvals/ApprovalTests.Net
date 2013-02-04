@@ -1,1 +1,1 @@
-"C:\Program Files\Beyond Compare 3\BCompare.exe" "../../b.png" "../../a.png"
+﻿"C:\Program Files\Beyond Compare 3\BCompare.exe" "../../b.png" "../../a.png"

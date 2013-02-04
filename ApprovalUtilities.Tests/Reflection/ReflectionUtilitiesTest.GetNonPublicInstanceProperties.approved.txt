@@ -1,4 +1,4 @@
-[0] = Boolean AccObjDoDefaultAction
+﻿[0] = Boolean AccObjDoDefaultAction
 [1] = System.Windows.Forms.CreateParams CreateParams
 [2] = System.Drawing.Size DefaultSize
 [3] = System.Drawing.Rectangle OverChangeRectangle

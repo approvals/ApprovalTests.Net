@@ -1,4 +1,4 @@
-
+﻿
     select
         company0_.Id as Id0_,
         company0_.Name as Name0_,

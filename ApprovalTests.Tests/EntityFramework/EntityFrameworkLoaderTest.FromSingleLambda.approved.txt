@@ -1,4 +1,4 @@
-SELECT TOP (1) 
+﻿SELECT TOP (1) 
 [top].[Id] AS [Id], 
 [top].[Name] AS [Name], 
 [top].[Website] AS [Website]

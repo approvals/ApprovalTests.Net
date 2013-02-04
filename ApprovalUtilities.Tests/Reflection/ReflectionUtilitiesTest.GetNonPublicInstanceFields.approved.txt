@@ -1,4 +1,4 @@
-[0] = System.Object NonEventField
+﻿[0] = System.Object NonEventField
 [1] = System.EventHandler MyEvent
 [2] = System.Func`1[System.Boolean] Truth
 [3] = System.ComponentModel.PropertyChangedEventHandler PropertyChanged

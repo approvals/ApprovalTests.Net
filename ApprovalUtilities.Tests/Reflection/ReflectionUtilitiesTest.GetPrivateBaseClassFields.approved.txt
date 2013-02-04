@@ -1,3 +1,3 @@
-Private methods for Class B
+﻿Private methods for Class B
 
 [0] = System.String Booya

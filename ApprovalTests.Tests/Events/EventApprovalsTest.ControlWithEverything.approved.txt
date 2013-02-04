@@ -1,4 +1,4 @@
-Event Configuration for TestingControl 
+﻿Event Configuration for TestingControl 
 
 EventClick:
 	[0] Void StandardCallback(System.Object, System.EventArgs)

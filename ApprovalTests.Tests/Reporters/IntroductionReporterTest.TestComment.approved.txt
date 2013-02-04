@@ -1,4 +1,4 @@
-Welcome to ApprovalTests.
+﻿Welcome to ApprovalTests.
 ApprovalTests use the attribute [UseReporter(typeof(DiffReporter))] on your test class or method.
 When you do this ApprovalTest will launch the result using that reporter (for example in your diff tool).
 You can find several reporters in ApprovalTests.Reporters namespace, or create your own by extending ApprovalTests.Core.IApprovalFailureReporter) interface.
