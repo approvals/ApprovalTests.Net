@@ -1,4 +1,4 @@
-=> LoggerTest.TestMainPath()
+﻿=> LoggerTest.TestMainPath()
     Event: Starting
     Variable: name = 'Llewellyn'
     Message: I Got here

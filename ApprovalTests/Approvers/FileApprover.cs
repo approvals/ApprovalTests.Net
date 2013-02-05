@@ -30,7 +30,7 @@ namespace ApprovalTests.Approvers
 			return failure == null;
 		}
 
-		public static ApprovalException Approve(string approved, string received)
+		public virtual ApprovalException Approve(string approved, string received)
 		{
 			if (!File.Exists(approved))
 			{

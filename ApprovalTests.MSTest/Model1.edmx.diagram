@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c9746ee614bf4b748acfaea97e28659a" Name="Diagram1">
+        <EntityTypeShape EntityType="EntityFrameworkDemoModel.Company" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EntityFrameworkDemoModel.Employee" Width="1.5" PointX="3" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="EntityFrameworkDemoModel.Event" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="EntityFrameworkDemoModel.Job" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="EntityFrameworkDemoModel.FK_Employee_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="EntityFrameworkDemoModel.FK_Boss" ManuallyRouted="false" />
+        <AssociationConnector Association="EntityFrameworkDemoModel.FK_Events_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="EntityFrameworkDemoModel.FK_Job_Employee" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,4 +1,4 @@
-<>f__AnonymousType0`2
+﻿<>f__AnonymousType0`2
 {
 	SomeString: Hello
 	SomeInt: 10

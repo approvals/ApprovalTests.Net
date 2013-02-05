@@ -31,7 +31,7 @@ namespace ApprovalTests.Tests
 		private static void AssertApprover(string receivedFile, string approvedFile, bool expected)
 		{
 			var basePath = PathUtilities.GetDirectoryForCaller();
-			var exception = FileApprover.Approve(basePath + approvedFile, basePath + receivedFile);
+			var exception = new FileApprover(null,null).Approve(basePath + approvedFile, basePath + receivedFile);
 			Assert.AreEqual(expected, exception == null);
 		}
 	}

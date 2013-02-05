@@ -1,4 +1,4 @@
-TestingObject
+﻿TestingObject
 {
 	ReadWriteInt: 10
 }
