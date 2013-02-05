@@ -22,8 +22,8 @@ namespace ApprovalTests.Persistence.EntityFramework.Version5
 
 		public string GetQuery()
 		{
-			DbQuery<T> objectQuery = (DbQuery<T>) queryable;
-			return EntityFrameworkUtils.GetQueryFromLinq(GetObjectQuery(objectQuery));
+			DbQuery<T> dbQuery = (DbQuery<T>) queryable;
+			return EntityFrameworkUtils.GetQueryFromLinq(GetObjectQuery(dbQuery));
 		}
 		public static ObjectQuery<T> GetObjectQuery<T>( DbQuery<T> query)
 		{
