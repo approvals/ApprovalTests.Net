@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <project name="ApprovalTests" default="createZip" basedir=".">
-  <property name="version" value="021" /> <!-- this is the last one published -->
+  <property name="version" value="022" /> <!-- this is the last one published -->
   <target name="clean">
     <delete dir="output" failonerror="false" />
     <mkdir dir="output" />
