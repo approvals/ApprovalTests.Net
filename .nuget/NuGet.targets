@@ -55,10 +55,10 @@
         <BuildCommand>$(NuGetCommand) pack "$(ProjectPath)" -p Configuration=$(Configuration) -o "$(PackageOutputDir)" -symbols</BuildCommand>
 
         <!-- We need to ensure packages are restored prior to assembly resolve -->
-        <ResolveReferencesDependsOn Condition="$(RestorePackages) == 'true'">
+        <BuildDependsOn Condition="$(RestorePackages) == 'true'">
             RestorePackages;
-            $(ResolveReferencesDependsOn);
-        </ResolveReferencesDependsOn>
+            $(BuildDependsOn);
+        </BuildDependsOn>
 
         <!-- Make the build depend on restore packages -->
         <BuildDependsOn Condition="$(BuildPackage) == 'true'">
