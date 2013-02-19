@@ -1,3 +1,5 @@
+Index.dat
+Storage.dat
 #################
 ## Eclipse
 #################
@@ -65,8 +67,8 @@ build/Output
 .builds
 *.dotCover
 
-## TODO: If you have NuGet Package Restore enabled, uncomment this
-#packages/
+## NuGet Package Restore enabled
+packages/
 
 # Visual C++ cache files
 ipch/
