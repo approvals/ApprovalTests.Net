@@ -92,11 +92,19 @@ namespace ApprovalTests
 			{
 				foreach (MethodBase method in caller.NonLambdaCallers.Select(c => c.Method))
 				{
-					object[] useReporters = attributeExtractor(method);
+					try
+					{
+						object[] useReporters = attributeExtractor(method);
 					if (useReporters.Length != 0)
 					{
 						return useReporters.First() as A;
 					}
+					}
+					catch (FileNotFoundException)
+					{ 
+						// ignore exceptions
+					}
+					
 				}
 			}
 			return null;

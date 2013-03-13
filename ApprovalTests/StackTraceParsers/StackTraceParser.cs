@@ -73,6 +73,7 @@ namespace ApprovalTests.StackTraceParsers
 				LoadIfApplicable(parsers, new VSStackTraceParser());
 				LoadIfApplicable(parsers, new MbUnitStackTraceParser());
 				LoadIfApplicable(parsers,new XUnitStackTraceParser());
+				parsers.Add(new MSpecStackTraceParser());
 			}
 			return parsers;
 		}
