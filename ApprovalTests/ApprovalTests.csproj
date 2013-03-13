@@ -117,6 +117,7 @@
     <Compile Include="Html\HtmlApprovals.cs" />
     <Compile Include="Namers\ApprovalResults.cs" />
     <Compile Include="Namers\NamerFactory.cs" />
+    <Compile Include="Namers\UnitTestFrameworks\MSpecStackTraceParser.cs" />
     <Compile Include="Namers\UnitTestFrameworks\XUnitStackTraceParser.cs" />
     <Compile Include="Persistence\DatabaseApprovals.cs" />
     <Compile Include="Persistence\EntityFramework\EntityFrameworkApprovals.cs" />
