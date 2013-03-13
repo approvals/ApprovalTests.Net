@@ -9,7 +9,7 @@ using MenuItem = System.Windows.Controls.MenuItem;
 namespace ApprovalTests.Tests.Wpf
 {
     [TestFixture]
-    [UseReporter(typeof(DiffReporter), typeof(ClipboardReporter))]
+    [UseReporter(typeof(AllFailingTestsClipboardReporter))]
     public class ApprovalsTest
     {
         [Test]

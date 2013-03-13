@@ -13,7 +13,7 @@ using ReportingDemo;
 
 namespace ApprovalTests.Tests.Persistence.Datasets
 {
-	[UseReporter(typeof(ImageReporter))]
+	[UseReporter(typeof(AllFailingTestsClipboardReporter))]
 	[TestFixture]
 	public class DatasetTest
 	{

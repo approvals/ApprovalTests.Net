@@ -8,7 +8,7 @@ using NUnit.Framework;
 namespace ApprovalTests.Tests.WinForms
 {
 	[TestFixture]
-	//[UseReporter(typeof(ClipboardReporter) )]
+	[UseReporter(typeof(AllFailingTestsClipboardReporter) )]
 	public class ApprovalsTest
 	{
 		[Test]
