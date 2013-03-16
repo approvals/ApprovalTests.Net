@@ -1,3 +1,10 @@
+
+*.received.txt
+*.received.html
+*.received.png
+*.received.tiff
+*.received.eml
+
 #################
 ## Eclipse
 #################
