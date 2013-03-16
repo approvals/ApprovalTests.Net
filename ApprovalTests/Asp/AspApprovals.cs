@@ -41,10 +41,19 @@ namespace ApprovalTests.Asp
 			HtmlApprovals.VerifyHtml(GetUrlContents(url));
 		}
 
-		public static string GetUrlContents(string url)
+        public static string ResolveUrl(string rawUrl)
+        {
+            rawUrl = string.IsNullOrWhiteSpace(rawUrl) ? "/" : rawUrl.TrimStart('~');
+            return rawUrl.StartsWith("/")
+                       ? string.Format("http://localhost:{0}{1}", PortFactory.AspPort, rawUrl)
+                       : rawUrl;
+        }
+
+	    public static string GetUrlContents(string url)
 		{
 			try
 			{
+			    url = ResolveUrl(url);
 				using (var client = new WebClient())
 				{
 					var baseUrl = url.Substring(0, url.LastIndexOf("/"));
