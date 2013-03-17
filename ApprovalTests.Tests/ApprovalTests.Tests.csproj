@@ -54,16 +54,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Gallio, Version=3.0.6.0, Culture=neutral, PublicKeyToken=eb9cfa67ee6ab36e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Common\mbunit\Gallio.dll</HintPath>
+    <Reference Include="Gallio, Version=3.4.0.0, Culture=neutral, PublicKeyToken=eb9cfa67ee6ab36e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Gallio_MbUnit.3.4.14.0\lib\net40\Gallio.dll</HintPath>
+    </Reference>
+    <Reference Include="Gallio40, Version=3.4.0.0, Culture=neutral, PublicKeyToken=eb9cfa67ee6ab36e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Gallio_MbUnit.3.4.14.0\lib\net40\Gallio40.dll</HintPath>
     </Reference>
     <Reference Include="Iesi.Collections">
       <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
     </Reference>
-    <Reference Include="MbUnit, Version=3.0.6.749, Culture=neutral, PublicKeyToken=eb9cfa67ee6ab36e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Common\mbunit\MbUnit.dll</HintPath>
+    <Reference Include="MbUnit">
+      <HintPath>..\packages\Gallio_MbUnit.3.4.14.0\lib\net40\MbUnit.dll</HintPath>
+    </Reference>
+    <Reference Include="MbUnit40">
+      <HintPath>..\packages\Gallio_MbUnit.3.4.14.0\lib\net40\MbUnit40.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CompilerServices.AsyncTargetingPack.Net4">
       <HintPath>..\packages\Microsoft.CompilerServices.AsyncTargetingPack.1.0.0\lib\net40\Microsoft.CompilerServices.AsyncTargetingPack.Net4.dll</HintPath>
@@ -77,7 +81,7 @@
       <HintPath>..\packages\NHibernate.3.3.2.4000\lib\Net35\NHibernate.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>..\Common\NUnit 2.5.10\nunit.framework.dll</HintPath>
+      <HintPath>..\packages\NUnit.2.6.2\lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
@@ -86,7 +90,8 @@
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
     <Reference Include="RazorEngine">
-      <HintPath>..\Common\RazorEngine.dll</HintPath>
+      <HintPath>..\packages\RazorEngine.3.2.0\lib\net40\RazorEngine.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -99,7 +104,8 @@
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web.Razor">
-      <HintPath>..\Common\System.Web.Razor.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xaml" />
