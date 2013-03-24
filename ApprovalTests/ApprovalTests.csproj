@@ -119,6 +119,7 @@
     <Compile Include="Namers\NamerFactory.cs" />
     <Compile Include="Namers\UnitTestFrameworks\MSpecStackTraceParser.cs" />
     <Compile Include="Namers\UnitTestFrameworks\XUnitStackTraceParser.cs" />
+    <Compile Include="Namers\UnitTestFrameworks\XUnitTheoryStackTraceParser.cs" />
     <Compile Include="Persistence\DatabaseApprovals.cs" />
     <Compile Include="Persistence\EntityFramework\EntityFrameworkApprovals.cs" />
     <Compile Include="Persistence\DataSets\ColumnDefaults.cs" />
