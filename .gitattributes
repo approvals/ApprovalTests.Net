@@ -20,3 +20,11 @@
 *.PDF	 diff=astextplain
 *.rtf	 diff=astextplain
 *.RTF	 diff=astextplain
+
+#Binary
+*.dll  binary
+*.exe  binary
+*.png  binary
+*.tif  binary
+*.tiff binary
+*.snk  binary
