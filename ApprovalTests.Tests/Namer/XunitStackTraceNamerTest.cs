@@ -26,21 +26,30 @@ namespace ApprovalTests.Tests.Namer
 			Approvals.Verify(exception.Message);
 		}
 
-        [Fact]
-        public async Task AsyncTestApprovalName()
-        {
-            var name = new UnitTestFrameworkNamer().Name;
-            var path = new UnitTestFrameworkNamer().SourcePath;
+		[Fact]
+		public async Task AsyncTestApprovalName()
+		{
+			var name = new UnitTestFrameworkNamer().Name;
+			var path = new UnitTestFrameworkNamer().SourcePath;
 
-            await AnAsyncMethod();
+			await AnAsyncMethod();
 
-            Assert.Equal("XunitStackTraceNamerTest.AsyncTestApprovalName", name);
-            Assert.True(File.Exists(path + "\\XunitStackTraceNamerTest.cs"));
-        }
+			Assert.Equal("XunitStackTraceNamerTest.AsyncTestApprovalName", name);
+			Assert.True(File.Exists(path + "\\XunitStackTraceNamerTest.cs"));
+		}
+		
+		[Fact]
+		public async Task FullAsyncTest()
+		{
+			await AnAsyncMethod();
 
-	    private static Task AnAsyncMethod()
-	    {
-	        return TaskEx.FromResult(default(object));
-	    }
+			Approvals.Verify("Async");
+		}
+
+
+		private static Task AnAsyncMethod()
+		{
+			return TaskEx.FromResult(default(object));
+		}
 	}
 }

@@ -1,4 +1,4 @@
-Assert.Equal() Failure
+﻿Assert.Equal() Failure
 Position: First difference is at position 5
 Expected: Hello
 Actual:   Hello2
