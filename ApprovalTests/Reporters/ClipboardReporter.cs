@@ -1,6 +1,7 @@
 using System;
 using System.Windows;
 using ApprovalTests.Core;
+using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.Reporters
 {
@@ -9,7 +10,8 @@ namespace ApprovalTests.Reporters
 		public static readonly ClipboardReporter INSTANCE = new ClipboardReporter();
 		public void Report(string approved, string received)
 		{
-			Clipboard.SetText(QuietReporter.GetCommandLineForApproval(approved, received));
+			string text = QuietReporter.GetCommandLineForApproval(approved, received);
+			ClipboardUtilities.CopyToClipboard(text);
 		}
 	}
 }

@@ -93,6 +93,7 @@
     <Compile Include="SimpleLogger\Writers\NullWriter.cs" />
     <Compile Include="SimpleLogger\Writers\StringBuilderLogger.cs" />
     <Compile Include="Utilities\ClassUtilities.cs" />
+    <Compile Include="Utilities\ClipboardUtilities.cs" />
     <Compile Include="Utilities\Clock.cs" />
     <Compile Include="Utilities\ExceptionUtilities.cs" />
     <Compile Include="Utilities\FileUtilities.cs" />
