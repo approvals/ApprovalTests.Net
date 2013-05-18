@@ -14,15 +14,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApprovalTests.Tests", "Appr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApprovalDemos", "ApprovalDemos\ApprovalDemos.csproj", "{7ACFCE47-789B-42F4-8B62-EBEF04B4100A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApprovalTests.Silverlight.Web", "ApprovalTests.Silverlight.Web\ApprovalTests.Silverlight.Web.csproj", "{EA285791-9C5D-4D98-A967-6151CD64938E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApprovalTests.Silverlight", "ApprovalTests.Silverlight\ApprovalTests.Silverlight.csproj", "{8EEA3F3E-5741-4C2C-82B9-CE6711F2CF5C}"
-	ProjectSection(ProjectDependencies) = postProject
-		{EA285791-9C5D-4D98-A967-6151CD64938E} = {EA285791-9C5D-4D98-A967-6151CD64938E}
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApprovalTests.Silverlight.Service", "ApprovalTests.Silverlight.Service\ApprovalTests.Silverlight.Service.csproj", "{C4D525C1-CC71-40E7-98CC-11EE32DEC358}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApprovalTests.MSTest", "ApprovalTests.MSTest\ApprovalTests.MSTest.csproj", "{55C72CD1-7EFA-4A12-8C6F-7F917CF83A40}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApprovalUtilities.Tests", "ApprovalUtilities.Tests\ApprovalUtilities.Tests.csproj", "{01EB7BB9-743C-4FB0-B97F-A6E2B4AF86CF}"
@@ -65,18 +56,6 @@ Global
 		{7ACFCE47-789B-42F4-8B62-EBEF04B4100A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7ACFCE47-789B-42F4-8B62-EBEF04B4100A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7ACFCE47-789B-42F4-8B62-EBEF04B4100A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EA285791-9C5D-4D98-A967-6151CD64938E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EA285791-9C5D-4D98-A967-6151CD64938E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EA285791-9C5D-4D98-A967-6151CD64938E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EA285791-9C5D-4D98-A967-6151CD64938E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8EEA3F3E-5741-4C2C-82B9-CE6711F2CF5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8EEA3F3E-5741-4C2C-82B9-CE6711F2CF5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8EEA3F3E-5741-4C2C-82B9-CE6711F2CF5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8EEA3F3E-5741-4C2C-82B9-CE6711F2CF5C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C4D525C1-CC71-40E7-98CC-11EE32DEC358}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C4D525C1-CC71-40E7-98CC-11EE32DEC358}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C4D525C1-CC71-40E7-98CC-11EE32DEC358}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C4D525C1-CC71-40E7-98CC-11EE32DEC358}.Release|Any CPU.Build.0 = Release|Any CPU
 		{55C72CD1-7EFA-4A12-8C6F-7F917CF83A40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{55C72CD1-7EFA-4A12-8C6F-7F917CF83A40}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55C72CD1-7EFA-4A12-8C6F-7F917CF83A40}.Release|Any CPU.ActiveCfg = Release|Any CPU

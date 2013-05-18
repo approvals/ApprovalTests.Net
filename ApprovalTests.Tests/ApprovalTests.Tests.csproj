@@ -98,9 +98,6 @@
     <Reference Include="System.Security" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Web.Razor">
-      <HintPath>..\Common\System.Web.Razor.dll</HintPath>
-    </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
@@ -116,7 +113,6 @@
     <Compile Include="ApprovalsTest.cs" />
     <Compile Include="Asp\RoutingTest.cs" />
     <Compile Include="Asp\Mvc\MvcTest.cs" />
-    <Compile Include="Asp\Razor\RazorTest.cs" />
     <Compile Include="Asp\RenderHtmlTest.cs" />
     <Compile Include="CleanupReporter.cs" />
     <Compile Include="Email\EmailTest.cs" />
@@ -194,7 +190,6 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Asp\Razor\Details.cshtml" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\ApprovalTests.Tests.EntityFramework.ModelContainer.datasource" />
     <None Include="Properties\Settings.settings">
