@@ -1,6 +1,6 @@
 ﻿using MbUnit.Framework;
 
-namespace ApprovalTests.Tests
+namespace ApprovalTests.MbUnit
 {
 	[TestFixture]
 	public class ExampleUsages
@@ -14,9 +14,7 @@ namespace ApprovalTests.Tests
 		[Test, Parallelizable]
 		public void ApprovingAnEnumerble()
 		{
-			Approvals.VerifyAll(new[] { "item1", "item2", "item3" }, "items");
+			Approvals.VerifyAll(new[] {"item1", "item2", "item3"}, "items");
 		}
-
-
 	}
 }

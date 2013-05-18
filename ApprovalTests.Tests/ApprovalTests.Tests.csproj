@@ -54,16 +54,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Gallio, Version=3.0.6.0, Culture=neutral, PublicKeyToken=eb9cfa67ee6ab36e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Common\mbunit\Gallio.dll</HintPath>
-    </Reference>
     <Reference Include="Iesi.Collections">
       <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
-    </Reference>
-    <Reference Include="MbUnit, Version=3.0.6.749, Culture=neutral, PublicKeyToken=eb9cfa67ee6ab36e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Common\mbunit\MbUnit.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CompilerServices.AsyncTargetingPack.Net4">
       <HintPath>..\packages\Microsoft.CompilerServices.AsyncTargetingPack.1.0.0\lib\net40\Microsoft.CompilerServices.AsyncTargetingPack.Net4.dll</HintPath>
@@ -168,7 +160,6 @@
     <Compile Include="Reporters\NUnitReporterTest.cs" />
     <Compile Include="Reporters\RecordingReporter.cs" />
     <Compile Include="Reporters\ReporterFactoryTest.cs" />
-    <Compile Include="ExampleUsages.cs" />
     <Compile Include="Reporters\TortoiseImageDiffTest.cs" />
     <Compile Include="WinForms\ApprovalsTest.cs" />
     <Compile Include="Wpf\ApprovalsTest.cs" />
