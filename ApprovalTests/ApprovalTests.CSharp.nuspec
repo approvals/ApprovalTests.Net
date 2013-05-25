@@ -2,7 +2,7 @@
 <package>
 	<metadata>
 		<id>ApprovalTests</id>
-		<version>1.22.1</version>    
+		<version>$version$</version>
 		<description>
 		 A picture's worth a 1000 tests.
          Unit testing asserts can be difficult to use. 
@@ -14,8 +14,10 @@
 		<projectUrl>https://github.com/approvals/ApprovalTests.Net</projectUrl>
 		<iconUrl>http://approvaltests.sourceforge.net/sites/all/themes/corolla/logo.png</iconUrl>
 		<dependencies>
-    	    <dependency id="ApprovalUtilities"/>
-    	</dependencies>
+			<group targetFramework=".NETFramework3.5">
+				<dependency id="ApprovalUtilities" />
+			</group>
+		</dependencies>
 	</metadata>
 	<files>
 		<file src="bin\Debug\ApprovalTests.dll" target="lib\net40" /> 

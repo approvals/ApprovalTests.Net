@@ -2,7 +2,7 @@
 <package>
 	<metadata>
 		<id>ApprovalUtilities</id>
-		<version>1.22.1</version>    
+		<version>$version$</version>    
 		<description>Common helper classes developed with ApprovalTests</description>
 		<language>en-US</language>
 		<authors>Llewellyn Falco &amp; Dan Gilkerson</authors>
