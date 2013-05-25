@@ -15,8 +15,7 @@ local.properties
 .classpath
 .settings/
 .loadpath
-ApprovalsKeyPair.snk
-ApprovalsKeyPair_real.snk
+
 build/Output
 # External tool builders
 .externalToolBuilders/
