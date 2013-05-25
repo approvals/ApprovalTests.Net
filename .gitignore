@@ -63,6 +63,7 @@ build/Output
 *.vspscc
 .builds
 *.dotCover
+*.nupkg
 
 ## TODO: If you have NuGet Package Restore enabled, uncomment this
 packages/
