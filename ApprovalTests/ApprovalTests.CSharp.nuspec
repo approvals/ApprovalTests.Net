@@ -22,6 +22,7 @@
 	<files>
 		<file src="bin\Debug\ApprovalTests.dll" target="lib\net40" /> 
 		<file src="bin\Debug\ApprovalTests.pdb" target="lib\net40" /> 
+		<file src="bin\Debug\ApprovalTests.XML" target="lib\net40" /> 
 	</files>
 
 </package>

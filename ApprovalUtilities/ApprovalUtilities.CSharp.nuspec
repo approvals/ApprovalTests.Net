@@ -13,5 +13,6 @@
 	<files>
 		<file src="bin\Debug\ApprovalUtilities.dll" target="lib\net35" /> 
 		<file src="bin\Debug\ApprovalUtilities.pdb" target="lib\net35" /> 
+		<file src="bin\Debug\ApprovalUtilities.XML" target="lib\net35" /> 
 	</files>
 </package>
