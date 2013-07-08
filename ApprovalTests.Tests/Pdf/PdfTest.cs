@@ -1,4 +1,6 @@
 ﻿using System.IO;
+using ApprovalTests.Reporters;
+using ApprovalUtilities.Utilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
 using System.Linq;
@@ -10,6 +12,16 @@ namespace ApprovalTests.Tests.Pdf
 	
 	public class PdfTest
 	{
+		[Test]
+		[UseReporter(typeof(FileLauncherReporter), typeof(ClipboardReporter))]
+		public void TestPdf()
+		{
+			var pdfOriginal = PathUtilities.GetAdjacentFile("sample.pdf");
+			var pdf = PathUtilities.GetAdjacentFile("temp.pdf");
+
+			File.Copy(pdfOriginal, pdf, true);
+			Approvals.VerifyPdfFile(pdf);
+		}
 		[Test]
 		public void TestNotFound()
 		{

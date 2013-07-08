@@ -99,15 +99,6 @@ namespace ApprovalTests.Tests
 			Approvals.VerifyAll(text, (t) => "" + t.Length);
 		}
 
-		[Test]
-		[UseReporter(typeof(FileLauncherReporter),typeof(ClipboardReporter))]
-		public void TestPdf()
-		{
-			var pdfOriginal = PathUtilities.GetAdjacentFile("sample.pdf");
-			var pdf = PathUtilities.GetAdjacentFile("temp.pdf");
-
-			File.Copy(pdfOriginal,pdf,true);
-			Approvals.VerifyPdfFile(pdf);
-		}
+		
 	}
 }
