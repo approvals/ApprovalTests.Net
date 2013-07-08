@@ -231,6 +231,14 @@ namespace ApprovalTests
 		}
 
 		#endregion
+
+		public static void VerifyPdfFile(string pdfFilePath)
+		{
+		    PdfScrubber.ScrubPdf(pdfFilePath);
+        Approvals.Verify(new ExistingFileWriter(pdfFilePath));
+    }
+
+ 
 	}
 
 	internal class AlwaysWorksReporter : IEnvironmentAwareReporter

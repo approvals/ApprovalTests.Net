@@ -86,7 +86,8 @@ If your report is very tight to the page, the page rendering might be different.
 			{
 				var method = typeof(LocalReport).GetMethod("SetEmbeddedResourceAsReportDefinition",
 																									 BindingFlags.NonPublic | BindingFlags.Instance);
-				method.Invoke(report.LocalReport, new object[] { reportname, assembly });
+				method.Invoke(report.LocalReport, new object[] {reportname, assembly});
+				report.LocalReport.EnableExternalImages = true;
 				populateDataSources(report.LocalReport.DataSources, report.LocalReport.GetDataSourceNames());
 				var bytes = RenderReport(report.LocalReport, "IMAGE");
 				ApprovalTests.Approvals.VerifyBinaryFile(bytes, "tiff");

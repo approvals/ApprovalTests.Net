@@ -13,7 +13,6 @@ using ReportingDemo;
 
 namespace ApprovalTests.Tests.Persistence.Datasets
 {
-	[UseReporter(typeof(AllFailingTestsClipboardReporter))]
 	[TestFixture]
 	public class DatasetTest
 	{
@@ -29,6 +28,12 @@ namespace ApprovalTests.Tests.Persistence.Datasets
 			return typeof (InsultsDataSet).Assembly;
 		}
 
+		[Test]
+		public void TestExtrenalImage()
+		{
+			RdlcApprovals.VerifyReport("ReportingDemo.ExternalImage.rdlc", GetDefaultData());
+		}
+		
 		[Test]
 		public void TestSimpleReportWith1Dataset()
 		{

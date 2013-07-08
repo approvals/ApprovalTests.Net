@@ -57,6 +57,9 @@
     <Compile Include="ReportHelper.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ExternalImage.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="InsultsReport.rdlc">
       <SubType>Designer</SubType>
     </EmbeddedResource>
