@@ -145,6 +145,7 @@
     <Compile Include="Reporters\BeyondCompareReporter.cs" />
     <Compile Include="Reporters\ClipboardReporter.cs" />
     <Compile Include="Reporters\CodeCompareReporter.cs" />
+    <Compile Include="Reporters\CruiseControlNetReporter.cs" />
     <Compile Include="Reporters\AllFailingTestsClipboardReporter.cs" />
     <Compile Include="Reporters\MightyMooseAutoTestReporter.cs" />
     <Compile Include="Reporters\P4MergeReporter.cs" />
@@ -195,6 +196,7 @@
     <Compile Include="Core\IApprover.cs" />
     <Compile Include="Approvers\FileApprover.cs" />
     <Compile Include="Core\IApprovalReporter.cs" />
+
     <Compile Include="Reporters\QuietReporter.cs" />
     <Compile Include="StackTraceParsers\IStackTraceParser.cs" />
     <Compile Include="Namers\UnitTestFrameworks\NUnitStackTraceParser.cs" />
