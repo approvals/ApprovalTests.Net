@@ -196,7 +196,6 @@
     <Compile Include="Core\IApprover.cs" />
     <Compile Include="Approvers\FileApprover.cs" />
     <Compile Include="Core\IApprovalReporter.cs" />
-
     <Compile Include="Reporters\QuietReporter.cs" />
     <Compile Include="StackTraceParsers\IStackTraceParser.cs" />
     <Compile Include="Namers\UnitTestFrameworks\NUnitStackTraceParser.cs" />
