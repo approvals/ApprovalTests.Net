@@ -14,7 +14,7 @@ namespace ApprovalTests.Reporters
 
 		public bool IsWorkingInThisEnvironment(string forFile)
 		{
-            return Environment.GetEnvironmentVariables().Contains("CCNetBuildDate");
+            return Environment.GetEnvironmentVariable("CCNetBuildDate") != null;
 		}
 	}
 }
