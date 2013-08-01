@@ -1,21 +1,27 @@
-﻿using System.Linq;
-using ApprovalTests.Core;
+﻿using ApprovalTests.Core;
 
 namespace ApprovalTests.Reporters
 {
-	public class MightyMooseAutoTestReporter: IEnvironmentAwareReporter
-	{
-		public static readonly MightyMooseAutoTestReporter INSTANCE = new MightyMooseAutoTestReporter();
+    public class MightyMooseAutoTestReporter : IEnvironmentAwareReporter
+    {
+        public static readonly MightyMooseAutoTestReporter INSTANCE = new MightyMooseAutoTestReporter();
 
-		public void Report(string approved, string received)
-		{
-			// do nothing
-		}
+        public static bool? IsRunning = null;
 
-		public bool IsWorkingInThisEnvironment(string forFile)
-		{
-			return Approvals.CurrentCaller.NonLambdaCallers
-			                .Any(c => c.Class.Assembly.GetName().Name.StartsWith("AutoTest.TestRunners"));
-		}
-	}
+        public void Report(string approved, string received)
+        {
+            // do nothing
+        }
+
+        public bool IsWorkingInThisEnvironment(string forFile)
+        {
+            if (IsRunning == null)
+            {
+                var processName = System.Diagnostics.Process.GetCurrentProcess().ProcessName;
+                IsRunning = processName != null && processName.StartsWith("AutoTest.TestRunner");
+            }
+
+            return IsRunning.Value;
+        }
+    }
 }
