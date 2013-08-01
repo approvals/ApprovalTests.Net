@@ -75,6 +75,12 @@ namespace ApprovalUtilities.CallStack
 				}
 			}
 		}
+
+        public override string ToString()
+        {
+            return Class.Assembly.GetName().Name  + "." + Method.ToStandardString();
+        }
+        
 	}
 
 	public static class ReflectionUtilities

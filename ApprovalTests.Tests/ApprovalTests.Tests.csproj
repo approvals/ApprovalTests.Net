@@ -131,7 +131,6 @@
     <Compile Include="NHibernate\Job.cs" />
     <Compile Include="NHibernate\NHibernateTest.cs" />
     <Compile Include="Pdf\PdfTest.cs" />
-    <Compile Include="Reporters\NonNUnitReporterTest.cs" />
     <Compile Include="StringEncodingTest.cs" />
     <Compile Include="WinForms\DemoForm.cs">
       <SubType>Form</SubType>
@@ -148,7 +147,6 @@
     <Compile Include="LockDownTest.cs" />
     <Compile Include="Namer\VsTestStackTraceNamerTests.cs" />
     <Compile Include="FileApproverTests.cs" />
-    <Compile Include="Namer\XunitStackTraceNamerTest.cs" />
     <Compile Include="Persistence\Datasets\DatasetTest.cs" />
     <Compile Include="Persistence\WeatherTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -37,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApprovalTests.MSpec", "Appr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApprovalTests.MbUnit", "ApprovalTests.MbUnit\ApprovalTests.MbUnit.csproj", "{51C095FB-042D-4BFC-8F2A-ECF622B2B5CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApprovalTests.Xunit", "ApprovalTests.Xunit\ApprovalTests.Xunit.csproj", "{B8AAA028-1890-40B6-84B8-2F46986EEE8C}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = ApprovalTests3.vsmdi
@@ -90,6 +92,10 @@ Global
 		{51C095FB-042D-4BFC-8F2A-ECF622B2B5CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51C095FB-042D-4BFC-8F2A-ECF622B2B5CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51C095FB-042D-4BFC-8F2A-ECF622B2B5CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8AAA028-1890-40B6-84B8-2F46986EEE8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8AAA028-1890-40B6-84B8-2F46986EEE8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8AAA028-1890-40B6-84B8-2F46986EEE8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8AAA028-1890-40B6-84B8-2F46986EEE8C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
