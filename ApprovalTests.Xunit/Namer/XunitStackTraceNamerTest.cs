@@ -9,17 +9,20 @@ namespace ApprovalTests.Xunit.Namer
     using ApprovalTests.Reporters;
     using ApprovalTests.StackTraceParsers;
 
+    using ApprovalUtilities.Utilities;
+
     using global::Xunit;
 
     public class XunitStackTraceNamerTest
     {
-        //[Fact]
-        [UseReporter(typeof(FileLauncherReporter))]
-        public void ShowMeCallers()
+        [Fact]
+        public void TestMightyMoose()
         {
             Approvals.SetCaller();
-
-            Approvals.VerifyAll(Approvals.CurrentCaller.NonLambdaCallers, "");
+            var m = new MightyMooseAutoTestReporter();
+            var b = m.IsWorkingInThisEnvironment("a.txt");
+            var f = PathUtilities.GetAdjacentFile("mightymooseresult.txt");
+            File.WriteAllText(f, "{0}, MightyMoose was running = {1}".FormatWith(DateTime.Now, b));
         }
 
         [Fact]

@@ -1,14 +1,12 @@
-﻿using System.Linq;
-using System.Collections.Generic;
+﻿using ApprovalTests.Reporters;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections;
-using ApprovalTests;
-using ApprovalTests.Reporters;
+
 namespace ApprovalTests.Tests.Reporters
 {
     [TestClass]
     public class DotNet4UtilitiesTest
     {
+
         [TestMethod]
         [ApprovalTests.Reporters.UseReporter(typeof(FileLauncherReporter))]
         public void TestPath()
