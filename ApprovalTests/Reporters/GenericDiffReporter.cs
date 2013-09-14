@@ -54,7 +54,7 @@ Recieved {0} ({1}, {2}, {3})"
 				}
 				var toFind = Path.GetFileName(fullPath);
 				var output = PathUtilities.LocateFileFromEnviormentPath(toFind).FirstOrDefault();
-    		return string.IsNullOrEmpty(output) ? fullPath: output;
+    		return String.IsNullOrEmpty(output) ? fullPath: output;
     	}
 
     	
@@ -65,7 +65,7 @@ Recieved {0} ({1}, {2}, {3})"
                 throw new Exception(diffProgramNotFoundMessage);
             }
             FileUtilities.EnsureFileExists(approved);
-            DiffReporter.Launch(GetLaunchArguments(approved, received));
+            Launch(GetLaunchArguments(approved, received));
         }
 
 		
@@ -91,5 +91,18 @@ Recieved {0} ({1}, {2}, {3})"
         {
             return filetypes.Any(ext => forFile.EndsWith(ext));
         }
+
+	    public static void Launch(LaunchArgs launchArgs)
+	    {
+		    try
+		    {
+			    Process.Start(launchArgs.Program, launchArgs.Arguments);
+		    }
+		    catch (System.ComponentModel.Win32Exception e)
+		    {
+
+			    throw new Exception("Unable to launch: {0} with arguments {1}\nError Message: {2}".FormatWith(launchArgs.Program, launchArgs.Arguments, e.Message), e);
+		    }
+	    }
     }
 }
