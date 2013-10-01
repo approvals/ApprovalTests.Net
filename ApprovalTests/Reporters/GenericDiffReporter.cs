@@ -1,108 +1,120 @@
 using System;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
 using ApprovalTests.Core;
 using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.Reporters
 {
-    public class GenericDiffReporter : IEnvironmentAwareReporter
-    {
-        public const string DEFAULT_ARGUMENT_FORMAT = "\"{0}\" \"{1}\"";
-        public static readonly string[] TEXT_FILE_TYPES = new[] {".txt", ".csv", ".htm", ".html", ".xml", ".eml",".cs",".css"};
-				public static readonly string[] IMAGE_FILE_TYPES = { ".png", ".gif", ".jpg", ".jpeg", ".bmp", ".tif", ".tiff" };
+	public class GenericDiffReporter : IEnvironmentAwareReporter
+	{
+		public const string DEFAULT_ARGUMENT_FORMAT = "\"{0}\" \"{1}\"";
 
-        protected string arguments;
-        protected string diffProgram;
-        protected string diffProgramNotFoundMessage;
-        protected string[] fileTypes = TEXT_FILE_TYPES;
+		public static readonly string[] TEXT_FILE_TYPES = new[]
+			{".txt", ".csv", ".htm", ".html", ".xml", ".eml", ".cs", ".css"};
 
-        public GenericDiffReporter(string diffProgram, string diffProgramNotFoundMessage)
-            : this(diffProgram, DEFAULT_ARGUMENT_FORMAT, diffProgramNotFoundMessage)
-        {
-        }
+		public static readonly string[] IMAGE_FILE_TYPES = {".png", ".gif", ".jpg", ".jpeg", ".bmp", ".tif", ".tiff"};
 
-        public GenericDiffReporter(string diffProgram, string argumentsFormat, string diffProgramNotFoundMessage)
-            : this(diffProgram, argumentsFormat, diffProgramNotFoundMessage, TEXT_FILE_TYPES)
-        {
-        }
+		protected string arguments;
+		protected string originalDiffProgram;
+		protected string actualDiffProgram;
+		protected string diffProgramNotFoundMessage;
+		protected string[] fileTypes = TEXT_FILE_TYPES;
 
-        public GenericDiffReporter(string diffProgram, string argumentsFormat, string diffProgramNotFoundMessage,
-                                   string[] allowedFileTypes)
-        {
-            if (diffProgram == null)
-            {
-                throw new NullReferenceException(
-                    @"Illegal arguments for {0} (diffProgam, argumentsFormat, diffProgramNotFoundMessage)
+		public GenericDiffReporter(string diffProgram, string diffProgramNotFoundMessage)
+			: this(diffProgram, DEFAULT_ARGUMENT_FORMAT, diffProgramNotFoundMessage)
+		{
+		}
+
+		public GenericDiffReporter(string diffProgram, string argumentsFormat, string diffProgramNotFoundMessage)
+			: this(diffProgram, argumentsFormat, diffProgramNotFoundMessage, TEXT_FILE_TYPES)
+		{
+		}
+
+		public GenericDiffReporter(string diffProgram, string argumentsFormat, string diffProgramNotFoundMessage,
+		                           string[] allowedFileTypes)
+		{
+			if (diffProgram == null)
+			{
+				throw new NullReferenceException(
+					@"Illegal arguments for {0} (diffProgam, argumentsFormat, diffProgramNotFoundMessage)
 Recieved {0} ({1}, {2}, {3})"
-                        .FormatWith(GetType().Name, diffProgram, argumentsFormat, diffProgramNotFoundMessage));
-            }
+						.FormatWith(GetType().Name, diffProgram, argumentsFormat, diffProgramNotFoundMessage));
+			}
 
-            this.diffProgram = GetActualProgramFile(diffProgram);
-            arguments = argumentsFormat;
-            this.diffProgramNotFoundMessage = diffProgramNotFoundMessage;
-            fileTypes = allowedFileTypes;
-        }
+			this.originalDiffProgram = diffProgram;
+			this.arguments = argumentsFormat;
+			this.diffProgramNotFoundMessage = diffProgramNotFoundMessage;
+			fileTypes = allowedFileTypes;
+		}
 
-    	public static string GetActualProgramFile(string fullPath)
-    	{
-				if (File.Exists(fullPath))
-				{
-					return fullPath;
-				}
-				var toFind = Path.GetFileName(fullPath);
-				var output = PathUtilities.LocateFileFromEnviormentPath(toFind).FirstOrDefault();
-    		return String.IsNullOrEmpty(output) ? fullPath: output;
-    	}
+		public static string GetActualProgramFile(string fullPath)
+		{
+			if (File.Exists(fullPath))
+			{
+				return fullPath;
+			}
+			var toFind = Path.GetFileName(fullPath);
+			var output = PathUtilities.LocateFileFromEnviormentPath(toFind).FirstOrDefault();
+			return String.IsNullOrEmpty(output) ? fullPath : output;
+		}
 
-    	
-        public virtual void Report(string approved, string received)
-        {
-            if (!File.Exists(diffProgram))
-            {
-                throw new Exception(diffProgramNotFoundMessage);
-            }
-            FileUtilities.EnsureFileExists(approved);
-            Launch(GetLaunchArguments(approved, received));
-        }
+		public  string GetDiffProgram()
+		{
+			if (actualDiffProgram == null)
+			{
+				actualDiffProgram = GetActualProgramFile(originalDiffProgram);
+			}
+			return actualDiffProgram;
+		}
 
-		
-
-	    public virtual bool IsWorkingInThisEnvironment(string forFile)
-        {
-            return File.Exists(diffProgram) && IsFileOneOf(forFile, fileTypes);
-        }
-
-
-        public LaunchArgs GetLaunchArguments(string approved, string received)
-        {
-            return new LaunchArgs(diffProgram, arguments.FormatWith(received, approved));
-        }
+		public virtual void Report(string approved, string received)
+		{
+			if (!File.Exists(GetDiffProgram()))
+			{
+				throw new Exception(diffProgramNotFoundMessage);
+			}
+			FileUtilities.EnsureFileExists(approved);
+			Launch(GetLaunchArguments(approved, received));
+		}
 
 
-        public static bool IsTextFile(string forFile)
-        {
-            return IsFileOneOf(forFile, TEXT_FILE_TYPES);
-        }
+		public virtual bool IsWorkingInThisEnvironment(string forFile)
+		{
+			return File.Exists(GetDiffProgram()) && IsFileOneOf(forFile, fileTypes);
+		}
 
-        public static bool IsFileOneOf(string forFile, string[] filetypes)
-        {
-            return filetypes.Any(ext => forFile.EndsWith(ext));
-        }
 
-	    public static void Launch(LaunchArgs launchArgs)
-	    {
-		    try
-		    {
-			    Process.Start(launchArgs.Program, launchArgs.Arguments);
-		    }
-		    catch (System.ComponentModel.Win32Exception e)
-		    {
+		public LaunchArgs GetLaunchArguments(string approved, string received)
+		{
+			return new LaunchArgs(GetDiffProgram(), arguments.FormatWith(received, approved));
+		}
 
-			    throw new Exception("Unable to launch: {0} with arguments {1}\nError Message: {2}".FormatWith(launchArgs.Program, launchArgs.Arguments, e.Message), e);
-		    }
-	    }
-    }
+
+		public static bool IsTextFile(string forFile)
+		{
+			return IsFileOneOf(forFile, TEXT_FILE_TYPES);
+		}
+
+		public static bool IsFileOneOf(string forFile, string[] filetypes)
+		{
+			return filetypes.Any(ext => forFile.EndsWith(ext));
+		}
+
+		public static void Launch(LaunchArgs launchArgs)
+		{
+			try
+			{
+				Process.Start(launchArgs.Program, launchArgs.Arguments);
+			}
+			catch (Win32Exception e)
+			{
+				throw new Exception(
+					"Unable to launch: {0} with arguments {1}\nError Message: {2}".FormatWith(launchArgs.Program, launchArgs.Arguments,
+					                                                                          e.Message), e);
+			}
+		}
+	}
 }

@@ -29,3 +29,4 @@
 *.tiff binary
 *.snk  binary
 *.ttf  binary
+*.gif  binary

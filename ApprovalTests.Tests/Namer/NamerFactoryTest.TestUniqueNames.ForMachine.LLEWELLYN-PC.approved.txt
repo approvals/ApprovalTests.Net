@@ -1,2 +1,2 @@
-﻿GetDotNetVersion => Net_v4.0.30319.18047
+﻿GetDotNetVersion => Net_v4.0.30319.18052
 GetOsName => Microsoft_Windows_7_Professional_N

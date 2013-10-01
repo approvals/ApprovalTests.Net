@@ -14,14 +14,14 @@ namespace ApprovalTests.Tests.WinForms
 		[Test]
 		public void TestControlApproved()
 		{
-			NamerFactory.AsMachineSpecificTest();
+			ApprovalResults.UniqueForMachineName();
 			WinFormsApprovals.Verify(new Button {BackColor = Color.LightBlue, Text = "Help"});
 		}
 
 		[Test]
 		public void TestFormApproval()
 		{
-			NamerFactory.AsMachineSpecificTest();
+			ApprovalResults.UniqueForMachineName();
 			WinFormsApprovals.Verify(new Form());
 		}
 
