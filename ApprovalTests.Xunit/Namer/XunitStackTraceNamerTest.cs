@@ -66,7 +66,7 @@ namespace ApprovalTests.Xunit.Namer
 
         private static Task AnAsyncMethod()
         {
-            return TaskEx.FromResult(default(object));
+            return Task.FromResult(default(object));
         }
     }
 }

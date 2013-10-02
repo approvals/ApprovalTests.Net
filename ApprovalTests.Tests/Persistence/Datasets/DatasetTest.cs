@@ -78,7 +78,7 @@ namespace ApprovalTests.Tests.Persistence.Datasets
 		[SetUp]
 		public void NamerSetUp()
 		{
-			NamerFactory.AsMachineSpecificTest();
+			ApprovalResults.UniqueForMachineName();
 		}
 	}
 

@@ -25,7 +25,7 @@ namespace ApprovalTests.Persistence.EntityFramework.Version5
 			DbQuery<T> dbQuery = (DbQuery<T>) queryable;
 			return EntityFrameworkUtils.GetQueryFromLinq(GetObjectQuery(dbQuery));
 		}
-		public static ObjectQuery<T> GetObjectQuery<T>( DbQuery<T> query)
+		public static ObjectQuery<T1> GetObjectQuery<T1>( DbQuery<T1> query)
 		{
 			var internalQueryField = query.GetType().GetFields(BindingFlags.NonPublic | BindingFlags.Instance).FirstOrDefault(f => f.Name.Equals("_internalQuery"));
 
@@ -33,7 +33,7 @@ namespace ApprovalTests.Persistence.EntityFramework.Version5
 
 			var objectQueryField = internalQuery.GetType().GetFields(BindingFlags.NonPublic | BindingFlags.Instance).FirstOrDefault(f => f.Name.Equals("_objectQuery"));
 
-			var objectQuery = objectQueryField.GetValue(internalQuery) as ObjectQuery<T>;
+			var objectQuery = objectQueryField.GetValue(internalQuery) as ObjectQuery<T1>;
 
 			return objectQuery;
 		}
