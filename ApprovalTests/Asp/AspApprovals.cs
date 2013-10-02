@@ -10,14 +10,12 @@ namespace ApprovalTests.Asp
 {
 	public static class AspApprovals
 	{
-		public static Func<string, string> NO_SCRUBBER = (s) => s;
-
 		/// <summary>
 		///   Uses PortFactory.AspPort
 		/// </summary>
 		public static void VerifyAspPage(Action testMethod)
 		{
-			VerifyAspPage(testMethod, NO_SCRUBBER);
+			VerifyAspPage(testMethod, ScrubberUtils.NO_SCRUBBER);
 		}
 
 		public static void VerifyAspPage(Action testMethod, Func<string, string> htmlScrubber)
@@ -28,7 +26,7 @@ namespace ApprovalTests.Asp
 
 		public static void VerifyAspPage(Action testMethod, int port)
 		{
-			VerifyAspPage(testMethod, port, NO_SCRUBBER);
+			VerifyAspPage(testMethod, port, ScrubberUtils.NO_SCRUBBER);
 		}
 
 		private static void VerifyAspPage(Action testMethod, int port, Func<string, string> htmlScrubber)
@@ -49,7 +47,7 @@ namespace ApprovalTests.Asp
 
 		public static void VerifyUrl(string url)
 		{
-			VerifyUrl(url, NO_SCRUBBER);
+			VerifyUrl(url, ScrubberUtils.NO_SCRUBBER);
 		}
 
 		public static void VerifyUrl(string url, Func<string, string> htmlScrubber)

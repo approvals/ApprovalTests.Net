@@ -124,6 +124,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
+    <Compile Include="ExceptionTests.cs" />
     <Compile Include="Namer\NamerFactoryTest.cs" />
     <Compile Include="NHibernate\Company.cs" />
     <Compile Include="NHibernate\Employee.cs" />

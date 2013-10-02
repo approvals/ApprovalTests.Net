@@ -178,10 +178,12 @@
     <Compile Include="Reporters\TortoiseTextDiffReporter.cs" />
     <Compile Include="Reporters\TortoiseImageDiffReporter.cs" />
     <Compile Include="Reporters\WinMergeReporter.cs" />
+    <Compile Include="ScrubberUtils.cs" />
     <Compile Include="StackTraceParsers\AttributeStackTraceParser.cs" />
     <Compile Include="Namers\UnitTestFrameworks\MbUnitStackTraceParser.cs" />
     <Compile Include="Namers\UnitTestFrameworks\VSStackTraceParser.cs" />
     <Compile Include="Reporters\UseReporterAttribute.cs" />
+    <Compile Include="StackTraceScrubber.cs" />
     <Compile Include="WinForms\WinFormsApprovals.cs" />
     <Compile Include="WinForms\WinFormsUtils.cs" />
     <Compile Include="Wpf\ApprovalWpfWindowWriter.cs" />

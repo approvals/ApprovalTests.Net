@@ -59,8 +59,8 @@ namespace ApprovalTests
 		                                                               IEnvironmentAwareReporter frontLoad)
 		{
 			return frontLoad.IsWorkingInThisEnvironment("default.txt")
-			       	? frontLoad
-			       	: (GetReporterFromAttribute() ?? defaultIfNotFound);
+				       ? frontLoad
+				       : (GetReporterFromAttribute() ?? defaultIfNotFound);
 		}
 
 
@@ -83,11 +83,11 @@ namespace ApprovalTests
 		{
 			var attribute = typeof (A);
 			var attributeExtractors = new Func<MethodBase, Object[]>[]
-			                          	{
-			                          		m => m.GetCustomAttributes(attribute, true),
-			                          		m => m.DeclaringType.GetCustomAttributes(attribute, true),
-			                          		m => m.DeclaringType.Assembly.GetCustomAttributes(attribute, true)
-			                          	};
+				{
+					m => m.GetCustomAttributes(attribute, true),
+					m => m.DeclaringType.GetCustomAttributes(attribute, true),
+					m => m.DeclaringType.Assembly.GetCustomAttributes(attribute, true)
+				};
 			foreach (var attributeExtractor in attributeExtractors)
 			{
 				foreach (MethodBase method in caller.NonLambdaCallers.Select(c => c.Method))
@@ -95,16 +95,15 @@ namespace ApprovalTests
 					try
 					{
 						object[] useReporters = attributeExtractor(method);
-					if (useReporters.Length != 0)
-					{
-						return useReporters.First() as A;
-					}
+						if (useReporters.Length != 0)
+						{
+							return useReporters.First() as A;
+						}
 					}
 					catch (FileNotFoundException)
-					{ 
+					{
 						// ignore exceptions
 					}
-					
 				}
 			}
 			return null;
@@ -141,8 +140,6 @@ namespace ApprovalTests
 			Verify(new ExecutableLambda("" + text, callBackOnFailure));
 		}
 
-		
-
 		#region Text
 
 		public static void Verify(string text)
@@ -154,6 +151,7 @@ namespace ApprovalTests
 		{
 			defaultNamerCreator = creator;
 		}
+
 		public static IApprovalNamer GetDefaultNamer()
 		{
 			return defaultNamerCreator.Invoke();
@@ -162,6 +160,17 @@ namespace ApprovalTests
 		public static void Verify(object text)
 		{
 			Verify(new ApprovalTextWriter("" + text));
+		}
+		public static void Verify(string text,  Func<string, string> scrubber)
+		{
+			Verify(new ApprovalTextWriter(scrubber(text)));
+		}
+
+		public static void Verify(Exception e)
+		{
+			string stackTrace = "" + e;
+
+			Verify(stackTrace, StackTraceScrubber.Scrub);
 		}
 
 		#endregion
@@ -234,12 +243,11 @@ namespace ApprovalTests
 
 		public static void VerifyPdfFile(string pdfFilePath)
 		{
-		    PdfScrubber.ScrubPdf(pdfFilePath);
-        Approvals.Verify(new ExistingFileWriter(pdfFilePath));
-    }
-
- 
+			PdfScrubber.ScrubPdf(pdfFilePath);
+			Verify(new ExistingFileWriter(pdfFilePath));
+		}
 	}
+
 
 	internal class AlwaysWorksReporter : IEnvironmentAwareReporter
 	{
