@@ -12,8 +12,7 @@ namespace ApprovalTests.Reporters
 	{
 		public const string DEFAULT_ARGUMENT_FORMAT = "\"{0}\" \"{1}\"";
 
-		public static readonly string[] TEXT_FILE_TYPES = new[]
-			{".txt", ".csv", ".htm", ".html", ".xml", ".eml", ".cs", ".css"};
+		public static readonly string[] TEXT_FILE_TYPES = {".txt", ".csv", ".htm", ".html", ".xml", ".eml", ".cs", ".css", ".sql"};
 
 		public static readonly string[] IMAGE_FILE_TYPES = {".png", ".gif", ".jpg", ".jpeg", ".bmp", ".tif", ".tiff"};
 
