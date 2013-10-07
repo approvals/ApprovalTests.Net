@@ -5,8 +5,6 @@ namespace ApprovalTests.Tests.WinForms
 {
     public partial class DemoForm : Form
     {
-        public event EventHandler CustomEvent;
-
         private System.Windows.Forms.Button button1;
 
         private System.Windows.Forms.CheckBox checkBox1;
@@ -24,6 +22,12 @@ namespace ApprovalTests.Tests.WinForms
         {
             InitializeComponent();
         }
+
+#pragma warning disable 67
+
+        public event EventHandler CustomEvent;
+
+#pragma warning restore 67
 
         /// <summary>
         /// Clean up any resources being used.
@@ -68,6 +72,7 @@ namespace ApprovalTests.Tests.WinForms
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
+
             //
             // button1
             //
@@ -78,6 +83,7 @@ namespace ApprovalTests.Tests.WinForms
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+
             //
             // checkBox1
             //
@@ -89,6 +95,7 @@ namespace ApprovalTests.Tests.WinForms
             this.checkBox1.Text = "checkBox1";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+
             //
             // listBox1
             //
@@ -97,10 +104,12 @@ namespace ApprovalTests.Tests.WinForms
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(259, 212);
             this.listBox1.TabIndex = 2;
+
             //
             // timer1
             //
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+
             //
             // DemoForm
             //

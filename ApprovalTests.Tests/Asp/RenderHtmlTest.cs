@@ -1,4 +1,5 @@
-﻿using System;
+﻿# if DEBUG
+using System;
 using System.Text.RegularExpressions;
 using ApprovalTests.Asp;
 using ApprovalTests.Reporters;
@@ -18,8 +19,10 @@ namespace ApprovalTests.Tests.Asp
 			PortFactory.AspPort = 1359;
 			Func<string, string> htmlScrubber = s => Regex.Replace(s, AspViewState, "<!-- aspviewstate -->");
 			AspApprovals.VerifyAspPage(new InvoiceView().TestSimpleInvoice, htmlScrubber);
+
 			//  -- These are the same thing
 			//AspApprovals.VerifyUrl("http://localhost:1359/Orders/InvoiceView.aspx?TestSimpleInvoice");
 		}
 	}
 }
+#endif
