@@ -3,29 +3,29 @@ using ApprovalTests.Core;
 
 namespace ApprovalTests.WinForms
 {
-	public class ApprovalFormWriter : IApprovalWriter
-	{
-		private readonly Form form;
+    public class ApprovalFormWriter : IApprovalWriter
+    {
+        private readonly Form form;
 
-		public ApprovalFormWriter(Form form)
-		{
-			this.form = form;
-		}
+        public ApprovalFormWriter(Form form)
+        {
+            this.form = form;
+        }
 
-		public string GetApprovalFilename(string basename)
-		{
-			return basename + ".approved.png";
-		}
+        public string GetApprovalFilename(string basename)
+        {
+            return basename + ".approved.png";
+        }
 
-		public string GetReceivedFilename(string basename)
-		{
-			return basename + ".received.png";
-		}
+        public string GetReceivedFilename(string basename)
+        {
+            return basename + ".received.png";
+        }
 
-		public string WriteReceivedFile(string received)
-		{
-			WinFormsUtils.ScreenCapture(received, form);
-			return received;
-		}
-	}
+        public string WriteReceivedFile(string received)
+        {
+            WinFormsUtils.ScreenCapture(received, form);
+            return received;
+        }
+    }
 }

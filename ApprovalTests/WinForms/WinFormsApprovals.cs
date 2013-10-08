@@ -1,23 +1,16 @@
-﻿using System.Windows.Forms;
-using ApprovalTests.Events;
-using ApprovalTests;
-using System.Text;
+﻿using ApprovalTests.Events;
 using ApprovalUtilities.Reflection;
-using System.Reflection;
+using ApprovalUtilities.Utilities;
 using System.Collections.Generic;
 using System.Linq;
-using ApprovalUtilities.Utilities;
+using System.Reflection;
+using System.Text;
+using System.Windows.Forms;
 
 namespace ApprovalTests.WinForms
 {
     public class WinFormsApprovals
     {
-        private static string GetLabelForChild(object parent, object child)
-        {
-            FieldInfo field = ReflectionUtilities.GetFieldForChild(parent, child);
-            return "({0}.{1})".FormatWith(parent.GetType().Name, field.Name);
-        }
-
         public static void VerifyEventsFor(Form form)
         {
             var sb = new StringBuilder();
@@ -28,7 +21,23 @@ namespace ApprovalTests.WinForms
                 sb.Append(EventApprovals.WriteEventsToString(o, GetLabelForChild(form, o)));
             }
 
-            ApprovalTests.Approvals.Verify(sb.ToString());
+            Approvals.Verify(sb.ToString());
+        }
+
+        public static void Verify(Form form)
+        {
+            Approvals.Verify(new ApprovalFormWriter(form));
+        }
+
+        public static void Verify(Control control)
+        {
+            Approvals.Verify(new ApprovalControlWriter(control));
+        }
+
+        private static string GetLabelForChild(object parent, object child)
+        {
+            FieldInfo field = ReflectionUtilities.GetFieldForChild(parent, child);
+            return "({0}.{1})".FormatWith(parent.GetType().Name, field.Name);
         }
 
         private static IEnumerable<object> GetSubEvents(Form form)
@@ -36,16 +45,6 @@ namespace ApprovalTests.WinForms
             return form.GetInstanceFields()
                 .Select(fi => fi.GetValue(form))
                 .Where(o => EventApprovals.GetEventsInformationFor(o).Count() > 0);
-        }
-
-        public static void Verify(Form form)
-        {
-            ApprovalTests.Approvals.Verify(new ApprovalFormWriter(form));
-        }
-
-        public static void Verify(Control control)
-        {
-            ApprovalTests.Approvals.Verify(new ApprovalControlWriter(control));
         }
     }
 }
