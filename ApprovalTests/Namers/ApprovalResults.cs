@@ -8,7 +8,7 @@ namespace ApprovalTests.Namers
     {
         public static void UniqueForDotNetVersion()
         {
-            NamerFactory.AsMachineSpecificTest(GetDotNetVersion);
+            NamerFactory.AsEnvironmentSpecificTest(GetDotNetVersion);
         }
 
         public static string GetDotNetVersion()
@@ -18,7 +18,7 @@ namespace ApprovalTests.Namers
 
         public static void UniqueForMachineName()
         {
-            NamerFactory.AsMachineSpecificTest(GetMachineName);
+            NamerFactory.AsEnvironmentSpecificTest(GetMachineName);
         }
 
         public static string GetMachineName()
@@ -37,7 +37,7 @@ namespace ApprovalTests.Namers
 
         public static void UniqueForOs()
         {
-            NamerFactory.AsMachineSpecificTest(GetOsName);
+            NamerFactory.AsEnvironmentSpecificTest(GetOsName);
         }
 
         public static string GetUserName()
