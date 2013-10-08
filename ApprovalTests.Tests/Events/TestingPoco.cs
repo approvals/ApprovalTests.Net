@@ -9,6 +9,12 @@ namespace ApprovalTests.Tests.Events
 
         public event EventHandler MyEvent;
 
+#pragma warning disable 67
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+#pragma warning restore 67
+
         protected virtual void OnMyEvent(object sender, EventArgs e)
         {
             EventHandler handler = MyEvent;
@@ -17,7 +23,5 @@ namespace ApprovalTests.Tests.Events
                 handler(sender, e);
             }
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
     }
 }
