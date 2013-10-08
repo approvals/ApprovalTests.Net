@@ -6,28 +6,34 @@ namespace ApprovalTests.WinForms
 {
     public class WinFormsUtils
     {
-        public static void ScreenCapture(string received, Form form)
+        public static void ScreenCapture(string received, Form test)
         {
-            EnsureControlDisplaysCorrectlyByAddingItToAHiddenForm(form);
-
-            var b = new Bitmap(form.Width, form.Height, PixelFormat.Format32bppArgb);
-            form.DrawToBitmap(b, new Rectangle(0, 0, form.Width, form.Height));
-            b.Save(received, ImageFormat.Png);
+            using (var hidden = new Form())
+            {
+                EnsureFormDisplaysCorrectlyByAddingItToAHiddenForm(hidden, test);
+                SavePng(received, test);
+            }
         }
 
-        private static void EnsureControlDisplaysCorrectlyByAddingItToAHiddenForm(Form form)
+        private static void SavePng(string received, Form test)
         {
-            var tempForm = new Form
-                            {
-                                IsMdiContainer = true,
-                                ShowInTaskbar = false,
-                                AllowTransparency = true,
-                                Opacity = 0
-                            };
+            using (var b = new Bitmap(test.Width, test.Height, PixelFormat.Format32bppArgb))
+            {
+                test.DrawToBitmap(b, new Rectangle(0, 0, test.Width, test.Height));
+                b.Save(received, ImageFormat.Png);
+            }
+        }
 
-            form.MdiParent = tempForm;
-            tempForm.Show();
-            form.Show();
+        private static void EnsureFormDisplaysCorrectlyByAddingItToAHiddenForm(Form hidden, Form test)
+        {
+            hidden.IsMdiContainer = true;
+            hidden.ShowInTaskbar = false;
+            hidden.AllowTransparency = true;
+            hidden.Opacity = 0;
+
+            test.MdiParent = hidden;
+            hidden.Show();
+            test.Show();
         }
     }
 }
