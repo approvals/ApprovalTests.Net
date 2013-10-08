@@ -13,7 +13,7 @@ namespace ApprovalTests.Namers
 
         public static string GetDotNetVersion()
         {
-            return "Net_v" + Environment.Version.ToString();
+            return "Net_v" + Environment.Version;
         }
 
         public static void UniqueForMachineName()
@@ -38,6 +38,16 @@ namespace ApprovalTests.Namers
         public static void UniqueForOs()
         {
             NamerFactory.AsMachineSpecificTest(GetOsName);
+        }
+
+        public static string GetUserName()
+        {
+            return "ForUser." + Environment.UserName;
+        }
+
+        public static void UniqueForUserName()
+        {
+            NamerFactory.AsEnvironmentSpecificTest(GetUserName);
         }
     }
 }
