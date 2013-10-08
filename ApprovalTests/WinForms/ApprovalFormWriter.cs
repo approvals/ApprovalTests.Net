@@ -24,8 +24,7 @@ namespace ApprovalTests.WinForms
 
         public string WriteReceivedFile(string received)
         {
-            WinFormsUtils.ScreenCapture(received, form);
-            return received;
+            return WinFormsUtils.ScreenCapture(received, form);
         }
     }
 }
