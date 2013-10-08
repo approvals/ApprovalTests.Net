@@ -6,55 +6,58 @@ using ApprovalTests.Writers;
 
 namespace ApprovalTests.WinForms
 {
-	public class ApprovalControlWriter : IApprovalWriter
-	{
-		private readonly Control control;
+    public class ApprovalControlWriter : IApprovalWriter
+    {
+        private readonly Control control;
 
-		public ApprovalControlWriter(Control controlHandle)
-		{
-			control = controlHandle;
-		}
+        public ApprovalControlWriter(Control controlHandle)
+        {
+            control = controlHandle;
+        }
 
+        public string GetApprovalFilename(string basename)
+        {
+            return basename + WriterUtils.Approved + ".png";
+        }
 
-		public string GetApprovalFilename(string basename)
-		{
-			return basename + WriterUtils.Approved + ".png";
-		}
+        public string GetReceivedFilename(string basename)
+        {
+            return basename + WriterUtils.Received + ".png";
+        }
 
-		public string GetReceivedFilename(string basename)
-		{
-			return basename + WriterUtils.Received + ".png";
-		}
+        public string WriteReceivedFile(string received)
+        {
+            using (Form hidden = new Form())
+            {
+                EnsureControlDisplaysCorrectly(hidden);
+                SavePng(received);
+                return received;
+            }
+        }
 
-		public string WriteReceivedFile(string received)
-		{
-			EnsureControlDisplaysCorrectly();
+        private void SavePng(string received)
+        {
+            using (var b = new Bitmap(control.Width, control.Height, PixelFormat.Format32bppArgb))
+            {
+                control.DrawToBitmap(b, new Rectangle(0, 0, control.Width, control.Height));
+                b.Save(received, ImageFormat.Png);
+            }
+        }
 
-			var b = new Bitmap(control.Width, control.Height, PixelFormat.Format32bppArgb);
-			control.DrawToBitmap(b, new Rectangle(0, 0, control.Width, control.Height));
-			b.Save(received, ImageFormat.Png);
+        private void EnsureControlDisplaysCorrectly(Form hidden)
+        {
+            AddToHiddenForm(hidden);
+        }
 
-			return received;
-		}
+        private void AddToHiddenForm(Form hidden)
+        {
+            hidden.ShowInTaskbar = false;
+            hidden.AllowTransparency = true;
+            hidden.Opacity = 0;
 
-
-		private void EnsureControlDisplaysCorrectly()
-		{
-			AddToHiddenForm();
-		}
-
-		private void AddToHiddenForm()
-		{
-			var tempForm = new Form
-			               	{
-			               		ShowInTaskbar = false,
-			               		AllowTransparency = true,
-			               		Opacity = 0
-			               	};
-
-			tempForm.Controls.Add(control);
-			tempForm.Show();
-			control.Show();
-		}
-	}
+            hidden.Controls.Add(control);
+            hidden.Show();
+            control.Show();
+        }
+    }
 }
