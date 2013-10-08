@@ -7,23 +7,23 @@ using NUnit.Framework;
 
 namespace ApprovalTests.Tests.WinForms
 {
-	[TestFixture]
-	[UseReporter(typeof(AllFailingTestsClipboardReporter) )]
-	public class ApprovalsTest
-	{
-		[Test]
-		public void TestControlApproved()
-		{
-			ApprovalResults.UniqueForMachineName();
-			WinFormsApprovals.Verify(new Button {BackColor = Color.LightBlue, Text = "Help"});
-		}
+    [TestFixture]
+    [UseReporter(typeof(AllFailingTestsClipboardReporter), typeof(FileLauncherReporter))]
+    public class ApprovalsTest
+    {
+        [Test]
+        public void TestControlApproved()
+        {
+            ApprovalResults.UniqueForMachineName();
+            WinFormsApprovals.Verify(new Button { BackColor = Color.LightBlue, Text = "Help" });
+        }
 
-		[Test]
-		public void TestFormApproval()
-		{
-			ApprovalResults.UniqueForMachineName();
-			WinFormsApprovals.Verify(new Form());
-		}
+        [Test]
+        public void TestFormApproval()
+        {
+            ApprovalResults.UniqueForMachineName();
+            WinFormsApprovals.Verify(new Form());
+        }
 
         [Test]
         [UseReporter(typeof(TortoiseDiffReporter))]
@@ -31,5 +31,5 @@ namespace ApprovalTests.Tests.WinForms
         {
             WinFormsApprovals.VerifyEventsFor(new DemoForm());
         }
-	}
+    }
 }

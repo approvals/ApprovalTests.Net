@@ -5,14 +5,16 @@ using NUnit.Framework;
 using Button = System.Windows.Controls.Button;
 using ContextMenu = System.Windows.Controls.ContextMenu;
 using MenuItem = System.Windows.Controls.MenuItem;
+using System;
 
 namespace ApprovalTests.Tests.Wpf
 {
     [TestFixture]
-    [UseReporter(typeof(AllFailingTestsClipboardReporter))]
+    [UseReporter(typeof(AllFailingTestsClipboardReporter), typeof(FileLauncherReporter))]
     public class ApprovalsTest
     {
         [Test]
+        [STAThread]
         public void TestFormApproval()
         {
             var button = new Button { Content = "Hello" };
@@ -21,6 +23,7 @@ namespace ApprovalTests.Tests.Wpf
         }
 
         [Test]
+        [STAThread]
         public void TestContextMenu()
         {
             var menu = new ContextMenu();
@@ -32,6 +35,7 @@ namespace ApprovalTests.Tests.Wpf
         }
 
         [Test]
+        [STAThread]
         public void TestButton()
         {
             WpfApprovals.Verify(new Button { Content = "Hello" });

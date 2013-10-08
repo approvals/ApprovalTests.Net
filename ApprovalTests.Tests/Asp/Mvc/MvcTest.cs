@@ -1,10 +1,10 @@
-﻿using System.Collections.Specialized;
-using ApprovalTests.Asp;
+﻿using ApprovalTests.Asp;
 using ApprovalTests.Asp.Mvc;
 using ApprovalTests.Reporters;
 using MvcApplication1.Controllers;
 using MvcApplication1.Models;
 using NUnit.Framework;
+using System.Collections.Specialized;
 
 namespace ApprovalTests.Tests.Asp.Mvc
 {
@@ -46,11 +46,12 @@ namespace ApprovalTests.Tests.Asp.Mvc
             }
 
 # if DEBUG
-		[Test]
-			public void TestWithName()
-			{
-				MvcApprovals.VerifyMvcPage(new CoolController().TestName);
-			}
+
+            [Test]
+            public void TestWithName()
+            {
+                MvcApprovals.VerifyMvcPage(new CoolController().TestName);
+            }
 
 #endif
         }
