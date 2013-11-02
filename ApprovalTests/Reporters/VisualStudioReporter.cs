@@ -1,19 +1,23 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using Microsoft.Win32;
+using NHibernate.Dialect.Function;
 
 namespace ApprovalTests.Reporters
 {
     public class VisualStudioReporter : GenericDiffReporter
     {
-        private static readonly string PATH = DotNet4Utilities.GetPathInProgramFilesX86(@"Microsoft Visual Studio 11.0\Common7\IDE\devenv.exe");
+        private static readonly string DEVENV_REGISTRYKEY =
+            @"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\devenv.exe";
+        private static readonly string PATH = (string)Registry.GetValue(DEVENV_REGISTRYKEY, "", @"Microsoft Visual Studio 11.0\Common7\IDE\devenv.exe"); 
         public static readonly VisualStudioReporter INSTANCE = new VisualStudioReporter();
 
         public VisualStudioReporter()
             : base(
                     PATH,
                     "/diff \"{0}\" \"{1}\"",
-                    "Only works with VS11\r\nCouldn't find VS11 at " + PATH)
+                    "Couldn't find Visual Studio at " + PATH)
         {
         }
 
