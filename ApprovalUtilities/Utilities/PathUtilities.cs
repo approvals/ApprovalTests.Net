@@ -39,7 +39,8 @@ namespace ApprovalUtilities.Utilities
 			string processName = @"C:\Windows\System32\where.exe";
 			if (!File.Exists(processName))
 			{
-				return null;
+                // report the actual error so the developer can do something about it. And no more TypeInit & TypeInvoke exceptions :)
+                return new string[] { "'where.exe' does not exist, automated searching for your diff tool will not work" };
 			}
 			return
 				GetOutputFromProcess(processName, toFind).Split('\n').Select(s => s.Trim()).Where(s => !string.IsNullOrEmpty(s)).
