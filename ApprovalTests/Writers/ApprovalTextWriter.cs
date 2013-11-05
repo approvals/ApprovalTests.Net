@@ -16,10 +16,10 @@ namespace ApprovalTests
 		public ApprovalTextWriter(string data, string extensionWithoutDot)
 		{
 			Data = data;
-			ExtensionWithDot = EnsureDoc(extensionWithoutDot);
+			ExtensionWithDot = EnsureDot(extensionWithoutDot);
 		}
 
-		private string EnsureDoc(string extension)
+		public static string EnsureDot(string extension)
 		{
 			string extensionWithDot = String.Format(".{0}", extension);
 			return extension.StartsWith(".") ? extension : extensionWithDot;
@@ -29,12 +29,12 @@ namespace ApprovalTests
 		public string ExtensionWithDot { get; set; }
 
 
-		public string GetApprovalFilename(string basename)
+		public virtual string GetApprovalFilename(string basename)
 		{
 			return String.Format("{0}.approved{1}", basename, ExtensionWithDot);
 		}
 
-		public string GetReceivedFilename(string basename)
+		public virtual string GetReceivedFilename(string basename)
 		{
 			return String.Format("{0}.received{1}", basename, ExtensionWithDot);
 		}

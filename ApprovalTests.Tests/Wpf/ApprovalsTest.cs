@@ -10,7 +10,7 @@ using System;
 namespace ApprovalTests.Tests.Wpf
 {
     [TestFixture]
-    [UseReporter(typeof(AllFailingTestsClipboardReporter), typeof(FileLauncherReporter))]
+    [UseReporter(typeof(AllFailingTestsClipboardReporter), typeof(DiffReporter))]
     public class ApprovalsTest
     {
         [Test]

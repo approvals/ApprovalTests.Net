@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using ApprovalTests.Core;
+using ApprovalTests.Namers;
 using ApprovalUtilities.Wpf;
 
 namespace ApprovalTests.Wpf
@@ -10,6 +11,7 @@ namespace ApprovalTests.Wpf
 	{
 		public static void Verify(Window window)
 		{
+			ApprovalResults.UniqueForOs();
 			ApprovalTests.Approvals.Verify(new ImageWriter(f => WpfUtils.ScreenCapture(window, f)));
 		}
 
@@ -25,6 +27,7 @@ namespace ApprovalTests.Wpf
 
 		public static void Verify(Control control)
 		{
+			ApprovalResults.UniqueForOs();
 			ApprovalTests.Approvals.Verify(new ImageWriter(f => WpfUtils.ScreenCapture(control, f)));
 		}
 	}
