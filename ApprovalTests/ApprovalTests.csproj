@@ -207,6 +207,7 @@
     <Compile Include="StackTraceParsers\StackTraceParser.cs" />
     <Compile Include="Writers\ExistingFileWriter.cs" />
     <Compile Include="Writers\WriterUtils.cs" />
+    <Compile Include="Writers\ConfigurableTempTextFileWriter.cs" />
     <Compile Include="Xml\XmlApprovals.cs" />
   </ItemGroup>
   <ItemGroup>

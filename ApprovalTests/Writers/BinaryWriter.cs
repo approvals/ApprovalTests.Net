@@ -35,12 +35,12 @@ namespace ApprovalTests.Writers
 		public string ExtensionWithDot { get; set; }
 
 
-		public string GetApprovalFilename(string basename)
+		public virtual string GetApprovalFilename(string basename)
 		{
 			return String.Format("{0}{1}{2}", basename, WriterUtils.Approved, ExtensionWithDot);
 		}
 
-		public string GetReceivedFilename(string basename)
+		public virtual string GetReceivedFilename(string basename)
 		{
 			return String.Format("{0}{1}{2}", basename, WriterUtils.Received, ExtensionWithDot);
 		}
