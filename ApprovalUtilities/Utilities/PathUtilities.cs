@@ -1,7 +1,8 @@
+using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
 
 namespace ApprovalUtilities.Utilities
 {
@@ -34,40 +35,17 @@ namespace ApprovalUtilities.Utilities
 			return GetDirectoryForCaller(1) + fileName;
 		}
 
-		public static string[] LocateFileFromEnviormentPath(string toFind)
+		public static IEnumerable<string> LocateFileFromEnviormentPath(string toFind)
 		{
-			string processName = @"C:\Windows\System32\where.exe";
-			if (!File.Exists(processName))
+			var results = new List<string>();
+			if (File.Exists(toFind))
 			{
-				return null;
+				results.Add(Path.GetFullPath(toFind));
 			}
-			return
-				GetOutputFromProcess(processName, toFind).Split('\n').Select(s => s.Trim()).Where(s => !string.IsNullOrEmpty(s)).
-					ToArray();
-		}
 
-		public static string GetOutputFromProcess(string processName, string arguments)
-		{
-			ProcessStartInfo processStartInfo = new ProcessStartInfo
-				{
-					CreateNoWindow = true,
-					RedirectStandardOutput = true,
-					RedirectStandardInput = true,
-					UseShellExecute = false,
-					Arguments = arguments,
-					FileName = processName
-				};
-
-			StringBuilder outputBuilder = new StringBuilder();
-			Process process = new Process {StartInfo = processStartInfo, EnableRaisingEvents = true};
-			process.OutputDataReceived += (sender, e) => outputBuilder.AppendLine(e.Data);
-			process.Start();
-			process.BeginOutputReadLine();
-			process.WaitForExit();
-			process.CancelOutputRead();
-
-			// use the output
-			return outputBuilder.ToString();
+			var values = Environment.GetEnvironmentVariable("PATH");
+			results.AddRange(values.Split(';').Select(path => Path.Combine(path, toFind)).Where(File.Exists));
+			return results.ToArray();
 		}
 	}
 }
