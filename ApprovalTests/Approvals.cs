@@ -120,6 +120,11 @@ namespace ApprovalTests
 			Verify(writer, GetDefaultNamer(), GetReporter());
 		}
 
+		public static void VerifyFile(string approvedFilePath, object receivedData)
+		{
+			Core.Approvals.Verify(new InMemoryStringApprover(approvedFilePath, "" + receivedData), GetReporter());
+		}
+
 		public static void VerifyFile(string file)
 		{
 			Verify(new ExistingFileWriter(file));
