@@ -125,6 +125,7 @@
       <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
     <Compile Include="ExceptionTests.cs" />
+    <Compile Include="InMemoryStringApproverTests.cs" />
     <Compile Include="Namer\ApprovalResultsTest.cs" />
     <Compile Include="Namer\SubdirectoryNamerTests.cs" />
     <Compile Include="NHibernate\Company.cs" />
@@ -186,6 +187,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="MyFile.error" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\ApprovalTests.Tests.EntityFramework.ModelContainer.datasource" />
     <None Include="Properties\Settings.settings">

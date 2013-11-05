@@ -108,6 +108,7 @@
     <Compile Include="..\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
+    <Compile Include="Approvers\InMemoryStringApprover.cs" />
     <Compile Include="Asp\AspApprovals.cs" />
     <Compile Include="Asp\AspTestingUtils.cs" />
     <Compile Include="Asp\Mocks.cs" />
