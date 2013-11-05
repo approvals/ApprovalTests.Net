@@ -4,7 +4,7 @@ using System.Management;
 
 namespace ApprovalTests.Namers
 {
-    public class ApprovalResults
+	public class ApprovalResults
     {
         public static void UniqueForDotNetVersion()
         {

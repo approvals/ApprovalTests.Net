@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using ApprovalUtilities.Utilities;
@@ -23,6 +24,7 @@ namespace ApprovalUtilities.CallStack
 			this.currentFrame = currentFrame;
 		}
 
+
 		public MethodBase Method
 		{
 			get { return StackFrame.GetMethod(); }
@@ -30,7 +32,7 @@ namespace ApprovalUtilities.CallStack
 
 		public StackFrame StackFrame
 		{
-			get { return stackTrace.GetFrame(currentFrame); }
+			get { return StackTrace.GetFrame(currentFrame); }
 		}
 
 		public Type Class
@@ -42,9 +44,9 @@ namespace ApprovalUtilities.CallStack
 		{
 			get
 			{
-				for (var i = currentFrame; i < stackTrace.FrameCount; i++)
+				for (var i = currentFrame; i < StackTrace.FrameCount; i++)
 				{
-					yield return stackTrace.GetFrame(i).GetMethod();
+					yield return StackTrace.GetFrame(i).GetMethod();
 				}
 			}
 		}
@@ -53,9 +55,9 @@ namespace ApprovalUtilities.CallStack
 		{
 			get
 			{
-				for (var i = currentFrame; i < stackTrace.FrameCount; i++)
+				for (var i = currentFrame; i < StackTrace.FrameCount; i++)
 				{
-					yield return new Caller(stackTrace, i);
+					yield return new Caller(StackTrace, i);
 				}
 			}
 		}
@@ -71,16 +73,50 @@ namespace ApprovalUtilities.CallStack
 			{
 				for (var i = currentFrame; 0 <= i; i--)
 				{
-					yield return new Caller(stackTrace, i);
+					yield return new Caller(StackTrace, i);
 				}
 			}
 		}
 
-        public override string ToString()
-        {
-            return Class.Assembly.GetName().Name  + "." + Method.ToStandardString();
-        }
-        
+		public StackTrace StackTrace
+		{
+			get { return stackTrace; }
+		}
+
+		public override string ToString()
+		{
+			return Class.Assembly.GetName().Name + "." + Method.ToStandardString();
+		}
+
+		public A GetFirstFrameForAttribute<A>() where A : Attribute
+		{
+			var attribute = typeof (A);
+			var attributeExtractors = new Func<MethodBase, Object[]>[]
+				{
+					m => m.GetCustomAttributes(attribute, true),
+					m => m.DeclaringType.GetCustomAttributes(attribute, true),
+					m => m.DeclaringType.Assembly.GetCustomAttributes(attribute, true)
+				};
+			foreach (var attributeExtractor in attributeExtractors)
+			{
+				foreach (MethodBase method in NonLambdaCallers.Select(c => c.Method))
+				{
+					try
+					{
+						object[] useReporters = attributeExtractor(method);
+						if (useReporters.Length != 0)
+						{
+							return useReporters.First() as A;
+						}
+					}
+					catch (FileNotFoundException)
+					{
+						// ignore exceptions
+					}
+				}
+			}
+			return null;
+		}
 	}
 
 	public static class ReflectionUtilities

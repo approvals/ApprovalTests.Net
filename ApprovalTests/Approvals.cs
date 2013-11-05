@@ -25,7 +25,14 @@ namespace ApprovalTests
 
 		public static Caller CurrentCaller
 		{
-			get { return currentCaller.Value; }
+			get
+			{
+				if (currentCaller == null)
+				{
+					SetCaller();
+				}
+				return currentCaller.Value;
+			}
 		}
 
 		public static void SetCaller()
@@ -51,7 +58,7 @@ namespace ApprovalTests
 
 		private static IEnvironmentAwareReporter GetFrontLoadedReporterFromAttribute()
 		{
-			var frontLoaded = GetFirstFrameForAttribute<FrontLoadedReporterAttribute>(CurrentCaller);
+			var frontLoaded = CurrentCaller.GetFirstFrameForAttribute<FrontLoadedReporterAttribute>();
 			return frontLoaded != null ? frontLoaded.Reporter : (IEnvironmentAwareReporter) DefaultFrontLoaderReporter.INSTANCE;
 		}
 
@@ -75,38 +82,8 @@ namespace ApprovalTests
 
 		private static IApprovalFailureReporter GetReporterFromAttribute()
 		{
-			var useReporter = GetFirstFrameForAttribute<UseReporterAttribute>(CurrentCaller);
+			var useReporter = CurrentCaller.GetFirstFrameForAttribute<UseReporterAttribute>();
 			return useReporter != null ? useReporter.Reporter : null;
-		}
-
-		private static A GetFirstFrameForAttribute<A>(Caller caller) where A : Attribute
-		{
-			var attribute = typeof (A);
-			var attributeExtractors = new Func<MethodBase, Object[]>[]
-				{
-					m => m.GetCustomAttributes(attribute, true),
-					m => m.DeclaringType.GetCustomAttributes(attribute, true),
-					m => m.DeclaringType.Assembly.GetCustomAttributes(attribute, true)
-				};
-			foreach (var attributeExtractor in attributeExtractors)
-			{
-				foreach (MethodBase method in caller.NonLambdaCallers.Select(c => c.Method))
-				{
-					try
-					{
-						object[] useReporters = attributeExtractor(method);
-						if (useReporters.Length != 0)
-						{
-							return useReporters.First() as A;
-						}
-					}
-					catch (FileNotFoundException)
-					{
-						// ignore exceptions
-					}
-				}
-			}
-			return null;
 		}
 
 		public static void Verify(IExecutableQuery query)
