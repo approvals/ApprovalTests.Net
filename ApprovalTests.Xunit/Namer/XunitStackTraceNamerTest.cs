@@ -1,72 +1,66 @@
+using System;
+using System.Diagnostics;
+using System.IO;
+using System.Threading.Tasks;
+using ApprovalTests.Namers;
+using ApprovalTests.Reporters;
+using ApprovalTests.StackTraceParsers;
+using ApprovalUtilities.Utilities;
+using Xunit;
+
 namespace ApprovalTests.Xunit.Namer
 {
-    using System;
-    using System.Diagnostics;
-    using System.IO;
-    using System.Linq;
-    using System.Reflection;
-    using System.Threading.Tasks;
+	public class XunitStackTraceNamerTest
+	{
+		[Fact]
+		public void TestMightyMoose()
+		{
+			Approvals.SetCaller();
+			var m = new MightyMooseAutoTestReporter();
+			var b = m.IsWorkingInThisEnvironment("a.txt");
+			var f = PathUtilities.GetAdjacentFile("mightymooseresult.txt");
+			File.WriteAllText(f, "{0}, MightyMoose was running = {1}".FormatWith(DateTime.Now, b));
+		}
 
-    using ApprovalTests.Namers;
-    using ApprovalTests.Reporters;
-    using ApprovalTests.StackTraceParsers;
+		[Fact]
+		public void TestApprovalName()
+		{
+			var name = new UnitTestFrameworkNamer().Name;
+			Assert.Equal("XunitStackTraceNamerTest.TestApprovalName", name);
+		}
 
-    using ApprovalUtilities.Utilities;
+		[Fact]
+		public void TestApprovalNamerFailureMessage()
+		{
+			var parser = new StackTraceParser();
+			var exception = Assert.Throws<Exception>(() => parser.Parse(new StackTrace(6)));
 
-    using global::Xunit;
+			Approvals.Verify(exception.Message);
+		}
 
-    public class XunitStackTraceNamerTest
-    {
+		[Fact]
+		public async Task AsyncTestApprovalName()
+		{
+			var name = new UnitTestFrameworkNamer().Name;
+			var path = new UnitTestFrameworkNamer().SourcePath;
 
-        [Fact]
-        public void TestMightyMoose()
-        {
-            Approvals.SetCaller();
-            var m = new MightyMooseAutoTestReporter();
-            var b = m.IsWorkingInThisEnvironment("a.txt");
-            var f = PathUtilities.GetAdjacentFile("mightymooseresult.txt");
-            File.WriteAllText(f, "{0}, MightyMoose was running = {1}".FormatWith(DateTime.Now, b));
-        }
+			await AnAsyncMethod();
 
-        [Fact]
-        public void TestApprovalName()
-        {
-            var name = new UnitTestFrameworkNamer().Name;
-            Assert.Equal("XunitStackTraceNamerTest.TestApprovalName", name);
-        }
+			Assert.Equal("XunitStackTraceNamerTest.AsyncTestApprovalName", name);
+			Assert.True(File.Exists(path + "\\XunitStackTraceNamerTest.cs"));
+		}
 
-        [Fact]
-        public void TestApprovalNamerFailureMessage()
-        {
-            var parser = new StackTraceParser();
-            var exception = Assert.Throws<Exception>(() => parser.Parse(new StackTrace(6)));
+		[Fact]
+		public async Task FullAsyncTest()
+		{
+			await AnAsyncMethod();
 
-            Approvals.Verify(exception.Message);
-        }
+			Approvals.Verify("Async");
+		}
 
-        [Fact]
-        public async Task AsyncTestApprovalName()
-        {
-            var name = new UnitTestFrameworkNamer().Name;
-            var path = new UnitTestFrameworkNamer().SourcePath;
-
-            await AnAsyncMethod();
-
-            Assert.Equal("XunitStackTraceNamerTest.AsyncTestApprovalName", name);
-            Assert.True(File.Exists(path + "\\XunitStackTraceNamerTest.cs"));
-        }
-
-        [Fact]
-        public async Task FullAsyncTest()
-        {
-            await AnAsyncMethod();
-
-            Approvals.Verify("Async");
-        }
-
-        private static Task AnAsyncMethod()
-        {
-            return Task.FromResult(default(object));
-        }
-    }
+		private static Task AnAsyncMethod()
+		{
+			return Task.FromResult(default(object));
+		}
+	}
 }
