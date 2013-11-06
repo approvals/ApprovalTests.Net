@@ -13,20 +13,25 @@ namespace ApprovalUtilities.Tests.Utilities
 		{
 			var dir = PathUtilities.GetDirectoryForCaller();
 			var file = dir + "PathUtilitiesTest.cs";
-			Assert.AreEqual(@"...\PathUtilitiesTest.cs", PathUtilities.ScrubPath(file, dir));
+			AssertEqualIgnoreCase(@"...\PathUtilitiesTest.cs", PathUtilities.ScrubPath(file, dir));
 		}
 
 		[TestMethod]
 		public void TestFindsFile()
 		{
-			Assert.AreEqual(@"C:\Windows\System32\ipconfig.exe",
-			                PathUtilities.LocateFileFromEnviormentPath(@"ipconfig.exe").FirstOrDefault());
+			var found = PathUtilities.LocateFileFromEnviormentPath(@"ipconfig.exe").FirstOrDefault();
+			AssertEqualIgnoreCase(@"C:\Windows\System32\ipconfig.exe", found);
+		}
+
+		private void AssertEqualIgnoreCase(string expected, string actual)
+		{
+			Assert.AreEqual(expected.ToLowerInvariant(), actual.ToLowerInvariant());
 		}
 
 		[TestMethod]
 		public void TestFindsMultipleFiles()
 		{
-			Approvals.VerifyAll(PathUtilities.LocateFileFromEnviormentPath(@"notepad.exe"), "Found");
+			Approvals.VerifyAll(PathUtilities.LocateFileFromEnviormentPath(@"notepad.exe").Select(f=>f.ToLowerInvariant()), "Found");
 		}
 
 		[TestMethod]

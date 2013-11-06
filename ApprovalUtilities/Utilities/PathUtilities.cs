@@ -42,9 +42,9 @@ namespace ApprovalUtilities.Utilities
 			{
 				results.Add(Path.GetFullPath(toFind));
 			}
-
 			var values = Environment.GetEnvironmentVariable("PATH");
-			results.AddRange(values.Split(';').Select(path => Path.Combine(path, toFind)).Where(File.Exists));
+			var found = values.Split(Path.PathSeparator).Select(path => Path.Combine(path, toFind)).Where(File.Exists);
+			results.AddRange(found);
 			return results.ToArray();
 		}
 	}
