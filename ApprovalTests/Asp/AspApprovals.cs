@@ -61,6 +61,7 @@ namespace ApprovalTests.Asp
 		{
 			try
 			{
+				url = ResolveUrl(url);
 				using (var client = new WebClient())
 				{
 					var baseUrl = url.Substring(0, url.LastIndexOf("/"));
@@ -79,6 +80,13 @@ namespace ApprovalTests.Asp
 					"The following error occured while connecting to:\r\n{0}\r\nError:\r\n{1}".FormatWith(url, e.Message), e);
 			}
 		}
+
+		public static string ResolveUrl(string rawUrl)
+		{
+			rawUrl = string.IsNullOrWhiteSpace(rawUrl) ? "/" : rawUrl.TrimStart('~');
+			return rawUrl.StartsWith("/") ? "http://localhost:{0}{1}".FormatWith(PortFactory.AspPort, rawUrl) : rawUrl;
+		}
+
 
 		public static void VerifyRouting(Action<RouteCollection> registerRoutesMethod, params string[] urls)
 		{

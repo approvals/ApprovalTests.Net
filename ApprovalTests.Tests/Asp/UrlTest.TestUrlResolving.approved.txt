@@ -1,0 +1,5 @@
+﻿Resolving:
+
+~/home => http://localhost:1000/home
+/home => http://localhost:1000/home
+http://www.google.com => http://www.google.com

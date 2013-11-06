@@ -110,6 +110,7 @@
     <Compile Include="Asp\RoutingTest.cs" />
     <Compile Include="Asp\Mvc\MvcTest.cs" />
     <Compile Include="Asp\RenderHtmlTest.cs" />
+    <Compile Include="Asp\UrlTest.cs" />
     <Compile Include="CleanupReporter.cs" />
     <Compile Include="Email\EmailTest.cs" />
     <Compile Include="EntityFramework\CompanyList.cs" />
