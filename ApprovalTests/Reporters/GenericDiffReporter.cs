@@ -6,7 +6,6 @@ using System.IO;
 using System.Linq;
 using ApprovalTests.Core;
 using ApprovalUtilities.Utilities;
-using NHibernate.Linq;
 
 namespace ApprovalTests.Reporters
 {
@@ -14,9 +13,29 @@ namespace ApprovalTests.Reporters
 	{
 		protected const string DEFAULT_ARGUMENT_FORMAT = "\"{0}\" \"{1}\"";
 
-		private static readonly HashSet<string> TEXT_FILE_TYPES = new HashSet<string> { ".txt", ".csv", ".htm", ".html", ".xml", ".eml", ".cs", ".css", ".sql" };
+		private static readonly HashSet<string> TEXT_FILE_TYPES = new HashSet<string>
+			{
+				".txt",
+				".csv",
+				".htm",
+				".html",
+				".xml",
+				".eml",
+				".cs",
+				".css",
+				".sql"
+			};
 
-		private static readonly HashSet<string> IMAGE_FILE_TYPES = new HashSet<string> { ".png", ".gif", ".jpg", ".jpeg", ".bmp", ".tif", ".tiff" };
+		private static readonly HashSet<string> IMAGE_FILE_TYPES = new HashSet<string>
+			{
+				".png",
+				".gif",
+				".jpg",
+				".jpeg",
+				".bmp",
+				".tif",
+				".tiff"
+			};
 
 		protected string arguments;
 		protected string originalDiffProgram;
@@ -28,7 +47,7 @@ namespace ApprovalTests.Reporters
 		{
 			return TEXT_FILE_TYPES;
 		}
-	
+
 
 		public static HashSet<string> GetImageFileTypes()
 		{
@@ -38,12 +57,13 @@ namespace ApprovalTests.Reporters
 		public static void RegisterTextFileTypes(params string[] extensionsWithDots)
 		{
 			AssertDots(extensionsWithDots);
-			extensionsWithDots.ForEach(e => TEXT_FILE_TYPES.Add(e));
+			TEXT_FILE_TYPES.AddAll(extensionsWithDots);
 		}
+
 		public static void RegisterImageFileTypes(params string[] extensionsWithDots)
 		{
 			AssertDots(extensionsWithDots);
-			extensionsWithDots.ForEach(e => IMAGE_FILE_TYPES.Add(e));
+			IMAGE_FILE_TYPES.AddAll(extensionsWithDots);
 		}
 
 
@@ -53,7 +73,7 @@ namespace ApprovalTests.Reporters
 			if (wrong.Count() > 0)
 			{
 				throw new ArgumentException("The following extensions don't start with dots: " +
-																		wrong.ToReadableString());
+				                            wrong.ToReadableString());
 			}
 		}
 
@@ -95,7 +115,7 @@ Recieved {0} ({1}, {2}, {3})"
 			return String.IsNullOrEmpty(output) ? fullPath : output;
 		}
 
-		public  string GetDiffProgram()
+		public string GetDiffProgram()
 		{
 			if (actualDiffProgram == null)
 			{
@@ -149,6 +169,17 @@ Recieved {0} ({1}, {2}, {3})"
 					"Unable to launch: {0} with arguments {1}\nError Message: {2}".FormatWith(launchArgs.Program, launchArgs.Arguments,
 					                                                                          e.Message), e);
 			}
+		}
+	}
+	public static class CollectionUtilities
+	{
+		public static ICollection<T> AddAll<T>(this ICollection<T> collection, IEnumerable<T> additions)
+		{
+			foreach (var addition in additions)
+			{
+				collection.Add(addition);
+			}
+			return collection;
 		}
 	}
 }
