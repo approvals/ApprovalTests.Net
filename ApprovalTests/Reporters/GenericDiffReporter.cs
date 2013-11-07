@@ -11,7 +11,7 @@ namespace ApprovalTests.Reporters
 {
 	public class GenericDiffReporter : IEnvironmentAwareReporter
 	{
-		public const string DEFAULT_ARGUMENT_FORMAT = "\"{0}\" \"{1}\"";
+		protected const string DEFAULT_ARGUMENT_FORMAT = "\"{0}\" \"{1}\"";
 
 		private static readonly HashSet<string> TEXT_FILE_TYPES = new HashSet<string> { ".txt", ".csv", ".htm", ".html", ".xml", ".eml", ".cs", ".css", ".sql" };
 
@@ -27,9 +27,32 @@ namespace ApprovalTests.Reporters
 		{
 			return TEXT_FILE_TYPES;
 		}
+	
+
 		public static HashSet<string> GetImageFileTypes()
 		{
 			return IMAGE_FILE_TYPES;
+		}
+
+		public static void RegisterTextFileTypes(params string[] extensionsWithDots)
+		{
+			AssertDots(extensionsWithDots);
+			TEXT_FILE_TYPES.Concat(extensionsWithDots);
+		}
+		public static void RegisterImageFileTypes(params string[] extensionsWithDots)
+		{
+			AssertDots(extensionsWithDots);
+			IMAGE_FILE_TYPES.Concat(extensionsWithDots);
+		}
+
+		private static void AssertDots(string[] extensionsWithDots)
+		{
+			var wrong = extensionsWithDots.Where(s => !s.StartsWith("."));
+			if (wrong.Count() > 0)
+			{
+				throw new ArgumentException("The following extensions don't start with dots: " +
+																		wrong.ToReadableString());
+			}
 		}
 
 		public GenericDiffReporter(string diffProgram, string diffProgramNotFoundMessage)

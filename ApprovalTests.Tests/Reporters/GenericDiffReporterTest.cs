@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using ApprovalTests.Reporters;
+using ApprovalUtilities.Utilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
 using Assert = NUnit.Framework.Assert;
@@ -23,6 +24,14 @@ namespace ApprovalTests.Tests.Reporters
         {
             Assert.IsFalse(new GenericDiffReporter("this_should_never_exist", "").IsWorkingInThisEnvironment("any.txt"));
         }
+			
+				[Test]
+        public void TestMissingDots()
+				{
+					var e =
+						ExceptionUtilities.GetException(() => GenericDiffReporter.RegisterTextFileTypes(".exe", "txt", ".error", "asp"));
+					Approvals.Verify(e);
+				}
 
         [Test]
         public void TestLaunchesBeyondCompareImage()
