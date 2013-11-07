@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using ApprovalUtilities.Utilities;
 using System.Linq;
 
@@ -11,9 +12,14 @@ namespace ApprovalTests.Reporters
 		public BeyondCompareReporter()
 			: base(PATH, GenericDiffReporter.DEFAULT_ARGUMENT_FORMAT,
             "Could not find BeyondCompare at {0}, please install it".FormatWith(PATH),
-            GenericDiffReporter.TEXT_FILE_TYPES.Concat(TortoiseImageDiffReporter.IMAGE_FILE_TYPES).ToArray())
+            ImageAndTextFiles)
 		{
 
+		}
+
+		private static IEnumerable<string> ImageAndTextFiles()
+		{
+			return GetTextFileTypes().Concat(GetImageFileTypes());
 		}
 	}
 }

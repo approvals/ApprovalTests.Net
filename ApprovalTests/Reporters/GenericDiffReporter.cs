@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
@@ -12,15 +13,24 @@ namespace ApprovalTests.Reporters
 	{
 		public const string DEFAULT_ARGUMENT_FORMAT = "\"{0}\" \"{1}\"";
 
-		public static readonly string[] TEXT_FILE_TYPES = {".txt", ".csv", ".htm", ".html", ".xml", ".eml", ".cs", ".css", ".sql"};
+		private static readonly HashSet<string> TEXT_FILE_TYPES = new HashSet<string> { ".txt", ".csv", ".htm", ".html", ".xml", ".eml", ".cs", ".css", ".sql" };
 
-		public static readonly string[] IMAGE_FILE_TYPES = {".png", ".gif", ".jpg", ".jpeg", ".bmp", ".tif", ".tiff"};
+		private static readonly HashSet<string> IMAGE_FILE_TYPES = new HashSet<string> { ".png", ".gif", ".jpg", ".jpeg", ".bmp", ".tif", ".tiff" };
 
 		protected string arguments;
 		protected string originalDiffProgram;
 		protected string actualDiffProgram;
 		protected string diffProgramNotFoundMessage;
-		protected string[] fileTypes = TEXT_FILE_TYPES;
+		protected Func<IEnumerable<string>> fileTypes = GetTextFileTypes;
+
+		public static HashSet<string> GetTextFileTypes()
+		{
+			return TEXT_FILE_TYPES;
+		}
+		public static HashSet<string> GetImageFileTypes()
+		{
+			return IMAGE_FILE_TYPES;
+		}
 
 		public GenericDiffReporter(string diffProgram, string diffProgramNotFoundMessage)
 			: this(diffProgram, DEFAULT_ARGUMENT_FORMAT, diffProgramNotFoundMessage)
@@ -28,12 +38,12 @@ namespace ApprovalTests.Reporters
 		}
 
 		public GenericDiffReporter(string diffProgram, string argumentsFormat, string diffProgramNotFoundMessage)
-			: this(diffProgram, argumentsFormat, diffProgramNotFoundMessage, TEXT_FILE_TYPES)
+			: this(diffProgram, argumentsFormat, diffProgramNotFoundMessage, GetTextFileTypes)
 		{
 		}
 
 		public GenericDiffReporter(string diffProgram, string argumentsFormat, string diffProgramNotFoundMessage,
-		                           string[] allowedFileTypes)
+		                           Func<IEnumerable<string>> allowedFileTypes)
 		{
 			if (diffProgram == null)
 			{
@@ -82,7 +92,7 @@ Recieved {0} ({1}, {2}, {3})"
 
 		public virtual bool IsWorkingInThisEnvironment(string forFile)
 		{
-			return File.Exists(GetDiffProgram()) && IsFileOneOf(forFile, fileTypes);
+			return File.Exists(GetDiffProgram()) && IsFileOneOf(forFile, fileTypes());
 		}
 
 
@@ -94,10 +104,10 @@ Recieved {0} ({1}, {2}, {3})"
 
 		public static bool IsTextFile(string forFile)
 		{
-			return IsFileOneOf(forFile, TEXT_FILE_TYPES);
+			return IsFileOneOf(forFile, GetTextFileTypes());
 		}
 
-		public static bool IsFileOneOf(string forFile, string[] filetypes)
+		public static bool IsFileOneOf(string forFile, IEnumerable<string> filetypes)
 		{
 			return filetypes.Any(ext => forFile.EndsWith(ext));
 		}

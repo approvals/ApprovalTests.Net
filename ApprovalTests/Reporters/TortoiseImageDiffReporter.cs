@@ -13,7 +13,7 @@ namespace ApprovalTests.Reporters
 			: base(
 				PATH, "/left:\"{0}\" /right:\"{1}\"",
 				"Could not find TortoiseMerge at {0}, please install it (it's part of TortoiseSVN) http://tortoisesvn.net/ ".
-					FormatWith(PATH), IMAGE_FILE_TYPES)
+					FormatWith(PATH), GetImageFileTypes)
 		{
 		}
 		
