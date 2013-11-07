@@ -32,6 +32,13 @@ namespace ApprovalTests.Tests.Reporters
 						ExceptionUtilities.GetException(() => GenericDiffReporter.RegisterTextFileTypes(".exe", "txt", ".error", "asp"));
 					Approvals.Verify(e);
 				}
+				[Test]
+        public void TestRegisterWorks()
+				{
+					var r = new TortoiseDiffReporter();
+					 GenericDiffReporter.RegisterTextFileTypes(".myCrazyExtension");
+					Assert.IsTrue(r.IsWorkingInThisEnvironment("file.myCrazyExtension"));
+				}
 
         [Test]
         public void TestLaunchesBeyondCompareImage()

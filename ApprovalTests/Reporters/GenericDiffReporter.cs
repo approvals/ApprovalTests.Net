@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using ApprovalTests.Core;
 using ApprovalUtilities.Utilities;
+using NHibernate.Linq;
 
 namespace ApprovalTests.Reporters
 {
@@ -37,13 +38,14 @@ namespace ApprovalTests.Reporters
 		public static void RegisterTextFileTypes(params string[] extensionsWithDots)
 		{
 			AssertDots(extensionsWithDots);
-			TEXT_FILE_TYPES.Concat(extensionsWithDots);
+			extensionsWithDots.ForEach(e => TEXT_FILE_TYPES.Add(e));
 		}
 		public static void RegisterImageFileTypes(params string[] extensionsWithDots)
 		{
 			AssertDots(extensionsWithDots);
-			IMAGE_FILE_TYPES.Concat(extensionsWithDots);
+			extensionsWithDots.ForEach(e => IMAGE_FILE_TYPES.Add(e));
 		}
+
 
 		private static void AssertDots(string[] extensionsWithDots)
 		{
