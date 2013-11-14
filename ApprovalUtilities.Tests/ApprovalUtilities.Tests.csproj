@@ -58,6 +58,7 @@
     </Compile>
     <Compile Include="Reflection\TestingListener.cs" />
     <Compile Include="Reflection\TestingPoco.cs" />
+    <Compile Include="MaintenanceTest.cs" />
     <Compile Include="Utilities\ClipboardUtilitiesTest.cs" />
     <Compile Include="Utilities\ExceptionUtilitiesTest.cs" />
     <Compile Include="Utilities\PathUtilitiesTest.cs" />
