@@ -112,6 +112,7 @@
     <Compile Include="Asp\RenderHtmlTest.cs" />
     <Compile Include="Asp\UrlTest.cs" />
     <Compile Include="CleanupReporter.cs" />
+    <Compile Include="RunMaintenance.cs" />
     <Compile Include="Email\EmailTest.cs" />
     <Compile Include="EntityFramework\CompanyList.cs" />
     <Compile Include="EntityFramework\CompanyLoaderByName.cs" />
@@ -126,6 +127,7 @@
       <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
     <Compile Include="ExceptionTests.cs" />
+    <Compile Include="Maintenance\ApprovalMaintenanceTest.cs" />
     <Compile Include="Namer\ApprovalResultsTest.cs" />
     <Compile Include="Namer\SubdirectoryNamerTests.cs" />
     <Compile Include="NHibernate\Company.cs" />

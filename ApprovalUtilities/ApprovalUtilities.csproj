@@ -105,6 +105,7 @@
     <Compile Include="Utilities\FileUtilities.cs" />
     <Compile Include="Utilities\StringUtils.cs" />
     <Compile Include="Utilities\PathUtilities.cs" />
+    <Compile Include="Utilities\TempFile.cs" />
     <Compile Include="WinForms\WinFormsUtils.cs" />
     <Compile Include="Wpf\WpfUtils.cs" />
     <Compile Include="Xml\XmlUtils.cs" />

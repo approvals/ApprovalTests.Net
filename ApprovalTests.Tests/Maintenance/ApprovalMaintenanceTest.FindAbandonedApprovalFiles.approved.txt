@@ -1,0 +1,3 @@
+﻿Abandoned Files:
+
+DeletedClass.AbandoneMethod.approved.txt

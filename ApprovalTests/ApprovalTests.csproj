@@ -127,6 +127,7 @@
     <Compile Include="ExecutableLambda.cs" />
     <Compile Include="Core\IReporterWithApprovalPower.cs" />
     <Compile Include="Html\HtmlApprovals.cs" />
+    <Compile Include="Maintenance\ApprovalMaintenance.cs" />
     <Compile Include="Namers\ApprovalResults.cs" />
     <Compile Include="Namers\NamerFactory.cs" />
     <Compile Include="Namers\UnitTestFrameworks\MSpecStackTraceParser.cs" />

@@ -1,2 +1,0 @@
-﻿GetDotNetVersion => Net_v4.0.30319.18051
-GetOsName => Microsoft_Windows_8_Pro
