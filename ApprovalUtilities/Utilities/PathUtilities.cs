@@ -30,9 +30,9 @@ namespace ApprovalUtilities.Utilities
 			return text == null ? null : text.Replace(path, @"...\");
 		}
 
-		public static string GetAdjacentFile(string fileName)
+		public static string GetAdjacentFile(string relativePath)
 		{
-			return GetDirectoryForCaller(1) + fileName;
+			return GetDirectoryForCaller(1) + relativePath;
 		}
 
 		public static IEnumerable<string> LocateFileFromEnviormentPath(string toFind)
