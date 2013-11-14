@@ -8,10 +8,10 @@ namespace ApprovalUtilities.Persistence
         private List<T> all = new List<T>();
         public T[] Saved{get { return all.ToArray(); }}
         public T LastSaved{get { return all.Last(); }}
-        public T Save(T t)
+        public T Save(T objectToBeSaved)
         {
-            all.Add(t);
-            return t;
+					all.Add(objectToBeSaved);
+					return objectToBeSaved;
         }
     }
 }
