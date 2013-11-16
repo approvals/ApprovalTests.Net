@@ -8,14 +8,8 @@ using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("ApprovalTests")]
 [assembly: AssemblyDescription("Approval testing library")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("ApprovalTests")]
-[assembly: AssemblyCopyright("")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
 [assembly: CLSCompliant(true)]
-[assembly: AssemblyKeyFileAttribute("..\\ApprovalsKeyPair.snk")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 
