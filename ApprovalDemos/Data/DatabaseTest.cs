@@ -1,10 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using ApprovalTests;
-using ApprovalTests.Writers;
 using ApprovalUtilities.Persistence;
-using NUnit.Framework;
 using ApprovalUtilities.Utilities;
+using NUnit.Framework;
 
 namespace ApprovalDemos.Data
 {
@@ -23,7 +22,7 @@ namespace ApprovalDemos.Data
 
 		private string AuthorLookup(ILoader<IEnumerable<Author>> authorLoader)
 		{
-			return "hiya";// +authorLoader.Load().First();
+			return authorLoader.Load().First().FirstName;
 		}
 
 		[Test]
@@ -64,8 +63,6 @@ namespace ApprovalDemos.Data
 
 	public class AuthorNameLoader : IExecutableQuery
 	{
-		#region IExecutableQuery Members
-
 		public string GetQuery()
 		{
 			return GetQueryExtracted().Expression.ToString();
@@ -73,17 +70,16 @@ namespace ApprovalDemos.Data
 
 		public string ExecuteQuery(string query)
 		{
-            return StringUtils.Write(GetQueryExtracted(), "author");
+			return StringUtils.Write(GetQueryExtracted(), "author");
 		}
 
-		#endregion
 
 		private static Author[] GetAuthors()
 		{
-			var tom = new Author { FirstName = "Tom", LastName = "Jones" };
-			var mark = new Author { FirstName = "Mark", LastName = "Twian" };
+			var tom = new Author {FirstName = "Tom", LastName = "Jones"};
+			var mark = new Author {FirstName = "Mark", LastName = "Twian"};
 
-			return new[] { tom, mark };
+			return new[] {tom, mark};
 		}
 
 		private static IQueryable<Author> GetQueryExtracted()

@@ -1,5 +1,4 @@
 ﻿using ApprovalTests.Asp;
-using MvcApplication1;
 using NUnit.Framework;
 using ApprovalUtilities.Utilities;
 

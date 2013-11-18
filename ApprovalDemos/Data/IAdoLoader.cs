@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
-using ApprovalTests;
 using ApprovalUtilities.Persistence;
-using NUnit.Framework;
 
 namespace ApprovalDemos.Data
 {
