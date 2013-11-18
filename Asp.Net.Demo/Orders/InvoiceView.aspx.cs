@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Web.UI;
 using ApprovalTests.Asp;
 
@@ -50,5 +49,6 @@ namespace Asp.Net.Demo.Orders
 			Invoice = invoice;
 		}
 #endif
+
 	}
 }

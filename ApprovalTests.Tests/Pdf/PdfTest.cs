@@ -1,7 +1,6 @@
 ﻿using System.IO;
 using ApprovalTests.Reporters;
 using ApprovalUtilities.Utilities;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
 using System.Linq;
 using Assert = NUnit.Framework.Assert;
