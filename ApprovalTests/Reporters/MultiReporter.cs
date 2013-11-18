@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using ApprovalTests.Core;
-using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.Reporters
 {

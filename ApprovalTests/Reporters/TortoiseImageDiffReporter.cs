@@ -1,6 +1,4 @@
-﻿using System.IO;
-using System.Linq;
-using ApprovalUtilities.Utilities;
+﻿using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.Reporters
 {

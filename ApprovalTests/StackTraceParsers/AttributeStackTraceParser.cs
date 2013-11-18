@@ -64,9 +64,7 @@ namespace ApprovalTests.StackTraceParsers
 		public static Caller GetFirstFrameForAttribute(Caller caller, string attributeName)
 		{
 			var firstFrameForAttribute =
-				caller.Callers.FirstOrDefault(c => ContainsAttribute(c.Method.GetCustomAttributes(false), attributeName));
-			if (firstFrameForAttribute == null) return null;
-			var all = caller.Callers.Where(c => ContainsAttribute(c.Method.GetCustomAttributes(false), attributeName));
+			caller.Callers.FirstOrDefault(c => ContainsAttribute(c.Method.GetCustomAttributes(false), attributeName));
 			return firstFrameForAttribute;
 		}
 
