@@ -1,6 +1,4 @@
-﻿using ApprovalTests.Core.Exceptions;
-using ApprovalTests.Maintenance;
-using ApprovalTests.Reporters;
+﻿using ApprovalTests.Maintenance;
 using NUnit.Framework;
 
 namespace ApprovalTests.Tests

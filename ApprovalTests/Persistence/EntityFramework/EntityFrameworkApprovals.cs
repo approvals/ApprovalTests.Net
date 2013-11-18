@@ -1,5 +1,4 @@
-﻿using System.Data.Entity;
-using System.Data.Objects;
+﻿using System.Data.Objects;
 using System.Linq;
 using ApprovalUtilities.Persistence.EntityFramework;
 

@@ -1,5 +1,3 @@
-using System;
-using System.Windows;
 using ApprovalTests.Core;
 using ApprovalUtilities.Utilities;
 

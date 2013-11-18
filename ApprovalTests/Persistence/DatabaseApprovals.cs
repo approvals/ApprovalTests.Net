@@ -1,7 +1,5 @@
-﻿using ApprovalTests.Core;
-using ApprovalUtilities.Persistence;
+﻿using ApprovalUtilities.Persistence;
 using ApprovalUtilities.Persistence.Database;
-using ApprovalUtilities.Persistence.EntityFramework;
 
 namespace ApprovalTests.Persistence
 {
