@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <id>ApprovalTests</id>
+    <version>$version$</version>
+    <description>
+      A picture's worth a 1000 tests.
+      Unit testing asserts can be difficult to use.
+      Approval tests simplify this by taking a snapshot of the results,
+      and confirming that they have not changed.
+    </description>
+    <language>en-US</language>
+    <authors>Llewellyn Falco &amp; Dan Gilkerson</authors>
+    <projectUrl>https://github.com/approvals/ApprovalTests.Net</projectUrl>
+    <iconUrl>http://approvaltests.sourceforge.net/sites/all/themes/corolla/logo.png</iconUrl>
+    <dependencies>
+      <group targetFramework=".NETFramework3.5">
+        <dependency id="ApprovalUtilities" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>
