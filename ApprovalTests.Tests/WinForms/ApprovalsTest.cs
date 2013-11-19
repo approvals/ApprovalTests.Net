@@ -8,7 +8,7 @@ using NUnit.Framework;
 namespace ApprovalTests.Tests.WinForms
 {
     [TestFixture]
-    [UseReporter(typeof(AllFailingTestsClipboardReporter), typeof(FileLauncherReporter))]
+    [UseReporter(typeof(AllFailingTestsClipboardReporter), typeof(ImageReporter))]
     public class ApprovalsTest
     {
         [Test]
@@ -26,8 +26,8 @@ namespace ApprovalTests.Tests.WinForms
         }
 
         [Test]
-        [UseReporter(typeof(TortoiseDiffReporter))]
-        public void VerifyCompleteFormTest()
+				[UseReporter(typeof(TortoiseDiffReporter))]
+				public void VerifyCompleteFormTest()
         {
             WinFormsApprovals.VerifyEventsFor(new DemoForm());
         }

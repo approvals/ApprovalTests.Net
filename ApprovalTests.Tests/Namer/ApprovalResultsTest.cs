@@ -1,4 +1,6 @@
-﻿namespace ApprovalTests.Tests.Namer
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+namespace ApprovalTests.Tests.Namer
 {
     using NUnit.Framework;
     using ApprovalTests.Namers;
@@ -21,5 +23,11 @@
                 methods,
                 m => "{0} => {1}".FormatWith(m.Method.Name, m.Invoke()));
         }
+
+	    [Test]
+	    public void TestEasyNames()
+	    {
+				Assert.AreEqual("Windows 7", ApprovalResults.TransformEasyOsName("Microsoft Windows 7 Professional N"));
+	    }
     }
 }

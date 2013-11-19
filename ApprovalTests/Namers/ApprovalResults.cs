@@ -29,13 +29,36 @@ namespace ApprovalTests.Namers
 
 		public static string GetOsName()
 		{
+			var name = TransformEasyOsName(GetFullOsNameFromWmi());
+			return name.Trim().Replace(' ', '_');
+		}
+
+		public static string GetFullOsName()
+		{
+			var name = GetFullOsNameFromWmi();
+			return name.Trim().Replace(' ', '_');
+		}
+
+		private static string GetFullOsNameFromWmi()
+		{
 			var caption =
 				(from x in
 					 new ManagementObjectSearcher("SELECT Caption FROM Win32_OperatingSystem").Get().OfType<ManagementObject>()
 				 select x.GetPropertyValue("Caption")).FirstOrDefault();
 
 			var name = caption == null ? Environment.OSVersion.ToString() : caption.ToString();
-			return name.Trim().Replace(' ', '_');
+			return name;
+		}
+
+		public static string TransformEasyOsName(string captionName)
+		{
+			string[] known = {"XP", "2000", "Vista", "7", "8", "Server 2003", "Server 2008", "Server 2012"};
+			var matched = known.FirstOrDefault(s => captionName.StartsWith("Microsoft Windows " + s));
+			if (matched != null)
+			{
+				return "Windows " + matched;
+			}
+			return captionName;
 		}
 
 		public static void UniqueForOs()
@@ -55,7 +78,6 @@ namespace ApprovalTests.Namers
 
 		public static void ForScenario(string data)
 		{
-
 			NamerFactory.AdditionalInformation = "ForScenario." + Scrub(data);
 		}
 

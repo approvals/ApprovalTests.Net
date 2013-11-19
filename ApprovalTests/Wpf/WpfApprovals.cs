@@ -9,15 +9,24 @@ namespace ApprovalTests.Wpf
 {
 	public class WpfApprovals
 	{
+		private static Action addAdditionalInfo = ApprovalResults.UniqueForOs;
+
+		public static void RegisterDefaultAddtionalInfo(Action a)
+		{
+			addAdditionalInfo = a;
+
+		}
 		public static void Verify(Window window)
 		{
-			ApprovalResults.UniqueForOs();
-			ApprovalTests.Approvals.Verify(new ImageWriter(f => WpfUtils.ScreenCapture(window, f)));
+			addAdditionalInfo();
+			Approvals.Verify(new ImageWriter(f => WpfUtils.ScreenCapture(window, f)));
 		}
+
+		
 
 		public static void Verify(Func<Window> action)
 		{
-			ApprovalTests.Approvals.Verify(CreateWindowWpfWriter(action));
+			Approvals.Verify(CreateWindowWpfWriter(action));
 		}
 
 		private static IApprovalWriter CreateWindowWpfWriter(Func<Window> action)
@@ -27,8 +36,8 @@ namespace ApprovalTests.Wpf
 
 		public static void Verify(Control control)
 		{
-			ApprovalResults.UniqueForOs();
-			ApprovalTests.Approvals.Verify(new ImageWriter(f => WpfUtils.ScreenCapture(control, f)));
+			addAdditionalInfo();
+			Approvals.Verify(new ImageWriter(f => WpfUtils.ScreenCapture(control, f)));
 		}
 	}
 }
