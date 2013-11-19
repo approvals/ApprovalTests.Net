@@ -62,6 +62,34 @@ namespace ApprovalUtilities.Wpf
 			return received;
 		}
 
+        public static string ScreeenCaptureInStaThread(string received, Func<Control> loader)
+        {
+            Exception caught = null;
+            var t = new Thread(() =>
+            {
+                try
+                {
+                    Control control = loader();
+                    ScreenCapture(control, received);
+                }
+                catch (Exception e)
+                {
+                    caught = e;
+                }
+            });
+
+            t.SetApartmentState(ApartmentState.STA); //Many WPF UI elements need to be created inside STA
+            t.Start();
+            t.Join();
+
+            if (caught != null)
+            {
+                throw new Exception("Creating window failed.", caught);
+            }
+
+            return received;
+        }
+
 		public static string ScreeenCaptureInStaThread(string received, Control control)
 		{
 			Exception caught = null;

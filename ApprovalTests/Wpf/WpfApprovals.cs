@@ -11,7 +11,7 @@ namespace ApprovalTests.Wpf
 	{
 		public static void Verify(Window window)
 		{
-			ApprovalResults.UniqueForOs();
+            //ApprovalResults.UniqueForOs();
 			ApprovalTests.Approvals.Verify(new ImageWriter(f => WpfUtils.ScreenCapture(window, f)));
 		}
 
@@ -25,9 +25,19 @@ namespace ApprovalTests.Wpf
 			return new ImageWriter(f => WpfUtils.ScreeenCaptureInStaThread(f, action));
 		}
 
+        public static void Verify(Func<Control> action)
+        {
+            ApprovalTests.Approvals.Verify(CreateWindowWpfWriter(action));
+        }
+
+        private static IApprovalWriter CreateWindowWpfWriter(Func<Control> action)
+        {
+            return new ImageWriter(f => WpfUtils.ScreeenCaptureInStaThread(f, action));
+        }
+
 		public static void Verify(Control control)
 		{
-			ApprovalResults.UniqueForOs();
+			//ApprovalResults.UniqueForOs();
 			ApprovalTests.Approvals.Verify(new ImageWriter(f => WpfUtils.ScreenCapture(control, f)));
 		}
 	}
