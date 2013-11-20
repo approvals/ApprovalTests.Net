@@ -1,6 +1,5 @@
 ﻿using System.Linq;
 using ApprovalTests.Persistence.EntityFramework;
-using ApprovalTests.Reporters;
 using ApprovalUtilities.Persistence;
 using ApprovalUtilities.Persistence.EntityFramework;
 using NUnit.Framework;

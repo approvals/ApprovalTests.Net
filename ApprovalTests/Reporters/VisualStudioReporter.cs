@@ -2,7 +2,6 @@
 using System.Diagnostics;
 using System.Linq;
 using Microsoft.Win32;
-using NHibernate.Dialect.Function;
 
 namespace ApprovalTests.Reporters
 {

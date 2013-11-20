@@ -2,7 +2,6 @@
 using ApprovalTests.Email;
 using ApprovalTests.Reporters;
 using ApprovalUtilities.Utilities;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
 
 namespace ApprovalTests.Tests.Email

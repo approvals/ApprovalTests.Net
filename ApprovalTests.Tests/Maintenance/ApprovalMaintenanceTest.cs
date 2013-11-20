@@ -1,5 +1,4 @@
-﻿using System.IO;
-using ApprovalTests.Maintenance;
+﻿using ApprovalTests.Maintenance;
 using ApprovalUtilities.Utilities;
 using NUnit.Framework;
 

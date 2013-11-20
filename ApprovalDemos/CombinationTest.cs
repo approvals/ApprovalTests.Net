@@ -1,10 +1,7 @@
-using System;
 using System.Linq;
-using System.Text;
 using ApprovalTests.Combinations;
 using ApprovalTests.Reporters;
 using NUnit.Framework;
-using ApprovalUtilities.Utilities;
 
 namespace ApprovalDemos.Data
 {

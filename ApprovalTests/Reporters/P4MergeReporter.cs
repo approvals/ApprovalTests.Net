@@ -1,6 +1,4 @@
-﻿using ApprovalUtilities.Utilities;
-
-namespace ApprovalTests.Reporters
+﻿namespace ApprovalTests.Reporters
 {
 	public class P4MergeReporter : FirstWorkingReporter
 	{
