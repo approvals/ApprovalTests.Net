@@ -61,5 +61,3 @@ In this form this test can never fail, it will always pass.
 		}
 	}
 }
-
-}
