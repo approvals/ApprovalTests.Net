@@ -1,11 +1,14 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CC679657-AF36-470E-9976-BB00E6792F32}"
 	ProjectSection(SolutionItems) = preProject
 		ApprovalTests.build = ApprovalTests.build
 		ApprovalTests.vsmdi = ApprovalTests.vsmdi
 		ApprovalTests3.vsmdi = ApprovalTests3.vsmdi
 		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
+		MyGet.cmd = MyGet.cmd
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApprovalTests", "ApprovalTests\ApprovalTests.csproj", "{F70C9A76-F797-4167-8178-14821F8634BC}"
@@ -40,9 +43,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApprovalTests.Xunit", "ApprovalTests.Xunit\ApprovalTests.Xunit.csproj", "{B8AAA028-1890-40B6-84B8-2F46986EEE8C}"
 EndProject
 Global
-	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = ApprovalTests3.vsmdi
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -99,5 +99,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = ApprovalTests3.vsmdi
 	EndGlobalSection
 EndGlobal
