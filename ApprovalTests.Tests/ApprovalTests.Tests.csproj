@@ -136,6 +136,7 @@
     <Compile Include="NHibernate\Job.cs" />
     <Compile Include="NHibernate\NHibernateTest.cs" />
     <Compile Include="Pdf\PdfTest.cs" />
+    <Compile Include="StackTraceParsers\StackTraceParserTests.cs" />
     <Compile Include="StringEncodingTest.cs" />
     <Compile Include="WinForms\DemoForm.cs">
       <SubType>Form</SubType>
@@ -220,7 +221,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="obj\" />
-    <Folder Include="StackTraceParsers\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -241,6 +241,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />

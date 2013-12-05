@@ -11,6 +11,11 @@ namespace ApprovalTests.StackTraceParsers
 		private static readonly IList<IStackTraceParser> parsers = new List<IStackTraceParser>();
 		private IStackTraceParser parser;
 
+        static StackTraceParser()
+        {
+            GetParsers();
+        }
+
 		public string ForTestingFramework
 		{
 			get { return GetParsers().Select(x => x.ForTestingFramework).ToReadableString(); }
@@ -65,17 +70,18 @@ namespace ApprovalTests.StackTraceParsers
 		{
 			parsers.Add(parser);
 		}
+
 		public static IEnumerable<IStackTraceParser> GetParsers()
 		{
-			if (parsers.Count == 0)
-			{
-				LoadIfApplicable(parsers, new NUnitStackTraceParser());
-				LoadIfApplicable(parsers, new VSStackTraceParser());
-				LoadIfApplicable(parsers, new MbUnitStackTraceParser());
-				LoadIfApplicable(parsers,new XUnitStackTraceParser());
-				LoadIfApplicable(parsers,new XUnitTheoryStackTraceParser());
-				parsers.Add(new MSpecStackTraceParser());
-			}
+            if (parsers.Count == 0)
+            {
+                LoadIfApplicable(parsers, new NUnitStackTraceParser());
+                LoadIfApplicable(parsers, new VSStackTraceParser());
+                LoadIfApplicable(parsers, new MbUnitStackTraceParser());
+                LoadIfApplicable(parsers, new XUnitStackTraceParser());
+                LoadIfApplicable(parsers, new XUnitTheoryStackTraceParser());
+                parsers.Add(new MSpecStackTraceParser());
+            }
 			return parsers;
 		}
 	}
