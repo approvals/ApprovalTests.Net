@@ -1,23 +1,28 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using Microsoft.Win32;
 
 namespace ApprovalTests.Reporters
 {
+    using System;
+
     public class VisualStudioReporter : GenericDiffReporter
     {
-        private static readonly string DEVENV_REGISTRYKEY =
-            @"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\devenv.exe";
-        private static readonly string PATH = (string)Registry.GetValue(DEVENV_REGISTRYKEY, "", @"Microsoft Visual Studio 11.0\Common7\IDE\devenv.exe"); 
+        private static string PATH;
         public static readonly VisualStudioReporter INSTANCE = new VisualStudioReporter();
 
         public VisualStudioReporter()
             : base(
-                    PATH,
+                    GetPath(),
                     "/diff \"{0}\" \"{1}\"",
                     "Couldn't find Visual Studio at " + PATH)
         {
+        }
+
+        private static string GetPath()
+        {
+            LaunchedFromVisualStudio();
+            return PATH ?? "Not launched from Visual Studio.";
         }
 
         public override bool IsWorkingInThisEnvironment(string forFile)
@@ -25,17 +30,58 @@ namespace ApprovalTests.Reporters
             return base.IsWorkingInThisEnvironment(forFile) && LaunchedFromVisualStudio();
         }
 
-        private bool LaunchedFromVisualStudio()
+        private static IEnumerable<Process> GetProcessAndParent()
         {
-            return GetProcessAndParent().Any(x => x.MainModule.FileName == PATH);
+
+            var currentProcess = Process.GetCurrentProcess();
+            yield return currentProcess;
+            var parentProcess = GetParentProcess(currentProcess);
+            do
+            {
+                yield return parentProcess;
+                parentProcess = GetParentProcess(parentProcess);
+            }
+            while (parentProcess != null);
+
+            //      return new[] { currentProcess, parentProcess };
         }
 
-        private IEnumerable<Process> GetProcessAndParent()
+        private static Process GetParentProcess(Process currentProcess)
         {
-            var currentProcess = Process.GetCurrentProcess();
-            var pc = new PerformanceCounter("Process", "Creating Process Id", currentProcess.ProcessName);
-            var parentProcess = Process.GetProcessById((int)pc.RawValue);
-            return new[] { currentProcess, parentProcess };
+            try
+            {
+                var pc = new PerformanceCounter("Process", "Creating Process Id", currentProcess.ProcessName);
+                return Process.GetProcessById((int)pc.RawValue);
+            }
+            catch (ArgumentException)
+            {
+                return null;
+            }
+
+        }
+
+        private static bool LaunchedFromVisualStudio()
+        {
+            if (PATH != null)
+            {
+                return true;
+            }
+
+            var processAndParent = GetProcessAndParent().ToArray();
+            var process = processAndParent.FirstOrDefault(x => x.MainModule.FileName.EndsWith("devenv.exe"));
+            
+            if (process != null)
+            {
+                var processModule = process.MainModule;
+                var version = processModule.FileVersionInfo.FileMajorPart;
+                if (11 <= version)
+                {
+                    PATH = processModule.FileName;
+
+                }
+            }
+
+            return PATH != null;
         }
     }
 }

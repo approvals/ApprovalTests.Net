@@ -19,8 +19,6 @@ namespace ApprovalTests.Reporters
             this.frameworkAttribute = frameworkAttribute;
         }
 
-        #region IEnvironmentAwareReporter Members
-
         public virtual void Report(string approved, string received)
         {
             AssertFileContents(approved, received);
@@ -33,8 +31,6 @@ namespace ApprovalTests.Reporters
                    null;
         }
 
-        #endregion
-
         public void AssertFileContents(string approved, string received)
         {
             string a = File.Exists(approved) ? File.ReadAllText(approved) : "";
@@ -44,12 +40,12 @@ namespace ApprovalTests.Reporters
             AssertEqual(a, r);
         }
 
-        public void AssertEqual(string approvedContent, string receivedConent)
+        public void AssertEqual(string approvedContent, string receivedContent)
         {
             try
             {
                 Type type = Type.GetType(assertClass);
-                var parameters = new[] {approvedContent, receivedConent};
+                var parameters = new[] {approvedContent, receivedContent};
                 InvokeEqualsMethod(type, parameters);
             }
             catch (TargetInvocationException e)
