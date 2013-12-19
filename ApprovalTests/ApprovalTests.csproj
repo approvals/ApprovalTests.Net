@@ -13,7 +13,6 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>$(SolutionDir)ApprovalsKeyPair.snk</AssemblyOriginatorKeyFile>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>
@@ -36,6 +35,7 @@
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <AssemblyOriginatorKeyFile>$(SolutionDir)\ApprovalsKeyPair.snk</AssemblyOriginatorKeyFile>
     <FodyPath>..\packages\Fody.1.17.4.0</FodyPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -70,11 +70,11 @@
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Common\Microsoft.ReportViewer.Common.dll</HintPath>
+      <HintPath>..\lib\ReportViewer\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Common\Microsoft.ReportViewer.WinForms.dll</HintPath>
+      <HintPath>..\lib\ReportViewer\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="NHibernate">
       <HintPath>..\packages\NHibernate.3.3.2.4000\lib\Net35\NHibernate.dll</HintPath>
@@ -155,6 +155,7 @@
     <Compile Include="Reporters\CruiseControlNetReporter.cs" />
     <Compile Include="Reporters\AllFailingTestsClipboardReporter.cs" />
     <Compile Include="Reporters\MightyMooseAutoTestReporter.cs" />
+    <Compile Include="Reporters\MyGetReporter.cs" />
     <Compile Include="Reporters\P4MergeReporter.cs" />
     <Compile Include="Reporters\P4MergeImageReporter.cs" />
     <Compile Include="Reporters\DefaultFrontLoaderReporter.cs" />
@@ -218,6 +219,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="ApprovalsKeyPair.snk" />
     <None Include="Fody.targets" />
     <None Include="packages.config" />
   </ItemGroup>
