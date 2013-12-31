@@ -40,6 +40,7 @@ Available on NuGet
 ---
 [Install-Package ApprovalTests](http://nuget.org/packages/ApprovalTests)
 
+Nightly (CI) Builds available at: https://www.myget.org/F/approvaltests/
 
 Examples
 ---
