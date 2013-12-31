@@ -65,6 +65,7 @@
     <Reference Include="Iesi.Collections">
       <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Build" />
     <Reference Include="Microsoft.CompilerServices.AsyncTargetingPack.Net4">
       <HintPath>..\packages\Microsoft.CompilerServices.AsyncTargetingPack.1.0.0\lib\net40\Microsoft.CompilerServices.AsyncTargetingPack.Net4.dll</HintPath>
     </Reference>
@@ -152,6 +153,7 @@
     <Compile Include="Reporters\BeyondCompareReporter.cs" />
     <Compile Include="Reporters\ClipboardReporter.cs" />
     <Compile Include="Reporters\CodeCompareReporter.cs" />
+    <Compile Include="Reporters\CollectionUtilities.cs" />
     <Compile Include="Reporters\CruiseControlNetReporter.cs" />
     <Compile Include="Reporters\AllFailingTestsClipboardReporter.cs" />
     <Compile Include="Reporters\MightyMooseAutoTestReporter.cs" />
@@ -166,6 +168,7 @@
     <Compile Include="Reporters\P4MergeTextReporter.cs" />
     <Compile Include="Reporters\TeamCityReporter.cs" />
     <Compile Include="Reporters\TortoiseComboImageReporter.cs" />
+    <Compile Include="Reporters\VisualStudioProjectFileAdder.cs" />
     <Compile Include="Reporters\VisualStudioReporter.cs" />
     <Compile Include="Reporters\XUnitReporter.cs" />
     <Compile Include="Reporters\ExecutableQueryFailure.cs" />
