@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using ApprovalTests.Namers;
 using ApprovalTests.Reporters;
 using ApprovalTests.StackTraceParsers;
-using ApprovalUtilities.CallStack;
 using ApprovalUtilities.Utilities;
 using Xunit;
 
@@ -13,7 +12,7 @@ namespace ApprovalTests.Xunit.Namer
 {
 	public class XunitStackTraceNamerTest
 	{
-		[Fact]
+		[Fact(Skip="The file it creates annoys me -- Jim")]
 		public void TestMightyMoose()
 		{
 			Approvals.SetCaller();

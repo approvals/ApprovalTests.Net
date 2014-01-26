@@ -112,7 +112,6 @@
     <Compile Include="Asp\RenderHtmlTest.cs" />
     <Compile Include="Asp\UrlTest.cs" />
     <Compile Include="CleanupReporter.cs" />
-    <Compile Include="Reporters\VisualStudioReporterTest.cs" />
     <Compile Include="RunMaintenance.cs" />
     <Compile Include="Email\EmailTest.cs" />
     <Compile Include="EntityFramework\CompanyList.cs" />
@@ -181,6 +180,7 @@
     <Content Include="a.png" />
     <Content Include="b.png" />
     <Content Include="b.txt" />
+    <Content Include="c:\Users\James\Documents\GitHub\ApprovalTests.Net\ApprovalTests.Tests\Namer\ApprovalResultsTest.TestUniqueNames.ForMachine.KARA.approved.txt" />
     <Content Include="EntityFramework\CreateDatabase.sql" />
     <EmbeddedResource Include="NHibernate\Company.hbm.xml" />
   </ItemGroup>
