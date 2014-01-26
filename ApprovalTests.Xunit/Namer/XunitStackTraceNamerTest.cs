@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using ApprovalTests.Namers;
 using ApprovalTests.Reporters;
 using ApprovalTests.StackTraceParsers;
+using ApprovalUtilities.CallStack;
 using ApprovalUtilities.Utilities;
 using Xunit;
 
@@ -54,15 +55,16 @@ namespace ApprovalTests.Xunit.Namer
 		public async Task FullAsyncTest()
 		{
 			await AnAsyncMethod();
-
 			Approvals.Verify("Async");
 		}
 
 		[Fact(Skip = "This is Hard")]
+		//[Fact]
 		public async Task ProperFullAsyncTest()
 		{
 			await Task.Delay(10);
-
+			// This is the stack trace, and needs to do MAGIC!
+			//   at ApprovalTests.Xunit.Namer.XunitStackTraceNamerTest.<ProperFullAsyncTest>d__c.MoveNext()
 			Approvals.Verify("Async with Delay");
 		}
 

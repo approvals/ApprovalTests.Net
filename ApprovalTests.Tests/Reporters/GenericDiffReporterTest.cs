@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.IO;
 using ApprovalTests.Namers;
 using ApprovalTests.Reporters;
 using ApprovalUtilities.Utilities;
@@ -15,6 +16,22 @@ namespace ApprovalTests.Tests.Reporters
 			var fileName = fullCommandLine.Substring(1, splitPosition - 1);
 			var arguments = fullCommandLine.Substring(splitPosition + 1);
 			Process.Start(fileName, arguments);
+		}
+
+		[Test]
+		public void TestGetCurrentProject()
+		{
+			var file = PathUtilities.GetAdjacentFile("GenericDiffReporterTest.TestLaunchesBeyondCompareImage.approved.txt");
+			string currentProjectFile = Path.GetFileName(VisualStudioProjectFileAdder.GetCurrentProjectFile(file));
+
+			Assert.AreEqual("ApprovalTests.Tests.csproj", currentProjectFile);
+		}		
+		[Test]
+		public void TestGetCurrentProjectNotFound()
+		{
+			var project = VisualStudioProjectFileAdder.GetCurrentProjectFile("C:\\");
+
+			Assert.AreEqual(null, project);
 		}
 
 		[Test]
