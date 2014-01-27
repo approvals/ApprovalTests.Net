@@ -5,42 +5,45 @@ using ApprovalTests.Namers;
 using ApprovalTests.Persistence.DataSets;
 using ApprovalTests.RdlcReports;
 using ApprovalTests.Reporters;
+using ApprovalTests.Tests.Asp;
 using ApprovalUtilities.Utilities;
+using Asp.Net.Demo;
 using NUnit.Framework;
 using ReportingDemo;
 
 namespace ApprovalTests.Tests.Persistence.Datasets
 {
     [TestFixture]
-    [UseReporter(typeof(DiffReporter),typeof(AllFailingTestsClipboardReporter))]
-    public class DatasetTest
+    [UseReporter(typeof(DiffReporter), typeof(AllFailingTestsClipboardReporter))]
+    public class DatasetTest : ServerDependentTest
     {
         private const string ReportName = "ReportingDemo.InsultsReport.rdlc";
 
-        private static void VerifyDefaultReport(string name)
+        public DatasetTest()
+            : base(Global.Directory, 1358)
         {
-            using (var data = GetDefaultData())
-            {
-                RdlcApprovals.VerifyReport(name, data);
-            }
+        }
+
+        [SetUp]
+        public void NamerSetUp()
+        {
+            ApprovalResults.UniqueForMachineName();
+        }
+
+        [Test]
+        public void TestDataSourceNames()
+        {
+            NamerFactory.Clear();
+            var exception =
+                ExceptionUtilities.GetException(
+                    () => RdlcApprovals.VerifyReport(ReportName, GetAssembly(), "purposelyMisspelt", GetDefaultData()));
+            Approvals.Verify(exception.Message);
         }
 
         [Test]
         public void TestExtrenalImage()
         {
             VerifyDefaultReport("ReportingDemo.ExternalImage.rdlc");
-        }
-
-        [Test]
-        public void TestSimpleReportWith1Dataset()
-        {
-            VerifyDefaultReport(ReportName);
-        }
-
-        [Test]
-        public void TestSimpleReportWithDatasetInAssembly()
-        {
-            RdlcApprovals.VerifyReport(ReportName, "Model", GetDefaultData());
         }
 
         [Test]
@@ -62,19 +65,20 @@ namespace ApprovalTests.Tests.Persistence.Datasets
         }
 
         [Test]
-        public void TestDataSourceNames()
+        public void TestSimpleReportWith1Dataset()
         {
-            NamerFactory.Clear();
-            var exception =
-                ExceptionUtilities.GetException(
-                    () => RdlcApprovals.VerifyReport(ReportName, GetAssembly(), "purposelyMisspelt", GetDefaultData()));
-            Approvals.Verify(exception.Message);
+            VerifyDefaultReport(ReportName);
         }
 
-        [SetUp]
-        public void NamerSetUp()
+        [Test]
+        public void TestSimpleReportWithDatasetInAssembly()
         {
-            ApprovalResults.UniqueForMachineName();
+            RdlcApprovals.VerifyReport(ReportName, "Model", GetDefaultData());
+        }
+
+        private static Assembly GetAssembly()
+        {
+            return typeof(InsultsDataSet).Assembly;
         }
 
         private static DataTable GetDefaultData()
@@ -82,9 +86,12 @@ namespace ApprovalTests.Tests.Persistence.Datasets
             return new InsultsDataSet.InsultsDataTable().AddTestDataRows();
         }
 
-        private static Assembly GetAssembly()
+        private static void VerifyDefaultReport(string name)
         {
-            return typeof(InsultsDataSet).Assembly;
+            using (var data = GetDefaultData())
+            {
+                RdlcApprovals.VerifyReport(name, data);
+            }
         }
     }
 }
