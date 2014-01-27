@@ -139,6 +139,7 @@
     <Compile Include="NHibernate\Job.cs" />
     <Compile Include="NHibernate\NHibernateTest.cs" />
     <Compile Include="Pdf\PdfTest.cs" />
+    <Compile Include="StackTraceScrubberTest.cs" />
     <Compile Include="StringEncodingTest.cs" />
     <Compile Include="WinForms\DemoForm.cs">
       <SubType>Form</SubType>

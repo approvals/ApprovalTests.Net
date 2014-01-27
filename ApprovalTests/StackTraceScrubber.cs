@@ -2,7 +2,7 @@ using System.Text.RegularExpressions;
 
 namespace ApprovalTests
 {
-	public class StackTraceScrubber
+	public static class StackTraceScrubber
 	{
 		public static string ScrubAnonymousIds(string source)
 		{
