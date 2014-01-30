@@ -14,6 +14,11 @@ namespace ApprovalTests.Tests.NHibernate
 		[Test]
 		public void TestSimpleQuery()
 		{
+		    if ("Machine name" != "Llewellyn's Machine")
+		    {
+		        Assert.Ignore("This test only works on Llewellyn's Machine.");
+		    }
+
 			using (ISession session = OpenSession())
 			{
 				IQueryable<Company> query =

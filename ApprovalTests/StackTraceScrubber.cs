@@ -2,7 +2,7 @@ using System.Text.RegularExpressions;
 
 namespace ApprovalTests
 {
-	public class StackTraceScrubber
+	public static class StackTraceScrubber
 	{
 		public static string ScrubAnonymousIds(string source)
 		{
@@ -18,7 +18,7 @@ namespace ApprovalTests
 
 		public static string ScrubPaths(string source)
 		{
-			var regex = new Regex(@"\w:[\\\w.\s]+\\");
+			var regex = new Regex(@"\w:[\\\w.\s-]+\\");
 			return regex.Replace(source, "...\\");
 		}
 		

@@ -10,7 +10,7 @@ namespace ApprovalTests.Maintenance
 {
 	public class ApprovalMaintenance
 	{
-		private static IEnumerable<FileInfo> CleanUpAbandonedFiles()
+		public static IEnumerable<FileInfo> CleanUpAbandonedFiles()
 		{
 			var assembly = new Caller().Methods.First().Module.Assembly; 
 			var path = PathUtilities.GetDirectoryForCaller(1);

@@ -1,9 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace ApprovalTests.Tests.Namer
+﻿namespace ApprovalTests.Tests.Namer
 {
     using NUnit.Framework;
-    using ApprovalTests.Namers;
+    using Namers;
     using ApprovalUtilities.Utilities;
     using System;
 
