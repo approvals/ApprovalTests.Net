@@ -137,6 +137,7 @@
     <Compile Include="NHibernate\Job.cs" />
     <Compile Include="NHibernate\NHibernateTest.cs" />
     <Compile Include="Pdf\PdfTest.cs" />
+    <Compile Include="StackTraceParsers\StackTraceParserTests.cs" />
     <Compile Include="StringEncodingTest.cs" />
     <Compile Include="WinForms\DemoForm.cs">
       <SubType>Form</SubType>
@@ -221,7 +222,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="obj\" />
-    <Folder Include="StackTraceParsers\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
