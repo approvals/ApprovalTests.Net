@@ -1,10 +1,9 @@
-﻿using System.Windows;
+﻿using System.Windows.Controls;
+using System.Windows;
+using System.Windows.Data;
 using ApprovalTests.Reporters;
 using ApprovalTests.Wpf;
 using NUnit.Framework;
-using Button = System.Windows.Controls.Button;
-using ContextMenu = System.Windows.Controls.ContextMenu;
-using MenuItem = System.Windows.Controls.MenuItem;
 using System;
 
 namespace ApprovalTests.Tests.Wpf
@@ -39,6 +38,39 @@ namespace ApprovalTests.Tests.Wpf
         public void TestButton()
         {
             WpfApprovals.Verify(new Button { Content = "Hello" });
+        }
+
+        class ViewModel
+        {
+            public string Text { get { return "Hello"; } }
+        }
+
+        [Test]
+        [STAThread]
+        public void TestWindowDataBinding()
+        {
+            var button = CreateButtonWithBinding();
+
+            var window = new Window { Content = button, Width = 200, Height = 200, DataContext = new ViewModel() };
+            WpfApprovals.Verify(window);
+        }
+
+        [Test]
+        [STAThread]
+        public void TestControlDataBinding()
+        {
+            var button = CreateButtonWithBinding();
+
+            object viewModel = new ViewModel();
+            WpfApprovals.Verify(button, viewModel);
+        }
+
+        private static Button CreateButtonWithBinding()
+        {
+            var button = new Button();
+            var myBinding = new Binding("Text");
+            BindingOperations.SetBinding(button, Button.ContentProperty, myBinding);
+            return button;
         }
     }
 }

@@ -39,5 +39,11 @@ namespace ApprovalTests.Wpf
 			addAdditionalInfo();
 			Approvals.Verify(new ImageWriter(f => WpfUtils.ScreenCapture(control, f)));
 		}
-	}
+
+        public static void Verify(Control control, object viewModel)
+        {
+            // Maybe `Verify(new Window { Content = control, DataContext = viewModel })`
+            throw new NotImplementedException();
+        }
+    }
 }
