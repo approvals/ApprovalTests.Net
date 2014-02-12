@@ -12,12 +12,12 @@ using ReportingDemo;
 namespace ApprovalTests.Tests.Persistence.Datasets
 {
     [TestFixture]
+		[UseReporter(typeof(AllFailingTestsClipboardReporter))]
     public class DatasetTest
     {
         private const string ReportName = "ReportingDemo.InsultsReport.rdlc";
 
         [Test]
-        [UseReporter(typeof(ClipboardReporter))]
         public void TestExtrenalImage()
         {
             RdlcApprovals.VerifyReport("ReportingDemo.ExternalImage.rdlc", GetDefaultData());

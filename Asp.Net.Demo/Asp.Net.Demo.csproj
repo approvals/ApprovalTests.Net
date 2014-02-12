@@ -66,6 +66,7 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="Encoding.UTF8.html" />
     <Content Include="images\acmelogo.gif" />
     <Content Include="Orders\InvoiceView.aspx" />
     <Content Include="Styles\Site.css" />

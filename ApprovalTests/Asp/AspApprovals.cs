@@ -64,6 +64,7 @@ namespace ApprovalTests.Asp
 				url = ResolveUrl(url);
 				using (var client = new WebClient())
 				{
+					client.Encoding = Encoding.UTF8;
 					var baseUrl = url.Substring(0, url.LastIndexOf("/"));
 					var html = client.DownloadString(url);
 					if (!html.Contains("<base"))

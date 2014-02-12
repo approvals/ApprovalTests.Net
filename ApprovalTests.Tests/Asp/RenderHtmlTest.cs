@@ -13,6 +13,7 @@ namespace ApprovalTests.Tests.Asp
 	public class RenderHtmlTest
 	{
 		public const string AspViewState = "<input type=\"hidden\" name=\"__VIEWSTATE\".+/>";
+		
 		[Test]
 		public void TestSimpleInvoice()
 		{
@@ -23,6 +24,13 @@ namespace ApprovalTests.Tests.Asp
 			//  -- These are the same thing
 			//AspApprovals.VerifyUrl("http://localhost:1359/Orders/InvoiceView.aspx?TestSimpleInvoice");
 		}
+
+		[Test]
+		public void TestInternationalization()
+		{
+			AspApprovals.VerifyUrl("http://localhost:1359/Encoding.UTF8.html");
+		}
+		
 	}
 }
 #endif

@@ -181,6 +181,8 @@
     <Content Include="a.png" />
     <Content Include="b.png" />
     <Content Include="b.txt" />
+    <Content Include="c:\code\ApprovalTests.Net\ApprovalTests.Tests\Asp\RenderHtmlTest.TestInternationalization.approved.html" />
+    <Content Include="c:\code\ApprovalTests.Net\ApprovalTests.Tests\Asp\RenderHtmlTest.TestISO88591.approved.html" />
     <Content Include="EntityFramework\CreateDatabase.sql" />
     <EmbeddedResource Include="NHibernate\Company.hbm.xml" />
   </ItemGroup>
