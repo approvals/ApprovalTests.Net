@@ -21,7 +21,6 @@ Approval Tests can be used for verifying objects that require more than a simple
 - Entity Framework
 - Rdlc reports
 
-
 [Video Tutorials](http://www.youtube.com/playlist?list=PL0C32F89E8BBB5368)
 ---
 
@@ -40,7 +39,11 @@ Available on NuGet
 ---
 [Install-Package ApprovalTests](http://nuget.org/packages/ApprovalTests)
 
-Nightly (CI) Builds available at: https://www.myget.org/F/approvaltests/
+Nightly (CI) Builds available at myget.org: 
+
+[![ApprovalTests Nightly Build Status](https://www.myget.org/BuildSource/Badge/approvaltests?identifier=c56b6e36-ea68-4965-8cd8-e7033c66e38e "Build Status")](https://www.myget.org/gallery/approvaltests)
+
+[ApprovalTests on the MyGet Gallery](https://www.myget.org/gallery/approvaltests)
 
 Examples
 ---
