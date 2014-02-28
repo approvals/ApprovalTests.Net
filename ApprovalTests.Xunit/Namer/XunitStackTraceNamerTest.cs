@@ -5,72 +5,72 @@ using System.Threading.Tasks;
 using ApprovalTests.Namers;
 using ApprovalTests.Reporters;
 using ApprovalTests.StackTraceParsers;
-using ApprovalUtilities.CallStack;
+
 using ApprovalUtilities.Utilities;
 using Xunit;
 
 namespace ApprovalTests.Xunit.Namer
 {
-	public class XunitStackTraceNamerTest
-	{
-		[Fact]
-		public void TestMightyMoose()
-		{
-			Approvals.SetCaller();
-			var m = new MightyMooseAutoTestReporter();
-			var b = m.IsWorkingInThisEnvironment("a.txt");
-			var f = PathUtilities.GetAdjacentFile("mightymooseresult.txt");
-			File.WriteAllText(f, "{0}, MightyMoose was running = {1}".FormatWith(DateTime.Now, b));
-		}
+    public class XunitStackTraceNamerTest
+    {
+        [Fact]
+        public async Task AsyncTestApprovalName()
+        {
+            var name = new UnitTestFrameworkNamer().Name;
+            var path = new UnitTestFrameworkNamer().SourcePath;
 
-		[Fact]
-		public void TestApprovalName()
-		{
-			var name = new UnitTestFrameworkNamer().Name;
-			Assert.Equal("XunitStackTraceNamerTest.TestApprovalName", name);
-		}
+            await AnAsyncMethod();
 
-		[Fact]
-		public void TestApprovalNamerFailureMessage()
-		{
-			var parser = new StackTraceParser();
-			var exception = Assert.Throws<Exception>(() => parser.Parse(new StackTrace(6)));
+            Assert.Equal("XunitStackTraceNamerTest.AsyncTestApprovalName", name);
+            Assert.True(File.Exists(path + "\\XunitStackTraceNamerTest.cs"));
+        }
 
-			Approvals.Verify(exception.Message);
-		}
+        [Fact]
+        public async Task FullAsyncTest()
+        {
+            await AnAsyncMethod();
+            Approvals.Verify("Async");
+        }
 
-		[Fact]
-		public async Task AsyncTestApprovalName()
-		{
-			var name = new UnitTestFrameworkNamer().Name;
-			var path = new UnitTestFrameworkNamer().SourcePath;
+        [Fact(Skip = "This is Hard")]
+        //[Fact]
+        public async Task ProperFullAsyncTest()
+        {
+            await Task.Delay(10);
+            // This is the stack trace, and needs to do MAGIC!
+            //   at ApprovalTests.Xunit.Namer.XunitStackTraceNamerTest.<ProperFullAsyncTest>d__c.MoveNext()
+            Approvals.Verify("Async with Delay");
+        }
 
-			await AnAsyncMethod();
+        [Fact]
+        public void TestApprovalName()
+        {
+            var name = new UnitTestFrameworkNamer().Name;
+            Assert.Equal("XunitStackTraceNamerTest.TestApprovalName", name);
+        }
 
-			Assert.Equal("XunitStackTraceNamerTest.AsyncTestApprovalName", name);
-			Assert.True(File.Exists(path + "\\XunitStackTraceNamerTest.cs"));
-		}
+        [Fact]
+        public void TestApprovalNamerFailureMessage()
+        {
+            var parser = new StackTraceParser();
+            var exception = Assert.Throws<Exception>(() => parser.Parse(new StackTrace(6)));
 
-		[Fact]
-		public async Task FullAsyncTest()
-		{
-			await AnAsyncMethod();
-			Approvals.Verify("Async");
-		}
+            Approvals.Verify(exception.Message);
+        }
 
-		[Fact(Skip = "This is Hard")]
-		//[Fact]
-		public async Task ProperFullAsyncTest()
-		{
-			await Task.Delay(10);
-			// This is the stack trace, and needs to do MAGIC!
-			//   at ApprovalTests.Xunit.Namer.XunitStackTraceNamerTest.<ProperFullAsyncTest>d__c.MoveNext()
-			Approvals.Verify("Async with Delay");
-		}
+        [Fact]
+        public void TestMightyMoose()
+        {
+            Approvals.SetCaller();
+            var m = new MightyMooseAutoTestReporter();
+            var b = m.IsWorkingInThisEnvironment("a.txt");
+            var f = PathUtilities.GetAdjacentFile("mightymooseresult.txt");
+            File.WriteAllText(f, "{0}, MightyMoose was running = {1}".FormatWith(DateTime.Now, b));
+        }
 
-		private static Task AnAsyncMethod()
-		{
-			return Task.FromResult(default(object));
-		}
-	}
+        private static Task AnAsyncMethod()
+        {
+            return Task.FromResult(default(object));
+        }
+    }
 }
