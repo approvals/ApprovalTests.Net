@@ -6,6 +6,7 @@
 
         public DefaultFrontLoaderReporter()
             : base(
+            TfsReporter.INSTANCE,
             TeamCityReporter.INSTANCE,
             CruiseControlNetReporter.INSTANCE,
             NCrunchReporter.INSTANCE,
