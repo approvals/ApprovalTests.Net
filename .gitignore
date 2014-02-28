@@ -1,4 +1,5 @@
 *.received.*
+nuget_packages/
 
 #################
 ## Eclipse
