@@ -11,6 +11,7 @@ namespace ApprovalTests.StackTraceParsers
     public class XUnitStackTraceParser : AttributeStackTraceParser
     {
         public const string Attribute = "Xunit.FactAttribute";
+        public static string AsyncAttributeName = "System.Runtime.CompilerServices.AsyncStateMachineAttribute";
 
         public override string ForTestingFramework
         {
@@ -41,13 +42,13 @@ namespace ApprovalTests.StackTraceParsers
         {
             if (res == null)
             {
-                return res;
+                return null;
             }
 
-            var attribute = Type.GetType("System.Runtime.CompilerServices.AsyncStateMachineAttribute", false);
+            var attribute = Type.GetType(AsyncAttributeName, false);
             if (attribute == null)
             {
-                throw new InvalidOperationException("Could not find the AsyncStateMachineAttribute type.  If you are on targeting .Net 4.0 you need to install Microsoft.CompilerServices.AsyncTargetingPack v1.0.1 from nuget.");
+                return res;
             }
 
             var asyncFrame = res.GetFirstFrameForAttribute(attribute);

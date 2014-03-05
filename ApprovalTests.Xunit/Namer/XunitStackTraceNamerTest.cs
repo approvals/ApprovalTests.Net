@@ -11,6 +11,8 @@ using Xunit;
 
 namespace ApprovalTests.Xunit.Namer
 {
+    using System.Runtime.CompilerServices;
+
     public class XunitStackTraceNamerTest
     {
         [Fact]
@@ -68,9 +70,36 @@ namespace ApprovalTests.Xunit.Namer
             File.WriteAllText(f, "{0}, MightyMoose was running = {1}".FormatWith(DateTime.Now, b));
         }
 
+        [Fact]
+        public void TestReflectionNames()
+        {
+            AssertEquals<AsyncStateMachineAttribute>(XUnitStackTraceParser.AsyncAttributeName);
+        }
+
+        [Fact]
+        public void WorksWhenMissingLibraries()
+        {
+            var asyncAttributeName = XUnitStackTraceParser.AsyncAttributeName;
+            try
+            {
+                XUnitStackTraceParser.AsyncAttributeName = "foo";
+                Approvals.Verify("still works.");
+            }
+            finally
+            {
+                XUnitStackTraceParser.AsyncAttributeName = asyncAttributeName;
+            }
+        }
+
         private static Task AnAsyncMethod()
         {
             return Task.FromResult(default(object));
+        }
+
+        private void AssertEquals<T>(string typeName)
+        {
+            Type instance = Type.GetType(typeName, false);
+            Assert.Equal(typeof(T), instance);
         }
     }
 }
