@@ -1,15 +1,19 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace ApprovalTests.Tests.Namer
+﻿namespace ApprovalTests.Tests.Namer
 {
-    using NUnit.Framework;
+    using System;
     using ApprovalTests.Namers;
     using ApprovalUtilities.Utilities;
-    using System;
+    using NUnit.Framework;
 
     [TestFixture]
     public class ApprovalResultsTest
     {
+        [Test]
+        public void TestEasyNames()
+        {
+            Assert.AreEqual("Windows 7", ApprovalResults.TransformEasyOsName("Microsoft Windows 7 Professional N"));
+        }
+
         [Test]
         public void TestUniqueNames()
         {
@@ -23,11 +27,5 @@ namespace ApprovalTests.Tests.Namer
                 methods,
                 m => "{0} => {1}".FormatWith(m.Method.Name, m.Invoke()));
         }
-
-	    [Test]
-	    public void TestEasyNames()
-	    {
-				Assert.AreEqual("Windows 7", ApprovalResults.TransformEasyOsName("Microsoft Windows 7 Professional N"));
-	    }
     }
 }

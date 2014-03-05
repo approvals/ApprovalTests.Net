@@ -5,72 +5,101 @@ using System.Threading.Tasks;
 using ApprovalTests.Namers;
 using ApprovalTests.Reporters;
 using ApprovalTests.StackTraceParsers;
-using ApprovalUtilities.CallStack;
+
 using ApprovalUtilities.Utilities;
 using Xunit;
 
 namespace ApprovalTests.Xunit.Namer
 {
-	public class XunitStackTraceNamerTest
-	{
-		[Fact]
-		public void TestMightyMoose()
-		{
-			Approvals.SetCaller();
-			var m = new MightyMooseAutoTestReporter();
-			var b = m.IsWorkingInThisEnvironment("a.txt");
-			var f = PathUtilities.GetAdjacentFile("mightymooseresult.txt");
-			File.WriteAllText(f, "{0}, MightyMoose was running = {1}".FormatWith(DateTime.Now, b));
-		}
+    using System.Runtime.CompilerServices;
 
-		[Fact]
-		public void TestApprovalName()
-		{
-			var name = new UnitTestFrameworkNamer().Name;
-			Assert.Equal("XunitStackTraceNamerTest.TestApprovalName", name);
-		}
+    public class XunitStackTraceNamerTest
+    {
+        [Fact]
+        public async Task AsyncTestApprovalName()
+        {
+            var name = new UnitTestFrameworkNamer().Name;
+            var path = new UnitTestFrameworkNamer().SourcePath;
 
-		[Fact]
-		public void TestApprovalNamerFailureMessage()
-		{
-			var parser = new StackTraceParser();
-			var exception = Assert.Throws<Exception>(() => parser.Parse(new StackTrace(6)));
+            await AnAsyncMethod();
 
-			Approvals.Verify(exception.Message);
-		}
+            Assert.Equal("XunitStackTraceNamerTest.AsyncTestApprovalName", name);
+            Assert.True(File.Exists(path + "\\XunitStackTraceNamerTest.cs"));
+        }
 
-		[Fact]
-		public async Task AsyncTestApprovalName()
-		{
-			var name = new UnitTestFrameworkNamer().Name;
-			var path = new UnitTestFrameworkNamer().SourcePath;
+        [Fact]
+        public async Task FullAsyncTest()
+        {
+            await AnAsyncMethod();
+            Approvals.Verify("Async");
+        }
 
-			await AnAsyncMethod();
+        [Fact(Skip = "This is Hard")]
+        //[Fact]
+        public async Task ProperFullAsyncTest()
+        {
+            await Task.Delay(10);
+            // This is the stack trace, and needs to do MAGIC!
+            //   at ApprovalTests.Xunit.Namer.XunitStackTraceNamerTest.<ProperFullAsyncTest>d__c.MoveNext()
+            Approvals.Verify("Async with Delay");
+        }
 
-			Assert.Equal("XunitStackTraceNamerTest.AsyncTestApprovalName", name);
-			Assert.True(File.Exists(path + "\\XunitStackTraceNamerTest.cs"));
-		}
+        [Fact]
+        public void TestApprovalName()
+        {
+            var name = new UnitTestFrameworkNamer().Name;
+            Assert.Equal("XunitStackTraceNamerTest.TestApprovalName", name);
+        }
 
-		[Fact]
-		public async Task FullAsyncTest()
-		{
-			await AnAsyncMethod();
-			Approvals.Verify("Async");
-		}
+        [Fact]
+        public void TestApprovalNamerFailureMessage()
+        {
+            var parser = new StackTraceParser();
+            var exception = Assert.Throws<Exception>(() => parser.Parse(new StackTrace(6)));
 
-		[Fact(Skip = "This is Hard")]
-		//[Fact]
-		public async Task ProperFullAsyncTest()
-		{
-			await Task.Delay(10);
-			// This is the stack trace, and needs to do MAGIC!
-			//   at ApprovalTests.Xunit.Namer.XunitStackTraceNamerTest.<ProperFullAsyncTest>d__c.MoveNext()
-			Approvals.Verify("Async with Delay");
-		}
+            Approvals.Verify(exception.Message);
+        }
 
-		private static Task AnAsyncMethod()
-		{
-			return Task.FromResult(default(object));
-		}
-	}
+        [Fact]
+        public void TestMightyMoose()
+        {
+            Approvals.SetCaller();
+            var m = new MightyMooseAutoTestReporter();
+            var b = m.IsWorkingInThisEnvironment("a.txt");
+            var f = PathUtilities.GetAdjacentFile("mightymooseresult.txt");
+            File.WriteAllText(f, "{0}, MightyMoose was running = {1}".FormatWith(DateTime.Now, b));
+        }
+
+        [Fact]
+        public void TestReflectionNames()
+        {
+            AssertEquals<AsyncStateMachineAttribute>(XUnitStackTraceParser.AsyncAttributeName);
+        }
+
+        [Fact]
+        public void WorksWhenMissingLibraries()
+        {
+            var asyncAttributeName = XUnitStackTraceParser.AsyncAttributeName;
+            try
+            {
+                XUnitStackTraceParser.AsyncAttributeName = "foo";
+                Approvals.Verify("still works.");
+            }
+            finally
+            {
+                XUnitStackTraceParser.AsyncAttributeName = asyncAttributeName;
+            }
+        }
+
+        private static Task AnAsyncMethod()
+        {
+            return Task.FromResult(default(object));
+        }
+
+        private void AssertEquals<T>(string typeName)
+        {
+            Type instance = Type.GetType(typeName, false);
+            Assert.Equal(typeof(T), instance);
+        }
+    }
 }
