@@ -7,7 +7,7 @@ namespace ApprovalTests.Namers
 	public class UnitTestFrameworkNamer : IApprovalNamer
 	{
 		private readonly StackTraceParser stackTraceParser;
-		private string subdirectory;
+		internal string subdirectory;
 
 		public UnitTestFrameworkNamer()
 		{
@@ -25,7 +25,6 @@ namespace ApprovalTests.Namers
 				subdirectory = subdirectoryAttribute.Subdirectory;
 			}
 		}
-
 
 		public string Name
 		{
