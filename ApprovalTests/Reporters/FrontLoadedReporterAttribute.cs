@@ -3,7 +3,7 @@ using ApprovalTests.Core;
 
 namespace ApprovalTests.Reporters
 {
-    [AttributeUsage(AttributeTargets.Assembly)]
+    [AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Class)]
     public class FrontLoadedReporterAttribute : Attribute
     {
         public FrontLoadedReporterAttribute(Type reporter)
