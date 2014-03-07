@@ -166,6 +166,8 @@
     <Compile Include="Reporters\XUnit2Reporter.cs" />
     <Compile Include="Scrubber\HtmlScrubbers.cs" />
     <Compile Include="Scrubber\PdfScrubber.cs" />
+    <Compile Include="Namers\UseNamerAttribute.cs" />
+    <Compile Include="PdfScrubber.cs" />
     <Compile Include="Persistence\DatabaseApprovals.cs" />
     <Compile Include="Persistence\EntityFramework\EntityFrameworkApprovals.cs" />
     <Compile Include="Persistence\DataSets\ColumnDefaults.cs" />

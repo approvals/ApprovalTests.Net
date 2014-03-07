@@ -121,6 +121,7 @@
     <Compile Include="Namer\StackTraceParsers\StackTraceParserTests.cs" />
     <Compile Include="Persistence\AsyncSaverTest.cs" />
     <Compile Include="Reporters\PowerShellClipboardReporterTest.cs" />
+    <Compile Include="Namer\UseNamerAttributeTests.cs" />
     <Compile Include="RunMaintenance.cs" />
     <Compile Include="Email\EmailTest.cs" />
     <Compile Include="EntityFramework\CompanyList.cs" />
