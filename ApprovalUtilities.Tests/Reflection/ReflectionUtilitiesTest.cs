@@ -41,8 +41,7 @@ namespace ApprovalUtilities.Tests.Reflection
         [TestMethod]
         public void GetInheritedNonPublicStaticFields()
         {
-            ApprovalResults.UniqueForDotNetVersion();
-            Approvals.VerifyAll(
+            Approvals.VerifyAll("For " + ApprovalResults.GetDotNetVersion(), 
                 new CheckBox().NonPublicStaticFields(true),
                 string.Empty);
         }

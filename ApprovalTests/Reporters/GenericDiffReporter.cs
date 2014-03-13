@@ -13,7 +13,6 @@ namespace ApprovalTests.Reporters
 {
 	public class GenericDiffReporter : IEnvironmentAwareReporter
 	{
-		public static readonly List<Action<String>> CreateNewFileEventListeners = new List<Action<string>>() { VisualStudioProjectFileAdder.IncludeFileInCurrentProject };
 		protected const string DEFAULT_ARGUMENT_FORMAT = "\"{0}\" \"{1}\"";
 
 		private static readonly HashSet<string> TEXT_FILE_TYPES = new HashSet<string>
@@ -142,10 +141,7 @@ Recieved {0} ({1}, {2}, {3})"
 			if (!File.Exists(approved))
 			{
 				File.WriteAllText(approved, " ", Encoding.UTF8);
-				foreach (var listener in CreateNewFileEventListeners)
-				{
-					listener(approved);
-				}
+				ReporterEvents.CreatedApprovedFile(approved);
 			}
 		}
 

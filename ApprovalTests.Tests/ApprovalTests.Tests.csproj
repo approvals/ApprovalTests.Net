@@ -177,6 +177,7 @@
     <Content Include="a.png" />
     <Content Include="b.png" />
     <Content Include="b.txt" />
+    <Content Include="c:\code\ApprovalTests.Net\ApprovalTests.Tests\Reporters\GenericDiffReporterTest.TestLaunchesBeyondCompareImage.ForMachine.LLEWELLYN-PC.approved.txt" />
     <Content Include="c:\Users\jcounts\Documents\GitHub\ApprovalTests.Net\ApprovalTests.Tests\Namer\ApprovalResultsTest.TestUniqueNames.ForMachine.RM-JCOUNTS18.approved.txt" />
     <Content Include="c:\Users\jcounts\Documents\GitHub\ApprovalTests.Net\ApprovalTests.Tests\Reporters\GenericDiffReporterTest.TestLaunchesBeyondCompareImage.ForMachine.RM-JCOUNTS18.approved.txt" />
     <Content Include="EntityFramework\CreateDatabase.sql" />

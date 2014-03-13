@@ -75,6 +75,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="c:\code\ApprovalTests.Net\ApprovalUtilities.Tests\Reflection\ReflectionUtilitiesTest.GetInheritedNonPublicStaticFields.Net_v4.0.30319.18063.approved.txt" />
     <Content Include="c:\Users\jcounts\Documents\GitHub\ApprovalTests.Net\ApprovalUtilities.Tests\Reflection\ReflectionUtilitiesTest.GetInheritedNonPublicStaticFields.Net_v4.0.30319.34011.approved.txt" />
     <Content Include="LoggerTest.TestMainPath.approved.txt">
       <DependentUpon>LoggerTest.cs</DependentUpon>

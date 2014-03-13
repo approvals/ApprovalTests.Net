@@ -20,8 +20,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApprovalTests", "ApprovalTe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApprovalTests.Tests", "ApprovalTests.Tests\ApprovalTests.Tests.csproj", "{7B8D265D-35BB-4817-B074-F5056E5A9B4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApprovalDemos", "ApprovalDemos\ApprovalDemos.csproj", "{7ACFCE47-789B-42F4-8B62-EBEF04B4100A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApprovalTests.MSTest", "ApprovalTests.MSTest\ApprovalTests.MSTest.csproj", "{55C72CD1-7EFA-4A12-8C6F-7F917CF83A40}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApprovalUtilities.Tests", "ApprovalUtilities.Tests\ApprovalUtilities.Tests.csproj", "{01EB7BB9-743C-4FB0-B97F-A6E2B4AF86CF}"
@@ -57,10 +55,6 @@ Global
 		{7B8D265D-35BB-4817-B074-F5056E5A9B4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B8D265D-35BB-4817-B074-F5056E5A9B4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B8D265D-35BB-4817-B074-F5056E5A9B4E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7ACFCE47-789B-42F4-8B62-EBEF04B4100A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7ACFCE47-789B-42F4-8B62-EBEF04B4100A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7ACFCE47-789B-42F4-8B62-EBEF04B4100A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7ACFCE47-789B-42F4-8B62-EBEF04B4100A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{55C72CD1-7EFA-4A12-8C6F-7F917CF83A40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{55C72CD1-7EFA-4A12-8C6F-7F917CF83A40}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55C72CD1-7EFA-4A12-8C6F-7F917CF83A40}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -163,6 +163,7 @@
     <Compile Include="Reporters\DotNet4Utilities.cs" />
     <Compile Include="Reporters\KDiffReporter.cs" />
     <Compile Include="Reporters\P4MergeTextReporter.cs" />
+    <Compile Include="Reporters\ReporterEvents.cs" />
     <Compile Include="Reporters\TeamCityReporter.cs" />
     <Compile Include="Reporters\TfsReporter.cs" />
     <Compile Include="Reporters\TortoiseComboImageReporter.cs" />
