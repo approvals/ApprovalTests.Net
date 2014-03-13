@@ -130,6 +130,7 @@
     <Compile Include="Maintenance\ApprovalMaintenance.cs" />
     <Compile Include="Namers\ApprovalResults.cs" />
     <Compile Include="Namers\NamerFactory.cs" />
+    <Compile Include="Namers\StackTraceParsers\AttributeStackTraceParser.cs" />
     <Compile Include="Namers\UnitTestFrameworks\MSpecStackTraceParser.cs" />
     <Compile Include="Namers\UnitTestFrameworks\XUnitStackTraceParser.cs" />
     <Compile Include="Namers\UnitTestFrameworks\XUnitTheoryStackTraceParser.cs" />
@@ -189,7 +190,6 @@
     <Compile Include="Reporters\TortoiseImageDiffReporter.cs" />
     <Compile Include="Reporters\WinMergeReporter.cs" />
     <Compile Include="ScrubberUtils.cs" />
-    <Compile Include="StackTraceParsers\AttributeStackTraceParser.cs" />
     <Compile Include="Namers\UnitTestFrameworks\MbUnitStackTraceParser.cs" />
     <Compile Include="Namers\UnitTestFrameworks\VSStackTraceParser.cs" />
     <Compile Include="Reporters\UseReporterAttribute.cs" />
@@ -209,11 +209,11 @@
     <Compile Include="Approvers\FileApprover.cs" />
     <Compile Include="Core\IApprovalReporter.cs" />
     <Compile Include="Reporters\QuietReporter.cs" />
-    <Compile Include="StackTraceParsers\IStackTraceParser.cs" />
+    <Compile Include="Namers\StackTraceParsers\IStackTraceParser.cs" />
     <Compile Include="Namers\UnitTestFrameworks\NUnitStackTraceParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Namers\UnitTestFrameworkNamer.cs" />
-    <Compile Include="StackTraceParsers\StackTraceParser.cs" />
+    <Compile Include="Namers\StackTraceParsers\StackTraceParser.cs" />
     <Compile Include="Writers\ExistingFileWriter.cs" />
     <Compile Include="Writers\WriterUtils.cs" />
     <Compile Include="Writers\ConfigurableTempTextFileWriter.cs" />

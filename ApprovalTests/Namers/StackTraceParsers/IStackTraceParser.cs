@@ -1,6 +1,6 @@
 using System.Diagnostics;
 
-namespace ApprovalTests.StackTraceParsers
+namespace ApprovalTests.Namers.StackTraceParsers
 {
 	public interface IStackTraceParser
 	{

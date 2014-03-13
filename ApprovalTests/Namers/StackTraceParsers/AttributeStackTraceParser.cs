@@ -2,10 +2,10 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using ApprovalTests.Namers;
+using ApprovalTests.StackTraceParsers;
 using ApprovalUtilities.CallStack;
 
-namespace ApprovalTests.StackTraceParsers
+namespace ApprovalTests.Namers.StackTraceParsers
 {
 	public abstract class AttributeStackTraceParser : IStackTraceParser
 	{

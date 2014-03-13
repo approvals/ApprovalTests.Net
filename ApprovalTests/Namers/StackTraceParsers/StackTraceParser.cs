@@ -2,9 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using ApprovalTests.StackTraceParsers;
 using ApprovalUtilities.Utilities;
 
-namespace ApprovalTests.StackTraceParsers
+namespace ApprovalTests.Namers.StackTraceParsers
 {
 	public class StackTraceParser : IStackTraceParser
 	{

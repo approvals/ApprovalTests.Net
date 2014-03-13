@@ -2,6 +2,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
+using ApprovalTests.Namers.StackTraceParsers;
 using ApprovalTests.Reporters;
 using ApprovalUtilities.CallStack;
 using ApprovalUtilities.Utilities;

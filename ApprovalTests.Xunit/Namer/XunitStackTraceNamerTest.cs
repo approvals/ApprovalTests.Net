@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
 using ApprovalTests.Namers;
+using ApprovalTests.Namers.StackTraceParsers;
 using ApprovalTests.Reporters;
 using ApprovalTests.StackTraceParsers;
 
@@ -60,15 +61,7 @@ namespace ApprovalTests.Xunit.Namer
             Approvals.Verify(exception.Message);
         }
 
-        [Fact]
-        public void TestMightyMoose()
-        {
-            Approvals.SetCaller();
-            var m = new MightyMooseAutoTestReporter();
-            var b = m.IsWorkingInThisEnvironment("a.txt");
-            var f = PathUtilities.GetAdjacentFile("mightymooseresult.txt");
-            File.WriteAllText(f, "{0}, MightyMoose was running = {1}".FormatWith(DateTime.Now, b));
-        }
+      
 
         [Fact]
         public void TestReflectionNames()

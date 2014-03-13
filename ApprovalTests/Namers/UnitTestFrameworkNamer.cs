@@ -1,5 +1,6 @@
 using System.IO;
 using ApprovalTests.Core;
+using ApprovalTests.Namers.StackTraceParsers;
 using ApprovalTests.StackTraceParsers;
 
 namespace ApprovalTests.Namers
