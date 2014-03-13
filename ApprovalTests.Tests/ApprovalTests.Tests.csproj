@@ -106,6 +106,7 @@
     <Compile Include="Namer\ApprovalResultsTest.cs" />
     <Compile Include="Namer\SubdirectoryNamerTests.cs" />
     <Compile Include="Pdf\PdfTest.cs" />
+    <Compile Include="StackTraceScrubberTest.cs" />
     <Compile Include="StringEncodingTest.cs" />
     <Compile Include="Events\EventApprovalsTest.cs" />
     <Compile Include="Events\TestingControl.cs">
