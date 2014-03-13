@@ -2,30 +2,32 @@
 using System.Windows.Forms;
 using ApprovalTests.Namers;
 using ApprovalTests.Reporters;
+using ApprovalTests.Tests.WinForms;
 using ApprovalTests.WinForms;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Button = System.Windows.Forms.Button;
 
-namespace ApprovalTests.Tests.WinForms
+namespace ApprovalTests.MachineSpecific.Tests.WinForms
 {
-    [TestFixture]
+    [TestClass]
     [UseReporter(typeof(AllFailingTestsClipboardReporter), typeof(ImageReporter))]
     public class ApprovalsTest
     {
-        [Test]
+        [TestMethod]
         public void TestControlApproved()
         {
             ApprovalResults.UniqueForMachineName();
             WinFormsApprovals.Verify(new Button { BackColor = Color.LightBlue, Text = "Help" });
         }
 
-        [Test]
+        [TestMethod]
         public void TestFormApproval()
         {
             ApprovalResults.UniqueForMachineName();
             WinFormsApprovals.Verify(new Form());
         }
 
-        [Test]
+        [TestMethod]
 				[UseReporter(typeof(TortoiseDiffReporter))]
 				public void VerifyCompleteFormTest()
         {

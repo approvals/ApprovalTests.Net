@@ -10,7 +10,12 @@ namespace ApprovalTests.Maintenance
 {
 	public class ApprovalMaintenance
 	{
-		private static IEnumerable<FileInfo> CleanUpAbandonedFiles()
+		/// <summary>
+		/// ** Warning : use at your own risk **
+		/// Deletes any files that may have been abandoned.
+		/// </summary>
+		/// <returns> List of deleted files</returns>
+		public static IEnumerable<FileInfo> CleanUpAbandonedFiles()
 		{
 			var assembly = new Caller().Methods.First().Module.Assembly; 
 			var path = PathUtilities.GetDirectoryForCaller(1);
@@ -53,7 +58,7 @@ namespace ApprovalTests.Maintenance
 			var files = FindAbandonedFiles(path, assembly);
 			if (files.Any())
 			{
-				throw new Exception("The folling files have been abandoned:\r\n" + files.ToReadableString().Replace(",","\r\n"));
+				throw new Exception("The following files have been abandoned:\r\n" + files.ToReadableString().Replace(",","\r\n"));
 			}
 		}
 	}

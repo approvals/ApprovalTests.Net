@@ -6,54 +6,54 @@ using ApprovalTests.Persistence.DataSets;
 using ApprovalTests.RdlcReports;
 using ApprovalTests.Reporters;
 using ApprovalUtilities.Utilities;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ReportingDemo;
 
 namespace ApprovalTests.Tests.Persistence.Datasets
 {
-    [TestFixture]
+    [TestClass]
 		[UseReporter(typeof(AllFailingTestsClipboardReporter))]
     public class DatasetTest
     {
         private const string ReportName = "ReportingDemo.InsultsReport.rdlc";
 
-        [Test]
+       [TestMethod]
         public void TestExtrenalImage()
         {
             RdlcApprovals.VerifyReport("ReportingDemo.ExternalImage.rdlc", GetDefaultData());
         }
 
-        [Test]
+       [TestMethod]
         public void TestSimpleReportWith1Dataset()
         {
             RdlcApprovals.VerifyReport(ReportName, GetDefaultData());
         }
 
-        [Test]
+       [TestMethod]
         public void TestSimpleReportWithDatasetInAssembly()
         {
             RdlcApprovals.VerifyReport(ReportName, "Model", GetDefaultData());
         }
 
-        [Test]
+       [TestMethod]
         public void TestReport()
         {
             RdlcApprovals.VerifyReport(ReportName, GetAssembly(), Tuple.Create("Model", GetDefaultData()));
         }
 
-        [Test]
+       [TestMethod]
         public void TestReportWithDataPair()
         {
             RdlcApprovals.VerifyReport(ReportName, GetAssembly(), new DataPairs { { "Model", GetDefaultData() } });
         }
 
-        [Test]
+       [TestMethod]
         public void TestSimpleReportExplict()
         {
             RdlcApprovals.VerifyReport(ReportName, GetAssembly(), "Model", GetDefaultData());
         }
 
-        [Test]
+       [TestMethod]
         public void TestDataSourceNames()
         {
             NamerFactory.Clear();
@@ -63,7 +63,7 @@ namespace ApprovalTests.Tests.Persistence.Datasets
             Approvals.Verify(exception.Message);
         }
 
-        [SetUp]
+        [TestInitialize]
         public void NamerSetUp()
         {
             ApprovalResults.UniqueForMachineName();

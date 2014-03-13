@@ -24,6 +24,7 @@ namespace ApprovalTests.Namers
 
         public static void AsEnvironmentSpecificTest(Func<string> environmentLabeler)
         {
+					 throw new Exception("Boo");
             AdditionalInformation = environmentLabeler();
         }
 
