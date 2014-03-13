@@ -1,5 +1,0 @@
-﻿
-SELECT i.Insult, i.BurnLevel
-		FROM Insults i
-		WHERE 5 <= i.BurnLevel 
-				AND i.NumberOfWords <= 7
