@@ -3,7 +3,6 @@ using System;
 using System.Text.RegularExpressions;
 using ApprovalTests.Asp;
 using ApprovalTests.Reporters;
-using ApprovalUtilities.Utilities;
 using Asp.Net.Demo;
 using Asp.Net.Demo.Orders;
 using CassiniDev;
@@ -17,19 +16,20 @@ namespace ApprovalTests.Tests.Asp
 	{
 		public const string AspViewState = "<input type=\"hidden\" name=\"__VIEWSTATE\".+/>";
 		private CassiniDevServer server = new CassiniDevServer();
-		
+
 		[TestFixtureSetUp]
 		public void Setup()
 		{
 			PortFactory.AspPort = 1359;
 			server.StartServer(Global.Path, PortFactory.AspPort, "/", "localhost");
 		}
+
 		[TestFixtureTearDown]
 		public void TearDown()
 		{
 			server.StopServer();
 		}
-		
+
 		[Test]
 		public void TestSimpleInvoice()
 		{

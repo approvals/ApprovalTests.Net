@@ -2,7 +2,6 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using ApprovalTests.StackTraceParsers;
 using ApprovalUtilities.CallStack;
 
 namespace ApprovalTests.Namers.StackTraceParsers
@@ -39,7 +38,7 @@ namespace ApprovalTests.Namers.StackTraceParsers
 
 		protected virtual string GetMethodName()
 		{
-			 return approvalFrame.Method.Name; 
+			return approvalFrame.Method.Name;
 		}
 
 		public string SourcePath
@@ -64,7 +63,7 @@ namespace ApprovalTests.Namers.StackTraceParsers
 		public static Caller GetFirstFrameForAttribute(Caller caller, string attributeName)
 		{
 			var firstFrameForAttribute =
-			caller.Callers.FirstOrDefault(c => ContainsAttribute(c.Method.GetCustomAttributes(false), attributeName));
+				caller.Callers.FirstOrDefault(c => ContainsAttribute(c.Method.GetCustomAttributes(false), attributeName));
 			return firstFrameForAttribute;
 		}
 
@@ -73,7 +72,7 @@ namespace ApprovalTests.Namers.StackTraceParsers
 			return attributes.Any(a => a.GetType().FullName.StartsWith(attributeName));
 		}
 
-		protected  virtual Caller FindApprovalFrame()
+		protected virtual Caller FindApprovalFrame()
 		{
 			return GetFirstFrameForAttribute(caller, GetAttributeType());
 		}

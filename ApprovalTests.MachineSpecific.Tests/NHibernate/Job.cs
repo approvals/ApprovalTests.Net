@@ -7,7 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ApprovalTests.Tests.NHibernate
+namespace ApprovalTests.MachineSpecific.Tests.NHibernate
+
 {
     using System;
     using System.Collections.Generic;

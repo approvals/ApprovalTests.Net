@@ -9,10 +9,10 @@ using ApprovalUtilities.Utilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ReportingDemo;
 
-namespace ApprovalTests.Tests.Persistence.Datasets
+namespace ApprovalTests.MachineSpecific.Tests.Persistence.Datasets
 {
     [TestClass]
-		[UseReporter(typeof(AllFailingTestsClipboardReporter))]
+		[UseReporter(typeof(AllFailingTestsClipboardReporter), typeof(DiffReporter))]
     public class DatasetTest
     {
         private const string ReportName = "ReportingDemo.InsultsReport.rdlc";

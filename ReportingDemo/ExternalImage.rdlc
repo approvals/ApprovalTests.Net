@@ -4,7 +4,7 @@
     <ReportItems>
       <Image Name="Image3">
         <Source>External</Source>
-        <Value>http://localhost:1359/images/acmelogo.gif</Value>
+        <Value>https://avatars2.githubusercontent.com/u/36907?s=140</Value>
         <Sizing>FitProportional</Sizing>
         <Top>0.30083in</Top>
         <Left>2.155in</Left>
@@ -60,7 +60,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Make sure the Asp.Net.Demo is running </Value>
+                  <Value>Make sure you have an internet connection </Value>
                   <Style>
                     <FontSize>16pt</FontSize>
                   </Style>
