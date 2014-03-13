@@ -22,14 +22,23 @@ namespace ApprovalTests.Namers
 			AsEnvironmentSpecificTest(environmentLabeler);
 		}
 
-		public static void AsEnvironmentSpecificTest(Func<string> environmentLabeler)
+		public static IDisposable AsEnvironmentSpecificTest(Func<string> environmentLabeler)
 		{
 			AdditionalInformation = environmentLabeler();
+			return new EnviromentSpecificCleanUp();
 		}
 
 		public static void Clear()
 		{
 			AdditionalInformation = null;
+		}
+	}
+
+	public class EnviromentSpecificCleanUp: IDisposable
+	{
+		public void Dispose()
+		{
+			NamerFactory.Clear();
 		}
 	}
 }

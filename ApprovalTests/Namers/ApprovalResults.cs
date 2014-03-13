@@ -7,9 +7,10 @@ namespace ApprovalTests.Namers
 {
 	public class ApprovalResults
 	{
-		public static void UniqueForDotNetVersion()
+		public static IDisposable UniqueForDotNetVersion()
 		{
-			NamerFactory.AsEnvironmentSpecificTest(GetDotNetVersion);
+			return NamerFactory.AsEnvironmentSpecificTest(GetDotNetVersion);
+			
 		}
 
 		public static string GetDotNetVersion()
@@ -17,9 +18,9 @@ namespace ApprovalTests.Namers
 			return "Net_v" + Environment.Version;
 		}
 
-		public static void UniqueForMachineName()
+		public static IDisposable UniqueForMachineName()
 		{
-			NamerFactory.AsEnvironmentSpecificTest(GetMachineName);
+			return NamerFactory.AsEnvironmentSpecificTest(GetMachineName);
 		}
 
 		public static string GetMachineName()
@@ -61,9 +62,9 @@ namespace ApprovalTests.Namers
 			return captionName;
 		}
 
-		public static void UniqueForOs()
+		public static IDisposable UniqueForOs()
 		{
-			NamerFactory.AsEnvironmentSpecificTest(GetOsName);
+			return NamerFactory.AsEnvironmentSpecificTest(GetOsName);
 		}
 
 		public static string GetUserName()
@@ -71,14 +72,14 @@ namespace ApprovalTests.Namers
 			return "ForUser." + Environment.UserName;
 		}
 
-		public static void UniqueForUserName()
+		public static IDisposable UniqueForUserName()
 		{
-			NamerFactory.AsEnvironmentSpecificTest(GetUserName);
+			return NamerFactory.AsEnvironmentSpecificTest(GetUserName);
 		}
 
-		public static void ForScenario(string data)
+		public static string ForScenario(string data)
 		{
-			NamerFactory.AdditionalInformation = "ForScenario." + Scrub(data);
+			return NamerFactory.AdditionalInformation = "ForScenario." + Scrub(data);
 		}
 
 		public static string Scrub(string data)

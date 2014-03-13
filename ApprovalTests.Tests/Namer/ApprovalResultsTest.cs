@@ -12,4 +12,25 @@ namespace ApprovalTests.Tests.Namer
 			Assert.AreEqual("Windows 7", ApprovalResults.TransformEasyOsName("Microsoft Windows 7 Professional N"));
 		}
 	}
+
+	[TestFixture]
+	public class AdditionalInformationTests
+	{
+		[Test]
+		public void ExitsBeforeNamerIsCalled()
+		{
+			using (ApprovalResults.UniqueForMachineName())
+			{
+				
+			}
+			
+		}
+
+		[Test]
+		public void WithoutExtraInfo()
+		{
+			var name = Approvals.GetDefaultNamer().Name;
+			Assert.AreEqual("AdditionalInformationTests.WithoutExtraInfo", name);
+		}
+	}
 }

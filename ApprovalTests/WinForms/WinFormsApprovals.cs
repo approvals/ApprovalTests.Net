@@ -13,9 +13,9 @@ namespace ApprovalTests.WinForms
 {
 	public class WinFormsApprovals
 	{
-		private static Action addAdditionalInfo = ApprovalResults.UniqueForOs;
+		private static Func<IDisposable> addAdditionalInfo = ApprovalResults.UniqueForOs;
 
-		public static void RegisterDefaultAddtionalInfo(Action a)
+		public static void RegisterDefaultAddtionalInfo(Func<IDisposable> a)
 		{
 			addAdditionalInfo = a;
 		}
@@ -35,14 +35,18 @@ namespace ApprovalTests.WinForms
 
 		public static void Verify(Form form)
 		{
-			addAdditionalInfo();
-			Approvals.Verify(new ApprovalFormWriter(form));
+			using (addAdditionalInfo())
+			{
+				Approvals.Verify(new ApprovalFormWriter(form));
+			}
 		}
 
 		public static void Verify(Control control)
 		{
-			addAdditionalInfo();
-			Approvals.Verify(new ApprovalControlWriter(control));
+			using (addAdditionalInfo())
+			{
+				Approvals.Verify(new ApprovalControlWriter(control));
+			}
 		}
 
 		private static string GetLabelForChild(object parent, object child)
