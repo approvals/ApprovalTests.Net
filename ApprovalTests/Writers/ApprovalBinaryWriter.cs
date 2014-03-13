@@ -5,21 +5,21 @@ using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.Writers
 {
-	public class BinaryWriter : IApprovalWriter
+	public class ApprovalBinaryWriter : IApprovalWriter
 	{
-		public BinaryWriter(byte[] data)
+		public ApprovalBinaryWriter(byte[] data)
 		{
 			Data = data;
 		}
 
-		public BinaryWriter(Stream content, string extensionWithoutDot)
+		public ApprovalBinaryWriter(Stream content, string extensionWithoutDot)
 		{
 			Data = new byte[content.Length];
 			content.Read(Data, 0, Data.Length);
 			ExtensionWithDot = EnsureDoc(extensionWithoutDot);
 		}
 
-		public BinaryWriter(byte[] data, string extensionWithoutDot)
+		public ApprovalBinaryWriter(byte[] data, string extensionWithoutDot)
 		{
 			Data = data;
 			ExtensionWithDot = EnsureDoc(extensionWithoutDot);

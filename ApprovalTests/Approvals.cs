@@ -13,7 +13,6 @@ using ApprovalTests.Xml;
 using ApprovalUtilities.CallStack;
 using ApprovalUtilities.Persistence;
 using ApprovalUtilities.Utilities;
-using BinaryWriter = ApprovalTests.Writers.BinaryWriter;
 
 namespace ApprovalTests
 {
@@ -203,7 +202,7 @@ namespace ApprovalTests
 
 		public static void VerifyBinaryFile(byte[] bytes, string fileExtensionWithoutDot)
 		{
-			Verify(new BinaryWriter(bytes, fileExtensionWithoutDot));
+			Verify(new ApprovalBinaryWriter(bytes, fileExtensionWithoutDot));
 		}
 
 		public static void VerifyHtml(string html)

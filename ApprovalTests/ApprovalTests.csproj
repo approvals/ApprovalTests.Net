@@ -190,7 +190,7 @@
     <Compile Include="WinForms\ApprovalControlWriter.cs" />
     <Compile Include="WinForms\ApprovalFormWriter.cs" />
     <Compile Include="Wpf\WpfApprovals.cs" />
-    <Compile Include="Writers\BinaryWriter.cs" />
+    <Compile Include="Writers\ApprovalBinaryWriter.cs" />
     <Compile Include="Core\IApprovalWriter.cs" />
     <Compile Include="Writers\ApprovalTextWriter.cs" />
     <Compile Include="Core\IApprovalNamer.cs" />
