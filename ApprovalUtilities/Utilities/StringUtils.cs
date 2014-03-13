@@ -73,7 +73,7 @@ namespace ApprovalUtilities.Utilities
 
 		public static string Write<T>(this IEnumerable<T> enumerable, String label)
 		{
-			return Write(enumerable, label, s => s.ToString());
+			return Write(enumerable, label, s => "" + s);
 		}
 
 		public static string Write<T>(this IEnumerable<T> enumerable, string label, Func<T, string> formatter)
@@ -90,7 +90,7 @@ namespace ApprovalUtilities.Utilities
 		public static string Write<T>(this IEnumerable<T> enumerable, Func<int, T, string> formatterWithIndex,
 		                              string emptyMessage)
 		{
-			var list = new List<T>(enumerable);
+			var list = new List<T>(enumerable??Enumerable.Empty<T>());
 
 			if (list.Count == 0)
 				return emptyMessage;

@@ -41,7 +41,7 @@ namespace ApprovalTests
 
 		public static void Verify(IApprovalWriter writer, IApprovalNamer namer, IApprovalFailureReporter reporter)
 		{
-			Core.Approvals.Verify(new FileApprover(writer, namer), reporter);
+			Core.Approver.Verify(new FileApprover(writer, namer), reporter);
 		}
 
 		public static IApprovalFailureReporter GetReporter()
@@ -182,6 +182,7 @@ namespace ApprovalTests
 
 		public static void VerifyAll<K, V>(IDictionary<K, V> dictionary)
 		{
+			dictionary = dictionary ?? new Dictionary<K, V>();
 			VerifyAll(dictionary.OrderBy(p => p.Key), p => "{0} => {1}".FormatWith(p.Key, p.Value));
 		}
 

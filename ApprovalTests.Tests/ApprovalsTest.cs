@@ -7,10 +7,10 @@ using NUnit.Framework;
 namespace ApprovalTests.Tests
 {
 	[TestFixture]
-	[UseReporter(typeof(DiffReporter))]
+	[UseReporter(typeof (DiffReporter))]
 	public class ApprovalsTest
 	{
-		private static readonly string[] text = new string[] { "abc", "123", "!@#" };
+		private static readonly string[] text = new string[] {"abc", "123", "!@#"};
 
 		[Test]
 		public void Text()
@@ -51,52 +51,75 @@ namespace ApprovalTests.Tests
 		public void EnumerableWithHeaderAndFormatter()
 		{
 			var word = "Llewellyn";
-			Approvals.VerifyAll(word, word.ToCharArray(), (c) => c + " => " + (int)c);
+			Approvals.VerifyAll(word, word.ToCharArray(), (c) => c + " => " + (int) c);
 		}
-				[Test]
+
+		[Test]
+		public void VerifyAllWithNull()
+		{
+			var words = new string[] {"abc", null, "123", "!@#"};
+			Approvals.VerifyAll(words, "");
+		}
+
+		[Test]
+		public void VerifyAllNull()
+		{
+			string[] words = null;
+			Approvals.VerifyAll(words, "words");
+		}
+
+		[Test]
+		public void VerifyNullDictionary()
+		{
+			Dictionary<string, int> words = null;
+			Approvals.VerifyAll(words);
+		}
+
+		[Test]
 		public void DictionarySimple()
-				{
-						Approvals.VerifyAll(FireFlyMap());
-				}
-				[Test]
+		{
+			Approvals.VerifyAll(FireFlyMap());
+		}
+
+		[Test]
 		public void Dictionary()
-				{
-						Approvals.VerifyAll("Firefly", FireFlyMap());
-				} 
-				[Test]
+		{
+			Approvals.VerifyAll("Firefly", FireFlyMap());
+		}
+
+		[Test]
 		public void DictionaryCustom()
-				{
-						Approvals.VerifyAll("Firefly", FireFlyMap(), (k,v)=> "\"{0}\" => {1}".FormatWith(k,v));
-				}
-	[Test]
+		{
+			Approvals.VerifyAll("Firefly", FireFlyMap(), (k, v) => "\"{0}\" => {1}".FormatWith(k, v));
+		}
+
+		[Test]
 		public void DictionaryCustomNoHeader()
+		{
+			Approvals.VerifyAll(FireFlyMap(), (k, v) => "\"{0}\" => {1}".FormatWith(k, v));
+		}
+
+		private static Dictionary<string, string> FireFlyMap()
+		{
+			var map = new Dictionary<string, string>()
 				{
-						Approvals.VerifyAll(FireFlyMap(), (k,v)=> "\"{0}\" => {1}".FormatWith(k,v));
-				}
+					{"Caption", "Mal"},
+					{"2nd In Command", "Zoey"},
+					{"Pilot", "Wash"},
+					{"Companion", "Inara"},
+					{"Muscle", "Jayne"},
+					{"Mechanic", "Kaylee"},
+					{"Doctor", "Simon"},
+					{"Pastor", "Book"},
+					{"Stoaway", "River"}
+				};
+			return map;
+		}
 
-			private static Dictionary<string, string> FireFlyMap()
-			{
-					var map = new Dictionary<string, string>()
-												{
-														{"Caption", "Mal"},
-														{"2nd In Command", "Zoey"},
-														{"Pilot", "Wash"},
-														{"Companion", "Inara"},
-														{"Muscle", "Jayne"},
-														{"Mechanic", "Kaylee"},
-														{"Doctor", "Simon"},
-														{"Pastor", "Book"},
-														{"Stoaway", "River"}
-												};
-					return map;
-			}
-
-			[Test]
+		[Test]
 		public void EnumerableWithFormatter()
 		{
 			Approvals.VerifyAll(text, (t) => "" + t.Length);
 		}
-
-		
 	}
 }

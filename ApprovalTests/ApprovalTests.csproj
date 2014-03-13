@@ -105,7 +105,7 @@
     <Compile Include="Asp\PortFactory.cs" />
     <Compile Include="Combinations\CombinationApprovals.cs" />
     <Compile Include="Core\IApprovalReporterWithCleanUp.cs" />
-    <Compile Include="Core\Approvals.cs" />
+    <Compile Include="Core\Approver.cs" />
     <Compile Include="Approvals.cs" />
     <Compile Include="Core\Exceptions\ApprovalException.cs" />
     <Compile Include="Core\Exceptions\ApprovalMismatchException.cs" />
