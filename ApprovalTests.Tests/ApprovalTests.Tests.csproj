@@ -87,6 +87,7 @@
     <Compile Include="Asp\RenderHtmlTest.cs" />
     <Compile Include="Asp\UrlTest.cs" />
     <Compile Include="CleanupReporter.cs" />
+    <Compile Include="Core\Exceptions\SerializableExceptionsTest.cs" />
     <Compile Include="RunMaintenance.cs" />
     <Compile Include="Email\EmailTest.cs" />
     <Compile Include="EntityFramework\CompanyList.cs" />
