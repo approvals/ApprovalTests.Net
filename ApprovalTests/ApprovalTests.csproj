@@ -184,6 +184,7 @@
     <Compile Include="Reporters\UseReporterAttribute.cs" />
     <Compile Include="StackTraceScrubber.cs" />
     <Compile Include="TheoryTests\SerializableTheory.cs" />
+    <Compile Include="Utilities\StringReporting.cs" />
     <Compile Include="WinForms\WinFormsApprovals.cs" />
     <Compile Include="WinForms\WinFormsUtils.cs" />
     <Compile Include="Wpf\ApprovalWpfWindowWriter.cs" />
