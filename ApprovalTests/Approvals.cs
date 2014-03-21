@@ -95,14 +95,14 @@ namespace ApprovalTests
 			Verify(writer, GetDefaultNamer(), GetReporter());
 		}
 
-		public static void VerifyFile(string file)
+		public static void VerifyFile(string receivedFilePath)
 		{
-			Verify(new ExistingFileWriter(file));
+			Verify(new ExistingFileWriter(receivedFilePath));
 		}
 
-		public static void Verify(FileInfo file)
+		public static void Verify(FileInfo receivedFilePath)
 		{
-			VerifyFile(file.FullName);
+			VerifyFile(receivedFilePath.FullName);
 		}
 
 		public static void VerifyWithCallback(object text, Action<string> callBackOnFailure)

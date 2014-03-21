@@ -15,6 +15,7 @@ namespace ApprovalUtilities.SimpleLogger.Writers
 		{
 			lock (this)
 			{
+				InitialWrite();
 				File.AppendAllText(LogFile, text + Environment.NewLine);
 			}
 		}
@@ -27,7 +28,7 @@ namespace ApprovalUtilities.SimpleLogger.Writers
 			set
 			{
 				getLogFile = value;
-				InitialWrite(value());
+				logFilePath = null;
 			}
 		}
 
@@ -36,26 +37,23 @@ namespace ApprovalUtilities.SimpleLogger.Writers
 		{
 			get
 			{
-				var logFile = GetLogFile();
-				InitialWrite(logFile);
-				return logFile;
+				return GetLogFile();
 			}
 			set
 			{
 				GetLogFile = () => value;
-				InitialWrite(value);
 			}
 		}
 
-		private void InitialWrite(string value)
+		private void InitialWrite()
 		{
-			if (value.Equals(logFilePath))
+			if (logFilePath != null)
 			{
 				return;
 			}
-			logFilePath = value;
-			EnsureDirectoryExists(new FileInfo(value).Directory);
-			var message = "Logging to:" + value;
+			logFilePath = getLogFile();
+			EnsureDirectoryExists(new FileInfo(logFilePath).Directory);
+			var message = "Logging to:" + logFilePath;
 			Console.WriteLine(message);
 			Debug.WriteLine(message);
 		}
