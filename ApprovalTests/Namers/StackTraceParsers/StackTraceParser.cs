@@ -9,7 +9,7 @@ namespace ApprovalTests.Namers.StackTraceParsers
 {
 	public class StackTraceParser : IStackTraceParser
 	{
-		private static readonly IList<IStackTraceParser> parsers = new List<IStackTraceParser>();
+		private static IList<IStackTraceParser> parsers = (IList<IStackTraceParser>) GetParsers();
 		private IStackTraceParser parser;
 
 		public string ForTestingFramework
@@ -39,9 +39,9 @@ namespace ApprovalTests.Namers.StackTraceParsers
 				              GetType(),
 				              typeof (IStackTraceParser),
 				              helpLink))
-			      	{
-			      		HelpLink = helpLink
-			      	};
+				{
+					HelpLink = helpLink
+				};
 		}
 
 		public string ApprovalName
@@ -66,15 +66,17 @@ namespace ApprovalTests.Namers.StackTraceParsers
 		{
 			parsers.Add(parser);
 		}
+
 		public static IEnumerable<IStackTraceParser> GetParsers()
 		{
-			if (parsers.Count == 0)
+			if (parsers == null)
 			{
+				parsers = new List<IStackTraceParser>();
 				LoadIfApplicable(parsers, new NUnitStackTraceParser());
 				LoadIfApplicable(parsers, new VSStackTraceParser());
 				LoadIfApplicable(parsers, new MbUnitStackTraceParser());
-				LoadIfApplicable(parsers,new XUnitStackTraceParser());
-				LoadIfApplicable(parsers,new XUnitTheoryStackTraceParser());
+				LoadIfApplicable(parsers, new XUnitStackTraceParser());
+				LoadIfApplicable(parsers, new XUnitTheoryStackTraceParser());
 				parsers.Add(new MSpecStackTraceParser());
 			}
 			return parsers;

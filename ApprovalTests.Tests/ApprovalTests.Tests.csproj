@@ -88,6 +88,7 @@
     <Compile Include="Asp\UrlTest.cs" />
     <Compile Include="CleanupReporter.cs" />
     <Compile Include="Core\Exceptions\SerializableExceptionsTest.cs" />
+    <Compile Include="Namer\StackTraceParsers\Class1.cs" />
     <Compile Include="RunMaintenance.cs" />
     <Compile Include="Email\EmailTest.cs" />
     <Compile Include="EntityFramework\CompanyList.cs" />
@@ -183,7 +184,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="obj\" />
-    <Folder Include="StackTraceParsers\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
