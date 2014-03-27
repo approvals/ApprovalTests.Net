@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ApprovalTests.Tests</RootNamespace>
     <AssemblyName>ApprovalTests.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -44,6 +44,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -52,6 +53,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CassiniDev4-lib">
@@ -67,6 +69,7 @@
     <Reference Include="PresentationCore">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -140,6 +143,10 @@
     <Compile Include="Reporters\RecordingReporter.cs" />
     <Compile Include="Reporters\ReporterFactoryTest.cs" />
     <Compile Include="Reporters\TortoiseImageDiffTest.cs" />
+    <Compile Include="WindowsRegistry\RegistryAssertTests.cs" />
+    <Compile Include="Wpf\WpfBindingTests.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Writers\ExistingFileTest.cs" />
     <Compile Include="Writers\WriterFactoryTests.cs" />
     <Compile Include="Xml\XmlTest.cs" />

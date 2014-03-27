@@ -1,0 +1,2 @@
+﻿This Value is gone
+Must set DWORD HKEY_CURRENT_USER\Console : IMadeThisUp = 1.

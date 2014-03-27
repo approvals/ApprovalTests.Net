@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
   <!-- EF Runtime content -->
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="StoreContainer">
-          <EntitySet Name="Company" EntityType="Store.Company" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Employee" EntityType="Store.Employee" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Events" EntityType="Store.Events" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Job" EntityType="Store.Job" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="sysdiagrams" EntityType="Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Company" EntityType="Store.Company" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Employee" EntityType="Store.Employee" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Events" EntityType="Store.Events" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Job" EntityType="Store.Job" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="sysdiagrams" EntityType="Store.sysdiagrams" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
           <AssociationSet Name="FK_Boss" Association="Store.FK_Boss">
             <End Role="Employee" EntitySet="Employee" />
             <End Role="Employee1" EntitySet="Employee" />
@@ -124,8 +124,8 @@
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
-        <EntityContainer Name="ModelContainer" annotation:LazyLoadingEnabled="true">
+      <Schema Namespace="Model" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ModelContainer" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
           <EntitySet Name="Companies" EntityType="Model.Company" />
           <EntitySet Name="Employees" EntityType="Model.Employee" />
           <EntitySet Name="Events" EntityType="Model.Event" />
@@ -152,7 +152,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Website" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Employees" Relationship="Model.FK_Employee_Company" FromRole="Company" ToRole="Employee" />
@@ -161,7 +161,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="Int32" Name="Boss" />
           <Property Type="Int32" Name="Company" />
@@ -175,7 +175,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="Int32" Name="Employee" />
           <Property Type="String" Name="EventTitle" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Details" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -185,7 +185,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="String" Name="Title" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="Int32" Name="Employee" Nullable="false" />
           <Property Type="String" Name="Status" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -197,7 +197,7 @@
           </Key>
           <Property Type="String" Name="name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
           <Property Type="Int32" Name="principal_id" Nullable="false" />
-          <Property Type="Int32" Name="diagram_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="diagram_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="Int32" Name="version" />
           <Property Type="Binary" Name="definition" MaxLength="Max" FixedLength="false" />
         </EntityType>
@@ -253,8 +253,8 @@
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="StoreContainer" CdmEntityContainer="ModelContainer" >
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="StoreContainer" CdmEntityContainer="ModelContainer">
           <EntitySetMapping Name="Companies">
             <EntityTypeMapping TypeName="Model.Company">
               <MappingFragment StoreEntitySet="Company">
@@ -309,14 +309,14 @@
 </Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
-  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <edmx:Designer>
     <edmx:Connection>
-      <DesignerInfoPropertySet>
+      <DesignerInfoPropertySet xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
         <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
       </DesignerInfoPropertySet>
     </edmx:Connection>
     <edmx:Options>
-      <DesignerInfoPropertySet>
+      <DesignerInfoPropertySet xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="True" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
@@ -324,27 +324,27 @@
     </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram Name="Model" >
+      <Diagram Name="Model" xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
         <EntityTypeShape EntityType="Model.Company" Width="1.5" PointX="0.75" PointY="2.5" Height="1.7879850260416665" />
         <EntityTypeShape EntityType="Model.Employee" Width="1.5" PointX="3" PointY="2" Height="2.7494921874999991" />
         <EntityTypeShape EntityType="Model.Event" Width="1.5" PointX="5.25" PointY="1" Height="1.9802864583333335" />
         <EntityTypeShape EntityType="Model.Job" Width="1.5" PointX="5.25" PointY="3.75" Height="1.9802864583333335" />
         <EntityTypeShape EntityType="Model.sysdiagram" Width="1.5" PointX="0.75" PointY="5.75" Height="1.9802864583333317" />
-        <AssociationConnector Association="Model.FK_Employee_Company" >
+        <AssociationConnector Association="Model.FK_Employee_Company">
           <ConnectorPoint PointX="2.25" PointY="3.3939925130208333" />
           <ConnectorPoint PointX="3" PointY="3.3939925130208333" />
         </AssociationConnector>
-        <AssociationConnector Association="Model.FK_Boss" >
+        <AssociationConnector Association="Model.FK_Boss">
           <ConnectorPoint PointX="3.5319230769230767" PointY="4.7494921875" />
           <ConnectorPoint PointX="3.5319230769230767" PointY="4.9994921875" />
           <ConnectorPoint PointX="3.9784615384615383" PointY="4.9994921875" />
           <ConnectorPoint PointX="3.9784615384615383" PointY="4.7494921875" />
         </AssociationConnector>
-        <AssociationConnector Association="Model.FK_Events_Employee" >
+        <AssociationConnector Association="Model.FK_Events_Employee">
           <ConnectorPoint PointX="4.5" PointY="2.4901432291666667" />
           <ConnectorPoint PointX="5.25" PointY="2.4901432291666667" />
         </AssociationConnector>
-        <AssociationConnector Association="Model.FK_Job_Employee" >
+        <AssociationConnector Association="Model.FK_Job_Employee">
           <ConnectorPoint PointX="4.5" PointY="4.24974609375" />
           <ConnectorPoint PointX="5.25" PointY="4.24974609375" />
         </AssociationConnector>

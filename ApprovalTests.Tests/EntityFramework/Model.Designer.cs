@@ -8,12 +8,13 @@
 //------------------------------------------------------------------------------
 
 using System;
+using System.ComponentModel;
+using System.Data.EntityClient;
 using System.Data.Objects;
 using System.Data.Objects.DataClasses;
-using System.Data.EntityClient;
-using System.ComponentModel;
-using System.Xml.Serialization;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Xml.Serialization;
 
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
@@ -60,6 +61,7 @@ namespace ApprovalTests.Tests.EntityFramework
         public ModelContainer(EntityConnection connection) : base(connection, "ModelContainer")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
+            OnContextCreated();
         }
     
         #endregion
@@ -153,6 +155,7 @@ namespace ApprovalTests.Tests.EntityFramework
         private ObjectSet<sysdiagram> _sysdiagrams;
 
         #endregion
+
         #region AddTo Methods
     
         /// <summary>
@@ -196,11 +199,11 @@ namespace ApprovalTests.Tests.EntityFramework
         }
 
         #endregion
+
     }
-    
 
     #endregion
-    
+
     #region Entities
     
     /// <summary>
@@ -225,7 +228,8 @@ namespace ApprovalTests.Tests.EntityFramework
         }
 
         #endregion
-        #region Primitive Properties
+
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -244,7 +248,7 @@ namespace ApprovalTests.Tests.EntityFramework
                 {
                     OnIdChanging(value);
                     ReportPropertyChanging("Id");
-                    _Id = StructuralObject.SetValidValue(value);
+                    _Id = StructuralObject.SetValidValue(value, "Id");
                     ReportPropertyChanged("Id");
                     OnIdChanged();
                 }
@@ -269,7 +273,7 @@ namespace ApprovalTests.Tests.EntityFramework
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -293,7 +297,7 @@ namespace ApprovalTests.Tests.EntityFramework
             {
                 OnWebsiteChanging(value);
                 ReportPropertyChanging("Website");
-                _Website = StructuralObject.SetValidValue(value, true);
+                _Website = StructuralObject.SetValidValue(value, true, "Website");
                 ReportPropertyChanged("Website");
                 OnWebsiteChanged();
             }
@@ -303,7 +307,7 @@ namespace ApprovalTests.Tests.EntityFramework
         partial void OnWebsiteChanged();
 
         #endregion
-    
+
         #region Navigation Properties
     
         /// <summary>
@@ -329,6 +333,7 @@ namespace ApprovalTests.Tests.EntityFramework
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -353,7 +358,8 @@ namespace ApprovalTests.Tests.EntityFramework
         }
 
         #endregion
-        #region Primitive Properties
+
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -372,7 +378,7 @@ namespace ApprovalTests.Tests.EntityFramework
                 {
                     OnIdChanging(value);
                     ReportPropertyChanging("Id");
-                    _Id = StructuralObject.SetValidValue(value);
+                    _Id = StructuralObject.SetValidValue(value, "Id");
                     ReportPropertyChanged("Id");
                     OnIdChanged();
                 }
@@ -397,7 +403,7 @@ namespace ApprovalTests.Tests.EntityFramework
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -421,7 +427,7 @@ namespace ApprovalTests.Tests.EntityFramework
             {
                 OnBossChanging(value);
                 ReportPropertyChanging("Boss");
-                _Boss = StructuralObject.SetValidValue(value);
+                _Boss = StructuralObject.SetValidValue(value, "Boss");
                 ReportPropertyChanged("Boss");
                 OnBossChanged();
             }
@@ -445,7 +451,7 @@ namespace ApprovalTests.Tests.EntityFramework
             {
                 OnCompanyChanging(value);
                 ReportPropertyChanging("Company");
-                _Company = StructuralObject.SetValidValue(value);
+                _Company = StructuralObject.SetValidValue(value, "Company");
                 ReportPropertyChanged("Company");
                 OnCompanyChanged();
             }
@@ -455,7 +461,7 @@ namespace ApprovalTests.Tests.EntityFramework
         partial void OnCompanyChanged();
 
         #endregion
-    
+
         #region Navigation Properties
     
         /// <summary>
@@ -601,6 +607,7 @@ namespace ApprovalTests.Tests.EntityFramework
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -625,7 +632,8 @@ namespace ApprovalTests.Tests.EntityFramework
         }
 
         #endregion
-        #region Primitive Properties
+
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -644,7 +652,7 @@ namespace ApprovalTests.Tests.EntityFramework
                 {
                     OnIdChanging(value);
                     ReportPropertyChanging("Id");
-                    _Id = StructuralObject.SetValidValue(value);
+                    _Id = StructuralObject.SetValidValue(value, "Id");
                     ReportPropertyChanged("Id");
                     OnIdChanged();
                 }
@@ -669,7 +677,7 @@ namespace ApprovalTests.Tests.EntityFramework
             {
                 OnEmployeeChanging(value);
                 ReportPropertyChanging("Employee");
-                _Employee = StructuralObject.SetValidValue(value);
+                _Employee = StructuralObject.SetValidValue(value, "Employee");
                 ReportPropertyChanged("Employee");
                 OnEmployeeChanged();
             }
@@ -693,7 +701,7 @@ namespace ApprovalTests.Tests.EntityFramework
             {
                 OnEventTitleChanging(value);
                 ReportPropertyChanging("EventTitle");
-                _EventTitle = StructuralObject.SetValidValue(value, true);
+                _EventTitle = StructuralObject.SetValidValue(value, true, "EventTitle");
                 ReportPropertyChanged("EventTitle");
                 OnEventTitleChanged();
             }
@@ -717,7 +725,7 @@ namespace ApprovalTests.Tests.EntityFramework
             {
                 OnDetailsChanging(value);
                 ReportPropertyChanging("Details");
-                _Details = StructuralObject.SetValidValue(value, true);
+                _Details = StructuralObject.SetValidValue(value, true, "Details");
                 ReportPropertyChanged("Details");
                 OnDetailsChanged();
             }
@@ -727,7 +735,7 @@ namespace ApprovalTests.Tests.EntityFramework
         partial void OnDetailsChanged();
 
         #endregion
-    
+
         #region Navigation Properties
     
         /// <summary>
@@ -769,6 +777,7 @@ namespace ApprovalTests.Tests.EntityFramework
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -795,7 +804,8 @@ namespace ApprovalTests.Tests.EntityFramework
         }
 
         #endregion
-        #region Primitive Properties
+
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -814,7 +824,7 @@ namespace ApprovalTests.Tests.EntityFramework
                 {
                     OnIdChanging(value);
                     ReportPropertyChanging("Id");
-                    _Id = StructuralObject.SetValidValue(value);
+                    _Id = StructuralObject.SetValidValue(value, "Id");
                     ReportPropertyChanged("Id");
                     OnIdChanged();
                 }
@@ -839,7 +849,7 @@ namespace ApprovalTests.Tests.EntityFramework
             {
                 OnTitleChanging(value);
                 ReportPropertyChanging("Title");
-                _Title = StructuralObject.SetValidValue(value, true);
+                _Title = StructuralObject.SetValidValue(value, true, "Title");
                 ReportPropertyChanged("Title");
                 OnTitleChanged();
             }
@@ -863,7 +873,7 @@ namespace ApprovalTests.Tests.EntityFramework
             {
                 OnEmployeeChanging(value);
                 ReportPropertyChanging("Employee");
-                _Employee = StructuralObject.SetValidValue(value);
+                _Employee = StructuralObject.SetValidValue(value, "Employee");
                 ReportPropertyChanged("Employee");
                 OnEmployeeChanged();
             }
@@ -887,7 +897,7 @@ namespace ApprovalTests.Tests.EntityFramework
             {
                 OnStatusChanging(value);
                 ReportPropertyChanging("Status");
-                _Status = StructuralObject.SetValidValue(value, true);
+                _Status = StructuralObject.SetValidValue(value, true, "Status");
                 ReportPropertyChanged("Status");
                 OnStatusChanged();
             }
@@ -897,7 +907,7 @@ namespace ApprovalTests.Tests.EntityFramework
         partial void OnStatusChanged();
 
         #endregion
-    
+
         #region Navigation Properties
     
         /// <summary>
@@ -939,6 +949,7 @@ namespace ApprovalTests.Tests.EntityFramework
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -967,7 +978,8 @@ namespace ApprovalTests.Tests.EntityFramework
         }
 
         #endregion
-        #region Primitive Properties
+
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -984,7 +996,7 @@ namespace ApprovalTests.Tests.EntityFramework
             {
                 OnnameChanging(value);
                 ReportPropertyChanging("name");
-                _name = StructuralObject.SetValidValue(value, false);
+                _name = StructuralObject.SetValidValue(value, false, "name");
                 ReportPropertyChanged("name");
                 OnnameChanged();
             }
@@ -1008,7 +1020,7 @@ namespace ApprovalTests.Tests.EntityFramework
             {
                 Onprincipal_idChanging(value);
                 ReportPropertyChanging("principal_id");
-                _principal_id = StructuralObject.SetValidValue(value);
+                _principal_id = StructuralObject.SetValidValue(value, "principal_id");
                 ReportPropertyChanged("principal_id");
                 Onprincipal_idChanged();
             }
@@ -1034,7 +1046,7 @@ namespace ApprovalTests.Tests.EntityFramework
                 {
                     Ondiagram_idChanging(value);
                     ReportPropertyChanging("diagram_id");
-                    _diagram_id = StructuralObject.SetValidValue(value);
+                    _diagram_id = StructuralObject.SetValidValue(value, "diagram_id");
                     ReportPropertyChanged("diagram_id");
                     Ondiagram_idChanged();
                 }
@@ -1059,7 +1071,7 @@ namespace ApprovalTests.Tests.EntityFramework
             {
                 OnversionChanging(value);
                 ReportPropertyChanging("version");
-                _version = StructuralObject.SetValidValue(value);
+                _version = StructuralObject.SetValidValue(value, "version");
                 ReportPropertyChanged("version");
                 OnversionChanged();
             }
@@ -1083,7 +1095,7 @@ namespace ApprovalTests.Tests.EntityFramework
             {
                 OndefinitionChanging(value);
                 ReportPropertyChanging("definition");
-                _definition = StructuralObject.SetValidValue(value, true);
+                _definition = StructuralObject.SetValidValue(value, true, "definition");
                 ReportPropertyChanged("definition");
                 OndefinitionChanged();
             }
@@ -1093,9 +1105,9 @@ namespace ApprovalTests.Tests.EntityFramework
         partial void OndefinitionChanged();
 
         #endregion
-    
+
     }
 
     #endregion
-    
+
 }

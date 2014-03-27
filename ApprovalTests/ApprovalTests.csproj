@@ -185,8 +185,11 @@
     <Compile Include="StackTraceScrubber.cs" />
     <Compile Include="TheoryTests\SerializableTheory.cs" />
     <Compile Include="Utilities\StringReporting.cs" />
+    <Compile Include="WindowsRegistry\WindowsRegistryAssert.cs" />
     <Compile Include="WinForms\WinFormsApprovals.cs" />
     <Compile Include="WinForms\WinFormsUtils.cs" />
+    <Compile Include="Wpf\AssertNoBindingErrorsTraceListener.cs" />
+    <Compile Include="Wpf\WpfBindingsAssert.cs" />
     <Compile Include="Wpf\ApprovalWpfWindowWriter.cs" />
     <Compile Include="Wpf\ImageWriter.cs" />
     <Compile Include="WinForms\ApprovalControlWriter.cs" />
