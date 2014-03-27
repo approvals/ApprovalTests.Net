@@ -86,7 +86,7 @@ namespace ApprovalTests
 
 		public static void Verify(IExecutableQuery query)
 		{
-			Verify(new ApprovalTextWriter(query.GetQuery()), GetDefaultNamer(),
+			Verify(WriterFactory.CreateTextWriter(query.GetQuery()), GetDefaultNamer(),
 			       new ExecutableQueryFailure(query, GetReporter()));
 		}
 
@@ -119,7 +119,7 @@ namespace ApprovalTests
 
 		public static void Verify(string text)
 		{
-			Verify(new ApprovalTextWriter(text));
+			Verify(WriterFactory.CreateTextWriter(text));
 		}
 
 		public static void RegisterDefaultNamerCreation(Func<IApprovalNamer> creator)
@@ -134,11 +134,11 @@ namespace ApprovalTests
 
 		public static void Verify(object text)
 		{
-			Verify(new ApprovalTextWriter("" + text));
+			Verify(WriterFactory.CreateTextWriter("" + text));
 		}
 		public static void Verify(string text,  Func<string, string> scrubber)
 		{
-			Verify(new ApprovalTextWriter(scrubber(text)));
+			Verify(WriterFactory.CreateTextWriter(scrubber(text)));
 		}
 
 		public static void Verify(Exception e)

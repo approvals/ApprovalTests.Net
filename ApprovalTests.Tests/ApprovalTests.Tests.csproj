@@ -141,6 +141,7 @@
     <Compile Include="Reporters\ReporterFactoryTest.cs" />
     <Compile Include="Reporters\TortoiseImageDiffTest.cs" />
     <Compile Include="Writers\ExistingFileTest.cs" />
+    <Compile Include="Writers\WriterFactoryTests.cs" />
     <Compile Include="Xml\XmlTest.cs" />
   </ItemGroup>
   <ItemGroup>

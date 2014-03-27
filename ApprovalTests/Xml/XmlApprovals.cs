@@ -1,4 +1,5 @@
-﻿using ApprovalUtilities.Xml;
+﻿using ApprovalTests.Writers;
+using ApprovalUtilities.Xml;
 
 namespace ApprovalTests.Xml
 {
@@ -12,7 +13,7 @@ namespace ApprovalTests.Xml
 		public static void VerifyText(string text, string fileExtensionWithoutDot, bool safely)
 		{
 			text = XmlUtils.FormatXml(text, safe: safely);
-			ApprovalTests.Approvals.Verify(new ApprovalTextWriter(text, fileExtensionWithoutDot));
+			ApprovalTests.Approvals.Verify(WriterFactory.CreateTextWriter(text, fileExtensionWithoutDot));
 		}
 
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Mail;
+using ApprovalTests.Writers;
 using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.Email
@@ -21,7 +22,7 @@ namespace ApprovalTests.Email
 			{
 				emailText = scrubber.Invoke(emailText);
 			}
-			Approvals.Verify(new ApprovalTextWriter(emailText, "eml"));
+			Approvals.Verify(WriterFactory.CreateTextWriter(emailText, "eml"));
 		}
 
 		public static string CreateEmail(MailMessage email)
