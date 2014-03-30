@@ -13,23 +13,29 @@ namespace ApprovalTests.Xunit.Namer
 			var name = new UnitTestFrameworkNamer().Name;
 			Assert.Equal("XunitTheoryStackTraceParserTest.TestApprovalName", name);
 		}
- 
+
 		[Theory]
 		[InlineData("file1.txt")]
 		[InlineData("file2.txt")]
 		public void TestApprovalNameWithAdditionalInformation(string fileName)
 		{
-			ApprovalResults.ForScenario(fileName);
-			var name = new UnitTestFrameworkNamer().Name;
-			Assert.Equal("XunitTheoryStackTraceParserTest.TestApprovalNameWithAdditionalInformation.ForScenario." + fileName, name);
+			using (ApprovalResults.ForScenario(fileName))
+			{
+				var name = new UnitTestFrameworkNamer().Name;
+				Assert.Equal("XunitTheoryStackTraceParserTest.TestApprovalNameWithAdditionalInformation.ForScenario." + fileName,
+				             name);
+			}
 		}
+
 		[Theory]
 		[InlineData("File \\;:/\"1.txt")]
 		public void TestInvalidCharacters(string fileName)
 		{
-			ApprovalResults.ForScenario(fileName);
-			var name = new UnitTestFrameworkNamer().Name;
-			Assert.Equal("XunitTheoryStackTraceParserTest.TestInvalidCharacters.ForScenario.File _;___1.txt", name);
+			using (ApprovalResults.ForScenario(fileName))
+			{
+				var name = new UnitTestFrameworkNamer().Name;
+				Assert.Equal("XunitTheoryStackTraceParserTest.TestInvalidCharacters.ForScenario.File _;___1.txt", name);
+			}
 		}
 	}
 }

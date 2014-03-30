@@ -77,9 +77,10 @@ namespace ApprovalTests.Namers
 			return NamerFactory.AsEnvironmentSpecificTest(GetUserName);
 		}
 
-		public static string ForScenario(string data)
+		public static IDisposable ForScenario(string data)
 		{
-			return NamerFactory.AdditionalInformation = "ForScenario." + Scrub(data);
+			var name = "ForScenario." + Scrub(data);
+			return NamerFactory.AsEnvironmentSpecificTest(() => name);
 		}
 
 		public static string Scrub(string data)
