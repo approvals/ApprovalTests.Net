@@ -32,5 +32,40 @@ namespace ApprovalTests.Tests.Namer
 			var name = Approvals.GetDefaultNamer().Name;
 			Assert.AreEqual("AdditionalInformationTests.WithoutExtraInfo", name);
 		}
+		   [Test]
+       public void WithScenarioData()
+       {
+           using (ApprovalResults.ForScenario("scenarioname"))
+           {
+ 
+               var name = Approvals.GetDefaultNamer().Name;
+               Assert.AreEqual("AdditionalInformationTests.WithScenarioData.ForScenario.scenarioname", name);
+           }
+       }
+ 
+       
+ 
+       [Test]
+       public void WithScenarioDataScrubsInvalidChars()
+       {
+           using (ApprovalResults.ForScenario("invalid/chars"))
+           {
+ 
+               var name = Approvals.GetDefaultNamer().Name;
+               Assert.AreEqual(
+                   "AdditionalInformationTests.WithScenarioDataScrubsInvalidChars.ForScenario.invalid_chars", name);
+           }
+       }
+ 
+       [Test]
+			 [TestCase("foo", "bar")]
+       public void WithMultiplePartScenarioData(string a, string b)
+       {
+           using (ApprovalResults.ForScenario(a,b))
+           {
+               var name = Approvals.GetDefaultNamer().Name;
+               Assert.AreEqual("AdditionalInformationTests.WithMultiplePartScenarioData.ForScenario.foo.bar", name);
+           }
+       }
 	}
 }

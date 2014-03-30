@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Management;
+using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.Namers
 {
@@ -10,7 +11,6 @@ namespace ApprovalTests.Namers
 		public static IDisposable UniqueForDotNetVersion()
 		{
 			return NamerFactory.AsEnvironmentSpecificTest(GetDotNetVersion);
-			
 		}
 
 		public static string GetDotNetVersion()
@@ -81,6 +81,12 @@ namespace ApprovalTests.Namers
 		{
 			var name = "ForScenario." + Scrub(data);
 			return NamerFactory.AsEnvironmentSpecificTest(() => name);
+		}
+
+		public static IDisposable ForScenario(params object[] dataPoints)
+		{
+			var name = dataPoints.JoinStringsWith(o => "" + o, ".");
+			return ForScenario(name);
 		}
 
 		public static string Scrub(string data)
