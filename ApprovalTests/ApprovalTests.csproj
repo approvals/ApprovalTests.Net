@@ -76,6 +76,9 @@
     <Reference Include="PresentationFramework">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="StatePrinter">
+      <HintPath>..\packages\StatePrinter.1.0.1\lib\net35\StatePrinter.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core">
@@ -183,6 +186,7 @@
     <Compile Include="Namers\UnitTestFrameworks\VSStackTraceParser.cs" />
     <Compile Include="Reporters\UseReporterAttribute.cs" />
     <Compile Include="StackTraceScrubber.cs" />
+    <Compile Include="StatePrinter\StatePrinterApprovals.cs" />
     <Compile Include="TheoryTests\SerializableTheory.cs" />
     <Compile Include="Utilities\StringReporting.cs" />
     <Compile Include="WindowsRegistry\WindowsRegistryAssert.cs" />
@@ -245,6 +249,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="FodyWeavers.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="gfx\stateprinter.ico" />
+    <Content Include="gfx\stateprinter.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />

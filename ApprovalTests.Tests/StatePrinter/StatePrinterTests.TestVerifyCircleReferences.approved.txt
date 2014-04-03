@@ -1,0 +1,13 @@
+﻿Root = <Turtle>, ref: 0
+{
+    Name = "jim"
+    On = <Turtle>
+    {
+        Name = "kasper"
+        On = <Turtle>
+        {
+            Name = "llewellyn"
+            On =  -> 0
+        }
+    }
+}
