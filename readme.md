@@ -49,6 +49,7 @@ Examples
 ---
 [Sample Code](https://github.com/approvals/ApprovalTests.Net/tree/master/ApprovalDemos/GettingStartedDemos)
 
+```c#
    	[UseReporter(typeof(DiffReporter))]
 	[TestFixture]
 	public class SampleTest
@@ -61,6 +62,7 @@ Examples
 			Approvals.VerifyAll(names, "");
 		}
 	}
+```
 
 Will Produce a File 
 
