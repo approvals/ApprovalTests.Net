@@ -73,6 +73,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
@@ -92,6 +93,7 @@
     <Compile Include="CleanupReporter.cs" />
     <Compile Include="Core\Exceptions\SerializableExceptionsTest.cs" />
     <Compile Include="Namer\StackTraceParsers\Class1.cs" />
+    <Compile Include="Reporters\P4MergeReporterTest.cs" />
     <Compile Include="RunMaintenance.cs" />
     <Compile Include="Email\EmailTest.cs" />
     <Compile Include="EntityFramework\CompanyList.cs" />

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -140,7 +141,18 @@ Recieved {0} ({1}, {2}, {3})"
 		{
 			if (!File.Exists(approved))
 			{
-				File.WriteAllText(approved, " ", Encoding.UTF8);
+                var extension = "." + approved.Split('.').Last();
+                if (IMAGE_FILE_TYPES.Contains(extension))
+                {
+                    using (var bitmap = new Bitmap(1, 1))
+                    {
+                        bitmap.Save(approved);
+                    }
+                }
+                else
+                {
+                    File.Create(approved).Dispose();
+                }
 				ReporterEvents.CreatedApprovedFile(approved);
 			}
 		}
