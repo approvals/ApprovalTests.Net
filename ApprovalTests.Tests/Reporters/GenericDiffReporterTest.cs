@@ -54,5 +54,19 @@ namespace ApprovalTests.Tests.Reporters
 			GenericDiffReporter.RegisterTextFileTypes(".myCrazyExtension");
 			Assert.IsTrue(r.IsWorkingInThisEnvironment("file.myCrazyExtension"));
 		}
+
+
+		[Test]
+		[UseReporter(typeof (ClipboardReporter))]
+		public void TestEnsureFileExist()
+		{
+			var imageFile = PathUtilities.GetAdjacentFile("TestImage.png");
+			if (File.Exists(imageFile))
+			{
+				File.Delete(imageFile);
+			}
+			GenericDiffReporter.EnsureFileExists(imageFile);
+			Approvals.VerifyFile(imageFile);
+		}
 	}
 }

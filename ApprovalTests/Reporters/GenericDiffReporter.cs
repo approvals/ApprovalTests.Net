@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -136,11 +137,22 @@ Recieved {0} ({1}, {2}, {3})"
 			LaunchAsync(GetLaunchArguments(approved, received));
 		}
 
-		private static void EnsureFileExists(string approved)
+		public static void EnsureFileExists(string approved)
 		{
 			if (!File.Exists(approved))
 			{
-				File.WriteAllText(approved, " ", Encoding.UTF8);
+				var fileType = new FileInfo(approved).Extension;
+				if (IMAGE_FILE_TYPES.Contains(fileType))
+				{
+					using (var bitmap = new Bitmap(1, 1))
+					{
+						bitmap.Save(approved);
+					}
+				}
+				else
+				{
+					File.WriteAllText(approved, " ", Encoding.UTF8);
+				}
 				ReporterEvents.CreatedApprovedFile(approved);
 			}
 		}
