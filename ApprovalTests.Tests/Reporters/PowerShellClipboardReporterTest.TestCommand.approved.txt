@@ -1,0 +1,1 @@
+﻿Move-Item "c:\temp\recieved.txt" "c:\temp\approved.txt" -Force

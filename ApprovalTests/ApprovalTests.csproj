@@ -144,6 +144,7 @@
     <Compile Include="Reporters\ClipboardReporter.cs" />
     <Compile Include="Reporters\CodeCompareReporter.cs" />
     <Compile Include="Reporters\CollectionUtilities.cs" />
+    <Compile Include="Reporters\PowershellClipboardReporter.cs" />
     <Compile Include="Reporters\CruiseControlNetReporter.cs" />
     <Compile Include="Reporters\AllFailingTestsClipboardReporter.cs" />
     <Compile Include="Reporters\MightyMooseAutoTestReporter.cs" />
