@@ -8,6 +8,7 @@ using ApprovalTests.Core;
 using ApprovalTests.Html;
 using ApprovalTests.Namers;
 using ApprovalTests.Reporters;
+using ApprovalTests.Scrubber;
 using ApprovalTests.Writers;
 using ApprovalTests.Xml;
 using ApprovalUtilities.CallStack;

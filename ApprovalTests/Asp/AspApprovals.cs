@@ -4,6 +4,7 @@ using System.Text;
 using System.Web;
 using System.Web.Routing;
 using ApprovalTests.Html;
+using ApprovalTests.Scrubber;
 using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.Asp

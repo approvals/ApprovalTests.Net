@@ -1,4 +1,5 @@
 ﻿# if DEBUG
+using ApprovalTests.Scrubber;
 using System;
 using System.Text.RegularExpressions;
 using ApprovalTests.Asp;
@@ -43,7 +44,7 @@ namespace ApprovalTests.Tests.Asp
 		[Test]
 		public void TestInternationalization()
 		{
-			AspApprovals.VerifyUrl("http://localhost:1359/Encoding.UTF8.html");
+			AspApprovals.VerifyUrl("http://localhost:1359/Encoding.UTF8.html", BrowserLink.Scrub);
 		}
 	}
 }
