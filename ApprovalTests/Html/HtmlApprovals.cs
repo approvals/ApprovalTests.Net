@@ -1,4 +1,6 @@
-﻿using ApprovalTests.Xml;
+﻿using System;
+using ApprovalTests.Scrubber;
+using ApprovalTests.Xml;
 
 namespace ApprovalTests.Html
 {
@@ -6,7 +8,12 @@ namespace ApprovalTests.Html
 	{
 		public static void VerifyHtml(string html)
 		{
-			XmlApprovals.VerifyText(html, "html", true);
+            VerifyHtml(html, ScrubberUtils.NO_SCRUBBER);
+		}
+
+        public static void VerifyHtml(string html, Func<string, string> scrubber)
+		{
+			XmlApprovals.VerifyText(html, "html", true, scrubber);
 		}
 
 		/// <summary>
@@ -14,7 +21,7 @@ namespace ApprovalTests.Html
 		/// </summary>
 		public static void VerifyHtmlStrict(string html)
 		{
-			XmlApprovals.VerifyText(html, "html", false);
+			XmlApprovals.VerifyText(html, "html", false, ScrubberUtils.NO_SCRUBBER);
 		}
 	}
 }

@@ -4,6 +4,7 @@ using System.Net;
 using System.Text;
 using System.Web.Mvc;
 using ApprovalTests.Html;
+using ApprovalTests.Scrubber;
 using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.Asp.Mvc
@@ -54,11 +55,12 @@ namespace ApprovalTests.Asp.Mvc
 		{
 			string clazz = func.Target.GetType().Name.Replace("Controller", String.Empty);
 			string action = func.Method.Name;
-			AspApprovals.VerifyUrl("http://localhost:{0}/{1}/{2}".FormatWith(PortFactory.MvcPort, clazz, action));
+		    var url = "http://localhost:{0}/{1}/{2}".FormatWith(PortFactory.MvcPort, clazz, action);
+		    AspApprovals.VerifyUrl(url, HtmlScrubbers.ScrubMvc);
 		}
 		public static void VerifyUrlViaPost(string url, NameValueCollection nameValueCollection)
 		{
-			HtmlApprovals.VerifyHtml(GetUrlPostContents(url, nameValueCollection));
+			HtmlApprovals.VerifyHtml(GetUrlPostContents(url, nameValueCollection), HtmlScrubbers.ScrubMvc);
 		}
 	}
 }
