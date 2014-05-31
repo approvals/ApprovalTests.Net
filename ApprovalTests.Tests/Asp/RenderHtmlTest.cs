@@ -1,5 +1,5 @@
-﻿using ApprovalTests.Scrubber;
-# if DEBUG
+﻿# if DEBUG
+using ApprovalTests.Scrubber;
 using System;
 using System.Text.RegularExpressions;
 using ApprovalTests.Asp;
