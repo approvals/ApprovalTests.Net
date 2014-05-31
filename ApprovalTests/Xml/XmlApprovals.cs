@@ -1,4 +1,6 @@
-﻿using ApprovalTests.Writers;
+﻿using System;
+using ApprovalTests.Scrubber;
+using ApprovalTests.Writers;
 using ApprovalUtilities.Xml;
 
 namespace ApprovalTests.Xml
@@ -7,12 +9,12 @@ namespace ApprovalTests.Xml
 	{
 		public static void VerifyXml(string xml)
 		{
-			VerifyText(xml, "xml", true);
+			VerifyText(xml, "xml", true, ScrubberUtils.NO_SCRUBBER);
 		}
 
-		public static void VerifyText(string text, string fileExtensionWithoutDot, bool safely)
+        public static void VerifyText(string text, string fileExtensionWithoutDot, bool safely, Func<string, string> scrubber)
 		{
-			text = XmlUtils.FormatXml(text, safe: safely);
+			text = XmlUtils.FormatXml(scrubber.Invoke(text), safe: safely);
 			ApprovalTests.Approvals.Verify(WriterFactory.CreateTextWriter(text, fileExtensionWithoutDot));
 		}
 
@@ -22,7 +24,7 @@ namespace ApprovalTests.Xml
 		/// </summary>
 		public static void VerifyXmlStrict(string xml)
 		{
-			VerifyText(xml, "xml", false);
+			VerifyText(xml, "xml", false, ScrubberUtils.NO_SCRUBBER);
 		}
 	}
 }

@@ -13,7 +13,7 @@ namespace ApprovalTests.Tests.Asp.Mvc
 	public class MvcTest
 	{
 		[TestFixture]
-		[UseReporter(typeof (TortoiseDiffReporter), typeof (FileLauncherReporter))]
+		[UseReporter(typeof (DiffReporter), typeof (FileLauncherReporter))]
 		public class TryingMvcViewApproval
 		{
 			private CassiniDevServer server = new CassiniDevServer();

@@ -17,5 +17,7 @@ namespace ApprovalTests.Scrubber
         }
 
         public static Func<string, string> ScrubAsp { get { return ScrubberUtils.Combine(ScrubAspViewstate, ScrubBrowserLink); }}
+
+        public static Func<string, string> ScrubMvc { get { return ScrubBrowserLink; }}
     }
 }
