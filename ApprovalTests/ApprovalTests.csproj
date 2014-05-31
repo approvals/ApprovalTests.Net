@@ -127,7 +127,8 @@
     <Compile Include="Namers\UnitTestFrameworks\XUnitStackTraceParser.cs" />
     <Compile Include="Namers\UnitTestFrameworks\XUnitTheoryStackTraceParser.cs" />
     <Compile Include="Namers\UseApprovalSubdirectoryAttribute.cs" />
-    <Compile Include="PdfScrubber.cs" />
+    <Compile Include="Scrubber\BrowserLink.cs" />
+    <Compile Include="Scrubber\PdfScrubber.cs" />
     <Compile Include="Persistence\DatabaseApprovals.cs" />
     <Compile Include="Persistence\EntityFramework\EntityFrameworkApprovals.cs" />
     <Compile Include="Persistence\DataSets\ColumnDefaults.cs" />
@@ -182,7 +183,7 @@
     <Compile Include="Reporters\TortoiseTextDiffReporter.cs" />
     <Compile Include="Reporters\TortoiseImageDiffReporter.cs" />
     <Compile Include="Reporters\WinMergeReporter.cs" />
-    <Compile Include="ScrubberUtils.cs" />
+    <Compile Include="Scrubber\ScrubberUtils.cs" />
     <Compile Include="Namers\UnitTestFrameworks\MbUnitStackTraceParser.cs" />
     <Compile Include="Namers\UnitTestFrameworks\VSStackTraceParser.cs" />
     <Compile Include="Reporters\UseReporterAttribute.cs" />

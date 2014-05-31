@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using ApprovalTests.Reporters;
+using ApprovalTests.Scrubber;
 using ApprovalUtilities.Utilities;
 using NUnit.Framework;
 using System.Linq;
