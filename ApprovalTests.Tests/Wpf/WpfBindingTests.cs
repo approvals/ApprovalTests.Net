@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using System.Windows.Controls;
@@ -13,6 +14,7 @@ namespace ApprovalTests.Tests.Wpf
 	public class WpfBindingTests
 	{
 		[Test]
+		[STAThread]
 		public void TestFailedBindings()
 		{
 			var viewModel = new TestViewModel();

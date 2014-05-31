@@ -14,6 +14,4 @@ namespace ApprovalTests.MSTest
 			Approvals.Verify("2010");
 		}
 	}
-
-	
 }
