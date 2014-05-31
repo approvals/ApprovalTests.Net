@@ -127,7 +127,7 @@
     <Compile Include="Namers\UnitTestFrameworks\XUnitStackTraceParser.cs" />
     <Compile Include="Namers\UnitTestFrameworks\XUnitTheoryStackTraceParser.cs" />
     <Compile Include="Namers\UseApprovalSubdirectoryAttribute.cs" />
-    <Compile Include="Scrubber\BrowserLink.cs" />
+    <Compile Include="Scrubber\HtmlScrubbers.cs" />
     <Compile Include="Scrubber\PdfScrubber.cs" />
     <Compile Include="Persistence\DatabaseApprovals.cs" />
     <Compile Include="Persistence\EntityFramework\EntityFrameworkApprovals.cs" />

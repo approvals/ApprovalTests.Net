@@ -15,7 +15,6 @@ namespace ApprovalTests.Tests.Asp
 	[UseReporter(typeof (DiffReporter), typeof (FileLauncherReporter))]
 	public class RenderHtmlTest
 	{
-		public const string AspViewState = "<input type=\"hidden\" name=\"__VIEWSTATE\".+/>";
 		private CassiniDevServer server = new CassiniDevServer();
 
 		[TestFixtureSetUp]
@@ -34,8 +33,7 @@ namespace ApprovalTests.Tests.Asp
 		[Test]
 		public void TestSimpleInvoice()
 		{
-			Func<string, string> htmlScrubber = s => Regex.Replace(s, AspViewState, "<!-- aspviewstate -->");
-			AspApprovals.VerifyAspPage(new InvoiceView().TestSimpleInvoice, htmlScrubber);
+			AspApprovals.VerifyAspPage(new InvoiceView().TestSimpleInvoice, HtmlScrubbers.ScrubAsp);
 
 			//  -- These are the same thing
 			//AspApprovals.VerifyUrl("http://localhost:1359/Orders/InvoiceView.aspx?TestSimpleInvoice");
@@ -44,7 +42,7 @@ namespace ApprovalTests.Tests.Asp
 		[Test]
 		public void TestInternationalization()
 		{
-			AspApprovals.VerifyUrl("http://localhost:1359/Encoding.UTF8.html", BrowserLink.Scrub);
+			AspApprovals.VerifyUrl("http://localhost:1359/Encoding.UTF8.html", HtmlScrubbers.ScrubBrowserLink);
 		}
 	}
 }
