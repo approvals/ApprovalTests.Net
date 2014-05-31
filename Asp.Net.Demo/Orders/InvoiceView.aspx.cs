@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Globalization;
+using System.Threading;
 using System.Web.UI;
 using ApprovalTests.Asp;
 
@@ -13,12 +15,11 @@ namespace Asp.Net.Demo.Orders
 			get { return invoice; }
 			set
 			{
-				invoice = value;
-				GridView1.DataSourceID = null;
-				GridView1.DataSource = invoice.GetLineItems();
-				GridView1.DataBind();
-
-				lblCompanyNameValue.Text = Invoice.CompanyName;
+			    invoice = value;
+			    GridView1.DataSourceID = null;
+			    GridView1.DataSource = invoice.GetLineItems();
+			    GridView1.DataBind();
+			    lblCompanyNameValue.Text = Invoice.CompanyName;
 				lblOrderNumberValue.Text = Invoice.OrderNumber;
 				lblOrderDateValue.Text = Invoice.OrderDate.ToShortDateString();
 			}
@@ -42,6 +43,7 @@ namespace Asp.Net.Demo.Orders
 # if DEBUG
 		public void TestSimpleInvoice()
 		{
+            ApprovalUtilities.Asp.CultureUtilities.ForceCulture();
 			var invoice = new Invoice()
 			              	{CompanyName = "Sammy Sweet Shop", OrderNumber = "123", OrderDate = new DateTime(1592, 3, 14)};
 			invoice.AddLineItem("Candy Bars", 0.50, 200);
