@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Globalization;
+using System.Threading;
 using ApprovalTests;
 using ApprovalTests.Reporters;
 using ApprovalUtilities.Persistence;
@@ -73,6 +75,7 @@ namespace ApprovalUtilities.Tests
 		[TestMethod]
 		public void TestTimes()
 		{
+            ApprovalUtilities.Culture.CultureUtilities.ForceCulture();
 			var log = Logger.LogToStringBuilder();
 			Logger.UseTimer(new MockTimer());
 			Logger.Show(timestamp: true, timeDifference: true);
