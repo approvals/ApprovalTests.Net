@@ -16,7 +16,8 @@ namespace ApprovalTests.Namers
 		public static string GetDotNetVersion()
 		{
 		    var runtimeVersion = Environment.Version.ToString();
-            return "Net_v" + runtimeVersion.Substring(0, runtimeVersion.LastIndexOf('.'));
+		    var runtimeVersionWithoutBuildNumber = runtimeVersion.Substring(0, runtimeVersion.LastIndexOf('.'));
+		    return "Net_v" + runtimeVersionWithoutBuildNumber;
 		}
 
 		public static IDisposable UniqueForMachineName()
