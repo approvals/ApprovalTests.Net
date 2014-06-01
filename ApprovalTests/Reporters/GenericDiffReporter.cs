@@ -146,6 +146,7 @@ Recieved {0} ({1}, {2}, {3})"
 				{
 					using (var bitmap = new Bitmap(1, 1))
 					{
+                        bitmap.SetResolution(96, 96);
 						bitmap.Save(approved);
 					}
 				}
