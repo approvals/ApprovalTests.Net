@@ -7,7 +7,7 @@
 *                                                                                    *
 * Exception: 'Void TestMainPath()' | 'ApprovalUtilities.Tests'
 *  Problem
-*    at ApprovalUtilities.Tests.LoggerTest.TestMainPath() in ...\LoggerTest.cs:line 27
+*    at ApprovalUtilities.Tests.LoggerTest.TestMainPath() in ...\LoggerTest.cs:line 29
 *                                                                                    *
 **************************************************************************************
 <= LoggerTest.TestMainPath()
