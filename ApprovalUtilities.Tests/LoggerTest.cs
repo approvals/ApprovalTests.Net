@@ -17,21 +17,24 @@ namespace ApprovalUtilities.Tests
 		public void TestMainPath()
 		{
 			var log = Logger.LogToStringBuilder();
-			Logger.MarkerIn();
-			Logger.Event("Starting");
-			var name = "Llewellyn";
-			Logger.Variable("name", name);
-			Logger.Message("I Got here");
-			Logger.Sql("Select * From table_name");
-			try
+			using (Logger.MarkEntryPoints())
 			{
-				throw new Exception(" Problem");
+
+
+				Logger.Event("Starting");
+				var name = "Llewellyn";
+				Logger.Variable("name", name);
+				Logger.Message("I Got here");
+				Logger.Sql("Select * From table_name");
+				try
+				{
+					throw new Exception(" Problem");
+				}
+				catch (Exception e)
+				{
+					Logger.Warning(e);
+				}
 			}
-			catch (Exception e)
-			{
-				Logger.Warning(e);
-			}
-			Logger.MarkerOut();
 			var logText = log.ScrubPath(PathUtilities.GetDirectoryForCaller());
 			logText = StackTraceScrubber.ScrubStackTrace(logText);
 			Approvals.Verify(logText);

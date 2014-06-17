@@ -19,11 +19,17 @@ namespace ApprovalUtilities.SimpleLogger
 			return log.LogToStringBuilder();
 		}
 
+		public static IDisposable MarkEntryPoints()
+		{
+
+			return new Marker();
+		}
+		[Obsolete("Use MarkEntryPoints")]
 		public static void MarkerIn()
 		{
 			log.MarkerIn();
 		}
-
+		[Obsolete("Use MarkEntryPoints")]
 		public static void MarkerOut()
 		{
 			log.MarkerOut();
@@ -73,6 +79,18 @@ namespace ApprovalUtilities.SimpleLogger
 		public static void UseTimer(ILoader<DateTime> timeLoader)
 		{
 			log.UseTimer(timeLoader);
+		}
+	}
+
+	public class Marker : IDisposable
+	{
+		public Marker()
+		{
+			Logger.MarkerIn();
+		}
+		public void Dispose()
+		{
+			Logger.MarkerOut();
 		}
 	}
 }
