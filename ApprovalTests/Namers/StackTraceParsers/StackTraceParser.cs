@@ -30,11 +30,24 @@ namespace ApprovalTests.Namers.StackTraceParsers
 
 			var helpLink = @"http://blog.approvaltests.com/2012/01/creating-namers.html";
 			throw new Exception(
-				string.Format("Approvals is not set up to use your test framework.{0}" +
-				              "It currently supports {1}{0}" +
-				              "To add one use {2}.AddParser() method to add implementation of {3} with support for your testing framework.{0}" +
-				              "To learn how to implement one see {4}",
-				              Environment.NewLine,
+				string.Format(@"
+Could Not Detect Test Framework
+
+Either:
+1) Optimizer Inlined Test Methods
+
+Solutions:
+a) Add [MethodImpl(MethodImplOptions.NoInlining)]
+b) Set Build->Opitmize Code to False 
+   & Build->Advanced->DebugInfo to Full
+
+or
+2) Approvals is not set up to use your test framework.
+It currently supports {0}
+
+Solution:
+To add one use {1}.AddParser() method to add implementation of {2} with support for your testing framework.
+To learn how to implement one see {3}",
 				              ForTestingFramework,
 				              GetType(),
 				              typeof (IStackTraceParser),

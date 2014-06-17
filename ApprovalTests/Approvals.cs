@@ -215,6 +215,10 @@ namespace ApprovalTests
 		{
 			XmlApprovals.VerifyXml(xml);
 		}
+		public static void VerifyJson(string json)
+		{
+			Verify(WriterFactory.CreateTextWriter(json.FormatJson(),"json"));
+		}
 
 		#endregion
 

@@ -1,13 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using ApprovalTests.Reporters;
 using ApprovalUtilities.Utilities;
 using NUnit.Framework;
 
 namespace ApprovalTests.Tests
 {
 	[TestFixture]
-	[UseReporter(typeof (DiffReporter))]
 	public class ApprovalsTest
 	{
 		private static readonly string[] text = new string[] {"abc", "123", "!@#"};
@@ -120,6 +118,12 @@ namespace ApprovalTests.Tests
 		public void EnumerableWithFormatter()
 		{
 			Approvals.VerifyAll(text, (t) => "" + t.Length);
+		}
+		[Test]
+		public void JsonText()
+		{
+			var json = @"{""GivenNames"":""John"",""FamilyName"":""Smith"",""Spouse"":""Jill"",""Address"":{""Street"":""1 Puddle Lane"",""Suburb"":null,""Country"":""USA""},""Childres"":[""Sam"",""Mary""],""Title"":""Mr""}";
+			Approvals.VerifyJson(json);
 		}
 	}
 }

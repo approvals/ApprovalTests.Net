@@ -10,15 +10,11 @@ namespace ApprovalTests.Tests.Namer.StackTraceParsers
 	[TestFixture]
 	public class StackTraceParserTests
 	{
-		// This test is not perfect, even if the StackTraceParser parser collection is thread-safe it is possible that the test
-		// pass. The bug is the result on concurrency between two threads, so this is a timing issue, sometime it happens sometime not.
 		[Test]
 		public void Parse_UsingStaticInitialize_DontThrowInvalidOperationException()
 		{
-			// ARRANGE
 			var parser = new StackTraceParser();
 
-			// ACT + ASSERT
 			try
 			{
 				Parallel.ForEach(Enumerable.Range(1, 20), (_) =>

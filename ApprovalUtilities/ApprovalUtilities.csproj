@@ -108,8 +108,10 @@
     <Compile Include="Utilities\ClassUtilities.cs" />
     <Compile Include="Utilities\ClipboardUtilities.cs" />
     <Compile Include="Utilities\Clock.cs" />
+    <Compile Include="Utilities\CollectionUtilities.cs" />
     <Compile Include="Utilities\ExceptionUtilities.cs" />
     <Compile Include="Utilities\FileUtilities.cs" />
+    <Compile Include="Utilities\JsonPrettyPrint.cs" />
     <Compile Include="Utilities\StringUtils.cs" />
     <Compile Include="Utilities\PathUtilities.cs" />
     <Compile Include="Utilities\TempFile.cs" />

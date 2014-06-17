@@ -26,7 +26,8 @@ namespace ApprovalTests.Reporters
 				".eml",
 				".cs",
 				".css",
-				".sql"
+				".sql",
+				".json"
 			};
 
 		private static readonly HashSet<string> IMAGE_FILE_TYPES = new HashSet<string>
