@@ -75,6 +75,7 @@ namespace ApprovalUtilities.Tests
 		[TestMethod]
 		public void TestTimes()
 		{
+			CultureUtilities.ForceCulture();
 			var log = Logger.LogToStringBuilder();
 			Logger.UseTimer(new MockTimer());
 			Logger.Show(timestamp: true, timeDifference: true);
