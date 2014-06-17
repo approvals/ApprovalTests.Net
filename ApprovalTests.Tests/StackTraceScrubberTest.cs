@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using ApprovalTests.Utilities;
+using NUnit.Framework;
 
 namespace ApprovalTests.Tests
 {

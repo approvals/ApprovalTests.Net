@@ -209,7 +209,7 @@
     <Compile Include="Namers\UnitTestFrameworks\MbUnitStackTraceParser.cs" />
     <Compile Include="Namers\UnitTestFrameworks\VSStackTraceParser.cs" />
     <Compile Include="Reporters\UseReporterAttribute.cs" />
-    <Compile Include="StackTraceScrubber.cs" />
+    <Compile Include="Utilities\StackTraceScrubber.cs" />
     <Compile Include="StatePrinter\StatePrinterApprovals.cs" />
     <Compile Include="TheoryTests\SerializableTheory.cs" />
     <Compile Include="Utilities\StringReporting.cs" />

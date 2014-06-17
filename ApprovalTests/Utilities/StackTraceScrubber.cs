@@ -1,9 +1,10 @@
+using System;
 using System.Text.RegularExpressions;
 using ApprovalTests.Scrubber;
 
-namespace ApprovalTests
+namespace ApprovalTests.Utilities
 {
-	public class StackTraceScrubber
+	public static class StackTraceScrubber
 	{
 		public static string ScrubAnonymousIds(string source)
 		{
@@ -23,9 +24,13 @@ namespace ApprovalTests
 			return regex.Replace(source, "...\\");
 		}
 		
-		public static string Scrub(string text)
+		public static string ScrubStackTrace(this string text)
 		{
 			return ScrubberUtils.Combine(ScrubAnonymousIds, ScrubPaths, ScrubLineNumbers)(text);
+		}
+		public static string Scrub(this Exception exception)
+		{
+			return ("" + exception).ScrubStackTrace();
 		}
 	}
 }

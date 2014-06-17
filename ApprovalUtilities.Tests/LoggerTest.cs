@@ -1,6 +1,7 @@
 ﻿using System;
 using ApprovalTests;
 using ApprovalTests.Reporters;
+using ApprovalTests.Utilities;
 using ApprovalUtilities.Persistence;
 using ApprovalUtilities.SimpleLogger;
 using ApprovalUtilities.Utilities;
@@ -32,7 +33,7 @@ namespace ApprovalUtilities.Tests
 			}
 			Logger.MarkerOut();
 			var logText = log.ScrubPath(PathUtilities.GetDirectoryForCaller());
-			logText = StackTraceScrubber.Scrub(logText);
+			logText = StackTraceScrubber.ScrubStackTrace(logText);
 			Approvals.Verify(logText);
 		}
 		[TestMethod]

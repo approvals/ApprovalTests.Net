@@ -9,6 +9,7 @@ using ApprovalTests.Html;
 using ApprovalTests.Namers;
 using ApprovalTests.Reporters;
 using ApprovalTests.Scrubber;
+using ApprovalTests.Utilities;
 using ApprovalTests.Writers;
 using ApprovalTests.Xml;
 using ApprovalUtilities.CallStack;
@@ -144,9 +145,7 @@ namespace ApprovalTests
 
 		public static void Verify(Exception e)
 		{
-			string stackTrace = "" + e;
-
-			Verify(stackTrace, StackTraceScrubber.Scrub);
+			Verify(e.Scrub());
 		}
 
 		#endregion
