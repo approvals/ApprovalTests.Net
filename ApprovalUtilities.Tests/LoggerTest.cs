@@ -31,7 +31,9 @@ namespace ApprovalUtilities.Tests
 				Logger.Warning(e);
 			}
 			Logger.MarkerOut();
-			Approvals.Verify(log.ScrubPath(PathUtilities.GetDirectoryForCaller()));
+			var logText = log.ScrubPath(PathUtilities.GetDirectoryForCaller());
+			logText = StackTraceScrubber.Scrub(logText);
+			Approvals.Verify(logText);
 		}
 		[TestMethod]
 		public void TestShowMarker()
