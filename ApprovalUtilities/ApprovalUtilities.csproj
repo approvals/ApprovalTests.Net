@@ -71,7 +71,7 @@
     <Compile Include="..\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
-    <Compile Include="Asp\CultureUtilities.cs" />
+    <Compile Include="Utilities\CultureUtilities.cs" />
     <Compile Include="Asp\Mvc\MvcUtilites.cs" />
     <Compile Include="CallStack\Caller.cs" />
     <Compile Include="Persistence\Database\DatabaseToExecuteableQueryAdaptor.cs" />

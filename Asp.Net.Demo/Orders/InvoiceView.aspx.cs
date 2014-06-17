@@ -3,6 +3,7 @@ using System.Globalization;
 using System.Threading;
 using System.Web.UI;
 using ApprovalTests.Asp;
+using ApprovalUtilities.Utilities;
 
 namespace Asp.Net.Demo.Orders
 {
@@ -43,7 +44,7 @@ namespace Asp.Net.Demo.Orders
 # if DEBUG
 		public void TestSimpleInvoice()
 		{
-            ApprovalUtilities.Asp.CultureUtilities.ForceCulture();
+            CultureUtilities.ForceCulture();
 			var invoice = new Invoice()
 			              	{CompanyName = "Sammy Sweet Shop", OrderNumber = "123", OrderDate = new DateTime(1592, 3, 14)};
 			invoice.AddLineItem("Candy Bars", 0.50, 200);

@@ -1,9 +1,9 @@
 ﻿using System.Globalization;
 using System.Threading;
 
-namespace ApprovalUtilities.Asp
+namespace ApprovalUtilities.Utilities
 {
-    public class CultureUtilities
+    public static class CultureUtilities
     {
         public static void ForceCulture(string culture="en-US")
         {
