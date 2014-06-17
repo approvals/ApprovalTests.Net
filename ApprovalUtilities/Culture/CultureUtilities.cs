@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
 using System.Threading;
 
-namespace ApprovalUtilities.Asp
+namespace ApprovalUtilities.Culture
 {
     public class CultureUtilities
     {
