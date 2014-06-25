@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.Scrubber
 {
@@ -11,5 +12,10 @@ namespace ApprovalTests.Scrubber
 		}
 
 		public static Func<string, string> NO_SCRUBBER = (s) => s;
+
+		public static Func<string,string> RemoveLinesContaining(string value)
+		{
+			return s => s.Split('\n').Where(l => !l.Contains(value)).JoinWith("\n");
+		}
 	}
 }

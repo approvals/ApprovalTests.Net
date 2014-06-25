@@ -98,6 +98,7 @@
     <Compile Include="Asp\Mvc\MvcTest.cs" />
     <Compile Include="Asp\RenderHtmlTest.cs" />
     <Compile Include="Asp\UrlTest.cs" />
+    <Compile Include="Async\AsyncTests.cs" />
     <Compile Include="CleanupReporter.cs" />
     <Compile Include="Core\Exceptions\SerializableExceptionsTest.cs" />
     <Compile Include="Namer\StackTraceParsers\StackTraceParserTests.cs" />

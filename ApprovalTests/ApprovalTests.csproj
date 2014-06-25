@@ -155,6 +155,7 @@
     <Compile Include="Asp\Mocks.cs" />
     <Compile Include="Asp\Mvc\MvcApprovals.cs" />
     <Compile Include="Asp\PortFactory.cs" />
+    <Compile Include="Async\AsyncApprovals.cs" />
     <Compile Include="Combinations\CombinationApprovals.cs" />
     <Compile Include="Core\IApprovalReporterWithCleanUp.cs" />
     <Compile Include="Core\Approver.cs" />
