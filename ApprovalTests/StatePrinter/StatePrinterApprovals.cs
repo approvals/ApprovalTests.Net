@@ -12,7 +12,7 @@ namespace ApprovalTests.StatePrinter
 			Verify(source, GetDefaultConfiguration(), rootName);
 		}
 
-		[CLSCompliant(false)]
+
 		public static void Verify(object source, Configuration configuration, string rootName = "Root")
 		{
 			var printer = new global::StatePrinter.StatePrinter(configuration);
