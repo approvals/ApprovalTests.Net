@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Net.Http;
+using System.Net;
+using System.Text;
 using System.Threading.Tasks;
-using ApprovalTests.Utilities;
 using ApprovalUtilities.Persistence;
 using ApprovalUtilities.Utilities;
 
@@ -15,18 +15,32 @@ namespace ApprovalTests.WebApi.MicrosoftHttpClient
 
 		public string ExecuteQuery(string query)
 		{
-			var json = ExecuteAsync(query).Result.Content.ReadAsStringAsync().Result;
+			string json = ExecuteAsync(query).Result.Result;
 			return json.FormatJson();
 		}
 
-		public Task<HttpResponseMessage> ExecuteAsync(string requestUri)
+		public Task<DownloadStringCompletedEventArgs> ExecuteAsync(string requestUri)
 		{
-			var httpClient = new HttpClient();
-			httpClient.BaseAddress = new Uri(GetBaseAddress());
-			return httpClient.GetAsync(requestUri);
+			var uri = new Uri(new Uri(GetBaseAddress()), requestUri);
+			try
+			{
+				using (var client = new WebClient())
+				{
+					client.Encoding = Encoding.UTF8;
+					var task = new TaskCompletionSource<DownloadStringCompletedEventArgs>();
+					client.DownloadStringCompleted += (sender, args) => { task.SetResult(args); };
+					client.DownloadStringAsync(uri);
+					return task.Task;
+				}
+			}
+			catch (Exception e)
+			{
+				throw new Exception(
+					"The following error occured while connecting to:\r\n{0}\r\nError:\r\n{1}".FormatWith(uri, e.Message), e);
+			}
 		}
 
-		public Task<HttpResponseMessage> GetResponse()
+		public Task<DownloadStringCompletedEventArgs> GetResponse()
 		{
 			return ExecuteAsync(GetQuery());
 		}

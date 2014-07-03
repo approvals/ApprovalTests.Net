@@ -1,4 +1,4 @@
-﻿using System.Net.Http;
+﻿using System.Net;
 using ApprovalTests.WebApi.MicrosoftHttpClient;
 using NUnit.Framework;
 
@@ -38,9 +38,10 @@ namespace ApprovalTests.Tests.WebApi.MicrosoftHttpClient
 			return new GoogleQueryResults(GetResponse().Result);
 		}
 	}
+
 	public class GoogleQueryResults
 	{
-		public GoogleQueryResults(HttpResponseMessage result)
+		public GoogleQueryResults(DownloadStringCompletedEventArgs result)
 		{
 			//do extraction stuff
 		}

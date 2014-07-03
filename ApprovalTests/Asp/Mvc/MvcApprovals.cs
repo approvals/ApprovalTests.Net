@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Specialized;
+using System.Data.Entity;
 using System.Net;
 using System.Text;
 using System.Web.Mvc;
+using ApprovalTests.ExceptionalExceptions;
 using ApprovalTests.Html;
 using ApprovalTests.Scrubber;
 using ApprovalUtilities.Utilities;
@@ -32,7 +34,7 @@ namespace ApprovalTests.Asp.Mvc
 			}
 			catch (Exception ex)
 			{
-				throw new Exception(StringUtils.FormatWith("The following error occured while connecting to:\r\n{0}\r\nError:\r\n{1}", (object)url, (object)ex.Message), ex);
+				throw Exceptional.Create<Exception>("The following error occured while connecting to:\n{0}\nError:\n{1}", url, ex.Message);
 			}
 		}
 		public static void VerifyMvcViaPost<T>(Func<T, ActionResult> func, NameValueCollection nameValueCollection)

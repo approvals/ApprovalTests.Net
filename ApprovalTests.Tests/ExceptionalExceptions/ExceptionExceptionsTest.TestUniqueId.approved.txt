@@ -1,0 +1,7 @@
+﻿ExceptionalId
+{
+	Assembly: ApprovalTests.Tests, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+	Class: ApprovalTests.Tests.ExceptionalExceptions.ExceptionExceptionsTest
+	Method: ExceptionExceptionsTest.TestUniqueId()
+	Exception: System.Exception
+}
