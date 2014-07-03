@@ -1,10 +1,10 @@
-﻿Root = <Turtle>, ref: 0
+﻿Root = new Turtle(), ref: 0
 {
     Name = "jim"
-    On = <Turtle>
+    On = new Turtle()
     {
         Name = "kasper"
-        On = <Turtle>
+        On = new Turtle()
         {
             Name = "llewellyn"
             On =  -> 0

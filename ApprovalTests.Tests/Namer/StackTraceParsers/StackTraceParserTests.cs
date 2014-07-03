@@ -39,9 +39,9 @@ namespace ApprovalTests.Tests.Namer.StackTraceParsers
 						catch (Exception e)
 						{
 							if (
-								!e.Message.StartsWith("Approvals is not set up to use your test framework", StringComparison.OrdinalIgnoreCase))
+								!e.Message.Contains("Approvals is not set up to use your test framework"))
 							{
-								Assert.Fail("Any other exception");
+								throw;
 							}
 						}
 					});
