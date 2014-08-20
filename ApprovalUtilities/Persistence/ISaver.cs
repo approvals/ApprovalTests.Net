@@ -4,4 +4,5 @@ namespace ApprovalUtilities.Persistence
 	{
 		T Save(T objectToBeSaved);
 	}
+	
 }

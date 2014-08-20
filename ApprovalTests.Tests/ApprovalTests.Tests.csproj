@@ -100,6 +100,7 @@
     <Compile Include="Core\Exceptions\SerializableExceptionsTest.cs" />
     <Compile Include="ExceptionalExceptions\ExceptionExceptionsTest.cs" />
     <Compile Include="Namer\StackTraceParsers\StackTraceParserTests.cs" />
+    <Compile Include="Persistence\AsyncSaverTest.cs" />
     <Compile Include="Reporters\PowerShellClipboardReporterTest.cs" />
     <Compile Include="RunMaintenance.cs" />
     <Compile Include="Email\EmailTest.cs" />
@@ -187,6 +188,10 @@
     <ProjectReference Include="..\ApprovalTests\ApprovalTests.csproj">
       <Project>{F70C9A76-F797-4167-8178-14821F8634BC}</Project>
       <Name>ApprovalTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ApprovalUtilities.Net45\ApprovalUtilities.Net45.csproj">
+      <Project>{C4BEE6F7-448B-43D6-A9C3-17273C94B0E6}</Project>
+      <Name>ApprovalUtilities.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\ApprovalUtilities\ApprovalUtilities.csproj">
       <Project>{E9683C33-7A71-4776-B7C9-E89C565AC16B}</Project>
