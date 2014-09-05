@@ -273,10 +273,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ApprovalUtilities.Net45\ApprovalUtilities.Net45.csproj">
-      <Project>{c4bee6f7-448b-43d6-a9c3-17273c94b0e6}</Project>
-      <Name>ApprovalUtilities.Net45</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ApprovalUtilities\ApprovalUtilities.csproj">
       <Project>{E9683C33-7A71-4776-B7C9-E89C565AC16B}</Project>
       <Name>ApprovalUtilities</Name>
