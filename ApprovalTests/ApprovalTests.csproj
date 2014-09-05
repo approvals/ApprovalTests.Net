@@ -216,6 +216,7 @@
     <Compile Include="Namers\UnitTestFrameworks\VSStackTraceParser.cs" />
     <Compile Include="Reporters\UseReporterAttribute.cs" />
     <Compile Include="TheoryTests\ThreadSafteyTheory.cs" />
+    <Compile Include="Utilities\ParentProcessUtils.cs" />
     <Compile Include="Utilities\StackTraceScrubber.cs" />
     <Compile Include="StatePrinter\StatePrinterApprovals.cs" />
     <Compile Include="TheoryTests\SerializableTheory.cs" />

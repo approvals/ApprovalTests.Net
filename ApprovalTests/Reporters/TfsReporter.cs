@@ -1,4 +1,6 @@
-﻿namespace ApprovalTests.Reporters
+﻿using ApprovalTests.Utilities;
+
+namespace ApprovalTests.Reporters
 {
     using System;
     using System.Diagnostics;
@@ -19,23 +21,9 @@
             // does nothing
         }
 
-        // TODO: This belongs in a utility class
-        private static Process GetParentProcess(Process currentProcess)
-        {
-            try
-            {
-                var pc = new PerformanceCounter("Process", "Creating Process Id", currentProcess.ProcessName);
-                return Process.GetProcessById((int)pc.RawValue);
-            }
-            catch (ArgumentException)
-            {
-                return null;
-            }
-        }
-
         private static string GetParentProcessName()
         {
-            var parentProcess = GetParentProcess(Process.GetCurrentProcess());
+            var parentProcess = ParentProcessUtils.GetParentProcess(Process.GetCurrentProcess());
             return parentProcess == null ? string.Empty : parentProcess.ProcessName;
         }
     }
