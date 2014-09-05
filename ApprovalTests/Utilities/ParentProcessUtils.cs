@@ -16,7 +16,7 @@ namespace ApprovalTests.Utilities
 				using (pc)
 					return Process.GetProcessById((int)pc.RawValue);
 			}
-			catch (ArgumentException)
+			catch (Exception)
 			{
 				return null;
 			}
