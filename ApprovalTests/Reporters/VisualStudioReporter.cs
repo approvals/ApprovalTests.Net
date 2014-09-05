@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using ApprovalTests.Utilities;
 
 namespace ApprovalTests.Reporters
 {
@@ -25,37 +26,12 @@ namespace ApprovalTests.Reporters
             return base.IsWorkingInThisEnvironment(forFile) && LaunchedFromVisualStudio();
         }
 
-        private static Process GetParentProcess(Process currentProcess)
-        {
-            try
-            {
-                var pc = new PerformanceCounter("Process", "Creating Process Id", currentProcess.ProcessName);
-                return Process.GetProcessById((int)pc.RawValue);
-            }
-            catch (ArgumentException)
-            {
-                return null;
-            }
-        }
-
         private static string GetPath()
         {
             LaunchedFromVisualStudio();
             return PATH ?? "Not launched from Visual Studio.";
         }
 
-        private static IEnumerable<Process> GetProcessAndParent()
-        {
-            var currentProcess = Process.GetCurrentProcess();
-            yield return currentProcess;
-            var parentProcess = GetParentProcess(currentProcess);
-            do
-            {
-                yield return parentProcess;
-                parentProcess = GetParentProcess(parentProcess);
-            }
-            while (parentProcess != null);
-        }
 
         private static bool LaunchedFromVisualStudio()
         {
@@ -64,7 +40,7 @@ namespace ApprovalTests.Reporters
                 return true;
             }
 
-            var processAndParent = GetProcessAndParent().ToArray();
+            var processAndParent = ParentProcessUtils.CurrentProcessWithAncestors().ToArray();
 
             Process process = null;
 
