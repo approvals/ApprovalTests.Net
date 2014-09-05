@@ -48,15 +48,10 @@ namespace ApprovalTests.Reporters
             {
                 process = processAndParent.FirstOrDefault(x => x.MainModule.FileName.EndsWith("devenv.exe"));
             }
-            catch (Win32Exception ex)
+            catch (Exception)
             {
-                if (ex.Message == "A 32 bit processes cannot access modules of a 64 bit process.")
-                {
-                    // devenv is always 32 bit; therefore not parent.
+                    // Any exception means we are not working in this environment.
                     return false;
-                }
-
-                throw;
             }
 
             if (process != null)
