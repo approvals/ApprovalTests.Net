@@ -20,7 +20,7 @@ namespace ApprovalTests.Utilities
 
 		public static string ScrubPaths(string source)
 		{
-			var regex = new Regex(@"\w:[\\\w.\s-]+\\");
+			var regex = new Regex(@"\b\w:[\\\w.\s-]+\\");
 			return regex.Replace(source, "...\\");
 		}
 		
