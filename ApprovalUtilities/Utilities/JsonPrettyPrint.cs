@@ -1,9 +1,11 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Text;
 
 namespace ApprovalUtilities.Utilities
 
 {
+  [Obsolete]
 	public static class JsonPrettyPrint
 	{
 		private const string INDENT_STRING = "    ";
