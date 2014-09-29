@@ -67,5 +67,18 @@ namespace ApprovalTests.Tests.Namer
                Assert.AreEqual("AdditionalInformationTests.WithMultiplePartScenarioData.ForScenario.foo.bar", name);
            }
        }
+
+       [Test]
+       public void TestMultipleNames()
+       {
+           using (ApprovalResults.ForScenario("scenario"))
+           {
+               using (ApprovalResults.ForScenario("machineName"))
+               {
+                   string name = Approvals.GetDefaultNamer().Name;
+                   Assert.AreEqual(name, "AdditionalInformationTests.TestMultipleNames.ForScenario.scenario.ForScenario.machineName");
+               }
+           }
+       }
 	}
 }
