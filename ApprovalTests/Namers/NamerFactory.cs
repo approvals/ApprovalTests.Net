@@ -24,7 +24,15 @@ namespace ApprovalTests.Namers
 
 		public static IDisposable AsEnvironmentSpecificTest(Func<string> environmentLabeler)
 		{
-			AdditionalInformation = environmentLabeler();
+            if (AdditionalInformation == null)
+            {
+                AdditionalInformation = environmentLabeler();
+            }
+            else
+            {
+                AdditionalInformation += "." + environmentLabeler();
+            }
+
 			return new EnviromentSpecificCleanUp();
 		}
 
