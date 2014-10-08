@@ -122,9 +122,9 @@ namespace ApprovalUtilities.Wpf
 			{
 			
 				// The BitmapSource that is rendered with a Visual.
-					control.Measure(new Size(1000,1000));
+					control.Measure(new Size(double.PositiveInfinity,double.PositiveInfinity));
 				Size size = control.DesiredSize;
-			  int	width = (int) size.Width;
+			    int	width = (int) size.Width;
 				int height = (int) size.Height;
 				control.Arrange(new Rect(0,0,width,height));
 				var rtb = new RenderTargetBitmap(width, height, 96, 96, PixelFormats.Pbgra32);
