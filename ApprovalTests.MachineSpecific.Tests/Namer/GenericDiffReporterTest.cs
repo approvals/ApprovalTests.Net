@@ -62,7 +62,6 @@ namespace ApprovalTests.MachineSpecific.Tests.Namer
 		[TestMethod]
 		public void TestLaunchesVisualStudio()
 		{
-			ApprovalResults.UniqueForMachineName();
 			AssertLauncher("../../a.txt", "../../b.txt", VisualStudioReporter.INSTANCE);
 		}
 
@@ -70,22 +69,15 @@ namespace ApprovalTests.MachineSpecific.Tests.Namer
 		[TestMethod]
 		public void TestWinMerge()
 		{
-			ApprovalResults.UniqueForMachineName();
 			AssertLauncher("../../a.txt", "../../b.txt", WinMergeReporter.INSTANCE);
 		}
 
 		private static void AssertLauncher(string approved, string received, GenericDiffReporter reporter)
 		{
-			try
+			using (ApprovalResults.UniqueForMachineName())
 			{
-				ApprovalResults.UniqueForMachineName();
 				var args = reporter.GetLaunchArguments(approved, received);
-
 				Approvals.VerifyWithCallback(args, s => StartProcess(s));
-			}
-			finally
-			{
-				NamerFactory.Clear();
 			}
 		}
 	}

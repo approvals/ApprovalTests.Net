@@ -1,6 +1,5 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
-using ApprovalTests.Namers;
 using ApprovalTests.Reporters;
 using ApprovalTests.Tests.WinForms;
 using ApprovalTests.WinForms;
@@ -16,14 +15,12 @@ namespace ApprovalTests.MachineSpecific.Tests.WinForms
         [TestMethod]
         public void TestControlApproved()
         {
-            ApprovalResults.UniqueForMachineName();
             WinFormsApprovals.Verify(new Button { BackColor = Color.LightBlue, Text = "Help" });
         }
 
         [TestMethod]
         public void TestFormApproval()
         {
-            ApprovalResults.UniqueForMachineName();
             WinFormsApprovals.Verify(new Form());
         }
 
