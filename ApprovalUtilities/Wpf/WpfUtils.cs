@@ -94,7 +94,7 @@ namespace ApprovalUtilities.Wpf
 			{
 			
 				// The BitmapSource that is rendered with a Visual.
-					control.Measure(new Size(1000,1000));
+					control.Measure(new Size(double.PositiveInfinity,double.PositiveInfinity));
 				Size size = control.DesiredSize;
 			  int	width = (int) size.Width;
 				int height = (int) size.Height;
