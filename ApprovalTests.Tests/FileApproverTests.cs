@@ -1,4 +1,5 @@
 ﻿using ApprovalTests.Approvers;
+using ApprovalTests.Core.Exceptions;
 using ApprovalUtilities.Utilities;
 using NUnit.Framework;
 
@@ -29,7 +30,7 @@ namespace ApprovalTests.Tests
 		}
 
 		[Test]
-		public void NormaliseLineEndings()
+		public void LineEndingsAreIgnored()
 		{
 			var basePath = PathUtilities.GetDirectoryForCaller();
 			var approvedFile = basePath + "UnixLineEndings.txt";
@@ -38,6 +39,18 @@ namespace ApprovalTests.Tests
 			File.WriteAllText(receivedFile, "Foo\r\nBar");
 			var fileApprover = new FileApprover(null, null, true).Approve(approvedFile, receivedFile);
 			Assert.IsNull(fileApprover);
+		}
+
+		[Test]
+		public void LineEndingAreNotIgnored()
+		{
+			var basePath = PathUtilities.GetDirectoryForCaller();
+			var approvedFile = basePath + "UnixLineEndings.txt";
+			var receivedFile = basePath + "WindowsLineEndings.txt";
+			File.WriteAllText(approvedFile, "Foo\nBar");
+			File.WriteAllText(receivedFile, "Foo\r\nBar");
+			var fileApprover = new FileApprover(null, null, true).Approve(approvedFile, receivedFile);
+            Assert.IsInstanceOf<ApprovalMismatchException>(fileApprover);
 		}
 
 		private static void AssertApprover(string receivedFile, string approvedFile, bool expected)
