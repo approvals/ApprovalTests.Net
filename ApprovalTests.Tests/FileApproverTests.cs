@@ -1,4 +1,5 @@
-﻿using ApprovalTests.Approvers;
+﻿using System.IO;
+using ApprovalTests.Approvers;
 using ApprovalTests.Core.Exceptions;
 using ApprovalUtilities.Utilities;
 using NUnit.Framework;
@@ -49,7 +50,7 @@ namespace ApprovalTests.Tests
 			var receivedFile = basePath + "WindowsLineEndings.txt";
 			File.WriteAllText(approvedFile, "Foo\nBar");
 			File.WriteAllText(receivedFile, "Foo\r\nBar");
-			var fileApprover = new FileApprover(null, null, true).Approve(approvedFile, receivedFile);
+			var fileApprover = new FileApprover(null, null, false).Approve(approvedFile, receivedFile);
             Assert.IsInstanceOf<ApprovalMismatchException>(fileApprover);
 		}
 
