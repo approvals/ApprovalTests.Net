@@ -1,8 +1,8 @@
+using System;
+
 namespace ApprovalTests.Reporters
 {
-    using System;
-
-    public class NormaliseLineEndingsForTextFilesAttribute : Attribute
+	public class NormaliseLineEndingsForTextFilesAttribute : Attribute
 	{
 		private readonly bool normaliseLineEndings;
 
@@ -15,7 +15,7 @@ namespace ApprovalTests.Reporters
 		{
 			get
 			{
-				return this.normaliseLineEndings;
+				return normaliseLineEndings;
 			}
 		}
 	}
