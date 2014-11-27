@@ -28,11 +28,23 @@ namespace ApprovalTests.Tests
 			AssertApprover("a.txt", "a.txt", true);
 		}
 
+		[Test]
+		public void NormaliseLineEndings()
+		{
+			var basePath = PathUtilities.GetDirectoryForCaller();
+			var approvedFile = basePath + "UnixLineEndings.txt";
+			var receivedFile = basePath + "WindowsLineEndings.txt";
+			File.WriteAllText(approvedFile, "Foo\nBar");
+			File.WriteAllText(receivedFile, "Foo\r\nBar");
+			var fileApprover = new FileApprover(null, null, true).Approve(approvedFile, receivedFile);
+			Assert.IsNull(fileApprover);
+		}
+
 		private static void AssertApprover(string receivedFile, string approvedFile, bool expected)
 		{
 			var basePath = PathUtilities.GetDirectoryForCaller();
-			var exception = new FileApprover(null,null).Approve(basePath + approvedFile, basePath + receivedFile);
-			Assert.AreEqual(expected, exception == null);
+			var fileApprover = new FileApprover(null,null).Approve(basePath + approvedFile, basePath + receivedFile);
+			Assert.AreEqual(expected, fileApprover == null);
 		}
 	}
 }

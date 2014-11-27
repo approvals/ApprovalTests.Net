@@ -8,15 +8,21 @@ namespace ApprovalTests.Approvers
 	public class FileApprover : IApprovalApprover
 	{
 		private readonly IApprovalNamer namer;
+		private readonly bool normaliseLineEndingsForTextFiles;
 		private readonly IApprovalWriter writer;
 		private string approved;
 		private ApprovalException failure;
 		private string received;
 
-		public FileApprover(IApprovalWriter writer, IApprovalNamer namer)
+		public FileApprover(IApprovalWriter writer, IApprovalNamer namer) : this(writer, namer, false)
+		{
+		}
+
+		public FileApprover(IApprovalWriter writer, IApprovalNamer namer, bool normaliseLineEndingsForTextFiles)
 		{
 			this.writer = writer;
 			this.namer = namer;
+			this.normaliseLineEndingsForTextFiles = normaliseLineEndingsForTextFiles;
 		}
 
 		public virtual bool Approve()
@@ -35,6 +41,20 @@ namespace ApprovalTests.Approvers
 			if (!File.Exists(approved))
 			{
 				return new ApprovalMissingException(received, approved);
+			}
+
+			if (normaliseLineEndingsForTextFiles && Path.GetExtension(approved).EndsWith(".txt"))
+			{
+				var receivedText = File.ReadAllText(received).Replace("\r\n", "\n");
+				var approvedText = File.ReadAllText(received).Replace("\r\n", "\n");
+
+
+				if (!Compare(receivedText.ToCharArray(), approvedText.ToCharArray()))
+				{
+					return new ApprovalMismatchException(received, approved);
+				}
+
+				return null;
 			}
 
 			if (!Compare(File.ReadAllBytes(received), File.ReadAllBytes(approved)))
@@ -62,6 +82,23 @@ namespace ApprovalTests.Approvers
 			{
 				((IApprovalReporterWithCleanUp)reporter).CleanUp(approved, received);
 			}
+		}
+
+		private static bool Compare(ICollection<char> chars1, ICollection<char> chars2)
+		{
+			if (chars1.Count != chars2.Count)
+				return false;
+
+			IEnumerator<char> e1 = chars1.GetEnumerator();
+			IEnumerator<char> e2 = chars2.GetEnumerator();
+
+			while (e1.MoveNext() && e2.MoveNext())
+			{
+				if (e1.Current != e2.Current)
+					return false;
+			}
+
+			return true;
 		}
 
 		private static bool Compare(ICollection<byte> bytes1, ICollection<byte> bytes2)

@@ -168,3 +168,5 @@ pip-log.txt
 .DS_Store
 *.ForMachine.KARA.approved.*
 RealTests.playlist
+ApprovalTests.Tests/UnixLineEndings.txt
+ApprovalTests.Tests/WindowsLineEndings.txt
