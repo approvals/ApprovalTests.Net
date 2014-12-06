@@ -42,7 +42,9 @@ namespace ApprovalTests
 
 		public static void Verify(IApprovalWriter writer, IApprovalNamer namer, IApprovalFailureReporter reporter)
 		{
-			Core.Approver.Verify(new FileApprover(writer, namer), reporter);
+			var normaliseLineEndingsForTextFiles = CurrentCaller.GetFirstFrameForAttribute<IgnoreLineEndingsAttribute>();
+			var shouldIgnoreLineEndings = normaliseLineEndingsForTextFiles == null || normaliseLineEndingsForTextFiles.IgnoreLineEndings;
+			Approver.Verify(new FileApprover(writer, namer, shouldIgnoreLineEndings), reporter);
 		}
 
 		public static IApprovalFailureReporter GetReporter()
