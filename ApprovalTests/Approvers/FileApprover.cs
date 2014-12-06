@@ -1,121 +1,125 @@
 using System.Collections.Generic;
 using System.IO;
+
 using ApprovalTests.Core;
 using ApprovalTests.Core.Exceptions;
 
 namespace ApprovalTests.Approvers
 {
-	public class FileApprover : IApprovalApprover
-	{
-		private readonly IApprovalNamer namer;
-		private readonly bool normaliseLineEndingsForTextFiles;
-		private readonly IApprovalWriter writer;
-		private string approved;
-		private ApprovalException failure;
-		private string received;
+    public class FileApprover : IApprovalApprover
+    {
+        private readonly IApprovalNamer namer;
+        private readonly bool normalizeLineEndingsForTextFiles;
+        private readonly IApprovalWriter writer;
+        private string approved;
+        private ApprovalException failure;
+        private string received;
 
-		public FileApprover(IApprovalWriter writer, IApprovalNamer namer) : this(writer, namer, false)
-		{
-		}
+        public FileApprover(IApprovalWriter writer, IApprovalNamer namer)
+            : this(writer, namer, false)
+        {
+        }
 
-		public FileApprover(IApprovalWriter writer, IApprovalNamer namer, bool normaliseLineEndingsForTextFiles)
-		{
-			this.writer = writer;
-			this.namer = namer;
-			this.normaliseLineEndingsForTextFiles = normaliseLineEndingsForTextFiles;
-		}
+        public FileApprover(IApprovalWriter writer, IApprovalNamer namer, bool normalizeLineEndingsForTextFiles)
+        {
+            this.writer = writer;
+            this.namer = namer;
+            this.normalizeLineEndingsForTextFiles = normalizeLineEndingsForTextFiles;
+        }
 
-		public virtual bool Approve()
-		{
-			string basename = string.Format(@"{0}\{1}", namer.SourcePath, namer.Name);
-			approved = Path.GetFullPath(writer.GetApprovalFilename(basename));
-			received = Path.GetFullPath(writer.GetReceivedFilename(basename));
-			received = writer.WriteReceivedFile(received);
+        public virtual bool Approve()
+        {
+            string basename = string.Format(@"{0}\{1}", this.namer.SourcePath, this.namer.Name);
+            this.approved = Path.GetFullPath(this.writer.GetApprovalFilename(basename));
+            this.received = Path.GetFullPath(this.writer.GetReceivedFilename(basename));
+            this.received = this.writer.WriteReceivedFile(this.received);
 
-			failure = Approve(approved, received);
-			return failure == null;
-		}
+            this.failure = this.Approve(this.approved, this.received);
+            return this.failure == null;
+        }
 
-		public virtual ApprovalException Approve(string approved, string received)
-		{
-			if (!File.Exists(approved))
-			{
-				return new ApprovalMissingException(received, approved);
-			}
+        public virtual ApprovalException Approve(string approvedPath, string receivedPath)
+        {
+            if (!File.Exists(approvedPath))
+            {
+                return new ApprovalMissingException(receivedPath, approvedPath);
+            }
 
-			if (normaliseLineEndingsForTextFiles && Path.GetExtension(approved).EndsWith(".txt"))
-			{
-				var receivedText = File.ReadAllText(received).Replace("\r\n", "\n");
-				var approvedText = File.ReadAllText(received).Replace("\r\n", "\n");
+            if (this.normalizeLineEndingsForTextFiles && Path.GetExtension(approvedPath).EndsWith(".txt"))
+            {
+                var receivedText = File.ReadAllText(receivedPath).Replace("\r\n", "\n");
+                var approvedText = File.ReadAllText(approvedPath).Replace("\r\n", "\n");
 
+                return !Compare(receivedText.ToCharArray(), approvedText.ToCharArray()) ?
+                    new ApprovalMismatchException(receivedPath, approvedPath) :
+                    null;
+            }
 
-				if (!Compare(receivedText.ToCharArray(), approvedText.ToCharArray()))
-				{
-					return new ApprovalMismatchException(received, approved);
-				}
+            return !Compare(File.ReadAllBytes(receivedPath), File.ReadAllBytes(approvedPath)) ?
+                new ApprovalMismatchException(receivedPath, approvedPath) :
+                null;
+        }
 
-				return null;
-			}
+        public void Fail()
+        {
+            throw this.failure;
+        }
 
-			if (!Compare(File.ReadAllBytes(received), File.ReadAllBytes(approved)))
-			{
-				return new ApprovalMismatchException(received, approved);
-			}
+        public void ReportFailure(IApprovalFailureReporter reporter)
+        {
+            reporter.Report(this.approved, this.received);
+        }
 
-			return null;
-		}
+        public void CleanUpAfterSuccess(IApprovalFailureReporter reporter)
+        {
+            File.Delete(this.received);
+            var withCleanUp = reporter as IApprovalReporterWithCleanUp;
+            if (withCleanUp != null)
+            {
+                withCleanUp.CleanUp(this.approved, this.received);
+            }
+        }
 
-		public void Fail()
-		{
-			throw failure;
-		}
+        private static bool Compare(ICollection<char> chars1, ICollection<char> chars2)
+        {
+            if (chars1.Count != chars2.Count)
+            {
+                return false;
+            }
 
-		public void ReportFailure(IApprovalFailureReporter reporter)
-		{
-			reporter.Report(approved, received);
-		}
+            IEnumerator<char> e1 = chars1.GetEnumerator();
+            IEnumerator<char> e2 = chars2.GetEnumerator();
 
-		public void CleanUpAfterSucess(IApprovalFailureReporter reporter)
-		{
-			File.Delete(received);
-			if (reporter is IApprovalReporterWithCleanUp)
-			{
-				((IApprovalReporterWithCleanUp)reporter).CleanUp(approved, received);
-			}
-		}
+            while (e1.MoveNext() && e2.MoveNext())
+            {
+                if (e1.Current != e2.Current)
+                {
+                    return false;
+                }
+            }
 
-		private static bool Compare(ICollection<char> chars1, ICollection<char> chars2)
-		{
-			if (chars1.Count != chars2.Count)
-				return false;
+            return true;
+        }
 
-			IEnumerator<char> e1 = chars1.GetEnumerator();
-			IEnumerator<char> e2 = chars2.GetEnumerator();
+        private static bool Compare(ICollection<byte> bytes1, ICollection<byte> bytes2)
+        {
+            if (bytes1.Count != bytes2.Count)
+            {
+                return false;
+            }
 
-			while (e1.MoveNext() && e2.MoveNext())
-			{
-				if (e1.Current != e2.Current)
-					return false;
-			}
+            IEnumerator<byte> e1 = bytes1.GetEnumerator();
+            IEnumerator<byte> e2 = bytes2.GetEnumerator();
 
-			return true;
-		}
+            while (e1.MoveNext() && e2.MoveNext())
+            {
+                if (e1.Current != e2.Current)
+                {
+                    return false;
+                }
+            }
 
-		private static bool Compare(ICollection<byte> bytes1, ICollection<byte> bytes2)
-		{
-			if (bytes1.Count != bytes2.Count)
-				return false;
-
-			IEnumerator<byte> e1 = bytes1.GetEnumerator();
-			IEnumerator<byte> e2 = bytes2.GetEnumerator();
-
-			while (e1.MoveNext() && e2.MoveNext())
-			{
-				if (e1.Current != e2.Current)
-					return false;
-			}
-
-			return true;
-		}
-	}
+            return true;
+        }
+    }
 }
