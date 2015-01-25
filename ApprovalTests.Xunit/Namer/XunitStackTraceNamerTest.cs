@@ -57,28 +57,6 @@ namespace ApprovalTests.Xunit.Namer
 			Approvals.Verify(exception.Message);
 		}
 
-
-		[Fact]
-		public void TestReflectionNames()
-		{
-			AssertEquals<AsyncStateMachineAttribute>(XUnitStackTraceParser.AsyncAttributeName);
-		}
-
-		[Fact]
-		public void WorksWhenMissingLibraries()
-		{
-			var asyncAttributeName = XUnitStackTraceParser.AsyncAttributeName;
-			try
-			{
-				XUnitStackTraceParser.AsyncAttributeName = "foo";
-				Approvals.Verify("still works.");
-			}
-			finally
-			{
-				XUnitStackTraceParser.AsyncAttributeName = asyncAttributeName;
-			}
-		}
-
 		private static Task AnAsyncMethod()
 		{
 			return Task.FromResult(default(object));

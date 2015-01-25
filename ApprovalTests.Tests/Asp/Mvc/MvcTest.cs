@@ -17,7 +17,7 @@ namespace ApprovalTests.Tests.Asp.Mvc
     public class MvcTest
     {
         [TestFixture]
-        [UseReporter(typeof(DiffReporter), typeof(AllFailingTestsClipboardReporter))]
+        [UseReporter(typeof(TortoiseDiffReporter), typeof(AllFailingTestsClipboardReporter))]
         public class TryingMvcViewApproval
         {
             private readonly CassiniDevServer server = new CassiniDevServer();

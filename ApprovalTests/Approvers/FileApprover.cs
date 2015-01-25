@@ -3,6 +3,7 @@ using System.IO;
 
 using ApprovalTests.Core;
 using ApprovalTests.Core.Exceptions;
+using ApprovalTests.Reporters;
 
 namespace ApprovalTests.Approvers
 {
@@ -45,7 +46,7 @@ namespace ApprovalTests.Approvers
                 return new ApprovalMissingException(receivedPath, approvedPath);
             }
 
-            if (this.normalizeLineEndingsForTextFiles && Path.GetExtension(approvedPath).EndsWith(".txt"))
+            if (this.normalizeLineEndingsForTextFiles && GenericDiffReporter.IsTextFile(approvedPath))
             {
                 var receivedText = File.ReadAllText(receivedPath).Replace("\r\n", "\n");
                 var approvedText = File.ReadAllText(approvedPath).Replace("\r\n", "\n");
