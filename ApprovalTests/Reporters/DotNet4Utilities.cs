@@ -28,6 +28,16 @@ namespace ApprovalTests.Reporters
 			return GetFirstWorking(path, paths);
 		}
 
+        public static string GetFirstWorkingPathInProgramFilesX86(params string[] paths)
+        {
+            string[] programFilePaths = GetProgramFilesPaths();
+            return (from path in paths
+                    from programFilePath in programFilePaths
+                    let fullPath = programFilePath + @"\" + path
+                    where File.Exists(fullPath)
+                    select fullPath).FirstOrDefault();
+        }
+
 		public static string[] GetProgramFilesPaths()
 		{
 			var paths = new HashSet<string>();

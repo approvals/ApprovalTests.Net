@@ -6,7 +6,7 @@ namespace ApprovalTests.Reporters
 {
 	public class BeyondCompareReporter : GenericDiffReporter
 	{
-		readonly static string PATH = DotNet4Utilities.GetPathInProgramFilesX86(@"Beyond Compare 3\BCompare.exe");
+		readonly static string PATH = DotNet4Utilities.GetFirstWorkingPathInProgramFilesX86(@"Beyond Compare 4\BCompare.exe", @"Beyond Compare 3\BCompare.exe");
 		public readonly static BeyondCompareReporter INSTANCE = new BeyondCompareReporter();
 
 		public BeyondCompareReporter()
