@@ -38,7 +38,7 @@ Either:
 
 Solutions:
 a) Add [MethodImpl(MethodImplOptions.NoInlining)]
-b) Set Build->Opitmize Code to False 
+b) Set Build->Optimize Code to False 
    & Build->Advanced->DebugInfo to Full
 
 or
