@@ -2,6 +2,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using ApprovalUtilities.CallStack;
 
 namespace ApprovalTests.Namers.StackTraceParsers
@@ -14,10 +15,45 @@ namespace ApprovalTests.Namers.StackTraceParsers
 
 		public string TypeName
 		{
-			get { return approvalFrame.Method.DeclaringType.Name; }
+			get { return GetRealMethod(approvalFrame.Method).DeclaringType.Name; }
 		}
 
-		public string AdditionalInfo
+	    static MethodBase GetRealMethod(MethodBase method)
+	    {
+	        var declaringType = method.DeclaringType;
+	        if (declaringType.IsByRef)
+	        {
+	            return method;
+	        }
+            if (!ContainsAttribute(declaringType.GetCustomAttributes(false), "System.Runtime.CompilerServices.CompilerGeneratedAttribute"))
+	        {
+	            return method;
+	        }
+	        if (declaringType.GetInterface("System.Runtime.CompilerServices.IAsyncStateMachine") == null)
+	        {
+	            return method;
+	        }
+            if (!declaringType.Name.Contains("<") || !declaringType.Name.Contains(">"))
+	        {
+	            return method;
+	        }
+            var trueMethodName = declaringType.Name.TrimStart('<').Split('>').First();
+	        MethodInfo methodInfo;
+	            var bindingFlags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.DeclaredOnly;
+	        try
+	        {
+	            methodInfo = declaringType.DeclaringType.GetMethod(trueMethodName, bindingFlags);
+	        }
+	        catch (AmbiguousMatchException)
+	        {
+                //TODO: Should this throw??
+	            //var message = string.Format("Could not derive root method for async method '{0}' since there are multiple methods named '{1}'.", method.Name, trueMethodName);
+                return method;
+	        }
+            return methodInfo;
+	    }
+
+	    public string AdditionalInfo
 		{
 			get
 			{
@@ -38,7 +74,7 @@ namespace ApprovalTests.Namers.StackTraceParsers
 
 		protected virtual string GetMethodName()
 		{
-			return approvalFrame.Method.Name;
+            return GetRealMethod(approvalFrame.Method).Name;
 		}
 
 		public string SourcePath
@@ -62,9 +98,7 @@ namespace ApprovalTests.Namers.StackTraceParsers
 
 		public static Caller GetFirstFrameForAttribute(Caller caller, string attributeName)
 		{
-			var firstFrameForAttribute =
-				caller.Callers.FirstOrDefault(c => ContainsAttribute(c.Method.GetCustomAttributes(false), attributeName));
-			return firstFrameForAttribute;
+			return caller.Callers.FirstOrDefault(c => ContainsAttribute(GetRealMethod(c.Method).GetCustomAttributes(false), attributeName));
 		}
 
 		private static bool ContainsAttribute(object[] attributes, string attributeName)

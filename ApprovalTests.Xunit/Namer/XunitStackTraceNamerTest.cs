@@ -31,8 +31,7 @@ namespace ApprovalTests.Xunit.Namer
 			Approvals.Verify("Async");
 		}
 
-		[Fact(Skip = "This is Hard")]
-		//[Fact]
+		[Fact]
 		public async Task ProperFullAsyncTest()
 		{
 			await Task.Delay(10);
