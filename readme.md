@@ -45,7 +45,7 @@ Nightly (CI) Builds available at myget.org:
 [![ApprovalTests Nightly Build Status](https://www.myget.org/BuildSource/Badge/approvaltests?identifier=c56b6e36-ea68-4965-8cd8-e7033c66e38e "Build Status")](https://www.myget.org/gallery/approvaltests)
 
 [ApprovalTests on the MyGet Gallery](https://www.myget.org/gallery/approvaltests)
-Note: Select "Include Prerelease" instead of "Stable Only" (-IncludePrerelease in powershell)
+Note: Select "Include Prerelease" instead of "Stable Only" (`-IncludePrerelease` in powershell)
 
 Examples
 ---
