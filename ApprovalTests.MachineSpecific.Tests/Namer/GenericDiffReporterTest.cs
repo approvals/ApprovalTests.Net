@@ -20,7 +20,7 @@ namespace ApprovalTests.MachineSpecific.Tests.Namer
 		[TestMethod]
 		public void TestLaunchesBeyondCompareImage()
 		{
-			AssertLauncher("../../a.png", "../../b.png", BeyondCompareReporter.INSTANCE);
+			AssertLauncher("../../a.png", "../../b.png", BeyondCompare3Reporter.INSTANCE);
 		}
 
 		[TestMethod]
