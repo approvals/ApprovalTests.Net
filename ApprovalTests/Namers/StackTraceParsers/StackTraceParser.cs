@@ -35,14 +35,23 @@ Could Not Detect Test Framework
 
 Either:
 1) Optimizer Inlined Test Methods
+2) An async test with the same method name as another async method
 
 Solutions:
+1)
+
 a) Add [MethodImpl(MethodImplOptions.NoInlining)]
 b) Set Build->Opitmize Code to False 
    & Build->Advanced->DebugInfo to Full
 
 or
-2) Approvals is not set up to use your test framework.
+
+2) Rename the methods that are named the same as the async test.
+
+or
+
+3) Approvals is not set up to use your test framework.
+
 It currently supports {0}
 
 Solution:
