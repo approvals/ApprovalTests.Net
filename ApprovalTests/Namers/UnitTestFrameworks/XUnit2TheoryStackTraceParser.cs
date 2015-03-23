@@ -8,7 +8,7 @@ namespace ApprovalTests.Namers.UnitTestFrameworks
 
         public override string ForTestingFramework
         {
-            get { return "xUnit.net"; }
+            get { return "xUnit2.net"; }
         }
 
         protected override string GetAttributeType()
