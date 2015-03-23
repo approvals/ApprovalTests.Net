@@ -43,6 +43,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApprovalTests.MachineSpecif
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApprovalUtilities.Net45", "ApprovalUtilities.Net45\ApprovalUtilities.Net45.csproj", "{C4BEE6F7-448B-43D6-A9C3-17273C94B0E6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApprovalTests.Xunit2", "ApprovalTests.Xunit2\ApprovalTests.Xunit2.csproj", "{E9BD0B96-01C4-4B25-ADFD-3A630970D267}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -101,6 +103,10 @@ Global
 		{C4BEE6F7-448B-43D6-A9C3-17273C94B0E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4BEE6F7-448B-43D6-A9C3-17273C94B0E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4BEE6F7-448B-43D6-A9C3-17273C94B0E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9BD0B96-01C4-4B25-ADFD-3A630970D267}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9BD0B96-01C4-4B25-ADFD-3A630970D267}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9BD0B96-01C4-4B25-ADFD-3A630970D267}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9BD0B96-01C4-4B25-ADFD-3A630970D267}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,36 +1,38 @@
+using ApprovalTests.StackTraceParsers;
+using ApprovalUtilities.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using ApprovalTests.StackTraceParsers;
-using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.Namers.StackTraceParsers
 {
-	public class StackTraceParser : IStackTraceParser
-	{
-		private static IList<IStackTraceParser> parsers = (IList<IStackTraceParser>) GetParsers();
-		private IStackTraceParser parser;
+    using ApprovalTests.Namers.UnitTestFrameworks;
 
-		public string ForTestingFramework
-		{
-			get { return GetParsers().Select(x => x.ForTestingFramework).ToReadableString(); }
-		}
+    public class StackTraceParser : IStackTraceParser
+    {
+        private static IList<IStackTraceParser> parsers = (IList<IStackTraceParser>)GetParsers();
+        private IStackTraceParser parser;
 
-		public bool Parse(StackTrace stackTrace)
-		{
-			foreach (IStackTraceParser p in GetParsers())
-			{
-				if (p.Parse(stackTrace))
-				{
-					parser = p;
-					return true;
-				}
-			}
+        public string ForTestingFramework
+        {
+            get { return GetParsers().Select(x => x.ForTestingFramework).ToReadableString(); }
+        }
 
-			var helpLink = @"http://blog.approvaltests.com/2012/01/creating-namers.html";
-			throw new Exception(
-				string.Format(@"
+        public bool Parse(StackTrace stackTrace)
+        {
+            foreach (IStackTraceParser p in GetParsers())
+            {
+                if (p.Parse(stackTrace))
+                {
+                    parser = p;
+                    return true;
+                }
+            }
+
+            var helpLink = @"http://blog.approvaltests.com/2012/01/creating-namers.html";
+            throw new Exception(
+                string.Format(@"
 Could Not Detect Test Framework
 
 Either:
@@ -38,7 +40,7 @@ Either:
 
 Solutions:
 a) Add [MethodImpl(MethodImplOptions.NoInlining)]
-b) Set Build->Opitmize Code to False 
+b) Set Build->Optimize Code to False
    & Build->Advanced->DebugInfo to Full
 
 or
@@ -48,51 +50,52 @@ It currently supports {0}
 Solution:
 To add one use {1}.AddParser() method to add implementation of {2} with support for your testing framework.
 To learn how to implement one see {3}",
-				              ForTestingFramework,
-				              GetType(),
-				              typeof (IStackTraceParser),
-				              helpLink))
-				{
-					HelpLink = helpLink
-				};
-		}
+                              ForTestingFramework,
+                              GetType(),
+                              typeof(IStackTraceParser),
+                              helpLink))
+                {
+                    HelpLink = helpLink
+                };
+        }
 
-		public string ApprovalName
-		{
-			get { return parser.ApprovalName; }
-		}
+        public string ApprovalName
+        {
+            get { return parser.ApprovalName; }
+        }
 
-		public string SourcePath
-		{
-			get { return parser.SourcePath; }
-		}
+        public string SourcePath
+        {
+            get { return parser.SourcePath; }
+        }
 
-		private static void LoadIfApplicable(IList<IStackTraceParser> found, AttributeStackTraceParser p)
-		{
-			if (p.IsApplicable())
-			{
-				found.Add(p);
-			}
-		}
+        private static void LoadIfApplicable(IList<IStackTraceParser> found, AttributeStackTraceParser p)
+        {
+            if (p.IsApplicable())
+            {
+                found.Add(p);
+            }
+        }
 
-		public static void AddParser(IStackTraceParser parser)
-		{
-			parsers.Add(parser);
-		}
+        public static void AddParser(IStackTraceParser parser)
+        {
+            parsers.Add(parser);
+        }
 
-		public static IEnumerable<IStackTraceParser> GetParsers()
-		{
-			if (parsers == null)
-			{
-				parsers = new List<IStackTraceParser>();
-				LoadIfApplicable(parsers, new NUnitStackTraceParser());
-				LoadIfApplicable(parsers, new VSStackTraceParser());
-				LoadIfApplicable(parsers, new MbUnitStackTraceParser());
-				LoadIfApplicable(parsers, new XUnitStackTraceParser());
-				LoadIfApplicable(parsers, new XUnitTheoryStackTraceParser());
-				parsers.Add(new MSpecStackTraceParser());
-			}
-			return parsers;
-		}
-	}
+        public static IEnumerable<IStackTraceParser> GetParsers()
+        {
+            if (parsers == null)
+            {
+                parsers = new List<IStackTraceParser>();
+                LoadIfApplicable(parsers, new NUnitStackTraceParser());
+                LoadIfApplicable(parsers, new VSStackTraceParser());
+                LoadIfApplicable(parsers, new MbUnitStackTraceParser());
+                LoadIfApplicable(parsers, new XUnitStackTraceParser());
+                LoadIfApplicable(parsers, new XUnitTheoryStackTraceParser());
+                LoadIfApplicable(parsers, new XUnit2TheoryStackTraceParser());
+                parsers.Add(new MSpecStackTraceParser());
+            }
+            return parsers;
+        }
+    }
 }
