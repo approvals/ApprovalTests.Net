@@ -1,4 +1,5 @@
 ﻿using ApprovalTests.Reporters;
+using ApprovalUtilities.SimpleLogger;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ApprovalTests.MSTest
@@ -11,6 +12,7 @@ namespace ApprovalTests.MSTest
 		[TestMethod]
 		public void MSTestVS2010()
 		{
+			Logger.Variable("a",1);
 			Approvals.Verify("2010");
 		}
 	}

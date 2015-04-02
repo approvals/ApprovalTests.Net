@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using ApprovalUtilities.CallStack;
+using ApprovalUtilities.SimpleLogger;
 
 namespace ApprovalTests.Namers.StackTraceParsers
 {
@@ -48,7 +49,10 @@ namespace ApprovalTests.Namers.StackTraceParsers
 
 		private string GetFileNameForStack(Caller frame)
 		{
-			return frame.Parents.Select(c => c.StackFrame.GetFileName()).FirstOrDefault(f => f != null);
+		
+			Logger.Variable("frame",  frame);
+			return 
+				frame.Parents.Select(c => c.StackFrame.GetFileName()).FirstOrDefault(f => f != null);
 		}
 
 		public abstract string ForTestingFramework { get; }
@@ -57,6 +61,7 @@ namespace ApprovalTests.Namers.StackTraceParsers
 		{
 			caller = new Caller(trace, 0);
 			approvalFrame = FindApprovalFrame();
+			Logger.Variable("approvalFrame",approvalFrame);
 			return approvalFrame != null;
 		}
 

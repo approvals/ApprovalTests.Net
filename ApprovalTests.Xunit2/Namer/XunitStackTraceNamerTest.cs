@@ -1,3 +1,5 @@
+using ApprovalUtilities.Utilities;
+
 namespace ApprovalTests.Xunit2.Namer
 {
     using ApprovalTests.Namers;
@@ -52,7 +54,7 @@ namespace ApprovalTests.Xunit2.Namer
         public void TestApprovalNamerFailureMessage()
         {
             var parser = new StackTraceParser();
-            var exception = Assert.Throws<Exception>(() => parser.Parse(new StackTrace(6)));
+            var exception = ExceptionUtilities.GetException(() => parser.Parse(new StackTrace(6)));
 
             Approvals.Verify(exception.Message);
         }

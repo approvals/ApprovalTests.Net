@@ -40,7 +40,7 @@ namespace ApprovalTests.ExceptionalExceptions
 		private static string GetTlDr(ExceptionalId uid)
 		{
 			return "";
-			return new ExceptionalTlDr(uid).Load();
+			//return new ExceptionalTlDr(uid).Load();
 		}
 
 		public static ExceptionalId GenerateUniqueId<T>()

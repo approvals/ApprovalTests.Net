@@ -4,11 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using ApprovalTests.Namers.UnitTestFrameworks;
 
 namespace ApprovalTests.Namers.StackTraceParsers
 {
-    using ApprovalTests.Namers.UnitTestFrameworks;
-
     public class StackTraceParser : IStackTraceParser
     {
         private static IList<IStackTraceParser> parsers = (IList<IStackTraceParser>)GetParsers();
@@ -21,8 +20,9 @@ namespace ApprovalTests.Namers.StackTraceParsers
 
         public bool Parse(StackTrace stackTrace)
         {
-            foreach (IStackTraceParser p in GetParsers())
+            foreach (IStackTraceParser parserTemplate in GetParsers())
             {
+							IStackTraceParser p = (IStackTraceParser) Activator.CreateInstance(parserTemplate.GetType());
                 if (p.Parse(stackTrace))
                 {
                     parser = p;
