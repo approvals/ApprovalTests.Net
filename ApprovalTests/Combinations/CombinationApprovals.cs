@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 
 namespace ApprovalTests.Combinations
@@ -247,7 +248,7 @@ namespace ApprovalTests.Combinations
 													{
 														result = ex.Message;
 													}
-													var input = String.Format(format, a, b, c, d, e, f, g, h, i);
+													var input = String.Format(CultureInfo.InvariantCulture, format, a, b, c, d, e, f, g, h, i);
 													sb.Append(String.Format("{0} => {1}\r\n", input, resultFormatter(result)));
 												}, aList, bList, cList, dList, eList, fList, gList, hList, iList);
 
