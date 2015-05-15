@@ -115,6 +115,7 @@
     <Compile Include="Asp\UrlTest.cs" />
     <Compile Include="Async\AsyncTests.cs" />
     <Compile Include="CleanupReporter.cs" />
+    <Compile Include="CombinationApprovalsTests.cs" />
     <Compile Include="Core\Exceptions\SerializableExceptionsTest.cs" />
     <Compile Include="ExceptionalExceptions\ExceptionExceptionsTest.cs" />
     <Compile Include="Namer\StackTraceParsers\StackTraceParserTests.cs" />
