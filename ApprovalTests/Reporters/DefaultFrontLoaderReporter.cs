@@ -8,6 +8,7 @@
             : base(
             TfsReporter.INSTANCE,
             TeamCityReporter.INSTANCE,
+            JenkinsReporter.INSTANCE,
             CruiseControlNetReporter.INSTANCE,
             NCrunchReporter.INSTANCE,
             MightyMooseAutoTestReporter.INSTANCE,
