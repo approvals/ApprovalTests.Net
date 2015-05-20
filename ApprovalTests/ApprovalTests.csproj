@@ -160,6 +160,7 @@
     <Compile Include="Namers\UseApprovalSubdirectoryAttribute.cs" />
     <Compile Include="Reporters\BeyondCompareReporter.cs" />
     <Compile Include="Reporters\BeyondCompare4Reporter.cs" />
+    <Compile Include="Reporters\GoContinuousDeliveryReporter.cs" />
     <Compile Include="Reporters\IgnoreLineEndingsAttribute.cs" />
     <Compile Include="Reporters\JenkinsReporter.cs" />
     <Compile Include="Reporters\XUnit2Reporter.cs" />

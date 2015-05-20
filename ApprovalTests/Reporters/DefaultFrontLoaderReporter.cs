@@ -12,7 +12,8 @@
             CruiseControlNetReporter.INSTANCE,
             NCrunchReporter.INSTANCE,
             MightyMooseAutoTestReporter.INSTANCE,
-            MyGetReporter.INSTANCE)
+            MyGetReporter.INSTANCE,
+            GoContinuousDeliveryReporter.INSTANCE)
         {
         }
     }
