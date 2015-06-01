@@ -13,6 +13,7 @@
     <authors>Llewellyn Falco &amp; Dan Gilkerson</authors>
     <projectUrl>https://github.com/approvals/ApprovalTests.Net</projectUrl>
     <iconUrl>http://approvaltests.sourceforge.net/sites/all/themes/corolla/logo.png</iconUrl>
+    <tags>Approvals ApprovalTests ApprovalTest Test Verification Verify Approve Testing</tags>
     <dependencies>
       <group targetFramework=".NETFramework3.5">
         <dependency id="ApprovalUtilities" />
