@@ -30,7 +30,7 @@ namespace ApprovalTests.Approvers
 
         public virtual bool Approve()
         {
-            string basename = string.Format(@"{0}\{1}", this.namer.SourcePath, this.namer.Name);
+            string basename = Path.Combine(this.namer.SourcePath, this.namer.Name);
             this.approved = Path.GetFullPath(this.writer.GetApprovalFilename(basename));
             this.received = Path.GetFullPath(this.writer.GetReceivedFilename(basename));
             this.received = this.writer.WriteReceivedFile(this.received);
