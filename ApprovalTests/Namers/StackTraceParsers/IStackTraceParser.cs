@@ -6,6 +6,7 @@ namespace ApprovalTests.Namers.StackTraceParsers
 	{
 		string ApprovalName { get; }
 		string SourcePath { get; }
+		string Namespace { get; }
 		string ForTestingFramework { get; }
 		bool Parse(StackTrace stackTrace);
 	}

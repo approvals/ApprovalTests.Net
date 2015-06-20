@@ -12,7 +12,6 @@ namespace ApprovalTests.Namers.StackTraceParsers
 		protected Caller caller;
 		protected Caller approvalFrame;
 
-
 		public string TypeName
 		{
 			get { return approvalFrame.Method.DeclaringType.Name; }
@@ -45,6 +44,11 @@ namespace ApprovalTests.Namers.StackTraceParsers
 		public string SourcePath
 		{
 			get { return Path.GetDirectoryName(GetFileNameForStack(approvalFrame)); }
+		}
+
+		public string Namespace
+		{
+			get { return approvalFrame.Class.Namespace; }
 		}
 
 		private string GetFileNameForStack(Caller frame)
