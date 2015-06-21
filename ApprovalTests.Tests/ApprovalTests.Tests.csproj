@@ -118,7 +118,11 @@
     <Compile Include="CombinationApprovalsTests.cs" />
     <Compile Include="Core\Exceptions\SerializableExceptionsTest.cs" />
     <Compile Include="ExceptionalExceptions\ExceptionExceptionsTest.cs" />
+    <Compile Include="Mocks\MockNamer.cs" />
+    <Compile Include="Mocks\MockStackTraceParser.cs" />
+    <Compile Include="Namer\RelativeToUnitTestNamespaceNamerTests.cs" />
     <Compile Include="Namer\StackTraceParsers\StackTraceParserTests.cs" />
+    <Compile Include="Namer\UnitTestFrameworkNamerTests.cs" />
     <Compile Include="Persistence\AsyncSaverTest.cs" />
     <Compile Include="Reporters\PowerShellClipboardReporterTest.cs" />
     <Compile Include="Namer\UseNamerAttributeTests.cs" />

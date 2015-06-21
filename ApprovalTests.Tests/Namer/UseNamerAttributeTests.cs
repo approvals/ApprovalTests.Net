@@ -1,5 +1,6 @@
 ﻿using System;
 using ApprovalTests.Core;
+using ApprovalTests.Tests.Mocks;
 using ApprovalTests.Namers;
 using ApprovalTests.Reporters;
 using NUnit.Framework;
@@ -10,12 +11,6 @@ namespace ApprovalTests.Tests.Namer
     class UseNamerAttributeTests
     {
         internal static Func<bool> IsAlwaysTrue = () => true;
-
-        internal class MockNamer : IApprovalNamer
-        {
-            public string SourcePath { get; private set; }
-            public string Name { get; private set; }
-        }
 
         internal static class MockApprovals
         {
