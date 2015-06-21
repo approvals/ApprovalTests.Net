@@ -13,10 +13,12 @@ namespace ApprovalTests.Tests.Namer
         {
             var stackTraceParser = new MockStackTraceParser
             {
+                RootNamespace = "MyProject.Tests",
+                RootPath = @"Z:\Projects\MyProject\MyProject.Tests",
                 Namespace = "MyProject.Tests"
             };
 
-            var namer = new RelativeToUnitTestNamespaceNamer("MyProject.Tests", @"Z:\Projects\MyProject\MyProject.Tests", stackTraceParser);
+            var namer = new RelativeToUnitTestNamespaceNamer(stackTraceParser);
 
             Assert.That(namer.SourcePath, Is.EqualTo(@"Z:\Projects\MyProject\MyProject.Tests"));
         }
@@ -26,10 +28,12 @@ namespace ApprovalTests.Tests.Namer
         {
             var stackTraceParser = new MockStackTraceParser
             {
+                RootNamespace = "MyProject.Tests",
+                RootPath = @"Z:\Projects\MyProject\MyProject.Tests",
                 Namespace = "MyProject.Tests.Customers.Api"
             };
 
-            var namer = new RelativeToUnitTestNamespaceNamer("MyProject.Tests", @"Z:\Projects\MyProject\MyProject.Tests", stackTraceParser);
+            var namer = new RelativeToUnitTestNamespaceNamer(stackTraceParser);
 
             Assert.That(namer.SourcePath, Is.EqualTo(@"Z:\Projects\MyProject\MyProject.Tests\Customers\Api"));
         }
@@ -39,13 +43,12 @@ namespace ApprovalTests.Tests.Namer
         {
             var stackTraceParser = new MockStackTraceParser
             {
+                RootNamespace = "Root.namespace.that.does.not.match.namespace.of.test",
+                RootPath = @"C:\Projects\MyProject\MyProject.Tests",
                 Namespace = "MyNewProject.Tests"
             };
 
-            var namer = new RelativeToUnitTestNamespaceNamer(
-                rootNamespace: "Root.namespace.that.does.not.match.namespace.of.test",
-                assemblyPath: @"C:\Projects\MyProject\MyProject.Tests",
-                stackTraceParser: stackTraceParser);
+            var namer = new RelativeToUnitTestNamespaceNamer(stackTraceParser);
 
             Assert.That(() => namer.SourcePath, Throws.Exception);
         }
@@ -55,13 +58,12 @@ namespace ApprovalTests.Tests.Namer
         {
             var stackTraceParser = new MockStackTraceParser
             {
+                RootNamespace = "MyProject.Tests",
+                RootPath = @"C:\Projects\MyProject\MyProject.Tests",
                 Namespace = "test.namespace.that.does.not.match.root.namespace"
             };
 
-            var namer = new RelativeToUnitTestNamespaceNamer(
-                rootNamespace: "MyProject.Tests",
-                assemblyPath: @"C:\Projects\MyProject\MyProject.Tests",
-                stackTraceParser: stackTraceParser);
+            var namer = new RelativeToUnitTestNamespaceNamer(stackTraceParser);
 
             Assert.That(() => namer.SourcePath, Throws.Exception);
         }
@@ -71,13 +73,12 @@ namespace ApprovalTests.Tests.Namer
         {
             var stackTraceParser = new MockStackTraceParser
             {
+                RootNamespace = "HelloWorld",
+                RootPath = @"C:\Projects\MyProject\MyProject.Tests",
                 Namespace = "Microsoft.HelloWorld"
             };
 
-            var namer = new RelativeToUnitTestNamespaceNamer(
-                rootNamespace: "HelloWorld",
-                assemblyPath: @"C:\Projects\MyProject\MyProject.Tests",
-                stackTraceParser: stackTraceParser);
+            var namer = new RelativeToUnitTestNamespaceNamer(stackTraceParser);
 
             Assert.That(() => namer.SourcePath, Throws.Exception);
         }
@@ -88,10 +89,12 @@ namespace ApprovalTests.Tests.Namer
         {
             var stackTraceParser = new MockStackTraceParser
             {
+                RootNamespace = "MyProject.Tests",
+                RootPath = @"Z:\Projects\MyProject\MyProject.Tests",
                 Namespace = "MyProject.Tests.CRM"
             };
 
-            var namer = new RelativeToUnitTestNamespaceNamer("MyProject.Tests", @"Z:\Projects\MyProject\MyProject.Tests", stackTraceParser);
+            var namer = new RelativeToUnitTestNamespaceNamer(stackTraceParser);
 
             Assert.That(namer.SourcePath, Is.EqualTo(@"Z:\Projects\MyProject\MyProject.Tests\CRM\subdir1"));
         }
@@ -105,6 +108,12 @@ namespace ApprovalTests.Tests.Namer
             public void full_integration_test()
             {
                 Approvals.VerifyJson(@"{ 'happy': 'days' }");
+            }
+
+            [TearDown]
+            public void TearDown()
+            {
+                Approvals.RegisterDefaultNamerCreation(() => new UnitTestFrameworkNamer());
             }
         }
     }

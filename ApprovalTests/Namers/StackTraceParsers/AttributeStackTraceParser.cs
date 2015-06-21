@@ -2,6 +2,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using ApprovalUtilities.CallStack;
 using ApprovalUtilities.SimpleLogger;
 
@@ -15,6 +16,16 @@ namespace ApprovalTests.Namers.StackTraceParsers
 		public string TypeName
 		{
 			get { return approvalFrame.Method.DeclaringType.Name; }
+		}
+
+		public string RootNamespace
+		{
+			get { return approvalFrame.Assembly.GetName().Name; }
+		}
+
+		public string RootPath
+		{
+			get { return GetAssemblyDirectory(approvalFrame.Assembly); }
 		}
 
 		public string AdditionalInfo
@@ -84,6 +95,14 @@ namespace ApprovalTests.Namers.StackTraceParsers
 		protected virtual Caller FindApprovalFrame()
 		{
 			return GetFirstFrameForAttribute(caller, GetAttributeType());
+		}
+
+		private static string GetAssemblyDirectory(Assembly assembly)
+		{
+			var codeBase = assembly.CodeBase;
+			var uri = new UriBuilder(codeBase);
+			var path = Uri.UnescapeDataString(uri.Path);
+			return Path.GetDirectoryName(path);
 		}
 
 		public bool IsApplicable()

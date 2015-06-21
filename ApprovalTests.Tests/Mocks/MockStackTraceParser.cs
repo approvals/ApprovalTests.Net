@@ -7,6 +7,8 @@ namespace ApprovalTests.Tests.Mocks
     {
         public string ApprovalName { get; set; }
         public string ForTestingFramework { get; set; }
+        public string RootNamespace { get; set; }
+        public string RootPath { get; set; }
         public string Namespace { get; set; }
         public string SourcePath { get; set; }
         public bool Parse(StackTrace stackTrace)
