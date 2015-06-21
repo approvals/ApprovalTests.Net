@@ -201,6 +201,9 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="Namer\Approvals\Json\IntegrationTests.full_integration_test.approved.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\ApprovalTests.Tests.EntityFramework.ModelContainer.datasource" />
     <None Include="Properties\Settings.settings">

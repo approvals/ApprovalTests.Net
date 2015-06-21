@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using ApprovalTests.Namers;
 using ApprovalTests.Tests.Mocks;
+using ApprovalTests.Reporters;
 
 namespace ApprovalTests.Tests.Namer
 {
@@ -79,6 +80,32 @@ namespace ApprovalTests.Tests.Namer
                 stackTraceParser: stackTraceParser);
 
             Assert.That(() => namer.SourcePath, Throws.Exception);
+        }
+
+        [Test]
+        [UseApprovalSubdirectory("subdir1")]
+        public void source_path_has_subdirectory_in_path()
+        {
+            var stackTraceParser = new MockStackTraceParser
+            {
+                Namespace = "MyProject.Tests.CRM"
+            };
+
+            var namer = new RelativeToUnitTestNamespaceNamer("MyProject.Tests", @"Z:\Projects\MyProject\MyProject.Tests", stackTraceParser);
+
+            Assert.That(namer.SourcePath, Is.EqualTo(@"Z:\Projects\MyProject\MyProject.Tests\CRM\subdir1"));
+        }
+
+        [UseNamer(typeof(RelativeToUnitTestNamespaceNamer), ForReporterOfType = typeof(DiffReporter))]
+        [UseReporter(typeof(DiffReporter))]
+        public class IntegrationTests
+        {
+            [Test]
+            [UseApprovalSubdirectory("Approvals\\Json")]
+            public void full_integration_test()
+            {
+                Approvals.VerifyJson(@"{ 'happy': 'days' }");
+            }
         }
     }
 }
