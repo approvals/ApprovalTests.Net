@@ -17,7 +17,7 @@ namespace ApprovalTests.Tests.Asp.Mvc
     public class MvcTest
     {
         [TestFixture]
-        [UseReporter(typeof(WinMergeReporter), typeof(AllFailingTestsClipboardReporter))]
+        [UseReporter(typeof(DiffReporter), typeof(AllFailingTestsClipboardReporter))]
         public class TryingMvcViewApproval
         {
             private readonly CassiniDevServer server = new CassiniDevServer();
@@ -25,7 +25,7 @@ namespace ApprovalTests.Tests.Asp.Mvc
             [TestFixtureSetUp]
             public void Setup()
             {
-                PortFactory.MvcPort = 11624;
+                PortFactory.MvcPort = 11625;
                 this.server.StartServer(MvcApplication.Path, PortFactory.MvcPort, "/", "localhost");
             }
 
@@ -38,14 +38,14 @@ namespace ApprovalTests.Tests.Asp.Mvc
             [Test]
             public void TestingSomeMvcView()
             {
-                // AspApprovals.VerifyUrlViaPost("http://localhost:11624/Cool/Index");
+                // AspApprovals.VerifyUrlViaPost("http://localhost:11625/Cool/Index");
                 MvcApprovals.VerifyMvcPage(new CoolController().Index);
             }
 
             [Test]
             public void TestingPostView()
             {
-                MvcApprovals.VerifyUrlViaPost("http://localhost:11624/Cool/SaveName", new NameValueCollection { { "Name", "Henrik" } });
+                MvcApprovals.VerifyUrlViaPost("http://localhost:11625/Cool/SaveName", new NameValueCollection { { "Name", "Henrik" } });
             }
 
             [Test]

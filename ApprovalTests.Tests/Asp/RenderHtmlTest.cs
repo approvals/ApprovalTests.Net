@@ -1,9 +1,7 @@
 ﻿# if DEBUG
-using ApprovalTests.Scrubber;
-using System;
-using System.Text.RegularExpressions;
 using ApprovalTests.Asp;
 using ApprovalTests.Reporters;
+using ApprovalTests.Scrubber;
 using Asp.Net.Demo;
 using Asp.Net.Demo.Orders;
 using CassiniDev;

@@ -21,6 +21,7 @@ namespace ApprovalTests.Asp.Mvc
 				using (WebClient webClient = new WebClient())
 				{
 					string str1 = url.Substring(0, url.LastIndexOf("/"));
+                    webClient.Encoding = Encoding.UTF8;
 					byte[] resp = webClient.UploadValues(url, "POST", nameValueCollection);
 					string str2 = Encoding.UTF8.GetString(resp);
 
