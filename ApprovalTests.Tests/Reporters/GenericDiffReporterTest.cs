@@ -51,7 +51,7 @@ namespace ApprovalTests.Tests.Reporters
         {
             var r = new CodeCompareReporter();
             GenericDiffReporter.RegisterTextFileTypes(".myCrazyExtension");
-            Assert.IsTrue(r.IsWorkingInThisEnvironment("file.myCrazyExtension"));
+            Assert.IsTrue(r.IsValidFileType("file.myCrazyExtension"));
         }
 
         [Test]

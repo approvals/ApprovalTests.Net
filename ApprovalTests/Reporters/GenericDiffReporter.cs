@@ -162,11 +162,16 @@ Recieved {0} ({1}, {2}, {3})"
 
 		public virtual bool IsWorkingInThisEnvironment(string forFile)
 		{
-			return File.Exists(GetDiffProgram()) && IsFileOneOf(forFile, fileTypes());
+			return File.Exists(GetDiffProgram()) && IsValidFileType(forFile);
 		}
 
+	    public bool IsValidFileType(string forFile)
+	    {
+	        return IsFileOneOf(forFile, fileTypes());
+	    }
 
-		public LaunchArgs GetLaunchArguments(string approved, string received)
+
+	    public LaunchArgs GetLaunchArguments(string approved, string received)
 		{
 			return new LaunchArgs(GetDiffProgram(), arguments.FormatWith(received, approved));
 		}
