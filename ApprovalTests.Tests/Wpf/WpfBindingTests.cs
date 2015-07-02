@@ -4,6 +4,7 @@ using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using System.Windows.Controls;
 using System.Windows.Data;
+using ApprovalTests.Reporters;
 using ApprovalTests.Wpf;
 using ApprovalUtilities.Utilities;
 using NUnit.Framework;

@@ -1,3 +1,5 @@
+using ApprovalTests.Reporters;
+
 namespace ApprovalUtilities.Tests.Reflection
 {
     using System;
@@ -37,7 +39,6 @@ namespace ApprovalUtilities.Tests.Reflection
                 new CheckBox().NonPublicStaticFields(false),
                 string.Empty);
         }
-
         [TestMethod]
         public void GetInheritedNonPublicStaticFields()
         {
