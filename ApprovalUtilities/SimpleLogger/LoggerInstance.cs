@@ -9,7 +9,7 @@ namespace ApprovalUtilities.SimpleLogger
 {
 	public class LoggerInstance
 	{
-		public IAppendable Writer = new FileWriter();
+		public IAppendable Writer = new ConsoleWriter();
 		private int indent = 0;
 		public int TabSize = 4;
 		private bool showMarkerIn = true;
