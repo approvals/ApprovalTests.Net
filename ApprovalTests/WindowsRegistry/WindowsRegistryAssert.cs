@@ -6,24 +6,29 @@ namespace ApprovalTests.WindowsRegistry
 {
 	public static class WindowsRegistryAssert
 	{
-		public static void HasDword(RegistryKey registryKey, string keyName, string valueName, Int32 expectedValue,
-		                            string failureMessage)
+		public static void HasDword(string keyName, string valueName, int expectedValue, string failureMessage)
 		{
-			var key = registryKey.OpenSubKey(keyName);
+			HasDword(Registry.CurrentUser, keyName, valueName, expectedValue, failureMessage);
+		}
 
-			int actualValue = key == null ? 0 : (int) key.GetValue(valueName, 0);
+		private static void HasDword(RegistryKey registryKey, string keyName, string valueName, int expectedValue, string failureMessage)
+		{
+			var actualValue = ReadIntKeyValue(registryKey, keyName, valueName);
 
 			if (actualValue != expectedValue)
 			{
 				string message = "{0}\r\nMust set DWORD {1}\\{2} : {3} = {4}.".FormatWith(failureMessage, registryKey.Name, keyName, valueName,
-				                                                                     expectedValue);
+																																						 expectedValue);
 				throw new Exception(message);
 			}
 		}
 
-		public static void HasDword(string keyName, string valueName, Int32 expectedValue, string failureMessage)
+		private static int ReadIntKeyValue(RegistryKey registryKey, string keyName, string valueName)
 		{
-			HasDword(Registry.CurrentUser, keyName, valueName, expectedValue, failureMessage);
+			using (var key = registryKey.OpenSubKey(keyName))
+			{
+				return key == null ? 0 : (int)key.GetValue(valueName, 0);
+			}
 		}
 	}
 }
