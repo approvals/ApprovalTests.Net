@@ -71,6 +71,7 @@
   <ItemGroup>
     <Compile Include="Namer\ApprovalResultsTest.cs" />
     <Compile Include="Namer\GenericDiffReporterTest.cs" />
+    <Compile Include="Namer\VisualStudioReporterTest.cs" />
     <Compile Include="NHibernate\Company.cs" />
     <Compile Include="NHibernate\Employee.cs" />
     <Compile Include="NHibernate\Event.cs" />
