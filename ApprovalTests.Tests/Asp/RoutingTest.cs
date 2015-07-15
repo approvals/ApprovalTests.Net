@@ -6,7 +6,7 @@ using NUnit.Framework;
 namespace ApprovalTests.Tests.Asp
 {
 	[TestFixture]
-	[UseReporter(typeof (TortoiseDiffReporter))]
+	[UseReporter(typeof (ClipboardReporter))]
 	public class RoutingTest
 	{
 		[Test]
@@ -15,5 +15,10 @@ namespace ApprovalTests.Tests.Asp
 			var urls = new[] {"/Home/Index/Hello", "/"};
 			AspApprovals.VerifyRouting(MvcApplication.RegisterRoutes, urls);
 		}
+
+	    [Test]
+	    public void TestMissingRoutes(){
+	    AspApprovals.VerifyRouting(r => { }, "/");
+	    }
 	}
 }

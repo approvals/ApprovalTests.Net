@@ -100,7 +100,8 @@ namespace ApprovalTests.Asp
 				var correctedUrl = url.StartsWith("~") ? url : '~' + url;
 				HttpContextBase httpContext = new MockContextBase(correctedUrl);
 				var route = routes.GetRouteData(httpContext);
-				sb.AppendFormat("{0} => {1} \r\n", url, route.Values.ToReadableString());
+                var routeText = route == null ? "404: Not found" : route.Values.ToReadableString();
+			    sb.AppendFormat("{0} => {1} \r\n", url, routeText);
 			}
 			Approvals.Verify(sb.ToString());
 		}

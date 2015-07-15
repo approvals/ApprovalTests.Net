@@ -12,6 +12,8 @@ namespace ApprovalUtilities.Tests.Utilities
 		{
 			Assert.AreEqual("[]", new int[0].ToReadableString());
 			Assert.AreEqual("[1, 2, 3]", new int[] {1, 2, 3}.ToReadableString());
+		    int[] empty = null;
+			Assert.AreEqual("[]",empty.ToReadableString());
 		}
 
 		[TestMethod]
