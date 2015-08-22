@@ -9,6 +9,7 @@
             TfsReporter.INSTANCE,
             TeamCityReporter.INSTANCE,
             JenkinsReporter.INSTANCE,
+            BambooReporter.INSTANCE,
             CruiseControlNetReporter.INSTANCE,
             NCrunchReporter.INSTANCE,
             MightyMooseAutoTestReporter.INSTANCE,

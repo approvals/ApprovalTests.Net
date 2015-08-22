@@ -158,6 +158,7 @@
     <Compile Include="Namers\UnitTestFrameworks\XUnitStackTraceParser.cs" />
     <Compile Include="Namers\UnitTestFrameworks\XUnitTheoryStackTraceParser.cs" />
     <Compile Include="Namers\UseApprovalSubdirectoryAttribute.cs" />
+    <Compile Include="Reporters\BambooReporter.cs" />
     <Compile Include="Reporters\BeyondCompareReporter.cs" />
     <Compile Include="Reporters\BeyondCompare4Reporter.cs" />
     <Compile Include="Reporters\GoContinuousDeliveryReporter.cs" />
