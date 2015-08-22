@@ -69,21 +69,6 @@ To learn how to implement one see {3}",
             get { return parser.SourcePath; }
         }
 
-        public string RootNamespace
-        {
-            get { return parser.RootNamespace; }
-        }
-
-        public string RootPath
-        {
-            get { return parser.RootPath; }
-        }
-
-        public string Namespace
-        {
-            get { return parser.Namespace; }
-        }
-
         private static void LoadIfApplicable(IList<IStackTraceParser> found, AttributeStackTraceParser p)
         {
             if (p.IsApplicable())

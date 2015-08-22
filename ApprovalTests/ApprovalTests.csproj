@@ -152,7 +152,6 @@
     <Compile Include="Maintenance\ApprovalMaintenance.cs" />
     <Compile Include="Namers\ApprovalResults.cs" />
     <Compile Include="Namers\NamerFactory.cs" />
-    <Compile Include="Namers\RelativeToUnitTestNamespaceNamer.cs" />
     <Compile Include="Namers\StackTraceParsers\AttributeStackTraceParser.cs" />
     <Compile Include="Namers\UnitTestFrameworks\MSpecStackTraceParser.cs" />
     <Compile Include="Namers\UnitTestFrameworks\XUnit2TheoryStackTraceParser.cs" />
@@ -168,7 +167,6 @@
     <Compile Include="Reporters\XUnit2Reporter.cs" />
     <Compile Include="Scrubber\HtmlScrubbers.cs" />
     <Compile Include="Scrubber\PdfScrubber.cs" />
-    <Compile Include="Namers\UseNamerAttribute.cs" />
     <Compile Include="Persistence\DatabaseApprovals.cs" />
     <Compile Include="Persistence\EntityFramework\EntityFrameworkApprovals.cs" />
     <Compile Include="Persistence\DataSets\ColumnDefaults.cs" />
