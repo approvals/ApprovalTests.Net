@@ -35,6 +35,16 @@ namespace ApprovalTests.Wpf
 			return new ImageWriter(f => WpfUtils.ScreeenCaptureInStaThread(f, action));
 		}
 
+        public static void Verify(Func<Control> action)
+        {
+            ApprovalTests.Approvals.Verify(CreateControlWpfWriter(action));
+        }
+
+        private static IApprovalWriter CreateControlWpfWriter(Func<Control> action)
+        {
+            return new ImageWriter(f => WpfUtils.ScreeenCaptureInStaThread(f, action));
+        }
+
 		public static void Verify(Control control)
 		{
 			using (addAdditionalInfo())

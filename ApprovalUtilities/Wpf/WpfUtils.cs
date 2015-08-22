@@ -62,6 +62,34 @@ namespace ApprovalUtilities.Wpf
 			return received;
 		}
 
+        public static string ScreeenCaptureInStaThread(string received, Func<Control> loader)
+        {
+            Exception caught = null;
+            var t = new Thread(() =>
+            {
+                try
+                {
+                    Control control = loader();
+                    ScreenCapture(control, received);
+                }
+                catch (Exception e)
+                {
+                    caught = e;
+                }
+            });
+
+            t.SetApartmentState(ApartmentState.STA); //Many WPF UI elements need to be created inside STA
+            t.Start();
+            t.Join();
+
+            if (caught != null)
+            {
+                throw new Exception("Creating window failed.", caught);
+            }
+
+            return received;
+        }
+
 		public static string ScreeenCaptureInStaThread(string received, Control control)
 		{
 			Exception caught = null;
@@ -96,7 +124,7 @@ namespace ApprovalUtilities.Wpf
 				// The BitmapSource that is rendered with a Visual.
 					control.Measure(new Size(double.PositiveInfinity,double.PositiveInfinity));
 				Size size = control.DesiredSize;
-			  int	width = (int) size.Width;
+			    int	width = (int) size.Width;
 				int height = (int) size.Height;
 				control.Arrange(new Rect(0,0,width,height));
 				var rtb = new RenderTargetBitmap(width, height, 96, 96, PixelFormats.Pbgra32);
