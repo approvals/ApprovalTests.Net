@@ -9,5 +9,5 @@ using ApprovalTests.Reporters;
 [assembly: AssemblyDescription("Tests for the approval testing library")]
 [assembly: AssemblyProduct("Approval Tests Tests")]
 
-[assembly: UseReporter(typeof(DiffReporter))]
+[assembly: UseReporter(typeof(TortoiseDiffReporter))]
 

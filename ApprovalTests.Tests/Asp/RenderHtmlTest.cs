@@ -10,7 +10,7 @@ using NUnit.Framework;
 namespace ApprovalTests.Tests.Asp
 {
 	[TestFixture]
-	[UseReporter(typeof (DiffReporter), typeof (FileLauncherReporter))]
+	[UseReporter(typeof (TortoiseDiffReporter), typeof (FileLauncherReporter))]
 	public class RenderHtmlTest
 	{
 		private CassiniDevServer server = new CassiniDevServer();
