@@ -8,69 +8,51 @@ using System.Windows.Media.Imaging;
 
 namespace ApprovalUtilities.Wpf
 {
-	public class WpfUtils
-	{
-		public static void ScreenCapture(Window window, string filename)
-		{
-			try
-			{
-				window.Show(); // make sure it is ready for rendering
+    public class WpfUtils
+    {
+        public static void ScreenCapture(Window window, string filename)
+        {
+            try
+            {
+                window.Show(); // make sure it is ready for rendering
 
-				// The BitmapSource that is rendered with a Visual.
-				var rtb = new RenderTargetBitmap((int)window.ActualWidth, (int)window.ActualHeight, 96, 96, PixelFormats.Pbgra32);
-				rtb.Render(window);
+                // The BitmapSource that is rendered with a Visual.
+                var rtb = new RenderTargetBitmap((int) window.ActualWidth, (int) window.ActualHeight, 96, 96,
+                    PixelFormats.Pbgra32);
+                rtb.Render(window);
 
-				// Encoding the RenderBitmapTarget as a PNG file.
-				var png = new PngBitmapEncoder();
-				png.Frames.Add(BitmapFrame.Create(rtb));
-				using (Stream stm = File.Create(filename))
-				{
-					png.Save(stm);
-				}
-			}
-			finally
-			{
-				window.Close();
-			}
-		}
+                // Encoding the RenderBitmapTarget as a PNG file.
+                var png = new PngBitmapEncoder();
+                png.Frames.Add(BitmapFrame.Create(rtb));
+                using (Stream stm = File.Create(filename))
+                {
+                    png.Save(stm);
+                }
+            }
+            finally
+            {
+                window.Close();
+            }
+        }
 
-		public static string ScreeenCaptureInStaThread(string received, Func<Window> loader)
-		{
-			Exception caught = null;
-			var t = new Thread(() =>
-			                   	{
-			                   		try
-			                   		{
-			                   			Window window = loader();
-			                   			ScreenCapture(window, received);
-			                   		}
-			                   		catch (Exception e)
-			                   		{
-			                   			caught = e;
-			                   		}
-			                   	});
+        public static string ScreenCaptureInStaThread(string received, Func<Window> loader)
+        {
+            return ScreenCaptureInStaThread(received, () => ScreenCapture(loader(), received));
+        }
+        public static string ScreenCaptureInStaThread(string received, Func<Control> loader)
+        {
+            return ScreenCaptureInStaThread(received, () => ScreenCapture(loader(), received));
 
-			t.SetApartmentState(ApartmentState.STA); //Many WPF UI elements need to be created inside STA
-			t.Start();
-			t.Join();
+        }
 
-			if (caught != null)
-			{
-				throw new Exception("Creating window failed.", caught);
-			}
-
-			return received;
-		}
-
-        public static string ScreeenCaptureInStaThread(string received, Func<Control> loader)
+        private static string ScreenCaptureInStaThread(string received, Action screenCapture)
         {
             Exception caught = null;
             var t = new Thread(() =>
             {
                 try
                 {
-                    Control control = loader();
-                    ScreenCapture(control, received);
+                    screenCapture();
                 }
                 catch (Exception e)
                 {
@@ -90,57 +72,34 @@ namespace ApprovalUtilities.Wpf
             return received;
         }
 
-		public static string ScreeenCaptureInStaThread(string received, Control control)
-		{
-			Exception caught = null;
-			var t = new Thread(() =>
-			{
-				try
-				{
-					ScreenCapture(control, received);
-				}
-				catch (Exception e)
-				{
-					caught = e;
-				}
-			});
+     
 
-			t.SetApartmentState(ApartmentState.STA); //Many WPF UI elements need to be created inside STA
-			t.Start();
-			t.Join();
+       
 
-			if (caught != null)
-			{
-				throw new Exception("Creating window failed.", caught);
-			}
+        public static void ScreenCapture(Control control, string filename)
+        {
+            try
+            {
+                // The BitmapSource that is rendered with a Visual.
+                control.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
+                Size size = control.DesiredSize;
+                int width = (int) size.Width;
+                int height = (int) size.Height;
+                control.Arrange(new Rect(0, 0, width, height));
+                var rtb = new RenderTargetBitmap(width, height, 96, 96, PixelFormats.Pbgra32);
+                rtb.Render(control);
 
-			return received;
-		}
-		public static void ScreenCapture(Control control, string filename)
-		{
-			try
-			{
-			
-				// The BitmapSource that is rendered with a Visual.
-					control.Measure(new Size(double.PositiveInfinity,double.PositiveInfinity));
-				Size size = control.DesiredSize;
-			    int	width = (int) size.Width;
-				int height = (int) size.Height;
-				control.Arrange(new Rect(0,0,width,height));
-				var rtb = new RenderTargetBitmap(width, height, 96, 96, PixelFormats.Pbgra32);
-				rtb.Render(control);
-
-				// Encoding the RenderBitmapTarget as a PNG file.
-				var png = new PngBitmapEncoder();
-				png.Frames.Add(BitmapFrame.Create(rtb));
-				using (Stream stm = File.Create(filename))
-				{
-					png.Save(stm);
-				}
-			}
-			finally
-			{
-			}
-		}
-	}
+                // Encoding the RenderBitmapTarget as a PNG file.
+                var png = new PngBitmapEncoder();
+                png.Frames.Add(BitmapFrame.Create(rtb));
+                using (Stream stm = File.Create(filename))
+                {
+                    png.Save(stm);
+                }
+            }
+            finally
+            {
+            }
+        }
+    }
 }
