@@ -6,17 +6,14 @@ namespace ApprovalTests.Namers
 {
     public class UnitTestFrameworkNamer : IApprovalNamer
     {
+        private readonly StackTraceParser stackTraceParser;
         private string subdirectory;
 
-        public UnitTestFrameworkNamer() : this(new StackTraceParser())
-        {
-        }
-
-        public UnitTestFrameworkNamer(IStackTraceParser stackTraceParser)
+        public UnitTestFrameworkNamer()
         {
             Approvals.SetCaller();
-            StackTraceParser = stackTraceParser;
-            StackTraceParser.Parse(Approvals.CurrentCaller.StackTrace);
+            stackTraceParser = new StackTraceParser();
+            stackTraceParser.Parse(Approvals.CurrentCaller.StackTrace);
             HandleSubdirectory();
         }
 
@@ -29,14 +26,14 @@ namespace ApprovalTests.Namers
             }
         }
 
-        public virtual string Name
+        public string Name
         {
-            get { return StackTraceParser.ApprovalName; }
+            get { return stackTraceParser.ApprovalName; }
         }
 
-        public virtual string SourcePath
+        public string SourcePath
         {
-            get { return StackTraceParser.SourcePath + GetSubdirectory(); }
+            get { return stackTraceParser.SourcePath + GetSubdirectory(); }
         }
 
         public string GetSubdirectory()
@@ -46,11 +43,6 @@ namespace ApprovalTests.Namers
                 return string.Empty;
             }
             return Path.DirectorySeparatorChar + subdirectory;
-        }
-
-        protected IStackTraceParser StackTraceParser
-        {
-            get; private set;
         }
     }
 }
