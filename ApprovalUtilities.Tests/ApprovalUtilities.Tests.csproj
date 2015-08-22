@@ -63,6 +63,7 @@
     <Compile Include="Utilities\ExceptionUtilitiesTest.cs" />
     <Compile Include="Utilities\PathUtilitiesTest.cs" />
     <Compile Include="Utilities\StringUtilitiesTest.cs" />
+    <Compile Include="Utilities\CollectionUtilsTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ApprovalTests\ApprovalTests.csproj">
