@@ -48,6 +48,11 @@ namespace ApprovalUtilities.CallStack
             }
         }
 
+        public Assembly Assembly
+        {
+            get { return Method.DeclaringType.Assembly; }
+        }
+
         public Type Class
         {
             get { return Method.DeclaringType; }

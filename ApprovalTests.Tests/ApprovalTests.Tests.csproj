@@ -118,9 +118,14 @@
     <Compile Include="CombinationApprovalsTests.cs" />
     <Compile Include="Core\Exceptions\SerializableExceptionsTest.cs" />
     <Compile Include="ExceptionalExceptions\ExceptionExceptionsTest.cs" />
+    <Compile Include="Mocks\MockNamer.cs" />
+    <Compile Include="Mocks\MockStackTraceParser.cs" />
+    <Compile Include="Namer\RelativeToUnitTestNamespaceNamerTests.cs" />
     <Compile Include="Namer\StackTraceParsers\StackTraceParserTests.cs" />
+    <Compile Include="Namer\UnitTestFrameworkNamerTests.cs" />
     <Compile Include="Persistence\AsyncSaverTest.cs" />
     <Compile Include="Reporters\PowerShellClipboardReporterTest.cs" />
+    <Compile Include="Namer\UseNamerAttributeTests.cs" />
     <Compile Include="RunMaintenance.cs" />
     <Compile Include="Email\EmailTest.cs" />
     <Compile Include="EntityFramework\CompanyList.cs" />
@@ -196,6 +201,9 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="Namer\Approvals\Json\IntegrationTests.full_integration_test.approved.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\ApprovalTests.Tests.EntityFramework.ModelContainer.datasource" />
     <None Include="Properties\Settings.settings">
