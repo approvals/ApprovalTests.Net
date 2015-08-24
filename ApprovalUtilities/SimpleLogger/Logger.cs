@@ -4,7 +4,7 @@ using ApprovalUtilities.SimpleLogger.Writers;
 
 namespace ApprovalUtilities.SimpleLogger
 {
-    public class Logger
+    public static class Logger
     {
         private static LoggerInstance log = new LoggerInstance();
 
@@ -80,6 +80,11 @@ namespace ApprovalUtilities.SimpleLogger
         public static void UseTimer(ILoader<DateTime> timeLoader)
         {
             log.UseTimer(timeLoader);
+        }
+        public static T Log<T>(this T t, string label, Func<T, string> log)
+        {
+            Logger.Variable(label, log(t));
+            return t;
         }
     }
 
