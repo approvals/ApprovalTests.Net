@@ -170,3 +170,7 @@ pip-log.txt
 RealTests.playlist
 ApprovalTests.Tests/UnixLineEndings.txt
 ApprovalTests.Tests/WindowsLineEndings.txt
+.vs/
+_NCrunch_ApprovalTests/
+*.ncrunchproject
+*.ncrunchsolution
