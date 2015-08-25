@@ -6,6 +6,7 @@ namespace ApprovalTests.Namers
 {
     public class UnitTestFrameworkNamer : IApprovalNamer
     {
+        private readonly string additionalContext;
         private readonly StackTraceParser stackTraceParser;
         private string subdirectory;
 
@@ -15,6 +16,15 @@ namespace ApprovalTests.Namers
             stackTraceParser = new StackTraceParser();
             stackTraceParser.Parse(Approvals.CurrentCaller.StackTrace);
             HandleSubdirectory();
+        }
+
+        /// <summary>
+        /// For data driven tests and other scenarios where you want multiple approvals per test
+        /// </summary>
+        /// <param name="additionalContext">Will be added between the test name and the received.ext or approved.ext</param>
+        public UnitTestFrameworkNamer(string additionalContext) : this()
+        {
+            this.additionalContext = additionalContext;
         }
 
         private void HandleSubdirectory()
@@ -28,7 +38,12 @@ namespace ApprovalTests.Namers
 
         public string Name
         {
-            get { return stackTraceParser.ApprovalName; }
+            get
+            {
+                if (!string.IsNullOrEmpty(additionalContext))
+                    return string.Concat(stackTraceParser.ApprovalName, ".", additionalContext);
+                return stackTraceParser.ApprovalName;
+            }
         }
 
         public string SourcePath
