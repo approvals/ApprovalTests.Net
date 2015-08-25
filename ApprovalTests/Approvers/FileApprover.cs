@@ -52,7 +52,7 @@ namespace ApprovalTests.Approvers
                 var approvedText = File.ReadAllText(approvedPath).Replace("\r\n", "\n");
 
                 return !Compare(receivedText.ToCharArray(), approvedText.ToCharArray()) ?
-                    new ApprovalMismatchException(receivedPath, approvedPath) :
+                    new ApprovalMismatchException(receivedText, approvedText) :
                     null;
             }
 
