@@ -99,6 +99,11 @@ namespace ApprovalTests
 			Verify(writer, GetDefaultNamer(), GetReporter());
 		}
 
+		public static void Verify(IApprovalWriter writer, IApprovalNamer namer)
+		{
+			Verify(writer, namer, GetReporter());
+		}
+
 		public static void VerifyFile(string receivedFilePath)
 		{
 			Verify(new ExistingFileWriter(receivedFilePath));
