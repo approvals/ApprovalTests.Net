@@ -1,4 +1,4 @@
-﻿# if DEBUG
+﻿# if DEBUG && !__MonoCS__
 using ApprovalTests.Asp;
 using ApprovalTests.Reporters;
 using ApprovalTests.Scrubber;
