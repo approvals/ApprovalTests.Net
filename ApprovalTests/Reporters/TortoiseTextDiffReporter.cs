@@ -4,7 +4,7 @@ namespace ApprovalTests.Reporters
 {
 	public class TortoiseTextDiffReporter : GenericDiffReporter
 	{
-		readonly static string PATH = DotNet4Utilities.GetPathInProgramFilesX86(@"TortoiseSVN\bin\tortoisemerge.exe");
+		readonly static string PATH = DotNet4Utilities.GetPathInProgramFilesX86(@"TortoiseSVN" + System.IO.Path.DirectorySeparatorChar + "bin" + System.IO.Path.DirectorySeparatorChar + "tortoisemerge.exe");
 		public readonly static TortoiseTextDiffReporter INSTANCE = new TortoiseTextDiffReporter();
 
 		public TortoiseTextDiffReporter()

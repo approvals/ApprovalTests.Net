@@ -4,7 +4,7 @@ namespace ApprovalTests.Reporters
 {
 	public class CodeCompareReporter : GenericDiffReporter
 	{
-		private readonly static string PATH = DotNet4Utilities.GetPathInProgramFilesX86(@"Devart\Code Compare\CodeCompare.exe");
+		private readonly static string PATH = DotNet4Utilities.GetPathInProgramFilesX86(@"Devart" + System.IO.Path.DirectorySeparatorChar + "Code Compare" + System.IO.Path.DirectorySeparatorChar + "CodeCompare.exe");
 		public readonly static CodeCompareReporter INSTANCE = new CodeCompareReporter();
 
 		public CodeCompareReporter()

@@ -12,7 +12,7 @@ namespace ApprovalTests.Reporters
 			string fullPath = path;
 			foreach (var p in paths)
 			{
-				fullPath = p + @"\" + path;
+				fullPath = p + System.IO.Path.DirectorySeparatorChar + path;
 				if (File.Exists(fullPath))
 				{
 					break;
