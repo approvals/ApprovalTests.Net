@@ -22,12 +22,12 @@ namespace ApprovalUtilities.Utilities
 
 		public static string GetDirectoryForStackFrame(StackFrame stackFrame)
 		{
-			return new FileInfo(stackFrame.GetFileName()).Directory.FullName + "\\";
+			return new FileInfo(stackFrame.GetFileName()).Directory.FullName + Path.DirectorySeparatorChar;
 		}
 
 		public static string ScrubPath(this string text, string path)
 		{
-			return text == null ? null : text.Replace(path, @"...\");
+			return text == null ? null : text.Replace(path, @"..." + Path.DirectorySeparatorChar);
 		}
 
 		public static string GetAdjacentFile(string relativePath)
