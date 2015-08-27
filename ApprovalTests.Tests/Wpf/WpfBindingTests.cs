@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if !__MonoCS__
+using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
@@ -54,3 +55,4 @@ namespace ApprovalTests.Tests.Wpf
 		}
 	}
 }
+#endif

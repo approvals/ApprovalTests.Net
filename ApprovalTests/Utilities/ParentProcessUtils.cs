@@ -40,6 +40,10 @@ namespace ApprovalTests.Utilities
 
 		private static Process ParentProcess(this Process process)
 		{
+#if __MonoCS__
+			// TODO: find a way to implement this in mono on a mac/linux machine
+			return null;
+#else
 			var parentPid = 0;
 			var processPid = process.Id;
 			const uint TH32_CS_SNAPPROCESS = 2;
@@ -85,6 +89,7 @@ namespace ApprovalTests.Utilities
 				//Process with an Id of X is not running
 				return null;
 			}
+#endif
 		}
 
 		[DllImport("kernel32.dll", SetLastError = true)]
