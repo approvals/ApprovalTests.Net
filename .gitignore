@@ -170,3 +170,8 @@ pip-log.txt
 RealTests.playlist
 ApprovalTests.Tests/UnixLineEndings.txt
 ApprovalTests.Tests/WindowsLineEndings.txt
+
+### XamarinStudio ###
+bin/
+obj/
+*.userprefs
