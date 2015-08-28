@@ -9,4 +9,4 @@ mono:
 
 notifications:
 
-script: "xbuild ApprovalTests.sln"
+solution: ApprovalTests.sln
