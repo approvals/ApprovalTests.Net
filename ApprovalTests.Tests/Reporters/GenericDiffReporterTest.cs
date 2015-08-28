@@ -62,6 +62,7 @@ namespace ApprovalTests.Tests.Reporters
         }
 
         [Test]
+		[Platform(Exclude="Mono")]
         [UseReporter(typeof(ClipboardReporter))]
         public void TestEnsureFileExist()
         {
