@@ -3,6 +3,7 @@
 namespace ApprovalTests.Tests.EntityFramework
 {
 	[TestFixture]
+	[Platform(Exclude="Mono")]
 	//[UseReporter(typeof(FileLauncherReporter))]
 	public class CompanyListTest
 	{

@@ -11,7 +11,8 @@ namespace ApprovalTests.Tests.Namer
 		public void TestSourcePath()
 		{
 			var name = new UnitTestFrameworkNamer().SourcePath;
-			Assert.IsTrue(name.Contains(@"ApprovalTests.Net\ApprovalTests.Tests\Namer\Foo"),name);
+			var expectedPath = @"ApprovalTests.Net\ApprovalTests.Tests\Namer\Foo".Replace(@"\", System.IO.Path.DirectorySeparatorChar.ToString());
+			StringAssert.Contains(expectedPath, name);
 		}
 
 	}
