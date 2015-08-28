@@ -7,6 +7,9 @@ mono:
   - 3.2.8
   - 2.10.8
 
+env:
+  - EnableNuGetPackageRestore=true
+
 notifications:
 
 solution: ApprovalTests.sln
