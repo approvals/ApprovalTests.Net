@@ -1,0 +1,14 @@
+﻿Event Configuration for TestingControl 
+
+EventClick:
+	[0] Void StandardCallback(System.Object, System.EventArgs)
+	[1] Void AnotherStandardCallback(System.Object, System.EventArgs)
+
+EventKey:
+	[0] Void StandardCallback(System.Object, System.EventArgs)
+	[1] Void AnotherStandardCallback(System.Object, System.EventArgs)
+
+MyEvent:
+	[0] Void StandardCallback(System.Object, System.EventArgs)
+	[1] Void AnotherStandardCallback(System.Object, System.EventArgs)
+
