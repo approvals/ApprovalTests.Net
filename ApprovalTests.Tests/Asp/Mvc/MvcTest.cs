@@ -1,4 +1,6 @@
-﻿using System.Collections.Specialized;
+﻿#if !__MonoCS__
+
+using System.Collections.Specialized;
 
 using ApprovalTests.Asp;
 using ApprovalTests.Asp.Mvc;
@@ -72,3 +74,4 @@ namespace ApprovalTests.Tests.Asp.Mvc
         }
     }
 }
+#endif

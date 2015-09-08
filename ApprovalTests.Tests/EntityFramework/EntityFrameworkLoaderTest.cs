@@ -7,6 +7,7 @@ using NUnit.Framework;
 namespace ApprovalTests.Tests.EntityFramework
 {
 	[TestFixture]
+	[Platform(Exclude="Mono")]
 	public class EntityFrameworkLoaderTest
 	{
 		[Test]

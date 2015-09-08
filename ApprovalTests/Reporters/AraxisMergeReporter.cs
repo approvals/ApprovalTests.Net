@@ -4,7 +4,7 @@ namespace ApprovalTests.Reporters
 {
 	public class AraxisMergeReporter : GenericDiffReporter
 	{
-		private static readonly string PATH = DotNet4Utilities.GetPathInProgramFilesX86(@"Araxis\Araxis Merge\Compare.exe");
+		private static readonly string PATH = DotNet4Utilities.GetPathInProgramFilesX86(@"Araxis" + System.IO.Path.DirectorySeparatorChar + "Araxis Merge" + System.IO.Path.DirectorySeparatorChar + "Compare.exe");
 		public static readonly AraxisMergeReporter INSTANCE = new AraxisMergeReporter();
 
 		public AraxisMergeReporter()

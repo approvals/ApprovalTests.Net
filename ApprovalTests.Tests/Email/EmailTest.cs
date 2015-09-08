@@ -7,33 +7,38 @@ using NUnit.Framework;
 namespace ApprovalTests.Tests.Email
 {
 	[TestFixture]
-	[UseReporter(typeof(TortoiseDiffReporter))]
 	public class EmailTest
 	{
 		[Test]
 		public void Testname()
 		{
-			var message = new MailMessage();
-			message.To.Add("approvals@approvaltests.com");
-			message.Subject = "this project rocks";
-			message.From = new MailAddress("everybody@acomputer.com");
-			message.Body = @"Wow, this is so cool.
+			using (ApprovalTests.Namers.ApprovalResults.UniqueForOs())
+			{
+				var message = new MailMessage();
+				message.To.Add("approvals@approvaltests.com");
+				message.Subject = "this project rocks";
+				message.From = new MailAddress("everybody@acomputer.com");
+				message.Body = @"Wow, this is so cool.
 I should send more emails.
 thanks,
 your biggest fan";
-			EmailApprovals.Verify(message);
+				EmailApprovals.Verify(message);
+			}
 		}
 		[Test]
 		public void TestAttachment()
 		{
-			var message = new MailMessage();
-			message.To.Add("approvals@approvaltests.com");
-			message.Subject = "this project rocks";
-			message.From = new MailAddress("everybody@acomputer.com");
-			message.Body = @"Pictures Attached";
-			message.Attachments.Add(new Attachment(PathUtilities.GetAdjacentFile("tower.png")));
-			message.AlternateViews.Add(AlternateView.CreateAlternateViewFromString("This be alternate."));
-			EmailApprovals.Verify(message);
+			using (ApprovalTests.Namers.ApprovalResults.UniqueForOs())
+			{
+				var message = new MailMessage();
+				message.To.Add("approvals@approvaltests.com");
+				message.Subject = "this project rocks";
+				message.From = new MailAddress("everybody@acomputer.com");
+				message.Body = @"Pictures Attached";
+				message.Attachments.Add(new Attachment(PathUtilities.GetAdjacentFile("tower.png")));
+				message.AlternateViews.Add(AlternateView.CreateAlternateViewFromString("This be alternate."));
+				EmailApprovals.Verify(message);
+			}
 		}
 
 		[Test]

@@ -1,0 +1,23 @@
+﻿Exceptions Thrown
+
+System.Exception: Throwing 0 times
+  at ApprovalTests.Tests.Async.AsyncTests+<ThrowBabyThrow>.<> (Int32 i) [0x0001a] in .../AsyncTests.cs:27 
+  at System.Linq.Parallel.SelectQueryOperator`2+SelectQueryOperatorEnumerator`1[System.Int32,System.Int32,System.Int32].MoveNext (System.Int32& currentElement, System.Int32& currentKey) [0x0001d] in .../SelectQueryOperator.cs:126 
+  at System.Linq.Parallel.IntSumAggregationOperator+IntSumAggregationOperatorEnumerator`1[System.Int32].MoveNextCore (System.Int32& currentElement) [0x00013] in .../IntSumAggregationOperator.cs:110 
+  at System.Linq.Parallel.InlinedAggregationOperatorEnumerator`1[System.Int32].MoveNext (System.Int32& currentElement, System.Int32& currentKey) [0x00000] in .../InlinedAggregationOperatorEnumerator.cs:59 
+  at System.Linq.Parallel.StopAndGoSpoolingTask`2[System.Int32,System.Int32].SpoolingWork () [0x0005b] in .../SpoolingTask.cs:232 
+  at System.Linq.Parallel.SpoolingTaskBase.Work () [0x00000] in .../SpoolingTaskBase.cs:51 
+System.Exception: Throwing 1 times
+  at ApprovalTests.Tests.Async.AsyncTests+<ThrowBabyThrow>.<> (Int32 i) [0x0001a] in .../AsyncTests.cs:27 
+  at System.Linq.Parallel.SelectQueryOperator`2+SelectQueryOperatorEnumerator`1[System.Int32,System.Int32,System.Int32].MoveNext (System.Int32& currentElement, System.Int32& currentKey) [0x0001d] in .../SelectQueryOperator.cs:126 
+  at System.Linq.Parallel.IntSumAggregationOperator+IntSumAggregationOperatorEnumerator`1[System.Int32].MoveNextCore (System.Int32& currentElement) [0x00013] in .../IntSumAggregationOperator.cs:110 
+  at System.Linq.Parallel.InlinedAggregationOperatorEnumerator`1[System.Int32].MoveNext (System.Int32& currentElement, System.Int32& currentKey) [0x00000] in .../InlinedAggregationOperatorEnumerator.cs:59 
+  at System.Linq.Parallel.StopAndGoSpoolingTask`2[System.Int32,System.Int32].SpoolingWork () [0x0005b] in .../SpoolingTask.cs:232 
+  at System.Linq.Parallel.SpoolingTaskBase.Work () [0x00000] in .../SpoolingTaskBase.cs:51 
+System.Exception: Throwing 2 times
+  at ApprovalTests.Tests.Async.AsyncTests+<ThrowBabyThrow>.<> (Int32 i) [0x0001a] in .../AsyncTests.cs:27 
+  at System.Linq.Parallel.SelectQueryOperator`2+SelectQueryOperatorEnumerator`1[System.Int32,System.Int32,System.Int32].MoveNext (System.Int32& currentElement, System.Int32& currentKey) [0x0001d] in .../SelectQueryOperator.cs:126 
+  at System.Linq.Parallel.IntSumAggregationOperator+IntSumAggregationOperatorEnumerator`1[System.Int32].MoveNextCore (System.Int32& currentElement) [0x00013] in .../IntSumAggregationOperator.cs:110 
+  at System.Linq.Parallel.InlinedAggregationOperatorEnumerator`1[System.Int32].MoveNext (System.Int32& currentElement, System.Int32& currentKey) [0x00000] in .../InlinedAggregationOperatorEnumerator.cs:59 
+  at System.Linq.Parallel.StopAndGoSpoolingTask`2[System.Int32,System.Int32].SpoolingWork () [0x0005b] in .../SpoolingTask.cs:232 
+  at System.Linq.Parallel.SpoolingTaskBase.Work () [0x00000] in .../SpoolingTaskBase.cs:51 

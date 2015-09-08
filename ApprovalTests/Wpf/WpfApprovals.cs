@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if !__MonoCS__
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using ApprovalTests.Core;
@@ -54,3 +55,4 @@ namespace ApprovalTests.Wpf
 		}
 	}
 }
+#endif

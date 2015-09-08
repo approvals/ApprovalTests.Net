@@ -1,4 +1,4 @@
-﻿# if DEBUG
+﻿# if DEBUG && !__MonoCS__
 using ApprovalTests.Asp;
 using ApprovalTests.Reporters;
 using ApprovalTests.Scrubber;
@@ -10,7 +10,7 @@ using NUnit.Framework;
 namespace ApprovalTests.Tests.Asp
 {
 	[TestFixture]
-	[UseReporter(typeof (TortoiseDiffReporter), typeof (FileLauncherReporter))]
+	[UseReporter(typeof (DiffReporter), typeof (FileLauncherReporter))]
 	public class RenderHtmlTest
 	{
 		private CassiniDevServer server = new CassiniDevServer();

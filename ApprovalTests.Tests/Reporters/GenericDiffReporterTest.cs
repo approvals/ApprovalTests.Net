@@ -27,7 +27,11 @@ namespace ApprovalTests.Tests.Reporters
         [Test]
         public void TestGetCurrentProjectNotFound()
         {
-            var project = VisualStudioProjectFileAdder.GetCurrentProjectFile("C:\\");
+#if __MonoCS__
+			var project = VisualStudioProjectFileAdder.GetCurrentProjectFile("/");
+#else
+			var project = VisualStudioProjectFileAdder.GetCurrentProjectFile("C:\\");
+#endif
 
             Assert.AreEqual(null, project);
         }
@@ -35,9 +39,12 @@ namespace ApprovalTests.Tests.Reporters
         [Test]
         public void TestMissingDots()
         {
-            var e =
-                ExceptionUtilities.GetException(() => GenericDiffReporter.RegisterTextFileTypes(".exe", "txt", ".error", "asp"));
-            Approvals.Verify(e);
+			using (ApprovalTests.Namers.ApprovalResults.UniqueForOs())
+			{
+				var e =
+					ExceptionUtilities.GetException(() => GenericDiffReporter.RegisterTextFileTypes(".exe", "txt", ".error", "asp"));
+				Approvals.Verify(e);
+			}
         }
 
         [Test]
@@ -55,6 +62,7 @@ namespace ApprovalTests.Tests.Reporters
         }
 
         [Test]
+		[Platform(Exclude="Mono")]
         [UseReporter(typeof(ClipboardReporter))]
         public void TestEnsureFileExist()
         {

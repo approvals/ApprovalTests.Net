@@ -14,7 +14,7 @@ namespace ApprovalTests.Tests.Writers
 		[Test]
 		public void TestExistFileIsApproved()
 		{
-			var basePath = PathUtilities.GetDirectoryForCaller() + "..\\";
+			var basePath = PathUtilities.GetDirectoryForCaller() + ".." + Path.DirectorySeparatorChar;
 
 			var original = basePath + "a.png";
 			var copy = basePath + "a1.png";

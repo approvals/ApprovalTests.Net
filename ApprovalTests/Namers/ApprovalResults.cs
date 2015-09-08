@@ -30,25 +30,14 @@ namespace ApprovalTests.Namers
 
 		public static string GetOsName()
 		{
-			var name = TransformEasyOsName(GetFullOsNameFromWmi());
+			var name = TransformEasyOsName(ApprovalUtilities.OSUtils.GetFullOsNameFromWmi());
 			return name.Trim().Replace(' ', '_');
 		}
 
 		public static string GetFullOsName()
 		{
-			var name = GetFullOsNameFromWmi();
+			var name = ApprovalUtilities.OSUtils.GetFullOsNameFromWmi();
 			return name.Trim().Replace(' ', '_');
-		}
-
-		private static string GetFullOsNameFromWmi()
-		{
-			var caption =
-				(from x in
-					 new ManagementObjectSearcher("SELECT Caption FROM Win32_OperatingSystem").Get().OfType<ManagementObject>()
-				 select x.GetPropertyValue("Caption")).FirstOrDefault();
-
-			var name = caption == null ? Environment.OSVersion.ToString() : caption.ToString();
-			return name;
 		}
 
 		public static string TransformEasyOsName(string captionName)

@@ -22,12 +22,12 @@ namespace ApprovalUtilities.Utilities
 
 		public static string GetDirectoryForStackFrame(StackFrame stackFrame)
 		{
-			return new FileInfo(stackFrame.GetFileName()).Directory.FullName + "\\";
+			return new FileInfo(stackFrame.GetFileName()).Directory.FullName + Path.DirectorySeparatorChar;
 		}
 
 		public static string ScrubPath(this string text, string path)
 		{
-			return text == null ? null : text.Replace(path, @"...\");
+			return text == null ? null : text.Replace(path, @"..." + Path.DirectorySeparatorChar);
 		}
 
 		public static string GetAdjacentFile(string relativePath)
@@ -42,10 +42,31 @@ namespace ApprovalUtilities.Utilities
 			{
 				results.Add(Path.GetFullPath(toFind));
 			}
-			var values = Environment.GetEnvironmentVariable("PATH");
-			var found = values.Split(Path.PathSeparator).Select(path => Path.Combine(path, toFind)).Where(File.Exists);
-			results.AddRange(found);
+
+#if __MonoCS__
+			if (toFind.IndexOf (".exe") >= 0)
+			{
+				var trimmedToFind = toFind.Substring(0, toFind.Length - 4);
+				results.AddRange(FindProgramOnPath(trimmedToFind));
+			}
+#endif
+			results.AddRange(FindProgramOnPath(toFind));
 			return results.ToArray();
+		}
+
+		static IList<string> EnvironmentPaths;
+
+		private static IEnumerable<string> FindProgramOnPath(string programName)
+		{
+			if (EnvironmentPaths == null) {
+				EnvironmentPaths = Environment.GetEnvironmentVariable("PATH").Split(Path.PathSeparator).ToList();
+#if __MonoCS__
+				// not sure why this path is not included in the environment variables
+				// but couldn't find find p4merge without it.
+				EnvironmentPaths.Add("/usr/local/bin");
+#endif
+			}
+			return EnvironmentPaths.Select(path => Path.Combine(path, programName)).Where(File.Exists);
 		}
 	}
 }

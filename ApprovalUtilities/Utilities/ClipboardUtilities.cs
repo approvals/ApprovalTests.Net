@@ -13,7 +13,11 @@ namespace ApprovalUtilities.Utilities
 			{
 				try
 				{
+#if __MonoCS__
+#warning Look into useing Gtk.Clipboard?
+#else
 					Clipboard.SetText(text);
+#endif
 				}
 				catch (Exception e)
 				{

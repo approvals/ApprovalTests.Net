@@ -259,6 +259,7 @@
     <Compile Include="Writers\WriterUtils.cs" />
     <Compile Include="Writers\ConfigurableTempTextFileWriter.cs" />
     <Compile Include="Xml\XmlApprovals.cs" />
+    <Compile Include="Utilities\OSUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

@@ -18,16 +18,20 @@ namespace ApprovalTests.Utilities
 			return regex.Replace(source, string.Empty);
 		}
 
+		static Regex windowsPathRegex = new Regex(@"\b\w:[\\\w.\s-]+\\");
+		static Regex unixPathRegex = new Regex(@"\/[\/\w.\s-]+\/");
 		public static string ScrubPaths(string source)
 		{
-			var regex = new Regex(@"\b\w:[\\\w.\s-]+\\");
-			return regex.Replace(source, "...\\");
+			var result = windowsPathRegex.Replace(source, "...\\");
+			result = unixPathRegex.Replace(result, ".../");
+			return result;
 		}
 		
 		public static string ScrubStackTrace(this string text)
 		{
 			return ScrubberUtils.Combine(ScrubAnonymousIds, ScrubPaths, ScrubLineNumbers)(text);
 		}
+
 		public static string Scrub(this Exception exception)
 		{
 			return ("" + exception).ScrubStackTrace();

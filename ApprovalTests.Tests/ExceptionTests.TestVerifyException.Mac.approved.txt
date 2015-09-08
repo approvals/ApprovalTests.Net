@@ -1,0 +1,3 @@
+﻿System.Exception: Exception of type 'System.Exception' was thrown.
+  at ApprovalTests.Tests.ExceptionTests.<TestVerifyException> () [0x00001] in .../ExceptionTests.cs:14 
+  at ApprovalUtilities.Utilities.ExceptionUtilities.GetException (System.Action action) [0x00006] in .../ExceptionUtilities.cs:45 

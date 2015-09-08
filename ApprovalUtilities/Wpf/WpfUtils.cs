@@ -1,3 +1,4 @@
+#if !__MonoCS__
 using System;
 using System.IO;
 using System.Threading;
@@ -103,3 +104,4 @@ namespace ApprovalUtilities.Wpf
         }
     }
 }
+#endif

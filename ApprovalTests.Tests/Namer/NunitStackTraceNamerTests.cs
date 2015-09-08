@@ -18,7 +18,7 @@ namespace ApprovalTests.Tests.Namer
 		public void TestSourcePath()
 		{
 			var name = new UnitTestFrameworkNamer().SourcePath;
-			var path = name.ToLower() + "\\" + this.GetType().Name + ".cs";
+			var path = name.ToLower() + Path.DirectorySeparatorChar + this.GetType().Name + ".cs";
 			Assert.IsTrue(File.Exists(path), path + " does not exist");
 		}
 
