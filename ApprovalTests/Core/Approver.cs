@@ -5,15 +5,22 @@
         public static void Verify(IApprovalApprover approver, IApprovalFailureReporter reporter)
         {
             if (approver.Approve())
+            {
                 approver.CleanUpAfterSuccess(reporter);
+            }
             else
             {
                 approver.ReportFailure(reporter);
 
-                if (reporter is IReporterWithApprovalPower && ((IReporterWithApprovalPower)reporter).ApprovedWhenReported())
-                    approver.CleanUpAfterSuccess(reporter);
+                var power = reporter as IReporterWithApprovalPower;
+                if (power != null && power.ApprovedWhenReported())
+                {
+                    approver.CleanUpAfterSuccess(power);
+                }
                 else
+                {
                     approver.Fail();
+                }
             }
         }
     }
