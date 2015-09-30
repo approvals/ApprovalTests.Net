@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Specialized;
 using System.Data.Entity;
+using System.Linq.Expressions;
 using System.Net;
 using System.Text;
 using System.Web.Mvc;
@@ -54,16 +55,26 @@ namespace ApprovalTests.Asp.Mvc
 
 			VerifyMvcViaPost(func, pieces);
 		}
-		public static void VerifyMvcPage(Func<ActionResult> func)
-		{
-			string clazz = func.Target.GetType().Name.Replace("Controller", String.Empty);
-			string action = func.Method.Name;
-		    var url = "http://localhost:{0}/{1}/{2}".FormatWith(PortFactory.MvcPort, clazz, action);
-		    AspApprovals.VerifyUrl(url, HtmlScrubbers.ScrubMvc);
-		}
+		
 		public static void VerifyUrlViaPost(string url, NameValueCollection nameValueCollection)
 		{
 			HtmlApprovals.VerifyHtml(GetUrlPostContents(url, nameValueCollection), HtmlScrubbers.ScrubMvc);
 		}
+        public static void VerifyMvcPage<MainController>(Expression<Func<MainController, Func<ActionResult>>> actionName)
+            where MainController : IController
+        {
+            VerifyMvcUrl(ReflectionUtility.GetControllerName<MainController>(), ReflectionUtility.GetMethodName<MainController>(actionName));
+        }
+        public static void VerifyMvcPage(Func<ActionResult> func)
+        {
+            string clazz = func.Target.GetType().Name.Replace("Controller", String.Empty);
+            string action = func.Method.Name;
+            VerifyMvcUrl(clazz, action);
+        }
+        private static void VerifyMvcUrl(string clazz, string action)
+        {
+            var url = "http://localhost:{0}/{1}/{2}".FormatWith(PortFactory.MvcPort, clazz, action);
+            AspApprovals.VerifyUrl(url, HtmlScrubbers.ScrubMvc);
+        }
 	}
 }

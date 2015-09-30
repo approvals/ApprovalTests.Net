@@ -135,6 +135,7 @@
     <Compile Include="Asp\AspTestingUtils.cs" />
     <Compile Include="Asp\Mocks.cs" />
     <Compile Include="Asp\Mvc\MvcApprovals.cs" />
+    <Compile Include="Asp\Mvc\ReflectionUtility.cs" />
     <Compile Include="Asp\PortFactory.cs" />
     <Compile Include="Async\AsyncApprovals.cs" />
     <Compile Include="Combinations\CombinationApprovals.cs" />
