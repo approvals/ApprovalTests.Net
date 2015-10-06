@@ -89,6 +89,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="NamerTest.cs" />
     <Compile Include="DotNet4UtilitiesTest.cs" />
+    <Compile Include="DataDrivenTestWriterTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ApprovalTests\ApprovalTests.csproj">
@@ -120,6 +121,7 @@
       <LastGenOutput>Model1.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
+    <None Include="SampleData\data.xlsx" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
