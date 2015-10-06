@@ -175,3 +175,4 @@ ApprovalTests.Tests/WindowsLineEndings.txt
 bin/
 obj/
 *.userprefs
+*.GhostDoc.*
