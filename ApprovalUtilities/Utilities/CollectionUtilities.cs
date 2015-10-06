@@ -6,18 +6,15 @@ namespace ApprovalUtilities.Utilities
 {
     public static class CollectionUtilities
     {
-        public static IEnumerable<T> OrEmpty<T>(this IEnumerable<T> source)
-        {
-            return source ?? Enumerable.Empty<T>();
-        }
-
         public static ICollection<T> AddAll<T>(this ICollection<T> collection, IEnumerable<T> additions)
         {
-            foreach (var addition in additions)
-            {
-                collection.Add(addition);
-            }
-            return collection;
+            return additions.OrEmpty().Aggregate(collection, AddItem);
+        }
+
+        public static ICollection<T> AddItem<T>(this ICollection<T> source, T item)
+        {
+            source.Add(item);
+            return source;
         }
 
         public static void ForEach<T>(this IEnumerable<T> ie, Action<T> action)
@@ -28,16 +25,14 @@ namespace ApprovalUtilities.Utilities
             }
         }
 
-        public static V GetValueOrDefault<K, V>(this IDictionary<K, V> map, K key)
+        public static TValue GetValueOrDefault<TKey, TValue>(this IDictionary<TKey, TValue> map, TKey key)
         {
-            if (map.ContainsKey(key))
-            {
-                return map[key];
-            }
-            else
-            {
-                return default(V);
-            }
+            return map.ContainsKey(key) ? map[key] : default(TValue);
+        }
+
+        public static IEnumerable<T> OrEmpty<T>(this IEnumerable<T> source)
+        {
+            return source ?? Enumerable.Empty<T>();
         }
     }
 }
