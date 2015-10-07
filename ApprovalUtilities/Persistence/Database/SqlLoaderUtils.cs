@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
+using System.Linq;
 using System.Text;
 using ApprovalUtilities.Utilities;
 
@@ -42,7 +43,7 @@ namespace ApprovalUtilities.Persistence.Database
                     dataset = DatabaseUtils.Query(query, commandCreator, r => ConvertRowToString(r, headers)).ToArray();
                 }
 
-                return headers + "\r\n" + string.Join("\r\n", dataset);
+                return headers + "\r\n" + string.Join("\r\n", dataset.OrEmpty().ToArray());
             }
             catch (Exception ex)
             {
@@ -55,8 +56,9 @@ namespace ApprovalUtilities.Persistence.Database
             var output = new List<string>();
             for (var i = 0; i < row.FieldCount; i++)
             {
-                output.Add("" + row.GetValue(i));
+                output.Add(string.Empty + row.GetValue(i));
             }
+
             if (headers.Length == 0)
             {
                 for (var i = 0; i < row.FieldCount; i++)
@@ -64,7 +66,8 @@ namespace ApprovalUtilities.Persistence.Database
                     headers.Append(row.GetName(i) + ", ");
                 }
             }
-            return String.Join(", ", output.ToArray());
+
+            return string.Join(", ", output.ToArray());
         }
     }
 }
