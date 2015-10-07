@@ -13,12 +13,12 @@ namespace ApprovalTests.Writers
 
         public override string GetReceivedFilename(string basename)
         {
-            return String.Format("{0}.received[{1}]{2}", basename, GetRowNumber(), ExtensionWithDot);
+            return String.Format("{0}[{1}].received{2}", basename, GetRowNumber(), ExtensionWithDot);
         }
 
         public override string GetApprovalFilename(string basename)
         {
-            return String.Format("{0}.approved[{1}]{2}", basename, GetRowNumber(), ExtensionWithDot);
+            return String.Format("{0}[{1}].approved{2}", basename, GetRowNumber(), ExtensionWithDot);
         }
 
         #region Private Members

@@ -41,7 +41,7 @@ namespace ApprovalTests.MSTest
         {
             // Arrange
             string rowNumber = Convert.ToString(TestContext.DataRow[0]);
-            var expectedResult = String.Concat(TestContext.TestName, ".received[", rowNumber, "].txt");
+            var expectedResult = String.Format("{0}[{1}].received.txt", TestContext.TestName, rowNumber);
 
             // Act
             var sut = new DataDrivenTestWriter(rowNumber, TestContext);
@@ -58,7 +58,7 @@ namespace ApprovalTests.MSTest
         {
             // Arrange
             string rowNumber = Convert.ToString(TestContext.DataRow[0]);
-            var expectedResult = String.Concat(TestContext.TestName, ".approved[", rowNumber, "].txt");
+            var expectedResult = String.Format("{0}[{1}].approved.txt", TestContext.TestName, rowNumber);
 
             // Act
             var sut = new DataDrivenTestWriter(rowNumber, TestContext);
