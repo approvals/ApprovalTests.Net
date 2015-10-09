@@ -136,10 +136,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApprovalsTest.cs" />
-    <Compile Include="Asp\RoutingTest.cs" />
-    <Compile Include="Asp\Mvc\MvcTest.cs" />
-    <Compile Include="Asp\RenderHtmlTest.cs" />
-    <Compile Include="Asp\UrlTest.cs" />
     <Compile Include="Async\AsyncTests.cs" />
     <Compile Include="CleanupReporter.cs" />
     <Compile Include="CombinationApprovalsTests.cs" />
@@ -242,14 +238,6 @@
     <ProjectReference Include="..\ApprovalUtilities\ApprovalUtilities.csproj">
       <Project>{E9683C33-7A71-4776-B7C9-E89C565AC16B}</Project>
       <Name>ApprovalUtilities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Asp.Net.Demo\Asp.Net.Demo.csproj">
-      <Project>{4A185DA2-D6DA-4E45-A4E8-1DC67B849EAE}</Project>
-      <Name>Asp.Net.Demo</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MvcApplication.Razor\MvcApplication.Razor.csproj">
-      <Project>{350DD60C-8C32-449C-9029-9E0195C756AA}</Project>
-      <Name>MvcApplication.Razor</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
