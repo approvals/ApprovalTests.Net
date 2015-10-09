@@ -35,11 +35,11 @@ namespace ApprovalTests.Tests
         [Test]
         public void TestExceptions()
         {
-			// The device by zero exception has a different message in Mono.
+			// The devide by zero exception has a different message in Mono.
 			using (ApprovalTests.Namers.ApprovalResults.UniqueForOs ()) {
 				int[] n = { 0, 2 };
 				CombinationApprovals.VerifyAllCombinations ((a, b) => a / b, n, n);
-			}
+			}   
         }
     }
 }

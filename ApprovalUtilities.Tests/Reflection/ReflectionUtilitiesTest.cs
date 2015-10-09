@@ -1,3 +1,4 @@
+
 using ApprovalTests.Reporters;
 
 namespace ApprovalUtilities.Tests.Reflection
@@ -13,6 +14,7 @@ namespace ApprovalUtilities.Tests.Reflection
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
+    [UseReporter(typeof(TortoiseDiffReporter))]
     public class ReflectionUtilitiesTest
     {
         [TestMethod]
