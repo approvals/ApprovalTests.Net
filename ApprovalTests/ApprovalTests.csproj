@@ -131,6 +131,7 @@
     <Compile Include="..\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
+    <Compile Include="Asp\MovedToSeperateNugetPackage.cs" />
     <Compile Include="Async\AsyncApprovals.cs" />
     <Compile Include="Combinations\CombinationApprovals.cs" />
     <Compile Include="Core\IApprovalReporterWithCleanUp.cs" />

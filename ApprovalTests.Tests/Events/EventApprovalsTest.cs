@@ -3,7 +3,6 @@
     using System.Windows.Forms;
     using ApprovalTests.Events;
     using NUnit.Framework;
-using ApprovalTests.Reporters;
 
     [TestFixture]
     public class EventApprovalsTest
