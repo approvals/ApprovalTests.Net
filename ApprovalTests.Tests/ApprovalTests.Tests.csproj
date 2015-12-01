@@ -140,6 +140,7 @@
     <Compile Include="CleanupReporter.cs" />
     <Compile Include="CombinationApprovalsTests.cs" />
     <Compile Include="Core\Exceptions\SerializableExceptionsTest.cs" />
+    <Compile Include="Issues\CustomNamerShouldBeSubstitutableTest.cs" />
     <Compile Include="ExceptionalExceptions\ExceptionExceptionsTest.cs" />
     <Compile Include="Namer\StackTraceParsers\StackTraceParserTests.cs" />
     <Compile Include="Persistence\AsyncSaverTest.cs" />
