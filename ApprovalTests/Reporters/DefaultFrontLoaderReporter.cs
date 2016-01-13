@@ -14,7 +14,8 @@
             NCrunchReporter.INSTANCE,
             MightyMooseAutoTestReporter.INSTANCE,
             MyGetReporter.INSTANCE,
-            GoContinuousDeliveryReporter.INSTANCE)
+            GoContinuousDeliveryReporter.INSTANCE,
+            AppVeyorReporter.INSTANCE)
         {
         }
     }

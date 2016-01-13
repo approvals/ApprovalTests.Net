@@ -157,6 +157,7 @@
     <Compile Include="Namers\UnitTestFrameworks\XUnitTheoryStackTraceParser.cs" />
     <Compile Include="Namers\UseApprovalSubdirectoryAttribute.cs" />
     <Compile Include="Persistence\ExecutableSqlQuery.cs" />
+    <Compile Include="Reporters\AppVeyorReporter.cs" />
     <Compile Include="Reporters\BambooReporter.cs" />
     <Compile Include="Reporters\BeyondCompareReporter.cs" />
     <Compile Include="Reporters\BeyondCompare4Reporter.cs" />
