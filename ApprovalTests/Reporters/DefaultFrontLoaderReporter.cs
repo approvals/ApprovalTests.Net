@@ -7,6 +7,7 @@
         public DefaultFrontLoaderReporter()
             : base(
             TfsReporter.INSTANCE,
+            TfsVnextReporter.INSTANCE,
             TeamCityReporter.INSTANCE,
             JenkinsReporter.INSTANCE,
             BambooReporter.INSTANCE,
