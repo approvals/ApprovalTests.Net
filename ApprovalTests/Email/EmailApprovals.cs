@@ -12,7 +12,7 @@ namespace ApprovalTests.Email
 	{
 		public static void Verify(MailMessage email)
 		{
-			VerifyScrubbed(email, ScrubBoundries);
+			VerifyScrubbed(email, ScrubBoundaries);
 		}
 
 		public static void VerifyScrubbed(MailMessage email, params Func<string, string>[] scrubbers)
@@ -40,14 +40,14 @@ namespace ApprovalTests.Email
 			return emailText;
 		}
 
-		private static string ScrubBoundries(string emailText)
+		private static string ScrubBoundaries(string emailText)
 		{
-			var boundies = FindBoundies(emailText);
-			emailText = ScrubBoundies(emailText, boundies);
+			var boundies = FindBoundaries(emailText);
+			emailText = ScrubBoundaries(emailText, boundies);
 			return emailText;
 		}
 
-		private static string ScrubBoundies(string emailText, string[] boundies)
+		private static string ScrubBoundaries(string emailText, string[] boundies)
 		{
 			int count = 0;
 			string guid = "--boundary_{0}_00000000-0000-0000-0000-00000000000{0}";
@@ -58,7 +58,7 @@ namespace ApprovalTests.Email
 			return emailText;
 		}
 
-		public static string[] FindBoundies(string emailText)
+		public static string[] FindBoundaries(string emailText)
 		{
 			int startPoint = 0;
 			var boundies = new HashSet<string>();

@@ -52,7 +52,7 @@ your biggest fan";
 Content-Type: multipart/alternative; boundary=--boundary_0_283b02d8-4af3-4d14-83bd-6d7181499f83
 
 ";
-            Approvals.VerifyAll(EmailApprovals.FindBoundies(text), "boundry");
+            Approvals.VerifyAll(EmailApprovals.FindBoundaries(text), "boundry");
         }
     }
 }
