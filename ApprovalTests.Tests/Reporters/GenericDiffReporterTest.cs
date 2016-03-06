@@ -27,12 +27,9 @@ namespace ApprovalTests.Tests.Reporters
         [Test]
         public void TestGetCurrentProjectNotFound()
         {
-#if __MonoCS__
-			var project = VisualStudioProjectFileAdder.GetCurrentProjectFile("/");
-#else
-			var project = VisualStudioProjectFileAdder.GetCurrentProjectFile("C:\\");
-#endif
 
+            var file = Path.PathSeparator == '\\' ? "C:\\": "/";
+            var project = VisualStudioProjectFileAdder.GetCurrentProjectFile(file);
             Assert.AreEqual(null, project);
         }
 

@@ -1,13 +1,11 @@
 using System.Diagnostics;
-using System.IO;
 using ApprovalTests.Namers;
 using ApprovalTests.Reporters;
-using ApprovalUtilities.Utilities;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace ApprovalTests.Tests.Reporters
+namespace ApprovalTests.MachineSpecific.Tests.Reporters
 {
-    [TestFixture]
+    [TestClass]
     public class GenericDiffReporterTest
     {
         public static void StartProcess(string fullCommandLine)
@@ -18,120 +16,73 @@ namespace ApprovalTests.Tests.Reporters
             Process.Start(fileName, arguments);
         }
 
-        [Test]
-        public void TestGetActualProgramFileEchos()
-        {
-            string NoneExistingFile = @"C:\ThisDirectoryShouldNotExist\ThisFileShouldNotExist.exe";
-            Assert.AreEqual(NoneExistingFile, GenericDiffReporter.GetActualProgramFile(NoneExistingFile));
-        }
-
-        [Test]
-        public void TestGetCurrentProject()
-        {
-            var file = PathUtilities.GetAdjacentFile("GenericDiffReporterTest.TestLaunchesBeyondCompareImage.approved.txt");
-            string currentProjectFile = Path.GetFileName(VisualStudioProjectFileAdder.GetCurrentProjectFile(file));
-
-            Assert.AreEqual("ApprovalTests.Tests.csproj", currentProjectFile);
-        }
-
-        [Test]
-        public void TestGetCurrentProjectNotFound()
-        {
-            var project = VisualStudioProjectFileAdder.GetCurrentProjectFile("C:\\");
-
-            Assert.AreEqual(null, project);
-        }
-
-        [Test]
+        [TestMethod]
         public void TestLaunchesBeyondCompareImage()
         {
-            AssertLauncher("../../a.png", "../../b.png", BeyondCompareReporter.INSTANCE);
+            AssertLauncher("../../a.png", "../../b.png", BeyondCompare3Reporter.INSTANCE);
         }
 
-        [Test]
+        [TestMethod]
         public void TestLaunchesCodeCompare()
         {
             AssertLauncher("../../a.txt", "../../b.txt", CodeCompareReporter.INSTANCE);
         }
 
-        [Test]
+        [TestMethod]
         public void TestLaunchesKDiff()
         {
             AssertLauncher("../../a.txt", "../../b.txt", KDiffReporter.INSTANCE);
         }
 
-        [Test]
+        [TestMethod]
         public void TestLaunchesP4Merge()
         {
             AssertLauncher("../../a.txt", "../../b.txt", P4MergeTextReporter.INSTANCE);
         }
 
-        [Test]
+        [TestMethod]
         public void TestLaunchesP4MergeImage()
         {
             AssertLauncher("../../a.png", "../../b.png", P4MergeImageReporter.INSTANCE);
         }
 
-        [Test]
+        [TestMethod]
         public void TestLaunchesTortoiseImage()
         {
             AssertLauncher("../../a.png", "../../b.png", TortoiseImageDiffReporter.INSTANCE);
         }
 
-        [Test]
+        [TestMethod]
         public void TestLaunchesTortoiseMerge()
         {
             AssertLauncher("../../a.txt", "../../b.txt", TortoiseTextDiffReporter.INSTANCE);
         }
 
-        [Test]
+        [TestMethod]
         public void TestLaunchesVisualStudio()
         {
-            ApprovalResults.UniqueForMachineName();
-            AssertLauncher("../../a.txt", "../../b.txt", VisualStudioReporter.INSTANCE);
+            using (ApprovalResults.UniqueForMachineName())
+            {
+                AssertLauncher("../../a.txt", "../../b.txt", VisualStudioReporter.INSTANCE);
+            }
         }
 
-        [Test]
-        public void TestMissingDots()
-        {
-            var e =
-                ExceptionUtilities.GetException(() => GenericDiffReporter.RegisterTextFileTypes(".exe", "txt", ".error", "asp"));
-            Approvals.Verify(e);
-        }
-
-        [Test]
-        public void TestProgramsExist()
-        {
-            Assert.IsFalse(new GenericDiffReporter("this_should_never_exist", "").IsWorkingInThisEnvironment("any.txt"));
-        }
-
-        [Test]
-        public void TestRegisterWorks()
-        {
-            var r = new TortoiseDiffReporter();
-            GenericDiffReporter.RegisterTextFileTypes(".myCrazyExtension");
-            Assert.IsTrue(r.IsWorkingInThisEnvironment("file.myCrazyExtension"));
-        }
-
-        [Test]
+        [TestMethod]
         public void TestWinMerge()
         {
-            ApprovalResults.UniqueForMachineName();
-            AssertLauncher("../../a.txt", "../../b.txt", WinMergeReporter.INSTANCE);
+            using (ApprovalResults.UniqueForMachineName())
+            {
+                AssertLauncher("../../a.txt", "../../b.txt", WinMergeReporter.INSTANCE);
+            }
         }
 
         private static void AssertLauncher(string approved, string received, GenericDiffReporter reporter)
         {
-            try
+            using (ApprovalResults.UniqueForMachineName())
             {
-                ApprovalResults.UniqueForMachineName();
                 var args = reporter.GetLaunchArguments(approved, received);
 
                 Approvals.VerifyWithCallback(args, s => StartProcess(s));
-            }
-            finally
-            {
-                NamerFactory.Clear();
             }
         }
     }

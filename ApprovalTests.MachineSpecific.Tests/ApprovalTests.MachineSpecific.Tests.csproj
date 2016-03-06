@@ -70,7 +70,6 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Namer\ApprovalResultsTest.cs" />
-    <Compile Include="Namer\GenericDiffReporterTest.cs" />
     <Compile Include="Namer\VisualStudioReporterTest.cs" />
     <Compile Include="NHibernate\Company.cs" />
     <Compile Include="NHibernate\Employee.cs" />
@@ -79,6 +78,7 @@
     <Compile Include="NHibernate\NHibernateTest.cs" />
     <Compile Include="Persistence\Datasets\DatasetTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reporters\GenericDiffReporterTest.cs" />
     <Compile Include="WinForms\ApprovalsTest.cs" />
     <Compile Include="WinForms\DemoForm.cs">
       <SubType>Form</SubType>
@@ -99,11 +99,10 @@
       <Name>ReportingDemo</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Reporters\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Namer\GenericDiffReporterTest.TestLaunchesBeyondCompareImage.ForMachine.LLEWELLYN-PC.approved.txt" />
+    <Content Include="a.png" />
+    <Content Include="b.png" />
     <EmbeddedResource Include="NHibernate\Company.hbm.xml" />
     <Content Include="Persistence\Datasets\DatasetTest.TestExtrenalImage.ForMachine.LLEWELLYN-PC.approved.tiff" />
     <Content Include="Persistence\Datasets\DatasetTest.TestReport.ForMachine.IP-0AF3274B.approved.tiff" />
