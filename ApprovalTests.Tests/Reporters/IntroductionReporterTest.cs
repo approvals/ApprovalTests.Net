@@ -7,7 +7,6 @@ namespace ApprovalTests.Tests.Reporters
 	public class IntroductionReporterTest
 	{
 		[Test]
-		[UseReporter(typeof(ClipboardReporter))]
 		public void TestComment()
 		{
 			Approvals.Verify(new IntroductionReporter().GetFriendlyWelcomeMessage());
