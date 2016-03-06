@@ -1,12 +1,9 @@
-﻿using ApprovalTests.Utilities;
+﻿using System.Diagnostics;
+using ApprovalTests.Core;
+using ApprovalTests.Utilities;
 
 namespace ApprovalTests.Reporters
 {
-    using System;
-    using System.Diagnostics;
-
-    using ApprovalTests.Core;
-
     public class TfsReporter : IEnvironmentAwareReporter
     {
         public static readonly TfsReporter INSTANCE = new TfsReporter();

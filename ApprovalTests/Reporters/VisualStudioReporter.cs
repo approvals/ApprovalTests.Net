@@ -1,13 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
 using System.Diagnostics;
 using System.Linq;
 using ApprovalTests.Utilities;
 
 namespace ApprovalTests.Reporters
 {
-    using System;
-    using System.ComponentModel;
-
     public class VisualStudioReporter : GenericDiffReporter
     {
         public static readonly VisualStudioReporter INSTANCE = new VisualStudioReporter();
@@ -15,9 +12,9 @@ namespace ApprovalTests.Reporters
 
         public VisualStudioReporter()
             : base(
-                    GetPath(),
-                    "/diff \"{0}\" \"{1}\"",
-                    "Couldn't find Visual Studio at " + PATH)
+                GetPath(),
+                "/diff \"{0}\" \"{1}\"",
+                "Couldn't find Visual Studio at " + PATH)
         {
         }
 
@@ -50,8 +47,8 @@ namespace ApprovalTests.Reporters
             }
             catch (Exception)
             {
-                    // Any exception means we are not working in this environment.
-                    return false;
+                // Any exception means we are not working in this environment.
+                return false;
             }
 
             if (process != null)
