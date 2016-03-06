@@ -158,7 +158,7 @@ namespace ApprovalTests
 
         public static void VerifyAll<T>(String header, IEnumerable<T> enumerable, string label)
         {
-            Verify(header + "\r\r" + enumerable.Write(label));
+            Verify(header + "\r\n\r\n" + enumerable.Write(label));
         }
 
         public static void VerifyAll<T>(IEnumerable<T> enumerable, string label)
@@ -175,7 +175,7 @@ namespace ApprovalTests
         public static void VerifyAll<T>(String header, IEnumerable<T> enumerable,
                                         Func<T, string> formatter)
         {
-            Verify(header + "\r\r" + enumerable.Write(formatter));
+            Verify(header + "\r\n\r\n" + enumerable.Write(formatter));
         }
 
         public static void VerifyAll<T>(IEnumerable<T> enumerable, Func<T, string> formatter)
