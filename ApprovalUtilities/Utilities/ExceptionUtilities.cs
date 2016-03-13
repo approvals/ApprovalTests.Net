@@ -7,7 +7,7 @@ namespace ApprovalUtilities.Utilities
 	{
 		public static string FormatExeption(Exception exception, params string[] additional)
 		{
-			return String.Join("\r\n", GetExceptionLines(exception, additional));
+			return String.Join("\n", GetExceptionLines(exception, additional));
 		}
 
 		public static string[] GetExceptionLines(Exception except, params string[] additional)

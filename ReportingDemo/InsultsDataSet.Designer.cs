@@ -940,7 +940,7 @@ namespace ReportingDemo.InsultsDataSetTableAdapters {
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Insults] ([Insult], [NumberOfWords], [BurnLevel], [Flaw], [Tar" +
-                "get]) VALUES (@Insult, @NumberOfWords, @BurnLevel, @Flaw, @Target);\r\nSELECT Id, " +
+                "get]) VALUES (@Insult, @NumberOfWords, @BurnLevel, @Flaw, @Target);\nSELECT Id, " +
                 "Insult, NumberOfWords, BurnLevel, Flaw, Target FROM Insults WHERE (Id = SCOPE_ID" +
                 "ENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
@@ -989,8 +989,8 @@ SELECT Id, Insult, NumberOfWords, BurnLevel, Flaw, Target FROM Insults WHERE (Id
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        Id, Insult, NumberOfWords, BurnLevel, Flaw, Target\r\nFROM           " +
-                " Insults\r\nWHERE        (BurnLevel > 8) AND (NumberOfWords < 6)";
+            this._commandCollection[1].CommandText = "SELECT        Id, Insult, NumberOfWords, BurnLevel, Flaw, Target\nFROM           " +
+                " Insults\nWHERE        (BurnLevel > 8) AND (NumberOfWords < 6)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         

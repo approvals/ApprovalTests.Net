@@ -81,7 +81,7 @@ namespace ApprovalUtilities.Utilities
 
         public static string Write<T>(this IEnumerable<T> enumerable, string label, Func<T, string> formatter)
         {
-            return StringUtils.Write(enumerable, (i, s) => string.Format("{0}[{1}] = {2}\r\n", label, i, formatter(s)), string.Format("{0} is empty", label));
+            return StringUtils.Write(enumerable, (i, s) => string.Format("{0}[{1}] = {2}\n", label, i, formatter(s)), string.Format("{0} is empty", label));
         }
 
         public static string Write<T>(this IEnumerable<T> enumerable, Func<T, string> formatter)
