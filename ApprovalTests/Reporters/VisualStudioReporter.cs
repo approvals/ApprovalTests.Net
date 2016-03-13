@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Linq;
 using ApprovalTests.Utilities;
+using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.Reporters
 {
@@ -20,7 +21,7 @@ namespace ApprovalTests.Reporters
 
         public override bool IsWorkingInThisEnvironment(string forFile)
         {
-            return base.IsWorkingInThisEnvironment(forFile) && LaunchedFromVisualStudio();
+            return OsUtils.IsWindowsOs() && base.IsWorkingInThisEnvironment(forFile) && LaunchedFromVisualStudio();
         }
 
         private static string GetPath()

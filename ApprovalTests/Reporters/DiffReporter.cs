@@ -13,9 +13,7 @@
 				P4MergeReporter.INSTANCE,
 				WinMergeReporter.INSTANCE,
 				KDiffReporter.INSTANCE,
-#if !__MonoCS__
 				VisualStudioReporter.INSTANCE,
-#endif
 				FrameworkAssertReporter.INSTANCE,
 				QuietReporter.INSTANCE)
 		{

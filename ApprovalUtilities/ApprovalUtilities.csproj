@@ -120,6 +120,7 @@
     <Compile Include="Utilities\ExceptionUtilities.cs" />
     <Compile Include="Utilities\FileUtilities.cs" />
     <Compile Include="Utilities\JsonPrettyPrint.cs" />
+    <Compile Include="Utilities\OsUtils.cs" />
     <Compile Include="Utilities\StringUtils.cs" />
     <Compile Include="Utilities\PathUtilities.cs" />
     <Compile Include="Utilities\TempFile.cs" />

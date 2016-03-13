@@ -5,7 +5,7 @@ using ApprovalUtilities.Wpf;
 
 namespace ApprovalTests.Wpf
 {
-	internal class ApprovalWpfWindowWriter : IApprovalWriter
+	public class ApprovalWpfWindowWriter : IApprovalWriter
 	{
 		private readonly Window window;
 

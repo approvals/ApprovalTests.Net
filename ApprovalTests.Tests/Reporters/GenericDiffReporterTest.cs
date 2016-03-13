@@ -1,3 +1,4 @@
+using System;
 using ApprovalTests.Reporters;
 using ApprovalUtilities.Utilities;
 using NUnit.Framework;
@@ -27,8 +28,7 @@ namespace ApprovalTests.Tests.Reporters
         [Test]
         public void TestGetCurrentProjectNotFound()
         {
-
-            var file = Path.PathSeparator == '\\' ? "C:\\": "/";
+            var file =  Path.GetPathRoot(Path.GetTempPath());
             var project = VisualStudioProjectFileAdder.GetCurrentProjectFile(file);
             Assert.AreEqual(null, project);
         }
