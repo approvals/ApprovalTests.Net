@@ -164,6 +164,7 @@
     <Compile Include="Reporters\GoContinuousDeliveryReporter.cs" />
     <Compile Include="Reporters\IgnoreLineEndingsAttribute.cs" />
     <Compile Include="Reporters\JenkinsReporter.cs" />
+    <Compile Include="Reporters\ReportWithoutFrontLoading.cs" />
     <Compile Include="Reporters\TfsVnextReporter.cs" />
     <Compile Include="Reporters\QueryResult.cs" />
     <Compile Include="Reporters\XUnit2Reporter.cs" />
