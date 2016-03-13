@@ -45,7 +45,7 @@ namespace ApprovalTests.RdlcReports
 						if (!validNames.Contains(info.Item1))
 						{
 							throw new Exception(
-								"The Datasource Name '{0}'\r\nis not a legal match for {1},\r\nLegal Matches are: {2}"
+								"The Datasource Name '{0}'\nis not a legal match for {1},\nLegal Matches are: {2}"
 									.FormatWith(info.Item1, reportname, validNames.ToReadableString()));
 						}
 
@@ -64,7 +64,7 @@ namespace ApprovalTests.RdlcReports
 						if (!validNames.Contains(info.Key))
 						{
 							throw new Exception(
-								"The Datasource Name '{0}'\r\nis not a legal match for {1},\r\nLegal Matches are: {2}"
+								"The Datasource Name '{0}'\nis not a legal match for {1},\nLegal Matches are: {2}"
 									.FormatWith(info.Value, reportname, validNames.ToReadableString()));
 						}
 

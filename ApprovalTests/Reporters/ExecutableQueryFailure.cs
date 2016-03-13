@@ -8,7 +8,7 @@ namespace ApprovalTests.Reporters
     public class ExecutableQueryFailure : IApprovalFailureReporter, IApprovalReporterWithCleanUp
     {
         private const string FileNameSuffix = ".queryresults.txt";
-        private const string Header = "\t\tDo NOT approve\r\n\t\tThis File will be Deleted\r\n\t\tit is for feedback purposes only.\r\n\t\tAn additional file has been opened with only the query which you can approve.\r\n";
+        private const string Header = "\t\tDo NOT approve\n\t\tThis File will be Deleted\n\t\tit is for feedback purposes only.\n\t\tAn additional file has been opened with only the query which you can approve.\n";
         private readonly IExecutableQuery query;
         private readonly IApprovalFailureReporter reporter;
 

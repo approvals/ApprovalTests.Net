@@ -58,7 +58,7 @@ namespace ApprovalTests.Maintenance
 			var files = FindAbandonedFiles(path, assembly);
 			if (files.Any())
 			{
-				throw new Exception("The following files have been abandoned:\r\n" + files.ToReadableString().Replace(",","\r\n"));
+				throw new Exception("The following files have been abandoned:\n" + files.ToReadableString().Replace(",","\n"));
 			}
 		}
 	}
