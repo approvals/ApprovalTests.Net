@@ -51,7 +51,7 @@ Windows Registry Editor Version 5.00
 				PresentationTraceSources.DataBindingSource.Listeners.Remove(this.listener);
 				if (!String.IsNullOrEmpty(message))
 				{
-					message = message.Replace(";", "\r\n\t").Replace(". ", ".\r\n\t");
+					message = message.Replace(";", "\n\t").Replace(". ", ".\n\t");
 					throw new Exception(message);
 				}
 			}

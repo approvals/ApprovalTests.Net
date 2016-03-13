@@ -38,7 +38,7 @@ namespace ApprovalTests.StackTraceParsers
 				});
 			if (approvalField == null)
 			{
-				throw new Exception("Could not find the Field for this MSpec Test \r\n (Please log this if found at: https://github.com/approvals/ApprovalTests.Net/issues");
+				throw new Exception("Could not find the Field for this MSpec Test \n (Please log this if found at: https://github.com/approvals/ApprovalTests.Net/issues");
 			}
 			return approvalField.Name;
 		}

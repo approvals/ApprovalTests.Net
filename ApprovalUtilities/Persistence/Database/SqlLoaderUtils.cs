@@ -43,7 +43,7 @@ namespace ApprovalUtilities.Persistence.Database
                     dataset = DatabaseUtils.Query(query, commandCreator, r => ConvertRowToString(r, headers)).ToArray();
                 }
 
-                return headers + "\r\n" + string.Join("\r\n", dataset.OrEmpty().ToArray());
+                return headers + "\n" + string.Join("\n", dataset.OrEmpty().ToArray());
             }
             catch (Exception ex)
             {

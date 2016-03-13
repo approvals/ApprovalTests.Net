@@ -9,7 +9,7 @@ namespace ApprovalUtilities.SimpleLogger.Writers
 
         public void AppendLine(string text)
         {
-            sb.Append(text + "\r\n");
+            sb.Append(text + "\n");
         }
 				public void Append(string text)
 				{

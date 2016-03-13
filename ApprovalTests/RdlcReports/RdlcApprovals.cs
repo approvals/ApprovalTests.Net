@@ -17,7 +17,7 @@ namespace ApprovalTests.RdlcReports
 					if (validNames.Count != 1)
 					{
 						throw new Exception(
-							"The Cannot use a 'default' Datasource Name for {0},\r\nLegal Matches are: {1}"
+							"The Cannot use a 'default' Datasource Name for {0},\nLegal Matches are: {1}"
 								.FormatWith(reportname, validNames.ToReadableString()));
 					}
 					ds.Add(new ReportDataSource(validNames[0], data));
