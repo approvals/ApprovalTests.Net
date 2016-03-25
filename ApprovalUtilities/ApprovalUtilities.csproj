@@ -58,6 +58,7 @@
       <HintPath>..\..\..\Program Files\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Web.Abstractions">
       <HintPath>..\packages\Mvc2.2.0.1\lib\net35\System.Web.Abstractions.dll</HintPath>
       <Private>True</Private>

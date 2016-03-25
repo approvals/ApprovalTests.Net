@@ -12,48 +12,48 @@ using ReportingDemo;
 namespace ApprovalTests.MachineSpecific.Tests.Persistence.Datasets
 {
     [TestClass]
-		[UseReporter(typeof(AllFailingTestsClipboardReporter), typeof(DiffReporter))]
+    [UseReporter(typeof (AllFailingTestsClipboardReporter))]
     public class DatasetTest
     {
         private const string ReportName = "ReportingDemo.InsultsReport.rdlc";
 
-       [TestMethod]
+        [TestMethod]
         public void TestExtrenalImage()
         {
             RdlcApprovals.VerifyReport("ReportingDemo.ExternalImage.rdlc", GetDefaultData());
         }
 
-       [TestMethod]
+        [TestMethod]
         public void TestSimpleReportWith1Dataset()
         {
             RdlcApprovals.VerifyReport(ReportName, GetDefaultData());
         }
 
-       [TestMethod]
+        [TestMethod]
         public void TestSimpleReportWithDatasetInAssembly()
         {
             RdlcApprovals.VerifyReport(ReportName, "Model", GetDefaultData());
         }
 
-       [TestMethod]
+        [TestMethod]
         public void TestReport()
         {
             RdlcApprovals.VerifyReport(ReportName, GetAssembly(), Tuple.Create("Model", GetDefaultData()));
         }
 
-       [TestMethod]
+        [TestMethod]
         public void TestReportWithDataPair()
         {
-            RdlcApprovals.VerifyReport(ReportName, GetAssembly(), new DataPairs { { "Model", GetDefaultData() } });
+            RdlcApprovals.VerifyReport(ReportName, GetAssembly(), new DataPairs {{"Model", GetDefaultData()}});
         }
 
-       [TestMethod]
+        [TestMethod]
         public void TestSimpleReportExplict()
         {
             RdlcApprovals.VerifyReport(ReportName, GetAssembly(), "Model", GetDefaultData());
         }
 
-       [TestMethod]
+        [TestMethod]
         public void TestDataSourceNames()
         {
             NamerFactory.Clear();
@@ -76,7 +76,7 @@ namespace ApprovalTests.MachineSpecific.Tests.Persistence.Datasets
 
         private static Assembly GetAssembly()
         {
-            return typeof(InsultsDataSet).Assembly;
+            return typeof (InsultsDataSet).Assembly;
         }
     }
 }

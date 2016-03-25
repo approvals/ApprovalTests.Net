@@ -30,13 +30,13 @@ namespace ApprovalTests.Namers
 
 		public static string GetOsName()
 		{
-			var name = TransformEasyOsName(ApprovalUtilities.OSUtils.GetFullOsNameFromWmi());
+			var name = TransformEasyOsName(OsUtils.GetFullOsNameFromWmi());
 			return name.Trim().Replace(' ', '_');
 		}
 
 		public static string GetFullOsName()
 		{
-			var name = ApprovalUtilities.OSUtils.GetFullOsNameFromWmi();
+			var name = OsUtils.GetFullOsNameFromWmi();
 			return name.Trim().Replace(' ', '_');
 		}
 

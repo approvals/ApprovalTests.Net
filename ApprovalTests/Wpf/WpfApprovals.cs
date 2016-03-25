@@ -25,7 +25,6 @@ namespace ApprovalTests.Wpf
 			}
 		}
 
-
 		public static void Verify(Func<Window> windowCreator)
 		{
 			Approvals.Verify(CreateWindowWpfWriter(windowCreator));
