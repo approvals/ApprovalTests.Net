@@ -22,7 +22,7 @@ namespace ApprovalTests.Reporters
 
 		public static string GetCommandLineForApproval(string approved, string received)
 		{
-			return string.Format("move /Y \"{0}\" \"{1}\"", received, approved);
+			return string.Format("cmd /c move /Y \"{0}\" \"{1}\"", received, approved);
 		}
 
 		public bool IsWorkingInThisEnvironment(string forFile)
