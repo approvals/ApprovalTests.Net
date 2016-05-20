@@ -1,29 +1,29 @@
-
+using System;
+using System.Linq;
+using System.Reflection;
+using System.Windows.Forms;
+using ApprovalTests;
+using ApprovalTests.Namers;
+using ApprovalTests.Tests.Events;
+using ApprovalUtilities.Reflection;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ApprovalTests.Reporters;
 
 namespace ApprovalUtilities.Tests.Reflection
 {
-    using System;
-    using System.Linq;
-    using System.Reflection;
-    using System.Windows.Forms;
-    using ApprovalTests;
-    using ApprovalTests.Namers;
-    using ApprovalTests.Tests.Events;
-    using ApprovalUtilities.Reflection;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
-
     [TestClass]
-    [UseReporter(typeof(TortoiseDiffReporter))]
+    [UseReporter(typeof(DiffReporter))]
     public class ReflectionUtilitiesTest
     {
         [TestMethod]
         public void ControlWithLocalAndBaseKeys()
         {
             var checkBox = new CheckBox();
+
             checkBox.CheckedChanged += TestingListener.AnotherStandardCallback;
             checkBox.Click += TestingListener.AnotherStandardCallback;
             checkBox.Click += TestingListener.StandardCallback;
+
             Approvals.VerifyAll(checkBox.GetEventHandlerListEvents(), string.Empty);
         }
 
@@ -31,6 +31,7 @@ namespace ApprovalUtilities.Tests.Reflection
         public void ControlWithEmptyHandlers()
         {
             var checkBox = new CheckBox();
+
             Assert.AreEqual(0, checkBox.GetEventHandlerListEvents().Count());
         }
 
@@ -41,6 +42,7 @@ namespace ApprovalUtilities.Tests.Reflection
                 new CheckBox().NonPublicStaticFields(false),
                 string.Empty);
         }
+
         [TestMethod]
         public void GetInheritedNonPublicStaticFields()
         {
@@ -61,6 +63,7 @@ namespace ApprovalUtilities.Tests.Reflection
         public void GetNonPublicInstanceFieldsAssignableTo()
         {
             Func<FieldInfo, bool> selector = fi => typeof(MulticastDelegate).IsAssignableFrom(fi.FieldType);
+
             Approvals.VerifyAll(
                 new TestingPoco().GetInstanceFields(selector),
                 string.Empty);
@@ -70,6 +73,7 @@ namespace ApprovalUtilities.Tests.Reflection
         public void GetNonPublicInstanceFieldsNamed()
         {
             Func<FieldInfo, bool> selector = fi => string.Compare(fi.Name, "NonEventField", false) == 0;
+
             Approvals.VerifyAll(
                 new TestingPoco().GetInstanceFields(selector),
                 string.Empty);
@@ -87,6 +91,7 @@ namespace ApprovalUtilities.Tests.Reflection
         public void GetNonPublicInstancePropertiesNamed()
         {
             Func<PropertyInfo, bool> selector = pi => string.Compare(pi.Name, "Events", false) == 0;
+
             Approvals.VerifyAll(
                 new CheckBox().NonPublicInstanceProperties(selector),
                 string.Empty);
@@ -96,8 +101,10 @@ namespace ApprovalUtilities.Tests.Reflection
         public void GetPocoEvents()
         {
             var testingPoco = new TestingPoco();
+
             testingPoco.MyEvent += TestingListener.StandardCallback;
             testingPoco.PropertyChanged += TestingListener.PropertyChagnedHandler;
+
             Approvals.VerifyAll(testingPoco.GetPocoEvents(), string.Empty);
         }
 
@@ -105,6 +112,7 @@ namespace ApprovalUtilities.Tests.Reflection
         public void GetEmptyPocoEvents()
         {
             var testingPoco = new TestingPoco();
+
             Assert.AreEqual(0, testingPoco.GetPocoEvents().Count());
         }
 
@@ -112,8 +120,10 @@ namespace ApprovalUtilities.Tests.Reflection
         public void GetInheritedPocoEvents()
         {
             var value = new InheritsTestingPoco();
+
             value.MyEvent += TestingListener.StandardCallback;
             value.PropertyChanged += TestingListener.PropertyChagnedHandler;
+
             Approvals.VerifyAll(value.GetPocoEvents(), string.Empty);
         }
 
@@ -127,6 +137,7 @@ namespace ApprovalUtilities.Tests.Reflection
         public void GetLabelForChild()
         {
             var value = new C("a", "b", "c");
+
             Assert.AreEqual("B", ReflectionUtilities.GetFieldForChild(value, "b").Name);
             Assert.AreEqual("D", ReflectionUtilities.GetFieldForChild(value, "c").Name);
         }
