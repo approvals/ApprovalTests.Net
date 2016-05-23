@@ -35,22 +35,11 @@
     <Reference Include="Gallio">
       <HintPath>..\packages\mbunit.3.3.454.0\lib\net40\Gallio.dll</HintPath>
     </Reference>
-    <Reference Include="Gallio40">
-      <HintPath>..\packages\mbunit.3.3.454.0\lib\net40\Gallio40.dll</HintPath>
-    </Reference>
     <Reference Include="MbUnit">
       <HintPath>..\packages\mbunit.3.3.454.0\lib\net40\MbUnit.dll</HintPath>
     </Reference>
-    <Reference Include="MbUnit40">
-      <HintPath>..\packages\mbunit.3.3.454.0\lib\net40\MbUnit40.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExampleUsages.cs" />
