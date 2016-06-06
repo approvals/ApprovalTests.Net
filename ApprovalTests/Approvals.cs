@@ -27,7 +27,7 @@ namespace ApprovalTests
         {
             get
             {
-                if (currentCaller == null)
+                if (currentCaller == null || currentCaller.Value==null)
                 {
                     SetCaller();
                 }
