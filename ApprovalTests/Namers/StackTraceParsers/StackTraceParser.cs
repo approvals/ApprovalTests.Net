@@ -36,20 +36,35 @@ namespace ApprovalTests.Namers.StackTraceParsers
 Could Not Detect Test Framework
 
 Either:
-1) Optimizer Inlined Test Methods
+    1) Optimizer Inlined Test Methods
 
-Solutions:
-a) Add [MethodImpl(MethodImplOptions.NoInlining)]
-b) Set Build->Optimize Code to False
-   & Build->Advanced->DebugInfo to Full
+    Solutions:
+        a) Add `[MethodImpl(MethodImplOptions.NoInlining)]` to the inlined test method, or
+        
+        b) Set ProjectProperties->Build->Optimize Code to False
+           Set ProjectProperties->Build->Advanced->DebugInfo to Full
 
 or
-2) Approvals is not set up to use your test framework.
-It currently supports {0}
+    2) Approvals is not set up to use your test framework. It currently supports {0}.
 
-Solution:
-To add one use {1}.AddParser() method to add implementation of {2} with support for your testing framework.
-To learn how to implement one see {3}",
+    Solution:
+        To add one use {1}.AddParser() method to add implementation of {2} with support for your testing framework. To learn how to implement one see {3}
+        
+or
+    3) Your unit test is `async`, which doesn't work with ApprovalTests.Net
+    
+    Solutions:
+        a) Use `.Result` and/or `.Wait()` instead of `await` when calling async methods, or
+        b) Wrap your async method calls in `Task.Run(...).Wait()` or `Task.Run().Result`, like this:
+        
+            Task.Run(() =>
+            {
+                await ...
+                await ...
+            }).Wait();
+            Approvals.Verify(...);
+            
+        ",
                               ForTestingFramework,
                               GetType(),
                               typeof(IStackTraceParser),
