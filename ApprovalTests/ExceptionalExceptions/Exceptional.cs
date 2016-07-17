@@ -40,13 +40,11 @@ namespace ApprovalTests.ExceptionalExceptions
 		private static string GetTlDr(ExceptionalId uid)
 		{
 			return "";
-			//return new ExceptionalTlDr(uid).Load();
 		}
 
 		public static ExceptionalId GenerateUniqueId<T>()
 		{
 			var callingMethod = new Caller().Methods.First(m => m.DeclaringType.Namespace != typeof (Exceptional).Namespace);
-	//		callingMethod.GetParameters()[0].Name
 			return new ExceptionalId
 			{
 				Assembly = callingMethod.DeclaringType.Assembly.FullName,
