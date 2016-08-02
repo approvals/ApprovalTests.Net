@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Linq;
-using System.Xml.Linq;
 using ApprovalTests.Scrubber;
 using ApprovalTests.Writers;
-using ApprovalUtilities.SimpleLogger;
 using ApprovalUtilities.Xml;
 
 namespace ApprovalTests.Xml
@@ -36,30 +33,9 @@ namespace ApprovalTests.Xml
 
 		public static void VerifyOrderedXml(string text, Func<string, string> scrubber)
 		{
-			string xml = scrubber.Invoke(text);
-
-		    var xElement = XElement.Parse(xml);
-		    SortAttributes(xElement);
-          
-		    text = xElement.ToString();
+		    text = XmlUtils.FormatXmlWithOrderedAttributes(scrubber.Invoke(text));
 
 		    ApprovalTests.Approvals.Verify(WriterFactory.CreateTextWriter(text, "xml"));
 		}
-
-	    private static void SortAttributes(XElement xElement)
-	    {
-	        var orderedNodes = xElement.Attributes().OrderBy(e => e.ToString()).ToArray();
-	        xElement.RemoveAttributes();
-	        foreach (var attribute in orderedNodes)
-	        {
-	            attribute.Log("xml", n => n.ToString());
-	            xElement.SetAttributeValue(attribute.Name, attribute.Value);
-	        }
-	        foreach (var node in xElement.Nodes().Where(n => n is XElement))
-	        {
-
-                SortAttributes((XElement)node);
-	        }
-	    }
 	}
 }
