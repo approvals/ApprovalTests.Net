@@ -20,6 +20,7 @@ namespace ApprovalTests.Wpf
 				Window window = process();
 				window.DataContext = viewModel;
 				window.Show(); // force binding
+				window.Close();
 			}
 		}
 	}
