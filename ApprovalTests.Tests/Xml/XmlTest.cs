@@ -15,7 +15,7 @@ namespace ApprovalTests.Tests.Xml
 	    [Test]
 	    public void TestXmlWithAttributes()
 	    {
-			XmlApprovals.VerifyXml("<xml b=\"123\" a=\"456\"><hello/><start>hi</start></xml>");
+			XmlApprovals.VerifyOrderedXml("<xml b=\"123\" a=\"456\"><hello x=\"y\"/><start>hi</start></xml>");
 	    }
 	}
 }
