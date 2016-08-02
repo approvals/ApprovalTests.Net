@@ -7,19 +7,19 @@ namespace ApprovalTests.Tests.Xml
 	public class XmlTest
 	{
 		[Test]
-		public static void TestXml()
+		public void TestXml()
 		{
 			XmlApprovals.VerifyXml("<xml><hello/><start>hi</start></xml>");
 		}
 
 	    [Test]
-	    public void TestXmlWithAttributes()
+        public void TestOrderedXmlWithAttributes()
 	    {
 			XmlApprovals.VerifyOrderedXml("<xml b=\"123\" a=\"456\"><hello x=\"y\"/><start>hi</start></xml>");
 	    } 
         
         [Test]
-	    public void TestOrderXmlWithDeepAttributes()
+	    public void TestOrderedXmlWithDeepAttributes()
 	    {
             XmlApprovals.VerifyOrderedXml("<xml b=\"1\" a=\"1\"><branch1 b=\"1\" a=\"1\"/><branch2 b=\"1\" a=\"1\">hi</branch2></xml>");
 	    }

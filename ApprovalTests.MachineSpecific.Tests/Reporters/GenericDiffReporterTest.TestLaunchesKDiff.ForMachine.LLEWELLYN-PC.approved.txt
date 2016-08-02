@@ -1,1 +1,1 @@
-﻿"C:\Program Files\TortoiseHg\kdiff3.exe" "../../b.txt" "../../a.txt" -m -o "../../b.txt"
+﻿"C:\Program Files\TortoiseHg\kdiff3.exe" "../../b.txt" "../../a.txt" -m -o "../../a.txt"
