@@ -39,16 +39,27 @@ namespace ApprovalTests.Xml
 			string xml = scrubber.Invoke(text);
 
 		    var xElement = XElement.Parse(xml);
-		    var orderedNodes = xElement.Attributes().OrderBy(e => e.ToString()).ToArray();
-            xElement.RemoveAttributes();
-		    foreach (var attribute in orderedNodes)
-		    {
-		        attribute.Log("xml", n => n.ToString());
-		        xElement.SetAttributeValue(attribute.Name, attribute.Value);
-		    }
+		    SortAttributes(xElement);
+          
 		    text = xElement.ToString();
 
 		    ApprovalTests.Approvals.Verify(WriterFactory.CreateTextWriter(text, "xml"));
 		}
+
+	    private static void SortAttributes(XElement xElement)
+	    {
+	        var orderedNodes = xElement.Attributes().OrderBy(e => e.ToString()).ToArray();
+	        xElement.RemoveAttributes();
+	        foreach (var attribute in orderedNodes)
+	        {
+	            attribute.Log("xml", n => n.ToString());
+	            xElement.SetAttributeValue(attribute.Name, attribute.Value);
+	        }
+	        foreach (var node in xElement.Nodes().Where(n => n is XElement))
+	        {
+
+                SortAttributes((XElement)node);
+	        }
+	    }
 	}
 }
