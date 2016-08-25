@@ -44,7 +44,8 @@ namespace ApprovalTests
         {
             var normalizeLineEndingsForTextFiles = CurrentCaller.GetFirstFrameForAttribute<IgnoreLineEndingsAttribute>();
             var shouldIgnoreLineEndings = normalizeLineEndingsForTextFiles == null || normalizeLineEndingsForTextFiles.IgnoreLineEndings;
-            Approver.Verify(new FileApprover(writer, namer, shouldIgnoreLineEndings), reporter);
+            var approver = new FileApprover(writer, namer, shouldIgnoreLineEndings);
+            Approver.Verify(approver, reporter);
         }
 
         public static IApprovalFailureReporter GetReporter()

@@ -17,7 +17,7 @@ namespace ApprovalTests.Tests.CustomImplementation
 		[Test]
 		public void CustomNamerShouldNotDependOnSetCallerTest()
 		{
-			var approvaltext = "CustomNamerShouldBeSubstitutable";
+            var approvaltext = "CustomNamerShouldBeSubstitutable";
 
 			var writer = WriterFactory.CreateTextWriter(approvaltext);
 			var namer = new CustomNamer();
@@ -26,13 +26,18 @@ namespace ApprovalTests.Tests.CustomImplementation
 			Approvals.Verify(writer, namer, reporter);
 		}
 
+        [Test]
+	    public void CustomNamerShouldBeSubstitutable()
+	    {
+	        // just here to prevent false detection as abandoned file via Maintenance test
+	    }
 		private class CustomNamer : IApprovalNamer
 		{
 			public string Name
 			{
 				get
 				{
-					return "CustomNamerShouldBeSubstitutable";
+                    return "CustomNamerShouldBeSubstitutableTest.CustomNamerShouldBeSubstitutable";
 				}
 			}
 
