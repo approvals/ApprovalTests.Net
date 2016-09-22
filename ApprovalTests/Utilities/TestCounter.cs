@@ -2,7 +2,9 @@
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
+using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.Utilities
 {
@@ -44,6 +46,12 @@ namespace ApprovalTests.Utilities
             }
         }
 
+        public static void ResetAndLaunch(string counterDisplayJar)
+        {
+            var javaPath = PathUtilities.LocateFileFromEnviormentPath("javaw.exe").FirstOrDefault();
+            ResetAndLaunch(javaPath, counterDisplayJar);
+        }
+
         public static void ResetAndLaunch(string javaPath, string counterDisplayJar)
         {
             Reset();
@@ -81,11 +89,11 @@ namespace ApprovalTests.Utilities
             try
             {
                 test();
-                TestCounter.IncrementSuccess();
+                IncrementSuccess();
             }
             catch (Exception)
             {
-                TestCounter.IncrementFailure();
+                IncrementFailure();
                 throw;
             }
         }
