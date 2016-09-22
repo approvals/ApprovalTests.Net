@@ -16,7 +16,7 @@
     <tags>Approvals ApprovalTests ApprovalTest Test Verification Verify Approve Testing</tags>
     <dependencies>
       <group targetFramework=".NETFramework3.5">
-        <dependency id="ApprovalUtilities" version="[$version$]" />
+        <dependency id="ApprovalUtilities" version="([$version$],)" />
       </group>
     </dependencies>
   </metadata>
