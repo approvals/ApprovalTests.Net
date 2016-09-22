@@ -226,6 +226,19 @@ namespace ApprovalTests
 
         #endregion Enumerable
 
+        public static void AssertEquals(string expected, string actual, IApprovalFailureReporter reporter)
+        {
+            StringReporting.AssertEqual(expected,actual,reporter);
+        }
+
+        public static void AssertEquals<T>(string expected, string actual) where T : IApprovalFailureReporter, new()
+        {
+            StringReporting.AssertEqual(expected, actual, new T());
+        }
+        public static void AssertEquals(string expected, string actual) 
+        {
+            StringReporting.AssertEqual(expected, actual, GetReporter());
+        }
         public static void VerifyPdfFile(string pdfFilePath)
         {
             PdfScrubber.ScrubPdf(pdfFilePath);
@@ -242,7 +255,6 @@ namespace ApprovalTests
             this.reporter = reporter;
         }
 
-        #region IEnvironmentAwareReporter Members
 
         public void Report(string approved, string received)
         {
@@ -254,6 +266,5 @@ namespace ApprovalTests
             return true;
         }
 
-        #endregion IEnvironmentAwareReporter Members
     }
 }
