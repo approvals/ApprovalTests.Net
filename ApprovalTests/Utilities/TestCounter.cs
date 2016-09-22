@@ -44,10 +44,10 @@ namespace ApprovalTests.Utilities
             }
         }
 
-        public static void ResetAndLaunch(string javaPath, string counterDisplay)
+        public static void ResetAndLaunch(string javaPath, string counterDisplayJar)
         {
             Reset();
-            Launch(javaPath, counterDisplay);
+            Launch(javaPath, counterDisplayJar);
         }
 
         public static void Launch(string java, string jar)
