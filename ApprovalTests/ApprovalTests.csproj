@@ -205,6 +205,7 @@
     <Compile Include="StatePrinter\StatePrinterApprovals.cs" />
     <Compile Include="TheoryTests\SerializableTheory.cs" />
     <Compile Include="Utilities\StringReporting.cs" />
+    <Compile Include="Utilities\TestCounter.cs" />
     <Compile Include="WebApi\MicrosoftHttpClient\RestQuery.cs" />
     <Compile Include="WindowsRegistry\WindowsRegistryAssert.cs" />
     <Compile Include="WinForms\WinFormsApprovals.cs" />

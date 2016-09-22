@@ -2,4 +2,4 @@
 
 
 [assembly: AssemblyVersion("3.0")]     // Don't change this
-[assembly: AssemblyFileVersion("3.0.11")] // Change this
+[assembly: AssemblyFileVersion("3.0.12")] // Change this
