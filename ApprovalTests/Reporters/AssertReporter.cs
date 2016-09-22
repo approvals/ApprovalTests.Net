@@ -26,8 +26,12 @@ namespace ApprovalTests.Reporters
 
         public virtual bool IsWorkingInThisEnvironment(string forFile)
         {
-            return GenericDiffReporter.IsTextFile(forFile) &&
-                   AttributeStackTraceParser.GetFirstFrameForAttribute(Approvals.CurrentCaller, frameworkAttribute) !=
+            return GenericDiffReporter.IsTextFile(forFile) && IsFrameworkUsed();
+        }
+
+        public bool IsFrameworkUsed()
+        {
+            return AttributeStackTraceParser.GetFirstFrameForAttribute(Approvals.CurrentCaller, frameworkAttribute) !=
                    null;
         }
 

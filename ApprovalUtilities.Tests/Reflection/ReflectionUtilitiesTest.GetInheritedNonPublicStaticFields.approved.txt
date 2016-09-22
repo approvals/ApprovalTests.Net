@@ -1,4 +1,4 @@
-﻿For Net_v4.0.30319.18444
+﻿For Net_v4.0.30319.42000
 
 [0] = System.Object EVENT_CHECKEDCHANGED
 [1] = System.Object EVENT_CHECKSTATECHANGED
@@ -184,16 +184,17 @@
 [181] = Int32 STATE2_UICUES
 [182] = Int32 STATE2_ISACTIVEX
 [183] = Int32 STATE2_USEPREFERREDSIZECACHE
-[184] = Int16 PaintLayerBackground
-[185] = Int16 PaintLayerForeground
-[186] = Byte RequiredScalingEnabledMask
-[187] = Byte RequiredScalingMask
-[188] = Int32 UISTATE_FOCUS_CUES_MASK
-[189] = Int32 UISTATE_FOCUS_CUES_HIDDEN
-[190] = Int32 UISTATE_FOCUS_CUES_SHOW
-[191] = Int32 UISTATE_KEYBOARD_CUES_MASK
-[192] = Int32 UISTATE_KEYBOARD_CUES_HIDDEN
-[193] = Int32 UISTATE_KEYBOARD_CUES_SHOW
-[194] = Int32 ImeCharsToIgnoreDisabled
-[195] = Int32 ImeCharsToIgnoreEnabled
-[196] = System.Object EventDisposed
+[184] = Int32 STATE2_TOPMDIWINDOWCLOSING
+[185] = Int16 PaintLayerBackground
+[186] = Int16 PaintLayerForeground
+[187] = Byte RequiredScalingEnabledMask
+[188] = Byte RequiredScalingMask
+[189] = Int32 UISTATE_FOCUS_CUES_MASK
+[190] = Int32 UISTATE_FOCUS_CUES_HIDDEN
+[191] = Int32 UISTATE_FOCUS_CUES_SHOW
+[192] = Int32 UISTATE_KEYBOARD_CUES_MASK
+[193] = Int32 UISTATE_KEYBOARD_CUES_HIDDEN
+[194] = Int32 UISTATE_KEYBOARD_CUES_SHOW
+[195] = Int32 ImeCharsToIgnoreDisabled
+[196] = Int32 ImeCharsToIgnoreEnabled
+[197] = System.Object EventDisposed

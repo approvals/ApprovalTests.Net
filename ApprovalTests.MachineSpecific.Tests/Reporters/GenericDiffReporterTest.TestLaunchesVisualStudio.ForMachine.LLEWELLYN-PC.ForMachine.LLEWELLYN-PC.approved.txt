@@ -1,1 +1,1 @@
-﻿"C:\Program Files\Microsoft Visual Studio 12.0\Common7\IDE\devenv.exe" /diff "../../b.txt" "../../a.txt"
+﻿"C:\Program Files\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" /diff "../../b.txt" "../../a.txt"

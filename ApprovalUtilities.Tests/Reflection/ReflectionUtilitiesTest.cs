@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using System.Reflection;
+using System.Threading;
 using System.Windows.Forms;
 using ApprovalTests;
 using ApprovalTests.Namers;
@@ -44,11 +45,22 @@ namespace ApprovalUtilities.Tests.Reflection
         }
 
         [TestMethod]
+        [UseReporter(typeof(DiffReporter))]
         public void GetInheritedNonPublicStaticFields()
         {
+            try
+            {
+
+            
             Approvals.VerifyAll("For " + ApprovalResults.GetDotNetVersion(), 
                 new CheckBox().NonPublicStaticFields(true),
                 string.Empty);
+            }
+            catch (Exception)
+            {
+                //Thread.Sleep(9000);
+                throw;
+            }
         }
 
         [TestMethod]
