@@ -9,12 +9,12 @@ namespace ApprovalTests.Approvers
 {
     public class FileApprover : IApprovalApprover
     {
-        private readonly IApprovalNamer namer;
-        private readonly bool normalizeLineEndingsForTextFiles;
-        private readonly IApprovalWriter writer;
-        private string approved;
-        private ApprovalException failure;
-        private string received;
+        public readonly IApprovalNamer namer;
+        public readonly bool normalizeLineEndingsForTextFiles;
+        public readonly IApprovalWriter writer;
+        public string approved;
+        public ApprovalException failure;
+        public string received;
 
         public FileApprover(IApprovalWriter writer, IApprovalNamer namer)
             : this(writer, namer, false)
