@@ -108,6 +108,11 @@ Recieved {0} ({1}, {2}, {3})"
             fileTypes = allowedFileTypes;
         }
 
+        protected GenericDiffReporter(DiffInfo info) : this(info.DiffProgram, info.Parameters, "Unable to find program at {0}".FormatWith( info.DiffProgram), info.FileTypes)
+        {
+            
+        }
+
         public static string GetActualProgramFile(string fullPath)
         {
             if (File.Exists(fullPath))

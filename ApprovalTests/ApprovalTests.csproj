@@ -138,6 +138,12 @@
     <Compile Include="Reporters\GoContinuousDeliveryReporter.cs" />
     <Compile Include="Reporters\IgnoreLineEndingsAttribute.cs" />
     <Compile Include="Reporters\JenkinsReporter.cs" />
+    <Compile Include="Reporters\Mac\BeyondCompareMacReporter.cs" />
+    <Compile Include="Reporters\Mac\DiffMergeReporter.cs" />
+    <Compile Include="Reporters\Mac\KaleidoscopeDiffReporter.cs" />
+    <Compile Include="Reporters\Mac\KDiff3Reporter.cs" />
+    <Compile Include="Reporters\Mac\P4MergeReporter.cs" />
+    <Compile Include="Reporters\Mac\TkDiffReporter.cs" />
     <Compile Include="Reporters\ReportWithoutFrontLoading.cs" />
     <Compile Include="Reporters\TfsVnextReporter.cs" />
     <Compile Include="Reporters\QueryResult.cs" />
