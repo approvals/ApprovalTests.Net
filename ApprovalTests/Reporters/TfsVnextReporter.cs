@@ -9,8 +9,8 @@ namespace ApprovalTests.Reporters
 
       public void Report(string approved, string received)
       {
-          // does nothing
-      }
+            ContinousDeliveryUtils.ReportOnServer(approved, received);
+        }
 
       public bool IsWorkingInThisEnvironment(string forFile)
       {

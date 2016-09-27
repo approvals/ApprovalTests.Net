@@ -15,7 +15,7 @@ namespace ApprovalTests.Reporters
 
         public void Report(string approved, string received)
         {
-            // does nothing
+            ContinousDeliveryUtils.ReportOnServer(approved, received);
         }
 
         private static string GetParentProcessName()
