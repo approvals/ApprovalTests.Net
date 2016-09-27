@@ -14,7 +14,7 @@ namespace ApprovalTests.Reporters
 {
     public class GenericDiffReporter : IEnvironmentAwareReporter
     {
-        protected const string DEFAULT_ARGUMENT_FORMAT = "\"{0}\" \"{1}\"";
+        public const string DEFAULT_ARGUMENT_FORMAT = "\"{0}\" \"{1}\"";
 
         private static readonly HashSet<string> TEXT_FILE_TYPES = new HashSet<string>
         {

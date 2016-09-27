@@ -9,29 +9,12 @@ namespace ApprovalTests.Reporters
 
         public void Report(string approved, string received)
         {
-            reportOnServer(approved, received);
-        }
-
-        public static void reportOnServer(string approved, string received)
-        {
-            var reporter = FrameworkAssertReporter.INSTANCE;
-            if (reporter.IsWorkingInThisEnvironment(received))
-            {
-                reporter.Report(approved, received);
-            }
-            else
-            {
-                // do nothing
-            }
+            ContinousDeliveryUtils.ReportOnServer(approved, received);
         }
 
         public bool IsWorkingInThisEnvironment(string forFile)
         {
             return Environment.GetEnvironmentVariable("GO_SERVER_URL") != null;
         }
-    }
-
-    public class ContinousDeliveryUtils
-    {
     }
 }
