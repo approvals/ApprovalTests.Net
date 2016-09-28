@@ -6,7 +6,7 @@ namespace ApprovalTests.Reporters
 		public static readonly AraxisMergeReporter INSTANCE = new AraxisMergeReporter();
 
 		public AraxisMergeReporter()
-			: base(DiffPrograms.Windows.ARAXIS_MERGE_REPORTER)
+			: base(DiffPrograms.Windows.ARAXIS_MERGE)
 		{
 		}
 	}
