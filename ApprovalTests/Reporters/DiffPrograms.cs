@@ -36,6 +36,7 @@ namespace ApprovalTests.Reporters
             public static DiffInfo ARAXIS_MERGE = new DiffInfo("{ProgramFiles}Araxis\\Araxis Merge\\Compare.exe", TEXT);
             public static DiffInfo CODE_COMPARE = new DiffInfo("{ProgramFiles}Devart\\Code Compare\\CodeCompare.exe", TEXT);
             public static DiffInfo KDIFF3 = new DiffInfo("{ProgramFiles}KDiff3\\kdiff3.exe", TEXT);
+            public static DiffInfo P4MERGE = new DiffInfo("{ProgramFiles}Perforce\\p4merge.exe", TEXT_AND_IMAGE);
         }
     }
 }
