@@ -1,4 +1,6 @@
-﻿namespace ApprovalTests.Reporters
+﻿using ApprovalUtilities.Utilities;
+
+namespace ApprovalTests.Reporters
 {
     public class WindowsDiffReporter : FirstWorkingReporter
     {
@@ -17,6 +19,15 @@
                 FrameworkAssertReporter.INSTANCE,
                 QuietReporter.INSTANCE)
         {
+        }
+
+        public override bool IsWorkingInThisEnvironment(string forFile)
+        {
+            if (OsUtils.IsWindowsOs())
+            {
+                return base.IsWorkingInThisEnvironment(forFile);
+            }
+            return false;
         }
     }
 }

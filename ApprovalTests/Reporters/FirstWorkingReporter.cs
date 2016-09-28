@@ -29,7 +29,7 @@ namespace ApprovalTests.Reporters
 			r.Report(approved, received);
 		}
 
-		public bool IsWorkingInThisEnvironment(string forFile)
+		public virtual bool IsWorkingInThisEnvironment(string forFile)
 		{
 			return reporters.Any(x => x.IsWorkingInThisEnvironment(forFile));
 		}
