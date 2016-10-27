@@ -48,6 +48,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompatibilityWithXunit1Test.cs" />
     <Compile Include="Namer\XunitStackTraceNamerTest.cs" />
     <Compile Include="Namer\XunitTheoryStackTraceParserTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
