@@ -5,7 +5,7 @@
         public static readonly P4MergeImageReporter INSTANCE = new P4MergeImageReporter();
 
         public P4MergeImageReporter()
-            : base(DiffPrograms.Windows.P4MERGE)
+            : base(DiffPrograms.Windows.P4MERGE_IMAGE)
         {
         }
     }

@@ -42,8 +42,10 @@ namespace ApprovalTests.Reporters
                 "/ENVIRONMENT=visualstudio {0} {1}", TEXT);
             public static DiffInfo KDIFF3 = new DiffInfo("{ProgramFiles}KDiff3\\kdiff3.exe",
                 "{0} {1} -m -o {1}", TEXT);
-            public static DiffInfo P4MERGE = new DiffInfo("{ProgramFiles}Perforce\\p4merge.exe",
-                "{1} {0} {1} {1}", TEXT_AND_IMAGE);
+            public static DiffInfo P4MERGE_TEXT = new DiffInfo("{ProgramFiles}Perforce\\p4merge.exe",
+                "{1} {0} {1} {1}", TEXT);
+            public static DiffInfo P4MERGE_IMAGE = new DiffInfo("{ProgramFiles}Perforce\\p4merge.exe",
+                "{0} {1}", IMAGE);
         }
     }
 }

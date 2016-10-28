@@ -16,7 +16,7 @@ namespace ApprovalTests.MSTest
 		{
 			using (var db = new EntityFrameworkDemoEntities())
 			{
-				EntityFrameworkDbContextApprovals.Verify(db, CreateCompanyLoaderByName2(db, "Mic"));
+			    EntityFrameworkDbContextApprovals.Verify(db, CreateCompanyLoaderByName2(db, "Mic"));
 			}
 		}
 

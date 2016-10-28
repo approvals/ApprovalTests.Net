@@ -1,1 +1,1 @@
-﻿"C:\Program Files\TortoiseSVN\bin\tortoisemerge.exe" "../../b.txt" "../../a.txt"
+﻿"C:\Program Files\TortoiseSVN\bin\TortoiseMerge.exe" "../../b.txt" "../../a.txt"

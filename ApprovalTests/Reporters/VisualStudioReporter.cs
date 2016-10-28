@@ -14,7 +14,7 @@ namespace ApprovalTests.Reporters
         public VisualStudioReporter()
             : base(
                 GetPath(),
-                "/diff \"{0}\" \"{1}\"",
+                "/diff {0} {1}",
                 "Couldn't find Visual Studio at " + PATH)
         {
         }
