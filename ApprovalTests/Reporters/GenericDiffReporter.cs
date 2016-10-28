@@ -14,7 +14,7 @@ namespace ApprovalTests.Reporters
 {
     public class GenericDiffReporter : IEnvironmentAwareReporter
     {
-        public const string DEFAULT_ARGUMENT_FORMAT = "\"{0}\" \"{1}\"";
+        public const string DEFAULT_ARGUMENT_FORMAT = "{0} {1}";
 
         private static readonly HashSet<string> TEXT_FILE_TYPES = new HashSet<string>
         {
@@ -178,7 +178,12 @@ Recieved {0} ({1}, {2}, {3})"
 
         public LaunchArgs GetLaunchArguments(string approved, string received)
         {
-            return new LaunchArgs(GetDiffProgram(), arguments.FormatWith(received, approved));
+            return new LaunchArgs(GetDiffProgram(), arguments.FormatWith( WrapPath(received), WrapPath(approved)));
+        }
+
+        private string WrapPath(string path)
+        {
+            return '"' + path + '"';
         }
 
 

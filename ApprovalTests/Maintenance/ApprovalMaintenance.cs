@@ -51,11 +51,12 @@ namespace ApprovalTests.Maintenance
 		}
 
 		
-		public static void VerifyNoAbandonedFiles()
+		public static void VerifyNoAbandonedFiles(params String[] ignore)
 		{
 			var path = PathUtilities.GetDirectoryForCaller(1);
 			var assembly = new Caller().Methods.First().Module.Assembly;
 			var files = FindAbandonedFiles(path, assembly);
+		    files = files.Where(f => !ignore.Any(p => f.FullName.Contains(p))).ToArray();
 			if (files.Any())
 			{
 				throw new Exception("The following files have been abandoned:\n" + files.ToReadableString().Replace(",","\n"));

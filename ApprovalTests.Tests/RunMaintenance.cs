@@ -9,7 +9,7 @@ namespace ApprovalTests.Tests
 		[Test]
 		public void EnsureNoAbandonedFiles()
 		{
-			ApprovalMaintenance.VerifyNoAbandonedFiles();
+			ApprovalMaintenance.VerifyNoAbandonedFiles("CustomNamerShouldBeSubstitutable.approved.txt");
 		}
 	}
 }
