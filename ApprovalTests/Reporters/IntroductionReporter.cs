@@ -23,12 +23,13 @@ namespace ApprovalTests.Reporters
                 @"Welcome to ApprovalTests.
 
 Please add:
-
 [UseReporter(typeof(DiffReporter))]
+or
+[UseFirstWorkingReporter(typeof(DiffReporter), typeof(QuietReporter)]
 to your Class, Method or assembly.
 
 Why:
-ApprovalTests uses the [UseReporter] attribute from your test class, method or assembly.
+ApprovalTests uses the [UseReporter] or [UseFirstWorkingReporter] attribute from your test class, method or assembly.
 When you do this ApprovalTest will launch the result using that reporter (for example in your diff tool).
 You can find several reporters in ApprovalTests.Reporters namespace, or create your own by extending {0}) interface.
 Find more at: http://blog.approvaltests.com/2011/12/using-reporters-in-approval-tests.html

@@ -108,6 +108,7 @@
     <Compile Include="Persistence\AsyncSaverTest.cs" />
     <Compile Include="Reporters\PowerShellClipboardReporterTest.cs" />
     <Compile Include="Reporters\ReporterTest.cs" />
+    <Compile Include="Reporters\UseFirstWorkingReporterAttributeTest.cs" />
     <Compile Include="RunMaintenance.cs" />
     <Compile Include="Email\EmailTest.cs" />
     <Compile Include="EntityFramework\CompanyList.cs" />
