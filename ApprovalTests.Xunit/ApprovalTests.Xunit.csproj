@@ -47,6 +47,7 @@
     <Compile Include="Namer\XunitTheoryStackTraceParserTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reporters\NonNUnitReporterTest.cs" />
+    <Compile Include="CompatibilityWithXunit2Tests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ApprovalTests\ApprovalTests.csproj">

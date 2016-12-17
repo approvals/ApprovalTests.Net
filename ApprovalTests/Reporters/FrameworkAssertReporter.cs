@@ -6,6 +6,7 @@ namespace ApprovalTests.Reporters
 		public FrameworkAssertReporter()
 			: base(MsTestReporter.INSTANCE,
 						 NUnitReporter.INSTANCE,
+						 XUnit2Reporter.INSTANCE,
 						 XUnitReporter.INSTANCE)
 		{
 		}
