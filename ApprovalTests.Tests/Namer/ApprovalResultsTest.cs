@@ -77,5 +77,16 @@ namespace ApprovalTests.Tests.Namer
                 }
             }
         }
+
+        [TestFixture]
+        public class NestedClassTests
+        {
+            [Test]
+            public void WithNestedClass()
+            {
+                var name = Approvals.GetDefaultNamer().Name;
+                Assert.AreEqual("AdditionalInformationTests.NestedClassTests.WithNestedClass", name);
+            }
+        }
     }
 }
