@@ -15,7 +15,7 @@ namespace ApprovalTests.Namers.StackTraceParsers
 
 		public string TypeName
 		{
-			get { return approvalFrame.Method.DeclaringType.Name; }
+		    get { return GetRecursiveTypeName(this.approvalFrame.Method.DeclaringType); }
 		}
 
 		public string AdditionalInfo
@@ -84,5 +84,12 @@ namespace ApprovalTests.Namers.StackTraceParsers
 		}
 
 		protected abstract string GetAttributeType();
+
+	    private static string GetRecursiveTypeName(Type type)
+	    {
+	        return type.DeclaringType != null 
+                ? $"{GetRecursiveTypeName(type.DeclaringType)}.{type.Name}" 
+                : type.Name;
+	    }
 	}
 }
