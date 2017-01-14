@@ -127,6 +127,7 @@
     <Compile Include="Namer\ApprovalResultsTest.cs" />
     <Compile Include="Namer\SubdirectoryNamerTests.cs" />
     <Compile Include="Pdf\PdfTest.cs" />
+    <Compile Include="Set\SetTests.cs" />
     <Compile Include="StackTraceScrubberTest.cs" />
     <Compile Include="StatePrinter\StatePrinterTests.cs" />
     <Compile Include="StringEncodingTest.cs" />
