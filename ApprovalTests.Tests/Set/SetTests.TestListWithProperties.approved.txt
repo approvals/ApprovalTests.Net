@@ -1,0 +1,12 @@
+﻿ObjectWithProperties
+{
+	Name: Barbara
+	Index: 1
+}
+
+ObjectWithProperties
+{
+	Name: Jordan
+	Index: 2
+}
+

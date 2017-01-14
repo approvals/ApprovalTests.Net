@@ -12,9 +12,14 @@ namespace ApprovalTests.Set
             return enumerable.OrderBy(e => e);
         }
 
-        public static void VerifySet<T>(IEnumerable<T> enumerable, Func<T, string> formatter) where T : IComparable<T>
+        private static IEnumerable<T> GetSorted<T>(IEnumerable<T> enumerable, Func<T, string> formatter)
         {
-            Approvals.VerifyAll(GetSorted(enumerable), formatter);
+            return enumerable.OrderBy(e => formatter(e));
+        }
+
+        public static void VerifySet<T>(IEnumerable<T> enumerable, Func<T, string> formatter) 
+        {
+            Approvals.VerifyAll(GetSorted(enumerable, formatter), formatter);
         }
 
         public static void VerifySet<T>(IEnumerable<T> enumerable, string label) where T : IComparable<T>
@@ -22,9 +27,9 @@ namespace ApprovalTests.Set
             Approvals.VerifyAll(GetSorted(enumerable), label);
         }
 
-        public static void VerifySet<T>(IEnumerable<T> enumerable, string label, Func<T, string> formatter) where T : IComparable<T>
+        public static void VerifySet<T>(IEnumerable<T> enumerable, string label, Func<T, string> formatter) 
         {
-            Approvals.VerifyAll(GetSorted(enumerable), label, formatter);
+            Approvals.VerifyAll(GetSorted(enumerable, formatter), label, formatter);
         }
 
         public static void VerifySet<T>(string header, IEnumerable<T> enumerable, string label) where T : IComparable<T>
@@ -32,9 +37,9 @@ namespace ApprovalTests.Set
             Approvals.VerifyAll(header, GetSorted(enumerable), label);
         }
 
-        public static void VerifySet<T>(string header, IEnumerable<T> enumerable, Func<T, string> formatter) where T : IComparable<T>
+        public static void VerifySet<T>(string header, IEnumerable<T> enumerable, Func<T, string> formatter)
         {
-            Approvals.VerifyAll(header, GetSorted(enumerable), formatter);
+            Approvals.VerifyAll(header, GetSorted(enumerable, formatter), formatter);
         }
 
         public static void VerifyFileAsSet(string filename, Func<string, string> scrubber)

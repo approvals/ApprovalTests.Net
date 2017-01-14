@@ -30,10 +30,15 @@ namespace ApprovalTests.Tests.Set
             {
                 return this.Bar.CompareTo(other.Bar);
             }
+
+            public override string ToString()
+            {
+                return this.Bar;
+            }
         }
 
         [Test]
-        public void TestListObject()
+        public void TestListObjectWithComparable()
         {
             var list = new List<Foo>()
             {
@@ -41,7 +46,7 @@ namespace ApprovalTests.Tests.Set
                 new Foo() { Bar = "apple" },
                 new Foo() { Bar = "banana" },
             };
-            SetApprovals.VerifySet(list, String.Empty, f => f.Bar);
+            SetApprovals.VerifySet(list, String.Empty);
         }
 
         [Test]
@@ -59,6 +64,30 @@ namespace ApprovalTests.Tests.Set
             var file = path + "a.txt";
             Func<string, string> scrubber =  s => Regex.Replace(s, @"^[^\|]*", "");
             SetApprovals.VerifyFileAsSet(file, scrubber);
+        }
+
+        [Test]
+        public void TestListWithFormatter()
+        {
+            var list = new List<string>() { "frobber", "gewgaw", "horse" };        
+            SetApprovals.VerifySet(list, s => s.Length.ToString());
+        }
+
+        public class ObjectWithProperties
+        {
+            public string Name { get; set; }
+            public int Index { get; set; }
+        }
+
+        [Test]
+        public void TestListWithProperties()
+        {
+            var list = new List<ObjectWithProperties>()
+            {
+                new ObjectWithProperties() { Name = "Jordan", Index = 2 },
+                new ObjectWithProperties() { Name = "Barbara", Index = 1 },
+            };
+            SetApprovals.VerifySet(list, i => StringUtils.WritePropertiesToString(i));
         }
     }
 }
