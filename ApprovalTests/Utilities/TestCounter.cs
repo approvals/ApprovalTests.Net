@@ -48,7 +48,7 @@ namespace ApprovalTests.Utilities
 
         public static void ResetAndLaunch(string counterDisplayJar)
         {
-            var javaPath = PathUtilities.LocateFileFromEnviormentPath("javaw.exe").FirstOrDefault();
+            var javaPath = PathUtilities.LocateFileFromEnvironmentPath("javaw.exe").FirstOrDefault();
             ResetAndLaunch(javaPath, counterDisplayJar);
         }
 
