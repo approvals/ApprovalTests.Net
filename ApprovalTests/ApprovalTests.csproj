@@ -209,6 +209,7 @@
     <Compile Include="Namers\UnitTestFrameworks\MbUnitStackTraceParser.cs" />
     <Compile Include="Namers\UnitTestFrameworks\VSStackTraceParser.cs" />
     <Compile Include="Reporters\UseReporterAttribute.cs" />
+    <Compile Include="Set\SetApprovals.cs" />
     <Compile Include="TheoryTests\ThreadSafteyTheory.cs" />
     <Compile Include="Utilities\OSUtils.cs" />
     <Compile Include="Utilities\ParentProcessUtils.cs" />
