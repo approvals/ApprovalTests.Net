@@ -19,7 +19,7 @@ namespace ApprovalUtilities.Tests.Utilities
 		[TestMethod]
 		public void TestFindsFile()
 		{
-			var found = PathUtilities.LocateFileFromEnviormentPath(@"ipconfig.exe").FirstOrDefault();
+			var found = PathUtilities.LocateFileFromEnvironmentPath(@"ipconfig.exe").FirstOrDefault();
 			AssertEqualIgnoreCase(@"C:\Windows\System32\ipconfig.exe", found);
 		}
 
@@ -31,14 +31,14 @@ namespace ApprovalUtilities.Tests.Utilities
 		[TestMethod]
 		public void TestFindsMultipleFiles()
 		{
-			Approvals.VerifyAll(PathUtilities.LocateFileFromEnviormentPath(@"notepad.exe").Select(f=>f.ToLowerInvariant()), "Found");
+			Approvals.VerifyAll(PathUtilities.LocateFileFromEnvironmentPath(@"notepad.exe").Select(f=>f.ToLowerInvariant()), "Found");
 		}
 
 		[TestMethod]
 		public void TestDoesNotFindFile()
 		{
 			string noneExistingFile = @"ThisFileShouldNotExist.exe";
-			var results = PathUtilities.LocateFileFromEnviormentPath(noneExistingFile);
+			var results = PathUtilities.LocateFileFromEnvironmentPath(noneExistingFile);
 			Assert.AreEqual(0,results.Count());
 		}
 	}

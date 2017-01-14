@@ -120,7 +120,7 @@ Recieved {0} ({1}, {2}, {3})"
                 return fullPath;
             }
             var toFind = Path.GetFileName(fullPath);
-            var output = PathUtilities.LocateFileFromEnviormentPath(toFind).FirstOrDefault();
+            var output = PathUtilities.LocateFileFromEnvironmentPath(toFind).FirstOrDefault();
             return String.IsNullOrEmpty(output) ? fullPath : output;
         }
 
