@@ -42,16 +42,16 @@ namespace ApprovalTests.Set
             Approvals.VerifyAll(header, GetSorted(enumerable, formatter), formatter);
         }
 
-        public static void VerifyFileAsSet(string filename, Func<string, string> scrubber)
+        public static void VerifyTextFileAsSet(string filename, Func<string, string> scrubber)
         {
             var lines = File.ReadAllLines(filename);
             var scrubbed = lines.Select(l => scrubber(l));
             VerifySet(scrubbed, s => s);  
         }
 
-        public static void VerifyFileAsSet(string filename)
+        public static void VerifyTextFileAsSet(string filename)
         {
-            VerifyFileAsSet(filename, ApprovalTests.Scrubber.ScrubberUtils.NO_SCRUBBER);
+            VerifyTextFileAsSet(filename, ApprovalTests.Scrubber.ScrubberUtils.NO_SCRUBBER);
         }
     }
 }

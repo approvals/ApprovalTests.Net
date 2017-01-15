@@ -54,7 +54,7 @@ namespace ApprovalTests.Tests.Set
         {
             var path = PathUtilities.GetDirectoryForCaller();
             var file = path + "a.txt";
-            SetApprovals.VerifyFileAsSet(file);
+            SetApprovals.VerifyTextFileAsSet(file);
         }
 
         [Test]
@@ -63,7 +63,7 @@ namespace ApprovalTests.Tests.Set
             var path = PathUtilities.GetDirectoryForCaller();
             var file = path + "a.txt";
             Func<string, string> scrubber =  s => Regex.Replace(s, @"^[^\|]*", "");
-            SetApprovals.VerifyFileAsSet(file, scrubber);
+            SetApprovals.VerifyTextFileAsSet(file, scrubber);
         }
 
         [Test]
