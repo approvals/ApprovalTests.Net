@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -55,6 +56,7 @@ namespace ApprovalUtilities.Utilities
             return results.ToArray();
         }
 
+        [EditorBrowsable(EditorBrowsableState.Never)]
         [Obsolete("Use LocateFileFromEnvironmentPath().")]
         public static IEnumerable<string> LocateFileFromEnviormentPath(string toFind)
         {
