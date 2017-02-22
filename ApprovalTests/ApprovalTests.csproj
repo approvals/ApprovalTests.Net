@@ -148,6 +148,7 @@
     <Compile Include="Reporters\ReportWithoutFrontLoading.cs" />
     <Compile Include="Reporters\TfsVnextReporter.cs" />
     <Compile Include="Reporters\QueryResult.cs" />
+    <Compile Include="Reporters\TortoiseGitTextDiffReporter.cs" />
     <Compile Include="Reporters\WindowsDiffReporter.cs" />
     <Compile Include="Reporters\XUnit2Reporter.cs" />
     <Compile Include="Scrubber\HtmlScrubbers.cs" />
