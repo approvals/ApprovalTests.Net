@@ -7,18 +7,27 @@ namespace ApprovalTests.Xml
 {
 	public class XmlApprovals
 	{
-		public static void VerifyXml(string xml)
+        public static void VerifyXml(string xml)
 		{
-			VerifyText(xml, "xml", true, ScrubberUtils.NO_SCRUBBER);
+			 VerifyXml(xml, ScrubberUtils.NO_SCRUBBER);
 		}
+
+        public static void VerifyXml(string xml, Func<string, string> scrubber)
+        {
+            VerifyText(xml, "xml", true, scrubber);
+        }
 
 		/// <summary>
 		/// 	Throws exception if Xml is incorrectly formatted
 		/// </summary>
 		public static void VerifyXmlStrict(string xml)
 		{
-			VerifyText(xml, "xml", false, ScrubberUtils.NO_SCRUBBER);
+		    VerifyXmlStrict(xml, ScrubberUtils.NO_SCRUBBER);
 		}
+        public static void VerifyXmlStrict(string xml, Func<string, string> scrubber)
+        {
+            VerifyText(xml, "xml", false, scrubber);
+        }
 
 		public static void VerifyText(string text, string fileExtensionWithoutDot, bool safely, Func<string, string> scrubber)
 		{
