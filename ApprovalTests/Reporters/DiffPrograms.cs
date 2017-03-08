@@ -32,6 +32,10 @@ namespace ApprovalTests.Reporters
                 "{ProgramFiles}TortoiseSVN\\bin\\TortoiseIDiff.exe", "/left:%s /right:%s", IMAGE);
             public static DiffInfo TORTOISE_TEXT_DIFF = new DiffInfo(
                 "{ProgramFiles}TortoiseSVN\\bin\\TortoiseMerge.exe", TEXT);
+
+            public static DiffInfo TORTOISEGIT_TEXT_DIFF = new DiffInfo(
+                "{ProgramFiles}TortoiseGit\\bin\\TortoiseGitMerge.exe", TEXT);
+
             public static DiffInfo WIN_MERGE = new DiffInfo("{ProgramFiles}WinMerge\\WinMergeU.exe", TEXT);
             public static DiffInfo ARAXIS_MERGE = new DiffInfo("{ProgramFiles}Araxis\\Araxis Merge\\Compare.exe", TEXT);
             public static DiffInfo CODE_COMPARE = new DiffInfo("{ProgramFiles}Devart\\Code Compare\\CodeCompare.exe", TEXT);

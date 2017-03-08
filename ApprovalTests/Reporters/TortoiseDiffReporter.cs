@@ -4,9 +4,12 @@
 	{
 		public static readonly TortoiseDiffReporter INSTANCE = new TortoiseDiffReporter();
 
-	    public TortoiseDiffReporter(): base(TortoiseTextDiffReporter.INSTANCE,TortoiseComboImageReporter.INSTANCE)
+	    public TortoiseDiffReporter(): base(TortoiseTextDiffReporter.INSTANCE, TortoiseGitTextDiffReporter.INSTANCE, TortoiseComboImageReporter.INSTANCE)
 	    {
 	        
 	    }
 	}
+
+
+
 }

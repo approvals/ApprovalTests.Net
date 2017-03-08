@@ -4,8 +4,7 @@
     {
         public static readonly TortoiseTextDiffReporter INSTANCE = new TortoiseTextDiffReporter();
 
-        public TortoiseTextDiffReporter()
-            : base(DiffPrograms.Windows.TORTOISE_TEXT_DIFF)
+        public TortoiseTextDiffReporter(): base(DiffPrograms.Windows.TORTOISE_TEXT_DIFF)
         {
         }
     }
