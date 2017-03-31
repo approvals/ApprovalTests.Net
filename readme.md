@@ -30,8 +30,8 @@ Podcasts
 ---
 If you prefer auditory learning, you might enjoy the following podcast 
 
-- [This Agile Life] (http://www.thisagilelife.com/46/)
-- [Hanselminutes] (http://www.hanselminutes.com/360/approval-tests-with-llewellyn-falco)
+- [This Agile Life](http://www.thisagilelife.com/46/)
+- [Hanselminutes](http://www.hanselminutes.com/360/approval-tests-with-llewellyn-falco)
 - [Herding Code](http://www.developerfusion.com/media/122649/herding-code-117-llewellyn-falcon-on-approval-tests/)
 - [The Watir Podcast](http://watirpodcast.com/podcast-53/)
 
