@@ -1,4 +1,5 @@
-﻿using ApprovalTests.Reporters;
+﻿using ApprovalTests.Namers;
+using ApprovalTests.Reporters;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ApprovalTests.MsTestV2
@@ -8,16 +9,19 @@ namespace ApprovalTests.MsTestV2
     public class NamerTest
     {
 		[TestMethod]
-		public void MSTestV2()
+		public void MsTestV2()
 		{
 			Approvals.Verify("MsTestV2");
 		}
 
 		[DataTestMethod]
-        [DataRow("DataTestMethod")]
-		public void MSTestV2DataTestMethod(string s)
+        [DataRow("MsDataTest")]
+		public void MsTestV2DataTestMethod(string s)
 		{
-			Approvals.Verify(s);
-		}
+            using (ApprovalResults.ForScenario(s))
+            {
+                Approvals.Verify(s);
+            }
+        }
     }
 }
