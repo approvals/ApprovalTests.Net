@@ -50,11 +50,9 @@ namespace ApprovalUtilities.Tests.Reflection
         {
             try
             {
-
-            
-            Approvals.VerifyAll("For " + ApprovalResults.GetDotNetVersion(), 
-                new CheckBox().NonPublicStaticFields(true),
-                string.Empty);
+                Approvals.VerifyAll("For " + ApprovalResults.GetDotNetVersion(),
+                    new CheckBox().NonPublicStaticFields(true),
+                    string.Empty);
             }
             catch (Exception)
             {

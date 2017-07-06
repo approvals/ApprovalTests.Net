@@ -41,7 +41,7 @@ namespace ApprovalTests.Set
         {
             var lines = File.ReadAllLines(filename);
             var scrubbed = lines.Select(l => scrubber(l));
-            VerifySet(scrubbed, s => s);  
+            VerifySet(scrubbed, s => s);
         }
 
         public static void VerifyFileAsSet(string filename)
