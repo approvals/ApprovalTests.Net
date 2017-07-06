@@ -3,7 +3,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using ApprovalUtilities.CallStack;
-using ApprovalUtilities.SimpleLogger;
 
 namespace ApprovalTests.Namers.StackTraceParsers
 {

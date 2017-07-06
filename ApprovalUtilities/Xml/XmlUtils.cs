@@ -1,6 +1,5 @@
 using System.Linq;
 using System.Xml.Linq;
-using ApprovalUtilities.SimpleLogger;
 
 namespace ApprovalUtilities.Xml
 {
