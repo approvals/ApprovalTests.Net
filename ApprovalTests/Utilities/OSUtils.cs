@@ -5,6 +5,6 @@ using System.Management;
 
 namespace ApprovalUtilities
 {
-	
+
 }
 
