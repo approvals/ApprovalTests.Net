@@ -50,7 +50,6 @@
     <Compile Include="Reflection\HandlerListEntryTest.cs" />
     <Compile Include="Reflection\HandlerListUtilitiesTest.cs" />
     <Compile Include="LoggerTest.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reflection\ReflectionUtilitiesTest.cs" />
     <Compile Include="Reflection\TestingControl.cs">
       <SubType>Component</SubType>
@@ -88,11 +87,4 @@
     <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>
