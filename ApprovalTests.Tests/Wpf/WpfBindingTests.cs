@@ -19,8 +19,10 @@ namespace ApprovalTests.Tests.Wpf
         public void TestFailedBindings()
         {
             var viewModel = new TestViewModel();
-            Binding myBinding = new Binding(TestViewModel.MyPropertyPropertyName + "BOGUS");
-            myBinding.Source = viewModel;
+            Binding myBinding = new Binding(TestViewModel.MyPropertyPropertyName + "BOGUS")
+            {
+                Source = viewModel
+            };
             var e = ExceptionUtilities.GetException(() => WpfBindingsAssert.BindsWithoutError(viewModel, () =>
             {
                 var textBox = new TextBox();

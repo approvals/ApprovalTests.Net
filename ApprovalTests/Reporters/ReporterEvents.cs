@@ -6,7 +6,7 @@ namespace ApprovalTests.Reporters
 	public class ReporterEvents
 	{
 		public static readonly List<Action<string>> CreateNewFileEventListeners = 
-			new List<Action<string>> { };
+			new List<Action<string>>();
 
 		public static void CreatedApprovedFile(string approved)
 		{
