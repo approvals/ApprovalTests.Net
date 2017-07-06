@@ -16,14 +16,14 @@ namespace ApprovalTests.Tests
         [Test]
         public void TestDashedPathOnMac()
         {
-            const string Path = @"/Users/approver/code/ApprovalTests - Net/Persistence/Datasets/DatasetTest.cs";
+            const string Path = "/Users/approver/code/ApprovalTests - Net/Persistence/Datasets/DatasetTest.cs";
             Assert.AreEqual(".../DatasetTest.cs", StackTraceScrubber.ScrubPaths(Path));
         }
 
         [Test]
         public void TestKeyValuePair()
         {
-            const string Value = @"name: File.foo";
+            const string Value = "name: File.foo";
             Assert.AreEqual(Value, StackTraceScrubber.ScrubPaths(Value));
         }
     }

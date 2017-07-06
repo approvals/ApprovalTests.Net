@@ -30,7 +30,7 @@ namespace ApprovalTests.Namers.StackTraceParsers
                 }
             }
 
-            var helpLink = @"http://blog.approvaltests.com/2012/01/creating-namers.html";
+            var helpLink = "http://blog.approvaltests.com/2012/01/creating-namers.html";
             throw new Exception(
                 $@"
 Could Not Detect Test Framework
