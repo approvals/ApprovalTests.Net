@@ -16,7 +16,7 @@ namespace ApprovalTests.Core.Exceptions
 
 		public override string Message
 		{
-			get { return string.Format("Failed Approval: Approval File \"{0}\" Not Found.", Approved); }
+			get { return $"Failed Approval: Approval File \"{Approved}\" Not Found."; }
 		}
 	}
 }

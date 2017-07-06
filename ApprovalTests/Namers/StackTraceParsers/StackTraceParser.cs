@@ -32,7 +32,7 @@ namespace ApprovalTests.Namers.StackTraceParsers
 
             var helpLink = @"http://blog.approvaltests.com/2012/01/creating-namers.html";
             throw new Exception(
-                string.Format(@"
+                $@"
 Could Not Detect Test Framework
 
 Either:
@@ -45,15 +45,11 @@ b) Set Build->Optimize Code to False
 
 or
 2) Approvals is not set up to use your test framework.
-It currently supports {0}
+It currently supports {ForTestingFramework}
 
 Solution:
-To add one use {1}.AddParser() method to add implementation of {2} with support for your testing framework.
-To learn how to implement one see {3}",
-                              ForTestingFramework,
-                              GetType(),
-                              typeof(IStackTraceParser),
-                              helpLink))
+To add one use {GetType()}.AddParser() method to add implementation of {typeof(IStackTraceParser)} with support for your testing framework.
+To learn how to implement one see {helpLink}")
                 {
                     HelpLink = helpLink
                 };

@@ -76,10 +76,7 @@ namespace ApprovalTests.Utilities
             catch (Win32Exception e)
             {
                 throw new Exception(
-                    String.Format("Unable to launch: {0} with arguments {1}\nError Message: {2}",
-                        program,
-                        arguments,
-                        e.Message),
+                    $"Unable to launch: {program} with arguments {arguments}\nError Message: {e.Message}",
                     e);
             }
         }
