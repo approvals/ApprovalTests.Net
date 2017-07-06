@@ -213,7 +213,6 @@
     <Compile Include="Reporters\UseReporterAttribute.cs" />
     <Compile Include="Set\SetApprovals.cs" />
     <Compile Include="TheoryTests\ThreadSafteyTheory.cs" />
-    <Compile Include="Utilities\OSUtils.cs" />
     <Compile Include="Utilities\ParentProcessUtils.cs" />
     <Compile Include="Utilities\StackTraceScrubber.cs" />
     <Compile Include="StatePrinter\StatePrinterApprovals.cs" />
