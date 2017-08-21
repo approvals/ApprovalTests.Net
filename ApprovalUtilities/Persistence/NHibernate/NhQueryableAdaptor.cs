@@ -31,7 +31,7 @@ namespace ApprovalUtilities.Persistence.NHibernate
             var sessionImp = (ISessionImplementor)session;
             var nhLinqExpression = new NhLinqExpression(queryable.Expression, sessionImp.Factory);
             var translatorFactory = new ASTQueryTranslatorFactory();
-            var translators = translatorFactory.CreateQueryTranslators(nhLinqExpression.Key, nhLinqExpression, null, false,
+            var translators = translatorFactory.CreateQueryTranslators(nhLinqExpression, null, false,
                                                                        sessionImp.EnabledFilters, sessionImp.Factory);
 
             var sql = translators.First().SQLString;

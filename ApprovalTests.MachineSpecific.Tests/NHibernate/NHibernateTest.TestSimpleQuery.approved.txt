@@ -1,8 +1,8 @@
 ﻿
     select
-        company0_.Id as Id0_,
-        company0_.Name as Name0_,
-        company0_.Website as Website0_ 
+        company0_.Id as Id1_0_,
+        company0_.Name as Name2_0_,
+        company0_.Website as Websit3_0_ 
     from
         Company company0_ 
     where
