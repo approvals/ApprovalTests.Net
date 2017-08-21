@@ -44,6 +44,8 @@ build/Output
 *.suo
 *.user
 *.sln.docstates
+# VS2017 SettingsCache
+.vs
 
 # Build results
 [Dd]ebug/
