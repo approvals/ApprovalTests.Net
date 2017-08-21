@@ -7,9 +7,16 @@ namespace ApprovalTests.Namers
 	{
 		public static ApprovalResults ApprovalResults = new ApprovalResults();
 
-		public static string AdditionalInformation { get; set; }
+        [ThreadStatic]
+	    static string additionalInformation;
 
-		[Obsolete("Use ApprovalResults.UniqueForMachineName instead.")]
+	    public static string AdditionalInformation
+	    {
+	        get { return additionalInformation; }
+	        set { additionalInformation = value; }
+	    }
+
+	    [Obsolete("Use ApprovalResults.UniqueForMachineName instead.")]
 		public static void AsMachineSpecificTest()
 		{
 			ApprovalResults.UniqueForMachineName();
