@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NUnit.Framework;
 using ApprovalTests.Set;
-using ApprovalTests.Reporters;
 using ApprovalUtilities.Utilities;
 using System.Text.RegularExpressions;
 
@@ -18,7 +14,7 @@ namespace ApprovalTests.Tests.Set
         public void TestListString()
         {
             // Approved file has order apple, banana, carrot
-            var list = new List<string>() { "carrot", "apple", "banana" };
+            var list = new List<string> { "carrot", "apple", "banana" };
             SetApprovals.VerifySet(list, String.Empty);
         }
 
@@ -35,11 +31,11 @@ namespace ApprovalTests.Tests.Set
         [Test]
         public void TestListObject()
         {
-            var list = new List<Foo>()
+            var list = new List<Foo>
             {
-                new Foo() { Bar = "carrot" },
-                new Foo() { Bar = "apple" },
-                new Foo() { Bar = "banana" },
+                new Foo { Bar = "carrot" },
+                new Foo { Bar = "apple" },
+                new Foo { Bar = "banana" },
             };
             SetApprovals.VerifySet(list, String.Empty, f => f.Bar);
         }

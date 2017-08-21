@@ -14,7 +14,7 @@ namespace ApprovalUtilities.Utilities
 		{
 			var lines = new List<string>
 			            	{
-			            		String.Format("Exception: '{0}' | '{1}'", except.TargetSite, except.Source),
+				                $"Exception: '{except.TargetSite}' | '{except.Source}'",
 			            		except.Message,
 			            		except.StackTrace
 			            	};

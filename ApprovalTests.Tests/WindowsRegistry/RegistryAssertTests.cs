@@ -37,7 +37,7 @@ namespace ApprovalTests.Tests.WindowsRegistry
 		{
 			var e =
 				ExceptionUtilities.GetException(
-					() => WindowsRegistryAssert.HasDword(@"Console", "IMadeThisUp", 1, "This Value is gone"));
+					() => WindowsRegistryAssert.HasDword("Console", "IMadeThisUp", 1, "This Value is gone"));
 			Approvals.Verify(e.Message);
 		}
 	}

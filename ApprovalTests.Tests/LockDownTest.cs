@@ -39,7 +39,7 @@ namespace ApprovalTests.Tests
 			using (ApprovalTests.Namers.ApprovalResults.UniqueForOs ()) {
 				int[] n = { 0, 2 };
 				CombinationApprovals.VerifyAllCombinations ((a, b) => a / b, n, n);
-			}   
+			}
         }
     }
 }

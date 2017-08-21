@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using ApprovalTests.Core;
 using ApprovalUtilities.Utilities;
 
@@ -37,12 +36,12 @@ namespace ApprovalTests.Writers
 
 		public virtual string GetApprovalFilename(string basename)
 		{
-			return String.Format("{0}{1}{2}", basename, WriterUtils.Approved, ExtensionWithDot);
+			return $"{basename}{WriterUtils.Approved}{ExtensionWithDot}";
 		}
 
 		public virtual string GetReceivedFilename(string basename)
 		{
-			return String.Format("{0}{1}{2}", basename, WriterUtils.Received, ExtensionWithDot);
+			return $"{basename}{WriterUtils.Received}{ExtensionWithDot}";
 		}
 
 		public string WriteReceivedFile(string received)

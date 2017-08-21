@@ -1,11 +1,9 @@
 using System;
 using System.Diagnostics;
 using System.IO;
-using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using ApprovalTests.Namers;
 using ApprovalTests.Namers.StackTraceParsers;
-using ApprovalTests.StackTraceParsers;
 using Xunit;
 
 namespace ApprovalTests.Xunit.Namer

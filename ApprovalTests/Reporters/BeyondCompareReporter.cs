@@ -7,8 +7,8 @@
 		public BeyondCompareReporter()
 			: base(BeyondCompare4Reporter.INSTANCE, BeyondCompare3Reporter.INSTANCE)
 	    {
-	        
+
 	    }
-	
+
 	}
 }

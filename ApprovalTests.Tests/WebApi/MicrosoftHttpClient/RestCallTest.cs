@@ -25,7 +25,7 @@ namespace ApprovalTests.Tests.WebApi.MicrosoftHttpClient
 
 		public override string GetQuery()
 		{
-			return string.Format("?v=1.0&q={0}", searchTerm);
+			return $"?v=1.0&q={searchTerm}";
 		}
 
 		public override string GetBaseAddress()

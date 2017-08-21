@@ -42,12 +42,12 @@ namespace ApprovalUtilities.Utilities
             StringBuilder b = new StringBuilder("  ");
             for (int x = 0; x < width; x++)
             {
-                b.Append(String.Format("{0:0} ", x));
+                b.Append($"{x:0} ");
             }
             b.AppendLine();
             for (int y = 0; y < height; y++)
             {
-                b.Append(String.Format("{0:0} ", y));
+                b.Append($"{y:0} ");
                 for (int x = 0; x < width; x++)
                 {
                     b.Append(func(x, y) + " ");
@@ -81,7 +81,7 @@ namespace ApprovalUtilities.Utilities
 
         public static string Write<T>(this IEnumerable<T> enumerable, string label, Func<T, string> formatter)
         {
-            return StringUtils.Write(enumerable, (i, s) => string.Format("{0}[{1}] = {2}\n", label, i, formatter(s)), string.Format("{0} is empty", label));
+            return StringUtils.Write(enumerable, (i, s) => $"{label}[{i}] = {formatter(s)}\n", $"{label} is empty");
         }
 
         public static string Write<T>(this IEnumerable<T> enumerable, Func<T, string> formatter)

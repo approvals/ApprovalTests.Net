@@ -6,7 +6,7 @@
 
 	    public TortoiseDiffReporter(): base(TortoiseTextDiffReporter.INSTANCE, TortoiseGitTextDiffReporter.INSTANCE, TortoiseComboImageReporter.INSTANCE)
 	    {
-	        
+
 	    }
 	}
 

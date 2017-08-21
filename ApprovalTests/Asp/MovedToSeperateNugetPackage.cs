@@ -6,6 +6,6 @@
     /// </summary>
     public class MovedToSeperateNugetPackage
     {
-         
+
     }
 }

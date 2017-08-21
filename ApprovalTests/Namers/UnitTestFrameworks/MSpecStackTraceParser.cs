@@ -48,8 +48,6 @@ namespace ApprovalTests.StackTraceParsers
 			get { return "Machine.Specifications (MSpec)"; }
 		}
 
-	
-
 
 		private Caller FindApprovalFrame(Caller caller)
 		{
@@ -57,13 +55,8 @@ namespace ApprovalTests.StackTraceParsers
 				c => c.Class.FullName == "Machine.Specifications.Model.Specification"
 				     && c.Method.Name == "InvokeSpecificationField");
 
-			if (mspecInvocationFrame == null)
-			{
-				return null;
-			}
-
-			return mspecInvocationFrame.Parents.NonLambda().Skip(1)
-				.FirstOrDefault(c => !c.Class.FullName.StartsWith("System."));
+		    return mspecInvocationFrame?.Parents.NonLambda().Skip(1)
+			    .FirstOrDefault(c => !c.Class.FullName.StartsWith("System."));
 		}
 	}
 }

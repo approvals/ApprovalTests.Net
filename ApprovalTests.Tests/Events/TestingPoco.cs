@@ -18,10 +18,7 @@ namespace ApprovalTests.Tests.Events
         protected virtual void OnMyEvent(object sender, EventArgs e)
         {
             EventHandler handler = MyEvent;
-            if (handler != null)
-            {
-                handler(sender, e);
-            }
+            handler?.Invoke(sender, e);
         }
     }
 }

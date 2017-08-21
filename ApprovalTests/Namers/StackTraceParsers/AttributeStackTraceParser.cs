@@ -3,7 +3,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using ApprovalUtilities.CallStack;
-using ApprovalUtilities.SimpleLogger;
 
 namespace ApprovalTests.Namers.StackTraceParsers
 {
@@ -34,7 +33,7 @@ namespace ApprovalTests.Namers.StackTraceParsers
 
 		public string ApprovalName
 		{
-			get { return String.Format(@"{0}.{1}{2}", TypeName, GetMethodName(), AdditionalInfo); }
+			get { return $"{TypeName}.{GetMethodName()}{AdditionalInfo}"; }
 		}
 
 		protected virtual string GetMethodName()

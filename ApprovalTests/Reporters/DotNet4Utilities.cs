@@ -30,11 +30,13 @@ namespace ApprovalTests.Reporters
 
 		public static string[] GetProgramFilesPaths()
 		{
-			var paths = new HashSet<string>();
-			paths.Add(Environment.GetEnvironmentVariable("ProgramFiles(x86)"));
-			paths.Add(Environment.GetEnvironmentVariable("ProgramFiles"));
-			paths.Add(Environment.GetEnvironmentVariable("ProgramW6432"));
-			return paths.Where(p => p != null).ToArray();
+		    var paths = new HashSet<string>
+		    {
+		        Environment.GetEnvironmentVariable("ProgramFiles(x86)"),
+		        Environment.GetEnvironmentVariable("ProgramFiles"),
+		        Environment.GetEnvironmentVariable("ProgramW6432")
+		    };
+		    return paths.Where(p => p != null).ToArray();
 		}
 	}
 }
