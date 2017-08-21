@@ -11,7 +11,6 @@ namespace ApprovalTests.Tests.EntityFramework
     {
         public static string GetCompanyRoster(string name)
         {
-					  
             return GetCompanyRoster(GetCompanyByName(name));
         }
 

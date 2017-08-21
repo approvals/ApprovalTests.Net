@@ -68,7 +68,7 @@ namespace ApprovalUtilities.SimpleLogger
                 var t = clock.Load();
                 var diff = t - lastTime;
                 lastTime = t;
-                difference = string.Format("~{0:000000}ms ", diff.TotalMilliseconds);
+                difference = $"~{diff.TotalMilliseconds:000000}ms ";
             }
 
             var message = text.Replace(Environment.NewLine, Environment.NewLine + "\t");

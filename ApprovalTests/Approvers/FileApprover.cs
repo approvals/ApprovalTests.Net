@@ -75,10 +75,7 @@ namespace ApprovalTests.Approvers
         {
             File.Delete(this.received);
             var withCleanUp = reporter as IApprovalReporterWithCleanUp;
-            if (withCleanUp != null)
-            {
-                withCleanUp.CleanUp(this.approved, this.received);
-            }
+            withCleanUp?.CleanUp(this.approved, this.received);
         }
 
         private static bool Compare(ICollection<char> chars1, ICollection<char> chars2)

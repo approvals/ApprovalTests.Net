@@ -33,9 +33,9 @@ namespace ApprovalTests.MachineSpecific.Tests.Wpf
         public void TestContextMenu()
         {
             var menu = new ContextMenu();
-            menu.Items.Add(new MenuItem() {Header = "Add Element"});
-            menu.Items.Add(new MenuItem() {Header = "Delete"});
-            menu.Items.Add(new MenuItem() {Header = "Edit"});
+            menu.Items.Add(new MenuItem {Header = "Add Element"});
+            menu.Items.Add(new MenuItem {Header = "Delete"});
+            menu.Items.Add(new MenuItem {Header = "Edit"});
             menu.IsOpen = true;
             WpfApprovals.Verify(menu);
         }

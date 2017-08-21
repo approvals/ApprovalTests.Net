@@ -12,7 +12,6 @@ namespace ApprovalTests.Reporters
                 BeyondCompareMacReporter.INSTANCE, DiffMergeReporter.INSTANCE, KaleidoscopeDiffReporter.INSTANCE,
                 P4MergeReporter.INSTANCE, KDiff3Reporter.INSTANCE, TkDiffReporter.INSTANCE, FrameworkAssertReporter.INSTANCE,
                 QuietReporter.INSTANCE)
-            
         {
         }
 
@@ -24,7 +23,6 @@ namespace ApprovalTests.Reporters
             }
             return false;
         }
-
 
     }
 }

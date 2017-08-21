@@ -44,7 +44,7 @@ namespace ApprovalTests.Reporters
         private static string RunQueryAndGetPath(string fileName, QueryResult result)
         {
             var newFileName = fileName + FileNameSuffix;
-            File.WriteAllText(newFileName, string.Format("{0}query:\n\n{1}\n\nresult:\n\n{2}", Header, result.Query, result.Result));
+            File.WriteAllText(newFileName, $"{Header}query:\n\n{result.Query}\n\nresult:\n\n{result.Result}");
             return newFileName;
         }
 

@@ -28,7 +28,7 @@ namespace ApprovalTests.Reporters
 
         public DiffInfo(string diffProgram, Func<IEnumerable<string>> fileTypes) : this(diffProgram, GenericDiffReporter.DEFAULT_ARGUMENT_FORMAT, fileTypes)
         {
-            
+
         }
 
     }

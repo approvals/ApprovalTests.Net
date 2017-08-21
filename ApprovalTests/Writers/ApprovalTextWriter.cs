@@ -21,7 +21,7 @@ namespace ApprovalTests
 
 		public static string EnsureDot(string extension)
 		{
-			string extensionWithDot = String.Format(".{0}", extension);
+			string extensionWithDot = $".{extension}";
 			return extension.StartsWith(".") ? extension : extensionWithDot;
 		}
 
@@ -31,12 +31,12 @@ namespace ApprovalTests
 
 		public virtual string GetApprovalFilename(string basename)
 		{
-			return String.Format("{0}.approved{1}", basename, ExtensionWithDot);
+			return $"{basename}.approved{ExtensionWithDot}";
 		}
 
 		public virtual string GetReceivedFilename(string basename)
 		{
-			return String.Format("{0}.received{1}", basename, ExtensionWithDot);
+			return $"{basename}.received{ExtensionWithDot}";
 		}
 
 		public string WriteReceivedFile(string received)

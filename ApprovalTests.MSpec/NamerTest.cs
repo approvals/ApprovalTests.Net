@@ -17,7 +17,7 @@ namespace ApprovalTests.MSpec
 				namer.Parse(new StackTrace());
 				namer.ApprovalName.ShouldEqual("NamerTest.should");
 			};
-	
+
 		private It shouldWork = () => { Approvals.Verify("Hello MSpec!"); };
 	}
 }

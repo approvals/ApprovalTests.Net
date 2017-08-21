@@ -1,7 +1,6 @@
 using System;
 using System.Linq;
 using System.Reflection;
-using System.Threading;
 using System.Windows.Forms;
 using ApprovalTests;
 using ApprovalTests.Namers;
@@ -50,11 +49,9 @@ namespace ApprovalUtilities.Tests.Reflection
         {
             try
             {
-
-            
-            Approvals.VerifyAll("For " + ApprovalResults.GetDotNetVersion(), 
-                new CheckBox().NonPublicStaticFields(true),
-                string.Empty);
+                Approvals.VerifyAll("For " + ApprovalResults.GetDotNetVersion(),
+                    new CheckBox().NonPublicStaticFields(true),
+                    string.Empty);
             }
             catch (Exception)
             {

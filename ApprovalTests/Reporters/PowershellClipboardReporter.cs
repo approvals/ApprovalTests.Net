@@ -14,7 +14,7 @@ namespace ApprovalTests.Reporters
 
 		public static  string GetCommandLineForApproval(string approved, string received)
 		{
-			return string.Format("Move-Item \"{0}\" \"{1}\" -Force", received, approved);
+			return $"Move-Item \"{received}\" \"{approved}\" -Force";
 		}
 	}
 }

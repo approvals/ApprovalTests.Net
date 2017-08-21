@@ -25,11 +25,10 @@ Windows Registry Editor Version 5.00
 			PresentationTraceSources.DataBindingSource.Switch.Level = level;
 		}
 
-	  
 
 	    public static IDisposable Start(SourceLevels level = SourceLevels.Warning)
 		{
-			
+
 			var listener = new AssertNoBindingErrorsTraceListener(level);
 			return new DisposableToken(listener);
 		}

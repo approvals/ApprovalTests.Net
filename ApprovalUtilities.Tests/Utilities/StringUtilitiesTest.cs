@@ -37,14 +37,14 @@ namespace ApprovalUtilities.Tests.Utilities
 		[TestMethod]
 		public void WriteOnlyPropertyTest()
 		{
-			var target = new TestingObject() {WriteOnlyString = "Hello", ReadWriteInt = 10};
+			var target = new TestingObject {WriteOnlyString = "Hello", ReadWriteInt = 10};
 			Approvals.Verify(target.WritePropertiesToString());
 		}
 
 		[TestMethod]
 		public void TestWriteFields()
 		{
-			var target = new TestingObject() {ThisShouldHaveBeenAProperty = "FooBar"};
+			var target = new TestingObject {ThisShouldHaveBeenAProperty = "FooBar"};
 			Approvals.Verify(target.WriteFieldsToString());
 		}
 

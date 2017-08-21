@@ -26,5 +26,4 @@ namespace ApprovalUtilities.SimpleLogger.Writers
         }
     }
 
-   
 }
