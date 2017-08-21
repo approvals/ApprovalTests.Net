@@ -21,7 +21,7 @@ namespace ApprovalTests.Xunit2.Namer
         {
             using (ApprovalResults.ForScenario(fileName))
             {
-                var name = new UnitTestFrameworkNamer().Name;
+                var name = Approvals.GetDefaultNamer().Name;
                 Assert.Equal("XunitTheoryStackTraceParserTest.TestApprovalNameWithAdditionalInformation.ForScenario." + fileName,
                              name);
             }
