@@ -98,6 +98,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApprovalsTest.cs" />
+    <Compile Include="ApprovalTestsConfig.cs" />
     <Compile Include="Async\AsyncTests.cs" />
     <Compile Include="CleanupReporter.cs" />
     <Compile Include="CombinationApprovalsTests.cs" />

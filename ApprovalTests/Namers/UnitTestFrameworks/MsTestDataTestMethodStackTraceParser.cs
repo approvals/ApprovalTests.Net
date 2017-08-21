@@ -8,7 +8,7 @@ namespace ApprovalTests.StackTraceParsers
 
 		public override string ForTestingFramework
 		{
-			get { return "MsTest"; }
+			get { return "MsTest-DataTest"; }
 		}
 
 		protected override string GetAttributeType()

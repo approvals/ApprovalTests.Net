@@ -43,6 +43,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApprovalTestsConfig.cs" />
     <Compile Include="Namer\XunitStackTraceNamerTest.cs" />
     <Compile Include="Namer\XunitTheoryStackTraceParserTest.cs" />
     <Compile Include="Reporters\NonNUnitReporterTest.cs" />

@@ -1,5 +1,6 @@
 using ApprovalTests.Reporters;
 using Xunit;
+using Xunit.Sdk;
 
 namespace ApprovalTests.Xunit
 {
@@ -9,7 +10,8 @@ namespace ApprovalTests.Xunit
         [UseReporter(typeof(FrameworkAssertReporter))]
         public void XunitShouldBeChosenFromFrameworkAssertReporter()
         {
-            Approvals.Verify("this should work");
+            Assert.Throws<EqualException>(() =>
+                Approvals.Verify("this should work"));
         }
     }
 }

@@ -69,6 +69,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="ApprovalTestsConfig.cs" />
     <Compile Include="Namer\ApprovalResultsTest.cs" />
     <Compile Include="Namer\VisualStudioReporterTest.cs" />
     <Compile Include="NHibernate\Company.cs" />
