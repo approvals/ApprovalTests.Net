@@ -74,6 +74,10 @@
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
     <Compile Include="Persistence\IExecutableLoader.cs" />
+    <Compile Include="Persistence\ISaverAsync.cs" />
+    <Compile Include="Persistence\SaverAsyncWrapper.cs" />
+    <Compile Include="Persistence\SaverSynchronousWrapper.cs" />
+    <Compile Include="Persistence\SaverUtils.cs" />
     <Compile Include="SimpleLogger\Writers\DebugerWriter.cs" />
     <Compile Include="Utilities\CultureUtilities.cs" />
     <Compile Include="Asp\Mvc\MvcUtilites.cs" />

@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CC679657-AF36-470E-9976-BB00E6792F32}"
 	ProjectSection(SolutionItems) = preProject
@@ -36,8 +36,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApprovalTests.Xunit", "ApprovalTests.Xunit\ApprovalTests.Xunit.csproj", "{B8AAA028-1890-40B6-84B8-2F46986EEE8C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApprovalTests.MachineSpecific.Tests", "ApprovalTests.MachineSpecific.Tests\ApprovalTests.MachineSpecific.Tests.csproj", "{E9786FB3-9A3A-4072-A799-CF867844BEF5}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApprovalUtilities.Net45", "ApprovalUtilities.Net45\ApprovalUtilities.Net45.csproj", "{C4BEE6F7-448B-43D6-A9C3-17273C94B0E6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApprovalTests.Xunit2", "ApprovalTests.Xunit2\ApprovalTests.Xunit2.csproj", "{E9BD0B96-01C4-4B25-ADFD-3A630970D267}"
 EndProject
@@ -89,10 +87,6 @@ Global
 		{E9786FB3-9A3A-4072-A799-CF867844BEF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9786FB3-9A3A-4072-A799-CF867844BEF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9786FB3-9A3A-4072-A799-CF867844BEF5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C4BEE6F7-448B-43D6-A9C3-17273C94B0E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C4BEE6F7-448B-43D6-A9C3-17273C94B0E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C4BEE6F7-448B-43D6-A9C3-17273C94B0E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C4BEE6F7-448B-43D6-A9C3-17273C94B0E6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E9BD0B96-01C4-4B25-ADFD-3A630970D267}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E9BD0B96-01C4-4B25-ADFD-3A630970D267}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9BD0B96-01C4-4B25-ADFD-3A630970D267}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -104,6 +98,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {56180843-A1A5-4711-81AF-318E8C8F8CE8}
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = ApprovalTests1.vsmdi
