@@ -1,147 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{E9683C33-7A71-4776-B7C9-E89C565AC16B}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ApprovalUtilities</RootNamespace>
-    <AssemblyName>ApprovalUtilities</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
+		<TargetFrameworks>net45</TargetFrameworks>
+		<LangVersion>7</LangVersion>
+		<AssemblyOriginatorKeyFile>$(SolutionDir)\ApprovalsKeyPair.snk</AssemblyOriginatorKeyFile>
+		<SignAssembly>true</SignAssembly>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\ApprovalUtilities.XML</DocumentationFile>
-    <NoWarn>1591</NoWarn>
+    <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup>
-    <AssemblyOriginatorKeyFile>$(SolutionDir)\ApprovalsKeyPair.snk</AssemblyOriginatorKeyFile>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="Iesi.Collections, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Iesi.Collections.4.0.2\lib\net40\Iesi.Collections.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="NHibernate, Version=4.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
-      <HintPath>..\packages\NHibernate.4.1.1.4000\lib\net40\NHibernate.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
-    <Reference Include="System" />
-    <Reference Include="System.Core">
-      <HintPath>..\..\..\Program Files\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Data.Entity" />
-    <Reference Include="System.Management" />
-    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Mvc2.2.0.1\lib\net35\System.Web.Mvc.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-    <Reference Include="WindowsBase" />
-  </ItemGroup>
   <ItemGroup>
     <Compile Include="..\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
-    <Compile Include="Persistence\IExecutableLoader.cs" />
-    <Compile Include="Persistence\ISaverAsync.cs" />
-    <Compile Include="Persistence\SaverAsyncWrapper.cs" />
-    <Compile Include="Persistence\SaverSynchronousWrapper.cs" />
-    <Compile Include="Persistence\SaverUtils.cs" />
-    <Compile Include="SimpleLogger\Writers\DebugerWriter.cs" />
-    <Compile Include="Utilities\CultureUtilities.cs" />
-    <Compile Include="Asp\Mvc\MvcUtilites.cs" />
-    <Compile Include="CallStack\Caller.cs" />
-    <Compile Include="Persistence\Database\DatabaseToExecuteableQueryAdaptor.cs" />
-    <Compile Include="Persistence\Database\DatabaseUtils.cs" />
-    <Compile Include="Persistence\Database\SqlLoader.cs" />
-    <Compile Include="Persistence\Database\SqlLoaderUtils.cs" />
-    <Compile Include="Persistence\EntityFramework\EntityFrameworkLoader.cs" />
-    <Compile Include="Persistence\EntityFramework\EntityFrameworkLoadersExtensions.cs" />
-    <Compile Include="Persistence\EntityFramework\LambdaEnumerableLoader.cs" />
-    <Compile Include="Persistence\EntityFramework\LambdaSingleLoader.cs" />
-    <Compile Include="Persistence\EntityFramework\Loaders.cs" />
-    <Compile Include="Persistence\EntityFramework\ObjectContextAdaptor.cs" />
-    <Compile Include="Persistence\IExecutableQuery.cs" />
-    <Compile Include="Persistence\LambdaLoader.cs" />
-    <Compile Include="Persistence\Loader.cs" />
-    <Compile Include="Persistence\MockSaver.cs" />
-    <Compile Include="Persistence\NHibernate\NhQueryableAdaptor.cs" />
-    <Compile Include="Reflection\CallbackDescriptor.cs" />
-    <Compile Include="Reflection\HandlerListEntry.cs" />
-    <Compile Include="Reflection\HandlerListHelper.cs" />
-    <Compile Include="Reflection\ReflectionUtilities.cs" />
-    <Compile Include="SimpleLogger\LoggerInstance.cs" />
-    <Compile Include="SimpleLogger\IAppendable.cs" />
-    <Compile Include="SimpleLogger\Logger.cs" />
-    <Compile Include="Persistence\ILoader.cs" />
-    <Compile Include="Persistence\ISaver.cs" />
-    <Compile Include="Persistence\MockLoader.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SimpleLogger\Writers\ConsoleWriter.cs" />
-    <Compile Include="SimpleLogger\Writers\FileWriter.cs" />
-    <Compile Include="SimpleLogger\Writers\MultiWriter.cs" />
-    <Compile Include="SimpleLogger\Writers\NullWriter.cs" />
-    <Compile Include="SimpleLogger\Writers\StringBuilderLogger.cs" />
-    <Compile Include="Utilities\ClassUtilities.cs" />
-    <Compile Include="Utilities\ClipboardUtilities.cs" />
-    <Compile Include="Utilities\Clock.cs" />
-    <Compile Include="Utilities\CollectionUtilities.cs" />
-    <Compile Include="Utilities\ExceptionUtilities.cs" />
-    <Compile Include="Utilities\FileUtilities.cs" />
-    <Compile Include="Utilities\JsonPrettyPrint.cs" />
-    <Compile Include="Utilities\OsUtils.cs" />
-    <Compile Include="Utilities\StringUtils.cs" />
-    <Compile Include="Utilities\PathUtilities.cs" />
-    <Compile Include="Utilities\TempFile.cs" />
-    <Compile Include="WinForms\WinFormsUtils.cs" />
-    <Compile Include="Wpf\WpfUtils.cs" />
-    <Compile Include="Xml\XmlUtils.cs" />
+	<PackageReference Include="NHibernate" Version="4.*" PrivateAssests="All" />
+	<PackageReference Include="Mvc2" Version="2.*" PrivateAssests="All" />
+	<PackageReference Include="Fody" Version="2.*" PrivateAssests="All" />
+	<PackageReference Include="Virtuosity.Fody" Version="1.*" PrivateAssests="All" />
+	<Reference Include="PresentationCore" />
+	<Reference Include="PresentationFramework" />
+	<Reference Include="System.Core" />
+	<Reference Include="System.Data.Entity" />
+	<Reference Include="System.Management" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="System.Data" />
+	<Reference Include="System.Xml" />
+	<Reference Include="WindowsBase" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="ApprovalsKeyPair.snk" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="FodyWeavers.xml" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" />
-  <Import Project="..\packages\Fody.1.29.3\build\portable-net+sl+win+wpa+wp\Fody.targets" Condition="Exists('..\packages\Fody.1.29.3\build\portable-net+sl+win+wpa+wp\Fody.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Fody.1.29.3\build\portable-net+sl+win+wpa+wp\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.1.29.3\build\portable-net+sl+win+wpa+wp\Fody.targets'))" />
-  </Target>
 </Project>
+
