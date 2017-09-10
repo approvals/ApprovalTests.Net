@@ -2,7 +2,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
 		<TargetFrameworks>net45</TargetFrameworks>
-		<LangVersion>7</LangVersion>
 		<AssemblyOriginatorKeyFile>$(SolutionDir)\ApprovalsKeyPair.snk</AssemblyOriginatorKeyFile>
 		<SignAssembly>true</SignAssembly>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
