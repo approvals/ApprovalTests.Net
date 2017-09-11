@@ -1,18 +1,19 @@
 ﻿using System;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using ApprovalTests.Reporters;
 using ApprovalTests.Wpf;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace ApprovalTests.MachineSpecific.Tests.Wpf
 {
-    [TestClass]
+    [TestFixture]
     [UseReporter(typeof (AllFailingTestsClipboardReporter), typeof (TortoiseDiffReporter))]
     public class ApprovalsTest
     {
-        [TestMethod]
-        [STAThread]
+        [Test]
+        [RequiresThread(ApartmentState.STA)]
         public void TestFormApproval()
         {
             var button = new Button {Content = "Hello"};
@@ -20,16 +21,16 @@ namespace ApprovalTests.MachineSpecific.Tests.Wpf
             WpfApprovals.Verify(window);
         }
 
-        [TestMethod]
-        [STAThread]
+        [Test]
+        [RequiresThread(ApartmentState.STA)]
         public void TestWindowFunc()
         {
             WpfApprovals.Verify(() => new Window {Content = new Button {Content = "Hello from Lambdas"}, Width = 200, Height = 200});
         }
 
 
-        [TestMethod]
-        [STAThread]
+        [Test]
+        [RequiresThread(ApartmentState.STA)]
         public void TestContextMenu()
         {
             var menu = new ContextMenu();
@@ -40,15 +41,15 @@ namespace ApprovalTests.MachineSpecific.Tests.Wpf
             WpfApprovals.Verify(menu);
         }
 
-        [TestMethod]
-        [STAThread]
+        [Test]
+        [RequiresThread(ApartmentState.STA)]
         public void TestButton()
         {
             WpfApprovals.Verify(new Button {Content = "Hello"});
         }
 
-        [TestMethod]
-        [STAThread]
+        [Test]
+        [RequiresThread(ApartmentState.STA)]
         public void TestButtonFunc()
         {
             WpfApprovals.Verify(() => new Button {Content = "Hello From Lambdas"});

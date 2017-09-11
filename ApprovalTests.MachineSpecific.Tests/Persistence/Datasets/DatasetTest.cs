@@ -6,54 +6,59 @@ using ApprovalTests.Persistence.DataSets;
 using ApprovalTests.RdlcReports;
 using ApprovalTests.Reporters;
 using ApprovalUtilities.Utilities;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using ReportingDemo;
 
 namespace ApprovalTests.MachineSpecific.Tests.Persistence.Datasets
 {
-    [TestClass]
+    [TestFixture]
     //[UseReporter(typeof (AllFailingTestsClipboardReporter))]
     public class DatasetTest
     {
         private const string ReportName = "ReportingDemo.InsultsReport.rdlc";
 
-        [TestMethod]
+        public DatasetTest()
+        {
+            ApprovalResults.UniqueForMachineName();
+        }
+
+        [Test]
         public void TestExtrenalImage()
         {
             RdlcApprovals.VerifyReport("ReportingDemo.ExternalImage.rdlc", GetDefaultData());
         }
 
-        [TestMethod]
+        [Test]
         public void TestSimpleReportWith1Dataset()
         {
             RdlcApprovals.VerifyReport(ReportName, GetDefaultData());
         }
 
-        [TestMethod]
+        [Test]
         public void TestSimpleReportWithDatasetInAssembly()
         {
             RdlcApprovals.VerifyReport(ReportName, "Model", GetDefaultData());
         }
 
-        [TestMethod]
+        [Test]
         public void TestReport()
         {
             RdlcApprovals.VerifyReport(ReportName, GetAssembly(), Tuple.Create("Model", GetDefaultData()));
         }
 
-        [TestMethod]
+        [Test]
         public void TestReportWithDataPair()
         {
             RdlcApprovals.VerifyReport(ReportName, GetAssembly(), new DataPairs {{"Model", GetDefaultData()}});
         }
 
-        [TestMethod]
+        [Test]
         public void TestSimpleReportExplict()
         {
             RdlcApprovals.VerifyReport(ReportName, GetAssembly(), "Model", GetDefaultData());
         }
 
-        [TestMethod]
+        [Test]
         public void TestDataSourceNames()
         {
             NamerFactory.Clear();
@@ -61,12 +66,6 @@ namespace ApprovalTests.MachineSpecific.Tests.Persistence.Datasets
                 ExceptionUtilities.GetException(
                     () => RdlcApprovals.VerifyReport(ReportName, GetAssembly(), "purposelyMisspelt", GetDefaultData()));
             Approvals.Verify(exception.Message);
-        }
-
-        [TestInitialize]
-        public void NamerSetUp()
-        {
-            ApprovalResults.UniqueForMachineName();
         }
 
         private static DataTable GetDefaultData()
