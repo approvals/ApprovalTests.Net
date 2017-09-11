@@ -17,7 +17,8 @@ namespace ApprovalTests.MachineSpecific.Tests.Persistence.Datasets
     {
         private const string ReportName = "ReportingDemo.InsultsReport.rdlc";
 
-        public DatasetTest()
+        [SetUp]
+        public void Setup()
         {
             ApprovalResults.UniqueForMachineName();
         }
