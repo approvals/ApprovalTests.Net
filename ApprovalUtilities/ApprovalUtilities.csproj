@@ -1,12 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-		<TargetFrameworks>net45</TargetFrameworks>
-		<LangVersion>7</LangVersion>
-		<AssemblyOriginatorKeyFile>$(SolutionDir)\ApprovalsKeyPair.snk</AssemblyOriginatorKeyFile>
-		<SignAssembly>true</SignAssembly>
-		<GenerateDocumentationFile>true</GenerateDocumentationFile>
-		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <TargetFrameworks>net45</TargetFrameworks>
+    <AssemblyOriginatorKeyFile>$(SolutionDir)\ApprovalsKeyPair.snk</AssemblyOriginatorKeyFile>
+    <SignAssembly>true</SignAssembly>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <DebugType>full</DebugType>
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
@@ -14,19 +13,18 @@
     <Compile Include="..\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
-	<PackageReference Include="NHibernate" Version="4.*" PrivateAssests="All" />
-	<PackageReference Include="Mvc2" Version="2.*" PrivateAssests="All" />
-	<PackageReference Include="Fody" Version="2.*" PrivateAssests="All" />
-	<PackageReference Include="Virtuosity.Fody" Version="1.*" PrivateAssests="All" />
-	<Reference Include="PresentationCore" />
-	<Reference Include="PresentationFramework" />
-	<Reference Include="System.Core" />
-	<Reference Include="System.Data.Entity" />
-	<Reference Include="System.Management" />
-	<Reference Include="System.Xml.Linq" />
-	<Reference Include="System.Data" />
-	<Reference Include="System.Xml" />
-	<Reference Include="WindowsBase" />
+    <PackageReference Include="NHibernate" Version="4.*" PrivateAssests="All" />
+    <PackageReference Include="Mvc2" Version="2.*" PrivateAssests="All" />
+    <PackageReference Include="Fody" Version="2.*" PrivateAssests="All" />
+    <PackageReference Include="Virtuosity.Fody" Version="1.*" PrivateAssests="All" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
 </Project>
-
