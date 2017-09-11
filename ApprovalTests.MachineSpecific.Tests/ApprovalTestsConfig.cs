@@ -1,7 +1,8 @@
-﻿using System;
-using System.Linq;
+﻿
+using System;
 using ApprovalTests.Reporters;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Linq;
 
 [assembly: UseReporter(typeof(DiffReporter))]
 
@@ -9,7 +10,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 public class SetupAssemblyInitializer
 {
     [AssemblyInitialize]
-    public static void AssemblyInit(TestContext context)
+    public static void AssemblyInit(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext t)
     {
         var machinesToRun = new[]{ "LLEWELLYN-PC" };
 
