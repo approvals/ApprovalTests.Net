@@ -1,15 +1,15 @@
 ﻿using System.Linq;
 using System.Reflection;
 using ApprovalTests.Persistence.NHibernate;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NHibernate;
 using NHibernate.Cfg;
 using NHibernate.Linq;
+using NUnit.Framework;
 using Environment = System.Environment;
 
 namespace ApprovalTests.MachineSpecific.Tests.NHibernate
 {
-	[TestClass]
+	[TestFixture]
 	public class NHibernateTest
 	{
 		public static ISessionFactory SessionFactory;
@@ -26,8 +26,8 @@ namespace ApprovalTests.MachineSpecific.Tests.NHibernate
 			return SessionFactory.OpenSession();
 		}
 
-		[TestMethod]
-		public void TestSimpleQuery()
+	    [Test]
+        public void TestSimpleQuery()
 		{
 			if (!Environment.MachineName.ToLowerInvariant().Contains("llewellyn"))
 			{

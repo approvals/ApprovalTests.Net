@@ -1,14 +1,14 @@
 ﻿using System;
 using ApprovalTests.Namers;
 using ApprovalUtilities.Utilities;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace ApprovalTests.MachineSpecific.Tests.Namer
 {
-	[TestClass]
+	[TestFixture]
 	public class ApprovalResultsTest
 	{
-		[TestMethod]
+		[Test]
 		public void TestUniqueNames()
 		{
 			ApprovalResults.UniqueForMachineName();

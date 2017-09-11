@@ -1,12 +1,12 @@
 ﻿using ApprovalTests.Reporters;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace ApprovalTests.MachineSpecific.Tests.Namer
 {
-	[TestClass]
+	[TestFixture]
 	public class VisualStudioReporterTest
 	{
-		[TestMethod]
+		[Test]
 		public void WhenLaunchedFromVisualStudioThenIsWorkingInThisEnvironmentForTextFiles()
 		{
 			var visualStudioReporter = new VisualStudioReporter();

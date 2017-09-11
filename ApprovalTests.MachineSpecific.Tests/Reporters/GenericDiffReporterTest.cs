@@ -1,11 +1,11 @@
 using System.Diagnostics;
 using ApprovalTests.Namers;
 using ApprovalTests.Reporters;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace ApprovalTests.MachineSpecific.Tests.Reporters
 {
-    [TestClass]
+    [TestFixture]
     public class GenericDiffReporterTest
     {
         public static void StartProcess(string fullCommandLine)
@@ -16,49 +16,49 @@ namespace ApprovalTests.MachineSpecific.Tests.Reporters
             Process.Start(fileName, arguments);
         }
 
-        [TestMethod]
+        [Test]
         public void TestLaunchesBeyondCompareImage()
         {
             AssertLauncher("../../a.png", "../../b.png", BeyondCompare3Reporter.INSTANCE);
         }
 
-        [TestMethod]
+        [Test]
         public void TestLaunchesCodeCompare()
         {
             AssertLauncher("../../a.txt", "../../b.txt", CodeCompareReporter.INSTANCE);
         }
 
-        [TestMethod]
+        [Test]
         public void TestLaunchesKDiff()
         {
             AssertLauncher("../../a.txt", "../../b.txt", KDiffReporter.INSTANCE);
         }
 
-        [TestMethod]
+        [Test]
         public void TestLaunchesP4Merge()
         {
             AssertLauncher("../../a.txt", "../../b.txt", P4MergeTextReporter.INSTANCE);
         }
 
-        [TestMethod]
+        [Test]
         public void TestLaunchesP4MergeImage()
         {
             AssertLauncher("../../a.png", "../../b.png", P4MergeImageReporter.INSTANCE);
         }
 
-        [TestMethod]
+        [Test]
         public void TestLaunchesTortoiseImage()
         {
             AssertLauncher("../../a.png", "../../b.png", TortoiseImageDiffReporter.INSTANCE);
         }
 
-        [TestMethod]
+        [Test]
         public void TestLaunchesTortoiseMerge()
         {
             AssertLauncher("../../a.txt", "../../b.txt", TortoiseTextDiffReporter.INSTANCE);
         }
 
-        [TestMethod]
+        [Test]
         public void TestLaunchesVisualStudio()
         {
             using (ApprovalResults.UniqueForMachineName())
@@ -67,7 +67,7 @@ namespace ApprovalTests.MachineSpecific.Tests.Reporters
             }
         }
 
-        [TestMethod]
+        [Test]
         public void TestWinMerge()
         {
             using (ApprovalResults.UniqueForMachineName())

@@ -3,6 +3,7 @@ using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Windows.Controls;
 using System.Windows.Data;
 using ApprovalTests.Wpf;
@@ -15,7 +16,7 @@ namespace ApprovalTests.Tests.Wpf
     public class WpfBindingTests
     {
         [Test]
-        [STAThread]
+        [RequiresThread(ApartmentState.STA)]
         public void TestFailedBindings()
         {
             var viewModel = new TestViewModel();
