@@ -14,7 +14,8 @@ namespace ApprovalTests.Tests
         {
             var dateTime = new DateTime(2000, 5, 22, 13, 43, 21);
             var result = CombinationApprovals.GetApprovalString(d => "test", Enumerable.Repeat(dateTime, 1));
-            Assert.That(result, Is.StringContaining(dateTime.ToString(CultureInfo.InvariantCulture)));
+            var invariantDate = dateTime.ToString(CultureInfo.InvariantCulture);
+            StringAssert.Contains(invariantDate, result);
         }
     }
 }

@@ -9,31 +9,31 @@ namespace ApprovalTests.Tests
     public class FailedApprovalTests
     {
         [Test]
-        [ExpectedException(typeof(ApprovalMismatchException))]
         public void EnumerableDoesNotMatchApproval()
         {
-            Approvals.VerifyAll(new[] { "Does not match" }, "collection");
+            Assert.Throws<ApprovalMismatchException>(() =>
+                Approvals.VerifyAll(new[] {"Does not match"}, "collection"));
         }
 
         [Test]
-        [ExpectedException(typeof(ApprovalMissingException))]
         public void EnumerableNotApprovedYet()
         {
-            Approvals.VerifyAll(new[] { "Not approved" }, "collection");
+            Assert.Throws<ApprovalMissingException>(() =>
+                Approvals.VerifyAll(new[] {"Not approved"}, "collection"));
         }
 
         [Test]
-        [ExpectedException(typeof(ApprovalMismatchException))]
         public void TextDoesNotMatchApproval()
         {
-            Approvals.Verify("should fail with mismatch");
+            Assert.Throws<ApprovalMismatchException>(() =>
+                Approvals.Verify("should fail with mismatch"));
         }
 
         [Test]
-        [ExpectedException(typeof(ApprovalMissingException))]
         public void TextNotApprovedYet()
         {
-            Approvals.Verify("should fail with a missing exception");
+            Assert.Throws<ApprovalMissingException>(() =>
+                Approvals.Verify("should fail with a missing exception"));
         }
     }
 }
