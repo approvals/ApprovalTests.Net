@@ -86,7 +86,6 @@ To learn how to implement one see {helpLink}")
                 LoadIfApplicable(parsers, new NUnitStackTraceParser());
                 LoadIfApplicable(parsers, new VSStackTraceParser());
                 LoadIfApplicable(parsers, new MsTestDataTestMethodStackTraceParser());
-                LoadIfApplicable(parsers, new MbUnitStackTraceParser());
                 LoadIfApplicable(parsers, new XUnitStackTraceParser());
                 LoadIfApplicable(parsers, new XUnitTheoryStackTraceParser());
                 LoadIfApplicable(parsers, new XUnit2TheoryStackTraceParser());
