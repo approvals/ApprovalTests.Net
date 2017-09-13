@@ -214,7 +214,6 @@
     <Compile Include="Reporters\TortoiseImageDiffReporter.cs" />
     <Compile Include="Reporters\WinMergeReporter.cs" />
     <Compile Include="Scrubber\ScrubberUtils.cs" />
-    <Compile Include="Namers\UnitTestFrameworks\MbUnitStackTraceParser.cs" />
     <Compile Include="Namers\UnitTestFrameworks\VSStackTraceParser.cs" />
     <Compile Include="Reporters\UseReporterAttribute.cs" />
     <Compile Include="Set\SetApprovals.cs" />
