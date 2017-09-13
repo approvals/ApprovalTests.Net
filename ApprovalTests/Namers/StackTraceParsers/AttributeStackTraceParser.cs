@@ -11,8 +11,8 @@ namespace ApprovalTests.Namers.StackTraceParsers
 		protected Caller caller;
 		protected Caller approvalFrame;
 
-
-		public string TypeName
+        
+		public virtual string TypeName
 		{
 		    get { return GetRecursiveTypeName(this.approvalFrame.Method.DeclaringType); }
 		}
@@ -84,7 +84,7 @@ namespace ApprovalTests.Namers.StackTraceParsers
 
 		protected abstract string GetAttributeType();
 
-	    private static string GetRecursiveTypeName(Type type)
+	    protected static string GetRecursiveTypeName(Type type)
 	    {
 	        return type.DeclaringType != null 
                 ? $"{GetRecursiveTypeName(type.DeclaringType)}.{type.Name}" 

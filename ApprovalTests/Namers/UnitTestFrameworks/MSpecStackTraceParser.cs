@@ -26,10 +26,16 @@ namespace ApprovalTests.StackTraceParsers
 			return "MSpec";
 		}
 
-		protected override string GetMethodName()
+	    public override string TypeName
+	    {
+	        get { return GetRecursiveTypeName(this.approvalFrame.Class.DeclaringType); }
+	    }
+
+        protected override string GetMethodName()
 		{
-			var instance = Activator.CreateInstance(approvalFrame.Class);
-			var fields = approvalFrame.Class.GetFields(BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+		    var testClass = approvalFrame.Class.DeclaringType;
+		    var instance = Activator.CreateInstance(testClass);
+			var fields = testClass.GetFields(BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.DeclaredOnly);
 			var delegates = fields.Where(f => typeof(Delegate).IsAssignableFrom(f.FieldType));
 			var approvalField = delegates.FirstOrDefault(f =>
 				{
