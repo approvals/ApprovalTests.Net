@@ -8,14 +8,7 @@
   <ItemGroup>
     <PackageReference Include="MSTest.TestFramework" Version="1.*" />
     <PackageReference Include="MSTest.TestAdapter" Version="1.*" />
-	  <Reference Include="System" />
-    <Reference Include="System.Windows.Forms" />
     <ProjectReference Include="..\ApprovalUtilities\ApprovalUtilities.csproj" />
     <ProjectReference Include="..\ApprovalTests\ApprovalTests.csproj" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Data.Entity" />
-  </ItemGroup>
-   <ItemGroup>
-    <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
   </ItemGroup>
 </Project>
