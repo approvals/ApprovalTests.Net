@@ -22,6 +22,7 @@ namespace ApprovalTests
     {
         private static readonly ThreadLocal<Caller> currentCaller = new ThreadLocal<Caller>();
         private static Func<IApprovalNamer> defaultNamerCreator = () => new UnitTestFrameworkNamer();
+        private static Func<IApprovalWriter, IApprovalNamer, bool, IApprovalApprover> defaultApproverCreator = (IApprovalWriter writer, IApprovalNamer namer, bool shouldIgnoreLineEndings) => new FileApprover(writer, namer, shouldIgnoreLineEndings);
 
         public static Caller CurrentCaller
         {
@@ -44,8 +45,17 @@ namespace ApprovalTests
         {
             var normalizeLineEndingsForTextFiles = CurrentCaller.GetFirstFrameForAttribute<IgnoreLineEndingsAttribute>();
             var shouldIgnoreLineEndings = normalizeLineEndingsForTextFiles == null || normalizeLineEndingsForTextFiles.IgnoreLineEndings;
-            var approver = new FileApprover(writer, namer, shouldIgnoreLineEndings);
+            var approver = GetDefaultApprover(writer, namer, shouldIgnoreLineEndings);
             Verify(approver, reporter);
+        }
+        public static void RegisterDefaultAppover(Func<IApprovalWriter, IApprovalNamer, bool, IApprovalApprover> creator)
+        {
+            defaultApproverCreator =  creator;
+        }
+
+        private static FileApprover GetDefaultApprover(IApprovalWriter writer, IApprovalNamer namer, bool shouldIgnoreLineEndings)
+        {
+            return new FileApprover(writer, namer, shouldIgnoreLineEndings);
         }
 
         public static void Verify(IApprovalApprover approver)
