@@ -53,9 +53,9 @@ namespace ApprovalTests
             defaultApproverCreator =  creator;
         }
 
-        private static FileApprover GetDefaultApprover(IApprovalWriter writer, IApprovalNamer namer, bool shouldIgnoreLineEndings)
+        private static IApprovalApprover GetDefaultApprover(IApprovalWriter writer, IApprovalNamer namer, bool shouldIgnoreLineEndings)
         {
-            return new FileApprover(writer, namer, shouldIgnoreLineEndings);
+            return defaultApproverCreator(writer, namer, shouldIgnoreLineEndings);
         }
 
         public static void Verify(IApprovalApprover approver)
