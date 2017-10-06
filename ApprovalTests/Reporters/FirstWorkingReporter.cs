@@ -8,8 +8,9 @@ namespace ApprovalTests.Reporters
 {
 	public class FirstWorkingReporter:IEnvironmentAwareReporter
 	{
-		private readonly IEnumerable<IEnvironmentAwareReporter> reporters;
-		public FirstWorkingReporter(params IEnvironmentAwareReporter[] reporters):
+	    public IEnumerable<IEnvironmentAwareReporter> Reporters { get; }
+
+	    public FirstWorkingReporter(params IEnvironmentAwareReporter[] reporters):
 			this((IEnumerable<IEnvironmentAwareReporter>)reporters)
 		{
 			
@@ -17,11 +18,11 @@ namespace ApprovalTests.Reporters
 
 		public FirstWorkingReporter(IEnumerable<IEnvironmentAwareReporter> reporters)
 		{
-			this.reporters = reporters;
+			this.Reporters = reporters;
 		}
 		public void Report(string approved, string received)
 		{
-			var r = reporters.FirstOrDefault(x => x.IsWorkingInThisEnvironment(received));
+			var r = Reporters.FirstOrDefault(x => x.IsWorkingInThisEnvironment(received));
 			if (r == null)
 			{
 				throw new Exception("{0} Could not find a Reporter for file {1}".FormatWith(GetType().Name, received));
@@ -31,7 +32,7 @@ namespace ApprovalTests.Reporters
 
 		public virtual bool IsWorkingInThisEnvironment(string forFile)
 		{
-			return reporters.Any(x => x.IsWorkingInThisEnvironment(forFile));
+			return Reporters.Any(x => x.IsWorkingInThisEnvironment(forFile));
 		}
 	}
 }
