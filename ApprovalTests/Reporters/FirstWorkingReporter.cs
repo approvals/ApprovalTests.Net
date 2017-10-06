@@ -6,7 +6,7 @@ using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.Reporters
 {
-	public class FirstWorkingReporter:IEnvironmentAwareReporter
+	public class FirstWorkingReporter:IEnvironmentAwareReporter, IApprovalReporterWithCleanUp
 	{
 	    public IEnumerable<IEnvironmentAwareReporter> Reporters { get; }
 
@@ -34,5 +34,13 @@ namespace ApprovalTests.Reporters
 		{
 			return Reporters.Any(x => x.IsWorkingInThisEnvironment(forFile));
 		}
+
+	    public void CleanUp(string approved, string received)
+	    {
+	        foreach (var cleanup in Reporters.OfType<IApprovalReporterWithCleanUp>())
+	        {
+	            cleanup.CleanUp(approved,received);
+	        }
+	    }
 	}
 }
