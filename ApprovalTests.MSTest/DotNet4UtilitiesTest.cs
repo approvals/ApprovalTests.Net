@@ -1,14 +1,14 @@
 ﻿using ApprovalTests.Reporters;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace ApprovalTests.Tests.Reporters
+namespace ApprovalTests.MSTest
 {
     [TestClass]
     public class DotNet4UtilitiesTest
     {
 
         [TestMethod]
-        [ApprovalTests.Reporters.UseReporter(typeof(FileLauncherReporter))]
+        [UseReporter(typeof(FileLauncherReporter))]
         public void TestPath()
         {
             string[] paths = new string[] { @"M:\Somepaththatdoesntexist\", @"C:\Windows\system32", @"Z:\Othernonpath" };
