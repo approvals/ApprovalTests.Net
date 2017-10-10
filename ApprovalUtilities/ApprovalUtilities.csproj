@@ -16,6 +16,7 @@
     <PackageReference Include="NHibernate" Version="4.*" PrivateAssests="All" />
     <PackageReference Include="Mvc2" Version="2.*" PrivateAssests="All" />
     <PackageReference Include="Fody" Version="2.*" PrivateAssests="All" />
+    <PackageReference Include="Publicize.Fody" Version="1.4.0" />
     <PackageReference Include="Virtuosity.Fody" Version="1.*" PrivateAssests="All" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
