@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace ReportingDemo {
+namespace RdlcTestTarget {
     
     
     /// <summary>
@@ -792,7 +792,7 @@ namespace ReportingDemo {
         }
     }
 }
-namespace ReportingDemo.InsultsDataSetTableAdapters {
+namespace RdlcTestTarget.InsultsDataSetTableAdapters {
     
     
     /// <summary>
@@ -976,7 +976,7 @@ SELECT Id, Insult, NumberOfWords, BurnLevel, Flaw, Target FROM Insults WHERE (Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportingDemo.Properties.Settings.Default.InsultsConnectionString;
+            this._connection.ConnectionString = global::RdlcTestTarget.Properties.Settings.Default.InsultsConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

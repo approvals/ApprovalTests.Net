@@ -7,7 +7,7 @@ using ApprovalTests.RdlcReports;
 using ApprovalTests.Reporters;
 using ApprovalUtilities.Utilities;
 using NUnit.Framework;
-using ReportingDemo;
+using RdlcTestTarget;
 
 namespace ApprovalTests.MachineSpecific.Tests.Persistence.Datasets
 {
@@ -15,7 +15,7 @@ namespace ApprovalTests.MachineSpecific.Tests.Persistence.Datasets
     //[UseReporter(typeof (AllFailingTestsClipboardReporter))]
     public class DatasetTest
     {
-        private const string ReportName = "ReportingDemo.InsultsReport.rdlc";
+        private const string ReportName = "RdlcTestTarget.InsultsReport.rdlc";
 
         [SetUp]
         public void Setup()
@@ -26,7 +26,7 @@ namespace ApprovalTests.MachineSpecific.Tests.Persistence.Datasets
         [Test]
         public void TestExtrenalImage()
         {
-            RdlcApprovals.VerifyReport("ReportingDemo.ExternalImage.rdlc", GetDefaultData());
+            RdlcApprovals.VerifyReport("RdlcTestTarget.ExternalImage.rdlc", GetDefaultData());
         }
 
         [Test]

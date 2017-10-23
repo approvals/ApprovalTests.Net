@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ReportingDemo.Properties {
+namespace RdlcTestTarget.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
