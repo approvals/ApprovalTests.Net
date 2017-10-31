@@ -1,5 +1,5 @@
 using System;
-using System.IO;
+using Alphaleonis.Win32.Filesystem;
 
 namespace ApprovalTests.Scrubber
 {
@@ -16,7 +16,7 @@ namespace ApprovalTests.Scrubber
 			{
 				using (var pdf = File.OpenWrite(pdfFilePath))
 				{
-					pdf.Seek(location, SeekOrigin.Begin);
+					pdf.Seek(location, System.IO.SeekOrigin.Begin);
 
 					var original = "/CreationDate (D:20110426104115-07'00')";
 					var desired = new System.Text.ASCIIEncoding().GetBytes(original);
@@ -26,7 +26,7 @@ namespace ApprovalTests.Scrubber
 				}
 			}
 		}
-		public  static long Find(string token, Stream fileStream)
+		public  static long Find(string token, System.IO.Stream fileStream)
 		{
 			while (fileStream.Length != fileStream.Position)
 			{

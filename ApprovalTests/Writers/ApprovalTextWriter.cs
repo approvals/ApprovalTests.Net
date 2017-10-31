@@ -1,6 +1,6 @@
 using System;
-using System.IO;
 using System.Text;
+using Alphaleonis.Win32.Filesystem;
 using ApprovalTests.Core;
 using ApprovalUtilities.Utilities;
 
@@ -80,7 +80,7 @@ namespace ApprovalTests
 		private static byte[] ReadBytes(string file, int length)
 		{
 			byte[] buffer;
-			using (FileStream fileStream = new FileStream(file, FileMode.Open, FileAccess.Read))
+			using (System.IO.FileStream fileStream = new System.IO.FileStream(file, System.IO.FileMode.Open, System.IO.FileAccess.Read))
 			{
 				int offset = 0;
 				long fileLength = fileStream.Length;
