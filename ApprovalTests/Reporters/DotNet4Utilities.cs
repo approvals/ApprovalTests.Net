@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
+using Alphaleonis.Win32.Filesystem;
 
 namespace ApprovalTests.Reporters
 {
@@ -12,7 +12,7 @@ namespace ApprovalTests.Reporters
 			string fullPath = path;
 			foreach (var p in paths)
 			{
-				fullPath = p + System.IO.Path.DirectorySeparatorChar + path;
+				fullPath = p + Path.DirectorySeparatorChar + path;
 				if (File.Exists(fullPath))
 				{
 					break;

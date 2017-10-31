@@ -1,5 +1,5 @@
-﻿using System.IO;
-using System.Linq;
+﻿using System.Linq;
+using Alphaleonis.Win32.Filesystem;
 using Microsoft.Build.Evaluation;
 
 namespace ApprovalTests.Reporters

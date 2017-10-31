@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Net.Mail;
+using Alphaleonis.Win32.Filesystem;
 using ApprovalTests.Writers;
 using ApprovalUtilities.Utilities;
 

@@ -1,7 +1,7 @@
 using System;
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
+using Alphaleonis.Win32.Filesystem;
 using ApprovalUtilities.CallStack;
 
 namespace ApprovalTests.Namers.StackTraceParsers

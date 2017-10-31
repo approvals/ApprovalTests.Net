@@ -1,6 +1,5 @@
 using System.Collections.Generic;
-using System.IO;
-
+using Alphaleonis.Win32.Filesystem;
 using ApprovalTests.Core;
 using ApprovalTests.Core.Exceptions;
 using ApprovalTests.Reporters;
