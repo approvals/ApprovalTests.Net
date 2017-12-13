@@ -1,4 +1,4 @@
-﻿using System.IO;
+﻿using Alphaleonis.Win32.Filesystem;
 using ApprovalTests.Core;
 using ApprovalUtilities.Utilities;
 
@@ -11,7 +11,7 @@ namespace ApprovalTests.Writers
 			Data = data;
 		}
 
-		public ApprovalBinaryWriter(Stream content, string extensionWithoutDot)
+		public ApprovalBinaryWriter(System.IO.Stream content, string extensionWithoutDot)
 		{
 			Data = new byte[content.Length];
 			content.Read(Data, 0, Data.Length);

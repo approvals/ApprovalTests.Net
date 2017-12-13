@@ -1,6 +1,6 @@
+using Alphaleonis.Win32.Filesystem;
 using ApprovalTests.Core;
 using ApprovalTests.Namers.StackTraceParsers;
-using System.IO;
 
 namespace ApprovalTests.Namers
 {
