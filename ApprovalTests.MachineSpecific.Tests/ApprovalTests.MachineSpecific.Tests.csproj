@@ -23,7 +23,7 @@
 
     <ProjectReference Include="..\ApprovalTests\ApprovalTests.csproj" />
     <ProjectReference Include="..\ApprovalUtilities\ApprovalUtilities.csproj" />
-    <ProjectReference Include="..\RdlcTestTarget\RdlcTestTarget.csproj" />
+    <ProjectReference Include="..\ReportingDemo\ReportingDemo.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="a.png" />
