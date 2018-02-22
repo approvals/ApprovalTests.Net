@@ -6,6 +6,8 @@
     <SignAssembly>true</SignAssembly>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="AlphaFS" Version="2.1.3" />
