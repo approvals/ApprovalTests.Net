@@ -1,6 +1,6 @@
 using Microsoft.Reporting.WinForms;
 
-namespace RdlcTestTarget
+namespace ReportingDemo
 {
 	public class ReportHelper
 	{
@@ -14,7 +14,7 @@ namespace RdlcTestTarget
 
 		public static void AddReport(ReportViewer reportViewer)
 		{
-			string reportname = "RdlcTestTarget.InsultsReport.rdlc";
+			string reportname = "ReportingDemo.InsultsReport.rdlc";
 			reportViewer.LocalReport.ReportEmbeddedResource = reportname;
 		}
 	}
