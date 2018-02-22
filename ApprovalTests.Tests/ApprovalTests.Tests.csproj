@@ -7,7 +7,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="nunit" Version="3.*" />
-   <PackageReference Include="MSTest.TestFramework" Version="1.*" />
+    <PackageReference Include="MSTest.TestFramework" Version="1.*" />
     <PackageReference Include="MSTest.TestAdapter" Version="1.*" />
 
     <Reference Include="PresentationCore">
@@ -24,16 +24,15 @@
     <Reference Include="WindowsBase">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
-	
-	    <ProjectReference Include="..\ApprovalTests\ApprovalTests.csproj" />
-     <ProjectReference Include="..\ApprovalUtilities\ApprovalUtilities.csproj" />
+    <ProjectReference Include="..\ApprovalTests\ApprovalTests.csproj" />
+    <ProjectReference Include="..\ApprovalUtilities\ApprovalUtilities.csproj" />
   </ItemGroup>
   <ItemGroup>
 
-	<Content Include="a.png" />
+  <Content Include="a.png" />
     <Content Include="b.png" />
-      <Content Include="EntityFramework\CreateDatabase.sql" />
-     <EntityDeploy Include="EntityFramework\Model.edmx">
+    <Content Include="EntityFramework\CreateDatabase.sql" />
+    <EntityDeploy Include="EntityFramework\Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model.Designer.cs</LastGenOutput>
     </EntityDeploy>

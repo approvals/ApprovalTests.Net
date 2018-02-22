@@ -1,101 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F70C9A76-F797-4167-8178-14821F8634BC}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ApprovalTests</RootNamespace>
-    <AssemblyName>ApprovalTests</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <SignAssembly>true</SignAssembly>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <OldToolsVersion>3.5</OldToolsVersion>
-    <UpgradeBackupLocation />
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <TargetFrameworkProfile />
-    <PublishUrl>publish\</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <UseApplicationTrust>false</UseApplicationTrust>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
+    <TargetFrameworks>net45</TargetFrameworks>
     <AssemblyOriginatorKeyFile>$(SolutionDir)\ApprovalsKeyPair.snk</AssemblyOriginatorKeyFile>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile>bin\Debug\ApprovalTests.XML</DocumentationFile>
-    <NoWarn>1591</NoWarn>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
+    <SignAssembly>true</SignAssembly>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AlphaFS, Version=2.1.0.0, Culture=neutral, PublicKeyToken=4d31a58f7d7ad5c9, processorArchitecture=MSIL">
-      <HintPath>..\packages\AlphaFS.2.1.3\lib\net45\AlphaFS.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="Iesi.Collections, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Iesi.Collections.4.0.2\lib\net40\Iesi.Collections.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.Build" />
-    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\ReportViewer\Microsoft.ReportViewer.WinForms.dll</HintPath>
-    </Reference>
-    <Reference Include="NHibernate, Version=4.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
-      <HintPath>..\packages\NHibernate.4.1.1.4000\lib\net40\NHibernate.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
+    <PackageReference Include="AlphaFS" Version="2.1.3" />
+    <PackageReference Include="EntityFramework" Version="5.0.0" />
+    <PackageReference Include="Iesi.Collections" Version="4.0.2" />
+    <PackageReference Include="NHibernate" Version="4.1.1.4000" />
+    <PackageReference Include="StatePrinter" Version="1.0.3" />
+    <PackageReference Include="Fody" Version="2.1.2" />
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="3.0.20105.1" />
+    <PackageReference Include="Microsoft.AspNet.Razor" Version="1.0.20105.408" />
+    <PackageReference Include="Microsoft.AspNet.WebPages" Version="1.0.20105.408" />
+    <PackageReference Include="Microsoft.Web.Infrastructure" Version="1.0.0.0" />
+    <PackageReference Include="Publicize.Fody" Version="1.4.0" />
+    <PackageReference Include="Virtuosity.Fody" Version="1.20.0" />
     <Reference Include="PresentationCore">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
     <Reference Include="PresentationFramework">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
-    <Reference Include="StatePrinter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=693eec472ad792e3, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.Build" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\StatePrinter.1.0.3\lib\net35\StatePrinter.dll</HintPath>
+      <HintPath>..\lib\ReportViewer\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
-    <Reference Include="System.Core">
-      <HintPath>..\..\..\..\..\..\Program Files\Reference Assemblies\Microsoft\Framework\v3.5\System.Core.dll</HintPath>
-    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml.Serialization" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
@@ -107,196 +50,12 @@
     <Reference Include="WindowsBase">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="..\VersionInfo.cs">
-      <Link>Properties\VersionInfo.cs</Link>
-    </Compile>
-    <Compile Include="Asp\MovedToSeperateNugetPackage.cs" />
-    <Compile Include="Async\AsyncApprovals.cs" />
-    <Compile Include="Combinations\CombinationApprovals.cs" />
-    <Compile Include="Core\IApprovalReporterWithCleanUp.cs" />
-    <Compile Include="Core\Approver.cs" />
-    <Compile Include="Approvals.cs" />
-    <Compile Include="Core\Exceptions\ApprovalException.cs" />
-    <Compile Include="Core\Exceptions\ApprovalMismatchException.cs" />
-    <Compile Include="Core\Exceptions\ApprovalMissingException.cs" />
-    <Compile Include="Core\IEnvironmentAwareReporter.cs" />
-    <Compile Include="Email\EmailApprovals.cs" />
-    <Compile Include="Events\EventApprovals.cs" />
-    <Compile Include="ExceptionalExceptions\Exceptional.cs" />
-    <Compile Include="ExecutableLambda.cs" />
-    <Compile Include="Core\IReporterWithApprovalPower.cs" />
-    <Compile Include="Html\HtmlApprovals.cs" />
-    <Compile Include="Maintenance\ApprovalMaintenance.cs" />
-    <Compile Include="Namers\ApprovalResults.cs" />
-    <Compile Include="Namers\NamerFactory.cs" />
-    <Compile Include="Namers\StackTraceParsers\AttributeStackTraceParser.cs" />
-    <Compile Include="Namers\UnitTestFrameworks\MSpecStackTraceParser.cs" />
-    <Compile Include="Namers\UnitTestFrameworks\MsTestDataTestMethodStackTraceParser.cs" />
-    <Compile Include="Namers\UnitTestFrameworks\XUnit2TheoryStackTraceParser.cs" />
-    <Compile Include="Namers\UnitTestFrameworks\XUnitStackTraceParser.cs" />
-    <Compile Include="Namers\UnitTestFrameworks\XUnitTheoryStackTraceParser.cs" />
-    <Compile Include="Namers\UseApprovalSubdirectoryAttribute.cs" />
-    <Compile Include="Persistence\ExecutableSqlQuery.cs" />
-    <Compile Include="Reporters\AppVeyorReporter.cs" />
-    <Compile Include="Reporters\BambooReporter.cs" />
-    <Compile Include="Reporters\BeyondCompareReporter.cs" />
-    <Compile Include="Reporters\BeyondCompare4Reporter.cs" />
-    <Compile Include="Reporters\ContinousDeliveryUtils.cs" />
-    <Compile Include="Reporters\DiffInfo.cs" />
-    <Compile Include="Reporters\DiffPrograms.cs" />
-    <Compile Include="Reporters\GoContinuousDeliveryReporter.cs" />
-    <Compile Include="Reporters\IgnoreLineEndingsAttribute.cs" />
-    <Compile Include="Reporters\JenkinsReporter.cs" />
-    <Compile Include="Reporters\MacDiffReporter.cs" />
-    <Compile Include="Reporters\Mac\BeyondCompareMacReporter.cs" />
-    <Compile Include="Reporters\Mac\DiffMergeReporter.cs" />
-    <Compile Include="Reporters\Mac\KaleidoscopeDiffReporter.cs" />
-    <Compile Include="Reporters\Mac\KDiff3Reporter.cs" />
-    <Compile Include="Reporters\Mac\P4MergeReporter.cs" />
-    <Compile Include="Reporters\Mac\TkDiffReporter.cs" />
-    <Compile Include="Reporters\ReportWithoutFrontLoading.cs" />
-    <Compile Include="Reporters\TfsVnextReporter.cs" />
-    <Compile Include="Reporters\QueryResult.cs" />
-    <Compile Include="Reporters\TortoiseGitTextDiffReporter.cs" />
-    <Compile Include="Reporters\WindowsDiffReporter.cs" />
-    <Compile Include="Reporters\XUnit2Reporter.cs" />
-    <Compile Include="Scrubber\HtmlScrubbers.cs" />
-    <Compile Include="Scrubber\PdfScrubber.cs" />
-    <Compile Include="Persistence\DatabaseApprovals.cs" />
-    <Compile Include="Persistence\EntityFramework\EntityFrameworkApprovals.cs" />
-    <Compile Include="Persistence\DataSets\ColumnDefaults.cs" />
-    <Compile Include="Persistence\DataSets\DataSetTestingUtilities.cs" />
-    <Compile Include="Persistence\EntityFramework\Version5\DbContextAdaptor.cs" />
-    <Compile Include="Persistence\EntityFramework\Version5\EntityFrameworkDbContextApprovals.cs" />
-    <Compile Include="Persistence\NHibernate\NHibernateApprovals.cs" />
-    <Compile Include="Core\ConsoleUtilities.cs" />
-    <Compile Include="RdlcReports\RdlcApprovals.cs" />
-    <Compile Include="Reporters\AppConfigReporter.cs" />
-    <Compile Include="Reporters\AraxisMergeReporter.cs" />
-    <Compile Include="Reporters\AssertReporter.cs" />
-    <Compile Include="Reporters\BeyondCompare3Reporter.cs" />
-    <Compile Include="Reporters\ClipboardReporter.cs" />
-    <Compile Include="Reporters\CodeCompareReporter.cs" />
-    <Compile Include="Reporters\PowershellClipboardReporter.cs" />
-    <Compile Include="Reporters\CruiseControlNetReporter.cs" />
-    <Compile Include="Reporters\AllFailingTestsClipboardReporter.cs" />
-    <Compile Include="Reporters\MightyMooseAutoTestReporter.cs" />
-    <Compile Include="Reporters\MyGetReporter.cs" />
-    <Compile Include="Reporters\P4MergeReporter.cs" />
-    <Compile Include="Reporters\P4MergeImageReporter.cs" />
-    <Compile Include="Reporters\DefaultFrontLoaderReporter.cs" />
-    <Compile Include="Reporters\FileLauncherWithDelayReporter.cs" />
-    <Compile Include="Reporters\FrontLoadedReporterAttribute.cs" />
-    <Compile Include="Reporters\DotNet4Utilities.cs" />
-    <Compile Include="Reporters\KDiffReporter.cs" />
-    <Compile Include="Reporters\P4MergeTextReporter.cs" />
-    <Compile Include="Reporters\ReporterEvents.cs" />
-    <Compile Include="Reporters\TeamCityReporter.cs" />
-    <Compile Include="Reporters\TfsReporter.cs" />
-    <Compile Include="Reporters\TortoiseComboImageReporter.cs" />
-    <Compile Include="Reporters\VisualStudioProjectFileAdder.cs" />
-    <Compile Include="Reporters\VisualStudioReporter.cs" />
-    <Compile Include="Reporters\XUnitReporter.cs" />
-    <Compile Include="Reporters\ExecutableQueryFailure.cs" />
-    <Compile Include="Reporters\DiffReporter.cs" />
-    <Compile Include="Reporters\FirstWorkingReporter.cs" />
-    <Compile Include="Reporters\FrameworkAssertReporter.cs" />
-    <Compile Include="Reporters\GenericDiffReporter.cs" />
-    <Compile Include="Reporters\ImageReporter.cs" />
-    <Compile Include="Reporters\FileLauncherReporter.cs" />
-    <Compile Include="Reporters\IntroductionReporter.cs" />
-    <Compile Include="Reporters\LaunchArgs.cs" />
-    <Compile Include="Reporters\MsTestReporter.cs" />
-    <Compile Include="Reporters\MultiReporter.cs" />
-    <Compile Include="Reporters\NCrunchReporter.cs" />
-    <Compile Include="Reporters\NotepadLauncher.cs" />
-    <Compile Include="Reporters\NUnitReporter.cs" />
-    <Compile Include="Reporters\TortoiseDiffReporter.cs" />
-    <Compile Include="Reporters\TortoiseTextDiffReporter.cs" />
-    <Compile Include="Reporters\TortoiseImageDiffReporter.cs" />
-    <Compile Include="Reporters\WinMergeReporter.cs" />
-    <Compile Include="Scrubber\ScrubberUtils.cs" />
-    <Compile Include="Namers\UnitTestFrameworks\VSStackTraceParser.cs" />
-    <Compile Include="Reporters\UseReporterAttribute.cs" />
-    <Compile Include="Set\SetApprovals.cs" />
-    <Compile Include="TheoryTests\ThreadSafteyTheory.cs" />
-    <Compile Include="Utilities\ParentProcessUtils.cs" />
-    <Compile Include="Utilities\StackTraceScrubber.cs" />
-    <Compile Include="StatePrinter\StatePrinterApprovals.cs" />
-    <Compile Include="TheoryTests\SerializableTheory.cs" />
-    <Compile Include="Utilities\StringReporting.cs" />
-    <Compile Include="Utilities\TestCounter.cs" />
-    <Compile Include="WebApi\MicrosoftHttpClient\RestQuery.cs" />
-    <Compile Include="WindowsRegistry\WindowsRegistryAssert.cs" />
-    <Compile Include="WinForms\WinFormsApprovals.cs" />
-    <Compile Include="WinForms\WinFormsUtils.cs" />
-    <Compile Include="Wpf\AssertNoBindingErrorsTraceListener.cs" />
-    <Compile Include="Wpf\WpfBindingsAssert.cs" />
-    <Compile Include="Wpf\ApprovalWpfWindowWriter.cs" />
-    <Compile Include="Wpf\ImageWriter.cs" />
-    <Compile Include="WinForms\ApprovalControlWriter.cs" />
-    <Compile Include="WinForms\ApprovalFormWriter.cs" />
-    <Compile Include="Wpf\WpfApprovals.cs" />
-    <Compile Include="Writers\ApprovalBinaryWriter.cs" />
-    <Compile Include="Core\IApprovalWriter.cs" />
-    <Compile Include="Writers\ApprovalTextWriter.cs" />
-    <Compile Include="Core\IApprovalNamer.cs" />
-    <Compile Include="Core\IApprover.cs" />
-    <Compile Include="Approvers\FileApprover.cs" />
-    <Compile Include="Core\IApprovalReporter.cs" />
-    <Compile Include="Reporters\QuietReporter.cs" />
-    <Compile Include="Namers\StackTraceParsers\IStackTraceParser.cs" />
-    <Compile Include="Namers\UnitTestFrameworks\NUnitStackTraceParser.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Namers\UnitTestFrameworkNamer.cs" />
-    <Compile Include="Namers\StackTraceParsers\StackTraceParser.cs" />
-    <Compile Include="Writers\ExistingFileWriter.cs" />
-    <Compile Include="Writers\WriterFactory.cs" />
-    <Compile Include="Writers\WriterUtils.cs" />
-    <Compile Include="Writers\ConfigurableTempTextFileWriter.cs" />
-    <Compile Include="Xml\XmlApprovals.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
-      <Visible>False</Visible>
-      <ProductName>Windows Installer 3.1</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\ApprovalUtilities\ApprovalUtilities.csproj">
       <Project>{E9683C33-7A71-4776-B7C9-E89C565AC16B}</Project>
       <Name>ApprovalUtilities</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="FodyWeavers.xml" />
+    <Compile Include="..\VersionInfo.cs" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
-  <Import Project="..\packages\Fody.2.1.2\build\netstandard1.0\Fody.targets" Condition="Exists('..\packages\Fody.2.1.2\build\netstandard1.0\Fody.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Fody.2.1.2\build\netstandard1.0\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.2.1.2\build\netstandard1.0\Fody.targets'))" />
-  </Target>
 </Project>
