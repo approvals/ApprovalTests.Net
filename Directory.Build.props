@@ -6,11 +6,12 @@
     <Version>3.0.14</Version>
     <AssemblyVersion>3.0</AssemblyVersion>
     <AssemblyInformationalVersion>$(Version)</AssemblyInformationalVersion>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <Authors>Llewellyn Falco &amp; Dan Gilkerson</Authors>
     <PackageLicenseUrl>https://github.com/approvals/ApprovalTests.Net/blob/master/LICENSE.md</PackageLicenseUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Copyright>Copyright $([System.DateTime]::UtcNow.ToString(yyyy)) Llewellyn Falco &amp; Dan Gilkerson. All rights reserved</Copyright>
-    <PackageTags>Testing, Verification</PackageTags>
+    <PackageTags>Approvals ApprovalTests ApprovalTest Test Verification Verify Approve Testing</PackageTags>
     <PackageIconUrl>http://approvaltests.sourceforge.net/sites/all/themes/corolla/logo.png</PackageIconUrl>
     <PackageProjectUrl>https://github.com/approvals/ApprovalTests.Net</PackageProjectUrl>
     <PackageOutputPath>$(SolutionDir)nuget_packages</PackageOutputPath>

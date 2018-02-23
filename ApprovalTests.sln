@@ -1,27 +1,22 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.12
+VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CC679657-AF36-470E-9976-BB00E6792F32}"
 	ProjectSection(SolutionItems) = preProject
 		ApprovalTests.build = ApprovalTests.build
 		ApprovalTests.vsmdi = ApprovalTests.vsmdi
 		ApprovalTests1.vsmdi = ApprovalTests1.vsmdi
+		Directory.Build.props = Directory.Build.props
 		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
 		MyGet.cmd = MyGet.cmd
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{9094DD0B-0791-4F63-8042-A8D5CD935FB8}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApprovalTests", "ApprovalTests\ApprovalTests.csproj", "{F70C9A76-F797-4167-8178-14821F8634BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApprovalTests", "ApprovalTests\ApprovalTests.csproj", "{F70C9A76-F797-4167-8178-14821F8634BC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApprovalTests.Tests", "ApprovalTests.Tests\ApprovalTests.Tests.csproj", "{7B8D265D-35BB-4817-B074-F5056E5A9B4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApprovalTests.MSTest", "ApprovalTests.MSTest\ApprovalTests.MSTest.csproj", "{55C72CD1-7EFA-4A12-8C6F-7F917CF83A40}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApprovalTests.MSTest", "ApprovalTests.MSTest\ApprovalTests.MSTest.csproj", "{55C72CD1-7EFA-4A12-8C6F-7F917CF83A40}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApprovalUtilities.Tests", "ApprovalUtilities.Tests\ApprovalUtilities.Tests.csproj", "{01EB7BB9-743C-4FB0-B97F-A6E2B4AF86CF}"
 EndProject
@@ -29,7 +24,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApprovalUtilities", "Approv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportingDemo", "ReportingDemo\ReportingDemo.csproj", "{F50278FC-C888-4DD3-898D-CFCF99147E3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApprovalTests.MSpec", "ApprovalTests.MSpec\ApprovalTests.MSpec.csproj", "{55CE757D-BBE0-4006-898C-CC884D95C520}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApprovalTests.MSpec", "ApprovalTests.MSpec\ApprovalTests.MSpec.csproj", "{55CE757D-BBE0-4006-898C-CC884D95C520}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApprovalTests.Xunit", "ApprovalTests.Xunit\ApprovalTests.Xunit.csproj", "{B8AAA028-1890-40B6-84B8-2F46986EEE8C}"
 EndProject
