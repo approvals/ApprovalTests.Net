@@ -2,7 +2,24 @@
 <Project>
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
-	<NoWarn>CS1591
-	</NoWarn>
+    <NoWarn>CS1591</NoWarn>
+    <Version>3.0.14</Version>
+    <AssemblyVersion>3.0</AssemblyVersion>
+    <AssemblyInformationalVersion>$(Version)</AssemblyInformationalVersion>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <Authors>Llewellyn Falco &amp; Dan Gilkerson</Authors>
+    <PackageLicenseUrl>https://github.com/approvals/ApprovalTests.Net/blob/master/LICENSE.md</PackageLicenseUrl>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Copyright>Copyright $([System.DateTime]::UtcNow.ToString(yyyy)) Llewellyn Falco &amp; Dan Gilkerson. All rights reserved</Copyright>
+    <PackageTags>Approvals ApprovalTests ApprovalTest Test Verification Verify Approve Testing</PackageTags>
+    <PackageIconUrl>http://approvaltests.sourceforge.net/sites/all/themes/corolla/logo.png</PackageIconUrl>
+    <PackageProjectUrl>https://github.com/approvals/ApprovalTests.Net</PackageProjectUrl>
+    <PackageOutputPath>$(SolutionDir)nuget_packages</PackageOutputPath>
+    <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);IncludePDBsInPackage</TargetsForTfmSpecificContentInPackage>
   </PropertyGroup>
+  <Target Name="IncludePDBsInPackage">
+    <ItemGroup>
+      <TfmSpecificPackageFile Include="$(OutputPath)\$(AssemblyName).pdb" PackagePath="lib/$(TargetFramework)" />
+    </ItemGroup>
+  </Target>
 </Project>
