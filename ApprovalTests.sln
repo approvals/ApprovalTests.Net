@@ -34,6 +34,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApprovalTests.Xunit2", "App
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApprovalTests.MSTestV2", "ApprovalTests.MsTestV2\ApprovalTests.MSTestV2.csproj", "{FF75C241-44F6-4ED8-BADA-CA35D98F5782}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApprovalTests.WinForms", "ApprovalTests.WinForms\ApprovalTests.WinForms.csproj", "{86C1830A-BCBB-403B-856A-12FFC9F93966}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApprovalTests.WinForms.Tests", "ApprovalTests.WinForms.Tests\ApprovalTests.WinForms.Tests.csproj", "{F236FD82-A470-422D-BDD7-7752BE2B0CA8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -84,6 +88,14 @@ Global
 		{FF75C241-44F6-4ED8-BADA-CA35D98F5782}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF75C241-44F6-4ED8-BADA-CA35D98F5782}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF75C241-44F6-4ED8-BADA-CA35D98F5782}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86C1830A-BCBB-403B-856A-12FFC9F93966}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86C1830A-BCBB-403B-856A-12FFC9F93966}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86C1830A-BCBB-403B-856A-12FFC9F93966}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86C1830A-BCBB-403B-856A-12FFC9F93966}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F236FD82-A470-422D-BDD7-7752BE2B0CA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F236FD82-A470-422D-BDD7-7752BE2B0CA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F236FD82-A470-422D-BDD7-7752BE2B0CA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F236FD82-A470-422D-BDD7-7752BE2B0CA8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

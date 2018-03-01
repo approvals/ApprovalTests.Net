@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net45</TargetFrameworks>
+    <AssemblyOriginatorKeyFile>$(SolutionDir)\ApprovalsKeyPair.snk</AssemblyOriginatorKeyFile>
+    <SignAssembly>true</SignAssembly>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>Utilities for approval testing Windows Forms. Allows screenshot verification of Windows Forms. For example:
+
+WinFormsApprovals.Verify(new Button { BackColor = Color.LightBlue, Text = "Help" });
+    </Description>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Fody" Version="2.4.2" PrivateAssests="All" ExcludeAssets="All" />
+    <PackageReference Include="Publicize.Fody" Version="1.4.0" PrivateAssests="All" ExcludeAssets="All" />
+    <PackageReference Include="Virtuosity.Fody" Version="1.20.2" PrivateAssests="All" ExcludeAssets="All" />
+    <Reference Include="System.Windows.Forms" />
+    <ProjectReference Include="..\ApprovalTests\ApprovalTests.csproj" />
+    <ProjectReference Include="..\ApprovalUtilities\ApprovalUtilities.csproj" />
+  </ItemGroup>
+</Project>
