@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2036
+VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CC679657-AF36-470E-9976-BB00E6792F32}"
 	ProjectSection(SolutionItems) = preProject
@@ -37,6 +37,10 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApprovalTests.WinForms", "ApprovalTests.WinForms\ApprovalTests.WinForms.csproj", "{86C1830A-BCBB-403B-856A-12FFC9F93966}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApprovalTests.WinForms.Tests", "ApprovalTests.WinForms.Tests\ApprovalTests.WinForms.Tests.csproj", "{F236FD82-A470-422D-BDD7-7752BE2B0CA8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApprovalTests.Rdlc", "ApprovalTests.Rdlc\ApprovalTests.Rdlc.csproj", "{1C03B503-2376-471C-96D8-8BE735F32493}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApprovalTests.Rdlc.Tests", "ApprovalTests.Rdlc.Tests\ApprovalTests.Rdlc.Tests.csproj", "{F84FFE6A-24E2-482C-B75E-626D03BD9889}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -96,6 +100,14 @@ Global
 		{F236FD82-A470-422D-BDD7-7752BE2B0CA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F236FD82-A470-422D-BDD7-7752BE2B0CA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F236FD82-A470-422D-BDD7-7752BE2B0CA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C03B503-2376-471C-96D8-8BE735F32493}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C03B503-2376-471C-96D8-8BE735F32493}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C03B503-2376-471C-96D8-8BE735F32493}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C03B503-2376-471C-96D8-8BE735F32493}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F84FFE6A-24E2-482C-B75E-626D03BD9889}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F84FFE6A-24E2-482C-B75E-626D03BD9889}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F84FFE6A-24E2-482C-B75E-626D03BD9889}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F84FFE6A-24E2-482C-B75E-626D03BD9889}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
