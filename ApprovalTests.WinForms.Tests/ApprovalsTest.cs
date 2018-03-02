@@ -10,7 +10,7 @@ namespace ApprovalTests.MachineSpecific.Tests.WinForms
 {
     [TestFixture]
     [UseReporter(typeof(AllFailingTestsClipboardReporter), typeof(ImageReporter))]
-    public class ApprovalsTest
+    public class WinFormTests
     {
         [Test]
         public void TestControlApproved()

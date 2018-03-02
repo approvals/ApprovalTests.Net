@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net45</TargetFrameworks>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="nunit" Version="3.*" />
+    <Reference Include="System.Windows.Forms" />
+    <ProjectReference Include="..\ApprovalTests.WinForms\ApprovalTests.WinForms.csproj" />
+    <ProjectReference Include="..\ApprovalTests\ApprovalTests.csproj" />
+    <ProjectReference Include="..\ApprovalUtilities\ApprovalUtilities.csproj" />
+  </ItemGroup>
+</Project>
