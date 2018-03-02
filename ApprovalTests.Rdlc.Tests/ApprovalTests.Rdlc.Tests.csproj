@@ -6,25 +6,13 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Iesi.Collections" Version="4.*" />
     <PackageReference Include="nunit" Version="3.*" />
-    <PackageReference Include="NHibernate" Version="4.*" />
-
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Xaml" />
-    <Reference Include="System.Xml" />
-    <Reference Include="WindowsBase" />
-
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <ProjectReference Include="..\ApprovalTests.Rdlc\ApprovalTests.Rdlc.csproj" />
     <ProjectReference Include="..\ApprovalTests\ApprovalTests.csproj" />
     <ProjectReference Include="..\ApprovalUtilities\ApprovalUtilities.csproj" />
     <ProjectReference Include="..\ReportingDemo\ReportingDemo.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="a.png" />
-    <Content Include="b.png" />
-    <EmbeddedResource Include="NHibernate\Company.hbm.xml" />
   </ItemGroup>
 </Project>

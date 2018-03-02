@@ -12,7 +12,7 @@ using ReportingDemo;
 namespace ApprovalTests.MachineSpecific.Tests.Persistence.Datasets
 {
     [TestFixture]
-    //[UseReporter(typeof (AllFailingTestsClipboardReporter))]
+    [UseReporter(typeof(DiffReporter), typeof(AllFailingTestsClipboardReporter))]
     public class DatasetTest
     {
         private const string ReportName = "ReportingDemo.InsultsReport.rdlc";
@@ -24,7 +24,7 @@ namespace ApprovalTests.MachineSpecific.Tests.Persistence.Datasets
         }
 
         [Test]
-        public void TestExtrenalImage()
+        public void TestExternalImage()
         {
             RdlcApprovals.VerifyReport("ReportingDemo.ExternalImage.rdlc", GetDefaultData());
         }
@@ -54,7 +54,7 @@ namespace ApprovalTests.MachineSpecific.Tests.Persistence.Datasets
         }
 
         [Test]
-        public void TestSimpleReportExplict()
+        public void TestSimpleReportExplicit()
         {
             RdlcApprovals.VerifyReport(ReportName, GetAssembly(), "Model", GetDefaultData());
         }
@@ -76,7 +76,7 @@ namespace ApprovalTests.MachineSpecific.Tests.Persistence.Datasets
 
         private static Assembly GetAssembly()
         {
-            return typeof (InsultsDataSet).Assembly;
+            return typeof(InsultsDataSet).Assembly;
         }
     }
 }

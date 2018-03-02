@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net45</TargetFrameworks>
+    <AssemblyOriginatorKeyFile>$(SolutionDir)\ApprovalsKeyPair.snk</AssemblyOriginatorKeyFile>
+    <SignAssembly>true</SignAssembly>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>
+      Utilities for approval testing Rdlc Reports. Allows Rdlc image verification and utilities to populate datasets.
+      For example:
+
+      RdlcApprovals.VerifyReport("YourReport.rdlc", new YourDataTable().AddTestDataRows(1));
+    </Description>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Fody" Version="2.4.2" PrivateAssests="All" ExcludeAssets="All" />
+     <PackageReference Include="Publicize.Fody" Version="1.4.0" PrivateAssests="All" ExcludeAssets="All" />
+    <PackageReference Include="Virtuosity.Fody" Version="1.20.2" PrivateAssests="All" ExcludeAssets="All" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" Pack="False">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\ReportViewer\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System" Pack="False" />
+    <Reference Include="System.Data.Entity" Pack="False" />
+    <Reference Include="System.Windows.Forms" Pack="False" />
+    <ProjectReference Include="..\ApprovalTests\ApprovalTests.csproj" />
+    <ProjectReference Include="..\ApprovalUtilities\ApprovalUtilities.csproj" />
+  </ItemGroup>
+</Project>
