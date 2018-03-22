@@ -1,13 +1,12 @@
 ﻿using System.Linq;
 using System.Reflection;
-using ApprovalTests.Persistence.NHibernate;
 using NHibernate;
 using NHibernate.Cfg;
 using NHibernate.Linq;
 using NUnit.Framework;
 using Environment = System.Environment;
 
-namespace ApprovalTests.MachineSpecific.Tests.NHibernate
+namespace ApprovalTests.NHibernate.Tests
 {
 	[TestFixture]
 	public class NHibernateTest

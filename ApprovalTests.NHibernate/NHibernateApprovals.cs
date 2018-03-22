@@ -1,7 +1,7 @@
-﻿using ApprovalUtilities.Persistence.NHibernate;
+﻿using ApprovalTests.Persistence;
 using NHibernate.Linq;
 
-namespace ApprovalTests.Persistence.NHibernate
+namespace ApprovalTests.NHibernate
 {
 	public class NHibernateApprovals
 	{
