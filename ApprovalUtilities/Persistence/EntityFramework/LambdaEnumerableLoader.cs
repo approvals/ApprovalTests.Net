@@ -5,29 +5,29 @@ using System.Linq;
 
 namespace ApprovalUtilities.Persistence.EntityFramework
 {
-	public class LambdaEnumerableLoader<T, C> : EntityFrameworkLoader<T, IEnumerable<T>, C>
-		where C : ObjectContext
-	{
-		private readonly Func<C, IQueryable<T>> func;
+    public class LambdaEnumerableLoader<T, C> : EntityFrameworkLoader<T, IEnumerable<T>, C>
+        where C : ObjectContext
+    {
+        private readonly Func<C, IQueryable<T>> func;
 
-		public LambdaEnumerableLoader(C context, Func<C, IQueryable<T>> func) : base(context)
-		{
-			this.func = func;
-		}
+        public LambdaEnumerableLoader(C context, Func<C, IQueryable<T>> func) : base(context)
+        {
+            this.func = func;
+        }
 
-		public LambdaEnumerableLoader(Func<C> context, Func<C, IQueryable<T>> func) : base(context)
-		{
-			this.func = func;
-		}
+        public LambdaEnumerableLoader(Func<C> context, Func<C, IQueryable<T>> func) : base(context)
+        {
+            this.func = func;
+        }
 
-		public override IQueryable<T> GetLinqStatement()
-		{
-			return func(GetDatabaseContext());
-		}
+        public override IQueryable<T> GetLinqStatement()
+        {
+            return func(GetDatabaseContext());
+        }
 
-		public override IEnumerable<T> Load()
-		{
-			return GetLinqStatement().ToArray();
-		}
-	}
+        public override IEnumerable<T> Load()
+        {
+            return GetLinqStatement().ToArray();
+        }
+    }
 }

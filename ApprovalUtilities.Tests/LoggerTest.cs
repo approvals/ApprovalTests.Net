@@ -9,97 +9,103 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ApprovalUtilities.Tests
 {
-	[TestClass]
-	[UseReporter(typeof(DiffReporter))]
-	public class LoggerTest
-	{
-		[TestMethod]
-		public void TestMainPath()
-		{
-			var log = Logger.LogToStringBuilder();
-			using (Logger.MarkEntryPoints())
-			{
+    [TestClass]
+    [UseReporter(typeof(DiffReporter))]
+    public class LoggerTest
+    {
+        [TestMethod]
+        public void TestMainPath()
+        {
+            var log = Logger.LogToStringBuilder();
+            using (Logger.MarkEntryPoints())
+            {
 
 
-				Logger.Event("Starting");
-				var name = "Llewellyn";
-				Logger.Variable("name", name);
-				Logger.Message("I Got here");
-				Logger.Sql("Select * From table_name");
-				try
-				{
-					throw new Exception(" Problem");
-				}
-				catch (Exception e)
-				{
-					Logger.Warning(e);
-				}
-			}
-			var logText = log.ScrubPath(PathUtilities.GetDirectoryForCaller());
-			logText = StackTraceScrubber.ScrubStackTrace(logText);
-			Approvals.Verify(logText);
-		}
-		[TestMethod]
-		public void TestShowMarker()
-		{
-			var log = Logger.LogToStringBuilder();
-			Logger.Show(markerIn: false);
-			Logger.MarkerIn();
+                Logger.Event("Starting");
+                var name = "Llewellyn";
+                Logger.Variable("name", name);
+                Logger.Message("I Got here");
+                Logger.Sql("Select * From table_name");
+                try
+                {
+                    throw new Exception(" Problem");
+                }
+                catch (Exception e)
+                {
+                    Logger.Warning(e);
+                }
+            }
 
-			Logger.MarkerOut();
-			Assert.AreEqual("", log.ToString());
-		}
-		[TestMethod]
-		public void TestShowEvents()
-		{
-			var log = Logger.LogToStringBuilder();
-			Logger.Show(events: false);
-			Logger.Event("ignored event");
+            var logText = log.ScrubPath(PathUtilities.GetDirectoryForCaller());
+            logText = StackTraceScrubber.ScrubStackTrace(logText);
+            Approvals.Verify(logText);
+        }
 
-			Assert.AreEqual("", log.ToString());
-		}
-		[TestMethod]
-		public void TestSql()
-		{
-			var log = Logger.LogToStringBuilder();
-			Logger.Show(sql: false);
-			Logger.Sql("ignored event");
+        [TestMethod]
+        public void TestShowMarker()
+        {
+            var log = Logger.LogToStringBuilder();
+            Logger.Show(markerIn: false);
+            Logger.MarkerIn();
 
-			Assert.AreEqual("", log.ToString());
-		}
-		[TestMethod]
-		public void TestShowVariables()
-		{
-			var log = Logger.LogToStringBuilder();
-			Logger.Show(variables: false);
-			Logger.Variable("name", "Llewellyn");
+            Logger.MarkerOut();
+            Assert.AreEqual("", log.ToString());
+        }
 
-			Assert.AreEqual("", log.ToString());
-		}
-		[TestMethod]
-		public void TestTimes()
-		{
-			CultureUtilities.ForceCulture();
-			var log = Logger.LogToStringBuilder();
-			Logger.UseTimer(new MockTimer());
-			Logger.Show(timestamp: true, timeDifference: true);
-			Logger.Variable("name", "Llewellyn");
-			Logger.Variable("name", "Llewellyn");
-			Logger.Variable("name", "Llewellyn");
+        [TestMethod]
+        public void TestShowEvents()
+        {
+            var log = Logger.LogToStringBuilder();
+            Logger.Show(events: false);
+            Logger.Event("ignored event");
 
-			Approvals.Verify(log.ToString());
-		}
-	}
+            Assert.AreEqual("", log.ToString());
+        }
 
-	public class MockTimer : ILoader<DateTime>
-	{
-		private int ticks;
+        [TestMethod]
+        public void TestSql()
+        {
+            var log = Logger.LogToStringBuilder();
+            Logger.Show(sql: false);
+            Logger.Sql("ignored event");
 
-		public DateTime Load()
-		{
-			ticks += 10;
-		    ticks = ticks%999;
-			return new DateTime(2011, 5, 6, 10, 30, 0, ticks);
-		}
-	}
+            Assert.AreEqual("", log.ToString());
+        }
+
+        [TestMethod]
+        public void TestShowVariables()
+        {
+            var log = Logger.LogToStringBuilder();
+            Logger.Show(variables: false);
+            Logger.Variable("name", "Llewellyn");
+
+            Assert.AreEqual("", log.ToString());
+        }
+
+        [TestMethod]
+        public void TestTimes()
+        {
+            CultureUtilities.ForceCulture();
+            var log = Logger.LogToStringBuilder();
+            Logger.UseTimer(new MockTimer());
+            Logger.Show(timestamp: true, timeDifference: true);
+            Logger.Variable("name", "Llewellyn");
+            Logger.Variable("name", "Llewellyn");
+            Logger.Variable("name", "Llewellyn");
+
+            Approvals.Verify(log.ToString());
+        }
+    }
+
+    public class MockTimer : ILoader<DateTime>
+    {
+        private int ticks;
+
+        public DateTime Load()
+        {
+            ticks += 10;
+            ticks = ticks % 999;
+            return new DateTime(2011, 5, 6, 10, 30, 0, ticks);
+        }
+    }
 }

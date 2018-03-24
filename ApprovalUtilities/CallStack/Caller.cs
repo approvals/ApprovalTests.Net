@@ -104,11 +104,11 @@ namespace ApprovalUtilities.CallStack
         public object GetFirstFrameForAttribute(Type attribute)
         {
             var attributeExtractors = new Func<MethodBase, Object[]>[]
-	                                      {
-	                                          m => m.GetCustomAttributes(attribute, true),
-	                                          m => m.DeclaringType.GetCustomAttributes(attribute, true),
-	                                          m => m.DeclaringType.Assembly.GetCustomAttributes(attribute, true)
-	                                      };
+            {
+                m => m.GetCustomAttributes(attribute, true),
+                m => m.DeclaringType.GetCustomAttributes(attribute, true),
+                m => m.DeclaringType.Assembly.GetCustomAttributes(attribute, true)
+            };
             foreach (var attributeExtractor in attributeExtractors)
             {
                 foreach (MethodBase method in this.NonLambdaCallers.Select(c => c.Method))
@@ -127,6 +127,7 @@ namespace ApprovalUtilities.CallStack
                     }
                 }
             }
+
             return null;
         }
 

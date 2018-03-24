@@ -6,89 +6,90 @@ using ApprovalUtilities.CallStack;
 
 namespace ApprovalTests.Namers.StackTraceParsers
 {
-	public abstract class AttributeStackTraceParser : IStackTraceParser
-	{
-		protected Caller caller;
-		protected Caller approvalFrame;
+    public abstract class AttributeStackTraceParser : IStackTraceParser
+    {
+        protected Caller caller;
+        protected Caller approvalFrame;
 
-        
-		public virtual string TypeName
-		{
-		    get { return GetRecursiveTypeName(this.approvalFrame.Method.DeclaringType); }
-		}
 
-		public string AdditionalInfo
-		{
-			get
-			{
-				var additionalInformation = NamerFactory.AdditionalInformation;
-				if (additionalInformation != null)
-				{
-					NamerFactory.AdditionalInformation = null;
-					additionalInformation = "." + additionalInformation;
-				}
-				return additionalInformation;
-			}
-		}
+        public virtual string TypeName
+        {
+            get { return GetRecursiveTypeName(this.approvalFrame.Method.DeclaringType); }
+        }
 
-		public string ApprovalName
-		{
-			get { return $"{TypeName}.{GetMethodName()}{AdditionalInfo}"; }
-		}
+        public string AdditionalInfo
+        {
+            get
+            {
+                var additionalInformation = NamerFactory.AdditionalInformation;
+                if (additionalInformation != null)
+                {
+                    NamerFactory.AdditionalInformation = null;
+                    additionalInformation = "." + additionalInformation;
+                }
 
-		protected virtual string GetMethodName()
-		{
-			return approvalFrame.Method.Name;
-		}
+                return additionalInformation;
+            }
+        }
 
-		public string SourcePath
-		{
-			get { return Path.GetDirectoryName(GetFileNameForStack(approvalFrame)); }
-		}
+        public string ApprovalName
+        {
+            get { return $"{TypeName}.{GetMethodName()}{AdditionalInfo}"; }
+        }
 
-		private string GetFileNameForStack(Caller frame)
-		{
-			return frame.Parents.Select(c => c.StackFrame.GetFileName()).FirstOrDefault(f => f != null);
-		}
+        protected virtual string GetMethodName()
+        {
+            return approvalFrame.Method.Name;
+        }
 
-		public abstract string ForTestingFramework { get; }
+        public string SourcePath
+        {
+            get { return Path.GetDirectoryName(GetFileNameForStack(approvalFrame)); }
+        }
 
-		public virtual bool Parse(StackTrace trace)
-		{
-			caller = new Caller(trace, 0);
-			approvalFrame = FindApprovalFrame();
-			return approvalFrame != null;
-		}
+        private string GetFileNameForStack(Caller frame)
+        {
+            return frame.Parents.Select(c => c.StackFrame.GetFileName()).FirstOrDefault(f => f != null);
+        }
 
-		public static Caller GetFirstFrameForAttribute(Caller caller, string attributeName)
-		{
-			var firstFrameForAttribute =
-				caller.Callers.FirstOrDefault(c => ContainsAttribute(c.Method.GetCustomAttributes(false), attributeName));
-			return firstFrameForAttribute;
-		}
+        public abstract string ForTestingFramework { get; }
 
-		private static bool ContainsAttribute(object[] attributes, string attributeName)
-		{
-			return attributes.Any(a => a.GetType().FullName.StartsWith(attributeName));
-		}
+        public virtual bool Parse(StackTrace trace)
+        {
+            caller = new Caller(trace, 0);
+            approvalFrame = FindApprovalFrame();
+            return approvalFrame != null;
+        }
 
-		protected virtual Caller FindApprovalFrame()
-		{
-			return GetFirstFrameForAttribute(caller, GetAttributeType());
-		}
+        public static Caller GetFirstFrameForAttribute(Caller caller, string attributeName)
+        {
+            var firstFrameForAttribute =
+                caller.Callers.FirstOrDefault(c => ContainsAttribute(c.Method.GetCustomAttributes(false), attributeName));
+            return firstFrameForAttribute;
+        }
 
-		public bool IsApplicable()
-		{
-			return GetAttributeType() != null;
-		}
+        private static bool ContainsAttribute(object[] attributes, string attributeName)
+        {
+            return attributes.Any(a => a.GetType().FullName.StartsWith(attributeName));
+        }
 
-		protected abstract string GetAttributeType();
+        protected virtual Caller FindApprovalFrame()
+        {
+            return GetFirstFrameForAttribute(caller, GetAttributeType());
+        }
 
-	    protected static string GetRecursiveTypeName(Type type)
-	    {
-	        return type.DeclaringType != null 
-                ? $"{GetRecursiveTypeName(type.DeclaringType)}.{type.Name}" 
+        public bool IsApplicable()
+        {
+            return GetAttributeType() != null;
+        }
+
+        protected abstract string GetAttributeType();
+
+        protected static string GetRecursiveTypeName(Type type)
+        {
+            return type.DeclaringType != null
+                ? $"{GetRecursiveTypeName(type.DeclaringType)}.{type.Name}"
                 : type.Name;
-	    }
-	}
+        }
+    }
 }

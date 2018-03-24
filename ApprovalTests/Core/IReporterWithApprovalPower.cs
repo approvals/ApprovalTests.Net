@@ -1,8 +1,7 @@
 namespace ApprovalTests.Core
 {
-	public interface IReporterWithApprovalPower : IApprovalFailureReporter
-	{
-		bool ApprovedWhenReported();
-		
-	}
+    public interface IReporterWithApprovalPower : IApprovalFailureReporter
+    {
+        bool ApprovedWhenReported();
+    }
 }

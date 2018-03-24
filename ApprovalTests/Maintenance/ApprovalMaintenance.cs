@@ -8,59 +8,61 @@ using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.Maintenance
 {
-	public class ApprovalMaintenance
-	{
-		/// <summary>
-		/// ** Warning : use at your own risk **
-		/// Deletes any files that may have been abandoned.
-		/// </summary>
-		/// <returns> List of deleted files</returns>
-		public static IEnumerable<FileInfo> CleanUpAbandonedFiles()
-		{
-			var assembly = new Caller().Methods.First().Module.Assembly; 
-			var path = PathUtilities.GetDirectoryForCaller(1);
-			var list = ApprovalMaintenance.FindAbandonedFiles(path,assembly);
-			foreach (var fileInfo in list)
-			{
-				fileInfo.Delete();
-			}
-			return list;
-		}
-		public static IEnumerable<FileInfo> FindAbandonedFiles(string path)
-		{
-			var assembly = new Caller().Methods.First().Module.Assembly;
-			return FindAbandonedFiles(path, assembly);
-		}
+    public class ApprovalMaintenance
+    {
+        /// <summary>
+        /// ** Warning : use at your own risk **
+        /// Deletes any files that may have been abandoned.
+        /// </summary>
+        /// <returns> List of deleted files</returns>
+        public static IEnumerable<FileInfo> CleanUpAbandonedFiles()
+        {
+            var assembly = new Caller().Methods.First().Module.Assembly;
+            var path = PathUtilities.GetDirectoryForCaller(1);
+            var list = ApprovalMaintenance.FindAbandonedFiles(path, assembly);
+            foreach (var fileInfo in list)
+            {
+                fileInfo.Delete();
+            }
 
-		private static IEnumerable<FileInfo> FindAbandonedFiles(string path, Assembly assembly)
-		{
-			string searchPattern = "*.approved.*";
-			var approvedFile = Directory.EnumerateFiles(path, searchPattern, SearchOption.AllDirectories);
-			return approvedFile.Select(f => new FileInfo(f)).Where(f => IsAbandoned(f, assembly
-				                                                            )).ToArray();
-		}
+            return list;
+        }
 
-		private static bool IsAbandoned(FileInfo approvedFile, Assembly assembly)
-		{
-			var parts = approvedFile.Name.Split('.');
-			var className = parts[0];
-			var methodName = parts[1];
-			var types = assembly.GetTypes().Where(t => t.Name == className);
-			var methods = types.SelectMany(t => t.GetMethods()).Where(m => m.Name == methodName);
-			return !methods.Any();
-		}
+        public static IEnumerable<FileInfo> FindAbandonedFiles(string path)
+        {
+            var assembly = new Caller().Methods.First().Module.Assembly;
+            return FindAbandonedFiles(path, assembly);
+        }
 
-		
-		public static void VerifyNoAbandonedFiles(params String[] ignore)
-		{
-			var path = PathUtilities.GetDirectoryForCaller(1);
-			var assembly = new Caller().Methods.First().Module.Assembly;
-			var files = FindAbandonedFiles(path, assembly);
-		    files = files.Where(f => !ignore.Any(p => f.FullName.Contains(p))).ToArray();
-			if (files.Any())
-			{
-				throw new Exception("The following files have been abandoned:\n" + files.ToReadableString().Replace(",","\n"));
-			}
-		}
-	}
+        private static IEnumerable<FileInfo> FindAbandonedFiles(string path, Assembly assembly)
+        {
+            string searchPattern = "*.approved.*";
+            var approvedFile = Directory.EnumerateFiles(path, searchPattern, SearchOption.AllDirectories);
+            return approvedFile.Select(f => new FileInfo(f)).Where(f => IsAbandoned(f, assembly
+            )).ToArray();
+        }
+
+        private static bool IsAbandoned(FileInfo approvedFile, Assembly assembly)
+        {
+            var parts = approvedFile.Name.Split('.');
+            var className = parts[0];
+            var methodName = parts[1];
+            var types = assembly.GetTypes().Where(t => t.Name == className);
+            var methods = types.SelectMany(t => t.GetMethods()).Where(m => m.Name == methodName);
+            return !methods.Any();
+        }
+
+
+        public static void VerifyNoAbandonedFiles(params String[] ignore)
+        {
+            var path = PathUtilities.GetDirectoryForCaller(1);
+            var assembly = new Caller().Methods.First().Module.Assembly;
+            var files = FindAbandonedFiles(path, assembly);
+            files = files.Where(f => !ignore.Any(p => f.FullName.Contains(p))).ToArray();
+            if (files.Any())
+            {
+                throw new Exception("The following files have been abandoned:\n" + files.ToReadableString().Replace(",", "\n"));
+            }
+        }
+    }
 }

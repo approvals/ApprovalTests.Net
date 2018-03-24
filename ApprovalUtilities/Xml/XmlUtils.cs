@@ -3,48 +3,49 @@ using System.Xml.Linq;
 
 namespace ApprovalUtilities.Xml
 {
-	public class XmlUtils
-	{
-		public static string FormatXml(string xml, bool safe)
-		{
-			try
-			{
-				return XElement.Parse(xml).ToString();
-			}
-			catch
-			{
-				if (safe)
-				{
-					return xml;
-				}
-				throw;
-			}
-		}
+    public class XmlUtils
+    {
+        public static string FormatXml(string xml, bool safe)
+        {
+            try
+            {
+                return XElement.Parse(xml).ToString();
+            }
+            catch
+            {
+                if (safe)
+                {
+                    return xml;
+                }
 
-	    public static string FormatXmlWithOrderedAttributes(string xml)
-	    {
-	        string text;
-	        var xElement = XElement.Parse(xml);
-	        SortAttributes(xElement);
+                throw;
+            }
+        }
 
-	        text = xElement.ToString();
-	        return text;
-	    }
+        public static string FormatXmlWithOrderedAttributes(string xml)
+        {
+            string text;
+            var xElement = XElement.Parse(xml);
+            SortAttributes(xElement);
 
-	    public static void SortAttributes(XElement xElement)
-	    {
-	        var orderedNodes = xElement.Attributes().OrderBy(e => e.ToString()).ToArray();
-	        xElement.RemoveAttributes();
-	        
+            text = xElement.ToString();
+            return text;
+        }
+
+        public static void SortAttributes(XElement xElement)
+        {
+            var orderedNodes = xElement.Attributes().OrderBy(e => e.ToString()).ToArray();
+            xElement.RemoveAttributes();
+
             foreach (var attribute in orderedNodes)
-	        {
-	            xElement.SetAttributeValue(attribute.Name, attribute.Value);
-	        }
+            {
+                xElement.SetAttributeValue(attribute.Name, attribute.Value);
+            }
 
-	        foreach (var node in xElement.Nodes().Where(n => n is XElement))
-	        {
-	            SortAttributes((XElement)node);
-	        }
-	    }
-	}
+            foreach (var node in xElement.Nodes().Where(n => n is XElement))
+            {
+                SortAttributes((XElement) node);
+            }
+        }
+    }
 }

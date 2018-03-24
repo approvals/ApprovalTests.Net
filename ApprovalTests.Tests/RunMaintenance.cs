@@ -3,13 +3,13 @@ using NUnit.Framework;
 
 namespace ApprovalTests.Tests
 {
-	[TestFixture]
-	public class RunMaintenance
-	{
-		[Test]
-		public void EnsureNoAbandonedFiles()
-		{
-			ApprovalMaintenance.VerifyNoAbandonedFiles("CustomNamerShouldBeSubstitutable.approved.txt");
-		}
-	}
+    [TestFixture]
+    public class RunMaintenance
+    {
+        [Test]
+        public void EnsureNoAbandonedFiles()
+        {
+            ApprovalMaintenance.VerifyNoAbandonedFiles("CustomNamerShouldBeSubstitutable.approved.txt");
+        }
+    }
 }

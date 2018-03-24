@@ -10,7 +10,7 @@ namespace ApprovalTests.Namers.StackTraceParsers
 {
     public class StackTraceParser : IStackTraceParser
     {
-        private static IList<IStackTraceParser> parsers = (IList<IStackTraceParser>)GetParsers();
+        private static IList<IStackTraceParser> parsers = (IList<IStackTraceParser>) GetParsers();
         private IStackTraceParser parser;
 
         public string ForTestingFramework
@@ -22,7 +22,7 @@ namespace ApprovalTests.Namers.StackTraceParsers
         {
             foreach (IStackTraceParser parserTemplate in GetParsers())
             {
-							IStackTraceParser p = (IStackTraceParser) Activator.CreateInstance(parserTemplate.GetType());
+                IStackTraceParser p = (IStackTraceParser) Activator.CreateInstance(parserTemplate.GetType());
                 if (p.Parse(stackTrace))
                 {
                     parser = p;
@@ -50,9 +50,9 @@ It currently supports {ForTestingFramework}
 Solution:
 To add one use {GetType()}.AddParser() method to add implementation of {typeof(IStackTraceParser)} with support for your testing framework.
 To learn how to implement one see {helpLink}")
-                {
-                    HelpLink = helpLink
-                };
+            {
+                HelpLink = helpLink
+            };
         }
 
         public string ApprovalName
@@ -91,6 +91,7 @@ To learn how to implement one see {helpLink}")
                 LoadIfApplicable(parsers, new XUnit2TheoryStackTraceParser());
                 parsers.Add(new MSpecStackTraceParser());
             }
+
             return parsers;
         }
     }

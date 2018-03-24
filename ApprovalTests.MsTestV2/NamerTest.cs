@@ -5,19 +5,19 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace ApprovalTests.MsTestV2
 {
     [TestClass]
-	[UseReporter(typeof(DiffReporter))]
+    [UseReporter(typeof(DiffReporter))]
     public class NamerTest
     {
-		[TestMethod]
-		public void MsTestV2()
-		{
-			Approvals.Verify("MsTestV2");
-		}
+        [TestMethod]
+        public void MsTestV2()
+        {
+            Approvals.Verify("MsTestV2");
+        }
 
-		[DataTestMethod]
+        [DataTestMethod]
         [DataRow("MsDataTest")]
-		public void MsTestV2DataTestMethod(string s)
-		{
+        public void MsTestV2DataTestMethod(string s)
+        {
             using (ApprovalResults.ForScenario(s))
             {
                 Approvals.Verify(s);

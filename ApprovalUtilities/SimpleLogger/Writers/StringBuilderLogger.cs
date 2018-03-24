@@ -11,10 +11,12 @@ namespace ApprovalUtilities.SimpleLogger.Writers
         {
             sb.Append(text + "\n");
         }
-				public void Append(string text)
-				{
-					sb.Append(text);
-				}
+
+        public void Append(string text)
+        {
+            sb.Append(text);
+        }
+
         public override string ToString()
         {
             return sb.ToString();
@@ -25,5 +27,4 @@ namespace ApprovalUtilities.SimpleLogger.Writers
             return ToString().ScrubPath(path);
         }
     }
-
 }
