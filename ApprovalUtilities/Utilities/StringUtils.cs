@@ -32,10 +32,13 @@ namespace ApprovalUtilities.Utilities
             return sb.ToString();
         }
 
+        [Obsolete("Use String.Format() or string interpolation instead.", true)]
+        // ReSharper disable UnusedParameter.Global
         public static string FormatWith(this string mask, params object[] parameters)
         {
-            return string.Format(mask, parameters);
+            throw new Exception("Use String.Format() or string interpolation instead.");
         }
+        // ReSharper restore UnusedParameter.Global
 
         public static string DisplayGrid(int width, int height, Func<int, int, string> func)
         {
@@ -62,12 +65,12 @@ namespace ApprovalUtilities.Utilities
             var sb = new StringBuilder();
             const int totalWidth = 86;
             var lineBreakOut = "".PadLeft(totalWidth, frameMarker);
-            var lineBreakIn = "{0}{1}{0}".FormatWith(frameMarker, "".PadLeft(totalWidth - 2, ' '));
+            var lineBreakIn = string.Format("{0}{1}{0}", frameMarker, "".PadLeft(totalWidth - 2, ' '));
             sb.AppendLine(lineBreakOut);
             sb.AppendLine(lineBreakIn);
             foreach (var line in lines)
             {
-                sb.AppendLine("{1} {0}".FormatWith(line.Replace(Environment.NewLine, "{0}{1} ".FormatWith(Environment.NewLine, frameMarker)), frameMarker));
+                sb.AppendLine(string.Format("{1} {0}",line.Replace(Environment.NewLine, $"{Environment.NewLine}{frameMarker} "), frameMarker));
             }
             sb.AppendLine(lineBreakIn);
             sb.AppendLine(lineBreakOut);

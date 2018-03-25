@@ -35,7 +35,7 @@ namespace ApprovalTests.WebApi.MicrosoftHttpClient
             }
             catch (Exception e)
             {
-                throw new Exception("The following error occured while connecting to:\n{0}\nError:\n{1}".FormatWith(uri, e.Message), e);
+                throw new Exception($"The following error occured while connecting to:\n{uri}\nError:\n{e.Message}", e);
             }
         }
 

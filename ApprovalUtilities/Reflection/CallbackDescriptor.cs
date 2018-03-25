@@ -3,7 +3,6 @@ namespace ApprovalUtilities.Reflection
     using System.Collections.Generic;
     using System.Reflection;
     using System.Text;
-    using Utilities;
 
     public class CallbackDescriptor
     {
@@ -37,11 +36,11 @@ namespace ApprovalUtilities.Reflection
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.AppendLine("{0}:".FormatWith(EventName));
+            sb.AppendLine($"{EventName}:");
 
             for (var i = 0; i < Methods.Count; i++)
             {
-                sb.AppendLine("\t[{0}] {1}".FormatWith(i, Methods[i]));
+                sb.AppendLine($"\t[{i}] {Methods[i]}");
             }
 
             return sb.ToString();

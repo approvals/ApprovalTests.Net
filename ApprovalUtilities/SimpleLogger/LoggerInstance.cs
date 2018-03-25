@@ -118,7 +118,7 @@ namespace ApprovalUtilities.SimpleLogger
 
         public string Miscellaneous(string label, string message)
         {
-            Write("{0}: {1}".FormatWith(label, message));
+            Write($"{label}: {message}");
             return message;
         }
 
@@ -130,7 +130,7 @@ namespace ApprovalUtilities.SimpleLogger
         public string Warning(string format, params object[] data)
         {
             PrintWarning(string.Format(format, data));
-            return format.FormatWith(data);
+            return string.Format(format, new[] {data});
         }
 
         private void PrintWarning(params string[] lines)

@@ -6,7 +6,6 @@ using System.Windows.Forms;
 using ApprovalTests.Events;
 using ApprovalTests.Namers;
 using ApprovalUtilities.Reflection;
-using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.WinForms
 {
@@ -51,7 +50,7 @@ namespace ApprovalTests.WinForms
         private static string GetLabelForChild(object parent, object child)
         {
             var field = ReflectionUtilities.GetFieldForChild(parent, child);
-            return "({0}.{1})".FormatWith(parent.GetType().Name, field.Name);
+            return $"({parent.GetType().Name}.{field.Name})";
         }
 
         private static IEnumerable<object> GetSubEvents(Form form)

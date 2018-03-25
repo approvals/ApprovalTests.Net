@@ -16,9 +16,7 @@ namespace ApprovalTests.RdlcReports
                 {
                     if (validNames.Count != 1)
                     {
-                        throw new Exception(
-                            "The Cannot use a 'default' Datasource Name for {0},\nLegal Matches are: {1}"
-                                .FormatWith(reportname, validNames.ToReadableString()));
+                        throw new Exception($"The Cannot use a 'default' Datasource Name for {reportname},\nLegal Matches are: {validNames.ToReadableString()}");
                     }
 
                     ds.Add(new ReportDataSource(validNames[0], data));
@@ -45,9 +43,7 @@ namespace ApprovalTests.RdlcReports
                     {
                         if (!validNames.Contains(info.Item1))
                         {
-                            throw new Exception(
-                                "The Datasource Name '{0}'\nis not a legal match for {1},\nLegal Matches are: {2}"
-                                    .FormatWith(info.Item1, reportname, validNames.ToReadableString()));
+                            throw new Exception($"The Datasource Name '{info.Item1}'\nis not a legal match for {reportname},\nLegal Matches are: {validNames.ToReadableString()}");
                         }
 
                         ds.Add(new ReportDataSource(info.Item1, info.Item2));
@@ -65,9 +61,7 @@ namespace ApprovalTests.RdlcReports
                     {
                         if (!validNames.Contains(info.Key))
                         {
-                            throw new Exception(
-                                "The Datasource Name '{0}'\nis not a legal match for {1},\nLegal Matches are: {2}"
-                                    .FormatWith(info.Value, reportname, validNames.ToReadableString()));
+                            throw new Exception($"The Datasource Name '{info.Value}'\nis not a legal match for {reportname},\nLegal Matches are: {validNames.ToReadableString()}");
                         }
 
                         ds.Add(new ReportDataSource(info.Key, info.Value));

@@ -1,5 +1,4 @@
 ﻿using ApprovalTests.Core;
-using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.Tests.Reporters
 {
@@ -19,7 +18,7 @@ namespace ApprovalTests.Tests.Reporters
 
         public void Report(string approved, string received)
         {
-            CalledWith = "{0},{1}".FormatWith(approved, received);
+            CalledWith = $"{approved},{received}";
         }
 
         public bool IsWorkingInThisEnvironment(string forFile)

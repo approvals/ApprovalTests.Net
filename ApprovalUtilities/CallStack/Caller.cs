@@ -4,7 +4,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using ApprovalUtilities.Utilities;
 
 namespace ApprovalUtilities.CallStack
 {
@@ -17,7 +16,7 @@ namespace ApprovalUtilities.CallStack
 
         public static string ToStandardString(this MethodBase method)
         {
-            return "{0}.{1}()".FormatWith(method.DeclaringType.Name, method.Name);
+            return $"{method.DeclaringType.Name}.{method.Name}()";
         }
     }
 

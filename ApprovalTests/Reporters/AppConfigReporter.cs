@@ -1,7 +1,6 @@
 using System;
 using System.Configuration;
 using ApprovalTests.Core;
-using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.Reporters
 {
@@ -36,11 +35,10 @@ namespace ApprovalTests.Reporters
             if (string.IsNullOrWhiteSpace(reporterTypeName))
             {
                 throw new InvalidOperationException(
-                    @"{0} requires you to configure your app.config/web.config with the following setting:
+                    $@"{GetType()} requires you to configure your app.config/web.config with the following setting:
     <appSettings>
         <add key=""UseReporter"" value=""ApprovalTests.Reporters.DiffReporter, ApprovalTests""/>
-    </appSettings>"
-                        .FormatWith(GetType()));
+    </appSettings>");
             }
 
             var reporterType = Type.GetType(reporterTypeName, true, ignoreCase: false);

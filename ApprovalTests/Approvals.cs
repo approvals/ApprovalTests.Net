@@ -206,12 +206,12 @@ namespace ApprovalTests
         public static void VerifyAll<K, V>(IDictionary<K, V> dictionary)
         {
             dictionary = dictionary ?? new Dictionary<K, V>();
-            VerifyAll(dictionary.OrderBy(p => p.Key), p => "{0} => {1}".FormatWith(p.Key, p.Value));
+            VerifyAll(dictionary.OrderBy(p => p.Key), p => $"{p.Key} => {p.Value}");
         }
 
         public static void VerifyAll<K, V>(string header, IDictionary<K, V> dictionary)
         {
-            VerifyAll(header, dictionary.OrderBy(p => p.Key), p => "{0} => {1}".FormatWith(p.Key, p.Value));
+            VerifyAll(header, dictionary.OrderBy(p => p.Key), p => $"{p.Key} => {p.Value}");
         }
 
         public static void VerifyAll<K, V>(string header, IDictionary<K, V> dictionary, Func<K, V, string> formatter)

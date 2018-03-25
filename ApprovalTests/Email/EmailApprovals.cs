@@ -4,7 +4,6 @@ using System.Linq;
 using System.Net.Mail;
 using Alphaleonis.Win32.Filesystem;
 using ApprovalTests.Writers;
-using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.Email
 {
@@ -54,7 +53,7 @@ namespace ApprovalTests.Email
             var guid = "--boundary_{0}_00000000-0000-0000-0000-00000000000{0}";
             foreach (var b in boundies)
             {
-                emailText = emailText.Replace(b, guid.FormatWith(count++));
+                emailText = emailText.Replace(b, string.Format(guid, new[] {count++}));
             }
 
             return emailText;

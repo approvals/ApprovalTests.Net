@@ -2,7 +2,6 @@ using System;
 using System.Text;
 using Alphaleonis.Win32.Filesystem;
 using ApprovalTests.Core;
-using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests
 {
@@ -52,7 +51,7 @@ namespace ApprovalTests
             var approved = received.Replace(".received", ".approved");
             if (File.Exists(approved) && !IsUft8ByteOrderMarkPresent(approved))
             {
-                ConsoleUtilities.WriteLine("Upgrading {0} to include Utf8 Byte Order Mark. (this is a 1 time event)".FormatWith(approved));
+                ConsoleUtilities.WriteLine($"Upgrading {approved} to include Utf8 Byte Order Mark. (this is a 1 time event)");
                 var text = File.ReadAllText(approved);
                 File.WriteAllText(approved, text, Encoding.UTF8);
             }

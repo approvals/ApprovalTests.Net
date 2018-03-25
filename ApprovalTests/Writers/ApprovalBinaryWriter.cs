@@ -1,6 +1,5 @@
 ﻿using Alphaleonis.Win32.Filesystem;
 using ApprovalTests.Core;
-using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.Writers
 {
@@ -26,7 +25,7 @@ namespace ApprovalTests.Writers
 
         private string EnsureDoc(string extension)
         {
-            var extensionWithDot = ".{0}".FormatWith(extension);
+            var extensionWithDot = $".{extension}";
             return extension.StartsWith(".") ? extension : extensionWithDot;
         }
 

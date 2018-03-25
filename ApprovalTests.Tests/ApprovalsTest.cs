@@ -88,13 +88,13 @@ namespace ApprovalTests.Tests
         [Test]
         public void DictionaryCustom()
         {
-            Approvals.VerifyAll("Firefly", FireFlyMap(), (k, v) => "\"{0}\" => {1}".FormatWith(k, v));
+            Approvals.VerifyAll("Firefly", FireFlyMap(), (k, v) => $"\"{k}\" => {v}");
         }
 
         [Test]
         public void DictionaryCustomNoHeader()
         {
-            Approvals.VerifyAll(FireFlyMap(), (k, v) => "\"{0}\" => {1}".FormatWith(k, v));
+            Approvals.VerifyAll(FireFlyMap(), (k, v) => $"\"{k}\" => {v}");
         }
 
         private static Dictionary<string, string> FireFlyMap()

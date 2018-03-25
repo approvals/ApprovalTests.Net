@@ -1,5 +1,4 @@
 ﻿using System;
-using ApprovalUtilities.Utilities;
 using Microsoft.Win32;
 
 namespace ApprovalTests.WindowsRegistry
@@ -17,8 +16,7 @@ namespace ApprovalTests.WindowsRegistry
 
             if (actualValue != expectedValue)
             {
-                var message = "{0}\nMust set DWORD {1}\\{2} : {3} = {4}.".FormatWith(failureMessage, registryKey.Name, keyName, valueName,
-                    expectedValue);
+                var message = $"{failureMessage}\nMust set DWORD {registryKey.Name}\\{keyName} : {valueName} = {expectedValue}.";
                 throw new Exception(message);
             }
         }

@@ -3,7 +3,6 @@ using System.Linq;
 using System.Text;
 using ApprovalUtilities.Persistence;
 using ApprovalUtilities.Persistence.EntityFramework;
-using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.Tests.EntityFramework
 {
@@ -21,7 +20,7 @@ namespace ApprovalTests.Tests.EntityFramework
             b.Append("<html><body>");
             foreach (var company in companies)
             {
-                b.Append("<li>{0}</li>".FormatWith(company.Name));
+                b.Append($"<li>{company.Name}</li>");
             }
             b.Append("</body></html>");
             return b.ToString();

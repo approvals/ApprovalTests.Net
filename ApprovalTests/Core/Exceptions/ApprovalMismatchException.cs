@@ -1,6 +1,5 @@
 using System;
 using System.Runtime.Serialization;
-using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.Core.Exceptions
 {
@@ -16,6 +15,6 @@ namespace ApprovalTests.Core.Exceptions
         {
         }
 
-        public override string Message => "Failed Approval: Received file {0} does not match approved file {1}.".FormatWith(Received, Approved);
+        public override string Message => $"Failed Approval: Received file {Received} does not match approved file {Approved}.";
     }
 }

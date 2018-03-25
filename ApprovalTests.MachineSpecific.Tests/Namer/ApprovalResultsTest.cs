@@ -1,6 +1,5 @@
 ﻿using System;
 using ApprovalTests.Namers;
-using ApprovalUtilities.Utilities;
 using NUnit.Framework;
 
 namespace ApprovalTests.MachineSpecific.Tests.Namer
@@ -20,7 +19,7 @@ namespace ApprovalTests.MachineSpecific.Tests.Namer
             };
             Approvals.VerifyAll(
                 methods,
-                m => "{0} => {1}".FormatWith(m.Method.Name, m.Invoke()));
+                m => $"{m.Method.Name} => {m.Invoke()}");
         }
     }
 }

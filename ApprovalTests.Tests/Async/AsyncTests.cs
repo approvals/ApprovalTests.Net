@@ -3,7 +3,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using ApprovalTests.Async;
 using ApprovalTests.Scrubber;
-using ApprovalUtilities.Utilities;
 using NUnit.Framework;
 
 namespace ApprovalTests.Tests.Async
@@ -25,7 +24,7 @@ namespace ApprovalTests.Tests.Async
         {
             return Enumerable.Range(0, 3).AsParallel().WithDegreeOfParallelism(4).Select(i =>
             {
-                throw new Exception("Throwing {0} times".FormatWith(i));
+                throw new Exception($"Throwing {i} times");
                 return 1;
             }).Sum();
         }

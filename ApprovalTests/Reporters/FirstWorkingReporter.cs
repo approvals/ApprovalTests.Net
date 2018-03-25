@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using ApprovalTests.Core;
 using System.Linq;
-using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.Reporters
 {
@@ -26,7 +25,7 @@ namespace ApprovalTests.Reporters
             var r = Reporters.FirstOrDefault(x => x.IsWorkingInThisEnvironment(received));
             if (r == null)
             {
-                throw new Exception("{0} Could not find a Reporter for file {1}".FormatWith(GetType().Name, received));
+                throw new Exception($"{GetType().Name} Could not find a Reporter for file {received}");
             }
 
             r.Report(approved, received);

@@ -1,5 +1,4 @@
 using ApprovalTests.Reporters;
-using ApprovalUtilities.Utilities;
 using NUnit.Framework;
 
 namespace ApprovalTests.Tests.Reporters
@@ -17,7 +16,7 @@ namespace ApprovalTests.Tests.Reporters
                             };
             Approvals.VerifyAll(
                 files,
-                f => "{0}  => {1}".FormatWith(f, TortoiseImageDiffReporter.INSTANCE.IsWorkingInThisEnvironment(f)));
+                f => $"{f}  => {TortoiseImageDiffReporter.INSTANCE.IsWorkingInThisEnvironment(f)}");
         }
     }
 }
