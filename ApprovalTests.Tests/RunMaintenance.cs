@@ -10,7 +10,7 @@ namespace ApprovalTests.Tests
 		public void EnsureNoAbandonedFiles()
 		{
 #if NETCORE
-            ApprovalMaintenance.VerifyNoAbandonedFiles("CustomNamerShouldBeSubstitutable.approved.txt", "EntityFramework", "Wpf", "EventApprovalsTest", "StatePrinterTests", "PowerShellClipboardReporterTest", "TestEnsureFileExist", "TortoiseImageDiffTest");
+            ApprovalMaintenance.VerifyNoAbandonedFiles("CustomNamerShouldBeSubstitutable.approved.txt", "EntityFramework", "Wpf", "EventApprovalsTest", "StatePrinterTests", "PowerShellClipboardReporterTest", "TestEnsureFileExist", "TortoiseImageDiffTest","StringEncodingTest.TestUnicode.approved.txt");
 #else
             ApprovalMaintenance.VerifyNoAbandonedFiles("CustomNamerShouldBeSubstitutable.approved.txt");
 #endif
