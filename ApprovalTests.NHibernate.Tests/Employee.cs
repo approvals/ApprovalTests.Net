@@ -1,6 +1,5 @@
 namespace ApprovalTests.NHibernate.Tests
 {
-    using System;
     using System.Collections.Generic;
 
     public class Employee
@@ -14,8 +13,8 @@ namespace ApprovalTests.NHibernate.Tests
 
         public int Id { get; set; }
         public string Name { get; set; }
-        public Nullable<int> Boss { get; set; }
-        public Nullable<int> Company { get; set; }
+        public int? Boss { get; set; }
+        public int? Company { get; set; }
         public virtual Company Company1 { get; set; }
         public virtual ICollection<Employee> Employee1 { get; set; }
         public virtual Employee Employee2 { get; set; }
