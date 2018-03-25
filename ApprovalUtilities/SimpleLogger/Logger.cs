@@ -36,12 +36,12 @@ namespace ApprovalUtilities.SimpleLogger
             log.MarkerOut();
         }
 
-        public static String Event(string message, params object[] items)
+        public static string Event(string message, params object[] items)
         {
             return log.Event(message, items);
         }
 
-        public static String Message(string message)
+        public static string Message(string message)
         {
             return log.Message(message);
         }

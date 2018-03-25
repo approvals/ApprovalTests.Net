@@ -49,7 +49,7 @@ Windows Registry Editor Version 5.00
                 this.listener.Flush();
                 this.listener.Close();
                 PresentationTraceSources.DataBindingSource.Listeners.Remove(this.listener);
-                if (!String.IsNullOrEmpty(message))
+                if (!string.IsNullOrEmpty(message))
                 {
                     message = message.Replace(";", "\n\t").Replace(". ", ".\n\t");
                     throw new Exception(message);

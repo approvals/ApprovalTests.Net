@@ -29,7 +29,7 @@ namespace ApprovalTests.ExceptionalExceptions
         public static T Create<T>(Func<string, Exception, T> constructor, Exception causedBy, string formattableMessage,
             params object[] messageParameters) where T : Exception
         {
-            var message = String.Format(formattableMessage, messageParameters);
+            var message = string.Format(formattableMessage, messageParameters);
             var uid = GenerateUniqueId<T>();
             var tldr = GetTlDr(uid);
             var completeMessage = message + tldr;

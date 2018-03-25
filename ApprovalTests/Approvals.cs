@@ -176,7 +176,7 @@ namespace ApprovalTests
 
         #region Enumerable
 
-        public static void VerifyAll<T>(String header, IEnumerable<T> enumerable, string label)
+        public static void VerifyAll<T>(string header, IEnumerable<T> enumerable, string label)
         {
             Verify(header + "\n\n" + enumerable.Write(label));
         }
@@ -192,7 +192,7 @@ namespace ApprovalTests
             Verify(enumerable.Write(label, formatter));
         }
 
-        public static void VerifyAll<T>(String header, IEnumerable<T> enumerable,
+        public static void VerifyAll<T>(string header, IEnumerable<T> enumerable,
                                         Func<T, string> formatter)
         {
             Verify(header + "\n\n" + enumerable.Write(formatter));

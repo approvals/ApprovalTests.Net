@@ -1,5 +1,4 @@
-﻿using System;
-using Alphaleonis.Win32.Filesystem;
+﻿using Alphaleonis.Win32.Filesystem;
 
 namespace ApprovalTests.Writers
 {
@@ -22,7 +21,7 @@ namespace ApprovalTests.Writers
 
         public override string GetReceivedFilename(string basename)
         {
-            if (String.IsNullOrEmpty(receivedFilePath))
+            if (string.IsNullOrEmpty(receivedFilePath))
             {
                 receivedFilePath = Path.ChangeExtension(Path.Combine(Path.GetTempPath(), Path.GetTempFileName()), ExtensionWithDot);
             }

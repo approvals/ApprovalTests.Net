@@ -10,7 +10,7 @@ namespace ApprovalUtilities.Utilities
             return ExceptionUtilities.GetException(() => Type.GetType(typeName)) == null;
         }
 
-        public static bool IsAssemblyLoaded(String assembly)
+        public static bool IsAssemblyLoaded(string assembly)
         {
             AppDomain.CurrentDomain.GetAssemblies().ToList().ForEach(a => Console.WriteLine(a.GetName()));
             return AppDomain.CurrentDomain.GetAssemblies().Any(a => a.FullName == assembly);

@@ -34,7 +34,7 @@ namespace ApprovalUtilities.Utilities
 
         public static string FormatWith(this string mask, params object[] parameters)
         {
-            return String.Format(mask, parameters);
+            return string.Format(mask, parameters);
         }
 
         public static string DisplayGrid(int width, int height, Func<int, int, string> func)
@@ -74,7 +74,7 @@ namespace ApprovalUtilities.Utilities
             return sb.ToString().Trim();
         }
 
-        public static string Write<T>(this IEnumerable<T> enumerable, String label)
+        public static string Write<T>(this IEnumerable<T> enumerable, string label)
         {
             return Write(enumerable, label, s => "" + s);
         }
@@ -162,7 +162,7 @@ namespace ApprovalUtilities.Utilities
 
         public static string JoinWith(this IEnumerable<string> elements, string seperator)
         {
-            return String.Join(seperator, elements.ToArray());
+            return string.Join(seperator, elements.ToArray());
         }
     }
 }

@@ -53,7 +53,7 @@ namespace ApprovalTests.Maintenance
         }
 
 
-        public static void VerifyNoAbandonedFiles(params String[] ignore)
+        public static void VerifyNoAbandonedFiles(params string[] ignore)
         {
             var path = PathUtilities.GetDirectoryForCaller(1);
             var assembly = new Caller().Methods.First().Module.Assembly;

@@ -28,7 +28,7 @@ namespace ApprovalTests.Utilities
             long count = 0;
             if (File.Exists(file))
             {
-                Int64.TryParse(File.ReadAllText(file), out count);
+                long.TryParse(File.ReadAllText(file), out count);
             }
             count++;
             File.WriteAllText(file, "" + count);

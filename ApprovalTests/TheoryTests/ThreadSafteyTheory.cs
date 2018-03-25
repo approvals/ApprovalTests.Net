@@ -8,7 +8,7 @@ namespace ApprovalTests.TheoryTests
 {
     public class ThreadSafteyTheory
     {
-        public static void VerifyNoRaceConditions<T>(int times, Func<T> caseGenerator, Func<T, String> caseString, Func<T, object> possibleRaceConditonFunction, Func<T, object> knownGoodFunction)
+        public static void VerifyNoRaceConditions<T>(int times, Func<T> caseGenerator, Func<T, string> caseString, Func<T, object> possibleRaceConditonFunction, Func<T, object> knownGoodFunction)
         {
             var n1 = new ConcurrentBag<string>();
             var n2 = new ConcurrentBag<string>();

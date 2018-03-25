@@ -88,7 +88,7 @@ namespace ApprovalUtilities.CallStack
 
         public object GetFirstFrameForAttribute(Type attribute)
         {
-            var attributeExtractors = new Func<MethodBase, Object[]>[]
+            var attributeExtractors = new Func<MethodBase, object[]>[]
             {
                 m => m.GetCustomAttributes(attribute, true),
                 m => m.DeclaringType.GetCustomAttributes(attribute, true),

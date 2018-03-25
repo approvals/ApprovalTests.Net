@@ -6,7 +6,7 @@ namespace ApprovalTests.TheoryTests
 {
     public class SerializableTheory
     {
-        public static void Verify(object original, Action<Object, Object> assertEqual)
+        public static void Verify(object original, Action<object, object> assertEqual)
         {
             var stream = new MemoryStream();
             var formatter = new BinaryFormatter();

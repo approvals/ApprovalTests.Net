@@ -15,7 +15,7 @@ namespace ApprovalTests.Tests.Set
         {
             // Approved file has order apple, banana, carrot
             var list = new List<string> { "carrot", "apple", "banana" };
-            SetApprovals.VerifySet(list, String.Empty);
+            SetApprovals.VerifySet(list, string.Empty);
         }
 
         public class Foo: IComparable<Foo>
@@ -37,7 +37,7 @@ namespace ApprovalTests.Tests.Set
                 new Foo { Bar = "apple" },
                 new Foo { Bar = "banana" },
             };
-            SetApprovals.VerifySet(list, String.Empty, f => f.Bar);
+            SetApprovals.VerifySet(list, string.Empty, f => f.Bar);
         }
 
         [Test]

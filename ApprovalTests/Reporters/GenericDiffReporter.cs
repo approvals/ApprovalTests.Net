@@ -121,7 +121,7 @@ Recieved {0} ({1}, {2}, {3})"
             }
             var toFind = Path.GetFileName(fullPath);
             var output = PathUtilities.LocateFileFromEnvironmentPath(toFind).FirstOrDefault();
-            return String.IsNullOrEmpty(output) ? fullPath : output;
+            return string.IsNullOrEmpty(output) ? fullPath : output;
         }
 
         public string GetDiffProgram()
