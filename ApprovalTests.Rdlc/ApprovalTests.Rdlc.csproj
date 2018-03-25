@@ -17,6 +17,9 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Fody" Version="2.4.6" PrivateAssets="All" />
+    <PackageReference Include="Publicize.Fody" Version="1.5.0" PrivateAssets="All" />
+    <PackageReference Include="Virtuosity.Fody" Version="1.20.2" PrivateAssets="All" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" Pack="False">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\ReportViewer\Microsoft.ReportViewer.WinForms.dll</HintPath>
