@@ -79,27 +79,21 @@ namespace ApprovalUtilities.Wpf
 
         public static void ScreenCapture(Control control, string filename)
         {
-            try
-            {
-                // The BitmapSource that is rendered with a Visual.
-                control.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
-                var size = control.DesiredSize;
-                var width = (int) size.Width;
-                var height = (int) size.Height;
-                control.Arrange(new Rect(0, 0, width, height));
-                var rtb = new RenderTargetBitmap(width, height, 96, 96, PixelFormats.Pbgra32);
-                rtb.Render(control);
+            // The BitmapSource that is rendered with a Visual.
+            control.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
+            var size = control.DesiredSize;
+            var width = (int) size.Width;
+            var height = (int) size.Height;
+            control.Arrange(new Rect(0, 0, width, height));
+            var rtb = new RenderTargetBitmap(width, height, 96, 96, PixelFormats.Pbgra32);
+            rtb.Render(control);
 
-                // Encoding the RenderBitmapTarget as a PNG file.
-                var png = new PngBitmapEncoder();
-                png.Frames.Add(BitmapFrame.Create(rtb));
-                using (Stream stm = File.Create(filename))
-                {
-                    png.Save(stm);
-                }
-            }
-            finally
+            // Encoding the RenderBitmapTarget as a PNG file.
+            var png = new PngBitmapEncoder();
+            png.Frames.Add(BitmapFrame.Create(rtb));
+            using (Stream stm = File.Create(filename))
             {
+                png.Save(stm);
             }
         }
     }

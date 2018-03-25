@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace ApprovalTests.Tests.WinForms
 {
-    public partial class DemoForm : Form
+    public class DemoForm : Form
     {
         private System.Windows.Forms.Button button1;
 

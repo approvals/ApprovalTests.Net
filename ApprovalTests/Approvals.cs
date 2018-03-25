@@ -81,7 +81,7 @@ namespace ApprovalTests
         private static IEnvironmentAwareReporter GetFrontLoadedReporterFromAttribute()
         {
             var frontLoaded = CurrentCaller.GetFirstFrameForAttribute<FrontLoadedReporterAttribute>();
-            return frontLoaded != null ? frontLoaded.Reporter : (IEnvironmentAwareReporter)DefaultFrontLoaderReporter.INSTANCE;
+            return frontLoaded != null ? frontLoaded.Reporter : DefaultFrontLoaderReporter.INSTANCE;
         }
 
         private static IApprovalFailureReporter GetFrontLoadedReporter(IApprovalFailureReporter defaultIfNotFound,

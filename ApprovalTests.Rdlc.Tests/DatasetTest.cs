@@ -71,7 +71,7 @@ namespace ApprovalTests.MachineSpecific.Tests.Persistence.Datasets
 
         private static DataTable GetDefaultData()
         {
-            return new InsultsDataSet.InsultsDataTable().AddTestDataRows(1);
+            return new InsultsDataSet.InsultsDataTable().AddTestDataRows();
         }
 
         private static Assembly GetAssembly()

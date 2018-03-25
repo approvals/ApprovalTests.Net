@@ -23,7 +23,7 @@ namespace ApprovalTests.ExceptionalExceptions
                 var instance = (T) constructorInfo.Invoke(new object[] {m, e});
                 return instance;
             };
-            return Create<T>(reflectiveConstructor, causedBy, formattableMessage, messageParameters);
+            return Create(reflectiveConstructor, causedBy, formattableMessage, messageParameters);
         }
 
         public static T Create<T>(Func<string, Exception, T> constructor, Exception causedBy, string formattableMessage,

@@ -88,7 +88,7 @@ namespace ApprovalUtilities.Tests
             CultureUtilities.ForceCulture();
             var log = Logger.LogToStringBuilder();
             Logger.UseTimer(new MockTimer());
-            Logger.Show(timestamp: true, timeDifference: true);
+            Logger.Show();
             Logger.Variable("name", "Llewellyn");
             Logger.Variable("name", "Llewellyn");
             Logger.Variable("name", "Llewellyn");
