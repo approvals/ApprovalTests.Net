@@ -1,9 +1,8 @@
-﻿#if !NETCORE
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.Objects;
 using System.Linq;
 
-namespace ApprovalUtilities.Persistence.EntityFramework
+namespace ApprovalTests.EntityFramework
 {
 	public class LambdaSingleLoader<T, C> : EntityFrameworkLoader<T, T, C>
 		where C : ObjectContext
@@ -33,4 +32,3 @@ namespace ApprovalUtilities.Persistence.EntityFramework
 		}
 	}
 }
-#endif

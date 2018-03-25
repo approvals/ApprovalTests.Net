@@ -1,11 +1,10 @@
-#if !NETCORE
 using System.Data.Common;
 using System.Data.EntityClient;
 using System.Data.Objects;
 using System.Linq;
 using ApprovalUtilities.Persistence.Database;
 
-namespace ApprovalUtilities.Persistence.EntityFramework
+namespace ApprovalTests.EntityFramework
 {
 	public class ObjectContextAdaptor<T> : IDatabaseToExecuteableQueryAdaptor
 	{
@@ -42,4 +41,3 @@ namespace ApprovalUtilities.Persistence.EntityFramework
 		}
 	}
 }
-#endif

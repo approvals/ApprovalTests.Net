@@ -1,11 +1,8 @@
-﻿#if NETCORE
-using Microsoft.EntityFrameworkCore;
-#else
-using System.Data.Entity;
-#endif
+﻿using System.Data.Entity;
 using System.Linq;
+using ApprovalTests.Persistence;
 
-namespace ApprovalTests.Persistence.EntityFramework.Version5
+namespace ApprovalTests.EntityFramework.Version5
 {
 	public class EntityFrameworkDbContextApprovals
 	{

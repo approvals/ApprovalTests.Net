@@ -1,12 +1,10 @@
-#if !NETCORE
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using ApprovalUtilities.Persistence;
-using ApprovalUtilities.Persistence.EntityFramework;
 using ApprovalUtilities.Utilities;
 
-namespace ApprovalTests.Tests.EntityFramework
+namespace ApprovalTests.EntityFramework.Tests
 {
     public class CompanyList
     {
@@ -37,4 +35,3 @@ namespace ApprovalTests.Tests.EntityFramework
         }
     }
 }
-#endif

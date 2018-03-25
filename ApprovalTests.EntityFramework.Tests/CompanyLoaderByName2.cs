@@ -1,7 +1,6 @@
-﻿#if !NETCORE
-using System.Linq;
+﻿using System.Linq;
 
-namespace ApprovalTests.Tests.EntityFramework
+namespace ApprovalTests.EntityFramework.Tests
 {
 	public class CompanyLoaderByName2 : MultiLoader<Company>
 	{
@@ -20,4 +19,3 @@ namespace ApprovalTests.Tests.EntityFramework
 		}
 	}
 }
-#endif

@@ -17,10 +17,8 @@
     <Reference Include="PresentationCore" Pack="False" />
     <Reference Include="PresentationFramework" Pack="False" />
     <Reference Include="System.Core" Pack="False" />
-    <Reference Include="System.Data.Entity" Pack="False" />
     <Reference Include="System.Management" Pack="False" />
     <Reference Include="System.Xml.Linq" Pack="False" />
-    <Reference Include="System.Data" Pack="False" />
     <Reference Include="System.Xml" Pack="False" />
     <Reference Include="WindowsBase" Pack="False" />
   </ItemGroup>

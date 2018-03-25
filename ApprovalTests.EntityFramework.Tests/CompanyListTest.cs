@@ -1,7 +1,6 @@
-﻿#if !NETCORE
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
-namespace ApprovalTests.Tests.EntityFramework
+namespace ApprovalTests.EntityFramework.Tests
 {
 	[TestFixture]
 	[Platform(Exclude="Mono")]
@@ -20,4 +19,3 @@ namespace ApprovalTests.Tests.EntityFramework
 		}
 	}
 }
-#endif

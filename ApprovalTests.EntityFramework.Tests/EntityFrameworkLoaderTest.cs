@@ -1,11 +1,8 @@
-﻿#if !NETCORE
-using System.Linq;
-using ApprovalTests.Persistence.EntityFramework;
+﻿using System.Linq;
 using ApprovalUtilities.Persistence;
-using ApprovalUtilities.Persistence.EntityFramework;
 using NUnit.Framework;
 
-namespace ApprovalTests.Tests.EntityFramework
+namespace ApprovalTests.EntityFramework.Tests
 {
 	[TestFixture]
 	[Platform(Exclude="Mono")]
@@ -56,4 +53,3 @@ namespace ApprovalTests.Tests.EntityFramework
 		}
 	}
 }
-#endif

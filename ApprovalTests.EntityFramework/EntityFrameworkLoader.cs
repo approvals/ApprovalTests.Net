@@ -1,10 +1,10 @@
-﻿#if !NETCORE
-using System;
+﻿using System;
 using System.Data.Objects;
 using System.Linq;
+using ApprovalUtilities.Persistence;
 using ApprovalUtilities.Persistence.Database;
 
-namespace ApprovalUtilities.Persistence.EntityFramework
+namespace ApprovalTests.EntityFramework
 {
 	public abstract class EntityFrameworkLoader<QueryType, LoaderType, DatabaseContextType> : IExecutableLoader<LoaderType>,
 																							  IDisposable
@@ -54,4 +54,3 @@ namespace ApprovalUtilities.Persistence.EntityFramework
 		}
 	}
 }
-#endif

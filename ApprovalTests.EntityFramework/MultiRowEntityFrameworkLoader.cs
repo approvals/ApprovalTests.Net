@@ -1,10 +1,10 @@
-#if !NETCORE
+using ApprovalUtilities.Persistence;
 using System;
 using System.Collections.Generic;
 using System.Data.Objects;
 using System.Linq;
 
-namespace ApprovalUtilities.Persistence.EntityFramework
+namespace ApprovalTests.EntityFramework
 {
     public abstract class MultiRowEntityFrameworkLoader<T, DatabaseContextType> : EntityFrameworkLoader<T, IEnumerable<T>, DatabaseContextType>
         where DatabaseContextType : ObjectContext
@@ -75,4 +75,3 @@ namespace ApprovalUtilities.Persistence.EntityFramework
         public int PageCount { get; private set; }
     }
 }
-#endif

@@ -16,8 +16,6 @@
     </Reference>
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xaml" />
@@ -35,25 +33,8 @@
 
     <Content Include="a.png" />
     <Content Include="b.png" />
-    <Content Include="EntityFramework\CreateDatabase.sql" />
-    <EntityDeploy Include="EntityFramework\Model.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Properties\DataSources\ApprovalTests.Tests.EntityFramework.ModelContainer.datasource" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
   </ItemGroup>
-  <ItemGroup Condition="'$(TargetFramework)'=='netcoreapp2.0'">
-    <Compile Remove="EntityFramework\**" />
-    <Content Remove="EntityFramework\**" />
-    <EmbeddedResource Remove="EntityFramework\**" />
-    <None Remove="EntityFramework\**" />
-    <Content Include="EntityFramework\**\*" />
-   </ItemGroup>
 </Project>

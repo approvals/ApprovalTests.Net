@@ -19,14 +19,14 @@ using System.Xml.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("Model", "FK_Employee_Company", "Company", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ApprovalTests.Tests.EntityFramework.Company), "Employee", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApprovalTests.Tests.EntityFramework.Employee), true)]
-[assembly: EdmRelationshipAttribute("Model", "FK_Boss", "Employee", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ApprovalTests.Tests.EntityFramework.Employee), "Employee1", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApprovalTests.Tests.EntityFramework.Employee), true)]
-[assembly: EdmRelationshipAttribute("Model", "FK_Events_Employee", "Employee", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ApprovalTests.Tests.EntityFramework.Employee), "Event", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApprovalTests.Tests.EntityFramework.Event), true)]
-[assembly: EdmRelationshipAttribute("Model", "FK_Job_Employee", "Employee", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ApprovalTests.Tests.EntityFramework.Employee), "Job", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApprovalTests.Tests.EntityFramework.Job), true)]
+[assembly: EdmRelationshipAttribute("Model", "FK_Employee_Company", "Company", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ApprovalTests.EntityFramework.Tests.Company), "Employee", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApprovalTests.EntityFramework.Tests.Employee), true)]
+[assembly: EdmRelationshipAttribute("Model", "FK_Boss", "Employee", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ApprovalTests.EntityFramework.Tests.Employee), "Employee1", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApprovalTests.EntityFramework.Tests.Employee), true)]
+[assembly: EdmRelationshipAttribute("Model", "FK_Events_Employee", "Employee", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(ApprovalTests.EntityFramework.Tests.Employee), "Event", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApprovalTests.EntityFramework.Tests.Event), true)]
+[assembly: EdmRelationshipAttribute("Model", "FK_Job_Employee", "Employee", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ApprovalTests.EntityFramework.Tests.Employee), "Job", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApprovalTests.EntityFramework.Tests.Job), true)]
 
 #endregion
 
-namespace ApprovalTests.Tests.EntityFramework
+namespace ApprovalTests.EntityFramework.Tests
 {
     #region Contexts
     

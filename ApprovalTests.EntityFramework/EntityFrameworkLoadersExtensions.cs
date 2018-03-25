@@ -1,8 +1,7 @@
-﻿#if !NETCORE
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.Objects;
 
-namespace ApprovalUtilities.Persistence.EntityFramework
+namespace ApprovalTests.EntityFramework
 {
 	public static class EntityFrameworkLoadersExtensions
 	{
@@ -13,4 +12,3 @@ namespace ApprovalUtilities.Persistence.EntityFramework
 		}
 	}
 }
-#endif

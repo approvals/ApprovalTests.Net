@@ -4,7 +4,7 @@ using ApprovalTests.Namers;
 using ApprovalTests.StackTraceParsers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace ApprovalTests.Tests.Namer
+namespace ApprovalTests.MSTest
 {
 	[TestClass]
 	public class VsTestStackTraceNamerTests

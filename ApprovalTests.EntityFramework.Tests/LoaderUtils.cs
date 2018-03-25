@@ -1,9 +1,8 @@
-#if !NETCORE
 using System;
 using System.Linq;
 using ApprovalUtilities.Persistence.EntityFramework;
 
-namespace ApprovalTests.Tests.EntityFramework
+namespace ApprovalTests.EntityFramework.Tests
 {
 	public class LoaderUtils
 	{
@@ -14,4 +13,3 @@ namespace ApprovalTests.Tests.EntityFramework
 		}
 	}
 }
-#endif

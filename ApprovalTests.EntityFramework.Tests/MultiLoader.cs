@@ -1,9 +1,8 @@
-﻿#if !NETCORE
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using ApprovalUtilities.Persistence.EntityFramework;
 
-namespace ApprovalTests.Tests.EntityFramework
+namespace ApprovalTests.EntityFramework.Tests
 {
 	public abstract class MultiLoader<T> : EntityFrameworkLoader<T, IEnumerable<T>, ModelContainer>
 	{
@@ -18,4 +17,3 @@ namespace ApprovalTests.Tests.EntityFramework
 		}
 	}
 }
-#endif

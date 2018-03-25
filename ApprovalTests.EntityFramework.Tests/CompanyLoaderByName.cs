@@ -1,8 +1,7 @@
-﻿#if !NETCORE
-using System.Linq;
+﻿using System.Linq;
 using ApprovalUtilities.Persistence.EntityFramework;
 
-namespace ApprovalTests.Tests.EntityFramework
+namespace ApprovalTests.EntityFramework.Tests
 {
 	public class CompanyLoaderByName : EntityFrameworkLoader<Company, Company[], ModelContainer>
 	{
@@ -26,4 +25,3 @@ namespace ApprovalTests.Tests.EntityFramework
 		}
 	}
 }
-#endif
