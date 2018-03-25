@@ -13,10 +13,7 @@ namespace ApprovalTests.Namers.StackTraceParsers
         private static IList<IStackTraceParser> parsers = (IList<IStackTraceParser>) GetParsers();
         private IStackTraceParser parser;
 
-        public string ForTestingFramework
-        {
-            get { return GetParsers().Select(x => x.ForTestingFramework).ToReadableString(); }
-        }
+        public string ForTestingFramework => GetParsers().Select(x => x.ForTestingFramework).ToReadableString();
 
         public bool Parse(StackTrace stackTrace)
         {
@@ -55,15 +52,9 @@ To learn how to implement one see {helpLink}")
             };
         }
 
-        public string ApprovalName
-        {
-            get { return parser.ApprovalName; }
-        }
+        public string ApprovalName => parser.ApprovalName;
 
-        public string SourcePath
-        {
-            get { return parser.SourcePath; }
-        }
+        public string SourcePath => parser.SourcePath;
 
         private static void LoadIfApplicable(IList<IStackTraceParser> found, AttributeStackTraceParser p)
         {

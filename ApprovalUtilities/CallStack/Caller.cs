@@ -48,15 +48,9 @@ namespace ApprovalUtilities.CallStack
             }
         }
 
-        public Type Class
-        {
-            get { return Method.DeclaringType; }
-        }
+        public Type Class => Method.DeclaringType;
 
-        public MethodBase Method
-        {
-            get { return StackFrame.GetMethod(); }
-        }
+        public MethodBase Method => StackFrame.GetMethod();
 
         public IEnumerable<MethodBase> Methods
         {
@@ -69,10 +63,7 @@ namespace ApprovalUtilities.CallStack
             }
         }
 
-        public IEnumerable<Caller> NonLambdaCallers
-        {
-            get { return Callers.Where(c => c.Class != null); }
-        }
+        public IEnumerable<Caller> NonLambdaCallers => Callers.Where(c => c.Class != null);
 
         public IEnumerable<Caller> Parents
         {
@@ -85,15 +76,9 @@ namespace ApprovalUtilities.CallStack
             }
         }
 
-        public StackFrame StackFrame
-        {
-            get { return StackTrace.GetFrame(currentFrame); }
-        }
+        public StackFrame StackFrame => StackTrace.GetFrame(currentFrame);
 
-        public StackTrace StackTrace
-        {
-            get { return stackTrace; }
-        }
+        public StackTrace StackTrace => stackTrace;
 
         public A GetFirstFrameForAttribute<A>() where A : Attribute
         {

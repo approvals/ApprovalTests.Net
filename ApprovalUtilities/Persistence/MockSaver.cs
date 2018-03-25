@@ -7,15 +7,9 @@ namespace ApprovalUtilities.Persistence
     {
         private List<T> all = new List<T>();
 
-        public T[] Saved
-        {
-            get { return all.ToArray(); }
-        }
+        public T[] Saved => all.ToArray();
 
-        public T LastSaved
-        {
-            get { return all.Last(); }
-        }
+        public T LastSaved => all.Last();
 
         public T Save(T objectToBeSaved)
         {

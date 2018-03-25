@@ -10,8 +10,8 @@ namespace ApprovalUtilities.SimpleLogger
 
         public static IAppendable Writer
         {
-            get { return log.Writer; }
-            set { log.Writer = value; }
+            get => log.Writer;
+            set => log.Writer = value;
         }
 
         public static StringBuilderLogger LogToStringBuilder()

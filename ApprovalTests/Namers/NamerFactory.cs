@@ -11,8 +11,8 @@ namespace ApprovalTests.Namers
 
         public static string AdditionalInformation
         {
-            get { return additionalInformation; }
-            set { additionalInformation = value; }
+            get => additionalInformation;
+            set => additionalInformation = value;
         }
 
         [Obsolete("Use ApprovalResults.UniqueForMachineName instead.")]

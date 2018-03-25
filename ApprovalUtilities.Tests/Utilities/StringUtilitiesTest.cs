@@ -75,7 +75,7 @@ namespace ApprovalUtilities.Tests.Utilities
 
             public string WriteOnlyString
             {
-                set { _WriteOnlyString = value; }
+                set => _WriteOnlyString = value;
             }
 
             public int ReadWriteInt { get; set; }

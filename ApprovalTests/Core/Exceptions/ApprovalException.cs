@@ -21,15 +21,9 @@ namespace ApprovalTests.Core.Exceptions
             this.approved = approved;
         }
 
-        public string Received
-        {
-            get { return received; }
-        }
+        public string Received => received;
 
-        public string Approved
-        {
-            get { return approved; }
-        }
+        public string Approved => approved;
 
         protected bool Equals(ApprovalException other)
         {

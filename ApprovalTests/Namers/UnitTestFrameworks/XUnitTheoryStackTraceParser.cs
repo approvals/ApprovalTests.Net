@@ -6,10 +6,7 @@ namespace ApprovalTests.StackTraceParsers
     {
         public const string TheoryAttribute = "Xunit.Extensions.TheoryAttribute";
 
-        public override string ForTestingFramework
-        {
-            get { return "xUnit.extensions"; }
-        }
+        public override string ForTestingFramework => "xUnit.extensions";
 
         protected override string GetAttributeType()
         {

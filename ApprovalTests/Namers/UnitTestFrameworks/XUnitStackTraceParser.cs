@@ -6,10 +6,7 @@ namespace ApprovalTests.StackTraceParsers
     {
         public const string Attribute = "Xunit.FactAttribute";
 
-        public override string ForTestingFramework
-        {
-            get { return "xUnit.net"; }
-        }
+        public override string ForTestingFramework => "xUnit.net";
 
         protected override string GetAttributeType()
         {

@@ -6,10 +6,7 @@ namespace ApprovalTests.StackTraceParsers
     {
         public const string Attribute = "NUnit.Framework.TestAttribute";
 
-        public override string ForTestingFramework
-        {
-            get { return "NUnit"; }
-        }
+        public override string ForTestingFramework => "NUnit";
 
         protected override string GetAttributeType()
         {

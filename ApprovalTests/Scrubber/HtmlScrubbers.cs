@@ -17,14 +17,8 @@ namespace ApprovalTests.Scrubber
             return Regex.Replace(input, AspViewState, "<!-- aspviewstate -->");
         }
 
-        public static Func<string, string> ScrubAsp
-        {
-            get { return ScrubberUtils.Combine(ScrubAspViewstate, ScrubBrowserLink); }
-        }
+        public static Func<string, string> ScrubAsp => ScrubberUtils.Combine(ScrubAspViewstate, ScrubBrowserLink);
 
-        public static Func<string, string> ScrubMvc
-        {
-            get { return ScrubBrowserLink; }
-        }
+        public static Func<string, string> ScrubMvc => ScrubBrowserLink;
     }
 }

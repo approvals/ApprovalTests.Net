@@ -27,10 +27,7 @@ namespace ApprovalTests.StackTraceParsers
             return "MSpec";
         }
 
-        public override string TypeName
-        {
-            get { return GetRecursiveTypeName(this.approvalFrame.Class.DeclaringType); }
-        }
+        public override string TypeName => GetRecursiveTypeName(this.approvalFrame.Class.DeclaringType);
 
         protected override string GetMethodName()
         {
@@ -51,10 +48,7 @@ namespace ApprovalTests.StackTraceParsers
             return approvalField.Name;
         }
 
-        public override string ForTestingFramework
-        {
-            get { return "Machine.Specifications (MSpec)"; }
-        }
+        public override string ForTestingFramework => "Machine.Specifications (MSpec)";
 
 
         private Caller FindApprovalFrame(Caller caller)

@@ -43,7 +43,7 @@ namespace ApprovalTests.Tests.Wpf
 
         public string MyProperty
         {
-            get { return this._myProperty; }
+            get => this._myProperty;
             set
             {
                 this._myProperty = value;

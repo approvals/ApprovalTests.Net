@@ -11,9 +11,6 @@ namespace ApprovalTests.Reporters
             _ignoreLineEndings = ignoreLineEndings;
         }
 
-        public bool IgnoreLineEndings
-        {
-            get { return _ignoreLineEndings; }
-        }
+        public bool IgnoreLineEndings => _ignoreLineEndings;
     }
 }

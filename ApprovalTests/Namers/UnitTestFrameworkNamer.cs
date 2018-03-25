@@ -26,15 +26,9 @@ namespace ApprovalTests.Namers
             }
         }
 
-        public string Name
-        {
-            get { return stackTraceParser.ApprovalName; }
-        }
+        public string Name => stackTraceParser.ApprovalName;
 
-        public string SourcePath
-        {
-            get { return stackTraceParser.SourcePath + GetSubdirectory(); }
-        }
+        public string SourcePath => stackTraceParser.SourcePath + GetSubdirectory();
 
         public string GetSubdirectory()
         {

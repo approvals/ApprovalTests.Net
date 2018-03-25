@@ -6,10 +6,7 @@ namespace ApprovalTests.StackTraceParsers
     {
         public const string Attribute = "Microsoft.VisualStudio.TestTools.UnitTesting.DataTestMethodAttribute";
 
-        public override string ForTestingFramework
-        {
-            get { return "MsTest-DataTest"; }
-        }
+        public override string ForTestingFramework => "MsTest-DataTest";
 
         protected override string GetAttributeType()
         {

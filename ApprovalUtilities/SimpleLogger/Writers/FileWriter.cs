@@ -25,7 +25,7 @@ namespace ApprovalUtilities.SimpleLogger.Writers
 
         public Func<string> GetLogFile
         {
-            get { return getLogFile; }
+            get => getLogFile;
             set
             {
                 getLogFile = value;
@@ -36,8 +36,8 @@ namespace ApprovalUtilities.SimpleLogger.Writers
 
         public string LogFile
         {
-            get { return GetLogFile(); }
-            set { GetLogFile = () => value; }
+            get => GetLogFile();
+            set => GetLogFile = () => value;
         }
 
         private void InitialWrite()

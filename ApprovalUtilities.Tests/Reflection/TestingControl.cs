@@ -11,14 +11,8 @@ namespace ApprovalTests.Tests.Events
 
         public event EventHandler KeyEvent
         {
-            add
-            {
-                base.Events.AddHandler(TestingControl.EventKey, value);
-            }
-            remove
-            {
-                base.Events.RemoveHandler(TestingControl.EventKey, value);
-            }
+            add => base.Events.AddHandler(TestingControl.EventKey, value);
+            remove => base.Events.RemoveHandler(TestingControl.EventKey, value);
         }
 
         public event EventHandler MyEvent;

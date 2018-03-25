@@ -34,10 +34,7 @@ namespace ApprovalTests.Tests.CustomImplementation
 
         private class CustomNamer : IApprovalNamer
         {
-            public string Name
-            {
-                get { return "CustomNamerShouldBeSubstitutableTest.CustomNamerShouldBeSubstitutable"; }
-            }
+            public string Name => "CustomNamerShouldBeSubstitutableTest.CustomNamerShouldBeSubstitutable";
 
             public string SourcePath
             {

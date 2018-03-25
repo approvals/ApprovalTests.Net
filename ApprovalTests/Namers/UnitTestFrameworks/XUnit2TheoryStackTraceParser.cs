@@ -6,10 +6,7 @@ namespace ApprovalTests.Namers.UnitTestFrameworks
     {
         public const string TheoryAttribute = "Xunit.TheoryAttribute";
 
-        public override string ForTestingFramework
-        {
-            get { return "xUnit2.net"; }
-        }
+        public override string ForTestingFramework => "xUnit2.net";
 
         protected override string GetAttributeType()
         {

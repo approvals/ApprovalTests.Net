@@ -18,10 +18,7 @@ namespace ApprovalUtilities.Utilities
             this.Dispose();
         }
 
-        public FileInfo File
-        {
-            get { return this.backingFile; }
-        }
+        public FileInfo File => this.backingFile;
 
         public void Dispose()
         {

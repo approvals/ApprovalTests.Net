@@ -11,15 +11,9 @@
             this.arguments = arguments;
         }
 
-        public string Program
-        {
-            get { return program; }
-        }
+        public string Program => program;
 
-        public string Arguments
-        {
-            get { return arguments; }
-        }
+        public string Arguments => arguments;
 
         public override string ToString()
         {

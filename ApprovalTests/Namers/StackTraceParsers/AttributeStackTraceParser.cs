@@ -12,10 +12,7 @@ namespace ApprovalTests.Namers.StackTraceParsers
         protected Caller approvalFrame;
 
 
-        public virtual string TypeName
-        {
-            get { return GetRecursiveTypeName(this.approvalFrame.Method.DeclaringType); }
-        }
+        public virtual string TypeName => GetRecursiveTypeName(this.approvalFrame.Method.DeclaringType);
 
         public string AdditionalInfo
         {
@@ -32,20 +29,14 @@ namespace ApprovalTests.Namers.StackTraceParsers
             }
         }
 
-        public string ApprovalName
-        {
-            get { return $"{TypeName}.{GetMethodName()}{AdditionalInfo}"; }
-        }
+        public string ApprovalName => $"{TypeName}.{GetMethodName()}{AdditionalInfo}";
 
         protected virtual string GetMethodName()
         {
             return approvalFrame.Method.Name;
         }
 
-        public string SourcePath
-        {
-            get { return Path.GetDirectoryName(GetFileNameForStack(approvalFrame)); }
-        }
+        public string SourcePath => Path.GetDirectoryName(GetFileNameForStack(approvalFrame));
 
         private string GetFileNameForStack(Caller frame)
         {
