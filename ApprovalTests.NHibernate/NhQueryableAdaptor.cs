@@ -10,7 +10,7 @@ using NHibernate.Hql.Ast.ANTLR;
 using NHibernate.Linq;
 using NHibernate.Linq.Visitors;
 
-namespace ApprovalUtilities.Persistence.NHibernate
+namespace ApprovalTests.NHibernate
 {
     public class NhQueryableAdaptor<T> : IDatabaseToExecuteableQueryAdaptor
     {

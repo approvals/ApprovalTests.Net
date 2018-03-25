@@ -6,10 +6,15 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Iesi.Collections" Version="4.0.4" />
+    <Compile Remove="NHibernate\**" />
+    <EmbeddedResource Remove="NHibernate\**" />
+    <None Remove="NHibernate\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Iesi.Collections" Version="4.*" />
     <PackageReference Include="nunit" Version="3.*" />
-    <PackageReference Include="NHibernate" Version="4.1.1.4000" />
-    <PackageReference Include="nunit" Version="3.*" />
+    <PackageReference Include="NHibernate" Version="4.*" />
+    <ProjectReference Include="..\ApprovalTests.NHibernate\ApprovalTests.NHibernate.csproj" />
 
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -18,13 +23,8 @@
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
-
-    <ProjectReference Include="..\ApprovalTests\ApprovalTests.csproj" />
-    <ProjectReference Include="..\ApprovalUtilities\ApprovalUtilities.csproj" />
-    <ProjectReference Include="..\ReportingDemo\ReportingDemo.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="a.png" />
-    <Content Include="b.png" />
+    <EmbeddedResource Include="Company.hbm.xml" />
   </ItemGroup>
 </Project>

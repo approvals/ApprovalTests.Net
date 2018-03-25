@@ -7,17 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ApprovalTests.MachineSpecific.Tests.NHibernate
+namespace ApprovalTests.NHibernate.Tests
+
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Event
+    public partial class Job
     {
         public int Id { get; set; }
-        public Nullable<int> Employee { get; set; }
-        public string EventTitle { get; set; }
-        public string Details { get; set; }
+        public string Title { get; set; }
+        public int Employee { get; set; }
+        public string Status { get; set; }
     
         public virtual Employee Employee1 { get; set; }
     }

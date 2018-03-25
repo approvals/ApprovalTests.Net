@@ -1,6 +1,8 @@
+using System;
 using System.IO;
 using ApprovalTests.Reporters;
 using NUnit.Framework;
+using NUnit.Framework.Internal;
 
 namespace ApprovalTests.Tests.Reporters
 {

@@ -7,19 +7,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ApprovalTests.MachineSpecific.Tests.NHibernate
-
+namespace ApprovalTests.NHibernate.Tests
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Job
+    public partial class Company
     {
-        public int Id { get; set; }
-        public string Title { get; set; }
-        public int Employee { get; set; }
-        public string Status { get; set; }
+        public Company()
+        {
+            this.Employees = new HashSet<Employee>();
+        }
     
-        public virtual Employee Employee1 { get; set; }
+        public virtual int Id { get; set; }
+        public virtual string Name { get; set; }
+        public virtual string Website { get; set; }
+    
+        public virtual ICollection<Employee> Employees { get; set; }
     }
 }
