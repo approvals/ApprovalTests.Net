@@ -7,8 +7,9 @@
     <Optimize>false</Optimize>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="MSTest.TestFramework" Version="1.*" />
-    <PackageReference Include="MSTest.TestAdapter" Version="1.*" />
+    <PackageReference Include="MSTest.TestFramework" Version="1.2.*" />
+    <PackageReference Include="MSTest.TestAdapter" Version="1.2.*" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.6.0" />
     <ProjectReference Include="..\ApprovalTests\ApprovalTests.csproj" />
     <ProjectReference Include="..\ApprovalUtilities\ApprovalUtilities.csproj" />
   </ItemGroup>
