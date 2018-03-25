@@ -1,5 +1,4 @@
 using System;
-using System.IO;
 using ApprovalTests.Reporters;
 using NUnit.Framework;
 using NUnit.Framework.Internal;
@@ -33,21 +32,6 @@ namespace ApprovalTests.Tests.Reporters
                 Assert.AreEqual(
                     expectedMessage,
                     e.Message);
-            }
-        }
-    }
-
-    public class NUnitReporterWithCleanup : NUnitReporter
-    {
-        public override void Report(string approved, string received)
-        {
-            try
-            {
-                base.Report(approved, received);
-            }
-            finally
-            {
-                File.Delete(received);
             }
         }
     }

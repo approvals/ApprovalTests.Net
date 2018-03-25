@@ -47,12 +47,4 @@ namespace ApprovalTests.Namers
             AdditionalInformation = null;
         }
     }
-
-    public class EnviromentSpecificCleanUp : IDisposable
-    {
-        public void Dispose()
-        {
-            NamerFactory.Clear();
-        }
-    }
 }

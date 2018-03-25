@@ -1,8 +1,6 @@
 using System;
 using System.Linq;
-using ApprovalTests.WebApi.MicrosoftHttpClient;
 using ApprovalUtilities.CallStack;
-using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.ExceptionalExceptions
 {
@@ -52,44 +50,6 @@ namespace ApprovalTests.ExceptionalExceptions
                 Method = callingMethod.ToStandardString(),
                 Exception = typeof(T).FullName,
             };
-        }
-    }
-
-    public class ExceptionalTlDr : RestQuery<string>
-    {
-        private readonly ExceptionalId uid;
-
-        public ExceptionalTlDr(ExceptionalId uid)
-        {
-            this.uid = uid;
-        }
-
-        public override string GetQuery()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override string GetBaseAddress()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override string Load()
-        {
-            throw new NotImplementedException();
-        }
-    }
-
-    public class ExceptionalId
-    {
-        public string Assembly { get; set; }
-        public string Class { get; set; }
-        public string Method { get; set; }
-        public string Exception { get; set; }
-
-        public override string ToString()
-        {
-            return this.WritePropertiesToString();
         }
     }
 }
