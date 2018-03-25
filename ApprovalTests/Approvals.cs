@@ -1,10 +1,6 @@
 using System;
 using System.Collections.Generic;
-#if NETCORE
 using System.IO;
-#else
-using Alphaleonis.Win32.Filesystem;
-#endif
 using System.Linq;
 using System.Threading;
 using ApprovalTests.Approvers;
