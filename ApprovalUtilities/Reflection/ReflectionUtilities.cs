@@ -88,7 +88,7 @@ namespace ApprovalUtilities.Reflection
                 return new FieldInfo[0];
             }
 
-            FieldInfo[] fields = forType.GetFields(NonPublicInstance | BindingFlags.Public);
+            var fields = forType.GetFields(NonPublicInstance | BindingFlags.Public);
             return fields.Concat(GetAllFields(forType.BaseType));
         }
 

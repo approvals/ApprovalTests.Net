@@ -19,7 +19,7 @@ namespace ApprovalTests.Tests.Wpf
         public void TestFailedBindings()
         {
             var viewModel = new TestViewModel();
-            Binding myBinding = new Binding(TestViewModel.MyPropertyPropertyName + "BOGUS")
+            var myBinding = new Binding(TestViewModel.MyPropertyPropertyName + "BOGUS")
             {
                 Source = viewModel
             };

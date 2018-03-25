@@ -36,7 +36,7 @@ namespace ApprovalTests.NHibernate
 
             var sql = translators.First().SQLString;
             var formamttedSql = FormatStyle.Basic.Formatter.Format(sql);
-            int i = 0;
+            var i = 0;
             var map = ExpressionParameterVisitor.Visit(queryable.Expression, sessionImp.Factory).ToArray();
             formamttedSql = Regex.Replace(formamttedSql, @"\?", m => map[i++].Key.ToString().Replace('"', '\''));
 

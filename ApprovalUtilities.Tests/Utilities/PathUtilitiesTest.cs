@@ -37,7 +37,7 @@ namespace ApprovalUtilities.Tests.Utilities
         [TestMethod]
         public void TestDoesNotFindFile()
         {
-            string noneExistingFile = "ThisFileShouldNotExist.exe";
+            var noneExistingFile = "ThisFileShouldNotExist.exe";
             var results = PathUtilities.LocateFileFromEnvironmentPath(noneExistingFile);
             Assert.AreEqual(0, results.Count());
         }

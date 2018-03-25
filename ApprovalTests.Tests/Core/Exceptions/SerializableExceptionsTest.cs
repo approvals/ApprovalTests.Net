@@ -10,8 +10,8 @@ namespace ApprovalTests.Tests.Core.Exceptions
         [Test]
         public void TestSerializable()
         {
-            string r = "recieved";
-            string a = "approved";
+            var r = "recieved";
+            var a = "approved";
             Verify(new ApprovalMissingException(r, a));
             Verify(new ApprovalMismatchException(r, a));
             Verify(new ApprovalException(r, a));

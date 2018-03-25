@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 using ApprovalTests.Events;
@@ -51,7 +50,7 @@ namespace ApprovalTests.WinForms
 
         private static string GetLabelForChild(object parent, object child)
         {
-            FieldInfo field = ReflectionUtilities.GetFieldForChild(parent, child);
+            var field = ReflectionUtilities.GetFieldForChild(parent, child);
             return "({0}.{1})".FormatWith(parent.GetType().Name, field.Name);
         }
 

@@ -66,7 +66,7 @@ namespace ApprovalTests.Xunit2.Namer
 
         private void AssertEquals<T>(string typeName)
         {
-            Type instance = Type.GetType(typeName, false);
+            var instance = Type.GetType(typeName, false);
             Assert.Equal(typeof(T), instance);
         }
     }

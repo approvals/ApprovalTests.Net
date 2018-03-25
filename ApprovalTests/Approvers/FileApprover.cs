@@ -29,7 +29,7 @@ namespace ApprovalTests.Approvers
 
         public virtual bool Approve()
         {
-            string basename = Path.Combine(this.namer.SourcePath, this.namer.Name);
+            var basename = Path.Combine(this.namer.SourcePath, this.namer.Name);
             this.approved = Path.GetFullPath(this.writer.GetApprovalFilename(basename));
             this.received = Path.GetFullPath(this.writer.GetReceivedFilename(basename));
             this.received = this.writer.WriteReceivedFile(this.received);
@@ -84,8 +84,8 @@ namespace ApprovalTests.Approvers
                 return false;
             }
 
-            IEnumerator<char> e1 = chars1.GetEnumerator();
-            IEnumerator<char> e2 = chars2.GetEnumerator();
+            var e1 = chars1.GetEnumerator();
+            var e2 = chars2.GetEnumerator();
 
             while (e1.MoveNext() && e2.MoveNext())
             {
@@ -105,8 +105,8 @@ namespace ApprovalTests.Approvers
                 return false;
             }
 
-            IEnumerator<byte> e1 = bytes1.GetEnumerator();
-            IEnumerator<byte> e2 = bytes2.GetEnumerator();
+            var e1 = bytes1.GetEnumerator();
+            var e2 = bytes2.GetEnumerator();
 
             while (e1.MoveNext() && e2.MoveNext())
             {

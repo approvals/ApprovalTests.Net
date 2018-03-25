@@ -9,7 +9,7 @@ namespace ApprovalTests.Reporters
     {
         public static string GetFirstWorking(string path, string[] paths)
         {
-            string fullPath = path;
+            var fullPath = path;
             foreach (var p in paths)
             {
                 fullPath = p + Path.DirectorySeparatorChar + path;
@@ -24,7 +24,7 @@ namespace ApprovalTests.Reporters
 
         public static string GetPathInProgramFilesX86(string path)
         {
-            string[] paths = GetProgramFilesPaths();
+            var paths = GetProgramFilesPaths();
             return GetFirstWorking(path, paths);
         }
 

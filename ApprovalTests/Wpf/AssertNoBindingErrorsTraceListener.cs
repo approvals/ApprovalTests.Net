@@ -45,7 +45,7 @@ Windows Registry Editor Version 5.00
 
             public void Dispose()
             {
-                string message = this.listener.messageBuilder.ToString();
+                var message = this.listener.messageBuilder.ToString();
                 this.listener.Flush();
                 this.listener.Close();
                 PresentationTraceSources.DataBindingSource.Listeners.Remove(this.listener);

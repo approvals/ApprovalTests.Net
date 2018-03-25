@@ -26,15 +26,15 @@ namespace ApprovalTests.Tests
         [Test]
         public void TestUnicode()
         {
-            string text = UnicodeEncoding.Default.GetString(new byte[] {101, 235, 110, 116});
+            var text = UnicodeEncoding.Default.GetString(new byte[] {101, 235, 110, 116});
             Approvals.Verify(text);
         }
 
         [Test]
         public void TestDetectUtf8ByteOrderMark()
         {
-            string with = PathUtilities.GetAdjacentFile("FileWithUtf8ByteOrderMark.txt");
-            string without = PathUtilities.GetAdjacentFile("FileWithoutUtf8ByteOrderMark.txt");
+            var with = PathUtilities.GetAdjacentFile("FileWithUtf8ByteOrderMark.txt");
+            var without = PathUtilities.GetAdjacentFile("FileWithoutUtf8ByteOrderMark.txt");
             Assert.IsTrue(ApprovalTextWriter.IsUft8ByteOrderMarkPresent(with));
             Assert.IsFalse(ApprovalTextWriter.IsUft8ByteOrderMarkPresent(without));
         }

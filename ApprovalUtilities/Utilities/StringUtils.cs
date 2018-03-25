@@ -20,7 +20,7 @@ namespace ApprovalUtilities.Utilities
 
             var sb = new StringBuilder();
             sb.Append("[");
-            foreach (object l in list)
+            foreach (var l in list)
             {
                 sb.Append(l + ", ");
             }
@@ -39,16 +39,16 @@ namespace ApprovalUtilities.Utilities
 
         public static string DisplayGrid(int width, int height, Func<int, int, string> func)
         {
-            StringBuilder b = new StringBuilder("  ");
-            for (int x = 0; x < width; x++)
+            var b = new StringBuilder("  ");
+            for (var x = 0; x < width; x++)
             {
                 b.Append($"{x:0} ");
             }
             b.AppendLine();
-            for (int y = 0; y < height; y++)
+            for (var y = 0; y < height; y++)
             {
                 b.Append($"{y:0} ");
-                for (int x = 0; x < width; x++)
+                for (var x = 0; x < width; x++)
                 {
                     b.Append(func(x, y) + " ");
                 }
@@ -61,8 +61,8 @@ namespace ApprovalUtilities.Utilities
         {
             var sb = new StringBuilder();
             const int totalWidth = 86;
-            string lineBreakOut = "".PadLeft(totalWidth, frameMarker);
-            string lineBreakIn = "{0}{1}{0}".FormatWith(frameMarker, "".PadLeft(totalWidth - 2, ' '));
+            var lineBreakOut = "".PadLeft(totalWidth, frameMarker);
+            var lineBreakIn = "{0}{1}{0}".FormatWith(frameMarker, "".PadLeft(totalWidth - 2, ' '));
             sb.AppendLine(lineBreakOut);
             sb.AppendLine(lineBreakIn);
             foreach (var line in lines)
@@ -97,7 +97,7 @@ namespace ApprovalUtilities.Utilities
                 return emptyMessage;
 
             var sb = new StringBuilder();
-            int i = 0;
+            var i = 0;
             list.ForEach(item => sb.Append(formatterWithIndex(i++, item)));
 
             return sb.ToString();
@@ -144,7 +144,7 @@ namespace ApprovalUtilities.Utilities
                 return string.Empty;
             }
 
-            Type t = typeof (T);
+            var t = typeof (T);
             var sb = new StringBuilder();
             sb.AppendLine(t.Name);
             sb.AppendLine("{");

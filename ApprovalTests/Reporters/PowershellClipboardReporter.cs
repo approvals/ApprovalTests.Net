@@ -9,7 +9,7 @@ namespace ApprovalTests.Reporters
 
         public void Report(string approved, string received)
         {
-            string text = GetCommandLineForApproval(approved, received);
+            var text = GetCommandLineForApproval(approved, received);
             ClipboardUtilities.CopyToClipboard(text);
         }
 

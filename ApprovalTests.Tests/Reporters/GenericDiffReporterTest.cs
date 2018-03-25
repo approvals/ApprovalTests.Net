@@ -11,7 +11,7 @@ namespace ApprovalTests.Tests.Reporters
         [Test]
         public void TestGetActualProgramFileEchos()
         {
-            string NoneExistingFile = @"C:\ThisDirectoryShouldNotExist\ThisFileShouldNotExist.exe";
+            var NoneExistingFile = @"C:\ThisDirectoryShouldNotExist\ThisFileShouldNotExist.exe";
             Assert.AreEqual(NoneExistingFile, GenericDiffReporter.GetActualProgramFile(NoneExistingFile));
         }
 
@@ -19,7 +19,7 @@ namespace ApprovalTests.Tests.Reporters
         public void TestGetCurrentProject()
         {
             var file = PathUtilities.GetAdjacentFile("GenericDiffReporterTest.TestLaunchesBeyondCompareImage.approved.txt");
-            string currentProjectFile = Path.GetFileName(VisualStudioProjectFileAdder.GetCurrentProjectFile(file));
+            var currentProjectFile = Path.GetFileName(VisualStudioProjectFileAdder.GetCurrentProjectFile(file));
 
             Assert.AreEqual("ApprovalTests.Tests.csproj", currentProjectFile);
         }

@@ -8,7 +8,7 @@ namespace ApprovalTests.Persistence.DataSets
     {
         private int integer = 1;
         private DateTime date = new DateTime(2001, 01, 11);
-        private bool boolean = false;
+        private bool boolean;
 
         private int GetNextInteger()
         {

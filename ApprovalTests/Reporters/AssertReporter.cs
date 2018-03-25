@@ -37,8 +37,8 @@ namespace ApprovalTests.Reporters
 
         public void AssertFileContents(string approved, string received)
         {
-            string a = File.Exists(approved) ? File.ReadAllText(approved) : "";
-            string r = File.ReadAllText(received);
+            var a = File.Exists(approved) ? File.ReadAllText(approved) : "";
+            var r = File.ReadAllText(received);
             QuietReporter.DisplayCommandLineApproval(approved, received);
 
             AssertEqual(a, r);
@@ -48,7 +48,7 @@ namespace ApprovalTests.Reporters
         {
             try
             {
-                Type type = Type.GetType(assertClass);
+                var type = Type.GetType(assertClass);
                 var parameters = new[] { approvedContent, receivedContent };
                 InvokeEqualsMethod(type, parameters);
             }
@@ -60,7 +60,7 @@ namespace ApprovalTests.Reporters
 
         protected virtual void InvokeEqualsMethod(Type type, string[] parameters)
         {
-            BindingFlags bindingFlags = BindingFlags.InvokeMethod | BindingFlags.Public | BindingFlags.Static;
+            var bindingFlags = BindingFlags.InvokeMethod | BindingFlags.Public | BindingFlags.Static;
             type.InvokeMember(areEqual, bindingFlags, null, null, parameters);
         }
     }

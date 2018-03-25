@@ -15,7 +15,7 @@ namespace ApprovalTests.WebApi.MicrosoftHttpClient
 
         public string ExecuteQuery(string query)
         {
-            string json = ExecuteAsync(query).Result.Result;
+            var json = ExecuteAsync(query).Result.Result;
             return json.FormatJson();
         }
 

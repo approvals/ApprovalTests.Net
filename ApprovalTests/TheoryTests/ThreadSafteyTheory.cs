@@ -14,7 +14,7 @@ namespace ApprovalTests.TheoryTests
             var n2 = new ConcurrentBag<string>();
             var count = Enumerable.Range(0, times).AsParallel().WithDegreeOfParallelism(16).Select(i =>
             {
-                T inputs = caseGenerator();
+                var inputs = caseGenerator();
                 var text = caseString(inputs);
                 n1.Add(text + possibleRaceConditonFunction(inputs));
                 n2.Add(text + knownGoodFunction(inputs));
@@ -28,7 +28,7 @@ namespace ApprovalTests.TheoryTests
         {
             Array.Sort(n1);
             Array.Sort(n2);
-            bool failed = n1.Length != n2.Length;
+            var failed = n1.Length != n2.Length;
             for (var i = 0; i < n1.Length && !failed; i++)
             {
                 if (!n1[i].Equals(n2[i]))

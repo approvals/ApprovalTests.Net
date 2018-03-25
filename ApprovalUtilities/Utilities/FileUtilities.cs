@@ -25,7 +25,7 @@ namespace ApprovalUtilities.Utilities
         {
             using (var sr = new System.IO.StreamReader(file, true))
             {
-                for (int i = 0; i < 4 && sr.Peek() >= 0; i++)
+                for (var i = 0; i < 4 && sr.Peek() >= 0; i++)
                 {
                     sr.Read();
                 }

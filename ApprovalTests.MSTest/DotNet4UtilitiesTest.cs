@@ -11,7 +11,7 @@ namespace ApprovalTests.MSTest
         [UseReporter(typeof(FileLauncherReporter))]
         public void TestPath()
         {
-            string[] paths = new string[] { @"M:\Somepaththatdoesntexist\", @"C:\Windows\system32", @"Z:\Othernonpath" };
+            var paths = new string[] { @"M:\Somepaththatdoesntexist\", @"C:\Windows\system32", @"Z:\Othernonpath" };
             Assert.AreEqual(@"C:\Windows\system32\notepad.exe", DotNet4Utilities.GetFirstWorking("notepad.exe", paths));
         }
     }

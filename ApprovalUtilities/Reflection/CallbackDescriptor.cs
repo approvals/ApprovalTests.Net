@@ -39,7 +39,7 @@ namespace ApprovalUtilities.Reflection
             var sb = new StringBuilder();
             sb.AppendLine("{0}:".FormatWith(this.EventName));
 
-            for (int i = 0; i < Methods.Count; i++)
+            for (var i = 0; i < Methods.Count; i++)
             {
                 sb.AppendLine("\t[{0}] {1}".FormatWith(i, Methods[i]));
             }

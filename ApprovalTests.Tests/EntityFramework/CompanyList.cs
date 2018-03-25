@@ -16,10 +16,10 @@ namespace ApprovalTests.Tests.EntityFramework
 
         public static string GetCompanyRoster(ILoader<IEnumerable<Company>> companyByName)
         {
-            IEnumerable<Company> companies = companyByName.Load();
+            var companies = companyByName.Load();
             var b = new StringBuilder();
             b.Append("<html><body>");
-            foreach (Company company in companies)
+            foreach (var company in companies)
             {
                 b.Append("<li>{0}</li>".FormatWith(company.Name));
             }

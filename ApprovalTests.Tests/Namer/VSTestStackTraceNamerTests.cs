@@ -13,14 +13,14 @@ namespace ApprovalTests.Tests.Namer
         [TestMethod]
         public void TestApprovalName()
         {
-            string name = new UnitTestFrameworkNamer().Name;
+            var name = new UnitTestFrameworkNamer().Name;
             Assert.AreEqual("VsTestStackTraceNamerTests.TestApprovalName", name);
         }
 
         [TestMethod]
         public void TestSourcePath()
         {
-            string name = new UnitTestFrameworkNamer().SourcePath;
+            var name = new UnitTestFrameworkNamer().SourcePath;
             var path = name.ToLower() + "\\VsTestStackTraceNamerTests.cs";
             Assert.IsTrue(File.Exists(path), path + " does not exist");
         }

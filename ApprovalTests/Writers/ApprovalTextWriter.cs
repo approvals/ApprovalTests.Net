@@ -21,7 +21,7 @@ namespace ApprovalTests
 
         public static string EnsureDot(string extension)
         {
-            string extensionWithDot = $".{extension}";
+            var extensionWithDot = $".{extension}";
             return extension.StartsWith(".") ? extension : extensionWithDot;
         }
 
@@ -61,14 +61,14 @@ namespace ApprovalTests
 
         public static bool IsUft8ByteOrderMarkPresent(string file)
         {
-            byte[] preamble = Encoding.UTF8.GetPreamble();
-            byte[] readAllBytes = ReadBytes(file, preamble.Length);
+            var preamble = Encoding.UTF8.GetPreamble();
+            var readAllBytes = ReadBytes(file, preamble.Length);
             if (readAllBytes.Length < preamble.Length)
             {
                 return false;
             }
 
-            for (int i = 0; i < preamble.Length; i++)
+            for (var i = 0; i < preamble.Length; i++)
             {
                 if (preamble[i] != readAllBytes[i])
                 {
@@ -82,15 +82,15 @@ namespace ApprovalTests
         private static byte[] ReadBytes(string file, int length)
         {
             byte[] buffer;
-            using (System.IO.FileStream fileStream = new System.IO.FileStream(file, System.IO.FileMode.Open, System.IO.FileAccess.Read))
+            using (var fileStream = new System.IO.FileStream(file, System.IO.FileMode.Open, System.IO.FileAccess.Read))
             {
-                int offset = 0;
-                long fileLength = fileStream.Length;
-                int count = (int) Math.Min(length, fileLength);
+                var offset = 0;
+                var fileLength = fileStream.Length;
+                var count = (int) Math.Min(length, fileLength);
                 buffer = new byte[count];
                 while (count > 0)
                 {
-                    int num = fileStream.Read(buffer, offset, count);
+                    var num = fileStream.Read(buffer, offset, count);
                     if (num == 0)
                     {
                         throw new Exception("Unexpected End of File while reading " + file);

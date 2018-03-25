@@ -71,7 +71,7 @@ namespace ApprovalTests.Tests.Namer
             {
                 using (ApprovalResults.ForScenario("machineName"))
                 {
-                    string name = Approvals.GetDefaultNamer().Name;
+                    var name = Approvals.GetDefaultNamer().Name;
                     Assert.AreEqual(name,
                         "AdditionalInformationTests.TestMultipleNames.ForScenario.scenario.ForScenario.machineName");
                 }

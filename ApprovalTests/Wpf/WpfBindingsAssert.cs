@@ -17,7 +17,7 @@ namespace ApprovalTests.Wpf
         {
             using (AssertNoBindingErrorsTraceListener.Start())
             {
-                Window window = process();
+                var window = process();
                 window.DataContext = viewModel;
                 window.Show(); // force binding
                 window.Close();

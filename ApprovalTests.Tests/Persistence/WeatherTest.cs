@@ -30,7 +30,7 @@ namespace ApprovalTests.Tests.Persistence
 
         public string ExecuteQuery(string query)
         {
-            string Url = "http://api.wunderground.com/weatherstation/WXCurrentObXML.asp";
+            var Url = "http://api.wunderground.com/weatherstation/WXCurrentObXML.asp";
             return new WebClient().DownloadString(Url + "?" + query);
         }
     }

@@ -12,7 +12,7 @@ namespace ApprovalTests.Tests.WinForms
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private System.ComponentModel.IContainer components;
 
         private System.Windows.Forms.ListBox listBox1;
 

@@ -14,7 +14,7 @@ namespace ReportingDemo
 
         public static void AddReport(ReportViewer reportViewer)
         {
-            string reportname = "ReportingDemo.InsultsReport.rdlc";
+            var reportname = "ReportingDemo.InsultsReport.rdlc";
             reportViewer.LocalReport.ReportEmbeddedResource = reportname;
         }
     }

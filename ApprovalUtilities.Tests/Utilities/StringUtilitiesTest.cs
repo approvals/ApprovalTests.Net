@@ -19,7 +19,7 @@ namespace ApprovalUtilities.Tests.Utilities
         [TestMethod]
         public void TestGrid()
         {
-            string grid = StringUtils.DisplayGrid(4, 4, (x, y) => x == y ? "x" : "_");
+            var grid = StringUtils.DisplayGrid(4, 4, (x, y) => x == y ? "x" : "_");
             Approvals.Verify(grid);
         }
 

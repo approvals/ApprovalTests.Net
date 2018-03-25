@@ -11,7 +11,7 @@ namespace ApprovalTests.Reporters
 
         public void Report(string approved, string received)
         {
-            string temp = QuietReporter.GetCommandLineForApproval(approved, received);
+            var temp = QuietReporter.GetCommandLineForApproval(approved, received);
             TOTAL.AppendLine(temp);
             ClipboardUtilities.CopyToClipboard(TOTAL.ToString());
         }

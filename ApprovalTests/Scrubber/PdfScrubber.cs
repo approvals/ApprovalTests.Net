@@ -35,7 +35,7 @@ namespace ApprovalTests.Scrubber
                 if (Compare(token[0], fileStream.ReadByte()))
                 {
                     var location = fileStream.Position - 1;
-                    bool fail = false;
+                    var fail = false;
                     for (var index = 1; index <= token.Length - 1; index++)
                     {
                         if (!Compare(token[index], fileStream.ReadByte()))

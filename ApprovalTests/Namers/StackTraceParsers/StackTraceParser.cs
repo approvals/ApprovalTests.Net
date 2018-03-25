@@ -17,9 +17,9 @@ namespace ApprovalTests.Namers.StackTraceParsers
 
         public bool Parse(StackTrace stackTrace)
         {
-            foreach (IStackTraceParser parserTemplate in GetParsers())
+            foreach (var parserTemplate in GetParsers())
             {
-                IStackTraceParser p = (IStackTraceParser) Activator.CreateInstance(parserTemplate.GetType());
+                var p = (IStackTraceParser) Activator.CreateInstance(parserTemplate.GetType());
                 if (p.Parse(stackTrace))
                 {
                     parser = p;

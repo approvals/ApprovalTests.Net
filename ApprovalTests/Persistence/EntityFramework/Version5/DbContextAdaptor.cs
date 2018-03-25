@@ -22,7 +22,7 @@ namespace ApprovalTests.Persistence.EntityFramework.Version5
 
         public string GetQuery()
         {
-            DbQuery<T> dbQuery = (DbQuery<T>) queryable;
+            var dbQuery = (DbQuery<T>) queryable;
             return EntityFrameworkUtils.GetQueryFromLinq(GetObjectQuery(dbQuery));
         }
 

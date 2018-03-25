@@ -218,7 +218,7 @@ Recieved {0} ({1}, {2}, {3})"
         {
             try
             {
-                Process process = Process.Start(launchArgs.Program, launchArgs.Arguments);
+                var process = Process.Start(launchArgs.Program, launchArgs.Arguments);
                 if (waitForExit)
                 {
                     process.WaitForExit();

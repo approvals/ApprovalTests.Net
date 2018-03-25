@@ -50,8 +50,8 @@ namespace ApprovalTests.Email
 
         private static string ScrubBoundaries(string emailText, string[] boundies)
         {
-            int count = 0;
-            string guid = "--boundary_{0}_00000000-0000-0000-0000-00000000000{0}";
+            var count = 0;
+            var guid = "--boundary_{0}_00000000-0000-0000-0000-00000000000{0}";
             foreach (var b in boundies)
             {
                 emailText = emailText.Replace(b, guid.FormatWith(count++));
@@ -62,7 +62,7 @@ namespace ApprovalTests.Email
 
         public static string[] FindBoundaries(string emailText)
         {
-            int startPoint = 0;
+            var startPoint = 0;
             var boundies = new HashSet<string>();
             while ((startPoint = emailText.IndexOf("boundary=--", startPoint)) != -1)
             {
@@ -77,8 +77,8 @@ namespace ApprovalTests.Email
 
         public static string ReadFileWhereLines(string latestFile, Func<string, bool> predicate)
         {
-            string[] latestFileLines = File.ReadAllLines(latestFile).Where(predicate).ToArray();
-            string newText = string.Join(Environment.NewLine, latestFileLines);
+            var latestFileLines = File.ReadAllLines(latestFile).Where(predicate).ToArray();
+            var newText = string.Join(Environment.NewLine, latestFileLines);
             return newText;
         }
 

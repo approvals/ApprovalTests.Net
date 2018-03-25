@@ -17,7 +17,7 @@ namespace ApprovalTests.WindowsRegistry
 
             if (actualValue != expectedValue)
             {
-                string message = "{0}\nMust set DWORD {1}\\{2} : {3} = {4}.".FormatWith(failureMessage, registryKey.Name, keyName, valueName,
+                var message = "{0}\nMust set DWORD {1}\\{2} : {3} = {4}.".FormatWith(failureMessage, registryKey.Name, keyName, valueName,
                     expectedValue);
                 throw new Exception(message);
             }

@@ -15,7 +15,7 @@ namespace ApprovalTests.Reporters
 
         public static void DisplayCommandLineApproval(string approved, string received)
         {
-            string message = GetCommandLineForApproval(approved, received);
+            var message = GetCommandLineForApproval(approved, received);
             Debug.WriteLine(message);
             Console.WriteLine(message);
         }

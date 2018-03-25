@@ -57,7 +57,7 @@ namespace ApprovalUtilities.Reflection
             {
                 if (this.next == null && this.listEntry != null)
                 {
-                    object nextValue = GetField<object>(NextFieldName);
+                    var nextValue = GetField<object>(NextFieldName);
                     if (nextValue != null)
                     {
                         this.next = new HandlerListEntry(nextValue);

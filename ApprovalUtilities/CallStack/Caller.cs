@@ -96,11 +96,11 @@ namespace ApprovalUtilities.CallStack
             };
             foreach (var attributeExtractor in attributeExtractors)
             {
-                foreach (MethodBase method in this.NonLambdaCallers.Select(c => c.Method))
+                foreach (var method in this.NonLambdaCallers.Select(c => c.Method))
                 {
                     try
                     {
-                        object[] useReporters = attributeExtractor(method);
+                        var useReporters = attributeExtractor(method);
                         if (useReporters.Length != 0)
                         {
                             return useReporters.First();

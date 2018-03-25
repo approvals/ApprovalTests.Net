@@ -18,7 +18,7 @@ namespace ApprovalTests.NHibernate.Tests
             if (SessionFactory == null) //not threadsafe
             {
                 //SessionFactories are expensive, create only once
-                Configuration configuration = new Configuration();
+                var configuration = new Configuration();
                 configuration.AddAssembly(Assembly.GetCallingAssembly());
                 SessionFactory = configuration.BuildSessionFactory();
             }
@@ -35,9 +35,9 @@ namespace ApprovalTests.NHibernate.Tests
                 return;
             }
 
-            using (ISession session = OpenSession())
+            using (var session = OpenSession())
             {
-                IQueryable<Company> query =
+                var query =
                     from a in session.Query<Company>()
                     where a.Name.StartsWith("Mic")
                     select a;

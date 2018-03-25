@@ -36,7 +36,7 @@ namespace ApprovalTests.Maintenance
 
         private static IEnumerable<FileInfo> FindAbandonedFiles(string path, Assembly assembly)
         {
-            string searchPattern = "*.approved.*";
+            var searchPattern = "*.approved.*";
             var approvedFile = Directory.EnumerateFiles(path, searchPattern, SearchOption.AllDirectories);
             return approvedFile.Select(f => new FileInfo(f)).Where(f => IsAbandoned(f, assembly
             )).ToArray();
