@@ -2,7 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Mail;
+#if NETCORE
+using System.IO;
+#else
 using Alphaleonis.Win32.Filesystem;
+#endif
 using ApprovalTests.Writers;
 using ApprovalUtilities.Utilities;
 

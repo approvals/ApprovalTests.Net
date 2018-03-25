@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if !NETCORE
+using System;
 using StatePrinter.Configurations;
 
 namespace ApprovalTests.StatePrinter
@@ -32,3 +33,4 @@ namespace ApprovalTests.StatePrinter
 
 	}
 }
+#endif

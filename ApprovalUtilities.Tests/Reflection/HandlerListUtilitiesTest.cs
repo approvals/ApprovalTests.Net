@@ -1,3 +1,4 @@
+#if !NETCORE
 namespace ApprovalUtilities.Tests.Reflection
 {
     using System.ComponentModel;
@@ -5,19 +6,18 @@ namespace ApprovalUtilities.Tests.Reflection
     using System.Windows.Forms;
     using ApprovalTests;
     using ApprovalTests.Tests.Events;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
     using ApprovalUtilities.Reflection;
 
-    [TestClass]
     public class HandlerListUtilitiesTest
     {
-        [TestMethod]
+        [Test]
         public void EnumerateList()
         {
             Approvals.VerifyAll(GetEventHandlerList().AsEnumerable(), string.Empty);
         }
 
-        [TestMethod]
+        [Test]
         public void GetListHead()
         {
             Approvals.Verify(GetEventHandlerList().GetHead());
@@ -33,3 +33,4 @@ namespace ApprovalUtilities.Tests.Reflection
         }
     }
 }
+#endif

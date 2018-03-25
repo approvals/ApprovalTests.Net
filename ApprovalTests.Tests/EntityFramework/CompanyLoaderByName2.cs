@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿#if !NETCORE
+using System.Linq;
 
 namespace ApprovalTests.Tests.EntityFramework
 {
@@ -19,3 +20,4 @@ namespace ApprovalTests.Tests.EntityFramework
 		}
 	}
 }
+#endif

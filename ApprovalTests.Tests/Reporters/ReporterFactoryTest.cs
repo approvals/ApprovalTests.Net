@@ -28,7 +28,7 @@ namespace ApprovalTests.Tests.Reporters
 			return singletons;
 		}
 		[Test]
-		public void TestClassLevel()
+		public void TestFixtureLevel()
 		{
 			Assert.AreEqual(typeof(ClassLevelReporter), Approvals.GetReporter().GetType());
 		}

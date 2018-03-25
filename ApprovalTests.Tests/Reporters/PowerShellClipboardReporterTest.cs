@@ -1,4 +1,5 @@
-﻿using ApprovalTests.Reporters;
+﻿#if !NETCORE
+using ApprovalTests.Reporters;
 using NUnit.Framework;
 
 namespace ApprovalTests.Tests.Reporters
@@ -13,3 +14,4 @@ namespace ApprovalTests.Tests.Reporters
 		}
 	}
 }
+#endif

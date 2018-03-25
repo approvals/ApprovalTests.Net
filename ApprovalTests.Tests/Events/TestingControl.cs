@@ -1,3 +1,4 @@
+#if !NETCORE
 namespace ApprovalTests.Tests.Events
 {
     using System;
@@ -30,3 +31,4 @@ namespace ApprovalTests.Tests.Events
         }
     }
 }
+#endif

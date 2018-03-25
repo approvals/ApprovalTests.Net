@@ -1,4 +1,5 @@
-﻿namespace ApprovalTests.Tests.Events
+﻿#if !NETCORE
+namespace ApprovalTests.Tests.Events
 {
     using System.Windows.Forms;
     using ApprovalTests.Events;
@@ -64,3 +65,4 @@
         }
     }
 }
+#endif

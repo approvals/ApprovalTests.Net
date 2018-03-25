@@ -1,15 +1,14 @@
-﻿using System.Windows.Forms;
+﻿#if !NETCORE
+using System.Windows.Forms;
 using ApprovalUtilities.Utilities;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace ApprovalUtilities.Tests.Utilities
 {
-	[TestClass]
 	public class ClipboardUtilitiesTest
 	{
-		// This messes up your clipboard
-		[Ignore]
-		[TestMethod]
+		[Ignore("This messes up your clipboard")]
+        [Test]
 		public void TestClipboard()
 		{
 			ClipboardUtilities.CopyToClipboard("fred");
@@ -18,3 +17,4 @@ namespace ApprovalUtilities.Tests.Utilities
 		}
 	}
 }
+#endif

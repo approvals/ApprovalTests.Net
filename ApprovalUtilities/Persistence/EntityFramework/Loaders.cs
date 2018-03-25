@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if !NETCORE
+using System;
 using System.Data.Objects;
 using System.Linq;
 
@@ -24,3 +25,4 @@ namespace ApprovalUtilities.Persistence.EntityFramework
         }
 	}
 }
+#endif

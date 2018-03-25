@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿#if !NETCORE
+using System.Collections.Generic;
 using System.Linq;
 using ApprovalUtilities.Persistence.EntityFramework;
 
@@ -17,3 +18,4 @@ namespace ApprovalTests.Tests.EntityFramework
 		}
 	}
 }
+#endif

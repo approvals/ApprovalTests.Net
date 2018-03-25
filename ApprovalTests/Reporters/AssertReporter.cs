@@ -2,7 +2,11 @@
 using ApprovalTests.Namers.StackTraceParsers;
 using System;
 using System.Reflection;
+#if NETCORE
+using System.IO;
+#else
 using Alphaleonis.Win32.Filesystem;
+#endif
 
 namespace ApprovalTests.Reporters
 {

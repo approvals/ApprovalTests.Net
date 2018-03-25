@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿#if !NETCORE
+using System.Collections.Generic;
 using System.Data.Objects;
 
 namespace ApprovalUtilities.Persistence.EntityFramework
@@ -12,3 +13,4 @@ namespace ApprovalUtilities.Persistence.EntityFramework
 		}
 	}
 }
+#endif

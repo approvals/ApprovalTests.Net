@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if !NETCORE
+using System;
 using System.Threading;
 using System.Windows;
 
@@ -36,3 +37,4 @@ namespace ApprovalUtilities.Utilities
         }
     }
 }
+#endif

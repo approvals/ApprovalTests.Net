@@ -18,17 +18,7 @@ namespace ApprovalTests.Tests.Reporters
 		[UseReporter((typeof (NUnitReporterWithCleanup)))]
 		public void TestReporter()
 		{
-			try
-			{
-				Approvals.Verify("Hello");
-			}
-			catch (AssertionException e)
-			{
-				var expectedMessage = string.Format ("  String lengths are both 5. Strings differ at index 0.{0}  Expected: \"World\"{0}  But was:  \"Hello\"{0}  -----------^{0}", System.Environment.NewLine);
-				Assert.AreEqual(
-					expectedMessage,
-					e.Message);
-			}
+            Assert.Throws<AssertionException>(() => Approvals.Verify("Hello"), string.Format("  String lengths are both 5. Strings differ at index 0.{0}  Expected: \"World\"{0}  But was:  \"Hello\"{0}  -----------^{0}", System.Environment.NewLine));
 		}
 	}
 

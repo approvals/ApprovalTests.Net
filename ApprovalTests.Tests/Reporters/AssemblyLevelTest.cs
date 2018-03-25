@@ -7,7 +7,7 @@ namespace ApprovalTests.Tests.Reporters
 	public class AssemblyLevelTest
 	{
 		[Test]
-		public void TestClassLevel()
+		public void TestFixtureLevel()
 		{
 			Assert.AreEqual(typeof(DiffReporter), Approvals.GetReporter().GetType());
 		}

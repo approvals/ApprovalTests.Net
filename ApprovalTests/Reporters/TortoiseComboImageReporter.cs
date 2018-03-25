@@ -1,4 +1,8 @@
-﻿using Alphaleonis.Win32.Filesystem;
+﻿#if NETCORE
+using System.IO;
+#else
+using Alphaleonis.Win32.Filesystem;
+#endif
 using ApprovalTests.Core;
 
 namespace ApprovalTests.Reporters
@@ -8,8 +12,9 @@ namespace ApprovalTests.Reporters
 		public static TortoiseComboImageReporter INSTANCE = new TortoiseComboImageReporter();
 		public void Report(string approved, string received)
 		{
-			ClipboardReporter.INSTANCE.Report(approved, received);
-
+#if !NETCORE
+            ClipboardReporter.INSTANCE.Report(approved, received);
+#endif
 			if (FileExistsAndNonEmpty(approved))
 			{
 				TortoiseImageDiffReporter.INSTANCE.Report(approved, received);

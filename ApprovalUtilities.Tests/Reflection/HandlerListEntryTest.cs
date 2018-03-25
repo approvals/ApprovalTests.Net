@@ -1,29 +1,31 @@
+#if !NETCORE
 namespace ApprovalUtilities.Tests.Reflection
 {
     using System.ComponentModel;
     using System.Linq;
+
     using System.Windows.Forms;
+
     using ApprovalTests;
     using ApprovalTests.Tests.Events;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
     using ApprovalUtilities.Reflection;
 
-    [TestClass]
     public class HandlerListEntryTest
     {
-        [TestMethod]
+        [Test]
         public void BecomeNullObjectWhenItemIsWrongType()
         {
             Approvals.Verify(new HandlerListEntry(new Button()));
         }
 
-        [TestMethod]
+        [Test]
         public void GetListEntryTest()
         {
             Assert.AreEqual("ListEntry", GetListEntry().GetType().Name);
         }
 
-        [TestMethod]
+        [Test]
         public void ProxyNonPublicMembers()
         {
             Approvals.Verify(new HandlerListEntry(GetListEntry()));
@@ -39,5 +41,7 @@ namespace ApprovalUtilities.Tests.Reflection
             var headInfo = eventList.GetInstanceFields(fi => fi.Name == "head").Single();
             return headInfo.GetValue(eventList);
         }
+
     }
 }
+#endif

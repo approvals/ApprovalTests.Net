@@ -1,14 +1,13 @@
 ﻿using System.Linq;
 using ApprovalTests;
 using ApprovalUtilities.CallStack;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace ApprovalUtilities.Tests.CallStack
 {
-	[TestClass]
 	public class CallerTest
 	{
-		[TestMethod]
+		[Test]
 		public void TestGetCaller()
 		{
 			var caller = GetCaller();
@@ -21,14 +20,14 @@ namespace ApprovalUtilities.Tests.CallStack
 			return new Caller();
 		}
 
-		[TestMethod]
+		[Test]
 		public void TestCallStack()
 		{
 			var caller = GetDeepCaller();
 			var callers = caller.Callers.Where(c => c.Method.DeclaringType == this.GetType());
 			Approvals.VerifyAll(callers, c => c.Method.ToStandardString());
 		}
-		[TestMethod]
+		[Test]
 		public void TestName()
 		{
 			var caller = GetDeepCaller();

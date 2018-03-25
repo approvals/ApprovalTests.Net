@@ -24,12 +24,12 @@ namespace ApprovalUtilities.Utilities
                 action(i);
             }
         }
-
+#if !NETCORE
         public static TValue GetValueOrDefault<TKey, TValue>(this IDictionary<TKey, TValue> map, TKey key)
         {
             return map.ContainsKey(key) ? map[key] : default(TValue);
         }
-
+#endif
         public static IEnumerable<T> OrEmpty<T>(this IEnumerable<T> source)
         {
             return source ?? Enumerable.Empty<T>();

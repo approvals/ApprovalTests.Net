@@ -1,7 +1,12 @@
 ﻿using System;
+#if NETCORE
+using System.IO;
+using System.Runtime.InteropServices;
+#else
 using System.Linq;
-using System.Management;
 using Alphaleonis.Win32.Filesystem;
+using System.Management;
+#endif
 
 namespace ApprovalUtilities.Utilities
 {
@@ -34,6 +39,12 @@ namespace ApprovalUtilities.Utilities
             return ApprovalsPlatform.Windows;
         }
 
+#if NETCORE
+        public static string GetFullOsNameFromWmi()
+        {
+            return RuntimeInformation.OSDescription.Split('.')[0];
+        }
+#else
         public static string GetFullOsNameFromWmi()
         {
             var platformId = GetPlatformId();
@@ -52,7 +63,8 @@ namespace ApprovalUtilities.Utilities
                 return platformId.ToString();
             }
         }
-        public static bool IsWindowsOs()
+#endif
+            public static bool IsWindowsOs()
         {
             return Path.DirectorySeparatorChar == '\\';
         }

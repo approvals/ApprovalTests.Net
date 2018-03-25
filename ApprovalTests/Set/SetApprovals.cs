@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+#if NETCORE
+using System.IO;
+#else
 using Alphaleonis.Win32.Filesystem;
+#endif
 
 namespace ApprovalTests.Set
 {

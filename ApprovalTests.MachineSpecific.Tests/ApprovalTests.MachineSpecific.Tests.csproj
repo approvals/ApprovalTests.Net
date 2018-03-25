@@ -6,9 +6,9 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Iesi.Collections" Version="4.*" />
+    <PackageReference Include="Iesi.Collections" Version="4.0.4" />
     <PackageReference Include="nunit" Version="3.*" />
-    <PackageReference Include="NHibernate" Version="4.*" />
+    <PackageReference Include="NHibernate" Version="4.1.1.4000" />
 
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />

@@ -23,8 +23,8 @@ namespace ApprovalUtilities.CallStack
 
     public class Caller
     {
-        private int currentFrame;
-        private StackTrace stackTrace;
+        private readonly int currentFrame;
+        private readonly StackTrace stackTrace;
 
         public Caller()
             : this(new StackTrace(true), 2)

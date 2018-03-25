@@ -1,13 +1,12 @@
 ﻿using ApprovalTests;
 using ApprovalUtilities.Utilities;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace ApprovalUtilities.Tests.Utilities
 {
-	[TestClass]
 	public class StringUtilitiesTest
 	{
-		[TestMethod]
+		[Test]
 		public void TestToReadableString()
 		{
 			Assert.AreEqual("[]", new int[0].ToReadableString());
@@ -16,14 +15,14 @@ namespace ApprovalUtilities.Tests.Utilities
 			Assert.AreEqual("[]",empty.ToReadableString());
 		}
 
-		[TestMethod]
+		[Test]
 		public void TestGrid()
 		{
 			string grid = StringUtils.DisplayGrid(4, 4, (x, y) => x == y ? "x" : "_");
 			Approvals.Verify(grid);
 		}
 
-		[TestMethod]
+		[Test]
 		public void WritePropertiesToStringTest()
 		{
 			var anonymous = new
@@ -34,21 +33,21 @@ namespace ApprovalUtilities.Tests.Utilities
 			Approvals.Verify(anonymous.WritePropertiesToString());
 		}
 
-		[TestMethod]
+		[Test]
 		public void WriteOnlyPropertyTest()
 		{
 			var target = new TestingObject {WriteOnlyString = "Hello", ReadWriteInt = 10};
 			Approvals.Verify(target.WritePropertiesToString());
 		}
 
-		[TestMethod]
+		[Test]
 		public void TestWriteFields()
 		{
 			var target = new TestingObject {ThisShouldHaveBeenAProperty = "FooBar"};
 			Approvals.Verify(target.WriteFieldsToString());
 		}
 
-		[TestMethod]
+		[Test]
 		public void TestJoinWith()
 		{
 			var numbers = new[]
@@ -56,7 +55,7 @@ namespace ApprovalUtilities.Tests.Utilities
 			Approvals.Verify(numbers.JoinWith(" - "));
 		}
 
-		[TestMethod]
+		[Test]
 		public void TestJoinWithTransform()
 		{
 			var numbers = new[]

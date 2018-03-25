@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿#if !NETCORE
+using NUnit.Framework;
 
 namespace ApprovalTests.Tests.EntityFramework
 {
@@ -19,3 +20,4 @@ namespace ApprovalTests.Tests.EntityFramework
 		}
 	}
 }
+#endif

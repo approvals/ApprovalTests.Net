@@ -1,20 +1,19 @@
 using System;
 using ApprovalUtilities.Utilities;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace ApprovalUtilities.Tests.Utilities
 {
-	[TestClass]
 	public class ExceptionUtilitiesTest
 	{
-		[TestMethod]
+		[Test]
 		public void TestGetException()
 		{
 			AssertException<NotFiniteNumberException>(() => { throw new NotFiniteNumberException(); });
 		}
 		public static void AssertException<T>(Action action) where T : Exception
 		{
-			Assert.IsInstanceOfType(ExceptionUtilities.GetException(action), typeof(T));
+			Assert.IsInstanceOf(typeof(T), ExceptionUtilities.GetException(action));
 		}
 	}
 }

@@ -5,15 +5,14 @@ using ApprovalTests.Utilities;
 using ApprovalUtilities.Persistence;
 using ApprovalUtilities.SimpleLogger;
 using ApprovalUtilities.Utilities;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace ApprovalUtilities.Tests
 {
-	[TestClass]
 	[UseReporter(typeof(DiffReporter))]
 	public class LoggerTest
 	{
-		[TestMethod]
+		[Test]
 		public void TestMainPath()
 		{
 			var log = Logger.LogToStringBuilder();
@@ -39,7 +38,7 @@ namespace ApprovalUtilities.Tests
 			logText = StackTraceScrubber.ScrubStackTrace(logText);
 			Approvals.Verify(logText);
 		}
-		[TestMethod]
+		[Test]
 		public void TestShowMarker()
 		{
 			var log = Logger.LogToStringBuilder();
@@ -49,7 +48,7 @@ namespace ApprovalUtilities.Tests
 			Logger.MarkerOut();
 			Assert.AreEqual("", log.ToString());
 		}
-		[TestMethod]
+		[Test]
 		public void TestShowEvents()
 		{
 			var log = Logger.LogToStringBuilder();
@@ -58,7 +57,7 @@ namespace ApprovalUtilities.Tests
 
 			Assert.AreEqual("", log.ToString());
 		}
-		[TestMethod]
+		[Test]
 		public void TestSql()
 		{
 			var log = Logger.LogToStringBuilder();
@@ -67,7 +66,7 @@ namespace ApprovalUtilities.Tests
 
 			Assert.AreEqual("", log.ToString());
 		}
-		[TestMethod]
+		[Test]
 		public void TestShowVariables()
 		{
 			var log = Logger.LogToStringBuilder();
@@ -76,7 +75,7 @@ namespace ApprovalUtilities.Tests
 
 			Assert.AreEqual("", log.ToString());
 		}
-		[TestMethod]
+		[Test]
 		public void TestTimes()
 		{
 			CultureUtilities.ForceCulture();

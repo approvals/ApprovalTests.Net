@@ -2,22 +2,22 @@
 using System.IO;
 using ApprovalTests.Namers;
 using ApprovalTests.StackTraceParsers;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace ApprovalTests.Tests.Namer
 {
-	[TestClass]
+	[TestFixture]
 	public class VsTestStackTraceNamerTests
 	{
 		
-		[TestMethod]
+		[Test]
 		public void TestApprovalName()
 		{
 			string name = new UnitTestFrameworkNamer().Name;
 			Assert.AreEqual("VsTestStackTraceNamerTests.TestApprovalName", name);
 		}
 
-		[TestMethod]
+		[Test]
 		public void TestSourcePath()
 		{
 			string name = new UnitTestFrameworkNamer().SourcePath;
@@ -25,7 +25,7 @@ namespace ApprovalTests.Tests.Namer
 			Assert.IsTrue(File.Exists(path), path + " does not exist" );
 		}
 
-		[TestMethod]
+		[Test]
 		public void TestMSTestAware()
 		{
 			Assert.IsTrue(new VSStackTraceParser().IsApplicable());

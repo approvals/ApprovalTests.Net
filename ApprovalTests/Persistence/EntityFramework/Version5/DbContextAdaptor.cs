@@ -1,16 +1,21 @@
-using System.Data.Common;
+#if NETCORE
+using Microsoft.EntityFrameworkCore;
+#else
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Data.Objects;
+using ApprovalUtilities.Persistence.EntityFramework;
+#endif
+using ApprovalUtilities.Persistence.Database;
 using System.Linq;
 using System.Reflection;
-using ApprovalUtilities.Persistence.Database;
-using ApprovalUtilities.Persistence.EntityFramework;
+using System.Data.Common;
 
 namespace ApprovalTests.Persistence.EntityFramework.Version5
 {
-	public class DbContextAdaptor<T> : IDatabaseToExecuteableQueryAdaptor
-	{
+    public class DbContextAdaptor<T> : IDatabaseToExecuteableQueryAdaptor where T : class
+
+    {
 		private readonly DbContext db;
 		private readonly IQueryable<T> queryable;
 
@@ -22,10 +27,15 @@ namespace ApprovalTests.Persistence.EntityFramework.Version5
 
 		public string GetQuery()
 		{
-			DbQuery<T> dbQuery = (DbQuery<T>) queryable;
+#if NETCORE
+            return queryable.ToSql();
+#else
+            DbQuery<T> dbQuery = (DbQuery<T>) queryable;
 			return EntityFrameworkUtils.GetQueryFromLinq(GetObjectQuery(dbQuery));
-		}
-		public static ObjectQuery<T1> GetObjectQuery<T1>( DbQuery<T1> query)
+#endif
+        }
+#if !NETCORE
+        public static ObjectQuery<T1> GetObjectQuery<T1>( DbQuery<T1> query)
 		{
 			var internalQueryField = query.GetType().GetFields(BindingFlags.NonPublic | BindingFlags.Instance).FirstOrDefault(f => f.Name.Equals("_internalQuery"));
 
@@ -37,7 +47,7 @@ namespace ApprovalTests.Persistence.EntityFramework.Version5
 
 			return objectQuery;
 		}
-
+#endif
 		
 		public DbConnection GetConnection()
 		{
@@ -46,8 +56,15 @@ namespace ApprovalTests.Persistence.EntityFramework.Version5
 
 		public static DbConnection GetConnectionFrom(DbContext context)
 		{
-			return context.Database.Connection;
-		}
+#if NETCORE
+            return context.Database.GetDbConnection();
+#else
+            return context.Database.Connection;
+#endif
+
+        }
 
 	}
+
+
 }

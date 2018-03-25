@@ -1,4 +1,4 @@
-﻿#if !__MonoCS__
+﻿#if !__MonoCS__ && !NETCORE
 using System.Windows;
 using ApprovalTests.Core;
 using ApprovalUtilities.Wpf;

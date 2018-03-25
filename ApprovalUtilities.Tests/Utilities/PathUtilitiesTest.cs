@@ -1,14 +1,13 @@
 ﻿using System.Linq;
 using ApprovalTests;
 using ApprovalUtilities.Utilities;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace ApprovalUtilities.Tests.Utilities
 {
-	[TestClass]
 	public class PathUtilitiesTest
 	{
-		[TestMethod]
+		[Test]
 		public void ScrubPathTest()
 		{
 			var dir = PathUtilities.GetDirectoryForCaller();
@@ -16,7 +15,7 @@ namespace ApprovalUtilities.Tests.Utilities
 			AssertEqualIgnoreCase(@"...\PathUtilitiesTest.cs", PathUtilities.ScrubPath(file, dir));
 		}
 
-		[TestMethod]
+		[Test]
 		public void TestFindsFile()
 		{
 			var found = PathUtilities.LocateFileFromEnvironmentPath("ipconfig.exe").FirstOrDefault();
@@ -28,13 +27,13 @@ namespace ApprovalUtilities.Tests.Utilities
 			Assert.AreEqual(expected.ToLowerInvariant(), actual.ToLowerInvariant());
 		}
 
-		[TestMethod]
+		[Test]
 		public void TestFindsMultipleFiles()
 		{
 			Approvals.VerifyAll(PathUtilities.LocateFileFromEnvironmentPath("notepad.exe").Select(f=>f.ToLowerInvariant()), "Found");
 		}
 
-		[TestMethod]
+		[Test]
 		public void TestDoesNotFindFile()
 		{
 			string noneExistingFile = "ThisFileShouldNotExist.exe";

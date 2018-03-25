@@ -1,3 +1,4 @@
+#if !NETCORE
 using System;
 using System.Collections.Generic;
 using System.Data.Objects;
@@ -74,3 +75,4 @@ namespace ApprovalUtilities.Persistence.EntityFramework
         public int PageCount { get; private set; }
     }
 }
+#endif

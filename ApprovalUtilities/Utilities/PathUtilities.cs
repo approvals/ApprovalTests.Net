@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
+#if NETCORE
+using System.IO;
+#else
 using Alphaleonis.Win32.Filesystem;
+#endif
 
 namespace ApprovalUtilities.Utilities
 {

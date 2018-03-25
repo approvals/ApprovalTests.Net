@@ -1,4 +1,4 @@
-﻿#if !__MonoCS__
+﻿#if !__MonoCS__ && !NETCORE
 using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;

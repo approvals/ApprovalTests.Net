@@ -1,4 +1,5 @@
-﻿using ApprovalTests.StatePrinter;
+﻿#if !NETCORE
+using ApprovalTests.StatePrinter;
 using NUnit.Framework;
 
 namespace ApprovalTests.Tests.StatePrinter
@@ -27,3 +28,4 @@ namespace ApprovalTests.Tests.StatePrinter
 		}
 	}
 }
+#endif

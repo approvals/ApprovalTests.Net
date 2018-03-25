@@ -1,3 +1,4 @@
+#if !NETCORE
 using ApprovalTests.Core;
 using ApprovalUtilities.Utilities;
 
@@ -18,3 +19,4 @@ namespace ApprovalTests.Reporters
 		}
 	}
 }
+#endif

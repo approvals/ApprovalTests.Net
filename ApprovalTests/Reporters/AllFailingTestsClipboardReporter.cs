@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿#if !NETCORE
+using System.Text;
 using ApprovalTests.Core;
 using ApprovalUtilities.Utilities;
 
@@ -17,3 +18,4 @@ namespace ApprovalTests.Reporters
 		}
 	}
 }
+#endif

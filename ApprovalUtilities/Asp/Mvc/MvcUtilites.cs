@@ -1,5 +1,9 @@
 ﻿using System;
+#if NETCORE
+using Microsoft.AspNetCore.Mvc;
+#else
 using System.Web.Mvc;
+#endif
 using ApprovalUtilities.CallStack;
 
 namespace ApprovalUtilities.Asp.Mvc

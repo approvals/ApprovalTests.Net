@@ -1,3 +1,4 @@
+#if !NETCORE
 using System;
 using System.Linq;
 using ApprovalUtilities.Persistence.EntityFramework;
@@ -13,3 +14,4 @@ namespace ApprovalTests.Tests.EntityFramework
 		}
 	}
 }
+#endif

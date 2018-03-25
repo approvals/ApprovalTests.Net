@@ -1,3 +1,4 @@
+#if !NETCORE
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -36,3 +37,4 @@ namespace ApprovalTests.Tests.EntityFramework
         }
     }
 }
+#endif

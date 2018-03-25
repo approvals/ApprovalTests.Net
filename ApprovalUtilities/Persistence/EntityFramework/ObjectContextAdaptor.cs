@@ -1,3 +1,4 @@
+#if !NETCORE
 using System.Data.Common;
 using System.Data.EntityClient;
 using System.Data.Objects;
@@ -41,3 +42,4 @@ namespace ApprovalUtilities.Persistence.EntityFramework
 		}
 	}
 }
+#endif

@@ -1,21 +1,24 @@
+
 using System;
 using System.Linq;
 using System.Reflection;
+#if !NETCORE
 using System.Windows.Forms;
+#endif
 using ApprovalTests;
 using ApprovalTests.Namers;
 using ApprovalTests.Tests.Events;
 using ApprovalUtilities.Reflection;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using ApprovalTests.Reporters;
 
 namespace ApprovalUtilities.Tests.Reflection
 {
-    [TestClass]
     [UseReporter(typeof(DiffReporter))]
     public class ReflectionUtilitiesTest
     {
-        [TestMethod]
+#if !NETCORE
+        [Test]
         public void ControlWithLocalAndBaseKeys()
         {
             var checkBox = new CheckBox();
@@ -27,7 +30,7 @@ namespace ApprovalUtilities.Tests.Reflection
             Approvals.VerifyAll(checkBox.GetEventHandlerListEvents(), string.Empty);
         }
 
-        [TestMethod]
+        [Test]
         public void ControlWithEmptyHandlers()
         {
             var checkBox = new CheckBox();
@@ -35,7 +38,7 @@ namespace ApprovalUtilities.Tests.Reflection
             Assert.AreEqual(0, checkBox.GetEventHandlerListEvents().Count());
         }
 
-        [TestMethod]
+        [Test]
         public void GetControlNonPublicStaticFields()
         {
             Approvals.VerifyAll(
@@ -43,7 +46,7 @@ namespace ApprovalUtilities.Tests.Reflection
                 string.Empty);
         }
 
-        [TestMethod]
+        [Test]
         [UseReporter(typeof(DiffReporter))]
         public void GetInheritedNonPublicStaticFields()
         {
@@ -59,8 +62,9 @@ namespace ApprovalUtilities.Tests.Reflection
                 throw;
             }
         }
+#endif
 
-        [TestMethod]
+        [Test]
         public void GetNonPublicInstanceFields()
         {
             Approvals.VerifyAll(
@@ -68,7 +72,7 @@ namespace ApprovalUtilities.Tests.Reflection
                 string.Empty);
         }
 
-        [TestMethod]
+        [Test]
         public void GetNonPublicInstanceFieldsAssignableTo()
         {
             Func<FieldInfo, bool> selector = fi => typeof(MulticastDelegate).IsAssignableFrom(fi.FieldType);
@@ -78,7 +82,7 @@ namespace ApprovalUtilities.Tests.Reflection
                 string.Empty);
         }
 
-        [TestMethod]
+        [Test]
         public void GetNonPublicInstanceFieldsNamed()
         {
             Func<FieldInfo, bool> selector = fi => string.Compare(fi.Name, "NonEventField", false) == 0;
@@ -87,8 +91,8 @@ namespace ApprovalUtilities.Tests.Reflection
                 new TestingPoco().GetInstanceFields(selector),
                 string.Empty);
         }
-
-        [TestMethod]
+#if !NETCORE
+        [Test]
         public void GetNonPublicInstanceProperties()
         {
             Approvals.VerifyAll(
@@ -96,7 +100,7 @@ namespace ApprovalUtilities.Tests.Reflection
                 string.Empty);
         }
 
-        [TestMethod]
+        [Test]
         public void GetNonPublicInstancePropertiesNamed()
         {
             Func<PropertyInfo, bool> selector = pi => string.Compare(pi.Name, "Events", false) == 0;
@@ -105,8 +109,9 @@ namespace ApprovalUtilities.Tests.Reflection
                 new CheckBox().NonPublicInstanceProperties(selector),
                 string.Empty);
         }
+#endif
 
-        [TestMethod]
+        [Test]
         public void GetPocoEvents()
         {
             var testingPoco = new TestingPoco();
@@ -117,7 +122,7 @@ namespace ApprovalUtilities.Tests.Reflection
             Approvals.VerifyAll(testingPoco.GetPocoEvents(), string.Empty);
         }
 
-        [TestMethod]
+        [Test]
         public void GetEmptyPocoEvents()
         {
             var testingPoco = new TestingPoco();
@@ -125,7 +130,7 @@ namespace ApprovalUtilities.Tests.Reflection
             Assert.AreEqual(0, testingPoco.GetPocoEvents().Count());
         }
 
-        [TestMethod]
+        [Test]
         public void GetInheritedPocoEvents()
         {
             var value = new InheritsTestingPoco();
@@ -136,13 +141,13 @@ namespace ApprovalUtilities.Tests.Reflection
             Approvals.VerifyAll(value.GetPocoEvents(), string.Empty);
         }
 
-        [TestMethod]
+        [Test]
         public void GetPrivateBaseClassFields()
         {
             Approvals.VerifyAll("Private methods for Class B", ReflectionUtilities.GetAllFields(typeof(B)), "");
         }
 
-        [TestMethod]
+        [Test]
         public void GetLabelForChild()
         {
             var value = new C("a", "b", "c");

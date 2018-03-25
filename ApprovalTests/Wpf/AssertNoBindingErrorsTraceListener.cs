@@ -1,3 +1,4 @@
+#if !NETCORE
 using System;
 using System.Diagnostics;
 using System.Text;
@@ -67,3 +68,4 @@ Windows Registry Editor Version 5.00
 		}
 	}
 }
+#endif

@@ -56,7 +56,7 @@ namespace ApprovalTests.Tests.Reporters
             GenericDiffReporter.RegisterTextFileTypes(".myCrazyExtension");
             Assert.IsTrue(r.IsValidFileType("file.myCrazyExtension"));
         }
-
+#if !NETCORE
         [Test]
 		[Platform(Exclude="Mono")]
         [UseReporter(typeof(ClipboardReporter))]
@@ -70,5 +70,6 @@ namespace ApprovalTests.Tests.Reporters
             GenericDiffReporter.EnsureFileExists(imageFile);
             Approvals.VerifyFile(imageFile);
         }
+#endif
     }
 }

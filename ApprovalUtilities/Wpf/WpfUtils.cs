@@ -1,4 +1,4 @@
-#if !__MonoCS__
+#if !__MonoCS__ && !NETCORE
 using System;
 using System.IO;
 using System.Threading;

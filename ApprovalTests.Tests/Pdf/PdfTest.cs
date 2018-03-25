@@ -4,7 +4,6 @@ using ApprovalTests.Scrubber;
 using ApprovalUtilities.Utilities;
 using NUnit.Framework;
 using System.Linq;
-using Assert = NUnit.Framework.Assert;
 
 namespace ApprovalTests.Tests.Pdf
 {
@@ -13,7 +12,11 @@ namespace ApprovalTests.Tests.Pdf
 	public class PdfTest
 	{
 		[Test]
-		[UseReporter(typeof(FileLauncherReporter), typeof(ClipboardReporter))]
+#if NETCORE
+        [UseReporter(typeof(FileLauncherReporter))]
+#else
+        [UseReporter(typeof(FileLauncherReporter),typeof(ClipboardReporter))]
+#endif
 		public void TestPdf()
 		{
 			var pdfOriginal = PathUtilities.GetAdjacentFile("sample.pdf");
