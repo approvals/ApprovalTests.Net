@@ -37,7 +37,7 @@ namespace ApprovalTests.Wpf
 
         public static void Verify(Func<Control> action)
         {
-            ApprovalTests.Approvals.Verify(CreateControlWpfWriter(action));
+            Approvals.Verify(CreateControlWpfWriter(action));
         }
 
         private static IApprovalWriter CreateControlWpfWriter(Func<Control> action)

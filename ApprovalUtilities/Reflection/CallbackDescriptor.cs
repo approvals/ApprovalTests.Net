@@ -3,7 +3,7 @@ namespace ApprovalUtilities.Reflection
     using System.Collections.Generic;
     using System.Reflection;
     using System.Text;
-    using ApprovalUtilities.Utilities;
+    using Utilities;
 
     public class CallbackDescriptor
     {
@@ -13,13 +13,13 @@ namespace ApprovalUtilities.Reflection
         {
             foreach (var m in methods)
             {
-                this.AddMethod(m);
+                AddMethod(m);
             }
         }
 
         public CallbackDescriptor(string name)
         {
-            this.EventName = name;
+            EventName = name;
         }
 
         public string EventName { get; private set; }
@@ -37,7 +37,7 @@ namespace ApprovalUtilities.Reflection
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.AppendLine("{0}:".FormatWith(this.EventName));
+            sb.AppendLine("{0}:".FormatWith(EventName));
 
             for (var i = 0; i < Methods.Count; i++)
             {

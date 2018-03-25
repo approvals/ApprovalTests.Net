@@ -12,7 +12,7 @@ namespace ApprovalTests.Namers.StackTraceParsers
         protected Caller approvalFrame;
 
 
-        public virtual string TypeName => GetRecursiveTypeName(this.approvalFrame.Method.DeclaringType);
+        public virtual string TypeName => GetRecursiveTypeName(approvalFrame.Method.DeclaringType);
 
         public string AdditionalInfo
         {

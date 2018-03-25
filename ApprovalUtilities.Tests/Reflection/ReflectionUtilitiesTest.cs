@@ -151,9 +151,9 @@ namespace ApprovalUtilities.Tests.Reflection
 
             public C(string a, string b, string c)
             {
-                this.A = a;
-                this.B = b;
-                this.D = c;
+                A = a;
+                B = b;
+                D = c;
             }
         }
 

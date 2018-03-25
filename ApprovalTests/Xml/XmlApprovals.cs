@@ -33,7 +33,7 @@ namespace ApprovalTests.Xml
         public static void VerifyText(string text, string fileExtensionWithoutDot, bool safely, Func<string, string> scrubber)
         {
             text = XmlUtils.FormatXml(scrubber.Invoke(text), safe: safely);
-            ApprovalTests.Approvals.Verify(WriterFactory.CreateTextWriter(text, fileExtensionWithoutDot));
+            Approvals.Verify(WriterFactory.CreateTextWriter(text, fileExtensionWithoutDot));
         }
 
         public static void VerifyOrderedXml(string text)
@@ -45,7 +45,7 @@ namespace ApprovalTests.Xml
         {
             text = XmlUtils.FormatXmlWithOrderedAttributes(scrubber.Invoke(text));
 
-            ApprovalTests.Approvals.Verify(WriterFactory.CreateTextWriter(text, "xml"));
+            Approvals.Verify(WriterFactory.CreateTextWriter(text, "xml"));
         }
     }
 }

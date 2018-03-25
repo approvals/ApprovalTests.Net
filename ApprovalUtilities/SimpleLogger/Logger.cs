@@ -83,7 +83,7 @@ namespace ApprovalUtilities.SimpleLogger
         }
         public static T Log<T>(this T t, string label, Func<T, string> log)
         {
-            Logger.Variable(label, log(t));
+            Variable(label, log(t));
             return t;
         }
     }

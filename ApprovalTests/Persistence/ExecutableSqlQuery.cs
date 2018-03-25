@@ -14,12 +14,12 @@ namespace ApprovalTests.Persistence
 
         public string GetQuery()
         {
-            return this.adapter.GetQuery();
+            return adapter.GetQuery();
         }
 
         public string ExecuteQuery(string query)
         {
-            return SqlLoaderUtils.ExecuteQueryToDisplayString(query, this.adapter.GetConnection());
+            return SqlLoaderUtils.ExecuteQueryToDisplayString(query, adapter.GetConnection());
         }
     }
 }

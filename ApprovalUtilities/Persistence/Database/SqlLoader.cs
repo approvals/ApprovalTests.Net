@@ -10,12 +10,12 @@ namespace ApprovalUtilities.Persistence.Database
 
         protected SqlLoader(string connectionString)
         {
-            this.ConnectionString = connectionString;
+            ConnectionString = connectionString;
         }
 
         protected SqlLoader(Func<DbCommand> commandCreator)
         {
-            this.CommandCreator = commandCreator;
+            CommandCreator = commandCreator;
         }
 
         public abstract T Load();

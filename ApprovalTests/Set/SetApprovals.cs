@@ -46,7 +46,7 @@ namespace ApprovalTests.Set
 
         public static void VerifyFileAsSet(string filename)
         {
-            VerifyFileAsSet(filename, ApprovalTests.Scrubber.ScrubberUtils.NO_SCRUBBER);
+            VerifyFileAsSet(filename, Scrubber.ScrubberUtils.NO_SCRUBBER);
         }
     }
 }

@@ -11,9 +11,9 @@ namespace ApprovalTests.Reporters
 
         public DiffInfo(string diffProgram, string parameters, Func<IEnumerable<string>> fileTypes)
         {
-            this.DiffProgram = ResolveWindowsPath(diffProgram);
-            this.Parameters = parameters;
-            this.FileTypes = fileTypes;
+            DiffProgram = ResolveWindowsPath(diffProgram);
+            Parameters = parameters;
+            FileTypes = fileTypes;
         }
 
         private static string ResolveWindowsPath(string diffProgram)

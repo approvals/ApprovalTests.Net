@@ -102,8 +102,8 @@ Recieved {0} ({1}, {2}, {3})"
                         .FormatWith(GetType().Name, diffProgram, argumentsFormat, diffProgramNotFoundMessage));
             }
 
-            this.originalDiffProgram = diffProgram;
-            this.arguments = argumentsFormat;
+            originalDiffProgram = diffProgram;
+            arguments = argumentsFormat;
             this.diffProgramNotFoundMessage = diffProgramNotFoundMessage;
             fileTypes = allowedFileTypes;
         }

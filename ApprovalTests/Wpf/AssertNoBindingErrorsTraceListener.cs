@@ -45,10 +45,10 @@ Windows Registry Editor Version 5.00
 
             public void Dispose()
             {
-                var message = this.listener.messageBuilder.ToString();
-                this.listener.Flush();
-                this.listener.Close();
-                PresentationTraceSources.DataBindingSource.Listeners.Remove(this.listener);
+                var message = listener.messageBuilder.ToString();
+                listener.Flush();
+                listener.Close();
+                PresentationTraceSources.DataBindingSource.Listeners.Remove(listener);
                 if (!string.IsNullOrEmpty(message))
                 {
                     message = message.Replace(";", "\n\t").Replace(". ", ".\n\t");

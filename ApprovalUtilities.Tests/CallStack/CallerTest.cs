@@ -25,7 +25,7 @@ namespace ApprovalUtilities.Tests.CallStack
         public void TestCallStack()
         {
             var caller = GetDeepCaller();
-            var callers = caller.Callers.Where(c => c.Method.DeclaringType == this.GetType());
+            var callers = caller.Callers.Where(c => c.Method.DeclaringType == GetType());
             Approvals.VerifyAll(callers, c => c.Method.ToStandardString());
         }
 
@@ -33,7 +33,7 @@ namespace ApprovalUtilities.Tests.CallStack
         public void TestName()
         {
             var caller = GetDeepCaller();
-            var methods = caller.Methods.Where(m => m.DeclaringType == this.GetType());
+            var methods = caller.Methods.Where(m => m.DeclaringType == GetType());
             Approvals.VerifyAll(methods, m => m.ToStandardString());
         }
 

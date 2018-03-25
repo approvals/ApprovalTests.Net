@@ -106,7 +106,7 @@ namespace ApprovalTests.Combinations
 
         private static void VerifyAllCombinations<A, B, C, D, E, F, G, H, I>(Func<A, B, C, D, E, F, G, H, I, object> processCall, string format, Func<object, string> resultFormatter, IEnumerable<A> aList, IEnumerable<B> bList, IEnumerable<C> cList, IEnumerable<D> dList, IEnumerable<E> eList, IEnumerable<F> fList, IEnumerable<G> gList, IEnumerable<H> hList, IEnumerable<I> iList)
         {
-            ApprovalTests.Approvals.Verify(GetApprovalString(processCall, format, resultFormatter, aList, bList, cList, dList, eList, fList, gList, hList, iList));
+            Approvals.Verify(GetApprovalString(processCall, format, resultFormatter, aList, bList, cList, dList, eList, fList, gList, hList, iList));
         }
 
         public static string GetApprovalString<A>(Func<A, object> processCall, string format, Func<object, string> resultFormatter,

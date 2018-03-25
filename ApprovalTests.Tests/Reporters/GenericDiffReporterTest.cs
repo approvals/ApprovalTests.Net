@@ -35,7 +35,7 @@ namespace ApprovalTests.Tests.Reporters
         [Test]
         public void TestMissingDots()
         {
-            using (ApprovalTests.Namers.ApprovalResults.UniqueForOs())
+            using (Namers.ApprovalResults.UniqueForOs())
             {
                 var e = ExceptionUtilities.GetException(() => GenericDiffReporter.RegisterTextFileTypes(".exe", "txt", ".error", "asp"));
                 Approvals.Verify(e);

@@ -29,13 +29,13 @@ namespace ApprovalTests.Approvers
 
         public virtual bool Approve()
         {
-            var basename = Path.Combine(this.namer.SourcePath, this.namer.Name);
-            this.approved = Path.GetFullPath(this.writer.GetApprovalFilename(basename));
-            this.received = Path.GetFullPath(this.writer.GetReceivedFilename(basename));
-            this.received = this.writer.WriteReceivedFile(this.received);
+            var basename = Path.Combine(namer.SourcePath, namer.Name);
+            approved = Path.GetFullPath(writer.GetApprovalFilename(basename));
+            received = Path.GetFullPath(writer.GetReceivedFilename(basename));
+            received = writer.WriteReceivedFile(received);
 
-            this.failure = this.Approve(this.approved, this.received);
-            return this.failure == null;
+            failure = Approve(approved, received);
+            return failure == null;
         }
 
         public virtual ApprovalException Approve(string approvedPath, string receivedPath)
@@ -45,7 +45,7 @@ namespace ApprovalTests.Approvers
                 return new ApprovalMissingException(receivedPath, approvedPath);
             }
 
-            if (this.normalizeLineEndingsForTextFiles && GenericDiffReporter.IsTextFile(approvedPath))
+            if (normalizeLineEndingsForTextFiles && GenericDiffReporter.IsTextFile(approvedPath))
             {
                 var receivedText = File.ReadAllText(receivedPath).Replace("\r\n", "\n");
                 var approvedText = File.ReadAllText(approvedPath).Replace("\r\n", "\n");
@@ -62,19 +62,19 @@ namespace ApprovalTests.Approvers
 
         public void Fail()
         {
-            throw this.failure;
+            throw failure;
         }
 
         public void ReportFailure(IApprovalFailureReporter reporter)
         {
-            reporter.Report(this.approved, this.received);
+            reporter.Report(approved, received);
         }
 
         public void CleanUpAfterSuccess(IApprovalFailureReporter reporter)
         {
-            File.Delete(this.received);
+            File.Delete(received);
             var withCleanUp = reporter as IApprovalReporterWithCleanUp;
-            withCleanUp?.CleanUp(this.approved, this.received);
+            withCleanUp?.CleanUp(approved, received);
         }
 
         private static bool Compare(ICollection<char> chars1, ICollection<char> chars2)

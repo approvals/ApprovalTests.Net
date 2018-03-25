@@ -42,17 +42,17 @@ namespace ApprovalTests.Tests.Wpf
 
         public string MyProperty
         {
-            get => this._myProperty;
+            get => _myProperty;
             set
             {
-                this._myProperty = value;
+                _myProperty = value;
                 RaisePropertyChanged();
             }
         }
 
         private void RaisePropertyChanged([CallerMemberName] string propertyName = null)
         {
-            this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

@@ -10,7 +10,7 @@ namespace ApprovalTests.Tests
         [Test]
         public void TestVerifyException()
         {
-            using (ApprovalTests.Namers.ApprovalResults.UniqueForOs())
+            using (Namers.ApprovalResults.UniqueForOs())
             {
                 Action wrapper = () => { throw new Exception(); };
                 var e = ExceptionUtilities.GetException(wrapper);

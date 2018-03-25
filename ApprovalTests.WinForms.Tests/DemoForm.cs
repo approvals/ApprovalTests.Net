@@ -5,18 +5,18 @@ namespace ApprovalTests.Tests.WinForms
 {
     public class DemoForm : Form
     {
-        private System.Windows.Forms.Button button1;
+        private Button button1;
 
-        private System.Windows.Forms.CheckBox checkBox1;
+        private CheckBox checkBox1;
 
         /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components;
 
-        private System.Windows.Forms.ListBox listBox1;
+        private ListBox listBox1;
 
-        private System.Windows.Forms.Timer timer1;
+        private Timer timer1;
 
         public DemoForm()
         {

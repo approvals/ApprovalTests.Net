@@ -55,7 +55,7 @@ namespace ApprovalUtilities.SimpleLogger
         public string GetCallingMethod()
         {
             var outsideCallingMethod =
-                new Caller().Methods.First(m => m.DeclaringType.Namespace != this.GetType().Namespace);
+                new Caller().Methods.First(m => m.DeclaringType.Namespace != GetType().Namespace);
             return outsideCallingMethod.ToStandardString();
         }
 

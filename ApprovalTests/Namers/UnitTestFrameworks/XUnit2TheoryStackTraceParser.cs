@@ -1,6 +1,6 @@
 namespace ApprovalTests.Namers.UnitTestFrameworks
 {
-    using ApprovalTests.Namers.StackTraceParsers;
+    using StackTraceParsers;
 
     public class XUnit2TheoryStackTraceParser : AttributeStackTraceParser
     {

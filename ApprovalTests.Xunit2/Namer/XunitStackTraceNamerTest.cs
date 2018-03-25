@@ -2,15 +2,15 @@ using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.Xunit2.Namer
 {
-    using ApprovalTests.Namers;
-    using ApprovalTests.Namers.StackTraceParsers;
+    using Namers;
+    using Namers.StackTraceParsers;
 
     using System;
     using System.Diagnostics;
     using System.IO;
     using System.Threading.Tasks;
 
-    using global::Xunit;
+    using Xunit;
 
     public class XunitStackTraceNamerTest
     {

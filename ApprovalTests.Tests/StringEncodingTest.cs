@@ -26,7 +26,7 @@ namespace ApprovalTests.Tests
         [Test]
         public void TestUnicode()
         {
-            var text = UnicodeEncoding.Default.GetString(new byte[] {101, 235, 110, 116});
+            var text = Encoding.Default.GetString(new byte[] {101, 235, 110, 116});
             Approvals.Verify(text);
         }
 

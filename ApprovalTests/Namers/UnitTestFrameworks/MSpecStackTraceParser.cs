@@ -27,7 +27,7 @@ namespace ApprovalTests.StackTraceParsers
             return "MSpec";
         }
 
-        public override string TypeName => GetRecursiveTypeName(this.approvalFrame.Class.DeclaringType);
+        public override string TypeName => GetRecursiveTypeName(approvalFrame.Class.DeclaringType);
 
         protected override string GetMethodName()
         {

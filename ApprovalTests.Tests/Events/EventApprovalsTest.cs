@@ -10,7 +10,7 @@
         [Test]
         public void ComponentWithStandardEventHandler()
         {
-            using (ApprovalTests.Namers.ApprovalResults.UniqueForOs())
+            using (Namers.ApprovalResults.UniqueForOs())
             {
                 var timer = new Timer();
                 timer.Tick += TestingListener.StandardCallback;
@@ -22,7 +22,7 @@
         [Test]
         public void ControlWithEverything()
         {
-            using (ApprovalTests.Namers.ApprovalResults.UniqueForOs())
+            using (Namers.ApprovalResults.UniqueForOs())
             {
                 var testingControl = new TestingControl();
                 testingControl.Click += TestingListener.StandardCallback;
@@ -38,7 +38,7 @@
         [Test]
         public void ControlWithLocalAndBaseKeys()
         {
-            using (ApprovalTests.Namers.ApprovalResults.UniqueForOs())
+            using (Namers.ApprovalResults.UniqueForOs())
             {
                 var checkBox = new CheckBox();
                 checkBox.CheckedChanged += TestingListener.AnotherStandardCallback;

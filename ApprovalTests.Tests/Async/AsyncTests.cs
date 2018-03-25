@@ -14,7 +14,7 @@ namespace ApprovalTests.Tests.Async
         [Test]
         public void TestAsyncExceptionFromVoid()
         {
-            using (ApprovalTests.Namers.ApprovalResults.UniqueForOs())
+            using (Namers.ApprovalResults.UniqueForOs())
             {
                 AsyncApprovals.VerifyException(ThrowBabyThrow(),
                     ScrubberUtils.RemoveLinesContaining("System.Linq.Parallel.QueryTask"));

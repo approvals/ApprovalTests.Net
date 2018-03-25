@@ -19,7 +19,7 @@ namespace ApprovalTests.Maintenance
         {
             var assembly = new Caller().Methods.First().Module.Assembly;
             var path = PathUtilities.GetDirectoryForCaller(1);
-            var list = ApprovalMaintenance.FindAbandonedFiles(path, assembly);
+            var list = FindAbandonedFiles(path, assembly);
             foreach (var fileInfo in list)
             {
                 fileInfo.Delete();

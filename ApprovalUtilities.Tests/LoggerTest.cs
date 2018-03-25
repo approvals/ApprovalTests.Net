@@ -19,8 +19,6 @@ namespace ApprovalUtilities.Tests
             var log = Logger.LogToStringBuilder();
             using (Logger.MarkEntryPoints())
             {
-
-
                 Logger.Event("Starting");
                 var name = "Llewellyn";
                 Logger.Variable("name", name);

@@ -18,7 +18,7 @@ namespace ApprovalTests.Reporters
 
         public FirstWorkingReporter(IEnumerable<IEnvironmentAwareReporter> reporters)
         {
-            this.Reporters = reporters;
+            Reporters = reporters;
         }
 
         public void Report(string approved, string received)

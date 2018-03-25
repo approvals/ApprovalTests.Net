@@ -9,23 +9,23 @@ namespace ApprovalUtilities.Utilities
 
         public TempFile(string name)
         {
-            this.backingFile = new FileInfo(name);
-            this.backingFile.Create().Close();
+            backingFile = new FileInfo(name);
+            backingFile.Create().Close();
         }
 
         ~TempFile()
         {
-            this.Dispose();
+            Dispose();
         }
 
-        public FileInfo File => this.backingFile;
+        public FileInfo File => backingFile;
 
         public void Dispose()
         {
             // File on the file system is not a managed resource :)
-            if (this.backingFile.Exists)
+            if (backingFile.Exists)
             {
-                this.backingFile.Delete();
+                backingFile.Delete();
             }
         }
 

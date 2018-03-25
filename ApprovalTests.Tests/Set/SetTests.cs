@@ -24,7 +24,7 @@ namespace ApprovalTests.Tests.Set
 
             public int CompareTo(Foo other)
             {
-                return this.Bar.CompareTo(other.Bar);
+                return Bar.CompareTo(other.Bar);
             }
         }
 

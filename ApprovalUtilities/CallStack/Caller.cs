@@ -83,7 +83,7 @@ namespace ApprovalUtilities.CallStack
         public A GetFirstFrameForAttribute<A>() where A : Attribute
         {
             var attribute = typeof(A);
-            return this.GetFirstFrameForAttribute(attribute) as A;
+            return GetFirstFrameForAttribute(attribute) as A;
         }
 
         public object GetFirstFrameForAttribute(Type attribute)
@@ -96,7 +96,7 @@ namespace ApprovalUtilities.CallStack
             };
             foreach (var attributeExtractor in attributeExtractors)
             {
-                foreach (var method in this.NonLambdaCallers.Select(c => c.Method))
+                foreach (var method in NonLambdaCallers.Select(c => c.Method))
                 {
                     try
                     {
