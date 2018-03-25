@@ -17,7 +17,7 @@ namespace ApprovalTests.Persistence.DataSets
 
         private double GetNextDouble()
         {
-            return (integer++) + 0.5;
+            return integer++ + 0.5;
         }
 
         private bool GetNextBoolean()

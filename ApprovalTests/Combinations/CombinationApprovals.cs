@@ -101,7 +101,7 @@ namespace ApprovalTests.Combinations
 
         private static void VerifyAllCombinations<A, B, C, D, E, F, G, H, I>(Func<A, B, C, D, E, F, G, H, I, object> processCall, string format, IEnumerable<A> aList, IEnumerable<B> bList, IEnumerable<C> cList, IEnumerable<D> dList, IEnumerable<E> eList, IEnumerable<F> fList, IEnumerable<G> gList, IEnumerable<H> hList, IEnumerable<I> iList)
         {
-            VerifyAllCombinations(processCall, format, (result) => result + string.Empty, aList, bList, cList, dList, eList, fList, gList, hList, iList);
+            VerifyAllCombinations(processCall, format, result => result + string.Empty, aList, bList, cList, dList, eList, fList, gList, hList, iList);
         }
 
         private static void VerifyAllCombinations<A, B, C, D, E, F, G, H, I>(Func<A, B, C, D, E, F, G, H, I, object> processCall, string format, Func<object, string> resultFormatter, IEnumerable<A> aList, IEnumerable<B> bList, IEnumerable<C> cList, IEnumerable<D> dList, IEnumerable<E> eList, IEnumerable<F> fList, IEnumerable<G> gList, IEnumerable<H> hList, IEnumerable<I> iList)
@@ -117,7 +117,7 @@ namespace ApprovalTests.Combinations
 
         public static string GetApprovalString<A>(Func<A, object> processCall, IEnumerable<A> aList)
         {
-            return GetApprovalString((a, b, c, d, e, f, g, h, i) => processCall(a), "[{0}]", (result) => result + string.Empty, aList, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY);
+            return GetApprovalString((a, b, c, d, e, f, g, h, i) => processCall(a), "[{0}]", result => result + string.Empty, aList, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY);
         }
 
         public static string GetApprovalString<A, B>(Func<A, B, object> processCall, string format, Func<object, string> resultFormatter,
@@ -128,7 +128,7 @@ namespace ApprovalTests.Combinations
 
         public static string GetApprovalString<A, B>(Func<A, B, object> processCall, IEnumerable<A> aList, IEnumerable<B> bList)
         {
-            return GetApprovalString((a, b, c, d, e, f, g, h, i) => processCall(a, b), "[{0},{1}]", (result) => result + string.Empty, aList, bList, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY);
+            return GetApprovalString((a, b, c, d, e, f, g, h, i) => processCall(a, b), "[{0},{1}]", result => result + string.Empty, aList, bList, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY);
         }
 
         public static string GetApprovalString<A, B, C>(Func<A, B, C, object> processCall, string format, Func<object, string> resultFormatter,
@@ -140,7 +140,7 @@ namespace ApprovalTests.Combinations
 
         public static string GetApprovalString<A, B, C>(Func<A, B, C, object> processCall, IEnumerable<A> aList, IEnumerable<B> bList, IEnumerable<C> cList)
         {
-            return GetApprovalString((a, b, c, d, e, f, g, h, i) => processCall(a, b, c), "[{0},{1},{2}]", (result) => result + string.Empty, aList, bList, cList, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY);
+            return GetApprovalString((a, b, c, d, e, f, g, h, i) => processCall(a, b, c), "[{0},{1},{2}]", result => result + string.Empty, aList, bList, cList, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY);
         }
 
         public static string GetApprovalString<A, B, C, D>(Func<A, B, C, D, object> processCall, string format, Func<object, string> resultFormatter,
@@ -153,7 +153,7 @@ namespace ApprovalTests.Combinations
         public static string GetApprovalString<A, B, C, D>(Func<A, B, C, D, object> processCall, IEnumerable<A> aList, IEnumerable<B> bList,
             IEnumerable<C> cList, IEnumerable<D> dList)
         {
-            return GetApprovalString((a, b, c, d, e, f, g, h, i) => processCall(a, b, c, d), "[{0},{1},{2},{3}]", (result) => result + string.Empty, aList, bList, cList, dList, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY);
+            return GetApprovalString((a, b, c, d, e, f, g, h, i) => processCall(a, b, c, d), "[{0},{1},{2},{3}]", result => result + string.Empty, aList, bList, cList, dList, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY);
         }
 
         public static string GetApprovalString<A, B, C, D, E>(Func<A, B, C, D, E, object> processCall, string format, Func<object, string> resultFormatter,
@@ -168,7 +168,7 @@ namespace ApprovalTests.Combinations
             IEnumerable<C> cList, IEnumerable<D> dList,
             IEnumerable<E> eList)
         {
-            return GetApprovalString((a, b, c, d, e, f, g, h, i) => processCall(a, b, c, d, e), "[{0},{1},{2},{3},{4}]", (result) => result + string.Empty, aList, bList, cList, dList, eList, EMPTY, EMPTY, EMPTY, EMPTY);
+            return GetApprovalString((a, b, c, d, e, f, g, h, i) => processCall(a, b, c, d, e), "[{0},{1},{2},{3},{4}]", result => result + string.Empty, aList, bList, cList, dList, eList, EMPTY, EMPTY, EMPTY, EMPTY);
         }
 
         public static string GetApprovalString<A, B, C, D, E, F>(Func<A, B, C, D, E, F, object> processCall, string format, Func<object, string> resultFormatter,
@@ -183,7 +183,7 @@ namespace ApprovalTests.Combinations
             IEnumerable<C> cList, IEnumerable<D> dList,
             IEnumerable<E> eList, IEnumerable<F> fList)
         {
-            return GetApprovalString((a, b, c, d, e, f, g, h, i) => processCall(a, b, c, d, e, f), "[{0},{1},{2},{3},{4},{5}]", (result) => result + string.Empty, aList, bList, cList, dList, eList, fList, EMPTY, EMPTY, EMPTY);
+            return GetApprovalString((a, b, c, d, e, f, g, h, i) => processCall(a, b, c, d, e, f), "[{0},{1},{2},{3},{4},{5}]", result => result + string.Empty, aList, bList, cList, dList, eList, fList, EMPTY, EMPTY, EMPTY);
         }
 
         public static string GetApprovalString<A, B, C, D, E, F, G>(Func<A, B, C, D, E, F, G, object> processCall, string format, Func<object, string> resultFormatter,
@@ -200,7 +200,7 @@ namespace ApprovalTests.Combinations
             IEnumerable<E> eList, IEnumerable<F> fList,
             IEnumerable<G> gList)
         {
-            return GetApprovalString((a, b, c, d, e, f, g, h, i) => processCall(a, b, c, d, e, f, g), "[{0},{1},{2},{3},{4},{5},{6}]", (result) => result + string.Empty, aList, bList, cList, dList, eList, fList, gList, EMPTY, EMPTY);
+            return GetApprovalString((a, b, c, d, e, f, g, h, i) => processCall(a, b, c, d, e, f, g), "[{0},{1},{2},{3},{4},{5},{6}]", result => result + string.Empty, aList, bList, cList, dList, eList, fList, gList, EMPTY, EMPTY);
         }
 
         public static string GetApprovalString<A, B, C, D, E, F, G, H>(Func<A, B, C, D, E, F, G, H, object> processCall, string format, Func<object, string> resultFormatter,
@@ -217,7 +217,7 @@ namespace ApprovalTests.Combinations
             IEnumerable<E> eList, IEnumerable<F> fList,
             IEnumerable<G> gList, IEnumerable<H> hList)
         {
-            return GetApprovalString((a, b, c, d, e, f, g, h, i) => processCall(a, b, c, d, e, f, g, h), "[{0},{1},{2},{3},{4},{5},{6},{7}]", (result) => result + string.Empty, aList, bList, cList, dList, eList, fList, gList, hList, EMPTY);
+            return GetApprovalString((a, b, c, d, e, f, g, h, i) => processCall(a, b, c, d, e, f, g, h), "[{0},{1},{2},{3},{4},{5},{6},{7}]", result => result + string.Empty, aList, bList, cList, dList, eList, fList, gList, hList, EMPTY);
         }
 
         public static string GetApprovalString<A, B, C, D, E, F, G, H, I>(Func<A, B, C, D, E, F, G, H, I, object> processCall, IEnumerable<A> aList, IEnumerable<B> bList,
@@ -226,7 +226,7 @@ namespace ApprovalTests.Combinations
             IEnumerable<G> gList, IEnumerable<H> hList,
             IEnumerable<I> iList)
         {
-            return GetApprovalString(processCall, "[{0},{1},{2},{3},{4},{5},{6},{7},{8}]", (result) => result + string.Empty, aList, bList, cList, dList, eList, fList, gList, hList, iList);
+            return GetApprovalString(processCall, "[{0},{1},{2},{3},{4},{5},{6},{7},{8}]", result => result + string.Empty, aList, bList, cList, dList, eList, fList, gList, hList, iList);
         }
 
         public static string GetApprovalString<A, B, C, D, E, F, G, H, I>(Func<A, B, C, D, E, F, G, H, I, object> processCall, string format, Func<object, string> resultFormatter,

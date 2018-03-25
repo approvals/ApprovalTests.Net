@@ -29,7 +29,7 @@ namespace ApprovalTests.Tests.EntityFramework
         public static LambdaEnumerableLoader<Company, ModelContainer> GetCompanyByName(string name)
         {
             return Loaders.Create(() => new ModelContainer(),
-                                  (m) => (from c in m.Companies
+                                  m => (from c in m.Companies
                                           where c.Name.StartsWith(name)
                                           select c).Take(9));
         }

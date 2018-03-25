@@ -10,7 +10,7 @@ namespace ApprovalTests.Tests.Writers
         public void TestTextWriter()
         {
             Assert.IsInstanceOf<ApprovalTextWriter>(WriterFactory.CreateTextWriter("foo"));
-            WriterFactory.SetTextWriterCreator((t) => new MyTextWriter(t));
+            WriterFactory.SetTextWriterCreator(t => new MyTextWriter(t));
             Assert.IsInstanceOf<MyTextWriter>(WriterFactory.CreateTextWriter("foo"));
         }
 

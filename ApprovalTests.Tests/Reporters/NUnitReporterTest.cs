@@ -16,7 +16,7 @@ namespace ApprovalTests.Tests.Reporters
         }
 
         [Test]
-        [UseReporter((typeof(NUnitReporterWithCleanup)))]
+        [UseReporter(typeof(NUnitReporterWithCleanup))]
         public void TestReporter()
         {
             try

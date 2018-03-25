@@ -42,14 +42,14 @@ namespace ApprovalTests.Tests
         [Test]
         public void EnumerableWithLabelAndFormatter()
         {
-            Approvals.VerifyAll(text, "collection", (t) => "" + t.Length);
+            Approvals.VerifyAll(text, "collection", t => "" + t.Length);
         }
 
         [Test]
         public void EnumerableWithHeaderAndFormatter()
         {
             var word = "Llewellyn";
-            Approvals.VerifyAll(word, word.ToCharArray(), (c) => c + " => " + (int) c);
+            Approvals.VerifyAll(word, word.ToCharArray(), c => c + " => " + (int) c);
         }
 
         [Test]
@@ -117,7 +117,7 @@ namespace ApprovalTests.Tests
         [Test]
         public void EnumerableWithFormatter()
         {
-            Approvals.VerifyAll(text, (t) => "" + t.Length);
+            Approvals.VerifyAll(text, t => "" + t.Length);
         }
 
         [Test]

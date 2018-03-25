@@ -7,7 +7,7 @@ namespace ApprovalTests.MSTest
     public class MsTestReporterTest
     {
         [TestMethod]
-        [UseReporter((typeof(MsTestReporter)))]
+        [UseReporter(typeof(MsTestReporter))]
         public void TestReporter()
         {
             try

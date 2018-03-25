@@ -99,7 +99,7 @@ namespace ApprovalUtilities.Reflection
 
         private static Type GetType(object value)
         {
-            return (value == null) ? typeof(void) : value.GetType();
+            return value == null ? typeof(void) : value.GetType();
         }
 
         public static IEnumerable<PropertyInfo> NonPublicInstanceProperties(this object value)

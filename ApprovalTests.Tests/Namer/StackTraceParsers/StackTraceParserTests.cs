@@ -17,7 +17,7 @@ namespace ApprovalTests.Tests.Namer.StackTraceParsers
 
             try
             {
-                Parallel.ForEach(Enumerable.Range(1, 20), (_) =>
+                Parallel.ForEach(Enumerable.Range(1, 20), _ =>
                 {
                     try
                     {

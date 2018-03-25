@@ -22,7 +22,7 @@ namespace ApprovalTests.Tests.Namer
             Assert.IsTrue(File.Exists(path), path + " does not exist");
         }
 
-        [Test()]
+        [Test]
         [Description("The approval file should be based on the scenario name with outline")]
         [TestCase("Fred")]
         [TestCase("John")]
