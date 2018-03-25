@@ -8,7 +8,7 @@ namespace ApprovalTests.Tests
     [TestFixture]
     public class ApprovalsTest
     {
-        private static readonly string[] text = new string[] {"abc", "123", "!@#"};
+        private static readonly string[] text = {"abc", "123", "!@#"};
 
         [Test]
         public void Text()
@@ -55,7 +55,7 @@ namespace ApprovalTests.Tests
         [Test]
         public void VerifyAllWithNull()
         {
-            var words = new string[] {"abc", null, "123", "!@#"};
+            var words = new[] {"abc", null, "123", "!@#"};
             Approvals.VerifyAll(words, "");
         }
 
