@@ -12,8 +12,7 @@
             {
                 approver.ReportFailure(reporter);
 
-                var power = reporter as IReporterWithApprovalPower;
-                if (power != null && power.ApprovedWhenReported())
+                if (reporter is IReporterWithApprovalPower power && power.ApprovedWhenReported())
                 {
                     approver.CleanUpAfterSuccess(power);
                 }

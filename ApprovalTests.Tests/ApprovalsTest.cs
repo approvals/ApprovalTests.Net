@@ -99,7 +99,7 @@ namespace ApprovalTests.Tests
 
         private static Dictionary<string, string> FireFlyMap()
         {
-            var map = new Dictionary<string, string>
+            return new Dictionary<string, string>
             {
                 {"Caption", "Mal"},
                 {"2nd In Command", "Zoey"},
@@ -111,7 +111,6 @@ namespace ApprovalTests.Tests
                 {"Pastor", "Book"},
                 {"Stoaway", "River"}
             };
-            return map;
         }
 
         [Test]

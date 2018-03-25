@@ -35,11 +35,7 @@ namespace ApprovalTests.StackTraceParsers
             var instance = Activator.CreateInstance(testClass);
             var fields = testClass.GetFields(BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.DeclaredOnly);
             var delegates = fields.Where(f => typeof(Delegate).IsAssignableFrom(f.FieldType));
-            var approvalField = delegates.FirstOrDefault(f =>
-            {
-                var theDelegate = f.GetValue(instance) as Delegate;
-                return theDelegate != null && theDelegate.Method == approvalFrame.Method;
-            });
+            var approvalField = delegates.FirstOrDefault(f => f.GetValue(instance) is Delegate theDelegate && theDelegate.Method == approvalFrame.Method);
             if (approvalField == null)
             {
                 throw new Exception("Could not find the Field for this MSpec Test \n (Please log this if found at: https://github.com/approvals/ApprovalTests.Net/issues");
