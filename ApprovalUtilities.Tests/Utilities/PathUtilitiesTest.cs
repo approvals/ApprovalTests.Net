@@ -13,7 +13,7 @@ namespace ApprovalUtilities.Tests.Utilities
         {
             var dir = PathUtilities.GetDirectoryForCaller();
             var file = dir + "PathUtilitiesTest.cs";
-            AssertEqualIgnoreCase(@"...\PathUtilitiesTest.cs", PathUtilities.ScrubPath(file, dir));
+            AssertEqualIgnoreCase(@"...\PathUtilitiesTest.cs", file.ScrubPath(dir));
         }
 
         [TestMethod]

@@ -41,7 +41,7 @@ namespace ApprovalTests.TheoryTests
             {
                 var method2 = ToText(n2, label2);
                 var method1 = ToText(n1, label1);
-                StringReporting.DiffWith(method2, method1);
+                method2.DiffWith(method1);
                 throw new Exception("Race condition detected");
             }
         }

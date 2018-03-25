@@ -11,7 +11,7 @@ namespace ApprovalTests.Tests
     {
         public string Echo(params int[] i)
         {
-            return StringUtils.ToReadableString(i);
+            return i.ToReadableString();
         }
 
         [Test]

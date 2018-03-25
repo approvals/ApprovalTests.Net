@@ -37,7 +37,7 @@ namespace ApprovalUtilities.Tests
             }
 
             var logText = log.ScrubPath(PathUtilities.GetDirectoryForCaller());
-            logText = StackTraceScrubber.ScrubStackTrace(logText);
+            logText = logText.ScrubStackTrace();
             Approvals.Verify(logText);
         }
 
