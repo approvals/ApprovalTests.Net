@@ -109,6 +109,5 @@ If your report is very tight to the page, the page rendering might be different.
 
     public class DataPairs : Dictionary<string, object>
     {
-
     }
 }

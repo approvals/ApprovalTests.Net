@@ -43,7 +43,6 @@ namespace ApprovalUtilities.Wpf
         public static string ScreenCaptureInStaThread(string received, Func<Control> loader)
         {
             return ScreenCaptureInStaThread(received, () => ScreenCapture(loader(), received));
-
         }
 
         private static string ScreenCaptureInStaThread(string received, Action screenCapture)
@@ -72,10 +71,6 @@ namespace ApprovalUtilities.Wpf
 
             return received;
         }
-
-     
-
-       
 
         public static void ScreenCapture(Control control, string filename)
         {

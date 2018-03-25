@@ -255,7 +255,7 @@ namespace ApprovalTests
         {
             StringReporting.AssertEqual(expected, actual, new T());
         }
-        public static void AssertEquals(string expected, string actual) 
+        public static void AssertEquals(string expected, string actual)
         {
             StringReporting.AssertEqual(expected, actual, GetReporter());
         }
