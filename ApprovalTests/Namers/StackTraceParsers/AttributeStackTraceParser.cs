@@ -1,6 +1,8 @@
 using System;
 using System.Diagnostics;
 using System.Linq;
+using System.Reflection;
+using System.Runtime.CompilerServices;
 using Alphaleonis.Win32.Filesystem;
 using ApprovalUtilities.CallStack;
 
@@ -11,8 +13,7 @@ namespace ApprovalTests.Namers.StackTraceParsers
         protected Caller caller;
         protected Caller approvalFrame;
 
-
-        public virtual string TypeName => GetRecursiveTypeName(approvalFrame.Method.DeclaringType);
+        public virtual string TypeName => GetRecursiveTypeName(GetRealMethod(approvalFrame.Method).DeclaringType);
 
         public string AdditionalInfo
         {
@@ -33,7 +34,30 @@ namespace ApprovalTests.Namers.StackTraceParsers
 
         protected virtual string GetMethodName()
         {
-            return approvalFrame.Method.Name;
+            return GetRealMethod(approvalFrame.Method).Name;
+        }
+
+        static MethodBase GetRealMethod(MethodBase method)
+        {
+            var declaringType = method.DeclaringType;
+            if (typeof(IAsyncStateMachine).IsAssignableFrom(declaringType))
+            {
+                var realType = declaringType.DeclaringType;
+                foreach (var methodInfo in realType.GetMethods(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic))
+                {
+                    var stateMachineAttribute = methodInfo.GetCustomAttribute<AsyncStateMachineAttribute>();
+                    if (stateMachineAttribute == null)
+                    {
+                        continue;
+                    }
+                    if (stateMachineAttribute.StateMachineType == declaringType)
+                    {
+                        return methodInfo;
+                    }
+                }
+            }
+
+            return method;
         }
 
         public string SourcePath => Path.GetDirectoryName(GetFileNameForStack(approvalFrame));
@@ -54,9 +78,7 @@ namespace ApprovalTests.Namers.StackTraceParsers
 
         public static Caller GetFirstFrameForAttribute(Caller caller, string attributeName)
         {
-            var firstFrameForAttribute =
-                caller.Callers.FirstOrDefault(c => ContainsAttribute(c.Method.GetCustomAttributes(false), attributeName));
-            return firstFrameForAttribute;
+            return caller.Callers.FirstOrDefault(c => ContainsAttribute(GetRealMethod(c.Method).GetCustomAttributes(false), attributeName));
         }
 
         private static bool ContainsAttribute(object[] attributes, string attributeName)
@@ -78,9 +100,12 @@ namespace ApprovalTests.Namers.StackTraceParsers
 
         protected static string GetRecursiveTypeName(Type type)
         {
-            return type.DeclaringType != null
-                ? $"{GetRecursiveTypeName(type.DeclaringType)}.{type.Name}"
-                : type.Name;
+            if (type.DeclaringType != null)
+            {
+                return $"{GetRecursiveTypeName(type.DeclaringType)}.{type.Name}";
+            }
+
+            return type.Name;
         }
     }
 }
