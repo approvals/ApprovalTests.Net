@@ -4,23 +4,24 @@ using System.Linq;
 
 namespace ApprovalUtilities.Persistence.EntityFramework
 {
-	public class Loaders
-	{
-		public static LambdaEnumerableLoader<T,C> Create<T,C>(C modelContainer, Func<C, IQueryable<T>> func)
-			where C : ObjectContext
-		{
-			return new LambdaEnumerableLoader<T,C>(modelContainer, func);
-		}
+    public class Loaders
+    {
+        public static LambdaEnumerableLoader<T, C> Create<T, C>(C modelContainer, Func<C, IQueryable<T>> func)
+            where C : ObjectContext
+        {
+            return new LambdaEnumerableLoader<T, C>(modelContainer, func);
+        }
 
-		public static LambdaEnumerableLoader<T,C> Create<T,C>(Func<C> modelContainer, Func<C, IQueryable<T>> func)
-			where C : ObjectContext
-		{
-			return new LambdaEnumerableLoader<T,C>(modelContainer, func);
-		}
+        public static LambdaEnumerableLoader<T, C> Create<T, C>(Func<C> modelContainer, Func<C, IQueryable<T>> func)
+            where C : ObjectContext
+        {
+            return new LambdaEnumerableLoader<T, C>(modelContainer, func);
+        }
+
         public static LambdaSingleLoader<T, C> CreateSingle<T, C>(Func<C> modelContainer, Func<C, IQueryable<T>> func)
             where C : ObjectContext
         {
-            return new LambdaSingleLoader<T, C>(Loaders.Create(modelContainer, func));
+            return new LambdaSingleLoader<T, C>(Create(modelContainer, func));
         }
-	}
+    }
 }

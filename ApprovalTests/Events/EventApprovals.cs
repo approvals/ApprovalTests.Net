@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Text;
 using ApprovalUtilities.Reflection;
-using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.Events
 {
@@ -23,7 +22,7 @@ namespace ApprovalTests.Events
             var events = GetEventsInformationFor(value);
 
             var sb = new StringBuilder();
-            sb.AppendLine("Event Configuration for {0} {1}".FormatWith(value.GetType().Name, label));
+            sb.AppendLine($"Event Configuration for {value.GetType().Name} {label}");
             sb.AppendLine();
 
             foreach (var ev in events)

@@ -81,7 +81,7 @@ namespace ApprovalTests
         private static IEnvironmentAwareReporter GetFrontLoadedReporterFromAttribute()
         {
             var frontLoaded = CurrentCaller.GetFirstFrameForAttribute<FrontLoadedReporterAttribute>();
-            return frontLoaded != null ? frontLoaded.Reporter : (IEnvironmentAwareReporter)DefaultFrontLoaderReporter.INSTANCE;
+            return frontLoaded != null ? frontLoaded.Reporter : DefaultFrontLoaderReporter.INSTANCE;
         }
 
         private static IApprovalFailureReporter GetFrontLoadedReporter(IApprovalFailureReporter defaultIfNotFound,
@@ -176,7 +176,7 @@ namespace ApprovalTests
 
         #region Enumerable
 
-        public static void VerifyAll<T>(String header, IEnumerable<T> enumerable, string label)
+        public static void VerifyAll<T>(string header, IEnumerable<T> enumerable, string label)
         {
             Verify(header + "\n\n" + enumerable.Write(label));
         }
@@ -192,7 +192,7 @@ namespace ApprovalTests
             Verify(enumerable.Write(label, formatter));
         }
 
-        public static void VerifyAll<T>(String header, IEnumerable<T> enumerable,
+        public static void VerifyAll<T>(string header, IEnumerable<T> enumerable,
                                         Func<T, string> formatter)
         {
             Verify(header + "\n\n" + enumerable.Write(formatter));
@@ -206,12 +206,12 @@ namespace ApprovalTests
         public static void VerifyAll<K, V>(IDictionary<K, V> dictionary)
         {
             dictionary = dictionary ?? new Dictionary<K, V>();
-            VerifyAll(dictionary.OrderBy(p => p.Key), p => "{0} => {1}".FormatWith(p.Key, p.Value));
+            VerifyAll(dictionary.OrderBy(p => p.Key), p => $"{p.Key} => {p.Value}");
         }
 
         public static void VerifyAll<K, V>(string header, IDictionary<K, V> dictionary)
         {
-            VerifyAll(header, dictionary.OrderBy(p => p.Key), p => "{0} => {1}".FormatWith(p.Key, p.Value));
+            VerifyAll(header, dictionary.OrderBy(p => p.Key), p => $"{p.Key} => {p.Value}");
         }
 
         public static void VerifyAll<K, V>(string header, IDictionary<K, V> dictionary, Func<K, V, string> formatter)
@@ -255,7 +255,7 @@ namespace ApprovalTests
         {
             StringReporting.AssertEqual(expected, actual, new T());
         }
-        public static void AssertEquals(string expected, string actual) 
+        public static void AssertEquals(string expected, string actual)
         {
             StringReporting.AssertEqual(expected, actual, GetReporter());
         }
@@ -264,27 +264,5 @@ namespace ApprovalTests
             PdfScrubber.ScrubPdf(pdfFilePath);
             Verify(new ExistingFileWriter(pdfFilePath));
         }
-    }
-
-    internal class AlwaysWorksReporter : IEnvironmentAwareReporter
-    {
-        private readonly IApprovalFailureReporter reporter;
-
-        public AlwaysWorksReporter(IApprovalFailureReporter reporter)
-        {
-            this.reporter = reporter;
-        }
-
-
-        public void Report(string approved, string received)
-        {
-            reporter.Report(approved, received);
-        }
-
-        public bool IsWorkingInThisEnvironment(string forFile)
-        {
-            return true;
-        }
-
     }
 }

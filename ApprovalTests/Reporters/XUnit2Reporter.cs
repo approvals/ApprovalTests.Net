@@ -4,7 +4,7 @@ namespace ApprovalTests.Reporters
 {
     using System.Linq;
 
-    using ApprovalTests.StackTraceParsers;
+    using StackTraceParsers;
 
     public class XUnit2Reporter : AssertReporter
     {
@@ -29,9 +29,9 @@ namespace ApprovalTests.Reporters
             return base.IsWorkingInThisEnvironment(forFile) && isXunit2.Value;
         }
 
-        protected override void InvokeEqualsMethod(System.Type type, string[] parameters)
+        protected override void InvokeEqualsMethod(Type type, string[] parameters)
         {
-            var method = type.GetMethods().First(m => m.Name == this.areEqual && m.GetParameters().Count() == 2);
+            var method = type.GetMethods().First(m => m.Name == areEqual && m.GetParameters().Count() == 2);
             method.Invoke(null, parameters);
         }
     }

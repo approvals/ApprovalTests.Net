@@ -10,7 +10,7 @@ namespace ApprovalUtilities.SimpleLogger
     public class LoggerInstance
     {
         public IAppendable Writer = new MultiWriter(new ConsoleWriter(), new DebugerWriter());
-        private int indent = 0;
+        private int indent;
         public int TabSize = 4;
         private bool showMarkerIn = true;
         private bool showVariables = true;
@@ -55,7 +55,7 @@ namespace ApprovalUtilities.SimpleLogger
         public string GetCallingMethod()
         {
             var outsideCallingMethod =
-                new Caller().Methods.First(m => m.DeclaringType.Namespace != this.GetType().Namespace);
+                new Caller().Methods.First(m => m.DeclaringType.Namespace != GetType().Namespace);
             return outsideCallingMethod.ToStandardString();
         }
 
@@ -78,7 +78,7 @@ namespace ApprovalUtilities.SimpleLogger
         private string GetIndentation()
         {
             return "".PadLeft(indent, ' ');
-            //				.Substring(0, indent);
+            //.Substring(0, indent);
         }
 
         public string Event(string message, params object[] items)
@@ -118,7 +118,7 @@ namespace ApprovalUtilities.SimpleLogger
 
         public string Miscellaneous(string label, string message)
         {
-            Write("{0}: {1}".FormatWith(label, message));
+            Write($"{label}: {message}");
             return message;
         }
 
@@ -130,7 +130,7 @@ namespace ApprovalUtilities.SimpleLogger
         public string Warning(string format, params object[] data)
         {
             PrintWarning(string.Format(format, data));
-            return format.FormatWith(data);
+            return string.Format(format, new[] {data});
         }
 
         private void PrintWarning(params string[] lines)

@@ -1,7 +1,7 @@
 namespace ApprovalUtilities.Persistence
 {
-	public interface ILoader<T>
-	{
-		T Load();
-	}
+    public interface ILoader<T>
+    {
+        T Load();
+    }
 }

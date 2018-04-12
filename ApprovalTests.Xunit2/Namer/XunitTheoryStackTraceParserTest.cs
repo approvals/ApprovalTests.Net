@@ -1,8 +1,8 @@
 namespace ApprovalTests.Xunit2.Namer
 {
-    using ApprovalTests.Namers;
+    using Namers;
 
-    using global::Xunit;
+    using Xunit;
 
     public class XunitTheoryStackTraceParserTest
     {

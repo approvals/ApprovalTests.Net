@@ -48,7 +48,6 @@ namespace ApprovalTests.Tests.Reporters
 
         public void Report(string approved, string received)
         {
-            
         }
 
         public bool IsWorkingInThisEnvironment(string forFile)
@@ -60,7 +59,6 @@ namespace ApprovalTests.Tests.Reporters
         {
             this.approved = approved;
             this.received = received;
-
         }
     }
 }

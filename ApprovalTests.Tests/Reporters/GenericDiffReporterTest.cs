@@ -11,7 +11,7 @@ namespace ApprovalTests.Tests.Reporters
         [Test]
         public void TestGetActualProgramFileEchos()
         {
-            string NoneExistingFile = @"C:\ThisDirectoryShouldNotExist\ThisFileShouldNotExist.exe";
+            var NoneExistingFile = @"C:\ThisDirectoryShouldNotExist\ThisFileShouldNotExist.exe";
             Assert.AreEqual(NoneExistingFile, GenericDiffReporter.GetActualProgramFile(NoneExistingFile));
         }
 
@@ -19,7 +19,7 @@ namespace ApprovalTests.Tests.Reporters
         public void TestGetCurrentProject()
         {
             var file = PathUtilities.GetAdjacentFile("GenericDiffReporterTest.TestLaunchesBeyondCompareImage.approved.txt");
-            string currentProjectFile = Path.GetFileName(VisualStudioProjectFileAdder.GetCurrentProjectFile(file));
+            var currentProjectFile = Path.GetFileName(VisualStudioProjectFileAdder.GetCurrentProjectFile(file));
 
             Assert.AreEqual("ApprovalTests.Tests.csproj", currentProjectFile);
         }
@@ -27,7 +27,7 @@ namespace ApprovalTests.Tests.Reporters
         [Test]
         public void TestGetCurrentProjectNotFound()
         {
-            var file =  Path.GetPathRoot(Path.GetTempPath());
+            var file = Path.GetPathRoot(Path.GetTempPath());
             var project = VisualStudioProjectFileAdder.GetCurrentProjectFile(file);
             Assert.AreEqual(null, project);
         }
@@ -35,12 +35,11 @@ namespace ApprovalTests.Tests.Reporters
         [Test]
         public void TestMissingDots()
         {
-			using (ApprovalTests.Namers.ApprovalResults.UniqueForOs())
-			{
-				var e =
-					ExceptionUtilities.GetException(() => GenericDiffReporter.RegisterTextFileTypes(".exe", "txt", ".error", "asp"));
-				Approvals.Verify(e);
-			}
+            using (Namers.ApprovalResults.UniqueForOs())
+            {
+                var e = ExceptionUtilities.GetException(() => GenericDiffReporter.RegisterTextFileTypes(".exe", "txt", ".error", "asp"));
+                Approvals.Verify(e);
+            }
         }
 
         [Test]
@@ -58,7 +57,7 @@ namespace ApprovalTests.Tests.Reporters
         }
 
         [Test]
-		[Platform(Exclude="Mono")]
+        [Platform(Exclude = "Mono")]
         [UseReporter(typeof(ClipboardReporter))]
         public void TestEnsureFileExist()
         {
@@ -67,6 +66,7 @@ namespace ApprovalTests.Tests.Reporters
             {
                 File.Delete(imageFile);
             }
+
             GenericDiffReporter.EnsureFileExists(imageFile);
             Approvals.VerifyFile(imageFile);
         }

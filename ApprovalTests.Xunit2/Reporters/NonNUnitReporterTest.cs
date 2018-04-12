@@ -4,7 +4,7 @@ namespace ApprovalTests.Xunit2.Reporters
 
     using ApprovalUtilities.Utilities;
 
-    using global::Xunit;
+    using Xunit;
 
     public class NonNUnitReporterTest
     {

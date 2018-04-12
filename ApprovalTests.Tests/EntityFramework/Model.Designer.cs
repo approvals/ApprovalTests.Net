@@ -1109,5 +1109,4 @@ namespace ApprovalTests.Tests.EntityFramework
     }
 
     #endregion
-
 }

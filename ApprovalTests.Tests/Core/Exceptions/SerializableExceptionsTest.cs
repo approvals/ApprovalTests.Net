@@ -4,22 +4,22 @@ using NUnit.Framework;
 
 namespace ApprovalTests.Tests.Core.Exceptions
 {
-	[TestFixture]
-	public class SerializableExceptionsTest
-	{
-		[Test]
-		public void TestSerializable()
-		{
-			string r = "recieved";
-			string a = "approved";
-			Verify(new ApprovalMissingException(r, a));
-			Verify(new ApprovalMismatchException(r, a));
-			Verify(new ApprovalException(r, a));
-		}
+    [TestFixture]
+    public class SerializableExceptionsTest
+    {
+        [Test]
+        public void TestSerializable()
+        {
+            var r = "recieved";
+            var a = "approved";
+            Verify(new ApprovalMissingException(r, a));
+            Verify(new ApprovalMismatchException(r, a));
+            Verify(new ApprovalException(r, a));
+        }
 
-		private void Verify(object o)
-		{
-			SerializableTheory.Verify(o, Assert.AreEqual);
-		}
-	}
+        private void Verify(object o)
+        {
+            SerializableTheory.Verify(o, Assert.AreEqual);
+        }
+    }
 }

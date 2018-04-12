@@ -1,29 +1,23 @@
 ﻿namespace ApprovalTests.Reporters
 {
-	public struct LaunchArgs
-	{
-		private string arguments;
-		private string program;
+    public struct LaunchArgs
+    {
+        private string arguments;
+        private string program;
 
-		public LaunchArgs(string program, string arguments)
-		{
-			this.program = program;
-			this.arguments = arguments;
-		}
+        public LaunchArgs(string program, string arguments)
+        {
+            this.program = program;
+            this.arguments = arguments;
+        }
 
-		public string Program
-		{
-			get { return program; }
-		}
+        public string Program => program;
 
-		public string Arguments
-		{
-			get { return arguments; }
-		}
+        public string Arguments => arguments;
 
-		public override string ToString()
-		{
-			return $"\"{program}\" {arguments}";
-		}
-	}
+        public override string ToString()
+        {
+            return $"\"{program}\" {arguments}";
+        }
+    }
 }

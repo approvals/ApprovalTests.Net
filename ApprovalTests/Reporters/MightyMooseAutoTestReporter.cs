@@ -6,7 +6,7 @@ namespace ApprovalTests.Reporters
     {
         public static readonly MightyMooseAutoTestReporter INSTANCE = new MightyMooseAutoTestReporter();
 
-        public static bool? IsRunning = null;
+        public static bool? IsRunning;
 
         public void Report(string approved, string received)
         {

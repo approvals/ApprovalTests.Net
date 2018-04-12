@@ -1,5 +1,4 @@
 ﻿#if !__MonoCS__
-using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
@@ -20,7 +19,7 @@ namespace ApprovalTests.Tests.Wpf
         public void TestFailedBindings()
         {
             var viewModel = new TestViewModel();
-            Binding myBinding = new Binding(TestViewModel.MyPropertyPropertyName + "BOGUS")
+            var myBinding = new Binding(TestViewModel.MyPropertyPropertyName + "BOGUS")
             {
                 Source = viewModel
             };
@@ -43,17 +42,17 @@ namespace ApprovalTests.Tests.Wpf
 
         public string MyProperty
         {
-            get { return this._myProperty; }
+            get => _myProperty;
             set
             {
-                this._myProperty = value;
+                _myProperty = value;
                 RaisePropertyChanged();
             }
         }
 
         private void RaisePropertyChanged([CallerMemberName] string propertyName = null)
         {
-            this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

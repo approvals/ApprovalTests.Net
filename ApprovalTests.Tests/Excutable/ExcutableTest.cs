@@ -6,42 +6,43 @@ using NUnit.Framework;
 
 namespace ApprovalTests.Tests.Excutable
 {
-	[TestFixture]
-	[UseReporter(typeof(QuietReporter))]
-	public class ExcutableTest
-	{
-		[Test]
-		public void TestExecutableFailure()
-		{
-			Approvals.VerifyAll(RunExecutableApproval(), "Increased feedback on");
-		}
+    [TestFixture]
+    [UseReporter(typeof(QuietReporter))]
+    public class ExcutableTest
+    {
+        [Test]
+        public void TestExecutableFailure()
+        {
+            Approvals.VerifyAll(RunExecutableApproval(), "Increased feedback on");
+        }
 
-		[Test]
-		public void TestExecutableFailureWithPreviousApproval()
-		{
-			Approvals.VerifyAll(RunExecutableApproval(), "Increased feedback on");
-		}
-		[Test]
-		public void TestExecutableSuccess()
-		{
-			Approvals.VerifyAll(RunExecutableApproval(), "Increased feedback on");
-		}
+        [Test]
+        public void TestExecutableFailureWithPreviousApproval()
+        {
+            Approvals.VerifyAll(RunExecutableApproval(), "Increased feedback on");
+        }
 
-		private List<string> RunExecutableApproval()
-		{
-			var output = new List<string>();
+        [Test]
+        public void TestExecutableSuccess()
+        {
+            Approvals.VerifyAll(RunExecutableApproval(), "Increased feedback on");
+        }
 
-			try
-			{
-				NamerFactory.AdditionalInformation = "Inner";
-				Approvals.VerifyWithCallback("Sam", s => output.Add(s));
+        private List<string> RunExecutableApproval()
+        {
+            var output = new List<string>();
 
-			}
-			catch (Exception)
-			{
+            try
+            {
+                NamerFactory.AdditionalInformation = "Inner";
+                Approvals.VerifyWithCallback("Sam", s => output.Add(s));
 
-			}
-			return output;
-		}
-	}
+            }
+            catch (Exception)
+            {
+            }
+
+            return output;
+        }
+    }
 }

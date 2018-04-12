@@ -2,9 +2,9 @@
 
 namespace ApprovalUtilities.Persistence.Database
 {
-	public interface IDatabaseToExecuteableQueryAdaptor
-	{
-		string GetQuery();
-		DbConnection GetConnection();
-	}
+    public interface IDatabaseToExecuteableQueryAdaptor
+    {
+        string GetQuery();
+        DbConnection GetConnection();
+    }
 }

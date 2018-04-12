@@ -20,7 +20,7 @@ namespace ApprovalUtilities.Utilities
 
             var sb = new StringBuilder();
             sb.Append("[");
-            foreach (object l in list)
+            foreach (var l in list)
             {
                 sb.Append(l + ", ");
             }
@@ -32,23 +32,26 @@ namespace ApprovalUtilities.Utilities
             return sb.ToString();
         }
 
+        [Obsolete("Use String.Format() or string interpolation instead.", true)]
+        // ReSharper disable UnusedParameter.Global
         public static string FormatWith(this string mask, params object[] parameters)
         {
-            return String.Format(mask, parameters);
+            throw new Exception("Use String.Format() or string interpolation instead.");
         }
+        // ReSharper restore UnusedParameter.Global
 
         public static string DisplayGrid(int width, int height, Func<int, int, string> func)
         {
-            StringBuilder b = new StringBuilder("  ");
-            for (int x = 0; x < width; x++)
+            var b = new StringBuilder("  ");
+            for (var x = 0; x < width; x++)
             {
                 b.Append($"{x:0} ");
             }
             b.AppendLine();
-            for (int y = 0; y < height; y++)
+            for (var y = 0; y < height; y++)
             {
                 b.Append($"{y:0} ");
-                for (int x = 0; x < width; x++)
+                for (var x = 0; x < width; x++)
                 {
                     b.Append(func(x, y) + " ");
                 }
@@ -61,32 +64,32 @@ namespace ApprovalUtilities.Utilities
         {
             var sb = new StringBuilder();
             const int totalWidth = 86;
-            string lineBreakOut = "".PadLeft(totalWidth, frameMarker);
-            string lineBreakIn = "{0}{1}{0}".FormatWith(frameMarker, "".PadLeft(totalWidth - 2, ' '));
+            var lineBreakOut = "".PadLeft(totalWidth, frameMarker);
+            var lineBreakIn = string.Format("{0}{1}{0}", frameMarker, "".PadLeft(totalWidth - 2, ' '));
             sb.AppendLine(lineBreakOut);
             sb.AppendLine(lineBreakIn);
             foreach (var line in lines)
             {
-                sb.AppendLine("{1} {0}".FormatWith(line.Replace(Environment.NewLine, "{0}{1} ".FormatWith(Environment.NewLine, frameMarker)), frameMarker));
+                sb.AppendLine(string.Format("{1} {0}",line.Replace(Environment.NewLine, $"{Environment.NewLine}{frameMarker} "), frameMarker));
             }
             sb.AppendLine(lineBreakIn);
             sb.AppendLine(lineBreakOut);
             return sb.ToString().Trim();
         }
 
-        public static string Write<T>(this IEnumerable<T> enumerable, String label)
+        public static string Write<T>(this IEnumerable<T> enumerable, string label)
         {
             return Write(enumerable, label, s => "" + s);
         }
 
         public static string Write<T>(this IEnumerable<T> enumerable, string label, Func<T, string> formatter)
         {
-            return StringUtils.Write(enumerable, (i, s) => $"{label}[{i}] = {formatter(s)}\n", $"{label} is empty");
+            return enumerable.Write((i, s) => $"{label}[{i}] = {formatter(s)}\n", $"{label} is empty");
         }
 
         public static string Write<T>(this IEnumerable<T> enumerable, Func<T, string> formatter)
         {
-            return StringUtils.Write(enumerable, (i, s) => formatter(s) + Environment.NewLine, "Empty");
+            return enumerable.Write((i, s) => formatter(s) + Environment.NewLine, "Empty");
         }
 
         public static string Write<T>(this IEnumerable<T> enumerable, Func<int, T, string> formatterWithIndex, string emptyMessage)
@@ -97,7 +100,7 @@ namespace ApprovalUtilities.Utilities
                 return emptyMessage;
 
             var sb = new StringBuilder();
-            int i = 0;
+            var i = 0;
             list.ForEach(item => sb.Append(formatterWithIndex(i++, item)));
 
             return sb.ToString();
@@ -144,7 +147,7 @@ namespace ApprovalUtilities.Utilities
                 return string.Empty;
             }
 
-            Type t = typeof (T);
+            var t = typeof (T);
             var sb = new StringBuilder();
             sb.AppendLine(t.Name);
             sb.AppendLine("{");
@@ -162,7 +165,7 @@ namespace ApprovalUtilities.Utilities
 
         public static string JoinWith(this IEnumerable<string> elements, string seperator)
         {
-            return String.Join(seperator, elements.ToArray());
+            return string.Join(seperator, elements.ToArray());
         }
     }
 }

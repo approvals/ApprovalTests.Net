@@ -3,28 +3,28 @@ using System.Data.Common;
 
 namespace ApprovalUtilities.Persistence.Database
 {
-	public abstract class SqlLoader<T> : ILoader<T>, IExecutableQuery
-	{
-		public readonly Func<DbCommand> CommandCreator;
-		public readonly string ConnectionString;
+    public abstract class SqlLoader<T> : ILoader<T>, IExecutableQuery
+    {
+        public readonly Func<DbCommand> CommandCreator;
+        public readonly string ConnectionString;
 
-		protected SqlLoader(string connectionString)
-		{
-			this.ConnectionString = connectionString;
-		}
+        protected SqlLoader(string connectionString)
+        {
+            ConnectionString = connectionString;
+        }
 
-		protected SqlLoader(Func<DbCommand> commandCreator)
-		{
-			this.CommandCreator = commandCreator;
-		}
+        protected SqlLoader(Func<DbCommand> commandCreator)
+        {
+            CommandCreator = commandCreator;
+        }
 
-		public abstract T Load();
+        public abstract T Load();
 
-		public abstract string GetQuery();
+        public abstract string GetQuery();
 
-		public string ExecuteQuery(string query)
-		{
-			return SqlLoaderUtils.ExecuteQueryToDisplayString(query, ConnectionString, CommandCreator);
-		}
-	}
+        public string ExecuteQuery(string query)
+        {
+            return SqlLoaderUtils.ExecuteQueryToDisplayString(query, ConnectionString, CommandCreator);
+        }
+    }
 }

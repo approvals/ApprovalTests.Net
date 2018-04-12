@@ -97,18 +97,17 @@ namespace ApprovalTests.Reporters
             if (diffProgram == null)
             {
                 throw new NullReferenceException(
-                    @"Illegal arguments for {0} (diffProgam, argumentsFormat, diffProgramNotFoundMessage)
-Recieved {0} ({1}, {2}, {3})"
-                        .FormatWith(GetType().Name, diffProgram, argumentsFormat, diffProgramNotFoundMessage));
+                    string.Format(@"Illegal arguments for {0} (diffProgam, argumentsFormat, diffProgramNotFoundMessage)
+Recieved {0} ({1}, {2}, {3})", GetType().Name, diffProgram, argumentsFormat, diffProgramNotFoundMessage));
             }
 
-            this.originalDiffProgram = diffProgram;
-            this.arguments = argumentsFormat;
+            originalDiffProgram = diffProgram;
+            arguments = argumentsFormat;
             this.diffProgramNotFoundMessage = diffProgramNotFoundMessage;
             fileTypes = allowedFileTypes;
         }
 
-        protected GenericDiffReporter(DiffInfo info) : this(info.DiffProgram, info.Parameters, "Unable to find program at {0}".FormatWith( info.DiffProgram), info.FileTypes)
+        protected GenericDiffReporter(DiffInfo info) : this(info.DiffProgram, info.Parameters, $"Unable to find program at {info.DiffProgram}", info.FileTypes)
         {
 
         }
@@ -121,7 +120,7 @@ Recieved {0} ({1}, {2}, {3})"
             }
             var toFind = Path.GetFileName(fullPath);
             var output = PathUtilities.LocateFileFromEnvironmentPath(toFind).FirstOrDefault();
-            return String.IsNullOrEmpty(output) ? fullPath : output;
+            return string.IsNullOrEmpty(output) ? fullPath : output;
         }
 
         public string GetDiffProgram()
@@ -178,7 +177,7 @@ Recieved {0} ({1}, {2}, {3})"
 
         public LaunchArgs GetLaunchArguments(string approved, string received)
         {
-            return new LaunchArgs(GetDiffProgram(), arguments.FormatWith( WrapPath(received), WrapPath(approved)));
+            return new LaunchArgs(GetDiffProgram(), string.Format(arguments, new[] {WrapPath(received), WrapPath(approved)}));
         }
 
         private string WrapPath(string path)
@@ -218,7 +217,7 @@ Recieved {0} ({1}, {2}, {3})"
         {
             try
             {
-                Process process = Process.Start(launchArgs.Program, launchArgs.Arguments);
+                var process = Process.Start(launchArgs.Program, launchArgs.Arguments);
                 if (waitForExit)
                 {
                     process.WaitForExit();
@@ -226,12 +225,7 @@ Recieved {0} ({1}, {2}, {3})"
             }
             catch (Win32Exception e)
             {
-                throw new Exception(
-                    "Unable to launch: {0} with arguments {1}\nError Message: {2}".FormatWith(
-                        launchArgs.Program,
-                        launchArgs.Arguments,
-                        e.Message),
-                    e);
+                throw new Exception($"Unable to launch: {launchArgs.Program} with arguments {launchArgs.Arguments}\nError Message: {e.Message}",e);
             }
         }
     }

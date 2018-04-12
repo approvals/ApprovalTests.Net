@@ -15,7 +15,11 @@ namespace ApprovalTests.MachineSpecific.Tests.WinForms
         [Test]
         public void TestControlApproved()
         {
-            WinFormsApprovals.Verify(new Button { BackColor = Color.LightBlue, Text = "Help" });
+            WinFormsApprovals.Verify(new Button
+            {
+                BackColor = Color.LightBlue,
+                Text = "Help"
+            });
         }
 
         [Test]
@@ -26,7 +30,7 @@ namespace ApprovalTests.MachineSpecific.Tests.WinForms
 
         [Test]
         [UseReporter(typeof(TortoiseDiffReporter))]
-				public void VerifyCompleteFormTest()
+        public void VerifyCompleteFormTest()
         {
             WinFormsApprovals.VerifyEventsFor(new DemoForm());
         }

@@ -4,7 +4,7 @@ namespace ApprovalUtilities.Reflection
     using System.ComponentModel;
     using System.Linq;
     using System.Reflection;
-    using ApprovalUtilities.Utilities;
+    using Utilities;
 
     public class HandlerListEntry
     {
@@ -29,12 +29,12 @@ namespace ApprovalUtilities.Reflection
         {
             get
             {
-                if (this.handler == null && this.listEntry != null)
+                if (handler == null && listEntry != null)
                 {
-                    this.handler = GetField<Delegate>(HandlerFieldName);
+                    handler = GetField<Delegate>(HandlerFieldName);
                 }
 
-                return this.handler;
+                return handler;
             }
         }
 
@@ -42,12 +42,12 @@ namespace ApprovalUtilities.Reflection
         {
             get
             {
-                if (this.key == null && this.listEntry != null)
+                if (key == null && listEntry != null)
                 {
-                    this.key = GetField<object>(KeyFieldName);
+                    key = GetField<object>(KeyFieldName);
                 }
 
-                return this.key;
+                return key;
             }
         }
 
@@ -55,16 +55,16 @@ namespace ApprovalUtilities.Reflection
         {
             get
             {
-                if (this.next == null && this.listEntry != null)
+                if (next == null && listEntry != null)
                 {
-                    object nextValue = GetField<object>(NextFieldName);
+                    var nextValue = GetField<object>(NextFieldName);
                     if (nextValue != null)
                     {
-                        this.next = new HandlerListEntry(nextValue);
+                        next = new HandlerListEntry(nextValue);
                     }
                 }
 
-                return this.next;
+                return next;
             }
         }
 

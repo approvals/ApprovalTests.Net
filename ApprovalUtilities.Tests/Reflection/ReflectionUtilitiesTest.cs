@@ -47,17 +47,9 @@ namespace ApprovalUtilities.Tests.Reflection
         [UseReporter(typeof(DiffReporter))]
         public void GetInheritedNonPublicStaticFields()
         {
-            try
-            {
-                Approvals.VerifyAll("For " + ApprovalResults.GetDotNetVersion(),
-                    new CheckBox().NonPublicStaticFields(true),
-                    string.Empty);
-            }
-            catch (Exception)
-            {
-                //Thread.Sleep(9000);
-                throw;
-            }
+            Approvals.VerifyAll("For " + ApprovalResults.GetDotNetVersion(),
+                new CheckBox().NonPublicStaticFields(true),
+                string.Empty);
         }
 
         [TestMethod]
@@ -159,9 +151,9 @@ namespace ApprovalUtilities.Tests.Reflection
 
             public C(string a, string b, string c)
             {
-                this.A = a;
-                this.B = b;
-                this.D = c;
+                A = a;
+                B = b;
+                D = c;
             }
         }
 

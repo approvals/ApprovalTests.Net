@@ -7,49 +7,44 @@ using NUnit.Framework;
 
 namespace ApprovalTests.Tests.CustomImplementation
 {
-	[TestFixture]
-	public class CustomNamerShouldBeSubstitutableTest
-	{
-		/// <summary>
-		/// Test for Issue #140
-		/// https://github.com/approvals/ApprovalTests.Net/issues/140
-		/// </summary>
-		[Test]
-		public void CustomNamerShouldNotDependOnSetCallerTest()
-		{
+    [TestFixture]
+    public class CustomNamerShouldBeSubstitutableTest
+    {
+        /// <summary>
+        /// Test for Issue #140
+        /// https://github.com/approvals/ApprovalTests.Net/issues/140
+        /// </summary>
+        [Test]
+        public void CustomNamerShouldNotDependOnSetCallerTest()
+        {
             var approvaltext = "CustomNamerShouldBeSubstitutable";
 
-			var writer = WriterFactory.CreateTextWriter(approvaltext);
-			var namer = new CustomNamer();
-			var reporter = new MethodLevelReporter();
+            var writer = WriterFactory.CreateTextWriter(approvaltext);
+            var namer = new CustomNamer();
+            var reporter = new MethodLevelReporter();
 
-			Approvals.Verify(writer, namer, reporter);
-		}
+            Approvals.Verify(writer, namer, reporter);
+        }
 
         [Test]
-	    public void CustomNamerShouldBeSubstitutable()
-	    {
-	        // just here to prevent false detection as abandoned file via Maintenance test
-	    }
-		private class CustomNamer : IApprovalNamer
-		{
-			public string Name
-			{
-				get
-				{
-                    return "CustomNamerShouldBeSubstitutableTest.CustomNamerShouldBeSubstitutable";
-				}
-			}
+        public void CustomNamerShouldBeSubstitutable()
+        {
+            // just here to prevent false detection as abandoned file via Maintenance test
+        }
 
-			public string SourcePath
-			{
-				get
-				{
-					var stackTraceParser = new StackTraceParser();
-					stackTraceParser.Parse(new Caller().StackTrace);
-					return stackTraceParser.SourcePath;
-				}
-			}
-		}
-	}
+        private class CustomNamer : IApprovalNamer
+        {
+            public string Name => "CustomNamerShouldBeSubstitutableTest.CustomNamerShouldBeSubstitutable";
+
+            public string SourcePath
+            {
+                get
+                {
+                    var stackTraceParser = new StackTraceParser();
+                    stackTraceParser.Parse(new Caller().StackTrace);
+                    return stackTraceParser.SourcePath;
+                }
+            }
+        }
+    }
 }

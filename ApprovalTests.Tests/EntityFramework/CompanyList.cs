@@ -3,7 +3,6 @@ using System.Linq;
 using System.Text;
 using ApprovalUtilities.Persistence;
 using ApprovalUtilities.Persistence.EntityFramework;
-using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.Tests.EntityFramework
 {
@@ -16,12 +15,12 @@ namespace ApprovalTests.Tests.EntityFramework
 
         public static string GetCompanyRoster(ILoader<IEnumerable<Company>> companyByName)
         {
-            IEnumerable<Company> companies = companyByName.Load();
+            var companies = companyByName.Load();
             var b = new StringBuilder();
             b.Append("<html><body>");
-            foreach (Company company in companies)
+            foreach (var company in companies)
             {
-                b.Append("<li>{0}</li>".FormatWith(company.Name));
+                b.Append($"<li>{company.Name}</li>");
             }
             b.Append("</body></html>");
             return b.ToString();
@@ -30,7 +29,7 @@ namespace ApprovalTests.Tests.EntityFramework
         public static LambdaEnumerableLoader<Company, ModelContainer> GetCompanyByName(string name)
         {
             return Loaders.Create(() => new ModelContainer(),
-                                  (m) => (from c in m.Companies
+                                  m => (from c in m.Companies
                                           where c.Name.StartsWith(name)
                                           select c).Take(9));
         }

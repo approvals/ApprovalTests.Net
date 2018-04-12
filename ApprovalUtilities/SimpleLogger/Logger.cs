@@ -10,8 +10,8 @@ namespace ApprovalUtilities.SimpleLogger
 
         public static IAppendable Writer
         {
-            get { return log.Writer; }
-            set { log.Writer = value; }
+            get => log.Writer;
+            set => log.Writer = value;
         }
 
         public static StringBuilderLogger LogToStringBuilder()
@@ -36,12 +36,12 @@ namespace ApprovalUtilities.SimpleLogger
             log.MarkerOut();
         }
 
-        public static String Event(string message, params object[] items)
+        public static string Event(string message, params object[] items)
         {
             return log.Event(message, items);
         }
 
-        public static String Message(string message)
+        public static string Message(string message)
         {
             return log.Message(message);
         }
@@ -83,7 +83,7 @@ namespace ApprovalUtilities.SimpleLogger
         }
         public static T Log<T>(this T t, string label, Func<T, string> log)
         {
-            Logger.Variable(label, log(t));
+            Variable(label, log(t));
             return t;
         }
     }

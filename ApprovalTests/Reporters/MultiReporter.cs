@@ -24,12 +24,12 @@ namespace ApprovalTests.Reporters
 
         public MultiReporter(params IApprovalFailureReporter[] reporters)
         {
-            this.Reporters = reporters;
+            Reporters = reporters;
         }
 
         public MultiReporter(IEnumerable<IApprovalFailureReporter> reporters)
         {
-            this.Reporters = reporters;
+            Reporters = reporters;
         }
 
         public virtual void Report(string approved, string received)

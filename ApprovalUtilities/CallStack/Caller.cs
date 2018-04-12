@@ -4,23 +4,9 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using ApprovalUtilities.Utilities;
 
 namespace ApprovalUtilities.CallStack
 {
-    public static class ReflectionUtilities
-    {
-        public static IEnumerable<Caller> NonLambda(this IEnumerable<Caller> callers)
-        {
-            return callers.Where(c => c.Class != null);
-        }
-
-        public static string ToStandardString(this MethodBase method)
-        {
-            return "{0}.{1}()".FormatWith(method.DeclaringType.Name, method.Name);
-        }
-    }
-
     public class Caller
     {
         private int currentFrame;
@@ -48,15 +34,9 @@ namespace ApprovalUtilities.CallStack
             }
         }
 
-        public Type Class
-        {
-            get { return Method.DeclaringType; }
-        }
+        public Type Class => Method.DeclaringType;
 
-        public MethodBase Method
-        {
-            get { return StackFrame.GetMethod(); }
-        }
+        public MethodBase Method => StackFrame.GetMethod();
 
         public IEnumerable<MethodBase> Methods
         {
@@ -69,10 +49,7 @@ namespace ApprovalUtilities.CallStack
             }
         }
 
-        public IEnumerable<Caller> NonLambdaCallers
-        {
-            get { return Callers.Where(c => c.Class != null); }
-        }
+        public IEnumerable<Caller> NonLambdaCallers => Callers.Where(c => c.Class != null);
 
         public IEnumerable<Caller> Parents
         {
@@ -85,37 +62,31 @@ namespace ApprovalUtilities.CallStack
             }
         }
 
-        public StackFrame StackFrame
-        {
-            get { return StackTrace.GetFrame(currentFrame); }
-        }
+        public StackFrame StackFrame => StackTrace.GetFrame(currentFrame);
 
-        public StackTrace StackTrace
-        {
-            get { return stackTrace; }
-        }
+        public StackTrace StackTrace => stackTrace;
 
         public A GetFirstFrameForAttribute<A>() where A : Attribute
         {
             var attribute = typeof(A);
-            return this.GetFirstFrameForAttribute(attribute) as A;
+            return GetFirstFrameForAttribute(attribute) as A;
         }
 
         public object GetFirstFrameForAttribute(Type attribute)
         {
-            var attributeExtractors = new Func<MethodBase, Object[]>[]
-	                                      {
-	                                          m => m.GetCustomAttributes(attribute, true),
-	                                          m => m.DeclaringType.GetCustomAttributes(attribute, true),
-	                                          m => m.DeclaringType.Assembly.GetCustomAttributes(attribute, true)
-	                                      };
+            var attributeExtractors = new Func<MethodBase, object[]>[]
+            {
+                m => m.GetCustomAttributes(attribute, true),
+                m => m.DeclaringType.GetCustomAttributes(attribute, true),
+                m => m.DeclaringType.Assembly.GetCustomAttributes(attribute, true)
+            };
             foreach (var attributeExtractor in attributeExtractors)
             {
-                foreach (MethodBase method in this.NonLambdaCallers.Select(c => c.Method))
+                foreach (var method in NonLambdaCallers.Select(c => c.Method))
                 {
                     try
                     {
-                        object[] useReporters = attributeExtractor(method);
+                        var useReporters = attributeExtractor(method);
                         if (useReporters.Length != 0)
                         {
                             return useReporters.First();
@@ -127,6 +98,7 @@ namespace ApprovalUtilities.CallStack
                     }
                 }
             }
+
             return null;
         }
 

@@ -20,11 +20,15 @@ namespace ApprovalUtilities.Reflection
             }
 
             var events = from fi in value.NonPublicStaticFields(true)
-                         let list = listInfo.GetValue<EventHandlerList>(value, null)
-                         from handlerEntry in list.AsEnumerable()
-                         where handlerEntry.Key == fi.GetValue(value)
-                         && handlerEntry.Handler != null
-                         select new { fi.Name, handlerEntry.Handler };
+                let list = listInfo.GetValue<EventHandlerList>(value, null)
+                from handlerEntry in list.AsEnumerable()
+                where handlerEntry.Key == fi.GetValue(value)
+                      && handlerEntry.Handler != null
+                select new
+                {
+                    fi.Name,
+                    handlerEntry.Handler
+                };
             return events.Select(e =>
             {
                 var callbackDescriptor = new CallbackDescriptor(e.Name);
@@ -41,14 +45,14 @@ namespace ApprovalUtilities.Reflection
         public static IEnumerable<CallbackDescriptor> GetPocoEventsForTypes(object value, params Type[] types)
         {
             return value.GetInstanceFields()
-                            .Where(fi => types.Any(t => t.IsAssignableFrom(fi.FieldType)) && fi.GetValue<Delegate>(value) != null)
-                            .Select(e =>
-                            {
-                                var callbackDescriptor = new CallbackDescriptor(e.Name);
-                                var eventDelegate = e.GetValue<Delegate>(value);
-                                callbackDescriptor.AddMethods(eventDelegate.GetInvocationList().Select(del => del.Method));
-                                return callbackDescriptor;
-                            }).ToArray();
+                .Where(fi => types.Any(t => t.IsAssignableFrom(fi.FieldType)) && fi.GetValue<Delegate>(value) != null)
+                .Select(e =>
+                {
+                    var callbackDescriptor = new CallbackDescriptor(e.Name);
+                    var eventDelegate = e.GetValue<Delegate>(value);
+                    callbackDescriptor.AddMethods(eventDelegate.GetInvocationList().Select(del => del.Method));
+                    return callbackDescriptor;
+                }).ToArray();
         }
 
         public static IEnumerable<CallbackDescriptor> GetPocoEvents(this object value)
@@ -59,12 +63,12 @@ namespace ApprovalUtilities.Reflection
 
         public static T GetValue<T>(this FieldInfo info, object value)
         {
-            return (T)info.GetValue(value);
+            return (T) info.GetValue(value);
         }
 
         public static T GetValue<T>(this PropertyInfo info, object value, object[] index)
         {
-            return (T)info.GetValue(value, index);
+            return (T) info.GetValue(value, index);
         }
 
         public static IEnumerable<FieldInfo> GetInstanceFields(this object value, Func<FieldInfo, bool> selector)
@@ -84,7 +88,7 @@ namespace ApprovalUtilities.Reflection
                 return new FieldInfo[0];
             }
 
-            FieldInfo[] fields = forType.GetFields(NonPublicInstance | BindingFlags.Public);
+            var fields = forType.GetFields(NonPublicInstance | BindingFlags.Public);
             return fields.Concat(GetAllFields(forType.BaseType));
         }
 
@@ -95,7 +99,7 @@ namespace ApprovalUtilities.Reflection
 
         private static Type GetType(object value)
         {
-            return (value == null) ? typeof(void) : value.GetType();
+            return value == null ? typeof(void) : value.GetType();
         }
 
         public static IEnumerable<PropertyInfo> NonPublicInstanceProperties(this object value)
@@ -118,10 +122,10 @@ namespace ApprovalUtilities.Reflection
             }
         }
 
-	    public static T GetValueForProperty<T>(object instance, string propertyName)
-	    {
-		    var propertyInfo = instance.NonPublicInstanceProperties().First(p => p.Name == propertyName);
-				return propertyInfo.GetValue<T>(instance,null);
-	    }
+        public static T GetValueForProperty<T>(object instance, string propertyName)
+        {
+            var propertyInfo = instance.NonPublicInstanceProperties().First(p => p.Name == propertyName);
+            return propertyInfo.GetValue<T>(instance, null);
+        }
     }
 }

@@ -26,10 +26,10 @@ namespace ApprovalTests.Reporters
 
         public void Report(string approved, string received)
         {
-            this.reporter.Report(approved, received);
+            reporter.Report(approved, received);
 
-            var receivedResult = this.ExecuteQuery(received);
-            var approvedResult = this.ExecuteQuery(approved);
+            var receivedResult = ExecuteQuery(received);
+            var approvedResult = ExecuteQuery(approved);
 
             if (string.IsNullOrEmpty(approvedResult.Result) && string.IsNullOrEmpty(receivedResult.Result))
             {
@@ -38,7 +38,7 @@ namespace ApprovalTests.Reporters
 
             var r = RunQueryAndGetPath(received, receivedResult);
             var a = RunQueryAndGetPath(approved, approvedResult);
-            this.reporter.Report(a, r);
+            reporter.Report(a, r);
         }
 
         private static string RunQueryAndGetPath(string fileName, QueryResult result)
@@ -56,7 +56,7 @@ namespace ApprovalTests.Reporters
             }
 
             var newQuery = File.ReadAllText(fileName).Trim();
-            var newResult = this.query.ExecuteQuery(newQuery);
+            var newResult = query.ExecuteQuery(newQuery);
             return new QueryResult { Query = newQuery, Result = newResult };
         }
     }

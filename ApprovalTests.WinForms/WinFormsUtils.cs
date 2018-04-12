@@ -51,10 +51,10 @@ namespace ApprovalTests.WinForms
 
         private static void AddToParent(Form hidden, Control controlUnderTest)
         {
-            if (controlUnderTest is Form)
+            if (controlUnderTest is Form form)
             {
                 hidden.IsMdiContainer = true;
-                ((Form)controlUnderTest).MdiParent = hidden;
+                form.MdiParent = hidden;
             }
             else
             {
