@@ -5,32 +5,32 @@ From: everybody@acomputer.com
 To: approvals@approvaltests.com
 Subject: this project rocks
 Content-Type: multipart/mixed;
- boundary=--boundary_1_--boundary_0_00000000-0000-0000-0000-000000000000
+ boundary=--boundary_1_--boundary_System.Int32[]_00000000-0000-0000-0000-00000000000System.Int32[]
 
 
-----boundary_1_--boundary_0_00000000-0000-0000-0000-000000000000
+----boundary_1_--boundary_System.Int32[]_00000000-0000-0000-0000-00000000000System.Int32[]
 Content-Type: multipart/alternative;
- boundary=--boundary_0_--boundary_1_00000000-0000-0000-0000-000000000001
+ boundary=--boundary_0_--boundary_System.Int32[]_00000000-0000-0000-0000-00000000000System.Int32[]
 
 
-----boundary_0_--boundary_1_00000000-0000-0000-0000-000000000001
+----boundary_0_--boundary_System.Int32[]_00000000-0000-0000-0000-00000000000System.Int32[]
 Content-Type: text/plain; charset=us-ascii
 Content-Transfer-Encoding: quoted-printable
 
 Pictures Attached
-----boundary_0_--boundary_1_00000000-0000-0000-0000-000000000001
+----boundary_0_--boundary_System.Int32[]_00000000-0000-0000-0000-00000000000System.Int32[]
 Content-Type: text/plain; charset=us-ascii
 Content-Transfer-Encoding: quoted-printable
 
 This be alternate.
-----boundary_0_--boundary_1_00000000-0000-0000-0000-000000000001--
+----boundary_0_--boundary_System.Int32[]_00000000-0000-0000-0000-00000000000System.Int32[]--
 
-----boundary_1_--boundary_0_00000000-0000-0000-0000-000000000000
+----boundary_1_--boundary_System.Int32[]_00000000-0000-0000-0000-00000000000System.Int32[]
 Content-Type: multipart/mixed;
- boundary=--boundary_2_--boundary_2_00000000-0000-0000-0000-000000000002
+ boundary=--boundary_2_--boundary_System.Int32[]_00000000-0000-0000-0000-00000000000System.Int32[]
 
 
-----boundary_2_--boundary_2_00000000-0000-0000-0000-000000000002
+----boundary_2_--boundary_System.Int32[]_00000000-0000-0000-0000-00000000000System.Int32[]
 Content-Type: application/octet-stream; name=tower.png
 Content-Transfer-Encoding: base64
 Content-Disposition: attachment
@@ -102,6 +102,6 @@ GT3IF0OSRc4eG0YzPh+79trhyWeew+NP7MBTz+yEo4s7O5c4HnDGruf3YPv2J9DV1QPr
 hEUtnHPmtVNXdEN9ODw5gnNvvIZ///Nt/P2t8zh/7gzO/OklvPH6aZw9e4r97vixecxM
 T2BsbASj42OYnTuCkdFx6EaGsXjsBI4fP47p6WksLCxgfn4eJ06c+D7PbkYOMy5snrzu
 1erJ1ek/Rs2/0uv1DzPv7/43N2/eZEfx/wNXHCPB+WMTeAAAAABJRU5ErkJggg==
-----boundary_2_--boundary_2_00000000-0000-0000-0000-000000000002--
+----boundary_2_--boundary_System.Int32[]_00000000-0000-0000-0000-00000000000System.Int32[]--
 
-----boundary_1_--boundary_0_00000000-0000-0000-0000-000000000000--
+----boundary_1_--boundary_System.Int32[]_00000000-0000-0000-0000-00000000000System.Int32[]--
