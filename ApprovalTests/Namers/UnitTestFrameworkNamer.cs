@@ -28,7 +28,7 @@ namespace ApprovalTests.Namers
 
         public string Name => stackTraceParser.ApprovalName;
 
-        public string SourcePath => stackTraceParser.SourcePath + GetSubdirectory();
+        public virtual string SourcePath => stackTraceParser.SourcePath + GetSubdirectory();
 
         public string GetSubdirectory()
         {
