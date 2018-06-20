@@ -26,13 +26,15 @@
     <Reference Include="WindowsBase">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
-    <ProjectReference Include="..\ApprovalTests\ApprovalTests.csproj" />
-    <ProjectReference Include="..\ApprovalUtilities\ApprovalUtilities.csproj" />
+    <ProjectReference Include="..\ApprovalTests.EntityFramework\ApprovalTests.EntityFramework.csproj" />
   </ItemGroup>
   <ItemGroup>
-
-  <Content Include="a.png" />
-    <Content Include="b.png" />
+    <Content Include="EntityFramework\CreateDatabase.sql" />
+    <EntityDeploy Include="EntityFramework\Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Properties\DataSources\ApprovalTests.Tests.EntityFramework.ModelContainer.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
