@@ -12,9 +12,9 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Iesi.Collections" Version="4.*" />
-    <PackageReference Include="NUnit" Version="3.7.1" />
-    <PackageReference Include="NUnit3TestAdapter" Version="3.8.0-alpha1" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.3.0" />
+    <PackageReference Include="NUnit" Version="3.*" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.*" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.*" />
     <PackageReference Include="NHibernate" Version="4.*" />
     <ProjectReference Include="..\ApprovalTests.NHibernate\ApprovalTests.NHibernate.csproj" />
 
