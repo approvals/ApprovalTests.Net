@@ -32,8 +32,6 @@
     <Reference Include="System" Pack="False" />
     <Reference Include="System.Configuration" Pack="False" />
     <Reference Include="System.Core" Pack="False" />
-    <Reference Include="System.Runtime.Remoting" Pack="False" />
-    <Reference Include="System.Transactions" Pack="False" />
     <Reference Include="System.Xaml" Pack="False" />
     <Reference Include="WindowsBase" Pack="False">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
