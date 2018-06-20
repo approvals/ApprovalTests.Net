@@ -29,7 +29,7 @@
     <ProjectReference Include="..\ApprovalTests.EntityFramework\ApprovalTests.EntityFramework.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="EntityFramework\CreateDatabase.sql" />
+    <Content Include="CreateDatabase.sql" />
     <EntityDeploy Include="EntityFramework\Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model.Designer.cs</LastGenOutput>
