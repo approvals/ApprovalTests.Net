@@ -5,14 +5,12 @@ namespace ApprovalTests.Wpf
 {
     public class ImageWriter : IApprovalWriter
     {
-        private readonly Action<string> writer;
-
+        Action<string> writer;
 
         public ImageWriter(Action<string> writer)
         {
             this.writer = writer;
         }
-
 
         public string GetApprovalFilename(string basename)
         {

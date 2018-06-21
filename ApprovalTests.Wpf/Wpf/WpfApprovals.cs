@@ -1,5 +1,4 @@
-﻿#if !__MonoCS__
-using System;
+﻿using System;
 using System.Windows;
 using System.Windows.Controls;
 using ApprovalTests.Core;
@@ -10,9 +9,9 @@ namespace ApprovalTests.Wpf
 {
     public class WpfApprovals
     {
-        private static Func<IDisposable> addAdditionalInfo = ApprovalResults.UniqueForOs;
+        static Func<IDisposable> addAdditionalInfo = ApprovalResults.UniqueForOs;
 
-        public static void RegisterDefaultAddtionalInfo(Func<IDisposable> a)
+        public static void RegisterDefaultAdditionalInfo(Func<IDisposable> a)
         {
             addAdditionalInfo = a;
         }
@@ -30,7 +29,7 @@ namespace ApprovalTests.Wpf
             Approvals.Verify(CreateWindowWpfWriter(windowCreator));
         }
 
-        private static IApprovalWriter CreateWindowWpfWriter(Func<Window> windowCreator)
+        static IApprovalWriter CreateWindowWpfWriter(Func<Window> windowCreator)
         {
             return new ImageWriter(f => WpfUtils.ScreenCaptureInStaThread(f, windowCreator));
         }
@@ -40,7 +39,7 @@ namespace ApprovalTests.Wpf
             Approvals.Verify(CreateControlWpfWriter(action));
         }
 
-        private static IApprovalWriter CreateControlWpfWriter(Func<Control> action)
+        static IApprovalWriter CreateControlWpfWriter(Func<Control> action)
         {
             return new ImageWriter(f => WpfUtils.ScreenCaptureInStaThread(f, action));
         }
@@ -54,4 +53,3 @@ namespace ApprovalTests.Wpf
         }
     }
 }
-#endif

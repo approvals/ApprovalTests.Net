@@ -1,5 +1,4 @@
-﻿#if !__MonoCS__
-using System.Windows;
+﻿using System.Windows;
 using ApprovalTests.Core;
 using ApprovalUtilities.Wpf;
 
@@ -7,7 +6,7 @@ namespace ApprovalTests.Wpf
 {
     public class ApprovalWpfWindowWriter : IApprovalWriter
     {
-        private readonly Window window;
+        Window window;
 
         public ApprovalWpfWindowWriter(Window window)
         {
@@ -31,4 +30,3 @@ namespace ApprovalTests.Wpf
         }
     }
 }
-#endif
