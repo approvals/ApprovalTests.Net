@@ -50,6 +50,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApprovalTests.EntityFramewo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApprovalTests.EntityFramework.Tests", "ApprovalTests.EntityFramework.Tests\ApprovalTests.EntityFramework.Tests.csproj", "{83282D39-556E-48A3-803A-1D920983B846}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApprovalTests.Wpf", "ApprovalTests.Wpf\ApprovalTests.Wpf.csproj", "{F2572B5C-DB03-4D66-B974-6D5F1519AEFF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApprovalTests.Wpf.Tests", "ApprovalTests.Wpf.Tests\ApprovalTests.Wpf.Tests.csproj", "{4252ED0A-82D3-4E70-9925-BB2DFC770422}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -132,6 +136,14 @@ Global
 		{83282D39-556E-48A3-803A-1D920983B846}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83282D39-556E-48A3-803A-1D920983B846}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83282D39-556E-48A3-803A-1D920983B846}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2572B5C-DB03-4D66-B974-6D5F1519AEFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2572B5C-DB03-4D66-B974-6D5F1519AEFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2572B5C-DB03-4D66-B974-6D5F1519AEFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2572B5C-DB03-4D66-B974-6D5F1519AEFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4252ED0A-82D3-4E70-9925-BB2DFC770422}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4252ED0A-82D3-4E70-9925-BB2DFC770422}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4252ED0A-82D3-4E70-9925-BB2DFC770422}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4252ED0A-82D3-4E70-9925-BB2DFC770422}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

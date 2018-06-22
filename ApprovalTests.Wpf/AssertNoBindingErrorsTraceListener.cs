@@ -7,7 +7,7 @@ namespace ApprovalTests.Wpf
 {
     public class AssertNoBindingErrorsTraceListener : TraceListener
     {
-        private readonly StringBuilder messageBuilder = new StringBuilder();
+        StringBuilder messageBuilder = new StringBuilder();
 
         public const string RegEditText = @"
 Just Save to file: wpf.reg and run
@@ -17,24 +17,20 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Tracing\WPF]
 ""ManagedTracing""=dword:00000001";
 
-
-        private AssertNoBindingErrorsTraceListener(SourceLevels level)
+        AssertNoBindingErrorsTraceListener(SourceLevels level)
         {
-
             WindowsRegistryAssert.HasDword(@"Software\Microsoft\Tracing\WPF", "ManagedTracing", 1, "You need to add this key to your registry for Wpf report Binding Errors. \n" + RegEditText);
             PresentationTraceSources.DataBindingSource.Listeners.Add(this);
             PresentationTraceSources.DataBindingSource.Switch.Level = level;
         }
 
-
         public static IDisposable Start(SourceLevels level = SourceLevels.Warning)
         {
-
             var listener = new AssertNoBindingErrorsTraceListener(level);
             return new DisposableToken(listener);
         }
 
-        private class DisposableToken : IDisposable
+        class DisposableToken : IDisposable
         {
             private readonly AssertNoBindingErrorsTraceListener listener;
 
