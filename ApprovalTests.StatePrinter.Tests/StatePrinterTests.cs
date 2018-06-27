@@ -1,9 +1,11 @@
-﻿using ApprovalTests.StatePrinter;
+﻿using ApprovalTests.Reporters;
+using ApprovalTests.StatePrinter;
 using NUnit.Framework;
 
 namespace ApprovalTests.Tests.StatePrinter
 {
     [TestFixture]
+    [UseReporter(typeof(DiffReporter))]
     public class StatePrinterTests
     {
         [Test]
