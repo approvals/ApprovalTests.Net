@@ -16,7 +16,7 @@
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
-
+    <ProjectReference Include="..\ApprovalTests.Wpf\ApprovalTests.Wpf.csproj" />
     <ProjectReference Include="..\ApprovalTests\ApprovalTests.csproj" />
     <ProjectReference Include="..\ApprovalUtilities\ApprovalUtilities.csproj" />
     <ProjectReference Include="..\ReportingDemo\ReportingDemo.csproj" />
