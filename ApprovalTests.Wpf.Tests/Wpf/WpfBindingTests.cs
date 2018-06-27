@@ -5,6 +5,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Controls;
 using System.Windows.Data;
+using ApprovalTests.Reporters;
 using ApprovalTests.Wpf;
 using ApprovalUtilities.Utilities;
 using NUnit.Framework;
@@ -12,6 +13,7 @@ using NUnit.Framework;
 namespace ApprovalTests.Tests.Wpf
 {
     [TestFixture]
+    [UseReporter(typeof(DiffReporter))]
     public class WpfBindingTests
     {
         [Test]
