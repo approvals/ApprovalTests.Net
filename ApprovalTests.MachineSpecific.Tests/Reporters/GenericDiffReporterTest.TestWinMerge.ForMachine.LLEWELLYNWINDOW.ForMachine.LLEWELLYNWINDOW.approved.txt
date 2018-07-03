@@ -1,0 +1,1 @@
+﻿"C:\Program Files\WinMerge\WinMergeU.exe" "../../b.txt" "../../a.txt"

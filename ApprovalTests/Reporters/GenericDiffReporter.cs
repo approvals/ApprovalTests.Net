@@ -15,7 +15,13 @@ namespace ApprovalTests.Reporters
     public class GenericDiffReporter : IEnvironmentAwareReporter
     {
         public const string DEFAULT_ARGUMENT_FORMAT = "{0} {1}";
-
+        public static IEnumerable<string> GetTextAndImageFileTypes()
+        {
+            var all = new HashSet<string>();
+            all.AddAll(GetTextFileTypes());
+            all.AddAll(GetImageFileTypes());
+            return all;
+        }
         private static readonly HashSet<string> TEXT_FILE_TYPES = new HashSet<string>
         {
             ".txt",
@@ -73,11 +79,10 @@ namespace ApprovalTests.Reporters
 
         private static void AssertDots(string[] extensionsWithDots)
         {
-            var wrong = extensionsWithDots.Where(s => !s.StartsWith("."));
-            if (wrong.Count() > 0)
+            var wrong = extensionsWithDots.Where(s => !s.StartsWith(".")).ToList();
+            if (wrong.Any())
             {
-                throw new ArgumentException("The following extensions don't start with dots: " +
-                                            wrong.ToReadableString());
+                throw new ArgumentException($"The following extensions don't start with dots: {wrong.ToReadableString()}");
             }
         }
 
@@ -97,8 +102,8 @@ namespace ApprovalTests.Reporters
             if (diffProgram == null)
             {
                 throw new NullReferenceException(
-                    string.Format(@"Illegal arguments for {0} (diffProgam, argumentsFormat, diffProgramNotFoundMessage)
-Recieved {0} ({1}, {2}, {3})", GetType().Name, diffProgram, argumentsFormat, diffProgramNotFoundMessage));
+                    string.Format(@"Illegal arguments for {0} (diffProgram, argumentsFormat, diffProgramNotFoundMessage)
+Received {0} ({1}, {2}, {3})", GetType().Name, diffProgram, argumentsFormat, diffProgramNotFoundMessage));
             }
 
             originalDiffProgram = diffProgram;
@@ -191,9 +196,9 @@ Recieved {0} ({1}, {2}, {3})", GetType().Name, diffProgram, argumentsFormat, dif
             return IsFileOneOf(forFile, GetTextFileTypes());
         }
 
-        public static bool IsFileOneOf(string forFile, IEnumerable<string> filetypes)
+        public static bool IsFileOneOf(string forFile, IEnumerable<string> fileTypes)
         {
-            return filetypes.Any(ext => forFile.EndsWith(ext));
+            return fileTypes.Any(forFile.EndsWith);
         }
 
         public static void LaunchAsync(LaunchArgs launchArgs)
@@ -228,5 +233,7 @@ Recieved {0} ({1}, {2}, {3})", GetType().Name, diffProgram, argumentsFormat, dif
                 throw new Exception($"Unable to launch: {launchArgs.Program} with arguments {launchArgs.Arguments}\nError Message: {e.Message}",e);
             }
         }
+
+        
     }
 }

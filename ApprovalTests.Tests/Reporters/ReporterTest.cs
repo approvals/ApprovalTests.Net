@@ -10,10 +10,10 @@ namespace ApprovalTests.Tests.Reporters
         [Test]
         public void Testname()
         {
-            var old = Environment.GetEnvironmentVariable(NCrunchReporter.EnviromentVariable);
-            Environment.SetEnvironmentVariable(NCrunchReporter.EnviromentVariable, "1");
+            var old = Environment.GetEnvironmentVariable(NCrunchReporter.EnvironmentVariable);
+            Environment.SetEnvironmentVariable(NCrunchReporter.EnvironmentVariable, "1");
             Assert.IsTrue(NCrunchReporter.INSTANCE.IsWorkingInThisEnvironment("a.txt"));
-            Environment.SetEnvironmentVariable(NCrunchReporter.EnviromentVariable, old);
+            Environment.SetEnvironmentVariable(NCrunchReporter.EnvironmentVariable, old);
         }
     }
 }

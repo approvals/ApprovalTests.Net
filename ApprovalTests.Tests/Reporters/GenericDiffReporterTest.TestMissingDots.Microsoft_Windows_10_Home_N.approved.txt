@@ -1,0 +1,5 @@
+﻿System.ArgumentException: The following extensions don't start with dots: [txt, asp]
+   at ApprovalTests.Reporters.GenericDiffReporter.AssertDots(String[] extensionsWithDots) in ...\GenericDiffReporter.cs
+   at ApprovalTests.Reporters.GenericDiffReporter.RegisterTextFileTypes(String[] extensionsWithDots) in ...\GenericDiffReporter.cs
+   at ApprovalTests.Tests.Reporters.GenericDiffReporterTest.<>c.<TestMissingDots>() in ...\GenericDiffReporterTest.cs
+   at ApprovalUtilities.Utilities.ExceptionUtilities.GetException(Action action) in ...\ExceptionUtilities.cs

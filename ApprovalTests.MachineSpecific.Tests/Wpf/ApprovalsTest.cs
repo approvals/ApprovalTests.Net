@@ -8,7 +8,7 @@ using NUnit.Framework;
 namespace ApprovalTests.MachineSpecific.Tests.Wpf
 {
     [TestFixture]
-    [UseReporter(typeof (AllFailingTestsClipboardReporter), typeof (TortoiseDiffReporter))]
+    [UseReporter(typeof (AllFailingTestsClipboardReporter))]
     public class ApprovalsTest
     {
         [Test]
