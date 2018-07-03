@@ -11,7 +11,7 @@ namespace ApprovalTests.Tests.EntityFramework
     public class EntityFrameworkLoaderTest
     {
         [Test]
-        public void FromInheritence()
+        public void FromInheritance()
         {
             Approvals.Verify(new CompanyLoaderByName2("M1"));
         }
