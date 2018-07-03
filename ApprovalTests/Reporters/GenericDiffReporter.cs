@@ -79,11 +79,10 @@ namespace ApprovalTests.Reporters
 
         private static void AssertDots(string[] extensionsWithDots)
         {
-            var wrong = extensionsWithDots.Where(s => !s.StartsWith("."));
-            if (wrong.Count() > 0)
+            var wrong = extensionsWithDots.Where(s => !s.StartsWith(".")).ToList();
+            if (wrong.Any())
             {
-                throw new ArgumentException("The following extensions don't start with dots: " +
-                                            wrong.ToReadableString());
+                throw new ArgumentException($"The following extensions don't start with dots: {wrong.ToReadableString()}");
             }
         }
 
@@ -103,8 +102,8 @@ namespace ApprovalTests.Reporters
             if (diffProgram == null)
             {
                 throw new NullReferenceException(
-                    string.Format(@"Illegal arguments for {0} (diffProgam, argumentsFormat, diffProgramNotFoundMessage)
-Recieved {0} ({1}, {2}, {3})", GetType().Name, diffProgram, argumentsFormat, diffProgramNotFoundMessage));
+                    string.Format(@"Illegal arguments for {0} (diffProgram, argumentsFormat, diffProgramNotFoundMessage)
+Received {0} ({1}, {2}, {3})", GetType().Name, diffProgram, argumentsFormat, diffProgramNotFoundMessage));
             }
 
             originalDiffProgram = diffProgram;
@@ -197,9 +196,9 @@ Recieved {0} ({1}, {2}, {3})", GetType().Name, diffProgram, argumentsFormat, dif
             return IsFileOneOf(forFile, GetTextFileTypes());
         }
 
-        public static bool IsFileOneOf(string forFile, IEnumerable<string> filetypes)
+        public static bool IsFileOneOf(string forFile, IEnumerable<string> fileTypes)
         {
-            return filetypes.Any(ext => forFile.EndsWith(ext));
+            return fileTypes.Any(forFile.EndsWith);
         }
 
         public static void LaunchAsync(LaunchArgs launchArgs)
