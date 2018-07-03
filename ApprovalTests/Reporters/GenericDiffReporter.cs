@@ -15,7 +15,13 @@ namespace ApprovalTests.Reporters
     public class GenericDiffReporter : IEnvironmentAwareReporter
     {
         public const string DEFAULT_ARGUMENT_FORMAT = "{0} {1}";
-
+        public static IEnumerable<string> GetTextAndImageFileTypes()
+        {
+            var all = new HashSet<string>();
+            all.AddAll(GetTextFileTypes());
+            all.AddAll(GetImageFileTypes());
+            return all;
+        }
         private static readonly HashSet<string> TEXT_FILE_TYPES = new HashSet<string>
         {
             ".txt",
@@ -228,5 +234,7 @@ Recieved {0} ({1}, {2}, {3})", GetType().Name, diffProgram, argumentsFormat, dif
                 throw new Exception($"Unable to launch: {launchArgs.Program} with arguments {launchArgs.Arguments}\nError Message: {e.Message}",e);
             }
         }
+
+        
     }
 }

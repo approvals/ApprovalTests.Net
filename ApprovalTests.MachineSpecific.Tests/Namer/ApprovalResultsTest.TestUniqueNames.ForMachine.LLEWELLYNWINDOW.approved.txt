@@ -1,0 +1,3 @@
+﻿GetDotNetVersion => Net_v4.0.30319.42000
+GetOsName => Microsoft_Windows_10_Home_N
+GetUserName => ForUser.Tomas

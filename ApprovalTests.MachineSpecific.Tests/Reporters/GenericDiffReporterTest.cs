@@ -16,6 +16,15 @@ namespace ApprovalTests.MachineSpecific.Tests.Reporters
             Process.Start(fileName, arguments);
         }
 
+        private static void AssertLauncher(string approved, string received, GenericDiffReporter reporter)
+        {
+            using (ApprovalResults.UniqueForMachineName())
+            {
+                var args = reporter.GetLaunchArguments(approved, received);
+                Approvals.VerifyWithCallback(args, s => StartProcess(s));
+            }
+        }
+
         [Test]
         public void TestLaunchesBeyondCompareImage()
         {
@@ -75,15 +84,5 @@ namespace ApprovalTests.MachineSpecific.Tests.Reporters
                 AssertLauncher("../../a.txt", "../../b.txt", WinMergeReporter.INSTANCE);
             }
         }
-
-        private static void AssertLauncher(string approved, string received, GenericDiffReporter reporter)
-        {
-            using (ApprovalResults.UniqueForMachineName())
-            {
-                var args = reporter.GetLaunchArguments(approved, received);
-
-                Approvals.VerifyWithCallback(args, s => StartProcess(s));
-            }
-        }
-    }
+     }
 }
