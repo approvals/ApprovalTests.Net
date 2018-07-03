@@ -1,3 +1,0 @@
-﻿5/6/2011 10:30:00 AM ~000020ms Variable: name = 'Llewellyn'
-5/6/2011 10:30:00 AM ~000020ms Variable: name = 'Llewellyn'
-5/6/2011 10:30:00 AM ~000020ms Variable: name = 'Llewellyn'
