@@ -1,8 +1,8 @@
 ﻿using ApprovalTests.Core;
 using ApprovalTests.Namers.StackTraceParsers;
 using System;
+using System.IO;
 using System.Reflection;
-using Alphaleonis.Win32.Filesystem;
 
 namespace ApprovalTests.Reporters
 {

@@ -1,5 +1,5 @@
 using System;
-using Alphaleonis.Win32.Filesystem;
+using System.IO;
 
 namespace ApprovalTests.Scrubber
 {
