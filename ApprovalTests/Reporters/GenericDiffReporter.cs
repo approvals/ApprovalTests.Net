@@ -73,11 +73,10 @@ namespace ApprovalTests.Reporters
 
         private static void AssertDots(string[] extensionsWithDots)
         {
-            var wrong = extensionsWithDots.Where(s => !s.StartsWith("."));
-            if (wrong.Count() > 0)
+            var wrong = extensionsWithDots.Where(s => !s.StartsWith(".")).ToList();
+            if (wrong.Any())
             {
-                throw new ArgumentException("The following extensions don't start with dots: " +
-                                            wrong.ToReadableString());
+                throw new ArgumentException($"The following extensions don't start with dots: {wrong.ToReadableString()}");
             }
         }
 
@@ -97,8 +96,8 @@ namespace ApprovalTests.Reporters
             if (diffProgram == null)
             {
                 throw new NullReferenceException(
-                    string.Format(@"Illegal arguments for {0} (diffProgam, argumentsFormat, diffProgramNotFoundMessage)
-Recieved {0} ({1}, {2}, {3})", GetType().Name, diffProgram, argumentsFormat, diffProgramNotFoundMessage));
+                    string.Format(@"Illegal arguments for {0} (diffProgram, argumentsFormat, diffProgramNotFoundMessage)
+Received {0} ({1}, {2}, {3})", GetType().Name, diffProgram, argumentsFormat, diffProgramNotFoundMessage));
             }
 
             originalDiffProgram = diffProgram;
