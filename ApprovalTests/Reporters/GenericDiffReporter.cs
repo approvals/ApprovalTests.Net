@@ -190,9 +190,9 @@ Received {0} ({1}, {2}, {3})", GetType().Name, diffProgram, argumentsFormat, dif
             return IsFileOneOf(forFile, GetTextFileTypes());
         }
 
-        public static bool IsFileOneOf(string forFile, IEnumerable<string> filetypes)
+        public static bool IsFileOneOf(string forFile, IEnumerable<string> fileTypes)
         {
-            return filetypes.Any(ext => forFile.EndsWith(ext));
+            return fileTypes.Any(forFile.EndsWith);
         }
 
         public static void LaunchAsync(LaunchArgs launchArgs)
