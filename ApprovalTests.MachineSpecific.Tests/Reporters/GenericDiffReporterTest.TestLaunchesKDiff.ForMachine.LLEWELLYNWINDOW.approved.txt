@@ -1,0 +1,1 @@
+﻿"C:\Program Files\KDiff3\kdiff3.exe" "../../b.txt" "../../a.txt" -m -o "../../a.txt"

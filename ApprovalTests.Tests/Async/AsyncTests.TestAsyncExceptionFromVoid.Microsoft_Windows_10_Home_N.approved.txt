@@ -1,0 +1,29 @@
+﻿Exceptions Thrown
+
+System.Exception: Throwing 0 times
+   at ApprovalTests.Tests.Async.AsyncTests.<>c.<ThrowBabyThrow>(Int32 i) in ...\AsyncTests.cs
+   at System.Linq.Parallel.SelectQueryOperator`2.SelectQueryOperatorEnumerator`1.MoveNext(TOutput& currentElement, TKey& currentKey)
+   at System.Linq.Parallel.IntSumAggregationOperator.IntSumAggregationOperatorEnumerator`1.MoveNextCore(Int32& currentElement)
+   at System.Linq.Parallel.InlinedAggregationOperatorEnumerator`1.MoveNext(TIntermediate& currentElement, Int32& currentKey)
+   at System.Linq.Parallel.StopAndGoSpoolingTask`2.SpoolingWork()
+   at System.Linq.Parallel.SpoolingTaskBase.Work()
+   at System.Threading.Tasks.Task.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+System.Exception: Throwing 1 times
+   at ApprovalTests.Tests.Async.AsyncTests.<>c.<ThrowBabyThrow>(Int32 i) in ...\AsyncTests.cs
+   at System.Linq.Parallel.SelectQueryOperator`2.SelectQueryOperatorEnumerator`1.MoveNext(TOutput& currentElement, TKey& currentKey)
+   at System.Linq.Parallel.IntSumAggregationOperator.IntSumAggregationOperatorEnumerator`1.MoveNextCore(Int32& currentElement)
+   at System.Linq.Parallel.InlinedAggregationOperatorEnumerator`1.MoveNext(TIntermediate& currentElement, Int32& currentKey)
+   at System.Linq.Parallel.StopAndGoSpoolingTask`2.SpoolingWork()
+   at System.Linq.Parallel.SpoolingTaskBase.Work()
+   at System.Threading.Tasks.Task.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+System.Exception: Throwing 2 times
+   at ApprovalTests.Tests.Async.AsyncTests.<>c.<ThrowBabyThrow>(Int32 i) in ...\AsyncTests.cs
+   at System.Linq.Parallel.SelectQueryOperator`2.SelectQueryOperatorEnumerator`1.MoveNext(TOutput& currentElement, TKey& currentKey)
+   at System.Linq.Parallel.IntSumAggregationOperator.IntSumAggregationOperatorEnumerator`1.MoveNextCore(Int32& currentElement)
+   at System.Linq.Parallel.InlinedAggregationOperatorEnumerator`1.MoveNext(TIntermediate& currentElement, Int32& currentKey)
+   at System.Linq.Parallel.StopAndGoSpoolingTask`2.SpoolingWork()
+   at System.Linq.Parallel.SpoolingTaskBase.Work()
+   at System.Threading.Tasks.Task.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()

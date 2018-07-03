@@ -11,7 +11,7 @@ public class SetUpFixture
     public void SetUp()
     {
         FixCurrentDirectory();
-        var machinesToRun = new[] { "LLEWELLYN-PC" };
+        var machinesToRun = new[] { "LLEWELLYN-PC", "LLEWELLYNWINDOW" };
 
         if (!machinesToRun.Contains(Environment.MachineName))
         {

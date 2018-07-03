@@ -1,0 +1,1 @@
+﻿"C:\Program Files\Devart\Code Compare\CodeCompare.exe" /ENVIRONMENT=visualstudio "../../b.txt" "../../a.txt"
