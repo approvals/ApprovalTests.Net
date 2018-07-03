@@ -18,6 +18,8 @@
     <PackageReference Include="Mvc2" Version="2.*" PrivateAssets="All" />
     <PackageReference Include="Publicize.Fody" Version="1.5.0" PrivateAssets="All" />
     <PackageReference Include="Virtuosity.Fody" Version="1.20.2" PrivateAssets="All" />
+    <Reference Include="PresentationCore" Pack="False" />
+    <Reference Include="PresentationFramework" Pack="False" />
     <Reference Include="System.Core" Pack="False" />
     <Reference Include="System.Data.Entity" Pack="False" />
     <Reference Include="System.Management" Pack="False" />
