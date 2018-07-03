@@ -5,7 +5,7 @@ namespace ApprovalTests.Reporters
 {
     public class NCrunchReporter : IEnvironmentAwareReporter
     {
-        public const string EnviromentVariable = "NCrunch";
+        public const string EnvironmentVariable = "NCrunch";
         public static readonly NCrunchReporter INSTANCE = new NCrunchReporter();
 
         public void Report(string approved, string received)
@@ -14,7 +14,7 @@ namespace ApprovalTests.Reporters
 
         public bool IsWorkingInThisEnvironment(string forFile)
         {
-            var ncrunch = Environment.GetEnvironmentVariable(EnviromentVariable);
+            var ncrunch = Environment.GetEnvironmentVariable(EnvironmentVariable);
             return ncrunch == "1";
         }
     }
