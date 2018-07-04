@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ApprovalUtilities.Persistence.NHibernate
+namespace ApprovalUtilities.Obsolete
 {
     [Obsolete(ObsoleteError, true)]
     public class NhQueryableAdaptor<T>

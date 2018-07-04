@@ -4,6 +4,7 @@
     <TargetFrameworks>net45</TargetFrameworks>
     <DebugType>full</DebugType>
     <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Machine.Specifications" Version="0.*" />
