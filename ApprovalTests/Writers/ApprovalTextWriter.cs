@@ -1,6 +1,6 @@
 using System;
+using System.IO;
 using System.Text;
-using Alphaleonis.Win32.Filesystem;
 using ApprovalTests.Core;
 
 namespace ApprovalTests

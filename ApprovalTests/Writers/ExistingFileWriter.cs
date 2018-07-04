@@ -1,5 +1,5 @@
 using System;
-using Alphaleonis.Win32.Filesystem;
+using System.IO;
 using ApprovalTests.Core;
 
 namespace ApprovalTests.Writers

@@ -1,7 +1,7 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using System.Management;
-using Alphaleonis.Win32.Filesystem;
 
 namespace ApprovalUtilities.Utilities
 {
