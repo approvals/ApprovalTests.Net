@@ -1,5 +1,5 @@
 ﻿using System.Linq;
-using ApprovalUtilities.Persistence.EntityFramework;
+using ApprovalTests.EntityFramework;
 
 namespace ApprovalTests.Tests.EntityFramework
 {

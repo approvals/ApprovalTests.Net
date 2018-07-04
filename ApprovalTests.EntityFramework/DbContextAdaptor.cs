@@ -5,9 +5,8 @@ using System.Data.Objects;
 using System.Linq;
 using System.Reflection;
 using ApprovalUtilities.Persistence.Database;
-using ApprovalUtilities.Persistence.EntityFramework;
 
-namespace ApprovalTests.Persistence.EntityFramework.Version5
+namespace ApprovalTests.EntityFramework
 {
     public class DbContextAdaptor<T> : IDatabaseToExecuteableQueryAdaptor
     {

@@ -2,8 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Data.Objects;
 using System.Linq;
+using ApprovalUtilities.Persistence;
 
-namespace ApprovalUtilities.Persistence.EntityFramework
+namespace ApprovalTests.EntityFramework
 {
     public abstract class MultiRowEntityFrameworkLoader<T, DatabaseContextType> : EntityFrameworkLoader<T, IEnumerable<T>, DatabaseContextType>
         where DatabaseContextType : ObjectContext
