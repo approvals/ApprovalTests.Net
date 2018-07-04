@@ -20,6 +20,7 @@
 *.PDF	 diff=astextplain
 *.rtf	 diff=astextplain
 *.RTF	 diff=astextplain
+*.sql	 diff=astextplain
 
 #Binary
 *.dll  binary
