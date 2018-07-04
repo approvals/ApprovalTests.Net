@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Data.Objects;
 
-namespace ApprovalUtilities.Persistence.EntityFramework
+namespace ApprovalTests.EntityFrameworkUtilities
 {
     public static class EntityFrameworkLoadersExtensions
     {

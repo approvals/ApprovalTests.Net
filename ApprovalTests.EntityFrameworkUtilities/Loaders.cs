@@ -2,7 +2,7 @@
 using System.Data.Objects;
 using System.Linq;
 
-namespace ApprovalUtilities.Persistence.EntityFramework
+namespace ApprovalTests.EntityFrameworkUtilities
 {
     public class Loaders
     {

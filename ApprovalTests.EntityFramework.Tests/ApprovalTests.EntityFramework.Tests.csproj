@@ -12,6 +12,7 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.*" />
     <PackageReference Include="MSTest.TestFramework" Version="1.*" />
     <PackageReference Include="MSTest.TestAdapter" Version="1.*" />
+    <ProjectReference Include="..\ApprovalTests.EntityFrameworkUtilities\ApprovalTests.EntityFrameworkUtilities.csproj" />
     <ProjectReference Include="..\ApprovalTests.EntityFramework\ApprovalTests.EntityFramework.csproj" />
   </ItemGroup>
   <ItemGroup>

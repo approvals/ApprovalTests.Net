@@ -1,7 +1,7 @@
 ﻿using System.Linq;
+using ApprovalTests.EntityFrameworkUtilities;
 using ApprovalTests.Persistence.EntityFramework;
 using ApprovalUtilities.Persistence;
-using ApprovalUtilities.Persistence.EntityFramework;
 using NUnit.Framework;
 
 namespace ApprovalTests.Tests.EntityFramework
