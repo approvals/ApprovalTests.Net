@@ -4,8 +4,8 @@ using System.Data.Entity.Infrastructure;
 using System.Data.Objects;
 using System.Linq;
 using System.Reflection;
+using ApprovalTests.EntityFrameworkUtilities;
 using ApprovalUtilities.Persistence.Database;
-using ApprovalUtilities.Persistence.EntityFramework;
 
 namespace ApprovalTests.Persistence.EntityFramework.Version5
 {
