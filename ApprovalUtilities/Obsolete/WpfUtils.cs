@@ -1,6 +1,6 @@
 using System;
 
-namespace ApprovalUtilities.Wpf
+namespace ApprovalUtilities.Obsolete
 {
     [Obsolete(ObsoleteError, true)]
     public class WpfUtils

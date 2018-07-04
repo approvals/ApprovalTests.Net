@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
-using Alphaleonis.Win32.Filesystem;
+using System.IO;
 
 namespace ApprovalUtilities.SimpleLogger.Writers
 {

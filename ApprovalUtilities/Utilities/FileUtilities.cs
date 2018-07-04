@@ -1,5 +1,5 @@
+using System.IO;
 using System.Text;
-using Alphaleonis.Win32.Filesystem;
 
 namespace ApprovalUtilities.Utilities
 {
