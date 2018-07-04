@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using ApprovalTests.EntityFramework;
 using ApprovalUtilities.Persistence;
-using ApprovalUtilities.Persistence.EntityFramework;
 
 namespace ApprovalTests.Tests.EntityFramework
 {

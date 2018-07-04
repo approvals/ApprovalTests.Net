@@ -2,7 +2,7 @@
 using System.Data.Objects;
 using System.Linq;
 
-namespace ApprovalUtilities.Persistence.EntityFramework
+namespace ApprovalTests.EntityFramework
 {
     public class LambdaSingleLoader<T, C> : EntityFrameworkLoader<T, T, C>
         where C : ObjectContext

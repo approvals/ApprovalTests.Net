@@ -1,7 +1,8 @@
 ﻿using System.Data.Entity;
 using System.Linq;
+using ApprovalTests.Persistence;
 
-namespace ApprovalTests.Persistence.EntityFramework.Version5
+namespace ApprovalTests.EntityFramework
 {
     public class EntityFrameworkDbContextApprovals
     {

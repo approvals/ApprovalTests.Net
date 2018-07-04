@@ -4,7 +4,7 @@ using System.Data.Objects;
 using System.Linq;
 using ApprovalUtilities.Persistence.Database;
 
-namespace ApprovalUtilities.Persistence.EntityFramework
+namespace ApprovalTests.EntityFramework
 {
     public class ObjectContextAdaptor<T> : IDatabaseToExecuteableQueryAdaptor
     {
