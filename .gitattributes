@@ -30,3 +30,4 @@
 *.snk  binary
 *.ttf  binary
 *.gif  binary
+*.bak  binary
