@@ -19,7 +19,6 @@
     <PackageReference Include="Microsoft.AspNet.Razor" Version="1.0.20105.408" ExcludeAssets="All" />
     <PackageReference Include="Microsoft.AspNet.WebPages" Version="1.0.20105.408" ExcludeAssets="All" />
     <PackageReference Include="Microsoft.Web.Infrastructure" Version="1.0.0.0" ExcludeAssets="All" />
-    <Reference Include="Microsoft.Build" Pack="False" />
     <Reference Include="Microsoft.CSharp" Pack="False" />
     <Reference Include="System" Pack="False" />
     <Reference Include="System.Configuration" Pack="False" />

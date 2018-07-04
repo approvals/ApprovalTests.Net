@@ -16,23 +16,6 @@ namespace ApprovalTests.Tests.Reporters
         }
 
         [Test]
-        public void TestGetCurrentProject()
-        {
-            var file = PathUtilities.GetAdjacentFile("GenericDiffReporterTest.TestLaunchesBeyondCompareImage.approved.txt");
-            var currentProjectFile = Path.GetFileName(VisualStudioProjectFileAdder.GetCurrentProjectFile(file));
-
-            Assert.AreEqual("ApprovalTests.Tests.csproj", currentProjectFile);
-        }
-
-        [Test]
-        public void TestGetCurrentProjectNotFound()
-        {
-            var file = Path.GetPathRoot(Path.GetTempPath());
-            var project = VisualStudioProjectFileAdder.GetCurrentProjectFile(file);
-            Assert.AreEqual(null, project);
-        }
-
-        [Test]
         public void TestMissingDots()
         {
             using (Namers.ApprovalResults.UniqueForOs())
