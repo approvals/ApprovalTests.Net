@@ -6,7 +6,7 @@ namespace ApprovalUtilities.Obsolete
     [Obsolete(ObsoleteError, true)]
     public class EntityFrameworkUtils
     {
-        internal const string ObsoleteError = "This class has been moved to the ApprovalTestsApprovalTests.EntityFrameworkUtilities NuGet package (https://www.nuget.org/packages/ApprovalTests.EntityFrameworkUtilities)";
+        internal const string ObsoleteError = "This class has been moved to the ApprovalTests.EntityFramework NuGet package (https://www.nuget.org/packages/ApprovalTests.EntityFramework)";
     }
 
     [Obsolete(EntityFrameworkUtils.ObsoleteError, true)]
