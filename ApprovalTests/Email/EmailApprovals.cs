@@ -53,7 +53,7 @@ namespace ApprovalTests.Email
             var guid = "--boundary_{0}_00000000-0000-0000-0000-00000000000{0}";
             foreach (var b in boundies)
             {
-                emailText = emailText.Replace(b, string.Format(guid, new[] {count++}));
+                emailText = emailText.Replace(b, string.Format(guid,count++));
             }
 
             return emailText;
