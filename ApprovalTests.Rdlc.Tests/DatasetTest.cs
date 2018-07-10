@@ -13,7 +13,7 @@ using ReportingDemo;
 namespace ApprovalTests.MachineSpecific.Tests.Persistence.Datasets
 {
     [TestFixture]
-    [UseReporter(typeof(DiffReporter), typeof(AllFailingTestsClipboardReporter))]
+    [UseReporter( typeof(AllFailingTestsClipboardReporter))]
     public class DatasetTest
     {
         private const string ReportName = "ReportingDemo.InsultsReport.rdlc";

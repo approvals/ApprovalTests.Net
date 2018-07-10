@@ -16,7 +16,7 @@ namespace ApprovalUtilities.Utilities
                     if (OsUtils.IsWindowsOs())
                     {
                         // #warning Look into using Gtk.Clipboard?
-                        Clipboard.SetDataObject(text);
+                        Clipboard.SetData(DataFormats.Text, text);
                     }
                 }
                 catch (Exception e)
