@@ -16,9 +16,10 @@
     <PackageReference Include="Mvc2" Version="2.*" PrivateAssets="All" />
     <PackageReference Include="Publicize.Fody" Version="1.6.1" PrivateAssets="All" />
     <PackageReference Include="Virtuosity.Fody" Version="1.21.1" PrivateAssets="All" />
+    <Reference Include="System.Core" Pack="False" />
+    <!--Not .net core compliant -->
     <Reference Include="PresentationCore" Pack="False" />
     <Reference Include="PresentationFramework" Pack="False" />
-    <Reference Include="System.Core" Pack="False" />
     <Reference Include="System.Management" Pack="False" />
     <Reference Include="WindowsBase" Pack="False" />
   </ItemGroup>
