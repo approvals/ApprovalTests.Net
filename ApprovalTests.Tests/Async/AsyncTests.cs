@@ -16,7 +16,10 @@ namespace ApprovalTests.Tests.Async
             using (Namers.ApprovalResults.UniqueForOs())
             {
                 AsyncApprovals.VerifyException(ThrowBabyThrow(),
-                    ScrubberUtils.RemoveLinesContaining("System.Linq.Parallel.QueryTask"));
+                    ScrubberUtils.Combine(
+                        ScrubberUtils.RemoveLinesContaining("System.Linq.Parallel.QueryTask"),
+                        ScrubberUtils.RemoveLinesContaining("System.Threading.Tasks.Task.InnerInvoke"))
+                );
             }
         }
 
