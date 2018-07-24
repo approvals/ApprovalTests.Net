@@ -9,8 +9,21 @@ namespace ApprovalTests.Reporters
     {
         public UseReporterAttribute(Type reporter)
         {
-            Reporter = GetSingleton(reporter) ?? CreateInstance(reporter);
+            Reporter = LoadReporter(reporter);
+        }
 
+        public UseReporterAttribute(params Type[] reporters)
+        {
+            Reporter = new MultiReporter(reporters.Select(LoadReporter));
+        }
+
+        private static IApprovalFailureReporter LoadReporter(Type reporter)
+        {
+            if (!typeof(IApprovalFailureReporter).IsAssignableFrom(reporter))
+            {
+                return new InvalidReporterConfiguration(reporter);
+            }
+            return GetSingleton(reporter) ?? CreateInstance(reporter);
         }
 
         public static IApprovalFailureReporter GetSingleton(Type reporter)
@@ -27,11 +40,6 @@ namespace ApprovalTests.Reporters
         public static IApprovalFailureReporter CreateInstance(Type reporter)
         {
             return (IApprovalFailureReporter) Activator.CreateInstance(reporter);
-        }
-
-        public UseReporterAttribute(params Type[] reporters)
-        {
-            Reporter = new MultiReporter(reporters.Select(r => (IApprovalFailureReporter) Activator.CreateInstance(r)));
         }
 
         public IApprovalFailureReporter Reporter { get; set; }
