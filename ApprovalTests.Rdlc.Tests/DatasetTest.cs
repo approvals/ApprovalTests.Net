@@ -1,5 +1,6 @@
 using System;
 using System.Data;
+using System.Drawing;
 using System.Reflection;
 using ApprovalTests.Namers;
 using ApprovalTests.Persistence.DataSets;
@@ -12,15 +13,31 @@ using ReportingDemo;
 namespace ApprovalTests.MachineSpecific.Tests.Persistence.Datasets
 {
     [TestFixture]
-    [UseReporter(typeof(DiffReporter), typeof(AllFailingTestsClipboardReporter))]
+    [UseReporter( typeof(AllFailingTestsClipboardReporter))]
     public class DatasetTest
     {
         private const string ReportName = "ReportingDemo.InsultsReport.rdlc";
+        private IDisposable machineName;
 
         [SetUp]
         public void Setup()
         {
-            ApprovalResults.UniqueForMachineName();
+            machineName = ApprovalResults.UniqueForMachineName();
+        }
+        [TearDown]
+        public void TearDown()
+        {
+            machineName.Dispose();
+        }
+
+        [Test]
+        public void TestFont()
+        {
+            var fontName = "Jokerman";
+            using (var fontTester = new Font(fontName,12,FontStyle.Regular,GraphicsUnit.Pixel))
+            {
+                Assert.AreEqual( fontName, fontTester.Name, "Please install the font");
+            }
         }
 
         [Test]

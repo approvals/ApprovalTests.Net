@@ -10,9 +10,7 @@
     <PackageReference Include="MSTest.TestFramework" Version="1.*" />
     <PackageReference Include="MSTest.TestAdapter" Version="1.*" />
 	  <Reference Include="System" />
-    <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
+    <Reference Include="System.Core"/>
     <Reference Include="System.Windows.Forms" />
     <ProjectReference Include="..\ApprovalTests\ApprovalTests.csproj" />
     <ProjectReference Include="..\ApprovalUtilities\ApprovalUtilities.csproj" />

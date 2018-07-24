@@ -1,36 +1,10 @@
 *.received.*
 nuget_packages/
 
-#################
-## Eclipse
-#################
-
-*.pydevproject
-.project
-.metadata
 bin/
 tmp/
 *.tmp
 *.bak
-*.swp
-*~.nib
-local.properties
-.classpath
-.settings/
-.loadpath
-
-build/Output
-# External tool builders
-.externalToolBuilders/
-
-# Locally stored "Eclipse launch configurations"
-*.launch
-
-# CDT-specific
-.cproject
-
-# PDT-specific
-.buildpath
 
 
 #################
@@ -69,16 +43,8 @@ build/Output
 .builds
 *.dotCover
 *.nupkg
-
-## TODO: If you have NuGet Package Restore enabled, uncomment this
 packages/
 
-# Visual C++ cache files
-ipch/
-*.aps
-*.ncb
-*.opensdf
-*.sdf
 
 # Visual Studio profiler
 *.psess
@@ -90,18 +56,6 @@ _ReSharper*
 # Installshield output folder
 [Ee]xpress
 
-# DocProject is a documentation generator add-in
-DocProject/buildhelp/
-DocProject/Help/*.HxT
-DocProject/Help/*.HxC
-DocProject/Help/*.hhc
-DocProject/Help/*.hhk
-DocProject/Help/*.hhp
-DocProject/Help/Html2
-DocProject/Help/html
-
-# Click-Once directory
-publish
 
 # Others
 [Bb]in
@@ -113,15 +67,6 @@ ClientBin
 stylecop.*
 ~$*
 *.dbmdl
-Generated_Code #added for RIA/Silverlight projects
-
-# Backup & report files from converting an old project file to a newer
-# Visual Studio version. Backup files are not needed, because we have git ;-)
-_UpgradeReport_Files/
-Backup*/
-UpgradeLog*.XML
-
-
 
 ############
 ## Windows
@@ -133,47 +78,8 @@ Thumbs.db
 # Folder config file
 Desktop.ini
 
-
-#############
-## Python
-#############
-
-*.py[co]
-
-# Packages
-*.egg
-*.egg-info
-dist
-
-eggs
-parts
-bin
-var
-sdist
-develop-eggs
-.installed.cfg
-
-# Installer logs
-pip-log.txt
-
-# Unit test / coverage reports
-.coverage
-.tox
-
-#Translations
-*.mo
-
-#Mr Developer
-.mr.developer.cfg
-
 # Mac crap
 .DS_Store
-*.ForMachine.KARA.approved.*
 RealTests.playlist
 ApprovalTests.Tests/UnixLineEndings.txt
 ApprovalTests.Tests/WindowsLineEndings.txt
-
-### XamarinStudio ###
-bin/
-obj/
-*.userprefs
