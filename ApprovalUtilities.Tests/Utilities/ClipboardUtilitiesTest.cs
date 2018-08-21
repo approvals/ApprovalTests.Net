@@ -1,4 +1,10 @@
-﻿using System.Windows.Forms;
+﻿#if (NET45)
+using System.Windows.Forms;
+#endif
+#if(NET461)
+using TextCopy;
+#endif
+
 using ApprovalUtilities.Utilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
