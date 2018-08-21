@@ -1,5 +1,6 @@
 using ApprovalTests.Core;
 using ApprovalUtilities.Utilities;
+using TextCopy;
 
 namespace ApprovalTests.Reporters
 {
@@ -10,7 +11,7 @@ namespace ApprovalTests.Reporters
         public void Report(string approved, string received)
         {
             var text = QuietReporter.GetCommandLineForApproval(approved, received);
-            ClipboardUtilities.CopyToClipboard(text);
+            Clipboard.SetText(text);
         }
     }
 }

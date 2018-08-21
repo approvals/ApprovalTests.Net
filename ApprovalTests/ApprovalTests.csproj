@@ -15,6 +15,7 @@
     <PackageReference Include="Fody" Version="3.1.3" PrivateAssets="All" />
     <PackageReference Include="Publicize.Fody" Version="1.6.1" PrivateAssets="All" />
     <PackageReference Include="Virtuosity.Fody" Version="1.21.1" PrivateAssets="All" />
+    <PackageReference Include="TextCopy" Version="1.3.0" />
     <Reference Include="Microsoft.CSharp" Pack="False" />
     <Reference Include="System.Core" Pack="False" />
     <!--Not .net core compliant -->

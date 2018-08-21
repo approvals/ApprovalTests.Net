@@ -1,6 +1,6 @@
 ﻿using System.Text;
 using ApprovalTests.Core;
-using ApprovalUtilities.Utilities;
+using TextCopy;
 
 namespace ApprovalTests.Reporters
 {
@@ -13,7 +13,7 @@ namespace ApprovalTests.Reporters
         {
             var temp = QuietReporter.GetCommandLineForApproval(approved, received);
             TOTAL.AppendLine(temp);
-            ClipboardUtilities.CopyToClipboard(TOTAL.ToString());
+            Clipboard.SetText(TOTAL.ToString());
         }
     }
 }
