@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net461</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <AssemblyOriginatorKeyFile>$(SolutionDir)\ApprovalsKeyPair.snk</AssemblyOriginatorKeyFile>
     <SignAssembly>true</SignAssembly>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -16,6 +16,6 @@
     <PackageReference Include="Publicize.Fody" Version="1.6.1" PrivateAssets="All" />
     <PackageReference Include="System.Management" Version="4.5.0" />
     <PackageReference Include="Virtuosity.Fody" Version="1.21.1" PrivateAssets="All" />
-    <Reference Include="System.Core" Pack="False" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.5.1" />
   </ItemGroup>
 </Project>
