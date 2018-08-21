@@ -8,6 +8,7 @@ namespace ApprovalUtilities.Utilities
     {
         public static void CopyToClipboard(string text)
         {
+#if NET45
             Exception caught = null;
             var t = new Thread(() =>
             {
@@ -33,6 +34,10 @@ namespace ApprovalUtilities.Utilities
             {
                 throw new Exception("Creating window failed.", caught);
             }
+#endif
+#if NET461
+            TextCopy.Clipboard.SetText(text);
+#endif
         }
     }
 }
