@@ -60,6 +60,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApprovalTests.StatePrinter.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApprovalTests.EntityFrameworkUtilities", "ApprovalTests.EntityFrameworkUtilities\ApprovalTests.EntityFrameworkUtilities.csproj", "{4E5614F7-7EBC-4C58-AE21-6CA998960EF3}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApprovalTests.AppConfig", "ApprovalTests.AppConfig\ApprovalTests.AppConfig.csproj", "{3EA875D6-2087-41B8-9A4D-6A8717A965DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -162,6 +164,10 @@ Global
 		{4E5614F7-7EBC-4C58-AE21-6CA998960EF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E5614F7-7EBC-4C58-AE21-6CA998960EF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E5614F7-7EBC-4C58-AE21-6CA998960EF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EA875D6-2087-41B8-9A4D-6A8717A965DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EA875D6-2087-41B8-9A4D-6A8717A965DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EA875D6-2087-41B8-9A4D-6A8717A965DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EA875D6-2087-41B8-9A4D-6A8717A965DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
