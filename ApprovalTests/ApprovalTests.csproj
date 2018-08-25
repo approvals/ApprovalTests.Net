@@ -20,7 +20,6 @@
     <Reference Include="System.Core" Pack="False" />
     <!--Not .net core compliant -->
     <Reference Include="System" Pack="False" />
-    <Reference Include="System.Configuration" Pack="False" />
     <ProjectReference Include="..\ApprovalUtilities\ApprovalUtilities.csproj" />
   </ItemGroup>
 </Project>
