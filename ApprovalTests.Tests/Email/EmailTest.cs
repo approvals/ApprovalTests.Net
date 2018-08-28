@@ -43,7 +43,7 @@ your biggest fan";
         }
 
         [Test]
-        public void TestCollectBoundies()
+        public void TestCollectBoundaries()
         {
             var text = @"Content-Type: multipart/mixed; boundary=--boundary_1_f3c617c1-4388-492c-8e07-0ef9bdb8af93
 
@@ -52,7 +52,7 @@ your biggest fan";
 Content-Type: multipart/alternative; boundary=--boundary_0_283b02d8-4af3-4d14-83bd-6d7181499f83
 
 ";
-            Approvals.VerifyAll(EmailApprovals.FindBoundaries(text), "boundry");
+            Approvals.VerifyAll(EmailApprovals.FindBoundaries(text), "boundary");
         }
     }
 }
