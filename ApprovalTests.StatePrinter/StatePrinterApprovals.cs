@@ -1,11 +1,11 @@
 ﻿using System;
-using StatePrinter.Configurations;
+using StatePrinting.Configurations;
 
 namespace ApprovalTests.StatePrinter
 {
     public static class StatePrinterApprovals
     {
-        private static Func<Configuration> defaultConfiguration = ConfigurationHelper.GetStandardConfiguration;
+        private static Func<Configuration> defaultConfiguration = () => ConfigurationHelper.GetStandardConfiguration();
 
         public static void Verify(object source, string rootName = "Root")
         {
@@ -14,7 +14,7 @@ namespace ApprovalTests.StatePrinter
 
         public static void Verify(object source, Configuration configuration, string rootName = "Root")
         {
-            var printer = new global::StatePrinter.StatePrinter(configuration);
+            var printer = new StatePrinting.Stateprinter(configuration);
             var printedResult = printer.PrintObject(source, rootName);
             Approvals.Verify(printedResult);
         }
