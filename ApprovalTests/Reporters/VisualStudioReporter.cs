@@ -40,7 +40,7 @@ namespace ApprovalTests.Reporters
 
             var processAndParent = ParentProcessUtils.CurrentProcessWithAncestors().ToArray();
 
-            Process process = null;
+            Process process;
 
             try
             {

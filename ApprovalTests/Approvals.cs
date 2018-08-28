@@ -89,14 +89,14 @@ namespace ApprovalTests
         {
             return frontLoad.IsWorkingInThisEnvironment("default.txt")
                        ? frontLoad
-                       : (GetReporterFromAttribute() ?? defaultIfNotFound);
+                       : GetReporterFromAttribute() ?? defaultIfNotFound;
         }
 
         private static IEnvironmentAwareReporter WrapAsEnvironmentAwareReporter(IApprovalFailureReporter mainReporter)
         {
-            if (mainReporter is IEnvironmentAwareReporter)
+            if (mainReporter is IEnvironmentAwareReporter reporter)
             {
-                return mainReporter as IEnvironmentAwareReporter;
+                return reporter;
             }
             return new AlwaysWorksReporter(mainReporter);
         }

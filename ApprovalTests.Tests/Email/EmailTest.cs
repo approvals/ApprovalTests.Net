@@ -1,7 +1,6 @@
 ﻿using System.Net.Mail;
 using ApprovalTests.Email;
 using ApprovalTests.Namers;
-using ApprovalTests.Reporters;
 using ApprovalUtilities.Utilities;
 using NUnit.Framework;
 
