@@ -28,7 +28,7 @@ namespace ApprovalTests.Scrubber
             }
         }
 
-        public static long Find(string token, System.IO.Stream fileStream)
+        public static long Find(string token, Stream fileStream)
         {
             while (fileStream.Length != fileStream.Position)
             {
