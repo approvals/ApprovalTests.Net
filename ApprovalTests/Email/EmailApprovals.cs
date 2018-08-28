@@ -27,13 +27,13 @@ namespace ApprovalTests.Email
 
         public static string CreateEmail(MailMessage email)
         {
-            var tempdir = Path.GetTempFileName();
-            File.Delete(tempdir);
-            Directory.CreateDirectory(tempdir);
+            var tempDir = Path.GetTempFileName();
+            File.Delete(tempDir);
+            Directory.CreateDirectory(tempDir);
             var client = new SmtpClient("doesntmatter")
             {
                 DeliveryMethod = SmtpDeliveryMethod.SpecifiedPickupDirectory,
-                PickupDirectoryLocation = tempdir
+                PickupDirectoryLocation = tempDir
             };
             client.Send(email);
             var emailText = ReadFileWhereLines(GetLatestFile(client.PickupDirectoryLocation), l => !l.StartsWith("Date"));

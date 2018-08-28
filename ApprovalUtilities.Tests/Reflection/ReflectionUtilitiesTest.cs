@@ -104,7 +104,7 @@ namespace ApprovalUtilities.Tests.Reflection
             var testingPoco = new TestingPoco();
 
             testingPoco.MyEvent += TestingListener.StandardCallback;
-            testingPoco.PropertyChanged += TestingListener.PropertyChagnedHandler;
+            testingPoco.PropertyChanged += TestingListener.PropertyChangedHandler;
 
             Approvals.VerifyAll(testingPoco.GetPocoEvents(), string.Empty);
         }
@@ -123,7 +123,7 @@ namespace ApprovalUtilities.Tests.Reflection
             var value = new InheritsTestingPoco();
 
             value.MyEvent += TestingListener.StandardCallback;
-            value.PropertyChanged += TestingListener.PropertyChagnedHandler;
+            value.PropertyChanged += TestingListener.PropertyChangedHandler;
 
             Approvals.VerifyAll(value.GetPocoEvents(), string.Empty);
         }

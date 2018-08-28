@@ -2,5 +2,5 @@
 	[0] Void StandardCallback(System.Object, System.EventArgs)
 
 [1] = PropertyChanged:
-	[0] Void PropertyChagnedHandler(System.Object, System.ComponentModel.PropertyChangedEventArgs)
+	[0] Void PropertyChangedHandler(System.Object, System.ComponentModel.PropertyChangedEventArgs)
 

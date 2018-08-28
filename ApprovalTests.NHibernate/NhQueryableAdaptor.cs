@@ -35,12 +35,12 @@ namespace ApprovalTests.NHibernate
                                                                        sessionImp.EnabledFilters, sessionImp.Factory);
 
             var sql = translators.First().SQLString;
-            var formamttedSql = FormatStyle.Basic.Formatter.Format(sql);
+            var formattedSql = FormatStyle.Basic.Formatter.Format(sql);
             var i = 0;
             var map = ExpressionParameterVisitor.Visit(queryable.Expression, sessionImp.Factory).ToArray();
-            formamttedSql = Regex.Replace(formamttedSql, @"\?", m => map[i++].Key.ToString().Replace('"', '\''));
+            formattedSql = Regex.Replace(formattedSql, @"\?", m => map[i++].Key.ToString().Replace('"', '\''));
 
-            return formamttedSql;
+            return formattedSql;
         }
 
         private static ISession GetSession<TResult>(NhQueryable<TResult> nhQueryable)
