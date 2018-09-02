@@ -1,15 +1,14 @@
 ﻿using ApprovalTests.Maintenance;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace ApprovalUtilities.Tests
 {
-    [TestClass]
     public class MaintenanceTest
     {
-        [TestMethod]
+        [Fact]
         public void EnsureNoAbandonedFiles()
         {
-            ApprovalMaintenance.VerifyNoAbandonedFiles();
+            ApprovalMaintenance.VerifyNoAbandonedFiles("Reflection");
         }
     }
 }

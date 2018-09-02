@@ -1,29 +1,28 @@
 ﻿using ApprovalTests;
 using ApprovalUtilities.Utilities;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace ApprovalUtilities.Tests.Utilities
 {
-    [TestClass]
     public class StringUtilitiesTest
     {
-        [TestMethod]
+        [Fact]
         public void TestToReadableString()
         {
-            Assert.AreEqual("[]", new int[0].ToReadableString());
-            Assert.AreEqual("[1, 2, 3]", new[] {1, 2, 3}.ToReadableString());
+            Assert.Equal("[]", new int[0].ToReadableString());
+            Assert.Equal("[1, 2, 3]", new[] {1, 2, 3}.ToReadableString());
             int[] empty = null;
-            Assert.AreEqual("[]", empty.ToReadableString());
+            Assert.Equal("[]", empty.ToReadableString());
         }
 
-        [TestMethod]
+        [Fact]
         public void TestGrid()
         {
             var grid = StringUtils.DisplayGrid(4, 4, (x, y) => x == y ? "x" : "_");
             Approvals.Verify(grid);
         }
 
-        [TestMethod]
+        [Fact]
         public void WritePropertiesToStringTest()
         {
             var anonymous = new
@@ -34,7 +33,7 @@ namespace ApprovalUtilities.Tests.Utilities
             Approvals.Verify(anonymous.WritePropertiesToString());
         }
 
-        [TestMethod]
+        [Fact]
         public void WriteOnlyPropertyTest()
         {
             var target = new TestingObject
@@ -45,14 +44,14 @@ namespace ApprovalUtilities.Tests.Utilities
             Approvals.Verify(target.WritePropertiesToString());
         }
 
-        [TestMethod]
+        [Fact]
         public void TestWriteFields()
         {
             var target = new TestingObject {ThisShouldHaveBeenAProperty = "FooBar"};
             Approvals.Verify(target.WriteFieldsToString());
         }
 
-        [TestMethod]
+        [Fact]
         public void TestJoinWith()
         {
             var numbers = new[]
@@ -60,7 +59,7 @@ namespace ApprovalUtilities.Tests.Utilities
             Approvals.Verify(numbers.JoinWith(" - "));
         }
 
-        [TestMethod]
+        [Fact]
         public void TestJoinWithTransform()
         {
             var numbers = new[]

@@ -1,29 +1,28 @@
+using System.ComponentModel;
+using System.Linq;
+using System.Windows.Forms;
+using ApprovalTests;
+using ApprovalTests.Tests.Events;
+using Xunit;
+using ApprovalUtilities.Reflection;
+
 namespace ApprovalUtilities.Tests.Reflection
 {
-    using System.ComponentModel;
-    using System.Linq;
-    using System.Windows.Forms;
-    using ApprovalTests;
-    using ApprovalTests.Tests.Events;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using ApprovalUtilities.Reflection;
-
-    [TestClass]
     public class HandlerListEntryTest
     {
-        [TestMethod]
+        [Fact]
         public void BecomeNullObjectWhenItemIsWrongType()
         {
             Approvals.Verify(new HandlerListEntry(new Button()));
         }
 
-        [TestMethod]
+        [Fact]
         public void GetListEntryTest()
         {
-            Assert.AreEqual("ListEntry", GetListEntry().GetType().Name);
+            Assert.Equal("ListEntry", GetListEntry().GetType().Name);
         }
 
-        [TestMethod]
+        [Fact]
         public void ProxyNonPublicMembers()
         {
             Approvals.Verify(new HandlerListEntry(GetListEntry()));
