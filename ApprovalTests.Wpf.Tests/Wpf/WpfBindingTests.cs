@@ -1,5 +1,4 @@
-﻿#if !__MonoCS__
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -58,5 +57,3 @@ namespace ApprovalTests.Tests.Wpf
         }
     }
 }
-
-#endif
