@@ -9,6 +9,10 @@ namespace ApprovalTests.Tests.Reporters
         [Test]
         public void TestIsImage()
         {
+            if (!TortoiseTextDiffReporter.INSTANCE.IsWorkingInThisEnvironment("a.txt"))
+            {
+                return;
+            }
             var files = new[]
                             {
                                 "image.png", "image.gif", "image.jpg", "image.jpeg", "image.tif", "image.tiff",
