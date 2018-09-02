@@ -1,6 +1,0 @@
-﻿Event Configuration for Timer 
-
-onTimer:
-	[0] Void StandardCallback(System.Object, System.EventArgs)
-	[1] Void AnotherStandardCallback(System.Object, System.EventArgs)
-
