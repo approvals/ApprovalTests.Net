@@ -9,10 +9,6 @@
   <ItemGroup>
     <PackageReference Include="NUnit" Version="3.*" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.*" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.*" />
-    <PackageReference Include="MSTest.TestFramework" Version="1.*" />
-    <PackageReference Include="MSTest.TestAdapter" Version="1.*" />
-
     <Reference Include="System" />
     <ProjectReference Include="..\ApprovalTests\ApprovalTests.csproj" />
     <ProjectReference Include="..\ApprovalUtilities\ApprovalUtilities.csproj" />
