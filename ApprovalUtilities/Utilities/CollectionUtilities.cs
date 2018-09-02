@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace ApprovalUtilities.Utilities
 {
-    public static class CollectionUtilities
+    public static partial class CollectionUtilities
     {
         public static ICollection<T> AddAll<T>(this ICollection<T> collection, IEnumerable<T> additions)
         {
@@ -23,11 +23,6 @@ namespace ApprovalUtilities.Utilities
             {
                 action(i);
             }
-        }
-
-        public static TValue GetValueOrDefault<TKey, TValue>(this IDictionary<TKey, TValue> map, TKey key)
-        {
-            return map.ContainsKey(key) ? map[key] : default(TValue);
         }
 
         public static IEnumerable<T> OrEmpty<T>(this IEnumerable<T> source)
