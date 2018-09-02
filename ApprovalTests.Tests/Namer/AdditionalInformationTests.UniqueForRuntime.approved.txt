@@ -1,0 +1,4 @@
+﻿runtimes
+
+.NET Core 4.6.26725.06 => NetCore_2.1
+.NET Framework 4.7.3132.0 => Net_4.7
