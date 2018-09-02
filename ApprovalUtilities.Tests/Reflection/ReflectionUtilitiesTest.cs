@@ -157,9 +157,13 @@ namespace ApprovalUtilities.Tests.Reflection
             }
         }
 
-        private class A
+        public class A
         {
-            private string Booya;
+            private string Booya = null;
+            public string GetBooya()
+            {
+                return Booya;
+            }
         }
 
         private class B : A

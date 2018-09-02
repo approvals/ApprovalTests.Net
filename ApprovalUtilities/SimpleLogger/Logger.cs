@@ -88,6 +88,7 @@ namespace ApprovalUtilities.SimpleLogger
         }
     }
 
+#pragma warning disable 618
     public class Marker : IDisposable
     {
         public Marker()
@@ -100,4 +101,5 @@ namespace ApprovalUtilities.SimpleLogger
             Logger.MarkerOut();
         }
     }
+#pragma warning restore 618
 }

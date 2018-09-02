@@ -44,9 +44,7 @@ namespace ApprovalUtilities.Tests
         {
             var log = Logger.LogToStringBuilder();
             Logger.Show(markerIn: false);
-            Logger.MarkerIn();
-
-            Logger.MarkerOut();
+            using(Logger.MarkEntryPoints()){}
             Assert.AreEqual("", log.ToString());
         }
 
