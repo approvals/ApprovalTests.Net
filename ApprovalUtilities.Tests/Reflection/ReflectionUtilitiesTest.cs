@@ -56,7 +56,7 @@ namespace ApprovalUtilities.Tests.Reflection
         public void GetNonPublicInstanceFields()
         {
             Approvals.VerifyAll(
-                new TestingEventPoco().GetInstanceFields(),
+                new TestingPoco().GetInstanceFields(),
                 string.Empty);
         }
 
@@ -66,7 +66,7 @@ namespace ApprovalUtilities.Tests.Reflection
             Func<FieldInfo, bool> selector = fi => typeof(MulticastDelegate).IsAssignableFrom(fi.FieldType);
 
             Approvals.VerifyAll(
-                new TestingEventPoco().GetInstanceFields(selector),
+                new TestingPoco().GetInstanceFields(selector),
                 string.Empty);
         }
 
@@ -76,7 +76,7 @@ namespace ApprovalUtilities.Tests.Reflection
             Func<FieldInfo, bool> selector = fi => string.Compare(fi.Name, "NonEventField", false) == 0;
 
             Approvals.VerifyAll(
-                new TestingEventPoco().GetInstanceFields(selector),
+                new TestingPoco().GetInstanceFields(selector),
                 string.Empty);
         }
 
@@ -101,7 +101,7 @@ namespace ApprovalUtilities.Tests.Reflection
         [TestMethod]
         public void GetPocoEvents()
         {
-            var testingPoco = new TestingEventPoco();
+            var testingPoco = new TestingPoco();
 
             testingPoco.MyEvent += TestingListener.StandardCallback;
             testingPoco.PropertyChanged += TestingListener.PropertyChangedHandler;
@@ -112,7 +112,7 @@ namespace ApprovalUtilities.Tests.Reflection
         [TestMethod]
         public void GetEmptyPocoEvents()
         {
-            var testingPoco = new TestingEventPoco();
+            var testingPoco = new TestingPoco();
 
             Assert.AreEqual(0, testingPoco.GetPocoEvents().Count());
         }
@@ -120,7 +120,7 @@ namespace ApprovalUtilities.Tests.Reflection
         [TestMethod]
         public void GetInheritedPocoEvents()
         {
-            var value = new InheritsTestingEventPoco();
+            var value = new InheritsTestingPoco();
 
             value.MyEvent += TestingListener.StandardCallback;
             value.PropertyChanged += TestingListener.PropertyChangedHandler;
