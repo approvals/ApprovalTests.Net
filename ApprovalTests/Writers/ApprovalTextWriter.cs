@@ -7,12 +7,7 @@ namespace ApprovalTests
 {
     public class ApprovalTextWriter : IApprovalWriter
     {
-        public ApprovalTextWriter(string data) : this(data, "txt")
-        {
-            Data = data;
-        }
-
-        public ApprovalTextWriter(string data, string extensionWithoutDot)
+        public ApprovalTextWriter(string data, string extensionWithoutDot = "txt")
         {
             Data = data;
             ExtensionWithDot = EnsureDot(extensionWithoutDot);
@@ -56,7 +51,6 @@ namespace ApprovalTests
                 File.WriteAllText(approved, text, Encoding.UTF8);
             }
         }
-
 
         public static bool IsUft8ByteOrderMarkPresent(string file)
         {
