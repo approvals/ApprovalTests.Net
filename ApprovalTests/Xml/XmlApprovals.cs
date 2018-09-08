@@ -7,12 +7,7 @@ namespace ApprovalTests.Xml
 {
     public class XmlApprovals
     {
-        public static void VerifyXml(string xml)
-        {
-            VerifyXml(xml, ScrubberUtils.NO_SCRUBBER);
-        }
-
-        public static void VerifyXml(string xml, Func<string, string> scrubber)
+        public static void VerifyXml(string xml, Func<string, string> scrubber = null)
         {
             VerifyText(xml, "xml", true, scrubber);
         }
@@ -20,29 +15,24 @@ namespace ApprovalTests.Xml
         /// <summary>
         /// 	Throws exception if Xml is incorrectly formatted
         /// </summary>
-        public static void VerifyXmlStrict(string xml)
+        public static void VerifyText(string text, string fileExtensionWithoutDot = "xml", bool safely = false, Func<string, string> scrubber = null)
         {
-            VerifyXmlStrict(xml, ScrubberUtils.NO_SCRUBBER);
-        }
+            if (scrubber == null)
+            {
+                scrubber = ScrubberUtils.NO_SCRUBBER;
+            }
 
-        public static void VerifyXmlStrict(string xml, Func<string, string> scrubber)
-        {
-            VerifyText(xml, "xml", false, scrubber);
-        }
-
-        public static void VerifyText(string text, string fileExtensionWithoutDot, bool safely, Func<string, string> scrubber)
-        {
             text = XmlUtils.FormatXml(scrubber.Invoke(text), safe: safely);
             Approvals.Verify(WriterFactory.CreateTextWriter(text, fileExtensionWithoutDot));
         }
 
-        public static void VerifyOrderedXml(string text)
+        public static void VerifyOrderedXml(string text, Func<string, string> scrubber = null)
         {
-            VerifyOrderedXml(text, ScrubberUtils.NO_SCRUBBER);
-        }
+            if (scrubber == null)
+            {
+                scrubber = ScrubberUtils.NO_SCRUBBER;
+            }
 
-        public static void VerifyOrderedXml(string text, Func<string, string> scrubber)
-        {
             text = XmlUtils.FormatXmlWithOrderedAttributes(scrubber.Invoke(text));
 
             Approvals.Verify(WriterFactory.CreateTextWriter(text, "xml"));
