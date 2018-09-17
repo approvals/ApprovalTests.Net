@@ -13,6 +13,31 @@ namespace ApprovalTests.Reporters
 
         private static bool IsXunit2()
         {
+            var firstCheck = AppDomain
+                    .CurrentDomain
+                    .GetAssemblies()
+                    .Any(a => a.FullName.Contains("xunit.assert"));
+
+            if (!firstCheck)
+            {
+                var secondCheck = AppDomain
+                    .CurrentDomain
+                    .GetAssemblies()
+                    .Any(a => a.FullName.Contains("xunit.core"));
+
+                if (secondCheck)
+                {
+                    try
+                    {
+                        var entry = AppDomain.CurrentDomain.Load("xunit.assert");
+                    }
+                    catch (Exception)
+                    {
+                        // xunit.assert wasn't found - fail quietly so that next check can continue
+                    }
+                }
+            }
+
             return AppDomain
                     .CurrentDomain
                     .GetAssemblies()
