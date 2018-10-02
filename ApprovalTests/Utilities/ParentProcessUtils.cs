@@ -43,7 +43,6 @@ namespace ApprovalTests.Utilities
         {
             if (OsUtils.IsUnixOs())
             {
-                // TODO: find a way to implement this in mono on a mac/linux machine
                 return null;
             }
             var parentPid = 0;

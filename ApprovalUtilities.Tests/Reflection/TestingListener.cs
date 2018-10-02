@@ -1,7 +1,7 @@
+using System;
+
 namespace ApprovalTests.Tests.Events
 {
-    using System;
-
     public static class TestingListener
     {
         public static void AnotherStandardCallback(object sender, EventArgs e)
@@ -9,7 +9,7 @@ namespace ApprovalTests.Tests.Events
             throw new NotImplementedException();
         }
 
-        public static void PropertyChagnedHandler(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        public static void PropertyChangedHandler(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
             return;
         }

@@ -10,7 +10,7 @@ namespace ApprovalTests.Writers
             Data = data;
         }
 
-        public ApprovalBinaryWriter(System.IO.Stream content, string extensionWithoutDot)
+        public ApprovalBinaryWriter(Stream content, string extensionWithoutDot)
         {
             Data = new byte[content.Length];
             content.Read(Data, 0, Data.Length);

@@ -1,19 +1,18 @@
 ﻿using System.Linq;
 using ApprovalTests;
 using ApprovalUtilities.CallStack;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace ApprovalUtilities.Tests.CallStack
 {
-    [TestClass]
     public class CallerTest
     {
-        [TestMethod]
+        [Fact]
         public void TestGetCaller()
         {
             var caller = GetCaller();
-            Assert.AreEqual("TestGetCaller", caller.Method.Name);
-            Assert.AreEqual("CallerTest", caller.Class.Name);
+            Assert.Equal("TestGetCaller", caller.Method.Name);
+            Assert.Equal("CallerTest", caller.Class.Name);
         }
 
         private Caller GetCaller()
@@ -21,7 +20,7 @@ namespace ApprovalUtilities.Tests.CallStack
             return new Caller();
         }
 
-        [TestMethod]
+        [Fact]
         public void TestCallStack()
         {
             var caller = GetDeepCaller();
@@ -29,7 +28,7 @@ namespace ApprovalUtilities.Tests.CallStack
             Approvals.VerifyAll(callers, c => c.Method.ToStandardString());
         }
 
-        [TestMethod]
+        [Fact]
         public void TestName()
         {
             var caller = GetDeepCaller();

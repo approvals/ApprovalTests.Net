@@ -1,9 +1,9 @@
+using System;
+using System.ComponentModel;
+
 namespace ApprovalTests.Tests.Events
 {
-    using System;
-    using System.ComponentModel;
-
-    public class TestingPoco
+    public class TestingEventPoco
     {
         private readonly object NonEventField = new object();
 
@@ -22,9 +22,5 @@ namespace ApprovalTests.Tests.Events
             var handler = MyEvent;
             handler?.Invoke(sender, e);
         }
-    }
-
-    public class InheritsTestingPoco : TestingPoco
-    {
     }
 }

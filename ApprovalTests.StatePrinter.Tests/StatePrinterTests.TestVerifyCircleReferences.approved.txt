@@ -7,7 +7,7 @@
         On = new Turtle()
         {
             Name = "llewellyn"
-            On =  -> 0
+            On = -> 0
         }
     }
 }

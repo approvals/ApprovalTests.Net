@@ -1,23 +1,23 @@
+using System.ComponentModel;
+using System.Linq;
+using System.Windows.Forms;
+using ApprovalTests;
+using ApprovalTests.Tests.Events;
+using Xunit;
+using ApprovalUtilities.Reflection;
+
 namespace ApprovalUtilities.Tests.Reflection
 {
-    using System.ComponentModel;
-    using System.Linq;
-    using System.Windows.Forms;
-    using ApprovalTests;
-    using ApprovalTests.Tests.Events;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using ApprovalUtilities.Reflection;
 
-    [TestClass]
     public class HandlerListUtilitiesTest
     {
-        [TestMethod]
+        [Fact]
         public void EnumerateList()
         {
             Approvals.VerifyAll(GetEventHandlerList().AsEnumerable(), string.Empty);
         }
 
-        [TestMethod]
+        [Fact]
         public void GetListHead()
         {
             Approvals.Verify(GetEventHandlerList().GetHead());

@@ -38,7 +38,6 @@ namespace ApprovalTests.Tests
         [Test]
         public void TestExceptions()
         {
-            // The devide by zero exception has a different message in Mono.
             using (Namers.ApprovalResults.UniqueForOs())
             {
                 int[] n = {0, 2};

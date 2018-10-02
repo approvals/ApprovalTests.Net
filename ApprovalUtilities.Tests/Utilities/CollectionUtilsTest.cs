@@ -1,18 +1,17 @@
 ﻿using System.Collections.Generic;
 using ApprovalUtilities.Utilities;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace ApprovalUtilities.Tests.Utilities
 {
-    [TestClass]
     public class CollectionUtilsTest
     {
-        [TestMethod]
+        [Fact]
         public void TestDictionary()
         {
             var d = new Dictionary<int, string> {{1, "one"}};
-            Assert.AreEqual("one", d.GetValueOrDefault(1));
-            Assert.AreEqual(null, d.GetValueOrDefault(2));
+            Assert.Equal("one", d.GetValueOrDefault(1));
+            Assert.Equal(null, d.GetValueOrDefault(2));
 
         }
     }

@@ -48,7 +48,8 @@ namespace ApprovalTests
             var approver = GetDefaultApprover(writer, namer, shouldIgnoreLineEndings);
             Verify(approver, reporter);
         }
-        public static void RegisterDefaultAppover(Func<IApprovalWriter, IApprovalNamer, bool, IApprovalApprover> creator)
+
+        public static void RegisterDefaultApprover(Func<IApprovalWriter, IApprovalNamer, bool, IApprovalApprover> creator)
         {
             defaultApproverCreator =  creator;
         }
@@ -89,14 +90,14 @@ namespace ApprovalTests
         {
             return frontLoad.IsWorkingInThisEnvironment("default.txt")
                        ? frontLoad
-                       : (GetReporterFromAttribute() ?? defaultIfNotFound);
+                       : GetReporterFromAttribute() ?? defaultIfNotFound;
         }
 
         private static IEnvironmentAwareReporter WrapAsEnvironmentAwareReporter(IApprovalFailureReporter mainReporter)
         {
-            if (mainReporter is IEnvironmentAwareReporter)
+            if (mainReporter is IEnvironmentAwareReporter reporter)
             {
-                return mainReporter as IEnvironmentAwareReporter;
+                return reporter;
             }
             return new AlwaysWorksReporter(mainReporter);
         }
@@ -142,11 +143,6 @@ namespace ApprovalTests
 
         #region Text
 
-        public static void Verify(string text)
-        {
-            Verify(WriterFactory.CreateTextWriter(text));
-        }
-
         public static void RegisterDefaultNamerCreation(Func<IApprovalNamer> creator)
         {
             defaultNamerCreator = creator;
@@ -162,8 +158,12 @@ namespace ApprovalTests
             Verify(WriterFactory.CreateTextWriter("" + text));
         }
 
-        public static void Verify(string text, Func<string, string> scrubber)
+        public static void Verify(string text, Func<string, string> scrubber= null)
         {
+            if (scrubber == null)
+            {
+                scrubber = ScrubberUtils.NO_SCRUBBER;
+            }
             Verify(WriterFactory.CreateTextWriter(scrubber(text)));
         }
 
@@ -248,7 +248,7 @@ namespace ApprovalTests
 
         public static void AssertEquals(string expected, string actual, IApprovalFailureReporter reporter)
         {
-            StringReporting.AssertEqual(expected,actual,reporter);
+            StringReporting.AssertEqual(expected, actual, reporter);
         }
 
         public static void AssertEquals<T>(string expected, string actual) where T : IApprovalFailureReporter, new()

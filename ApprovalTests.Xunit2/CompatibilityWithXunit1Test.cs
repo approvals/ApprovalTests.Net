@@ -8,7 +8,7 @@ namespace ApprovalTests.Xunit2
     {
         [Fact]
         [UseReporter(typeof(FrameworkAssertReporter))]
-        public void Xunit2ShouldWrokWithFrameworkAssertReporter()
+        public void Xunit2ShouldWorkWithFrameworkAssertReporter()
         {
             Assert.Throws<EqualException>(() =>
                   Approvals.Verify("this should work"));

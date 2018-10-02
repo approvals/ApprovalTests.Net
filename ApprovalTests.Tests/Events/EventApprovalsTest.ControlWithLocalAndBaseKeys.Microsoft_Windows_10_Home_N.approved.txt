@@ -1,9 +1,0 @@
-﻿Event Configuration for CheckBox 
-
-EVENT_CHECKEDCHANGED:
-	[0] Void AnotherStandardCallback(System.Object, System.EventArgs)
-
-EventClick:
-	[0] Void AnotherStandardCallback(System.Object, System.EventArgs)
-	[1] Void StandardCallback(System.Object, System.EventArgs)
-

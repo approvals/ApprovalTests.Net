@@ -1,3 +1,4 @@
+#pragma warning disable xUnit1006 // Theory methods should have parameters
 namespace ApprovalTests.Xunit2.Namer
 {
     using Namers;

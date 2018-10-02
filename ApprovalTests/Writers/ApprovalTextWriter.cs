@@ -7,12 +7,7 @@ namespace ApprovalTests
 {
     public class ApprovalTextWriter : IApprovalWriter
     {
-        public ApprovalTextWriter(string data) : this(data, "txt")
-        {
-            Data = data;
-        }
-
-        public ApprovalTextWriter(string data, string extensionWithoutDot)
+        public ApprovalTextWriter(string data, string extensionWithoutDot = "txt")
         {
             Data = data;
             ExtensionWithDot = EnsureDot(extensionWithoutDot);
@@ -57,7 +52,6 @@ namespace ApprovalTests
             }
         }
 
-
         public static bool IsUft8ByteOrderMarkPresent(string file)
         {
             var preamble = Encoding.UTF8.GetPreamble();
@@ -81,7 +75,7 @@ namespace ApprovalTests
         private static byte[] ReadBytes(string file, int length)
         {
             byte[] buffer;
-            using (var fileStream = new System.IO.FileStream(file, System.IO.FileMode.Open, System.IO.FileAccess.Read))
+            using (var fileStream = new FileStream(file, FileMode.Open, FileAccess.Read))
             {
                 var offset = 0;
                 var fileLength = fileStream.Length;

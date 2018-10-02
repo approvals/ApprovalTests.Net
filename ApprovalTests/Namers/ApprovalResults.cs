@@ -1,6 +1,11 @@
 using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Reflection;
+using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
 using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.Namers
@@ -15,6 +20,56 @@ namespace ApprovalTests.Namers
         public static string GetDotNetVersion()
         {
             return "Net_v" + Environment.Version;
+        }
+
+        public static IDisposable UniqueForRuntime(bool throwOnError = true)
+        {
+            return NamerFactory.AsEnvironmentSpecificTest(() => GetDotNetRuntime(throwOnError));
+        }
+
+        public static string GetDotNetRuntime(bool throwOnError)
+        {
+            var frameworkDescription = RuntimeInformation.FrameworkDescription;
+            return GetDotNetRuntime(throwOnError, frameworkDescription);
+        }
+
+        public static string GetDotNetRuntime(bool throwOnError, string frameworkDescription)
+        {
+            if (frameworkDescription.StartsWith(".NET Framework", StringComparison.OrdinalIgnoreCase))
+            {
+                var version = Version.Parse(frameworkDescription.Replace(".NET Framework ", ""));
+                return $"Net_{version.Major}.{version.Minor}";
+            }
+
+            if (frameworkDescription.StartsWith(".NET Core", StringComparison.OrdinalIgnoreCase))
+            {
+                var version = Version.Parse(frameworkDescription.Replace(".NET Core ", ""));
+                var map = new Dictionary<string, string>
+                {
+                    {
+                        "4.6","2.1"
+                    }
+                };
+                if (map.TryGetValue($"{version.Major}.{version.Minor}", out var result))
+                {
+                    return "NetCore_" + result;
+                }
+            }
+
+            if (throwOnError)
+            {
+                throw new NotImplementedException($@"Your current framework is not properly handled by ApprovalTests
+Framework: {frameworkDescription}.
+To suppress this error and make the test pass using the full FrameworkDescription use:
+using (Namers.ApprovalResults.UniqueForRuntime(throwOnError: true)){{
+    //The code being tested
+}}
+To help ApprovalTest please submit a new issue using the following link:
+https://github.com/approvals/ApprovalTests.Net/issues/new?title=Unknown%3A+%27Runtime%27&body={frameworkDescription}
+");
+            }
+
+            return frameworkDescription;
         }
 
         public static IDisposable UniqueForMachineName()

@@ -5,15 +5,14 @@ using ApprovalTests.Utilities;
 using ApprovalUtilities.Persistence;
 using ApprovalUtilities.SimpleLogger;
 using ApprovalUtilities.Utilities;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace ApprovalUtilities.Tests
 {
-    [TestClass]
     [UseReporter(typeof(DiffReporter))]
     public class LoggerTest
     {
-        [TestMethod]
+        [Fact]
         public void TestMainPath()
         {
             var log = Logger.LogToStringBuilder();
@@ -39,48 +38,46 @@ namespace ApprovalUtilities.Tests
             Approvals.Verify(logText);
         }
 
-        [TestMethod]
+        [Fact]
         public void TestShowMarker()
         {
             var log = Logger.LogToStringBuilder();
             Logger.Show(markerIn: false);
-            Logger.MarkerIn();
-
-            Logger.MarkerOut();
-            Assert.AreEqual("", log.ToString());
+            using(Logger.MarkEntryPoints()){}
+            Assert.Equal("", log.ToString());
         }
 
-        [TestMethod]
+        [Fact]
         public void TestShowEvents()
         {
             var log = Logger.LogToStringBuilder();
             Logger.Show(events: false);
             Logger.Event("ignored event");
 
-            Assert.AreEqual("", log.ToString());
+            Assert.Equal("", log.ToString());
         }
 
-        [TestMethod]
+        [Fact]
         public void TestSql()
         {
             var log = Logger.LogToStringBuilder();
             Logger.Show(sql: false);
             Logger.Sql("ignored event");
 
-            Assert.AreEqual("", log.ToString());
+            Assert.Equal("", log.ToString());
         }
 
-        [TestMethod]
+        [Fact]
         public void TestShowVariables()
         {
             var log = Logger.LogToStringBuilder();
             Logger.Show(variables: false);
             Logger.Variable("name", "Llewellyn");
 
-            Assert.AreEqual("", log.ToString());
+            Assert.Equal("", log.ToString());
         }
 
-        [TestMethod]
+        [Fact]
         public void TestTimes()
         {
             CultureUtilities.ForceCulture();

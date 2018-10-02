@@ -15,12 +15,7 @@ namespace ApprovalTests.Approvers
         public ApprovalException failure;
         public string received;
 
-        public FileApprover(IApprovalWriter writer, IApprovalNamer namer)
-            : this(writer, namer, false)
-        {
-        }
-
-        public FileApprover(IApprovalWriter writer, IApprovalNamer namer, bool normalizeLineEndingsForTextFiles)
+        public FileApprover(IApprovalWriter writer, IApprovalNamer namer, bool normalizeLineEndingsForTextFiles = false)
         {
             this.writer = writer;
             this.namer = namer;

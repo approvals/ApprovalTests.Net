@@ -10,7 +10,7 @@ namespace ApprovalTests.Tests.Maintenance
         [Test]
         public void FindAbandonedApprovalFiles()
         {
-            using (var t = new TempFile(PathUtilities.GetAdjacentFile("DeletedClass.AbandoneMethod.approved.txt")))
+            using (var t = new TempFile(PathUtilities.GetAdjacentFile("DeletedClass.AbandonedMethod.approved.txt")))
             {
                 t.WriteAllText("Llewellyn was here");
                 var path = PathUtilities.GetDirectoryForCaller();

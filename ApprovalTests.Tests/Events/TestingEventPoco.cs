@@ -3,7 +3,7 @@ namespace ApprovalTests.Tests.Events
     using System;
     using System.ComponentModel;
 
-    public class TestingPoco : INotifyPropertyChanged
+    public class TestingEventPoco : INotifyPropertyChanged
     {
         private readonly object NonEventField = new object();
 

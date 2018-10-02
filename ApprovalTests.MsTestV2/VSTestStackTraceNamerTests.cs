@@ -1,4 +1,3 @@
-#if !__MonoCS__
 using System.IO;
 using ApprovalTests.Namers;
 using ApprovalTests.StackTraceParsers;
@@ -32,4 +31,3 @@ namespace ApprovalTests.Tests.Namer
         }
     }
 }
-#endif

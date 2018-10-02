@@ -20,7 +20,7 @@ namespace ApprovalTests.Tests.Reporters
         }
 
         [Test]
-        public void TestCallAFterException()
+        public void TestCallAfterException()
         {
             var a = new NUnitReporter();
             var b = new RecordingReporter();

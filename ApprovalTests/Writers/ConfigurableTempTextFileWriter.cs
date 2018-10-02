@@ -13,7 +13,6 @@ namespace ApprovalTests.Writers
             this.approvedFilePath = Path.GetFullPath(approvedFilePath);
         }
 
-
         public override string GetApprovalFilename(string basename)
         {
             return approvedFilePath;

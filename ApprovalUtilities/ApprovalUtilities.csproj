@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>net461;netstandard2.0</TargetFrameworks>
     <AssemblyOriginatorKeyFile>$(SolutionDir)\ApprovalsKeyPair.snk</AssemblyOriginatorKeyFile>
     <SignAssembly>true</SignAssembly>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -11,6 +11,9 @@
     <DebugType>full</DebugType>
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
+  <ItemGroup Condition="$(TargetFramework) != 'net461'">
+    <Compile Remove="**\*_desktop.cs" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Fody" Version="3.1.3" PrivateAssets="All" />
     <PackageReference Include="Publicize.Fody" Version="1.6.1" PrivateAssets="All" />
