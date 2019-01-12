@@ -7,9 +7,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Description><![CDATA[Utilities for approval testing Windows Forms. Allows screenshot verification of Windows Forms. For example:
-      WinFormsApprovals.Verify(new Button { BackColor = Color.LightBlue, Text = "Help" });]]>
-    </Description>
+    <Description>Utilities for approval testing Windows Forms. Allows screenshot verification of Windows Forms.</Description>
     <DebugType>full</DebugType>
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
