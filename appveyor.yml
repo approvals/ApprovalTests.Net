@@ -5,4 +5,4 @@ services:
 build_script:
 - cmd: dotnet build --configuration Release
 artifacts:
-- path: nugets\**\*.nupkg
+- path: nuget_packages\*.nupkg
