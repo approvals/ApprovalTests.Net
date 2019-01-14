@@ -3,6 +3,7 @@ using ApprovalTests.Namers.StackTraceParsers;
 using System;
 using System.IO;
 using System.Reflection;
+using ApprovalTests.Asserts;
 
 namespace ApprovalTests.Reporters
 {
@@ -51,6 +52,10 @@ namespace ApprovalTests.Reporters
                 var type = Type.GetType(assertClass);
                 var parameters = new[] { approvedContent, receivedContent };
                 InvokeEqualsMethod(type, parameters);
+            }
+            catch (NullReferenceException)
+            {
+                StringAssert.Equal(approvedContent, receivedContent);
             }
             catch (TargetInvocationException e)
             {
