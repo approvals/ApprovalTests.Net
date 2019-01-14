@@ -12,7 +12,7 @@ namespace ApprovalTests.Reporters
 
         public void Report(string approved, string received)
         {
-            StringAssert.Equal(approved, received);
+            StringAssert.Equal(approved, received, false, ShouldIgnoreLineEndings);
         }
 
         public bool ShouldIgnoreLineEndings { get; set; }

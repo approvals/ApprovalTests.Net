@@ -55,7 +55,7 @@ namespace ApprovalTests.Reporters
             }
             catch (NullReferenceException)
             {
-                StringAssert.Equal(approvedContent, receivedContent);
+                StringAssert.Equal(approvedContent, receivedContent, false, ShouldIgnoreLineEndings);
             }
             catch (TargetInvocationException e)
             {

@@ -36,5 +36,24 @@ Expected: Hello
 Actual:   Hello2
                ↑ (pos 5)", e.Message);
         }
+
+        [Test]
+        public void TestApprovalTestReporterIgnoreEndLines()
+        {
+            ApprovalTestReporter.INSTANCE.ShouldIgnoreLineEndings = true;
+            Assert.DoesNotThrow(() =>ApprovalTestReporter.INSTANCE.Report("Hello\nHello", "Hello\r\nHello"));
+        }
+
+        [Test]
+        public void TestApprovalTestReporterIgnoreEndLinesAndFailAfter()
+        {
+            ApprovalTestReporter.INSTANCE.ShouldIgnoreLineEndings = true;
+            var e = ExceptionUtilities.GetException(() => ApprovalTestReporter.INSTANCE.Report("Hello\nHello", "Hello\r\nHello2"));
+            Assert.AreEqual(@"The string are not equal
+                      ↓ (pos 11)
+Expected: Hello\nHello
+Actual:   Hello\r\nHello2
+                        ↑ (pos 12)", e.Message);
+        }
     }
 }
