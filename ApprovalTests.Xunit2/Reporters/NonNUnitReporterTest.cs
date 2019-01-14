@@ -28,5 +28,20 @@ namespace ApprovalTests.Xunit2.Reporters
             var e = ExceptionUtilities.GetException(() => XUnit2Reporter.INSTANCE.AssertEqual("Hello", "Hello2"));
             Approvals.Verify(e.Message);
         }
+
+        [Fact]
+        public void TestXunitReporterIgnoreEndLines()
+        {
+            XUnit2Reporter.INSTANCE.ShouldIgnoreLineEndings = true;
+            XUnit2Reporter.INSTANCE.AssertEqual("Hello\nHello", "Hello\r\nHello");
+        }
+
+        [Fact]
+        public void TestXunitReporterIgnoreEndLinesAndFailAfter()
+        {
+            XUnit2Reporter.INSTANCE.ShouldIgnoreLineEndings = true;
+            var e = ExceptionUtilities.GetException(() => XUnit2Reporter.INSTANCE.AssertEqual("Hello\nHello", "Hello\r\nHello2"));
+            Approvals.Verify(e.Message);
+        }
     }
 }

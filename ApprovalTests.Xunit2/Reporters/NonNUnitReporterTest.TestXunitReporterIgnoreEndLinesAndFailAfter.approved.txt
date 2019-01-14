@@ -1,0 +1,5 @@
+﻿Assert.Equal() Failure
+                      ↓ (pos 11)
+Expected: Hello\nHello
+Actual:   Hello\r\nHello2
+                        ↑ (pos 12)

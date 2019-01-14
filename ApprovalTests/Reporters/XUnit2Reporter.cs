@@ -1,11 +1,14 @@
 using System;
+using ApprovalTests.Asserts;
 
 namespace ApprovalTests.Reporters
 {
     using System.Linq;
 
     using StackTraceParsers;
-
+    /// <summary>
+    /// Reporter to use when using Xunit >=2
+    /// </summary>
     public class XUnit2Reporter : AssertReporter
     {
         public readonly static XUnit2Reporter INSTANCE = new XUnit2Reporter();
@@ -32,8 +35,29 @@ namespace ApprovalTests.Reporters
 
         protected override void InvokeEqualsMethod(Type type, string[] parameters)
         {
-            var method = type.GetMethods().First(m => m.Name == areEqual && m.GetParameters().Count() == 2);
-            method.Invoke(null, parameters);
+            var xunitAssertMethods = type.GetMethods();
+            var method = xunitAssertMethods.First(m => m.Name == areEqual && m.GetParameters().Count() == 5);
+            if (method != null)
+            {
+                var ignoreEndLineParameters = new object[]
+                {
+                    parameters[0],
+                    parameters[1],
+                    false, //ignoreCase
+                    ShouldIgnoreLineEndings, //ignoreLineEndingDifferences
+                    false //ignoreWhiteSpaceDifferences
+                };
+                method.Invoke(null, ignoreEndLineParameters.ToArray());
+                return;
+            }
+
+            method = xunitAssertMethods.First(m => m.Name == areEqual && m.GetParameters().Count() == 2);
+            if (method != null)
+            {
+                method.Invoke(null, parameters);
+            }
+
+            StringAssert.Equal(parameters[0], parameters[1], false, ShouldIgnoreLineEndings);
         }
     }
 }
