@@ -18,4 +18,6 @@ public class FileLauncherWithDelayReporter : IApprovalFailureReporter
         FileLauncherReporter.INSTANCE.Report(approved, received);
         Thread.Sleep(seconds * 1000);
     }
+
+    public bool ShouldIgnoreLineEndings { get; set; }
 }

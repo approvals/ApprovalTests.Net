@@ -146,6 +146,8 @@ Received {0} ({1}, {2}, {3})", GetType().Name, diffProgram, argumentsFormat, dif
             LaunchAsync(GetLaunchArguments(approved, received));
         }
 
+        public bool ShouldIgnoreLineEndings { get; set; }
+
         public static void EnsureFileExists(string approved)
         {
             if (!File.Exists(approved))

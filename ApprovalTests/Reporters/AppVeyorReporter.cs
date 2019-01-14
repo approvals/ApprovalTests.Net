@@ -9,8 +9,10 @@ namespace ApprovalTests.Reporters
 
         public void Report(string approved, string received)
         {
-            ContinousDeliveryUtils.ReportOnServer(approved,received);
+            ContinousDeliveryUtils.ReportOnServer(approved,received, ShouldIgnoreLineEndings);
         }
+
+        public bool ShouldIgnoreLineEndings { get; set; }
 
         public bool IsWorkingInThisEnvironment(string forFile)
         {

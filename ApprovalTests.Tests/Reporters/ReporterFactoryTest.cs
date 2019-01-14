@@ -67,6 +67,8 @@ namespace ApprovalTests.Tests.Reporters
         public void Report(string approved, string received)
         {
         }
+
+        public bool ShouldIgnoreLineEndings { get; set; }
     }
 
     public class ClassLevelReporter : IApprovalFailureReporter
@@ -74,5 +76,7 @@ namespace ApprovalTests.Tests.Reporters
         public void Report(string approved, string received)
         {
         }
+
+        public bool ShouldIgnoreLineEndings { get; set; }
     }
 }

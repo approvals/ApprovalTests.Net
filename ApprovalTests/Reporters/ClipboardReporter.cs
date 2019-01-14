@@ -12,5 +12,7 @@ namespace ApprovalTests.Reporters
             var text = QuietReporter.GetCommandLineForApproval(approved, received);
             Clipboard.SetText(text);
         }
+
+        public bool ShouldIgnoreLineEndings { get; set; }
     }
 }

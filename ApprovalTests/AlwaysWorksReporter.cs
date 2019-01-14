@@ -17,6 +17,11 @@ namespace ApprovalTests
             reporter.Report(approved, received);
         }
 
+        public bool ShouldIgnoreLineEndings
+        {
+            set => reporter.ShouldIgnoreLineEndings = value;
+        }
+
         public bool IsWorkingInThisEnvironment(string forFile)
         {
             return true;

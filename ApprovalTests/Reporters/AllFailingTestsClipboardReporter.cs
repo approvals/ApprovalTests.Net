@@ -15,5 +15,7 @@ namespace ApprovalTests.Reporters
             TOTAL.AppendLine(temp);
             Clipboard.SetText(TOTAL.ToString());
         }
+
+        public bool ShouldIgnoreLineEndings { get; set; }
     }
 }

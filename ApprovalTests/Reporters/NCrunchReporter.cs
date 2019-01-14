@@ -12,6 +12,8 @@ namespace ApprovalTests.Reporters
         {
         }
 
+        public bool ShouldIgnoreLineEndings { get; set; }
+
         public bool IsWorkingInThisEnvironment(string forFile)
         {
             var ncrunch = Environment.GetEnvironmentVariable(EnvironmentVariable);

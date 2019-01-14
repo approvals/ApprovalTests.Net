@@ -31,6 +31,17 @@ namespace ApprovalTests.Reporters
             r.Report(approved, received);
         }
 
+        public bool ShouldIgnoreLineEndings
+        {
+            set
+            {
+                foreach (var reporter in Reporters)
+                {
+                    reporter.ShouldIgnoreLineEndings = value;
+                }
+            }
+        }
+
         public virtual bool IsWorkingInThisEnvironment(string forFile)
         {
             return Reporters.Any(x => x.IsWorkingInThisEnvironment(forFile));

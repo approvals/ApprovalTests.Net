@@ -17,6 +17,8 @@ namespace ApprovalTests.Reporters
             throw BuildException();
         }
 
+        public bool ShouldIgnoreLineEndings { get; set; }
+
         public bool IsWorkingInThisEnvironment(string forFile)
         {
             throw BuildException();

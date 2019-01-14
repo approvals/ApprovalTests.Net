@@ -10,6 +10,8 @@ namespace ApprovalTests.Tests
             File.Delete(received);
         }
 
+        public bool ShouldIgnoreLineEndings { get; set; }
+
         public bool ApprovedWhenReported()
         {
             return false;

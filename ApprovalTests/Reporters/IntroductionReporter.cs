@@ -16,6 +16,8 @@ namespace ApprovalTests.Reporters
             throw new Exception(message);
         }
 
+        public bool ShouldIgnoreLineEndings { get; set; }
+
         public string GetFriendlyWelcomeMessage()
         {
             var message =

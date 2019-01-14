@@ -15,6 +15,8 @@ namespace ApprovalTests.Reporters
             StringAssert.Equal(approved, received);
         }
 
+        public bool ShouldIgnoreLineEndings { get; set; }
+
         public bool IsWorkingInThisEnvironment(string forFile)
         {
             return GenericDiffReporter.IsTextFile(forFile);

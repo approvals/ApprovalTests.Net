@@ -21,6 +21,8 @@ namespace ApprovalTests.Reporters
             }
         }
 
+        public bool ShouldIgnoreLineEndings { get; set; }
+
         public static bool FileExistsAndNonEmpty(string file)
         {
             var a = new FileInfo(file);

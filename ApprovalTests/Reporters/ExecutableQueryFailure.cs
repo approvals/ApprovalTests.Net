@@ -26,6 +26,7 @@ namespace ApprovalTests.Reporters
 
         public void Report(string approved, string received)
         {
+            reporter.ShouldIgnoreLineEndings = ShouldIgnoreLineEndings;
             reporter.Report(approved, received);
 
             var receivedResult = ExecuteQuery(received);
@@ -40,6 +41,8 @@ namespace ApprovalTests.Reporters
             var a = RunQueryAndGetPath(approved, approvedResult);
             reporter.Report(a, r);
         }
+
+        public bool ShouldIgnoreLineEndings { get; set; }
 
         private static string RunQueryAndGetPath(string fileName, QueryResult result)
         {

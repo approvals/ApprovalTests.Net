@@ -12,6 +12,8 @@ namespace ApprovalTests.Reporters
             // does nothing
         }
 
+        public bool ShouldIgnoreLineEndings { get; set; }
+
         public bool IsWorkingInThisEnvironment(string forFile)
         {
             return "MyGet".Equals(Environment.GetEnvironmentVariable("BuildRunner"));

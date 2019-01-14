@@ -10,6 +10,7 @@ namespace ApprovalTests.Reporters
     {
         public readonly static XUnit2Reporter INSTANCE = new XUnit2Reporter();
         private static readonly Lazy<bool> isXunit2 = new Lazy<bool>(IsXunit2);
+        public bool ShouldIgnoreLineEndings { get; set; }
 
         private static bool IsXunit2()
         {

@@ -12,5 +12,7 @@ namespace ApprovalTests.Reporters
             QuietReporter.DisplayCommandLineApproval(approved, received);
             Process.Start(received);
         }
+
+        public bool ShouldIgnoreLineEndings { get; set; }
     }
 }

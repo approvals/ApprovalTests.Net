@@ -21,6 +21,8 @@ namespace ApprovalTests.Tests.Reporters
             CalledWith = $"{approved},{received}";
         }
 
+        public bool ShouldIgnoreLineEndings { get; set; }
+
         public bool IsWorkingInThisEnvironment(string forFile)
         {
             return working;

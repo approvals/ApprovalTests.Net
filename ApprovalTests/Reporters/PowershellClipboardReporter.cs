@@ -13,6 +13,8 @@ namespace ApprovalTests.Reporters
             Clipboard.SetText(text);
         }
 
+        public bool ShouldIgnoreLineEndings { get; set; }
+
         public static string GetCommandLineForApproval(string approved, string received)
         {
             return $"Move-Item \"{received}\" \"{approved}\" -Force";

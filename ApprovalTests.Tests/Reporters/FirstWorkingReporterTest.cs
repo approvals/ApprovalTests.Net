@@ -50,6 +50,8 @@ namespace ApprovalTests.Tests.Reporters
         {
         }
 
+        public bool ShouldIgnoreLineEndings { get; set; }
+
         public bool IsWorkingInThisEnvironment(string forFile)
         {
             return false;

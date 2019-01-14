@@ -52,5 +52,16 @@ namespace ApprovalTests.Reporters
                 throw lastThrown;
             }
         }
+
+        public bool ShouldIgnoreLineEndings
+        {
+            set
+            {
+                foreach (var reporter in Reporters)
+                {
+                    reporter.ShouldIgnoreLineEndings = value;
+                }
+            }
+        }
     }
 }

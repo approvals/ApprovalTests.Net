@@ -68,5 +68,7 @@ namespace ApprovalTests.Reporters
             var bindingFlags = BindingFlags.InvokeMethod | BindingFlags.Public | BindingFlags.Static;
             type.InvokeMember(areEqual, bindingFlags, null, null, parameters);
         }
+
+        public bool ShouldIgnoreLineEndings { get; set; }
     }
 }

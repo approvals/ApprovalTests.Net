@@ -25,8 +25,11 @@ namespace ApprovalTests.Reporters
 
         public void Report(string approved, string received)
         {
+            Reporter.ShouldIgnoreLineEndings = ShouldIgnoreLineEndings;
             Reporter.Report(approved, received);
         }
+
+        public bool ShouldIgnoreLineEndings { get; set; }
 
 
         private IApprovalFailureReporter CreateReporter()
