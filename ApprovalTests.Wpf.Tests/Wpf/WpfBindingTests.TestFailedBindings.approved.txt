@@ -1,5 +1,0 @@
-﻿System.Windows.Data Error: 40 : BindingExpression path error: 'MyPropertyBOGUS' property not found on 'object' ''TestViewModel' (Hashcode)'.
-	BindingExpression:Path=MyPropertyBOGUS
-	 DataItem='TestViewModel' (Hashcode)
-	 target element is 'TextBox' (Name='')
-	 target property is 'Text' (type 'String')
