@@ -78,15 +78,29 @@ namespace ApprovalTests.Namers.StackTraceParsers
 
         public static Caller GetFirstFrameForAttribute(Caller caller, string attributeName)
         {
-            return caller.Callers.FirstOrDefault(c => ContainsAttribute(GetRealMethod(c.Method).GetCustomAttributes(false), attributeName));
+            return caller.Callers.FirstOrDefault(c =>
+            {
+                var attributes = GetRealMethod(c.Method).GetCustomAttributes(false);
+                return ContainsAttribute(attributes, attributeName);
+            });
         }
 
         private static bool ContainsAttribute(object[] attributes, string attributeName)
         {
-
-            return attributes.Any(a =>
+            return attributes.Any(attribute =>
             {
-                return a.GetType().FullName.StartsWith(attributeName);
+                var type = attribute.GetType();
+                do
+                {
+                    if (type.FullName.StartsWith(attributeName))
+                    {
+                        return true;
+                    }
+
+                    type = type.BaseType;
+                } while (type != null);
+
+                return false;
             });
         }
 
