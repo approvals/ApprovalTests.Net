@@ -5,12 +5,10 @@ namespace ApprovalTests.Xunit2.Namer
 {
     using Namers;
     using Namers.StackTraceParsers;
-
     using System;
     using System.Diagnostics;
     using System.IO;
     using System.Threading.Tasks;
-
     using Xunit;
 
     public class XunitStackTraceNamerTest
@@ -51,12 +49,12 @@ namespace ApprovalTests.Xunit2.Namer
             Assert.Equal("XunitStackTraceNamerTest.TestApprovalName", name);
         }
 
-        [InheritedFactAttribute]
-        public void TestApprovalName_InheritedFact()
-        {
-            var name = new UnitTestFrameworkNamer().Name;
-            Assert.Equal("XunitStackTraceNamerTest.TestApprovalName", name);
-        }
+        //[InheritedFactAttribute]
+        //public void TestApprovalName_InheritedFact()
+        //{
+        //    var name = new UnitTestFrameworkNamer().Name;
+        //    Assert.Equal("XunitStackTraceNamerTest.TestApprovalName", name);
+        //}
 
         [Fact]
         public void TestApprovalNamerFailureMessage()
