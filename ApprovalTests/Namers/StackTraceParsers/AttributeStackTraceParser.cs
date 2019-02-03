@@ -83,7 +83,11 @@ namespace ApprovalTests.Namers.StackTraceParsers
 
         private static bool ContainsAttribute(object[] attributes, string attributeName)
         {
-            return attributes.Any(a => a.GetType().FullName.StartsWith(attributeName));
+
+            return attributes.Any(a =>
+            {
+                return a.GetType().FullName.StartsWith(attributeName);
+            });
         }
 
         protected virtual Caller FindApprovalFrame()

@@ -1,4 +1,5 @@
 using ApprovalUtilities.Utilities;
+using Xunit;
 
 namespace ApprovalTests.Xunit2.Namer
 {
@@ -23,7 +24,7 @@ namespace ApprovalTests.Xunit2.Namer
             await AnAsyncMethod();
 
             Assert.Equal("XunitStackTraceNamerTest.AsyncTestApprovalName", name);
-            Assert.True(File.Exists(path + "\\XunitStackTraceNamerTest.cs"));
+            Assert.True(File.Exists($@"{path}\XunitStackTraceNamerTest.cs"));
         }
 
         [Fact]
@@ -50,6 +51,13 @@ namespace ApprovalTests.Xunit2.Namer
             Assert.Equal("XunitStackTraceNamerTest.TestApprovalName", name);
         }
 
+        [InheritedFactAttribute]
+        public void TestApprovalName_InheritedFact()
+        {
+            var name = new UnitTestFrameworkNamer().Name;
+            Assert.Equal("XunitStackTraceNamerTest.TestApprovalName", name);
+        }
+
         [Fact]
         public void TestApprovalNamerFailureMessage()
         {
@@ -70,4 +78,9 @@ namespace ApprovalTests.Xunit2.Namer
             Assert.Equal(typeof(T), instance);
         }
     }
+}
+
+public class InheritedFactAttribute:FactAttribute
+{
+
 }
