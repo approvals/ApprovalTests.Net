@@ -8,6 +8,5 @@ nuget_cli\NuGet.exe push nuget_packages\ApprovalTests.EntityFrameworkUtilities.3
 nuget_cli\NuGet.exe push nuget_packages\ApprovalTests.EntityFramework.3.0.??.nupkg -Source nuget.org
 nuget_cli\NuGet.exe push nuget_packages\ApprovalTests.NHibernate.3.0.??.nupkg -Source nuget.org
 nuget_cli\NuGet.exe push nuget_packages\ApprovalTests.Rdlc.3.0.??.nupkg -Source nuget.org
-nuget_cli\NuGet.exe push nuget_packages\ApprovalTests.Wpf.3.0.??.nupkg -Source nuget.org
 
 pause 
