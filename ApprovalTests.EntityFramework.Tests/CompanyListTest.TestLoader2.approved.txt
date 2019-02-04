@@ -1,6 +1,0 @@
-﻿SELECT TOP (9) 
-[Extent1].[Id] AS [Id], 
-[Extent1].[Name] AS [Name], 
-[Extent1].[Website] AS [Website]
-FROM [dbo].[Company] AS [Extent1]
-WHERE [Extent1].[Name] LIKE 'mi%' ESCAPE '~'

@@ -1,8 +1,0 @@
-﻿SELECT TOP (1) 
-[top].[Id] AS [Id], 
-[top].[Name] AS [Name], 
-[top].[Website] AS [Website]
-FROM ( SELECT TOP (10) [Extent1].[Id] AS [Id], [Extent1].[Name] AS [Name], [Extent1].[Website] AS [Website]
-	FROM [dbo].[Company] AS [Extent1]
-	WHERE [Extent1].[Name] LIKE 'Mic%' ESCAPE '~'
-)  AS [top]
