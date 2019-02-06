@@ -41,12 +41,12 @@ namespace ApprovalTests.Xunit2
 
                 // the call below to Verify inside the ansyc method fails
                 // fails with message "Could Not Detect Test Framework"
-                //Approvals.Verify(content);
+                Approvals.Verify(content);
                 return content;
             });
 
             // if we move the approve outside of the async call and not call it inside the async method, then it works correctly.
-            Approvals.Verify(json);
+            //Approvals.Verify(json);
         }
 
     }
