@@ -38,10 +38,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApprovalTests.Rdlc", "Appro
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApprovalTests.Rdlc.Tests", "ApprovalTests.Rdlc.Tests\ApprovalTests.Rdlc.Tests.csproj", "{F84FFE6A-24E2-482C-B75E-626D03BD9889}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApprovalTests.NHibernate.Tests", "ApprovalTests.NHibernate.Tests\ApprovalTests.NHibernate.Tests.csproj", "{F347F72E-07D5-472E-8E03-B79422028F88}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApprovalTests.NHibernate", "ApprovalTests.NHibernate\ApprovalTests.NHibernate.csproj", "{C1F1569A-B58E-4DEC-93B0-2B7A482E77FB}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApprovalTests.AppConfig", "ApprovalTests.AppConfig\ApprovalTests.AppConfig.csproj", "{3EA875D6-2087-41B8-9A4D-6A8717A965DE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApprovalTests.AppConfig.Tests", "ApprovalTests.AppConfig.Tests\ApprovalTests.AppConfig.Tests.csproj", "{82A65038-B52E-430F-A42F-87F0B566442B}"
@@ -104,14 +100,6 @@ Global
 		{F84FFE6A-24E2-482C-B75E-626D03BD9889}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F84FFE6A-24E2-482C-B75E-626D03BD9889}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F84FFE6A-24E2-482C-B75E-626D03BD9889}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F347F72E-07D5-472E-8E03-B79422028F88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F347F72E-07D5-472E-8E03-B79422028F88}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F347F72E-07D5-472E-8E03-B79422028F88}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F347F72E-07D5-472E-8E03-B79422028F88}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C1F1569A-B58E-4DEC-93B0-2B7A482E77FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C1F1569A-B58E-4DEC-93B0-2B7A482E77FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C1F1569A-B58E-4DEC-93B0-2B7A482E77FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C1F1569A-B58E-4DEC-93B0-2B7A482E77FB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3EA875D6-2087-41B8-9A4D-6A8717A965DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3EA875D6-2087-41B8-9A4D-6A8717A965DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EA875D6-2087-41B8-9A4D-6A8717A965DE}.Release|Any CPU.ActiveCfg = Release|Any CPU

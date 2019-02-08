@@ -1,9 +1,0 @@
-﻿
-    select
-        company0_.Id as Id1_0_,
-        company0_.Name as Name2_0_,
-        company0_.Website as Websit3_0_ 
-    from
-        Company company0_ 
-    where
-        company0_.Name like ('Mic'+'%')
