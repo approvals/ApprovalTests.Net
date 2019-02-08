@@ -34,12 +34,13 @@ namespace ApprovalTests.Maintenance
             return FindAbandonedFiles(path, assembly);
         }
 
-        private static IEnumerable<FileInfo> FindAbandonedFiles(string path, Assembly assembly)
+        private static List<FileInfo> FindAbandonedFiles(string path, Assembly assembly)
         {
             var searchPattern = "*.approved.*";
             var approvedFile = Directory.EnumerateFiles(path, searchPattern, SearchOption.AllDirectories);
-            return approvedFile.Select(f => new FileInfo(f)).Where(f => IsAbandoned(f, assembly
-            )).ToArray();
+            return approvedFile.Select(f => new FileInfo(f))
+                .Where(f => IsAbandoned(f, assembly))
+                .ToList();
         }
 
         private static bool IsAbandoned(FileInfo approvedFile, Assembly assembly)
@@ -52,13 +53,13 @@ namespace ApprovalTests.Maintenance
             return !methods.Any();
         }
 
-
         public static void VerifyNoAbandonedFiles(params string[] ignore)
         {
             var path = PathUtilities.GetDirectoryForCaller(1);
             var assembly = new Caller().Methods.First().Module.Assembly;
-            var files = FindAbandonedFiles(path, assembly);
-            files = files.Where(f => !ignore.Any(p => f.FullName.Contains(p))).ToArray();
+            var files = FindAbandonedFiles(path, assembly)
+                .Where(f => !ignore.Any(p => f.FullName.Contains(p)))
+                .ToArray();
             if (files.Any())
             {
                 throw new Exception("The following files have been abandoned:\n" + files.ToReadableString().Replace(",", "\n"));
