@@ -1,3 +1,0 @@
-﻿The Datasource Name 'purposelyMisspelt'
-is not a legal match for ReportingDemo.InsultsReport.rdlc,
-Legal Matches are: [Model]
