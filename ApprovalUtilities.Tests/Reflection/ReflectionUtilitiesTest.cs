@@ -31,7 +31,7 @@ namespace ApprovalUtilities.Tests.Reflection
         {
             var checkBox = new CheckBox();
 
-            Assert.Equal(0, checkBox.GetEventHandlerListEvents().Count());
+            Assert.Empty(checkBox.GetEventHandlerListEvents());
         }
 
         [Fact]
@@ -113,7 +113,7 @@ namespace ApprovalUtilities.Tests.Reflection
         {
             var testingPoco = new TestingEventPoco();
 
-            Assert.Equal(0, testingPoco.GetPocoEvents().Count());
+            Assert.Empty(testingPoco.GetPocoEvents());
         }
 
         [Fact]
