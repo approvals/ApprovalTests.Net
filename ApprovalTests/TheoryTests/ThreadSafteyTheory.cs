@@ -21,7 +21,7 @@ namespace ApprovalTests.TheoryTests
                 return 1;
             }).Sum();
 
-            CompareArrays(n1.ToArray(), "Race Conditon Function", n2.ToArray(), "Thread Safe Function");
+            CompareArrays(n1.ToArray(), "Race Condition Function", n2.ToArray(), "Thread Safe Function");
         }
 
         public static void CompareArrays<T>(T[] n1, string label1, T[] n2, string label2)
