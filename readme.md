@@ -1,5 +1,8 @@
 ApprovalTests
 ====
+[![Backers on Open Collective](https://opencollective.com/approvaltestsnet/backers/badge.svg)](#backers)
+
+ [![Sponsors on Open Collective](https://opencollective.com/approvaltestsnet/sponsors/badge.svg)](#sponsors) 
 
 Capturing Human Intelligence - ApprovalTests is an open source assertion/verification library to aid unit testing.
 
@@ -94,6 +97,27 @@ More Info
 - [Website](http://approvaltests.sourceforge.net/)
 - [Blog](http://blog.approvaltests.com/)
 - [Getting Started Doc](https://github.com/approvals/ApprovalTests.Net/blob/master/build/Documentation/Approval%20Tests%20-%20Getting%20Started.pdf?raw=true)
+
+## Credits
+
+### Contributors
+
+This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
+
+<a href="graphs/contributors"><img src="https://opencollective.com/approvaltestsnet/contributors.svg?width=890&button=false" /></a>
+
+### Backers
+
+Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/approvaltestsnet#backer)]
+
+<a href="https://opencollective.com/approvaltestsnet#backers" target="_blank"><img src="https://opencollective.com/approvaltestsnet/backers.svg?width=890"></a>
+
+### Sponsors
+
+Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/approvaltestsnet#sponsor)]
+
+<a href="https://opencollective.com/approvaltestsnet/sponsor/0/website" target="_blank"><img src="https://opencollective.com/approvaltestsnet/sponsor/0/avatar.svg"></a>
+
 
 	
 ## LICENSE
