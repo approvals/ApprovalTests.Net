@@ -1,4 +1,1 @@
-﻿[0] = System.Object EVENT_CHECKEDCHANGED
-[1] = System.Object EVENT_CHECKSTATECHANGED
-[2] = System.Object EVENT_APPEARANCECHANGED
-[3] = System.Drawing.ContentAlignment anyRight
+﻿[0] = System.String <PublicStaticProperty>k__BackingField

@@ -34,11 +34,33 @@ namespace ApprovalUtilities.Tests.Reflection
             Assert.Empty(checkBox.GetEventHandlerListEvents());
         }
 
+        public class TargetPoco : TargetPocoBase
+        {
+            public string PublicInstanceField;
+            string PrivateInstanceField;
+            public static string PublicStaticField;
+            string PrivateStaticField;
+            public string PublicInstanceProperty{ get; set; }
+            private string PrivateInstanceProperty{ get; set; }
+            public static string PublicStaticProperty{ get; set; }
+            private string PrivateStaticProperty { get; set; }
+        }
+        public class TargetPocoBase
+        {
+            public string BasePublicInstanceField;
+            string BasePrivateInstanceField;
+            public static string BasePublicStaticField;
+            string BasePrivateStaticField;
+            public string BasePublicInstanceProperty{ get; set; }
+            private string BasePrivateInstanceProperty{ get; set; }
+            public static string BasePublicStaticProperty{ get; set; }
+            private string BasePrivateStaticProperty{ get; set; }
+        }
         [Fact]
         public void GetControlNonPublicStaticFields()
         {
             Approvals.VerifyAll(
-                new CheckBox().NonPublicStaticFields(false),
+                new TargetPoco().NonPublicStaticFields(false).OrderBy(x=>x.Name),
                 string.Empty);
         }
 
@@ -46,8 +68,7 @@ namespace ApprovalUtilities.Tests.Reflection
         [UseReporter(typeof(DiffReporter))]
         public void GetInheritedNonPublicStaticFields()
         {
-            Approvals.VerifyAll("For " + ApprovalResults.GetDotNetVersion(),
-                new CheckBox().NonPublicStaticFields(true),
+            Approvals.VerifyAll(new TargetPoco().NonPublicStaticFields(true),
                 string.Empty);
         }
 
@@ -83,7 +104,7 @@ namespace ApprovalUtilities.Tests.Reflection
         public void GetNonPublicInstanceProperties()
         {
             Approvals.VerifyAll(
-                new CheckBox().NonPublicInstanceProperties(),
+                new TargetPoco().NonPublicInstanceProperties(),
                 string.Empty);
         }
 
