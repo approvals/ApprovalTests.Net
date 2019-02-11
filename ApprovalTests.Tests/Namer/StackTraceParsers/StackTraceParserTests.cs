@@ -48,7 +48,7 @@ namespace ApprovalTests.Tests.Namer.StackTraceParsers
             }
             catch (AggregateException e)
             {
-                // Throw the first inner exception of the AggretateException, this way NUnit shows a much clearer result.
+                // Throw the first inner exception of the AggregateException, this way NUnit shows a much clearer result.
                 throw e.InnerException;
             }
         }
