@@ -16,7 +16,11 @@ namespace ApprovalTests.Reporters
             return AppDomain
                     .CurrentDomain
                     .GetAssemblies()
-                    .Any(a => a.FullName.Contains("xunit.assert"));
+                    .Any(a =>
+                    {
+                        var name = a.FullName;
+                        return name.Contains("xunit.core") || name.Contains("xunit.assert");
+                    });
         }
 
         public XUnit2Reporter()

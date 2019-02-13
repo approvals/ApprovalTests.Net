@@ -19,7 +19,7 @@ namespace ApprovalTests.Xunit2.Reporters
         public void TestXunitIsWorking()
         {
             Approvals.SetCaller();
-            Assert.True(XUnitReporter.INSTANCE.IsWorkingInThisEnvironment("default.txt"));
+            Assert.True(XUnit2Reporter.INSTANCE.IsWorkingInThisEnvironment("default.txt"));
         }
 
         [Fact]
