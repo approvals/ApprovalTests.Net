@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-<project name="ApprovalProperties">
-	<property name="username" value="isidore_usa" />
-	<property name="password" value="" />
-	<property name="uploadPath" value="/incoming/i/is/isidore_usa/uploads/" />
-</project>
