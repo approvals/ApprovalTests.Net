@@ -1,18 +1,27 @@
-﻿using ApprovalTests.Reporters;
-using ApprovalUtilities.SimpleLogger;
+﻿using ApprovalTests.Namers;
+using ApprovalTests.Reporters;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace ApprovalTests.MSTest
+namespace ApprovalTests.MsTestV2
 {
     [TestClass]
     [UseReporter(typeof(DiffReporter))]
     public class NamerTest
     {
         [TestMethod]
-        public void MSTestVS2010()
+        public void MsTestV2()
         {
-            Logger.Variable("a", 1);
-            Approvals.Verify("2010");
+            Approvals.Verify("MsTestV2");
+        }
+
+        [DataTestMethod]
+        [DataRow("MsDataTest")]
+        public void MsTestV2DataTestMethod(string s)
+        {
+            using (ApprovalResults.ForScenario(s))
+            {
+                Approvals.Verify(s);
+            }
         }
     }
 }
