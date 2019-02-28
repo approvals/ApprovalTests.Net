@@ -1,5 +1,6 @@
 *.received.*
 nuget_packages/
+nuget_cli/
 
 bin/
 tmp/
