@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using ApprovalTests.Namers;
 using NUnit.Framework;
@@ -17,7 +18,8 @@ namespace ApprovalTests.Tests.Namer
         [Test]
         public void TestSourcePath()
         {
-            var name = new UnitTestFrameworkNamer().SourcePath;
+            var name = Approvals.GetDefaultNamer().SourcePath;
+            Assert.IsNotEmpty(name);
             var path = name.ToLower() + Path.DirectorySeparatorChar + GetType().Name + ".cs";
             Assert.IsTrue(File.Exists(path), path + " does not exist");
         }
