@@ -18,10 +18,10 @@ namespace ApprovalTests.Tests.Namer
         [Test]
         public void TestSourcePath()
         {
-            var name = Approvals.GetDefaultNamer().SourcePath;
-            Assert.IsNotEmpty(name);
-            var path = name.ToLower() + Path.DirectorySeparatorChar + GetType().Name + ".cs";
-            Assert.IsTrue(File.Exists(path), path + " does not exist");
+            var path = Approvals.GetDefaultNamer().SourcePath;
+            Assert.IsNotEmpty(path);
+            var fullPath = path.ToLower() + Path.DirectorySeparatorChar + GetType().Name + ".cs";
+            Assert.IsTrue(File.Exists(fullPath), fullPath + " does not exist");
         }
 
         [Test]

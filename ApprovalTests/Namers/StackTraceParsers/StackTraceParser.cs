@@ -54,7 +54,32 @@ To learn how to implement one see {helpLink}")
 
         public string ApprovalName => parser.ApprovalName;
 
-        public string SourcePath => parser.SourcePath;
+        public string SourcePath
+        {
+            get
+            {
+                var path = parser.SourcePath;
+                if (string.IsNullOrEmpty(path))
+                {
+                    var helpMessage = @"
+ApprovalTests is not detecting the proper source path
+
+This is probably because you're missing the following
+line in your .csproj file:
+	  <DebugType>full</DebugType>
+in the 
+<Project>
+  <PropertyGroup>
+element.
+
+Solution:
+a) Add <DebugType>full</DebugType> to your .csproj file.
+b) OR Build->Advanced->DebugInfo to Full";
+                    throw new Exception(helpMessage);
+                }
+                return path;
+            }
+        }
 
         private static void LoadIfApplicable(IList<IStackTraceParser> found, AttributeStackTraceParser p)
         {
