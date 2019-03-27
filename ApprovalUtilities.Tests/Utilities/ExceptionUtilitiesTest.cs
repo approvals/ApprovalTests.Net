@@ -12,7 +12,7 @@ namespace ApprovalUtilities.Tests.Utilities
             AssertException<NotFiniteNumberException>(() => { throw new NotFiniteNumberException(); });
         }
 
-        public static void AssertException<T>(Action action) where T : Exception
+        private static void AssertException<T>(Action action) where T : Exception
         {
             Assert.IsType<T>(ExceptionUtilities.GetException(action));
         }
