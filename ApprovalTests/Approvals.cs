@@ -158,7 +158,7 @@ namespace ApprovalTests
         /// and if you use subdirectories you'll need a post-build command like
         /// copy /y $(ProjectDir)**subfolder**\*.approved.txt $(TargetDir)
         /// </summary>
-        public static void UseAssemblyLocationForNames()
+        public static void UseAssemblyLocationForApprovedFiles()
         {
             RegisterDefaultNamerCreation(()=> new AssemblyLocationNamer());
         }
