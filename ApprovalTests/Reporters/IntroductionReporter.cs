@@ -34,7 +34,7 @@ Find more at: http://blog.approvaltests.com/2011/12/using-reporters-in-approval-
 
 
 Best Practice:
-We recommend added an assembly level configuration. 
+We recommend adding an assembly level configuration. 
 Simply create a file in your base directory
 Name: ApprovalTestsConfig.cs
 Contents:
