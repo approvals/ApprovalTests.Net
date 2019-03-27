@@ -11,7 +11,7 @@ namespace ApprovalUtilities.Tests.Utilities
         {
             var d = new Dictionary<int, string> {{1, "one"}};
             Assert.Equal("one", d.GetValueOrDefault(1));
-            Assert.Equal(null, d.GetValueOrDefault(2));
+            Assert.Null(d.GetValueOrDefault(2));
 
         }
     }
