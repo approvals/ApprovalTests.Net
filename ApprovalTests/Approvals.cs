@@ -152,6 +152,16 @@ namespace ApprovalTests
         {
             return defaultNamerCreator.Invoke();
         }
+        /// <summary>
+        /// This is sometimes needed on CI systems that move/remove the original source.
+        /// If you use this you will also need to set the .approved. files to "Copy Always"
+        /// and if you use subdirectories you'll need a post-build command like
+        /// copy /y $(ProjectDir)**subfolder**\*.approved.txt $(TargetDir)
+        /// </summary>
+        public static void UseAssemblyLocationForNames()
+        {
+            RegisterDefaultNamerCreation(()=> new AssemblyLocationNamer());
+        }
 
         public static void Verify(object text)
         {
