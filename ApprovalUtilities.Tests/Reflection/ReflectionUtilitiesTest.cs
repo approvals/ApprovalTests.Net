@@ -5,7 +5,6 @@ using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 using ApprovalTests;
-using ApprovalTests.Namers;
 using ApprovalTests.Tests.Events;
 using ApprovalUtilities.Reflection;
 using Xunit;
