@@ -32,6 +32,17 @@ When you do this ApprovalTest will launch the result using that reporter (for ex
 You can find several reporters in ApprovalTests.Reporters namespace, or create your own by extending {typeof(IApprovalFailureReporter)}) interface.
 Find more at: http://blog.approvaltests.com/2011/12/using-reporters-in-approval-tests.html
 
+
+Best Practice:
+We recommend added an assembly level configuration. 
+Simply create a file in your base directory
+Name: ApprovalTestsConfig.cs
+Contents:
+using ApprovalTests.Reporters;
+
+[assembly: UseReporter(typeof(DiffReporter))]
+
+
 ";
             return message;
         }
