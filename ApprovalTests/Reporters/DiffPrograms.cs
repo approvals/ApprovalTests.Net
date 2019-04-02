@@ -11,13 +11,13 @@ namespace ApprovalTests.Reporters
         public static class Mac
         {
             public static DiffInfo DIFF_MERGE = new DiffInfo("/Applications/DiffMerge.app/Contents/MacOS/DiffMerge",
-                "{0} {1}--nosplash", TEXT);
+                "{0} {1} --nosplash", TEXT);
             public static DiffInfo BEYOND_COMPARE = new DiffInfo("/Applications/Beyond Compare.app/Contents/MacOS/bcomp",
                 TEXT);
             public static DiffInfo KALEIDOSCOPE = new DiffInfo("/Applications/Kaleidoscope.app/Contents/MacOS/ksdiff",
                 TEXT_AND_IMAGE);
             public static DiffInfo KDIFF3 = new DiffInfo("/Applications/kdiff3.app/Contents/MacOS/kdiff3",
-                "{0} {1}-m", TEXT);
+                "{0} {1} -m", TEXT);
             public static DiffInfo P4MERGE = new DiffInfo("/Applications/p4merge.app/Contents/MacOS/p4merge",
                 TEXT_AND_IMAGE);
             public static DiffInfo TK_DIFF = new DiffInfo("/Applications/TkDiff.app/Contents/MacOS/tkdiff", TEXT);
