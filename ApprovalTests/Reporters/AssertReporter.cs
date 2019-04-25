@@ -10,11 +10,20 @@ namespace ApprovalTests.Reporters
     {
         protected readonly string areEqual;
         private readonly string assertClass;
+        private readonly string[] assertSearchAssemblies;
         private readonly string frameworkAttribute;
 
         public AssertReporter(string assertClass, string areEqual, string frameworkAttribute)
         {
             this.assertClass = assertClass;
+            this.areEqual = areEqual;
+            this.frameworkAttribute = frameworkAttribute;
+        }
+
+        public AssertReporter(string assertClass, string areEqual, string frameworkAttribute, params string[] assertSearchAssemblies)
+        {
+            this.assertClass = assertClass;
+            this.assertSearchAssemblies = assertSearchAssemblies;
             this.areEqual = areEqual;
             this.frameworkAttribute = frameworkAttribute;
         }
@@ -48,7 +57,7 @@ namespace ApprovalTests.Reporters
         {
             try
             {
-                var type = Type.GetType(assertClass);
+                var type = FindAssertionType();
                 var parameters = new[] { approvedContent, receivedContent };
                 InvokeEqualsMethod(type, parameters);
             }
@@ -56,6 +65,27 @@ namespace ApprovalTests.Reporters
             {
                 throw e.GetBaseException();
             }
+        }
+
+        private Type FindAssertionType()
+        {
+            // no search assemblies given, assume assembly given in as assertClass
+            if (assertSearchAssemblies == null)
+            {
+                var found = Type.GetType(assertClass);
+                if (found != null) return found;
+
+                throw new ArgumentException($"Found no matching types in class [{assertClass}]");
+            }
+
+            foreach (var searchAssembly in assertSearchAssemblies)
+            {
+                var found = Type.GetType($"{assertClass}, {searchAssembly}");
+                if (found != null) return found;
+            }
+              
+            throw new ArgumentException($"Found no matching types in class [{assertClass}] using " +
+                                        $"searchAssemblies [{string.Join(",", assertSearchAssemblies)}]");
         }
 
         protected virtual void InvokeEqualsMethod(Type type, string[] parameters)

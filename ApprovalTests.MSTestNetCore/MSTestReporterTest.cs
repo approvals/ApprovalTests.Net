@@ -2,7 +2,7 @@
 using ApprovalTests.Reporters;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace ApprovalTests.MSTest
+namespace ApprovalTests.MSTestNetCore
 {
     [TestClass]
     public class MsTestReporterTest

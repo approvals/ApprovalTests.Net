@@ -1,5 +1,4 @@
-﻿
-using ApprovalTests.StackTraceParsers;
+﻿using ApprovalTests.StackTraceParsers;
 
 namespace ApprovalTests.Reporters
 {
@@ -8,7 +7,8 @@ namespace ApprovalTests.Reporters
         public readonly static MsTestReporter INSTANCE = new MsTestReporter();
 
         public MsTestReporter()
-            : base("Microsoft.VisualStudio.TestTools.UnitTesting.Assert, Microsoft.VisualStudio.QualityTools.UnitTestFramework", "AreEqual", VSStackTraceParser.Attribute)
+            : base("Microsoft.VisualStudio.TestTools.UnitTesting.Assert", "AreEqual", VSStackTraceParser.Attribute,
+              "Microsoft.VisualStudio.QualityTools.UnitTestFramework", "Microsoft.VisualStudio.TestPlatform.TestFramework")
         {
         }
     }
