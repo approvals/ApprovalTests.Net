@@ -14,12 +14,12 @@ Approval Tests can be used for verifying objects that require more than a simple
 - Dictionaries & Collections
 - Long Strings
 - Log Files
-- Asp.Net
-- Asp.Net Mvc
-- Winforms
-- Wpf
-- Entity Framework
-- Rdlc reports
+- [Asp.Net]()
+- [Asp.Net Mvc]()
+- [Winforms](https://github.com/approvals/ApprovalTests.Net.WinForms)
+- [Wpf](https://github.com/approvals/ApprovalTests.Net.Wpf)
+- [Entity Framework]()
+- [Rdlc reports]()
 
 [Video Tutorials](http://www.youtube.com/playlist?list=PL0C32F89E8BBB5368)
 ---
