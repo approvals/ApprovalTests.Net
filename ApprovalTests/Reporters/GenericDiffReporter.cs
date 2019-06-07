@@ -85,7 +85,10 @@ namespace ApprovalTests.Reporters
                 throw new ArgumentException($"The following extensions don't start with dots: {wrong.ToReadableString()}");
             }
         }
-
+        public GenericDiffReporter(string diffProgram)
+            : this(diffProgram, DEFAULT_ARGUMENT_FORMAT, $"Couldn't find: {diffProgram}")
+        {
+        }
         public GenericDiffReporter(string diffProgram, string diffProgramNotFoundMessage)
             : this(diffProgram, DEFAULT_ARGUMENT_FORMAT, diffProgramNotFoundMessage)
         {
