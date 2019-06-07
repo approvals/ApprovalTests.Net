@@ -35,6 +35,10 @@ If you prefer auditory learning, you might enjoy the following podcast
 - [Herding Code](http://www.developerfusion.com/media/122649/herding-code-117-llewellyn-falcon-on-approval-tests/)
 - [The Watir Podcast](http://watirpodcast.com/podcast-53/)
 
+## Docs
+
+* [ApprovalTests](/ApprovalTests/docs/README.md)
+* [ApprovalUtilities](/ApprovalUtilities/docs/README.md)
 
 Available on NuGet
 ---
