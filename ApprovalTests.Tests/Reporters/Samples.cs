@@ -3,7 +3,7 @@
 namespace ApprovalTests.Tests.Reporters.Sample1
 {
     // begin-snippet: custom_reporter
-    internal class CustomReporter : GenericDiffReporter
+    public class CustomReporter : GenericDiffReporter
     {
         // Optional but allows performance optimizations
         public static readonly CustomReporter INSTANCE = new CustomReporter();

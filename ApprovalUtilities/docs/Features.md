@@ -10,7 +10,7 @@ If your favorite diff tool isn't already in ApprovalTests. There are a couple wa
 
 <!-- snippet: custom_reporter -->
 ```cs
-internal class CustomReporter : GenericDiffReporter
+public class CustomReporter : GenericDiffReporter
 {
     // Optional but allows performance optimizations
     public static readonly CustomReporter INSTANCE = new CustomReporter();
