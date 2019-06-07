@@ -1,4 +1,5 @@
 ﻿using ApprovalTests.Reporters.Linux;
+using ApprovalTests.Reporters.Mac;
 
 namespace ApprovalTests.Reporters
 {

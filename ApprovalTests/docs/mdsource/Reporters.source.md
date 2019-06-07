@@ -26,3 +26,7 @@ If you have more details you might want to use the DiffInfo Class.
 snippet: custom_reporter_diff_info
 
 *note:* Please consider contrubing these back via pull request.
+
+## Joining Reporters
+
+## Auto-Approving Reporters

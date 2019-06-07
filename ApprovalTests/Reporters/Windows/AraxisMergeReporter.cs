@@ -1,5 +1,5 @@
 ﻿
-namespace ApprovalTests.Reporters
+namespace ApprovalTests.Reporters.Windows
 {
     public class AraxisMergeReporter : GenericDiffReporter
     {

@@ -1,7 +1,6 @@
-﻿using ApprovalTests.Reporters.Mac;
-using ApprovalUtilities.Utilities;
+﻿using ApprovalUtilities.Utilities;
 
-namespace ApprovalTests.Reporters
+namespace ApprovalTests.Reporters.Mac
 {
     public class MacDiffReporter : FirstWorkingReporter
     {
@@ -13,7 +12,7 @@ namespace ApprovalTests.Reporters
                 BeyondCompareMacReporter.INSTANCE,
                 DiffMergeReporter.INSTANCE, 
                 KaleidoscopeDiffReporter.INSTANCE,
-                P4MergeReporter.INSTANCE, 
+                ApprovalTests.Reporters.P4MergeReporter.INSTANCE, 
                 KDiff3Reporter.INSTANCE,
                 TkDiffReporter.INSTANCE, 
                 FrameworkAssertReporter.INSTANCE,
