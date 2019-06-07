@@ -1,4 +1,6 @@
-namespace ApprovalTests.Reporters
+using ApprovalTests.Reporters.TestFrameworks;
+
+namespace ApprovalTests.Reporters.ContinuousIntegration
 {
     public class ContinousDeliveryUtils
     {

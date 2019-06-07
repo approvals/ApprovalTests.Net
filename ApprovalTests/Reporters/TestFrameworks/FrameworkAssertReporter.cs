@@ -1,4 +1,4 @@
-namespace ApprovalTests.Reporters
+namespace ApprovalTests.Reporters.TestFrameworks
 {
     public class FrameworkAssertReporter : FirstWorkingReporter
     {

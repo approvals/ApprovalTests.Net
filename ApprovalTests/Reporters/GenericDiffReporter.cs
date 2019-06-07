@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ApprovalTests.Core;
+using ApprovalTests.Reporters.TestFrameworks;
 using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.Reporters

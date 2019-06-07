@@ -29,4 +29,25 @@ snippet: custom_reporter_diff_info
 
 ## Joining Reporters
 
+These classes help you combine reporters to make more powerful combinations
+
+* FirstWorkingReporter - launch the first report for this system, only 1 
+* MultiReporter - launch ALL reporters 
+
 ## Auto-Approving Reporters
+
+These reporters create a commandline move file to approve the results and place it on your clipboard when a test fails.
+
+* ClipboardReporter - This test only
+* AllFailingTestsClipboardReporter - All tests (this might make a long command line )
+
+
+## Continous Intergration
+
+Approvaltests will not launch anything if you are running on a CI machine.   
+
+Currently, we support:
+
+snippet: continuous_integration
+
+You can add to this by configuring the FrontLoadedReporter Annotation.

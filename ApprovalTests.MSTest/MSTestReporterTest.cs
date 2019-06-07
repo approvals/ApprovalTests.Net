@@ -1,4 +1,5 @@
 ﻿using ApprovalTests.Reporters;
+using ApprovalTests.Reporters.TestFrameworks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ApprovalTests.MSTest

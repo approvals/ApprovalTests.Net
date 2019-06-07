@@ -1,4 +1,5 @@
-﻿using ApprovalUtilities.Utilities;
+﻿using ApprovalTests.Reporters.TestFrameworks;
+using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.Reporters.Mac
 {

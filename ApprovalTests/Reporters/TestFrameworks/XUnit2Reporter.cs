@@ -1,11 +1,9 @@
 using System;
+using System.Linq;
+using ApprovalTests.StackTraceParsers;
 
-namespace ApprovalTests.Reporters
+namespace ApprovalTests.Reporters.TestFrameworks
 {
-    using System.Linq;
-
-    using StackTraceParsers;
-
     public class XUnit2Reporter : AssertReporter
     {
         public readonly static XUnit2Reporter INSTANCE = new XUnit2Reporter();

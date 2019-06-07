@@ -1,3 +1,5 @@
+using ApprovalTests.Reporters.TestFrameworks;
+
 namespace ApprovalTests.Xunit2.Reporters
 {
     using ApprovalTests.Reporters;

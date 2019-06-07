@@ -1,6 +1,6 @@
 using ApprovalTests.StackTraceParsers;
 
-namespace ApprovalTests.Reporters
+namespace ApprovalTests.Reporters.TestFrameworks
 {
     public class NUnitReporter : AssertReporter
     {

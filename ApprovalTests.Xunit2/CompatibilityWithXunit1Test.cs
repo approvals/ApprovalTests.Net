@@ -1,4 +1,5 @@
 using ApprovalTests.Reporters;
+using ApprovalTests.Reporters.TestFrameworks;
 using Xunit;
 using Xunit.Sdk;
 

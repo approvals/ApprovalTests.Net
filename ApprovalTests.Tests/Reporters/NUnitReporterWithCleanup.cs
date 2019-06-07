@@ -1,5 +1,6 @@
 using System.IO;
 using ApprovalTests.Reporters;
+using ApprovalTests.Reporters.TestFrameworks;
 
 namespace ApprovalTests.Tests.Reporters
 {
