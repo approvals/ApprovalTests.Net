@@ -12,7 +12,7 @@ namespace ApprovalTests.Reporters.Mac
                 BeyondCompareMacReporter.INSTANCE,
                 DiffMergeReporter.INSTANCE, 
                 KaleidoscopeDiffReporter.INSTANCE,
-                ApprovalTests.Reporters.P4MergeReporter.INSTANCE, 
+                Windows.P4MergeReporter.INSTANCE, 
                 KDiff3Reporter.INSTANCE,
                 TkDiffReporter.INSTANCE, 
                 FrameworkAssertReporter.INSTANCE,
