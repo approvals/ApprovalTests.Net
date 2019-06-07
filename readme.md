@@ -1,3 +1,21 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Contents**
+
+- [ApprovalTests](#approvaltests)
+  - [What can it be used for?](#what-can-it-be-used-for)
+  - [Video Tutorials](#video-tutorials)
+  - [Podcasts](#podcasts)
+  - [Docs](#docs)
+  - [Available on NuGet](#available-on-nuget)
+  - [Examples](#examples)
+  - [Approved File Artifacts](#approved-file-artifacts)
+  - [More Info](#more-info)
+  - [LICENSE](#license)
+  - [Questions?](#questions)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ApprovalTests
 ====
 

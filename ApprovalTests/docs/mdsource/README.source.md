@@ -1,3 +1,14 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Contents**
+
+- [ApprovalTests](#approvaltests)
+  - [Features](#features)
+  - [Main concepts for ApprovalTests](#main-concepts-for-approvaltests)
+  - [Approval Output Files](#approval-output-files)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # ApprovalTests
 
 ## Features 

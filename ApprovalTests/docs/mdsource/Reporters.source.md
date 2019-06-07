@@ -1,3 +1,18 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Contents**
+
+- [Supported Diff Tools](#supported-diff-tools)
+  - [Windows](#windows)
+  - [Mac](#mac)
+  - [Linux](#linux)
+- [Making Custom Reporters](#making-custom-reporters)
+- [Joining Reporters](#joining-reporters)
+- [Auto-Approving Reporters](#auto-approving-reporters)
+- [Continous Intergration](#continous-intergration)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Supported Diff Tools
 The DiffReporter class goes through a chain of possible reporters to find the first option installed on your system. Currently the search goes in this order:
 
