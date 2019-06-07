@@ -66,3 +66,7 @@ Currently, we support:
 snippet: continuous_integration
 
 You can add to this by configuring the FrontLoadedReporter Annotation.
+
+---
+
+[Back to User Guide](/doc/README.md#top)

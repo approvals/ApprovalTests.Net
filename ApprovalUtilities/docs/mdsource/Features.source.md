@@ -11,3 +11,7 @@
 `using` statements nicely cleanup on exit if you have a `IDisposable` or you can create a simple disposable object by passing in a lambda.  
 
 snippet: disposables
+
+---
+
+[Back to User Guide](/doc/README.md#top)

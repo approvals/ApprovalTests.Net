@@ -27,3 +27,6 @@ There are a few convience functions in `ApprovalResults` setup for the common si
 * UniqueForRuntime
 * GetUserName
 
+---
+
+[Back to User Guide](/doc/README.md#top)

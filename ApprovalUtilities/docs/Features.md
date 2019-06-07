@@ -25,3 +25,7 @@ using (var cleanup = Disposables.Create(() => callCount++))
 ```
 <sup>[snippet source](/ApprovalUtilities.Tests/Utilities/DisposablesTest.cs#L12-L17)</sup>
 <!-- endsnippet -->
+
+---
+
+[Back to User Guide](/doc/README.md#top)

@@ -17,3 +17,6 @@ To change this file edit the source file and then run MarkdownSnippets.
 As new features are added, they will be [documented here](Features.md)
 
 
+---
+
+[Back to User Guide](/doc/README.md#top)

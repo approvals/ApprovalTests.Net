@@ -33,3 +33,7 @@ As new features are added, they will be [documented here](Features.md)
 ## Approval Output Files
 
 * [Enviroment SpecificTests](EnvironmentSpecificTests.md)
+
+---
+
+[Back to User Guide](/doc/README.md#top)

@@ -16,3 +16,7 @@ To change this file edit the source file and then run MarkdownSnippets.
 ## [Making Custom Reporters](Reporters.md)
 
 ## [EnvironmentSpecificTest](EnvironmentSpecificTest.md)
+
+---
+
+[Back to User Guide](/doc/README.md#top)
