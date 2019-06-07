@@ -5,9 +5,9 @@ namespace ApprovalTests.Reporters
 {
     public class DiffPrograms
     {
-        private static Func<IEnumerable<string>> TEXT           = GenericDiffReporter.GetTextFileTypes;
-        private static Func<IEnumerable<string>> IMAGE          = GenericDiffReporter.GetImageFileTypes;
-        private static Func<IEnumerable<string>> TEXT_AND_IMAGE = GenericDiffReporter.GetTextAndImageFileTypes;
+        public static Func<IEnumerable<string>> TEXT           = GenericDiffReporter.GetTextFileTypes;
+        public static Func<IEnumerable<string>> IMAGE          = GenericDiffReporter.GetImageFileTypes;
+        public static Func<IEnumerable<string>> TEXT_AND_IMAGE = GenericDiffReporter.GetTextAndImageFileTypes;
         public static class Mac
         {
             public static DiffInfo DIFF_MERGE = new DiffInfo("/Applications/DiffMerge.app/Contents/MacOS/DiffMerge",
