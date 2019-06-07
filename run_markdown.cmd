@@ -20,6 +20,7 @@ doctoc --title **Contents** .
 ::   dotnet tool update  -g MarkdownSnippets.Tool
 
 dotnet tool update  -g MarkdownSnippets.Tool
+
 mdsnippets
 
 :: Custom Markdown linting
