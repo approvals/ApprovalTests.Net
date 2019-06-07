@@ -1,4 +1,4 @@
-﻿namespace ApprovalTests.Reporters
+﻿namespace ApprovalTests.Reporters.Windows
 {
     public class KDiffReporter : GenericDiffReporter
     {
