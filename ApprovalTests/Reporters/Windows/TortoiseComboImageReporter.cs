@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using ApprovalTests.Core;
 
-namespace ApprovalTests.Reporters
+namespace ApprovalTests.Reporters.Windows
 {
     public class TortoiseComboImageReporter : IEnvironmentAwareReporter
     {
