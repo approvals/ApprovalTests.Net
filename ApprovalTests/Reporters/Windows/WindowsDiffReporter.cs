@@ -1,7 +1,6 @@
-﻿using ApprovalTests.Reporters.Windows;
-using ApprovalUtilities.Utilities;
+﻿using ApprovalUtilities.Utilities;
 
-namespace ApprovalTests.Reporters
+namespace ApprovalTests.Reporters.Windows
 {
     public class WindowsDiffReporter : FirstWorkingReporter
     {

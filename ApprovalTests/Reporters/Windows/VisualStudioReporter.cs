@@ -4,7 +4,7 @@ using System.Linq;
 using ApprovalTests.Utilities;
 using ApprovalUtilities.Utilities;
 
-namespace ApprovalTests.Reporters
+namespace ApprovalTests.Reporters.Windows
 {
     public class VisualStudioReporter : GenericDiffReporter
     {
