@@ -5,7 +5,7 @@ namespace ApprovalTests.Tests.Reporters.Sample1
     // begin-snippet: custom_reporter
     internal class CustomReporter : GenericDiffReporter
     {
-        // Allows performance optimizations
+        // Optional but allows performance optimizations
         public static readonly CustomReporter INSTANCE = new CustomReporter();
 
         public CustomReporter() :
@@ -23,7 +23,6 @@ namespace ApprovalTests.Tests.Reporters.Sample2
     // begin-snippet: custom_reporter_robust
     public class CustomReporter : GenericDiffReporter
     {
-        // Allows performance optimizations
         public static readonly CustomReporter INSTANCE = new CustomReporter();
         // begin-snippet: custom_reporter_diff_info
         public CustomReporter() :

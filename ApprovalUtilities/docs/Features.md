@@ -12,7 +12,7 @@ If your favorite diff tool isn't already in ApprovalTests. There are a couple wa
 ```cs
 internal class CustomReporter : GenericDiffReporter
 {
-    // Allows performance optimizations
+    // Optional but allows performance optimizations
     public static readonly CustomReporter INSTANCE = new CustomReporter();
 
     public CustomReporter() :
@@ -38,7 +38,7 @@ public CustomReporter() :
 {
 }
 ```
-<sup>[snippet source](/ApprovalTests.Tests/Reporters/Samples.cs#L28-L37)</sup>
+<sup>[snippet source](/ApprovalTests.Tests/Reporters/Samples.cs#L27-L36)</sup>
 <!-- endsnippet -->
 
 *note:* Please consider contrubing these back via pull request.
