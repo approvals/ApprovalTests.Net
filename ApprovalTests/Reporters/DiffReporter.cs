@@ -1,4 +1,6 @@
-﻿namespace ApprovalTests.Reporters
+﻿using ApprovalTests.Reporters.Linux;
+
+namespace ApprovalTests.Reporters
 {
     public class DiffReporter : FirstWorkingReporter
     {
@@ -6,7 +8,7 @@
 
         public DiffReporter()
             : base(
-                WindowsDiffReporter.INSTANCE, MacDiffReporter.INSTANCE)
+                WindowsDiffReporter.INSTANCE, LinuxDiffReporter.INSTANCE, MacDiffReporter.INSTANCE)
         {
         }
     }

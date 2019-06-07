@@ -8,6 +8,7 @@ namespace ApprovalTests.Reporters
 
         public WindowsDiffReporter()
             : base(
+                // begin-snippet: windows_diff_reporters
                 CodeCompareReporter.INSTANCE,
                 BeyondCompareReporter.INSTANCE,
                 TortoiseDiffReporter.INSTANCE,
@@ -17,7 +18,9 @@ namespace ApprovalTests.Reporters
                 KDiffReporter.INSTANCE,
                 VisualStudioReporter.INSTANCE,
                 FrameworkAssertReporter.INSTANCE,
-                QuietReporter.INSTANCE)
+                QuietReporter.INSTANCE
+                // end-snippet
+                )
         {
         }
 
