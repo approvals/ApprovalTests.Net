@@ -1,4 +1,4 @@
-﻿namespace ApprovalTests.Reporters
+﻿namespace ApprovalTests.Reporters.Windows
 {
     public class P4MergeImageReporter : GenericDiffReporter
     {

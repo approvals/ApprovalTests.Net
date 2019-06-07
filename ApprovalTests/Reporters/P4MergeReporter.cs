@@ -1,4 +1,6 @@
-﻿namespace ApprovalTests.Reporters
+﻿using ApprovalTests.Reporters.Windows;
+
+namespace ApprovalTests.Reporters
 {
     public class P4MergeReporter : FirstWorkingReporter
     {
