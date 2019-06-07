@@ -8,6 +8,7 @@ namespace ApprovalTests.Reporters
 
         public DefaultFrontLoaderReporter()
             : base(
+            // begin-snippet: continuous_integration
             TfsReporter.INSTANCE,
             TfsVnextReporter.INSTANCE,
             TeamCityReporter.INSTANCE,
@@ -18,7 +19,9 @@ namespace ApprovalTests.Reporters
             MightyMooseAutoTestReporter.INSTANCE,
             MyGetReporter.INSTANCE,
             GoContinuousDeliveryReporter.INSTANCE,
-            AppVeyorReporter.INSTANCE)
+            AppVeyorReporter.INSTANCE
+            // end-snippet
+            )
         {
         }
     }
