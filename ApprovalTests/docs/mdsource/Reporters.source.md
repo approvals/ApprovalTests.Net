@@ -1,13 +1,14 @@
 ## Supported Diff Tools
 The DiffReporter class goes through a chain of possible reporters to find the first option installed on your system. Currently the search goes in this order:
 
-### Mac
-
-snippet: mac_diff_reporters
 
 ### Windows
 
 snippet: windows_diff_reporters
+
+### Mac
+
+snippet: mac_diff_reporters
 
 ### Linux
 

@@ -7,21 +7,6 @@ To change this file edit the source file and then run MarkdownSnippets.
 ## Supported Diff Tools
 The DiffReporter class goes through a chain of possible reporters to find the first option installed on your system. Currently the search goes in this order:
 
-### Mac
-
-<!-- snippet: mac_diff_reporters -->
-```cs
-BeyondCompareMacReporter.INSTANCE,
-DiffMergeReporter.INSTANCE, 
-KaleidoscopeDiffReporter.INSTANCE,
-P4MergeReporter.INSTANCE, 
-KDiff3Reporter.INSTANCE,
-TkDiffReporter.INSTANCE, 
-FrameworkAssertReporter.INSTANCE,
-QuietReporter.INSTANCE
-```
-<sup>[snippet source](/ApprovalTests/Reporters/MacDiffReporter.cs#L12-L21)</sup>
-<!-- endsnippet -->
 
 ### Windows
 
@@ -39,6 +24,22 @@ FrameworkAssertReporter.INSTANCE,
 QuietReporter.INSTANCE
 ```
 <sup>[snippet source](/ApprovalTests/Reporters/WindowsDiffReporter.cs#L11-L22)</sup>
+<!-- endsnippet -->
+
+### Mac
+
+<!-- snippet: mac_diff_reporters -->
+```cs
+BeyondCompareMacReporter.INSTANCE,
+DiffMergeReporter.INSTANCE, 
+KaleidoscopeDiffReporter.INSTANCE,
+P4MergeReporter.INSTANCE, 
+KDiff3Reporter.INSTANCE,
+TkDiffReporter.INSTANCE, 
+FrameworkAssertReporter.INSTANCE,
+QuietReporter.INSTANCE
+```
+<sup>[snippet source](/ApprovalTests/Reporters/MacDiffReporter.cs#L12-L21)</sup>
 <!-- endsnippet -->
 
 ### Linux
