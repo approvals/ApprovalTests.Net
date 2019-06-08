@@ -6,7 +6,7 @@
 :: To install:
 ::   npm install -g doctoc
 
-doctoc --title **Contents** .
+call doctoc --title **Contents** .
 
 :: ---------------------------------------------------
 :: Update code examples
@@ -20,9 +20,9 @@ doctoc --title **Contents** .
 ::   dotnet tool update  -g MarkdownSnippets.Tool
 
 
-dotnet tool update  -g MarkdownSnippets.Tool
+call dotnet tool update  -g MarkdownSnippets.Tool
 
-mdsnippets
+call mdsnippets
 
 :: Custom Markdown linting
 :: todo: fix
