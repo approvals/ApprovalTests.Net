@@ -67,6 +67,18 @@ snippet: continuous_integration
 
 You can add to this by configuring the FrontLoadedReporter Annotation.
 
+## File Types
+
+ApprovalTests will do different things depending on if it thinks a file is an image or not. It does this by the file extension.
+
+### Text File extensions
+
+snippet: text_file_types
+
+
+### Image File extensions
+
+snippet: image_file_types
 ---
 
 [Back to User Guide](/doc/README.md#top)
