@@ -25,6 +25,7 @@ namespace ApprovalTests.Reporters
         }
         private static readonly HashSet<string> TEXT_FILE_TYPES = new HashSet<string>
         {
+            // snippet: text_file_types
             ".txt",
             ".csv",
             ".htm",
@@ -34,11 +35,14 @@ namespace ApprovalTests.Reporters
             ".cs",
             ".css",
             ".sql",
-            ".json"
+            ".json",
+            ".dot"
+            // end-snippet
         };
 
         private static readonly HashSet<string> IMAGE_FILE_TYPES = new HashSet<string>
         {
+            // snippet: image_file_types
             ".png",
             ".gif",
             ".jpg",
@@ -46,6 +50,7 @@ namespace ApprovalTests.Reporters
             ".bmp",
             ".tif",
             ".tiff"
+            // end-snippet
         };
 
         protected string arguments;
