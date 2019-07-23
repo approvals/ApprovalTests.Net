@@ -78,7 +78,7 @@ namespace ApprovalTests.Namers
             get
             {
                 var additional = AdditionalInformation.Select(s => '.' + s).JoinWith("");
-                return $"{Directory}\\{ClassName}.{MethodName}{additional}.{ApprovedStatus}.{Extension}";
+                return $"{Directory}{Path.DirectorySeparatorChar}{ClassName}.{MethodName}{additional}.{ApprovedStatus}.{Extension}";
             }
         }
 
