@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using ApprovalTests.Core;
 using ApprovalUtilities.Utilities;
@@ -48,9 +49,43 @@ namespace ApprovalTests.Namers
         public string Directory { get; set; }
         public bool IsMachineSpecific => 0 < AdditionalInformation.Count;
 
+
+        public ApprovalsFilename ForApproved()
+        {
+            if (ApprovedStatus == "approved")
+            {
+                return this;
+            }
+
+            return new ApprovalsFilename
+            {
+                AdditionalInformation = AdditionalInformation,
+                ApprovedStatus = "approved",
+                ClassName = ClassName,
+                Directory = Directory,
+                Extension = Extension,
+                MethodName = MethodName
+            };
+        }
+
+        public bool IsEmptyFile()
+        {
+            return !File.Exists(GetFullPath) || 10 < new FileInfo(GetFullPath).Length;
+        }
+
+        public string GetFullPath
+        {
+            get
+            {
+                var additional = AdditionalInformation.Select(s => '.' + s).JoinWith("");
+                return $"{Directory}\\{ClassName}.{MethodName}{additional}.{ApprovedStatus}.{Extension}";
+            }
+        }
+
         public override string ToString()
         {
-            return $@"{nameof(Directory)}: {Directory}
+            return $@"{nameof(GetFullPath)}: {GetFullPath}
+{nameof(Directory)}: {Directory}
 {nameof(ClassName)}: {ClassName}
 {nameof(MethodName)}: {MethodName}
 {nameof(AdditionalInformation)}: {AdditionalInformation.ToReadableString()}
