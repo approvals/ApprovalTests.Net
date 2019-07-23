@@ -1,5 +1,6 @@
 ﻿using System;
 using ApprovalTests.Core;
+using ApprovalTests.Namers;
 using ApprovalTests.Reporters;
 using ApprovalTests.Reporters.ContinuousIntegration;
 using NUnit.Framework;
@@ -32,6 +33,20 @@ namespace ApprovalTests.Tests.Reporters
             VerifyReporterAttribute(attribute);
         }
 
+        [Test]
+        public void TestMachineSpecificName()
+        {
+            var approvalsFilename = ApprovalsFilename.Parse(@"C:\Users\olgica\Documents\GitHub\ApprovalTests.Net\ApprovalTests.Tests\Email\EmailTest.Testname.Microsoft_Windows_10_Education.approved.eml");
+            Approvals.Verify(approvalsFilename);
+            Assert.True(approvalsFilename.IsMachineSpecific);
+        }
+
+        [Test]
+        public void TestNonMachineSpecificName()
+        {
+            Approvals.Verify(ApprovalsFilename.Parse(@"C:\Users\olgica\Documents\GitHub\ApprovalTests.Net\ApprovalTests.Tests\Email\EmailTest.Testname.approved.eml"));
+        }
+
         private static void VerifyReporterAttribute(UseReporterAttribute attribute)
         {
             var reporter = (IEnvironmentAwareReporter) attribute.Reporter;
@@ -43,4 +58,6 @@ namespace ApprovalTests.Tests.Reporters
 {isWorkingException.Message}");
         }
     }
+
+
 }

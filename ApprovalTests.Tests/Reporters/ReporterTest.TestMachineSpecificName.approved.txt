@@ -1,0 +1,6 @@
+﻿Directory: C:\Users\olgica\Documents\GitHub\ApprovalTests.Net\ApprovalTests.Tests\Email
+ClassName: EmailTest
+MethodName: Testname
+AdditionalInformation: [Microsoft_Windows_10_Education]
+ApprovedStatus: approved
+Extension: eml
