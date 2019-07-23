@@ -1,0 +1,7 @@
+﻿GetFullPath: C:\Users\olgica\Documents\GitHub\ApprovalTests.Net\ApprovalTests.Tests\Email\EmailTest.Testname.approved.eml
+Directory: C:\Users\olgica\Documents\GitHub\ApprovalTests.Net\ApprovalTests.Tests\Email
+ClassName: EmailTest
+MethodName: Testname
+AdditionalInformation: []
+ApprovedStatus: approved
+Extension: eml

@@ -2,12 +2,14 @@
 using System.Linq;
 using System.Threading.Tasks;
 using ApprovalTests.Async;
+using ApprovalTests.Reporters;
 using ApprovalTests.Scrubber;
 using NUnit.Framework;
 
 namespace ApprovalTests.Tests.Async
 {
     [TestFixture]
+    [UseReporter(typeof(MachineSpecificReporter))]
     public class AsyncTests
     {
         [Test]

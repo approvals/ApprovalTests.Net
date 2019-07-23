@@ -1,10 +1,12 @@
 ﻿using System;
+using ApprovalTests.Reporters;
 using ApprovalUtilities.Utilities;
 using NUnit.Framework;
 
 namespace ApprovalTests.Tests
 {
     [TestFixture]
+    [UseReporter(typeof(MachineSpecificReporter))]
     public class ExceptionTests
     {
         [Test]
