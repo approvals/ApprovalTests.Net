@@ -1,0 +1,9 @@
+﻿
+
+EmailTest.Testname.Mac.approved.eml
+EmailTest.Testname.Microsoft_Windows_10_Education.approved.eml
+EmailTest.Testname.Microsoft_Windows_10_Home_N.approved.eml
+EmailTest.Testname.Microsoft_Windows_10_Pro.approved.eml
+EmailTest.Testname.Microsoft_Windows_Server_2016_Datacenter.approved.eml
+EmailTest.Testname.Windows_7.approved.eml
+EmailTest.Testname.Windows_8.approved.eml

@@ -82,6 +82,14 @@ namespace ApprovalTests.Namers
             }
         }
 
+
+        public List<FileInfo> GetOtherMachineSpecificFiles()
+        {
+            var search = $"{ClassName}.{MethodName}.*.approved.{Extension}";
+
+            return System.IO.Directory.GetFiles(Directory, search).Select(f => new FileInfo(f)).ToList();
+        }
+
         public override string ToString()
         {
             return $@"{nameof(GetFullPath)}: {GetFullPath}
@@ -91,11 +99,6 @@ namespace ApprovalTests.Namers
 {nameof(AdditionalInformation)}: {AdditionalInformation.ToReadableString()}
 {nameof(ApprovedStatus)}: {ApprovedStatus}
 { nameof(Extension)}: { Extension}";
-        }
-
-        public List<FileInfo> GetOtherMachineSpecificFiles()
-        {
-            throw new NotImplementedException();
         }
     }
 }

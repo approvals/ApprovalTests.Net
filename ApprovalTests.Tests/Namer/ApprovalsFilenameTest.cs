@@ -18,5 +18,13 @@ namespace ApprovalTests.Tests.Namer
         {
             Approvals.Verify(ApprovalsFilename.Parse(@"C:\Users\olgica\Documents\GitHub\ApprovalTests.Net\ApprovalTests.Tests\Email\EmailTest.Testname.approved.eml"));
         }
+
+        [Test]
+        public void TestSimilarFiles()
+        {
+            var approvalsFilename = ApprovalsFilename.Parse(@"C:\Users\olgica\Documents\GitHub\ApprovalTests.Net\ApprovalTests.Tests\Email\EmailTest.Testname.Microsoft_Windows_10_Education.approved.eml");
+            Approvals.VerifyAll("", approvalsFilename.GetOtherMachineSpecificFiles(), f => f.Name);
+        }
+
     }
 }
