@@ -92,5 +92,10 @@ namespace ApprovalTests.Namers
 {nameof(ApprovedStatus)}: {ApprovedStatus}
 { nameof(Extension)}: { Extension}";
         }
+
+        public List<FileInfo> GetOtherMachineSpecificFiles()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
