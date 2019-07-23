@@ -70,7 +70,7 @@ namespace ApprovalTests.Namers
 
         public bool IsEmptyFile()
         {
-            return !File.Exists(GetFullPath) || 10 < new FileInfo(GetFullPath).Length;
+            return !File.Exists(GetFullPath) || new FileInfo(GetFullPath).Length < 10;
         }
 
         public string GetFullPath
@@ -87,7 +87,7 @@ namespace ApprovalTests.Namers
         {
             var search = $"{ClassName}.{MethodName}.*.approved.{Extension}";
 
-            return System.IO.Directory.GetFiles(Directory, search).Select(f => new FileInfo(f)).ToList();
+            return System.IO.Directory.GetFiles(Directory, search).Where(f => f != GetFullPath).Select(f => new FileInfo(f)).ToList();
         }
 
         public override string ToString()
