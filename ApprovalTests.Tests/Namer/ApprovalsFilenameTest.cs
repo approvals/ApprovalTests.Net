@@ -1,4 +1,7 @@
-﻿using ApprovalTests.Namers;
+﻿using System;
+using System.IO;
+using ApprovalTests.Namers;
+using ApprovalUtilities.Utilities;
 using NUnit.Framework;
 
 namespace ApprovalTests.Tests.Namer
@@ -8,7 +11,7 @@ namespace ApprovalTests.Tests.Namer
         [Test]
         public void TestMachineSpecificName()
         {
-            var approvalsFilename = ApprovalsFilename.Parse(@"C:\Users\olgica\Documents\GitHub\ApprovalTests.Net\ApprovalTests.Tests\Email\EmailTest.Testname.Microsoft_Windows_10_Education.approved.eml");
+            var approvalsFilename = ApprovalsFilename.Parse(@"..\Email\EmailTest.Testname.Microsoft_Windows_10_Education.approved.eml");
             Approvals.Verify(approvalsFilename);
             Assert.True(approvalsFilename.IsMachineSpecific);
         }
@@ -16,15 +19,15 @@ namespace ApprovalTests.Tests.Namer
         [Test]
         public void TestNonMachineSpecificName()
         {
-            Approvals.Verify(ApprovalsFilename.Parse(@"C:\Users\olgica\Documents\GitHub\ApprovalTests.Net\ApprovalTests.Tests\Email\EmailTest.Testname.approved.eml"));
+            Approvals.Verify(ApprovalsFilename.Parse(@"..\Email\EmailTest.Testname.approved.eml"));
         }
 
         [Test]
         public void TestSimilarFiles()
         {
-            var approvalsFilename = ApprovalsFilename.Parse(@"C:\Users\olgica\Documents\GitHub\ApprovalTests.Net\ApprovalTests.Tests\Email\EmailTest.Testname.Microsoft_Windows_10_Education.approved.eml");
+            var file = PathUtilities.GetAdjacentFile(@"..\Email\EmailTest.Testname.Microsoft_Windows_10_Education.approved.eml");
+            var approvalsFilename = ApprovalsFilename.Parse(file);
             Approvals.VerifyAll("Like EmailTest.Testname.Microsoft_Windows_10_Education.approved.eml", approvalsFilename.GetOtherMachineSpecificFiles(), f => f.Name);
         }
-
     }
 }
