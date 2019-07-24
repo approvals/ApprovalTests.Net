@@ -4,6 +4,9 @@ using ApprovalTests.Scrubber;
 using ApprovalUtilities.Utilities;
 using NUnit.Framework;
 using System.Linq;
+using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Layout.Element;
 using Assert = NUnit.Framework.Assert;
 
 namespace ApprovalTests.Tests.Pdf
@@ -16,10 +19,21 @@ namespace ApprovalTests.Tests.Pdf
         [UseReporter(typeof(FileLauncherReporter), typeof(ClipboardReporter))]
         public void TestPdf()
         {
-            var pdfOriginal = PathUtilities.GetAdjacentFile("sample.pdf");
+
+//            var pdfOriginal = PathUtilities.GetAdjacentFile("sample.pdf");
             var pdf = PathUtilities.GetAdjacentFile("temp.pdf");
 
-            File.Copy(pdfOriginal, pdf, true);
+            using (var fileStream = File.Create(pdf))
+            using (var writer = new PdfWriter(fileStream))
+            using (var pdfDocument = new PdfDocument(writer))
+            {
+                pdfDocument.SetTagged();
+                var document = new Document(pdfDocument);
+                document.Add(new Paragraph("Test"));
+                document.Close();
+            }
+
+//            File.Copy(pdfOriginal, pdf, true);
             Approvals.VerifyPdfFile(pdf);
         }
 
