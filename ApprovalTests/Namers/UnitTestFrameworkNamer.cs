@@ -36,6 +36,7 @@ namespace ApprovalTests.Namers
             {
                 return string.Empty;
             }
+
             return Path.DirectorySeparatorChar + subdirectory;
         }
     }
