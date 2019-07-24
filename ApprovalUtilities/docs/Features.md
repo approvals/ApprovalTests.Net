@@ -8,9 +8,21 @@ To change this file edit the source file and then run MarkdownSnippets.
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Contents**
 
+- [Guard](#guard)
 - [Disposables.Create](#disposablescreate)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+## Guard
+
+Guards are convenient functions if incorrect values are passed in.
+
+<!-- snippet: guard_usage -->
+```cs
+Guard.AgainstNullAndEmpty(subdirectory, nameof(subdirectory));
+```
+<sup>[snippet source](/ApprovalTests/Namers/UseApprovalSubdirectoryAttribute.cs#L10-L12)</sup>
+<!-- endsnippet -->
+
 
 ## Disposables.Create
 
