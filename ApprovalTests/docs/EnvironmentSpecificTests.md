@@ -10,7 +10,6 @@ To change this file edit the source file and then run MarkdownSnippets.
 
 - [EnvironmentSpecificTest](#environmentspecifictest)
 - [MachineSpecificReporter](#machinespecificreporter)
-- [this makes it easier to understand how this system differs from the last system.](#this-makes-it-easier-to-understand-how-this-system-differs-from-the-last-system)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -70,7 +69,10 @@ This will always start with a line like
 ```
 Copied from: EmailTest.Testname.Microsoft_Windows_10_Pro.approved.eml
 ```
-this makes it easier to understand how this system differs from the last system.
+
+This makes it easier to understand how this system differs from the last system.
+
+
 ---
 
 [Back to User Guide](/doc/README.md#top)
