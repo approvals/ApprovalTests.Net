@@ -2,11 +2,13 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Contents**
 
+- [MachineSpecificReporter](#machinespecificreporter)
 - [ApprovalsFilename](#approvalsfilename)
 - [Making Custom Reporters](#making-custom-reporters)
 - [EnvironmentSpecificTest](#environmentspecifictest)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+## [MachineSpecificReporter](EnvironmentSpecificTest.md#machinespecificreporter)
 
 ## ApprovalsFilename
 Sometimes you want to parse an approvals filename to get the parts.
@@ -16,9 +18,9 @@ snippet: approvals_filename
 Will produce
 snippet: ApprovalsFilenameTest.TestMachineSpecificName.approved.txt
 
-## [Making Custom Reporters](Reporters.md)
+## [Making Custom Reporters](Reporters.md##making-custom-reporters)
 
-## [EnvironmentSpecificTest](EnvironmentSpecificTest.md)
+## [EnvironmentSpecificTest](EnvironmentSpecificTest.md#environmentspecifictest)
 
 ---
 
