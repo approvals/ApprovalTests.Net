@@ -1,6 +1,4 @@
-﻿using System;
-using System.IO;
-using ApprovalTests.Namers;
+﻿using ApprovalTests.Namers;
 using ApprovalUtilities.Utilities;
 using NUnit.Framework;
 
@@ -11,7 +9,9 @@ namespace ApprovalTests.Tests.Namer
         [Test]
         public void TestMachineSpecificName()
         {
+            // begin-snippet: approvals_filename
             var approvalsFilename = ApprovalsFilename.Parse(@"..\Email\EmailTest.Testname.Microsoft_Windows_10_Education.approved.eml");
+            // end-snippet
             Approvals.Verify(approvalsFilename);
             Assert.True(approvalsFilename.IsMachineSpecific);
         }
