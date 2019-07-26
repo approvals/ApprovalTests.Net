@@ -11,5 +11,15 @@ namespace ApprovalTests.Tests.Namer
         {
             Assert.AreEqual("Windows 7", ApprovalResults.TransformEasyOsName("Microsoft Windows 7 Professional N"));
         }
+        
+        public void SampleUniqueForOs()
+        {
+            // begin-snippet: unique_for_os
+            using (ApprovalResults.UniqueForOs())
+            {
+                Approvals.Verify("Data");
+            }
+            // end-snippet
+        }
     }
 }
