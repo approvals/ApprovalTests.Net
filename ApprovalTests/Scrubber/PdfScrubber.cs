@@ -12,24 +12,29 @@ namespace ApprovalTests.Scrubber
         public static void ScrubPdf(string pdfFilePath)
         {
             using (var fileStream = File.Open(pdfFilePath, FileMode.Open))
-            using (var writer = new StreamWriter(fileStream))
             {
                 var replacements = FindReplacements(fileStream);
-                foreach (var replacement in replacements)
-                {
-                    fileStream.Position = replacement.start;
-                    writer.Write(replacement.text, 0, replacement.text.Length);
-                    writer.Flush();
-                }
+                WriteReplacements(fileStream, replacements);
             }
         }
 
-        public static IEnumerable<(long start, string text)> FindReplacements(FileStream fileStream)
+        private static void WriteReplacements(FileStream fileStream, IEnumerable<(long start, string text)> replacements)
+        {
+            foreach (var replacement in replacements)
+            {
+                var text = Encoding.ASCII.GetBytes(replacement.text);
+                fileStream.Position = replacement.start;
+                fileStream.Write(text, 0, text.Length);
+                fileStream.Flush();
+            }
+        }
+
+        public static IEnumerable<(long, string)> FindReplacements(FileStream fileStream)
         {
             var readSize = 4096; // Number of bytes to read from the file at a time. This should exceed the max length of the patterns to search for.
             var buffer = new byte[readSize * 2]; // Buffer is twice as large as the read, to account for matches spanning two reads
             var bufferToPositionOffset = -buffer.Length; // Because we push into the buffer from right to left
-            var replacements = new List<(long start, string text)>();
+            var replacements = new List<(long, string)>();
 
             while (!(fileStream.Position >= fileStream.Length))
             {
@@ -52,15 +57,18 @@ namespace ApprovalTests.Scrubber
             return replacements.Distinct();
         }
 
-        public static IEnumerable<(long start, string replacement)> GetDateReplacements(string input, long positionOffset)
+        private static IEnumerable<(long, string)> GetDateReplacements(string input, long positionOffset)
         {
-            // var scrubbedDateTemplate = "20110426104115-07'00'";
-            var scrubbedDateTemplate = "19000101000000+00'00'";
+            // This would be a cleaner value, but would represent a breaking change because people might already be successfully approving with the old arbitrary valu
+            // var scrubbedDateTemplate = "19000101000000+00'00'";
+
+            var scrubbedDateTemplate = "20110426104115-07'00'";
+
             return FindDates(input).Select(pos => (positionOffset + pos.start,
                 scrubbedDateTemplate.Substring(0, pos.length)));
         }
 
-        public static IEnumerable<(long start, string replacement)> GetIdReplacements(string input, long positionOffset)
+        private static IEnumerable<(long, string)> GetIdReplacements(string input, long positionOffset)
         {
             return FindIds(input).Select(pos => (positionOffset + pos.start, new string('0', pos.length)));
         }
@@ -130,7 +138,7 @@ namespace ApprovalTests.Scrubber
                     .Select(group => (group.Index, group.Length));
             }
 
-            return new List<(int start, int end)>();
+            return new List<(int, int)>();
         }
     }
 }

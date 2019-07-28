@@ -17,7 +17,7 @@ namespace ApprovalTests.Tests.Pdf
     {
         [Test]
         [UseReporter(typeof(FileLauncherReporter), typeof(ClipboardReporter))]
-        public void TestNewPdf()
+        public void TestPdf_New()
         {
             var pdf = PathUtilities.GetAdjacentFile("temp.pdf");
 
@@ -31,17 +31,21 @@ namespace ApprovalTests.Tests.Pdf
                 document.Close();
             }
             Approvals.VerifyPdfFile(pdf);
+
+            File.Delete(pdf);
         }
 
         [Test]
         [UseReporter(typeof(FileLauncherReporter), typeof(ClipboardReporter))]
-        public void TestExistingPdf()
+        public void TestPdf_Sample()
         {
             var pdfOriginal = PathUtilities.GetAdjacentFile("sample.pdf");
-            var pdf = PathUtilities.GetAdjacentFile("temp2.pdf");
+            var pdf = PathUtilities.GetAdjacentFile("temp.pdf");
 
             File.Copy(pdfOriginal, pdf, true);
             Approvals.VerifyPdfFile(pdf);
+
+            File.Delete(pdf);
         }
 
         [TestCase("xxx(D:20191230235959+23'59')xxx")]
@@ -55,7 +59,7 @@ namespace ApprovalTests.Tests.Pdf
         [TestCase("xxx(D:20191231)xxx")]
         [TestCase("xxx(D:201912)xxx")]
         [TestCase("xxx(D:2019)xxx")]
-        public void TestPdfDate_Match(string input)
+        public void TestPdf_ScrubberDateMatch(string input)
         {
             var matchPositions = PdfScrubber.FindDates(input).ToList();
             Assert.IsNotEmpty(matchPositions);
@@ -76,28 +80,21 @@ namespace ApprovalTests.Tests.Pdf
         [TestCase("xxx(D:201)xxx")]
         [TestCase("xxx(D:20)xxx")]
         [TestCase("xxx(D:)xxx")]
-        public void TestPdfDate_NotMatch(string input)
+        public void TestPdf_ScrubberDateNotMatch(string input)
         {
             var matchPositions = PdfScrubber.FindDates(input);
             Assert.IsEmpty(matchPositions);
         }
 
-        [TestCase("xxx(D:2019)xxx(D:20191231)xxx")]
-        public void TestPdfDate_MultipleMatches(string input)
-        {
-            var matchPositions = PdfScrubber.FindDates(input);
-            Assert.AreEqual(2, matchPositions.Count());
-        }
-
         [Test]
-        public void TestPdfScrubber_FindAllDates()
+        public void TestPdf_ScrubberFindAllReplacementsInFile()
         {
             var pdf = PathUtilities.GetAdjacentFile("sample.pdf");
 
             using (var fileStream = File.OpenRead(pdf))
             {
                 var matches = PdfScrubber.FindReplacements(fileStream);
-                Assert.IsNotEmpty(matches);
+                Assert.AreEqual(3, matches.Count());
             }
         }
 
@@ -117,7 +114,7 @@ trailer
 startxref
 69143
 %%EOF")]
-        public void TestPdfScrubber_FindIds_Match(string input)
+        public void TestPdf_ScrubberIdsMatch(string input)
         {
             var matchPositions = PdfScrubber.FindIds(input).ToList();
             Assert.AreEqual(2, matchPositions.Count);
@@ -139,7 +136,7 @@ trailer
 startxref
 69143
 %%EOF")]
-        public void TestPdfScrubber_FindIds_NotMatch(string input)
+        public void TestPdf_ScrubberIdsNotMatch(string input)
         {
             var matchPositions = PdfScrubber.FindIds(input).ToList();
             Assert.AreEqual(0, matchPositions.Count);

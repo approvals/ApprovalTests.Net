@@ -6,7 +6,7 @@ bin/
 tmp/
 *.tmp
 *.bak
-
+temp.*
 
 #################
 ## Visual Studio
