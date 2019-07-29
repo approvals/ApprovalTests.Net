@@ -10,10 +10,10 @@ To change this file edit the source file and then run MarkdownSnippets.
 <!-- toc -->
 ## Contents
 
-  * [[MachineSpecificReporter](EnvironmentSpecificTests.md#machinespecificreporter)](#[machinespecificreporter](environmentspecifictests.md#machinespecificreporter))
+  * [MachineSpecificReporter](#machinespecificreporter)
   * [ApprovalsFilename](#approvalsfilename)
-  * [[Making Custom Reporters](Reporters.md##making-custom-reporters)](#[making-custom-reporters](reporters.md##making-custom-reporters))
-  * [[Enviroment SpecificTests](EnvironmentSpecificTests.md#environmentspecifictest)](#[enviroment-specifictests](environmentspecifictests.md#environmentspecifictest))
+  * [Making Custom Reporters](#making-custom-reporters)
+  * [Enviroment SpecificTests](#enviroment-specifictests)
 <!-- endtoc -->
 
 
