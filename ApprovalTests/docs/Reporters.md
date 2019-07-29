@@ -127,12 +127,12 @@ These classes help you combine reporters to make more powerful combinations
 These reporters create a commandline move file to approve the results and place it on your clipboard when a test fails.
 
 * ClipboardReporter - This test only
-* AllFailingTestsClipboardReporter - All tests (this might make a long command line )
+* AllFailingTestsClipboardReporter - All tests (this might make a long command line)
 
 
 ## Continous Intergration
 
-Approvaltests will not launch anything if you are running on a CI machine.
+ApprovalTests will not launch anything if you are running on a CI machine.
 
 Currently, we support:
 

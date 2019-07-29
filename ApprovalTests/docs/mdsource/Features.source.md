@@ -20,7 +20,7 @@ snippet: ApprovalsFilenameTest.TestMachineSpecificName.approved.txt
 ## [Making Custom Reporters](Reporters.md##making-custom-reporters)
 
 
-## [Enviroment SpecificTests](EnvironmentSpecificTests.md#environmentspecifictest)
+## [Environment SpecificTests](EnvironmentSpecificTests.md#environmentspecifictest)
 
 ---
 
