@@ -7,11 +7,11 @@ To change this file edit the source file and then run MarkdownSnippets.
 
 # ApprovalTests
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Build](https://travis-ci.com/approvals/ApprovalTests.Net.svg?branch=master)](https://travis-ci.com/approvals/ApprovalTests.Net) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![NuGet Status](http://img.shields.io/nuget/v/ApprovalTests.svg?style=flat)](https://www.nuget.org/packages/ApprovalTests/)
 
 Capturing Human Intelligence - ApprovalTests is an open source assertion/verification library to aid unit testing.
 
-It is compatible with most .Net unit testing frameworks (Nunit, MsTest, Xunit, MBUnit)
+It is compatible with most .Net unit testing frameworks (Nunit, MsTest, xUnit, MBUnit)
 
 <!-- toc -->
 ## Contents
