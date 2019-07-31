@@ -15,7 +15,7 @@ It is compatible with most .Net unit testing frameworks (Nunit, MsTest, Xunit, M
 ## Contents
 
   * [What can it be used for?](#what-can-it-be-used-for?)
-  * [[Video Tutorials](http://www.youtube.com/playlist?list=PL0C32F89E8BBB5368)](#[video-tutorials](http://www.youtube.com/playlist?list=pl0c32f89e8bbb5368))
+  * [Video Tutorials](#video-tutorials)
   * [Podcasts](#podcasts)
   * [Docs](#docs)
   * [Available on NuGet](#available-on-nuget)
