@@ -1,0 +1,7 @@
+﻿GetFullPath: ..\Email\EmailTest.Testname.Microsoft_Windows_10_Education.approved.eml
+Directory: ..\Email
+ClassName: EmailTest
+MethodName: Testname
+AdditionalInformation: [Microsoft_Windows_10_Education]
+ApprovedStatus: approved
+Extension: eml

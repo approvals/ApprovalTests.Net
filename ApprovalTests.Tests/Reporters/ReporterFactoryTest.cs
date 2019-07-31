@@ -17,7 +17,7 @@ namespace ApprovalTests.Tests.Reporters
             var reporters = GetSingletonReporterTypes();
             foreach (var r in reporters)
             {
-                Assert.IsInstanceOf(r, UseReporterAttribute.GetSingleton(r));
+                Assert.IsInstanceOf(r, UseReporterAttribute.GetSingleton(r), $"Please add\npublic static readonly {r.FullName} INSTANCE = new {r.FullName}();");
             }
         }
 

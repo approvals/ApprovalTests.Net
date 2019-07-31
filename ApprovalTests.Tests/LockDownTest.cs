@@ -36,6 +36,7 @@ namespace ApprovalTests.Tests
         }
 
         [Test]
+        [UseReporter(typeof(MachineSpecificReporter))]
         public void TestExceptions()
         {
             using (Namers.ApprovalResults.UniqueForOs())

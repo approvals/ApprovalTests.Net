@@ -17,12 +17,12 @@ namespace ApprovalTests.Xunit2.Namer
         public async Task AsyncTestApprovalName()
         {
             var name = new UnitTestFrameworkNamer().Name;
-            var path = new UnitTestFrameworkNamer().SourcePath;
+            var sourcePath = new UnitTestFrameworkNamer().SourcePath;
 
             await AnAsyncMethod();
 
             Assert.Equal("XunitStackTraceNamerTest.AsyncTestApprovalName", name);
-            Assert.True(File.Exists($@"{path}\XunitStackTraceNamerTest.cs"));
+            Assert.True(File.Exists($@"{sourcePath}\XunitStackTraceNamerTest.cs"));
         }
 
         [Fact]
