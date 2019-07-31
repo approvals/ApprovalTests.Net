@@ -1,5 +1,6 @@
 ﻿using ApprovalTests.Reporters;
 using ApprovalTests.Reporters.TestFrameworks;
+using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ApprovalTests.MSTest
@@ -14,8 +15,9 @@ namespace ApprovalTests.MSTest
             try
             {
                 Approvals.Verify("Hello");
+                Assert.Fail("Above verification should have thrown an AssertFailedException");
             }
-            catch (AssertFailedException e)
+            catch (Exception e)
             {
                 Assert.AreEqual("Assert.AreEqual failed. Expected:<World>. Actual:<Hello>. ", e.Message);
             }

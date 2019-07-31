@@ -8,7 +8,7 @@ namespace ApprovalTests.Reporters.TestFrameworks
         public readonly static MsTestReporter INSTANCE = new MsTestReporter();
 
         public MsTestReporter()
-            : base("Microsoft.VisualStudio.TestTools.UnitTesting.Assert, Microsoft.VisualStudio.QualityTools.UnitTestFramework", "AreEqual", VSStackTraceParser.Attribute)
+            : base("Microsoft.VisualStudio.TestTools.UnitTesting.Assert, Microsoft.VisualStudio.TestPlatform.TestFramework", "AreEqual", VSStackTraceParser.Attribute)
         {
         }
     }
