@@ -1,14 +1,4 @@
 :: ---------------------------------------------------
-:: Update tables of contents
-:: ---------------------------------------------------
-:: For info on doctoc, see https://github.com/thlorenz/doctoc
-
-:: To install:
-::   npm install -g doctoc
-
-call doctoc --title **Contents** .
-
-:: ---------------------------------------------------
 :: Update code examples
 :: ---------------------------------------------------
 :: For info on mdsnippets, see https://github.com/SimonCropp/MarkdownSnippets
@@ -20,7 +10,7 @@ call doctoc --title **Contents** .
 ::   dotnet tool update  -g MarkdownSnippets.Tool
 
 
-call dotnet tool update  -g MarkdownSnippets.Tool
+call dotnet tool update -g MarkdownSnippets.Tool
 
 call mdsnippets
 
