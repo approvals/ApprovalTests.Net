@@ -1,5 +1,7 @@
 # ApprovalTests
 
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
 Capturing Human Intelligence - ApprovalTests is an open source assertion/verification library to aid unit testing.
 
 It is compatible with most .Net unit testing frameworks (Nunit, MsTest, Xunit, MBUnit)
@@ -47,17 +49,8 @@ If you prefer auditory learning, you might enjoy the following podcast
 
 [Install-Package ApprovalTests](http://nuget.org/packages/ApprovalTests)
 
-Nightly (CI) Builds available at myget.org:
-
-[![ApprovalTests Nightly Build Status](https://www.myget.org/BuildSource/Badge/approvaltests?identifier=c56b6e36-ea68-4965-8cd8-e7033c66e38e "Build Status")](https://www.myget.org/gallery/approvaltests)
-
-[ApprovalTests on the MyGet Gallery](https://www.myget.org/gallery/approvaltests)
-Note: Select "Include Prerelease" instead of "Stable Only" (`-IncludePrerelease` in powershell)
-
 
 ## Examples
-
-[Sample Code](https://github.com/approvals/ApprovalTests.Net/tree/master/ApprovalDemos/GettingStartedDemos)
 
 ```c#
 [UseReporter(typeof(DiffReporter))]
@@ -97,13 +90,8 @@ Do not add `*.received.*` files to your source control (they are transitory, and
 
 ## More Info
 
- * [Website](http://approvaltests.sourceforge.net/)
- * [Blog](http://blog.approvaltests.com/)
- * [Getting Started Doc](https://github.com/approvals/ApprovalTests.Net/blob/master/build/Documentation/Approval%20Tests%20-%20Getting%20Started.pdf?raw=true)
-
-
-## LICENSE
-[Apache 2.0 License](https://github.com/SignalR/SignalR/blob/master/LICENSE.md)
+ * [Website](http://approvaltests.com/)
+ * [Blog](https://approvaltests.blogspot.com/)
 
 
 ## Questions?
