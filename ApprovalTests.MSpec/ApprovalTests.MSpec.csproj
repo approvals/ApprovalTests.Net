@@ -7,8 +7,8 @@
     <Optimize>false</Optimize>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Machine.Specifications" Version="0.*" />
-    <PackageReference Include="Machine.Specifications.Should" Version="0.*" />
+    <PackageReference Include="Machine.Specifications" Version="1.0.0" />
+    <PackageReference Include="Machine.Specifications.Should" Version="1.0.0" />
 
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
