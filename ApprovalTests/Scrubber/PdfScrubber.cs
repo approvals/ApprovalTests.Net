@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 
 namespace ApprovalTests.Scrubber
 {
-    public static class PdfScrubber
+    static class PdfScrubber
     {
         public static void ScrubPdf(string pdfFilePath)
         {
@@ -18,7 +18,13 @@ namespace ApprovalTests.Scrubber
             }
         }
 
-        static void WriteReplacements(FileStream fileStream, IEnumerable<(long start, string text)> replacements)
+        public class Replacement
+        {
+            public long start;
+            public string text;
+        }
+
+        static void WriteReplacements(FileStream fileStream, IEnumerable<Replacement> replacements)
         {
             foreach (var replacement in replacements)
             {
@@ -29,12 +35,15 @@ namespace ApprovalTests.Scrubber
             }
         }
 
-        public static IEnumerable<(long, string)> FindReplacements(FileStream fileStream)
+        public static IEnumerable<Replacement> FindReplacements(FileStream fileStream)
         {
-            var readSize = 4096; // Number of bytes to read from the file at a time. This should exceed the max length of the patterns to search for.
-            var buffer = new byte[readSize * 2]; // Buffer is twice as large as the read, to account for matches spanning two reads
-            var bufferToPositionOffset = -buffer.Length; // Because we push into the buffer from right to left
-            var replacements = new List<(long, string)>();
+            // Number of bytes to read from the file at a time. This should exceed the max length of the patterns to search for.
+            var readSize = 4096;
+            // Buffer is twice as large as the read, to account for matches spanning two reads
+            var buffer = new byte[readSize * 2];
+            // Because we push into the buffer from right to left
+            var bufferToPositionOffset = -buffer.Length;
+            var replacements = new List<Replacement>();
 
             while (!(fileStream.Position >= fileStream.Length))
             {
@@ -57,7 +66,7 @@ namespace ApprovalTests.Scrubber
             return replacements.Distinct();
         }
 
-        static IEnumerable<(long, string)> GetDateReplacements(string input, long positionOffset)
+        static IEnumerable<Replacement> GetDateReplacements(string input, long positionOffset)
         {
             // This would be a cleaner value, but would represent a breaking change because people might already be successfully approving with the old arbitrary valu
             // var scrubbedDateTemplate = "19000101000000+00'00'";
@@ -65,17 +74,20 @@ namespace ApprovalTests.Scrubber
             var scrubbedDateTemplate = "20110426104115-07'00'";
 
             return FindDates(input)
-                .Select(pos => (positionOffset + pos.start,
-                scrubbedDateTemplate.Substring(0, pos.length)));
+                .Select(pos => new Replacement
+                {
+                    start = positionOffset + pos.start,
+                    text = scrubbedDateTemplate.Substring(0, pos.length)
+                });
         }
 
-        static IEnumerable<(long, string)> GetIdReplacements(string input, long positionOffset)
+        static IEnumerable<Replacement> GetIdReplacements(string input, long positionOffset)
         {
             return FindIds(input)
-                .Select(pos => (positionOffset + pos.start, new string('0', pos.length)));
+                .Select(pos => new Replacement{start = positionOffset + pos.start,text = new string('0', pos.length)});
         }
 
-        public static IEnumerable<(int start, int length)> FindDates(string input)
+        public static IEnumerable<Id> FindDates(string input)
         {
             // PDF Date format is at least (D:YYYY), but can be as long as (D:YYYYMMDDHHmmSSOHH'mm'), where O can be Z, + or -. Chars after the O denote offset.
             // "Closely follow that of the international standard ASN.1 (Abstract Syntax Notation One), defined in ISO/IEC 8824."
@@ -101,10 +113,16 @@ namespace ApprovalTests.Scrubber
             var matches = regex.Matches(input);
             return matches
                 .OfType<Match>()
-                .Select(match => (match.Groups[1].Index, match.Groups[1].Length));
+                .Select(match => new Id{start = match.Groups[1].Index,length = match.Groups[1].Length});
         }
 
-        public static IEnumerable<(int start, int length)> FindIds(string input)
+        public class Id
+        {
+            public int start;
+            public int length;
+        }
+
+        public static IEnumerable<Id> FindIds(string input)
         {
             // File identifiers are defined by the optional /ID entry in a PDF file's trailer dictionary.
             // The spec calls for an array of two strings. Although it recommends using an md5 hash to generate them, it does not demand them.
@@ -139,10 +157,10 @@ namespace ApprovalTests.Scrubber
             {
                 return match.Groups.OfType<Group>()
                     .Skip(1) // Skip the first group which contains the entire match
-                    .Select(group => (group.Index, group.Length));
+                    .Select(group => new Id{start = group.Index, length = group.Length});
             }
 
-            return new List<(int, int)>();
+            return new List<Id>();
         }
     }
 }
