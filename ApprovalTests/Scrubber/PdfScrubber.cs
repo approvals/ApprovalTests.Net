@@ -18,7 +18,7 @@ namespace ApprovalTests.Scrubber
             }
         }
 
-        private static void WriteReplacements(FileStream fileStream, IEnumerable<(long start, string text)> replacements)
+        static void WriteReplacements(FileStream fileStream, IEnumerable<(long start, string text)> replacements)
         {
             foreach (var replacement in replacements)
             {
@@ -57,20 +57,22 @@ namespace ApprovalTests.Scrubber
             return replacements.Distinct();
         }
 
-        private static IEnumerable<(long, string)> GetDateReplacements(string input, long positionOffset)
+        static IEnumerable<(long, string)> GetDateReplacements(string input, long positionOffset)
         {
             // This would be a cleaner value, but would represent a breaking change because people might already be successfully approving with the old arbitrary valu
             // var scrubbedDateTemplate = "19000101000000+00'00'";
 
             var scrubbedDateTemplate = "20110426104115-07'00'";
 
-            return FindDates(input).Select(pos => (positionOffset + pos.start,
+            return FindDates(input)
+                .Select(pos => (positionOffset + pos.start,
                 scrubbedDateTemplate.Substring(0, pos.length)));
         }
 
-        private static IEnumerable<(long, string)> GetIdReplacements(string input, long positionOffset)
+        static IEnumerable<(long, string)> GetIdReplacements(string input, long positionOffset)
         {
-            return FindIds(input).Select(pos => (positionOffset + pos.start, new string('0', pos.length)));
+            return FindIds(input)
+                .Select(pos => (positionOffset + pos.start, new string('0', pos.length)));
         }
 
         public static IEnumerable<(int start, int length)> FindDates(string input)
@@ -97,7 +99,9 @@ namespace ApprovalTests.Scrubber
             ");
 
             var matches = regex.Matches(input);
-            return matches.OfType<Match>().Select(match => (match.Groups[1].Index, match.Groups[1].Length));
+            return matches
+                .OfType<Match>()
+                .Select(match => (match.Groups[1].Index, match.Groups[1].Length));
         }
 
         public static IEnumerable<(int start, int length)> FindIds(string input)

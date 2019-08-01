@@ -19,7 +19,7 @@ namespace ApprovalTests.Reporters
         public string GetFriendlyWelcomeMessage()
         {
             var message =
-                $@"Welcome to ApprovalTests.
+                @"Welcome to ApprovalTests.
 ====
 
 Please add:

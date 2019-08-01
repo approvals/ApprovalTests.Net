@@ -9,12 +9,14 @@ namespace ApprovalTests.Namers
     {
         public static ApprovalsFilename Parse(string fullFilepath)
         {
-            var info = new ApprovalsFilename();
-            info.Directory = Path.GetDirectoryName(fullFilepath);
+            var info = new ApprovalsFilename
+            {
+                Directory = Path.GetDirectoryName(fullFilepath)
+            };
             var parts = Path.GetFileName(fullFilepath).Split('.');
             info.ClassName = parts[0];
             info.MethodName = parts[1];
-            for (int i = 2; i < parts.Length; i++)
+            for (var i = 2; i < parts.Length; i++)
             {
                 if (i == parts.Length - 2)
                 {

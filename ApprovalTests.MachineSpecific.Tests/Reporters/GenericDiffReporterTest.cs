@@ -22,7 +22,7 @@ namespace ApprovalTests.MachineSpecific.Tests.Reporters
             using (ApprovalResults.UniqueForMachineName())
             {
                 var args = reporter.GetLaunchArguments(approved, received);
-                Approvals.VerifyWithCallback(args, s => StartProcess(s));
+                Approvals.VerifyWithCallback(args, StartProcess);
             }
         }
 

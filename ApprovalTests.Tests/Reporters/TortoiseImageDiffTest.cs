@@ -1,4 +1,3 @@
-using ApprovalTests.Reporters;
 using ApprovalTests.Reporters.Windows;
 using NUnit.Framework;
 
@@ -14,11 +13,12 @@ namespace ApprovalTests.Tests.Reporters
             {
                 return;
             }
+
             var files = new[]
-                            {
-                                "image.png", "image.gif", "image.jpg", "image.jpeg", "image.tif", "image.tiff",
-                                "movie.avi", "text.txt", "excel.xls"
-                            };
+            {
+                "image.png", "image.gif", "image.jpg", "image.jpeg", "image.tif", "image.tiff",
+                "movie.avi", "text.txt", "excel.xls"
+            };
             Approvals.VerifyAll(
                 files,
                 f => $"{f}  => {TortoiseImageDiffReporter.INSTANCE.IsWorkingInThisEnvironment(f)}");
