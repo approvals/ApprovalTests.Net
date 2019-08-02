@@ -63,7 +63,9 @@ namespace ApprovalTests.Scrubber
             }
 
             // De-dupe because some matches might occur in both the left and right sides of the buffer
-            return replacements.Distinct();
+            return replacements
+                .GroupBy(x=>x.start)
+                .Select(x=>x.First());
         }
 
         static IEnumerable<Replacement> GetDateReplacements(string input, long positionOffset)
