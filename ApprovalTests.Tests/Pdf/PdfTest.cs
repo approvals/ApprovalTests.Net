@@ -19,7 +19,7 @@ namespace ApprovalTests.Tests.Pdf
         [UseReporter(typeof(FileLauncherReporter), typeof(ClipboardReporter))]
         public void TestPdf_New()
         {
-            var pdf = PathUtilities.GetAdjacentFile("temp.pdf");
+            var pdf = PathUtilities.GetAdjacentFile("new_temp.pdf");
 
             using (var fileStream = File.Create(pdf))
             using (var writer = new PdfWriter(fileStream))
@@ -40,7 +40,7 @@ namespace ApprovalTests.Tests.Pdf
         public void TestPdf_Sample()
         {
             var pdfOriginal = PathUtilities.GetAdjacentFile("sample.pdf");
-            var pdf = PathUtilities.GetAdjacentFile("temp.pdf");
+            var pdf = PathUtilities.GetAdjacentFile("sample_temp.pdf");
 
             File.Copy(pdfOriginal, pdf, true);
             Approvals.VerifyPdfFile(pdf);

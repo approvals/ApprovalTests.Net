@@ -29,6 +29,7 @@
 *.tif  binary
 *.tiff binary
 *.snk  binary
+*.pdf  binary
 *.ttf  binary
 *.gif  binary
 *.bak  binary
