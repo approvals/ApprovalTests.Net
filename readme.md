@@ -16,7 +16,7 @@ It is compatible with most .Net unit testing frameworks (Nunit, MsTest, xUnit, M
 <!-- toc -->
 ## Contents
 
-  * [What can it be used for?](#what-can-it-be-used-for?)
+  * [What can it be used for?](#what-can-it-be-used-for)
   * [Video Tutorials](#video-tutorials)
   * [Podcasts](#podcasts)
   * [Docs](#docs)
@@ -24,7 +24,7 @@ It is compatible with most .Net unit testing frameworks (Nunit, MsTest, xUnit, M
   * [Examples](#examples)
   * [Approved File Artifacts](#approved-file-artifacts)
   * [More Info](#more-info)
-  * [Questions?](#questions?)
+  * [Questions?](#questions)
 <!-- endtoc -->
 
 
