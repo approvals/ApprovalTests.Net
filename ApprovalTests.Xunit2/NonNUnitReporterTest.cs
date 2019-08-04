@@ -1,13 +1,9 @@
 using ApprovalTests.Reporters.TestFrameworks;
+using ApprovalUtilities.Utilities;
+using Xunit;
 
 namespace ApprovalTests.Xunit2.Reporters
 {
-    using ApprovalTests.Reporters;
-
-    using ApprovalUtilities.Utilities;
-
-    using Xunit;
-
     public class NonNUnitReporterTest
     {
         [Fact]

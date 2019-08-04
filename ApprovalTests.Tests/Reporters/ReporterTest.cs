@@ -43,4 +43,6 @@ namespace ApprovalTests.Tests.Reporters
 {isWorkingException.Message}");
         }
     }
+
+
 }

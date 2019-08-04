@@ -19,16 +19,17 @@ namespace ApprovalTests.Namers
             return "Net_v" + Environment.Version;
         }
 
+#if (!NET461)
         public static IDisposable UniqueForRuntime(bool throwOnError = true)
         {
             return NamerFactory.AsEnvironmentSpecificTest(() => GetDotNetRuntime(throwOnError));
         }
-
         public static string GetDotNetRuntime(bool throwOnError)
         {
             var frameworkDescription = RuntimeInformation.FrameworkDescription;
             return GetDotNetRuntime(throwOnError, frameworkDescription);
         }
+#endif
 
         public static string GetDotNetRuntime(bool throwOnError, string frameworkDescription)
         {

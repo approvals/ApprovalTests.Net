@@ -17,6 +17,7 @@ namespace ApprovalTests.Tests.Reporters
         }
 
         [Test]
+        [UseReporter(typeof(MachineSpecificReporter))]
         public void TestMissingDots()
         {
             using (Namers.ApprovalResults.UniqueForOs())

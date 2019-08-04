@@ -1,4 +1,5 @@
 using System;
+using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.Namers
 {
@@ -6,9 +7,12 @@ namespace ApprovalTests.Namers
     {
         public UseApprovalSubdirectoryAttribute(string subdirectory)
         {
+            // begin-snippet: guard_usage
+            Guard.AgainstNullAndEmpty(subdirectory, nameof(subdirectory));
+            // end-snippet
             Subdirectory = subdirectory;
         }
 
-        public string Subdirectory { get; private set; }
+        public string Subdirectory { get; }
     }
 }

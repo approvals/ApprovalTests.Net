@@ -1,19 +1,10 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Contents**
+# Reporters
 
-- [Supported Diff Tools](#supported-diff-tools)
-  - [Windows](#windows)
-  - [Mac](#mac)
-  - [Linux](#linux)
-- [Making Custom Reporters](#making-custom-reporters)
-- [Joining Reporters](#joining-reporters)
-- [Auto-Approving Reporters](#auto-approving-reporters)
-- [Continous Intergration](#continous-intergration)
+toc
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Supported Diff Tools
+
 The DiffReporter class goes through a chain of possible reporters to find the first option installed on your system. Currently the search goes in this order:
 
 
@@ -21,9 +12,11 @@ The DiffReporter class goes through a chain of possible reporters to find the fi
 
 snippet: windows_diff_reporters
 
+
 ### Mac
 
 snippet: mac_diff_reporters
+
 
 ### Linux
 
@@ -40,26 +33,28 @@ If you have more details you might want to use the DiffInfo Class.
 
 snippet: custom_reporter_diff_info
 
-*note:* Please consider contrubing these back via pull request.
+*note:* Please consider contributing these back via pull request.
+
 
 ## Joining Reporters
 
 These classes help you combine reporters to make more powerful combinations
 
-* FirstWorkingReporter - launch the first report for this system, only 1 
-* MultiReporter - launch ALL reporters 
+* FirstWorkingReporter - launch the first report for this system, only 1
+* MultiReporter - launch ALL reporters
+
 
 ## Auto-Approving Reporters
 
 These reporters create a commandline move file to approve the results and place it on your clipboard when a test fails.
 
 * ClipboardReporter - This test only
-* AllFailingTestsClipboardReporter - All tests (this might make a long command line )
+* AllFailingTestsClipboardReporter - All tests (this might make a long command line)
 
 
 ## Continous Intergration
 
-Approvaltests will not launch anything if you are running on a CI machine.   
+ApprovalTests will not launch anything if you are running on a CI machine.
 
 Currently, we support:
 

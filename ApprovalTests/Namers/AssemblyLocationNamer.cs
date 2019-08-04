@@ -18,6 +18,6 @@ namespace ApprovalTests.Namers
             }
         }
 
-        public override string SourcePath => AssemblyDirectory + GetSubdirectory();
+        public override string SourcePath => Path.Combine(AssemblyDirectory, Subdirectory);
     }
 }
