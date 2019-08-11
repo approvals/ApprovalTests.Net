@@ -4,6 +4,9 @@ using NUnit.Framework;
 namespace ApprovalTests.Tests.Namer
 {
     [TestFixture]
+    // begin-snippet: use_MachineSpecificReporter
+    [UseReporter(typeof(MachineSpecificReporter))]
+    // end-snippet
     public class ApprovalResultsTest
     {
         [Test]
