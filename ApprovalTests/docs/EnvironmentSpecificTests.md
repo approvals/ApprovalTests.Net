@@ -45,17 +45,19 @@ If you are using a machine specific name in your approval tests
 for example:
 
 <!-- snippet: unique_for_os -->
+<a id='snippet-unique_for_os'/></a>
 ```cs
 using (ApprovalResults.UniqueForOs())
 {
     Approvals.Verify("Data");
 }
 ```
-<sup>[snippet source](/ApprovalTests.Tests/Namer/ApprovalResultsTest.cs#L17-L22)</sup>
+<sup>[snippet source](/ApprovalTests.Tests/Namer/ApprovalResultsTest.cs#L20-L25) / [anchor](#snippet-unique_for_os)</sup>
 <!-- endsnippet -->
 
 This can produce files such as:
 <!-- snippet: ApprovalsFilenameTest.TestSimilarFiles.approved.txt -->
+<a id='snippet-ApprovalsFilenameTest.TestSimilarFiles.approved.txt'/></a>
 ```txt
 Like EmailTest.Testname.Microsoft_Windows_10_Education.approved.eml
 
@@ -63,10 +65,19 @@ EmailTest.Testname.Microsoft_Windows_10_Home_N.approved.eml
 EmailTest.Testname.Microsoft_Windows_10_Pro.approved.eml
 EmailTest.Testname.Microsoft_Windows_Server_2016_Datacenter.approved.eml
 ```
-<sup>[snippet source](/ApprovalTests.Tests/Namer/ApprovalsFilenameTest.TestSimilarFiles.approved.txt#L1-L5)</sup>
+<sup>[snippet source](/ApprovalTests.Tests/Namer/ApprovalsFilenameTest.TestSimilarFiles.approved.txt#L1-L5) / [anchor](#snippet-ApprovalsFilenameTest.TestSimilarFiles.approved.txt)</sup>
 <!-- endsnippet -->
 
 If this is run on a new machine, it could produce a new approval file. This can be confusing as you might not remember what the old system used to produce.
+
+<!-- snippet: use_MachineSpecificReporter -->
+<a id='snippet-use_machinespecificreporter'/></a>
+```cs
+[UseReporter(typeof(MachineSpecificReporter))]
+```
+<sup>[snippet source](/ApprovalTests.Tests/Namer/ApprovalResultsTest.cs#L7-L9) / [anchor](#snippet-use_machinespecificreporter)</sup>
+<!-- endsnippet -->
+
 If you use a MachineSpecificReporter and the existing approval file does not exist (or is empty), it will search or the last approved version from a different machine and copy it over as a starting point. This will always start with a line:
 
 ```
