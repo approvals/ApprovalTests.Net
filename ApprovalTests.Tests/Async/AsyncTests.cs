@@ -5,6 +5,8 @@ using ApprovalTests.Async;
 using ApprovalTests.Reporters;
 using ApprovalTests.Scrubber;
 using NUnit.Framework;
+#pragma warning disable 162
+#pragma warning disable 1998
 
 namespace ApprovalTests.Tests.Async
 {
