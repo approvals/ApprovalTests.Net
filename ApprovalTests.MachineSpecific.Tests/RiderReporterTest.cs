@@ -1,4 +1,4 @@
-﻿using ApprovalTests.Reporters;
+﻿using ApprovalTests.Reporters.Windows;
 using NUnit.Framework;
 
 namespace ApprovalTests.MachineSpecific.Tests
@@ -7,6 +7,7 @@ namespace ApprovalTests.MachineSpecific.Tests
     public class RiderReporterTest
     {
         [Test]
+        [Ignore("Only works when rider is installed")]
         public void WhenLaunchedFromVisualStudioThenIsWorkingInThisEnvironmentForTextFiles()
         {
             var riderReporter = new RiderReporter();
