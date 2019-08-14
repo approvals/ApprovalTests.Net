@@ -52,7 +52,7 @@ using (ApprovalResults.UniqueForOs())
     Approvals.Verify("Data");
 }
 ```
-<sup>[snippet source](/ApprovalTests.Tests/Namer/ApprovalResultsTest.cs#L20-L25) / [anchor](#snippet-unique_for_os)</sup>
+<sup>[snippet source](/ApprovalTests.Tests/Namer/ApprovalResultsTest.cs#L21-L26) / [anchor](#snippet-unique_for_os)</sup>
 <!-- endsnippet -->
 
 This can produce files such as:
@@ -75,7 +75,7 @@ If this is run on a new machine, it could produce a new approval file. This can 
 ```cs
 [UseReporter(typeof(MachineSpecificReporter))]
 ```
-<sup>[snippet source](/ApprovalTests.Tests/Namer/ApprovalResultsTest.cs#L7-L9) / [anchor](#snippet-use_machinespecificreporter)</sup>
+<sup>[snippet source](/ApprovalTests.Tests/Namer/ApprovalResultsTest.cs#L8-L10) / [anchor](#snippet-use_machinespecificreporter)</sup>
 <!-- endsnippet -->
 
 If you use a MachineSpecificReporter and the existing approval file does not exist (or is empty), it will search or the last approved version from a different machine and copy it over as a starting point. This will always start with a line:
