@@ -37,6 +37,9 @@ This can produce files such as:
 snippet: ApprovalsFilenameTest.TestSimilarFiles.approved.txt
 
 If this is run on a new machine, it could produce a new approval file. This can be confusing as you might not remember what the old system used to produce.
+
+snippet: use_MachineSpecificReporter
+
 If you use a MachineSpecificReporter and the existing approval file does not exist (or is empty), it will search or the last approved version from a different machine and copy it over as a starting point. This will always start with a line:
 
 ```

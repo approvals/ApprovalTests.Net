@@ -26,15 +26,17 @@ To change this file edit the source file and then execute run_markdown.cmd.
 Sometimes you want to parse an approvals filename to get the parts.
 
 <!-- snippet: approvals_filename -->
+<a id='snippet-approvals_filename'/></a>
 ```cs
 var approvalsFilename = ApprovalsFilename.Parse(@"..\Email\EmailTest.Testname.Microsoft_Windows_10_Education.approved.eml");
 ```
-<sup>[snippet source](/ApprovalTests.Tests/Namer/ApprovalsFilenameTest.cs#L12-L14)</sup>
+<sup>[snippet source](/ApprovalTests.Tests/Namer/ApprovalsFilenameTest.cs#L12-L14) / [anchor](#snippet-approvals_filename)</sup>
 <!-- endsnippet -->
 
 Will produce
 
 <!-- snippet: ApprovalsFilenameTest.TestMachineSpecificName.approved.txt -->
+<a id='snippet-ApprovalsFilenameTest.TestMachineSpecificName.approved.txt'/></a>
 ```txt
 GetFullPath: ..\Email\EmailTest.Testname.Microsoft_Windows_10_Education.approved.eml
 Directory: ..\Email
@@ -44,7 +46,7 @@ AdditionalInformation: [Microsoft_Windows_10_Education]
 ApprovedStatus: approved
 Extension: eml
 ```
-<sup>[snippet source](/ApprovalTests.Tests/Namer/ApprovalsFilenameTest.TestMachineSpecificName.approved.txt#L1-L7)</sup>
+<sup>[snippet source](/ApprovalTests.Tests/Namer/ApprovalsFilenameTest.TestMachineSpecificName.approved.txt#L1-L7) / [anchor](#snippet-ApprovalsFilenameTest.TestMachineSpecificName.approved.txt)</sup>
 <!-- endsnippet -->
 
 
