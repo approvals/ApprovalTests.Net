@@ -18,6 +18,7 @@ namespace ApprovalTests.Reporters.Windows
                 WinMergeReporter.INSTANCE,
                 KDiffReporter.INSTANCE,
                 VisualStudioReporter.INSTANCE,
+                RiderReporter.INSTANCE,
                 FrameworkAssertReporter.INSTANCE,
                 QuietReporter.INSTANCE
                 // end-snippet
