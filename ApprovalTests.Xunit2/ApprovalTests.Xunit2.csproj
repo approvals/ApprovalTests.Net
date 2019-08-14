@@ -7,6 +7,8 @@
     <Optimize>false</Optimize>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Fody" Version="5.1.1" PrivateAssets="All" />
+    <PackageReference Include="ModuleInit.Fody" Version="2.0.0" PrivateAssets="All" />
     <PackageReference Include="xunit" Version="2.4.1" />
     <PackageReference Include="xunit.core" Version="2.4.1" />
     <PackageReference Include="xunit.abstractions" Version="2.0.3" />

@@ -12,7 +12,6 @@ using Assert = NUnit.Framework.Assert;
 namespace ApprovalTests.Tests.Pdf
 {
     [TestFixture]
-
     public class PdfTest
     {
         [Test]

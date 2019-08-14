@@ -7,6 +7,8 @@
     <Optimize>false</Optimize>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Fody" Version="5.1.1" PrivateAssets="All" />
+    <PackageReference Include="ModuleInit.Fody" Version="2.0.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
     <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
