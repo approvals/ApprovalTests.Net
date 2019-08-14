@@ -15,7 +15,7 @@ namespace ApprovalTests.Tests.Pdf
     public class PdfTest
     {
         [Test]
-        [UseReporter(typeof(FileLauncherReporter), typeof(ClipboardReporter))]
+        [UseReporter(typeof(ClipboardReporter))]
         public void TestPdf_New()
         {
             var pdf = PathUtilities.GetAdjacentFile("new_temp.pdf");
@@ -35,7 +35,7 @@ namespace ApprovalTests.Tests.Pdf
         }
 
         [Test]
-        [UseReporter(typeof(FileLauncherReporter), typeof(ClipboardReporter))]
+        [UseReporter(typeof(ClipboardReporter))]
         public void TestPdf_Sample()
         {
             var pdfOriginal = PathUtilities.GetAdjacentFile("sample.pdf");
