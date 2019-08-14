@@ -67,7 +67,7 @@ ApprovalTests is not detecting the proper source path
 This is probably because you're missing the following
 line in your .csproj file:
 	  <DebugType>full</DebugType>
-in the 
+in the
 <Project>
   <PropertyGroup>
 element.

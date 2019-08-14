@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using ApprovalTests.Core;
 using ApprovalTests.Namers.StackTraceParsers;
@@ -7,36 +8,30 @@ namespace ApprovalTests.Namers
     public class UnitTestFrameworkNamer : IApprovalNamer
     {
         private readonly StackTraceParser stackTraceParser;
-        private string subdirectory;
+        public string Subdirectory { get; }
 
         public UnitTestFrameworkNamer()
         {
             Approvals.SetCaller();
             stackTraceParser = new StackTraceParser();
             stackTraceParser.Parse(Approvals.CurrentCaller.StackTrace);
-            HandleSubdirectory();
+            Subdirectory = GetSubdirectoryFromAttribute();
         }
 
-        private void HandleSubdirectory()
+        private string GetSubdirectoryFromAttribute()
         {
             var subdirectoryAttribute = Approvals.CurrentCaller.GetFirstFrameForAttribute<UseApprovalSubdirectoryAttribute>();
-            if (subdirectoryAttribute != null)
-            {
-                subdirectory = subdirectoryAttribute.Subdirectory;
-            }
+            return subdirectoryAttribute == null ? string.Empty : subdirectoryAttribute.Subdirectory;
         }
 
         public string Name => stackTraceParser.ApprovalName;
 
-        public virtual string SourcePath => stackTraceParser.SourcePath + GetSubdirectory();
+        public virtual string SourcePath => Path.Combine(stackTraceParser.SourcePath, Subdirectory);
 
+        [Obsolete("Use Subdirectory")]
         public string GetSubdirectory()
         {
-            if (string.IsNullOrEmpty(subdirectory))
-            {
-                return string.Empty;
-            }
-            return Path.DirectorySeparatorChar + subdirectory;
+            return Subdirectory;
         }
     }
 }

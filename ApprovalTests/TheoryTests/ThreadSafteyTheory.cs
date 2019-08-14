@@ -12,7 +12,10 @@ namespace ApprovalTests.TheoryTests
         {
             var n1 = new ConcurrentBag<string>();
             var n2 = new ConcurrentBag<string>();
-            var count = Enumerable.Range(0, times).AsParallel().WithDegreeOfParallelism(16).Select(i =>
+            var count = Enumerable.Range(0, times)
+                .AsParallel()
+                .WithDegreeOfParallelism(16)
+                .Select(i =>
             {
                 var inputs = caseGenerator();
                 var text = caseString(inputs);

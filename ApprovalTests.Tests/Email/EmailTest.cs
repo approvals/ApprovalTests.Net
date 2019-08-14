@@ -1,12 +1,14 @@
 ﻿using System.Net.Mail;
 using ApprovalTests.Email;
 using ApprovalTests.Namers;
+using ApprovalTests.Reporters;
 using ApprovalUtilities.Utilities;
 using NUnit.Framework;
 
 namespace ApprovalTests.Tests.Email
 {
     [TestFixture]
+    [UseReporter(typeof(MachineSpecificReporter))]
     public class EmailTest
     {
         [Test]

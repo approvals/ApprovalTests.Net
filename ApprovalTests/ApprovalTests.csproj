@@ -1,9 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;</TargetFrameworks>
-    <AssemblyOriginatorKeyFile>$(SolutionDir)\ApprovalsKeyPair.snk</AssemblyOriginatorKeyFile>
-    <SignAssembly>true</SignAssembly>
+    <TargetFrameworks>net461;netstandard2.0</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -12,12 +10,16 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Fody" Version="4.0.2" PrivateAssets="All" />
+    <Compile Include="..\ApprovalUtilities\InternalsVisibleTo.cs" Link="InternalsVisibleTo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Fody" Version="5.1.1" PrivateAssets="All" />
     <PackageReference Include="Microsoft.Win32.Registry" Version="4.5.0" />
     <PackageReference Include="Publicize.Fody" Version="1.7.0" PrivateAssets="All" />
-    <PackageReference Include="System.Drawing.Common" Version="4.5.0" />
-    <PackageReference Include="Virtuosity.Fody" Version="1.21.3" PrivateAssets="All" />
-    <PackageReference Include="TextCopy" Version="1.5.1" />
+    <PackageReference Include="System.Drawing.Common" Version="4.5.1" />
+    <PackageReference Include="Virtuosity.Fody" Version="3.0.0" PrivateAssets="All" />
+    <PackageReference Include="TextCopy" Version="1.7.1" />
     <ProjectReference Include="..\ApprovalUtilities\ApprovalUtilities.csproj" />
+    <Content Include="build\ApprovalTests.props" PackagePath="build\ApprovalTests.props" />
   </ItemGroup>
 </Project>

@@ -1,4 +1,4 @@
-﻿using ApprovalTests.Reporters;
+﻿using ApprovalTests.Reporters.Windows;
 using NUnit.Framework;
 
 namespace ApprovalTests.MachineSpecific.Tests.Namer

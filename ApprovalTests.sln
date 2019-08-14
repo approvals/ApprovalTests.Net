@@ -4,12 +4,7 @@ VisualStudioVersion = 16.0.28606.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CC679657-AF36-470E-9976-BB00E6792F32}"
 	ProjectSection(SolutionItems) = preProject
-		ApprovalTests.build = ApprovalTests.build
-		ApprovalTests.vsmdi = ApprovalTests.vsmdi
-		ApprovalTests1.vsmdi = ApprovalTests1.vsmdi
 		Directory.Build.props = Directory.Build.props
-		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
-		MyGet.cmd = MyGet.cmd
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApprovalTests", "ApprovalTests\ApprovalTests.csproj", "{F70C9A76-F797-4167-8178-14821F8634BC}"

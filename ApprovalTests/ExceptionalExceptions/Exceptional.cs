@@ -6,7 +6,8 @@ namespace ApprovalTests.ExceptionalExceptions
 {
     public class Exceptional : Exception
     {
-        public static T Create<T>(string formattableMessage, params object[] messageParameters) where T : Exception
+        public static T Create<T>(string formattableMessage, params object[] messageParameters)
+            where T : Exception
         {
             return Create<T>(null, formattableMessage, messageParameters);
         }
@@ -25,7 +26,8 @@ namespace ApprovalTests.ExceptionalExceptions
         }
 
         public static T Create<T>(Func<string, Exception, T> constructor, Exception causedBy, string formattableMessage,
-            params object[] messageParameters) where T : Exception
+            params object[] messageParameters)
+            where T : Exception
         {
             var message = string.Format(formattableMessage, messageParameters);
             var uid = GenerateUniqueId<T>();

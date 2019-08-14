@@ -3,8 +3,10 @@
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
     <NoWarn>CS1591</NoWarn>
-    <Version>3.0.21</Version>
+    <Version>4.0.0</Version>
     <AssemblyVersion>3.0</AssemblyVersion>
+    <AssemblyOriginatorKeyFile>$(SolutionDir)\ApprovalsKeyPair.snk</AssemblyOriginatorKeyFile>
+    <SignAssembly>true</SignAssembly>
     <AssemblyInformationalVersion>$(Version)</AssemblyInformationalVersion>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <Authors>Llewellyn Falco &amp; Dan Gilkerson</Authors>

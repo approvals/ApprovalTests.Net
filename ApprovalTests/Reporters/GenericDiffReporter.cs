@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ApprovalTests.Core;
+using ApprovalTests.Reporters.TestFrameworks;
 using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.Reporters
@@ -24,6 +25,7 @@ namespace ApprovalTests.Reporters
         }
         private static readonly HashSet<string> TEXT_FILE_TYPES = new HashSet<string>
         {
+            // snippet: text_file_types
             ".txt",
             ".csv",
             ".htm",
@@ -33,11 +35,14 @@ namespace ApprovalTests.Reporters
             ".cs",
             ".css",
             ".sql",
-            ".json"
+            ".json",
+            ".dot"
+            // end-snippet
         };
 
         private static readonly HashSet<string> IMAGE_FILE_TYPES = new HashSet<string>
         {
+            // snippet: image_file_types
             ".png",
             ".gif",
             ".jpg",
@@ -45,6 +50,7 @@ namespace ApprovalTests.Reporters
             ".bmp",
             ".tif",
             ".tiff"
+            // end-snippet
         };
 
         protected string arguments;
@@ -85,7 +91,10 @@ namespace ApprovalTests.Reporters
                 throw new ArgumentException($"The following extensions don't start with dots: {wrong.ToReadableString()}");
             }
         }
-
+        public GenericDiffReporter(string diffProgram)
+            : this(diffProgram, DEFAULT_ARGUMENT_FORMAT, $"Couldn't find: {diffProgram}")
+        {
+        }
         public GenericDiffReporter(string diffProgram, string diffProgramNotFoundMessage)
             : this(diffProgram, DEFAULT_ARGUMENT_FORMAT, diffProgramNotFoundMessage)
         {

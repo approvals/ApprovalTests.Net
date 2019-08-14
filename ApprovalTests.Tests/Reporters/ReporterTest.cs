@@ -1,6 +1,7 @@
 ﻿using System;
 using ApprovalTests.Core;
 using ApprovalTests.Reporters;
+using ApprovalTests.Reporters.ContinuousIntegration;
 using NUnit.Framework;
 
 namespace ApprovalTests.Tests.Reporters
@@ -42,4 +43,6 @@ namespace ApprovalTests.Tests.Reporters
 {isWorkingException.Message}");
         }
     }
+
+
 }

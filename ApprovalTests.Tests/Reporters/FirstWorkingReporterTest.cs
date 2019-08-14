@@ -1,5 +1,6 @@
 using ApprovalTests.Core;
 using ApprovalTests.Reporters;
+using ApprovalTests.Reporters.Windows;
 using ApprovalUtilities.Utilities;
 using NUnit.Framework;
 

@@ -53,7 +53,7 @@ namespace ApprovalUtilities.Utilities
             }
 
             results.AddRange(FindProgramOnPath(toFind));
-            return results.ToArray();
+            return results.Distinct();
         }
 
         [EditorBrowsable(EditorBrowsableState.Never)]

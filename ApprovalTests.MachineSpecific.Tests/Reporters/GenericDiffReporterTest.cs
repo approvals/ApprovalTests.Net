@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using ApprovalTests.Namers;
 using ApprovalTests.Reporters;
+using ApprovalTests.Reporters.Windows;
 using NUnit.Framework;
 
 namespace ApprovalTests.MachineSpecific.Tests.Reporters
@@ -21,7 +22,7 @@ namespace ApprovalTests.MachineSpecific.Tests.Reporters
             using (ApprovalResults.UniqueForMachineName())
             {
                 var args = reporter.GetLaunchArguments(approved, received);
-                Approvals.VerifyWithCallback(args, s => StartProcess(s));
+                Approvals.VerifyWithCallback(args, StartProcess);
             }
         }
 

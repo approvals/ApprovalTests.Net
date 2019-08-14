@@ -2,6 +2,7 @@ using ApprovalTests.Reporters;
 using ApprovalUtilities.Utilities;
 using NUnit.Framework;
 using System.IO;
+using ApprovalTests.Reporters.Windows;
 
 namespace ApprovalTests.Tests.Reporters
 {
@@ -16,6 +17,7 @@ namespace ApprovalTests.Tests.Reporters
         }
 
         [Test]
+        [UseReporter(typeof(MachineSpecificReporter))]
         public void TestMissingDots()
         {
             using (Namers.ApprovalResults.UniqueForOs())

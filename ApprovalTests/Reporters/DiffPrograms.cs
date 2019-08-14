@@ -5,13 +5,13 @@ namespace ApprovalTests.Reporters
 {
     public class DiffPrograms
     {
-        private static Func<IEnumerable<string>> TEXT           = GenericDiffReporter.GetTextFileTypes;
-        private static Func<IEnumerable<string>> IMAGE          = GenericDiffReporter.GetImageFileTypes;
-        private static Func<IEnumerable<string>> TEXT_AND_IMAGE = GenericDiffReporter.GetTextAndImageFileTypes;
+        public static Func<IEnumerable<string>> TEXT           = GenericDiffReporter.GetTextFileTypes;
+        public static Func<IEnumerable<string>> IMAGE          = GenericDiffReporter.GetImageFileTypes;
+        public static Func<IEnumerable<string>> TEXT_AND_IMAGE = GenericDiffReporter.GetTextAndImageFileTypes;
         public static class Mac
         {
             public static DiffInfo DIFF_MERGE = new DiffInfo("/Applications/DiffMerge.app/Contents/MacOS/DiffMerge",
-                "{0} {1} --nosplash", TEXT);
+                "--nosplash {0} {1}", TEXT);
             public static DiffInfo BEYOND_COMPARE = new DiffInfo("/Applications/Beyond Compare.app/Contents/MacOS/bcomp",
                 TEXT);
             public static DiffInfo KALEIDOSCOPE = new DiffInfo("/Applications/Kaleidoscope.app/Contents/MacOS/ksdiff",
@@ -46,6 +46,13 @@ namespace ApprovalTests.Reporters
                 "{1} {0} {1} {1}", TEXT);
             public static DiffInfo P4MERGE_IMAGE = new DiffInfo("{ProgramFiles}Perforce\\p4merge.exe",
                 "{0} {1}", IMAGE);
+        }
+
+        public static class Linux
+        {
+            public static DiffInfo DIFF_MERGE = new DiffInfo("/usr/bin/diffmerge",
+                "--nosplash {0} {1}", TEXT);
+            public static DiffInfo MELD = new DiffInfo("/usr/bin/meld", TEXT);
         }
     }
 }
