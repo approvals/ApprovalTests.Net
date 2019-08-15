@@ -3,13 +3,13 @@
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
     <NoWarn>CS1591</NoWarn>
-    <Version>4.1.0</Version>
+    <Version>4.2.0</Version>
     <AssemblyVersion>3.0</AssemblyVersion>
     <AssemblyOriginatorKeyFile>$(SolutionDir)\ApprovalsKeyPair.snk</AssemblyOriginatorKeyFile>
     <SignAssembly>true</SignAssembly>
     <AssemblyInformationalVersion>$(Version)</AssemblyInformationalVersion>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <Authors>Llewellyn Falco &amp; Dan Gilkerson</Authors>
+    <Authors>Llewellyn Falco &amp; Dan Gilkerson &amp; Simon Cropp</Authors>
     <PackageLicense>Apache-2.0</PackageLicense>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Copyright>Copyright $([System.DateTime]::UtcNow.ToString(yyyy)) Llewellyn Falco &amp; Dan Gilkerson. All rights reserved</Copyright>
