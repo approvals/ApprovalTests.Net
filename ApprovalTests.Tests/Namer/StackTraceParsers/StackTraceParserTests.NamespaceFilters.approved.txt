@@ -1,0 +1,8 @@
+﻿Namespace is part of Approvals
+
+ApprovalTests.Tests.Namer.StackTraceParsers = True
+ = False
+ = False
+System = False
+ApprovalTests = True
+ApprovalUtilities.SimpleLogger = True

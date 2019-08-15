@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using ApprovalTests.Namers.StackTraceParsers;
+using ApprovalUtilities.SimpleLogger;
 using NUnit.Framework;
 
 namespace ApprovalTests.Tests.Namer.StackTraceParsers
@@ -10,6 +11,15 @@ namespace ApprovalTests.Tests.Namer.StackTraceParsers
     [TestFixture]
     public class StackTraceParserTests
     {
+        [Test]
+        public void NamespaceFilters()
+        {
+            var namespaces = new[] { GetType().Namespace, "", null, typeof(string).Namespace, typeof(Approvals).Namespace, typeof(Logger).Namespace};
+            Approvals.VerifyAll("Namespace is part of Approvals", namespaces, n => $"{n} = {AttributeStackTraceParser.IsNamespaceApprovals(n)}");
+        }
+
+
+
         [Test]
         public void Parse_UsingStaticInitialize_DontThrowInvalidOperationException()
         {

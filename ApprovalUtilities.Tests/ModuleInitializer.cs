@@ -4,6 +4,6 @@ public static class ModuleInitializer
 {
     public static void Initialize()
     {
-        AttributeStackTraceParser.ExcludeFileInfoFromApprovalTests = caller => true;
+        AttributeStackTraceParser.FileInfoIsValidFilter = caller => true;
     }
 }

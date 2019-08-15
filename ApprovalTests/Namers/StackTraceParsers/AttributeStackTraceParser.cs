@@ -62,19 +62,23 @@ namespace ApprovalTests.Namers.StackTraceParsers
 
         public string SourcePath => Path.GetDirectoryName(GetFileNameForStack(approvalFrame));
 
-        public static Func<Caller, bool> ExcludeFileInfoFromApprovalTests = x =>
+        public static Func<Caller, bool> FileInfoIsValidFilter = x =>
         {
             var classNamespace = x.Class.Namespace;
-            return
-                !classNamespace.StartsWith("ApprovalTests") &&
-                !classNamespace.StartsWith("ApprovalUtilities");
+            return !IsNamespaceApprovals(classNamespace);
         };
+
+        public static bool IsNamespaceApprovals(string classNamespace)
+        {
+            return classNamespace != null && 
+               ( classNamespace.StartsWith("ApprovalTests") ||
+                classNamespace.StartsWith("ApprovalUtilities"));
+        }
 
         string GetFileNameForStack(Caller frame)
         {
             return frame.Parents
-                .Where(x=> x.Class.Namespace != null)
-                .Where(ExcludeFileInfoFromApprovalTests)
+                .Where(FileInfoIsValidFilter)
                 .Select(c => c.StackFrame.GetFileName())
                 .FirstOrDefault(f => f != null);
         }

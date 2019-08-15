@@ -11,7 +11,7 @@ public class SetUpFixture
     [OneTimeSetUp]
     public void SetUp()
     {
-        AttributeStackTraceParser.ExcludeFileInfoFromApprovalTests = caller => true;
+        AttributeStackTraceParser.FileInfoIsValidFilter = caller => true;
         FixCurrentDirectory();
         var machinesToRun = new[] { "LLEWELLYN-PC", "LLEWELLYNWINDOW" };
 
