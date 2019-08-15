@@ -22,6 +22,11 @@ namespace ApprovalTests.Scrubber
         {
             public long start;
             public string text;
+
+            public override string ToString()
+            {
+                return $"{nameof(start)}: {start}, {nameof(text)}: {text}";
+            }
         }
 
         static void WriteReplacements(FileStream fileStream, IEnumerable<Replacement> replacements)
@@ -122,6 +127,11 @@ namespace ApprovalTests.Scrubber
         {
             public int start;
             public int length;
+
+            public override string ToString()
+            {
+                return $"{nameof(start)}: {start}, {nameof(length)}: {length}";
+            }
         }
 
         public static IEnumerable<Id> FindIds(string input)
