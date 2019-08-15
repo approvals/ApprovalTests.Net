@@ -95,6 +95,7 @@ startxref
         {
             var pdfOriginal = PathUtilities.GetAdjacentFile("sample.pdf");
             var pdf = PathUtilities.GetAdjacentFile("sample_temp.pdf");
+            File.Delete(pdf);
 
             File.Copy(pdfOriginal, pdf, true);
             Approvals.VerifyPdfFile(pdf);
