@@ -1,0 +1,13 @@
+﻿PDF Dates
+
+[start: 6, length: 4] For xxx(D:2019)xxx
+[start: 6, length: 6] For xxx(D:201912)xxx
+[start: 6, length: 8] For xxx(D:20191231)xxx
+[start: 6, length: 10] For xxx(D:2019123123)xxx
+[start: 6, length: 12] For xxx(D:201912312359)xxx
+[start: 6, length: 14] For xxx(D:20191231235959)xxx
+[start: 6, length: 15] For xxx(D:20191231235959+)xxx
+[start: 6, length: 17] For xxx(D:20191231235959+23)xxx
+[start: 6, length: 18] For xxx(D:20191231235959+23')xxx
+[start: 6, length: 20] For xxx(D:20191231235959+23'59)xxx
+[start: 6, length: 21] For xxx(D:20191230235959+23'59')xxx

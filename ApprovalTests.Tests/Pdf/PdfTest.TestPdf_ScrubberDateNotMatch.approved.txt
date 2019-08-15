@@ -1,0 +1,13 @@
+﻿Dates
+
+[] for xxx(D:)xxx
+[] for xxx(D:20)xxx
+[] for xxx(D:201)xxx
+[] for xxx(D:20191)xxx
+[] for xxx(D:2019123)xxx
+[] for xxx(D:201912312)xxx
+[] for xxx(D:20191231235)xxx
+[] for xxx(D:2019123123595)xxx
+[] for xxx(D:20191231235959+2)xxx
+[] for xxx(D:20191231235959+23'5)xxx
+[] for xxx(D:20191230235959+23'59'59)xxx
