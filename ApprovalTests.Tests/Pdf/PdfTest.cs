@@ -79,6 +79,7 @@ startxref
         }
 
         [Test]
+        [UseReporter(typeof(ClipboardReporter))]
         public void TestPdf_Replacements()
         {
             var pdfOriginal = PathUtilities.GetAdjacentFile("sample.pdf");
