@@ -6,8 +6,6 @@
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>Common helper classes developed with ApprovalTests</Description>
-    <DebugType>full</DebugType>
-    <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup Condition="$(TargetFramework) != 'net461'">
     <Compile Remove="**\*_desktop.cs" />

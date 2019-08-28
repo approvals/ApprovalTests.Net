@@ -10,18 +10,13 @@
     <AssemblyInformationalVersion>$(Version)</AssemblyInformationalVersion>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <Authors>Llewellyn Falco &amp; Dan Gilkerson &amp; Simon Cropp</Authors>
-    <PackageLicense>Apache-2.0</PackageLicense>
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <Copyright>Copyright $([System.DateTime]::UtcNow.ToString(yyyy)) Llewellyn Falco &amp; Dan Gilkerson. All rights reserved</Copyright>
     <PackageTags>Approvals ApprovalTests ApprovalTest Test Verification Verify Approve Testing</PackageTags>
     <PackageIconUrl>https://avatars3.githubusercontent.com/u/36907</PackageIconUrl>
     <PackageProjectUrl>https://github.com/approvals/ApprovalTests.Net</PackageProjectUrl>
     <PackageOutputPath>$(SolutionDir)nuget_packages</PackageOutputPath>
-    <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);IncludePDBsInPackage</TargetsForTfmSpecificContentInPackage>
+    <DebugType>embedded</DebugType>
+    <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
-  <Target Name="IncludePDBsInPackage">
-    <ItemGroup>
-      <TfmSpecificPackageFile Include="$(OutputPath)\$(AssemblyName).pdb" PackagePath="lib/$(TargetFramework)" />
-    </ItemGroup>
-  </Target>
 </Project>

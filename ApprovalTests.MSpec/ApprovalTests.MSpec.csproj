@@ -2,8 +2,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>net461</TargetFrameworks>
-    <DebugType>full</DebugType>
-    <DebugSymbols>true</DebugSymbols>
     <Optimize>false</Optimize>
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
