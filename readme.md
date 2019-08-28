@@ -7,7 +7,7 @@ To change this file edit the source file and then execute run_markdown.cmd.
 
 # ApprovalTests
 
-[![Build](https://travis-ci.com/approvals/ApprovalTests.Net.svg?branch=master)](https://travis-ci.com/approvals/ApprovalTests.Net) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![NuGet Status](http://img.shields.io/nuget/v/ApprovalTests.svg?style=flat)](https://www.nuget.org/packages/ApprovalTests/)
+[![Build status](https://ci.appveyor.com/api/projects/status/github/approvals/ApprovalTests.Net)](https://ci.appveyor.com/project/isidore/approvaltests-net/branch/master)[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![NuGet Status](http://img.shields.io/nuget/v/ApprovalTests.svg?style=flat)](https://www.nuget.org/packages/ApprovalTests/)
 
 Capturing Human Intelligence - ApprovalTests is an open source assertion/verification library to aid unit testing.
 
