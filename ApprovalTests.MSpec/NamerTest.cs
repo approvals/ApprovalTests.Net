@@ -8,6 +8,7 @@ namespace ApprovalTests.MSpec
     [UseReporter(typeof(DiffReporter))]
     public class NamerTest
     {
+
         private Establish start = () => { };
         private Because of = () => { };
 
