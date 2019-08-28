@@ -11,11 +11,11 @@
     <Compile Include="..\ApprovalUtilities\InternalsVisibleTo.cs" Link="InternalsVisibleTo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Fody" Version="5.2.0" PrivateAssets="all" />
+    <PackageReference Include="Fody" Version="6.0.0" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Win32.Registry" Version="4.5.0" />
-    <PackageReference Include="Publicize.Fody" Version="1.7.0" PrivateAssets="All" />
+    <PackageReference Include="Publicize.Fody" Version="1.8.0" PrivateAssets="All" />
     <PackageReference Include="System.Drawing.Common" Version="4.5.1" />
-    <PackageReference Include="Virtuosity.Fody" Version="3.0.0" PrivateAssets="All" />
+    <PackageReference Include="Virtuosity.Fody" Version="3.1.0" PrivateAssets="All" />
     <PackageReference Include="TextCopy" Version="1.7.1" />
     <ProjectReference Include="..\ApprovalUtilities\ApprovalUtilities.csproj" />
     <Content Include="build\ApprovalTests.props" PackagePath="build\ApprovalTests.props" />
