@@ -3,7 +3,7 @@
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
     <NoWarn>CS1591</NoWarn>
-    <Version>4.2.0</Version>
+    <Version>4.2.0-beta.1</Version>
     <AssemblyVersion>3.0</AssemblyVersion>
     <AssemblyOriginatorKeyFile>$(SolutionDir)\ApprovalsKeyPair.snk</AssemblyOriginatorKeyFile>
     <SignAssembly>true</SignAssembly>
@@ -16,7 +16,7 @@
     <PackageIconUrl>https://avatars3.githubusercontent.com/u/36907</PackageIconUrl>
     <PackageProjectUrl>https://github.com/approvals/ApprovalTests.Net</PackageProjectUrl>
     <PackageOutputPath>$(SolutionDir)nuget_packages</PackageOutputPath>
-    <DebugType>embedded</DebugType>
+    <DebugType>portable</DebugType>
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
 </Project>

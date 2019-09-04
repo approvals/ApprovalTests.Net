@@ -1,6 +1,6 @@
 ﻿<Project>
   <PropertyGroup>
-    <DebugType>embedded</DebugType>
+    <DebugType Condition="'$(DebugType)' == ''">portable</DebugType>
     <DebugSymbols>true</DebugSymbols>
     <Optimize>false</Optimize>
   </PropertyGroup>
