@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel;
+using System.Threading;
 
 namespace ApprovalTests.Namers
 {
@@ -7,12 +8,12 @@ namespace ApprovalTests.Namers
     {
         public static ApprovalResults ApprovalResults = new ApprovalResults();
 
-        [ThreadStatic] static string additionalInformation;
+        static AsyncLocal<string> additionalInformation = new AsyncLocal<string>();
 
         public static string AdditionalInformation
         {
-            get => additionalInformation;
-            set => additionalInformation = value;
+            get => additionalInformation.Value;
+            set => additionalInformation.Value = value;
         }
 
         [Obsolete("Use ApprovalResults.UniqueForMachineName instead.")]

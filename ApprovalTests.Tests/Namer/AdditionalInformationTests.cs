@@ -1,4 +1,5 @@
-﻿using ApprovalTests.Namers;
+﻿using System.Threading.Tasks;
+using ApprovalTests.Namers;
 using NUnit.Framework;
 
 namespace ApprovalTests.Tests.Namer
@@ -36,6 +37,17 @@ namespace ApprovalTests.Tests.Namer
             {
                 var name = Approvals.GetDefaultNamer().Name;
                 Assert.AreEqual("AdditionalInformationTests.WithScenarioData.ForScenario.scenarioname", name);
+            }
+        }
+
+        [Test]
+        public async Task WithScenarioDataAsync()
+        {
+            using (ApprovalResults.ForScenario("asyncScenario"))
+            {
+                await Task.Delay(10);
+                var name = Approvals.GetDefaultNamer().Name;
+                Assert.AreEqual("AdditionalInformationTests.WithScenarioDataAsync.ForScenario.asyncScenario", name);
             }
         }
 
