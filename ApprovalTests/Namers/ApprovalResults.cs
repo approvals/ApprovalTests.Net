@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices;
 using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.Namers
@@ -26,7 +25,7 @@ namespace ApprovalTests.Namers
         }
         public static string GetDotNetRuntime(bool throwOnError)
         {
-            var frameworkDescription = RuntimeInformation.FrameworkDescription;
+            var frameworkDescription = System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription;
             return GetDotNetRuntime(throwOnError, frameworkDescription);
         }
 #endif

@@ -30,6 +30,7 @@ namespace ApprovalTests.Tests.Reporters
             var ex = ExceptionUtilities.GetException(() => new ImageReporter().Report("received.notreal", "received.notreal"));
             Assert.AreEqual("ImageReporter Could not find a Reporter for file received.notreal", ex.Message);
         }
+
         [Test]
         public void TestCleanup()
         {
@@ -39,13 +40,15 @@ namespace ApprovalTests.Tests.Reporters
             r.CleanUp("a", "r");
             Assert.AreEqual("a", cleanup1.approved);
             Assert.AreEqual("a", cleanup2.approved);
+            Assert.AreEqual("r", cleanup1.received);
+            Assert.AreEqual("r", cleanup2.received);
         }
     }
 
     public class MockCleanup : IEnvironmentAwareReporter, IApprovalReporterWithCleanUp
     {
         public string approved;
-        private string received;
+        public string received;
 
         public void Report(string approved, string received)
         {
