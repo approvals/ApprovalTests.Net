@@ -1,13 +1,12 @@
 ﻿using System.Text;
 using ApprovalTests.Reporters;
-using ApprovalTests.Reporters.Windows;
 using ApprovalUtilities.Utilities;
 using NUnit.Framework;
 
 namespace ApprovalTests.Tests
 {
     [TestFixture]
-    [UseReporter(typeof(TortoiseDiffReporter), typeof(ClipboardReporter))]
+    [UseReporter(typeof(ClipboardReporter))]
     public class StringEncodingTest
     {
         [Test]
@@ -24,12 +23,14 @@ namespace ApprovalTests.Tests
             Approvals.Verify(text);
         }
 
+#if(NETFRAMEWORK)
         [Test]
         public void TestUnicode()
         {
             var text = Encoding.Default.GetString(new byte[] {101, 235, 110, 116});
             Approvals.Verify(text);
         }
+#endif
 
         [Test]
         public void TestDetectUtf8ByteOrderMark()

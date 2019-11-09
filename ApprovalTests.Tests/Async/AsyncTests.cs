@@ -14,6 +14,7 @@ namespace ApprovalTests.Tests.Async
     [UseReporter(typeof(MachineSpecificReporter))]
     public class AsyncTests
     {
+        #if(NETFRAMEWORK)
         [Test]
         public void TestAsyncExceptionFromVoid()
         {
@@ -26,6 +27,7 @@ namespace ApprovalTests.Tests.Async
                 );
             }
         }
+        #endif
 
         private static async Task<int> ThrowBabyThrow()
         {
