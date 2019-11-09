@@ -1,3 +1,4 @@
+using System;
 using ApprovalTests.Reporters;
 using NUnit.Framework;
 
@@ -9,7 +10,12 @@ namespace ApprovalTests.Tests.Reporters
         [Test]
         public void TestClassLevel()
         {
-            Assert.AreEqual(typeof(DiffReporter), Approvals.GetReporter().GetType());
+            using (Approvals.SetFrontLoadedReporter(ReportWithoutFrontLoading.INSTANCE))
+            {
+                Assert.AreEqual(typeof(DiffReporter), Approvals.GetReporter().GetType());
+            }
         }
+
+
     }
 }

@@ -82,7 +82,7 @@ namespace ApprovalTests
         private static IEnvironmentAwareReporter GetFrontLoadedReporterFromAttribute()
         {
             var frontLoaded = CurrentCaller.GetFirstFrameForAttribute<FrontLoadedReporterAttribute>();
-            return frontLoaded != null ? frontLoaded.Reporter : DefaultFrontLoaderReporter.INSTANCE;
+            return frontLoaded != null ? frontLoaded.Reporter : FrontLoadedReporterDisposer.Default;
         }
 
         private static IApprovalFailureReporter GetFrontLoadedReporter(IApprovalFailureReporter defaultIfNotFound,
@@ -273,6 +273,11 @@ namespace ApprovalTests
         {
             PdfScrubber.ScrubPdf(pdfFilePath);
             Verify(new ExistingFileWriter(pdfFilePath));
+        }
+
+        public static IDisposable SetFrontLoadedReporter(IEnvironmentAwareReporter reporter)
+        {
+            return new FrontLoadedReporterDisposer(reporter);
         }
     }
 }
