@@ -8,7 +8,7 @@ namespace ApprovalTests.Tests.Persistence
     public class AsyncSaverTest
     {
         [Test]
-        public void TestAnsyncWrapperSave()
+        public void TestAsyncWrapperSave()
         {
             using var f = new TempFile("stuff");
             var s = new FileSaver(f.File);
@@ -16,7 +16,7 @@ namespace ApprovalTests.Tests.Persistence
         }
 
         [Test]
-        public void TestTrueAnsyncSave()
+        public void TestTrueAsyncSave()
         {
             using var f = new TempFile("stuff");
             var s = new FileAsyncSaver(f.File);
@@ -24,7 +24,7 @@ namespace ApprovalTests.Tests.Persistence
         }
 
         [Test]
-        public void TestNonAnsyncWrapper()
+        public void TestNonAsyncWrapper()
         {
             using var f = new TempFile("stuff");
             var s = new FileAsyncSaver(f.File);

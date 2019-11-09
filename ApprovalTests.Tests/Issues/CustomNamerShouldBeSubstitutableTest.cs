@@ -17,9 +17,9 @@ namespace ApprovalTests.Tests.CustomImplementation
         [Test]
         public void CustomNamerShouldNotDependOnSetCallerTest()
         {
-            var approvaltext = "CustomNamerShouldBeSubstitutable";
+            var approvalText = "CustomNamerShouldBeSubstitutable";
 
-            var writer = WriterFactory.CreateTextWriter(approvaltext);
+            var writer = WriterFactory.CreateTextWriter(approvalText);
             var namer = new CustomNamer();
             var reporter = new MethodLevelReporter();
 
