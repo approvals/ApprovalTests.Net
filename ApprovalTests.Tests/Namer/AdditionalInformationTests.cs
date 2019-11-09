@@ -33,10 +33,10 @@ namespace ApprovalTests.Tests.Namer
         [Test]
         public void WithScenarioData()
         {
-            using (ApprovalResults.ForScenario("scenarioname"))
+            using (ApprovalResults.ForScenario("ScenarioName"))
             {
                 var name = Approvals.GetDefaultNamer().Name;
-                Assert.AreEqual("AdditionalInformationTests.WithScenarioData.ForScenario.scenarioname", name);
+                Assert.AreEqual("AdditionalInformationTests.WithScenarioData.ForScenario.ScenarioName", name);
             }
         }
 

@@ -1,4 +1,4 @@
-#pragma warning disable CS0169  
+#pragma warning disable CS0169
 
 using System;
 using System.Linq;
@@ -34,7 +34,7 @@ namespace ApprovalUtilities.Tests.Reflection
 
             Assert.Empty(checkBox.GetEventHandlerListEvents());
         }
-            
+
         public class TargetPoco : TargetPocoBase
         {
             public string PublicInstanceField;
