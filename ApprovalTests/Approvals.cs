@@ -215,7 +215,7 @@ namespace ApprovalTests
 
         public static void VerifyAll<K, V>(IDictionary<K, V> dictionary)
         {
-            dictionary = dictionary ?? new Dictionary<K, V>();
+            dictionary ??= new Dictionary<K, V>();
             VerifyAll(dictionary.OrderBy(p => p.Key), p => $"{p.Key} => {p.Value}");
         }
 
