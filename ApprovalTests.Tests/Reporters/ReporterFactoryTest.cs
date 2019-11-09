@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using ApprovalTests.Core;
 using ApprovalTests.Reporters;
 using NUnit.Framework;
-using System.Linq;
 
 namespace ApprovalTests.Tests.Reporters
 {
@@ -11,16 +11,6 @@ namespace ApprovalTests.Tests.Reporters
     [UseReporter(typeof(ClassLevelReporter))]
     public class ReporterFactoryTest
     {
-        [Test]
-        public void TestSingletonOnAllReporters()
-        {
-            var reporters = GetSingletonReporterTypes();
-            foreach (var r in reporters)
-            {
-                Assert.IsInstanceOf(r, UseReporterAttribute.GetSingleton(r), $"Please add\npublic static readonly {r.FullName} INSTANCE = new {r.FullName}();");
-            }
-        }
-
         private static IEnumerable<Type> GetSingletonReporterTypes()
         {
             var types = typeof(UseReporterAttribute).Assembly.GetTypes();
@@ -29,36 +19,58 @@ namespace ApprovalTests.Tests.Reporters
             return singletons;
         }
 
+        private void SubMethod()
+        {
+            Assert.AreEqual(typeof(MethodLevelReporter), Approvals.GetReporter().GetType());
+        }
+
         [Test]
         public void TestClassLevel()
         {
-            Assert.AreEqual(typeof(ClassLevelReporter), Approvals.GetReporter().GetType());
+            using (Approvals.SetFrontLoadedReporter(ReportWithoutFrontLoading.INSTANCE))
+            {
+                Assert.AreEqual(typeof(ClassLevelReporter), Approvals.GetReporter().GetType());
+            }
         }
 
         [Test]
         [UseReporter(typeof(MethodLevelReporter))]
         public void TestMethodOverride()
         {
-            Assert.AreEqual(typeof(MethodLevelReporter), Approvals.GetReporter().GetType());
-        }
-
-        [Test]
-        [UseReporter(typeof(MethodLevelReporter), typeof(ClassLevelReporter))]
-        public void TestMultipleReporters()
-        {
-            Assert.AreEqual(typeof(MultiReporter), Approvals.GetReporter().GetType());
+            using (Approvals.SetFrontLoadedReporter(ReportWithoutFrontLoading.INSTANCE))
+            {
+                Assert.AreEqual(typeof(MethodLevelReporter), Approvals.GetReporter().GetType());
+            }
         }
 
         [Test]
         [UseReporter(typeof(MethodLevelReporter))]
         public void TestMethodOverrideWithSubMethod()
         {
-            SubMethod();
+            using (Approvals.SetFrontLoadedReporter(ReportWithoutFrontLoading.INSTANCE))
+            {
+                SubMethod();
+            }
         }
 
-        private void SubMethod()
+        [Test]
+        [UseReporter(typeof(MethodLevelReporter), typeof(ClassLevelReporter))]
+        public void TestMultipleReporters()
         {
-            Assert.AreEqual(typeof(MethodLevelReporter), Approvals.GetReporter().GetType());
+            using (Approvals.SetFrontLoadedReporter(ReportWithoutFrontLoading.INSTANCE))
+            {
+                Assert.AreEqual(typeof(MultiReporter), Approvals.GetReporter().GetType());
+            }
+        }
+
+        [Test]
+        public void TestSingletonOnAllReporters()
+        {
+            using (Approvals.SetFrontLoadedReporter(ReportWithoutFrontLoading.INSTANCE))
+            {
+                var reporters = GetSingletonReporterTypes();
+                foreach (var r in reporters) Assert.IsInstanceOf(r, UseReporterAttribute.GetSingleton(r), $"Please add\npublic static readonly {r.FullName} INSTANCE = new {r.FullName}();");
+            }
         }
     }
 
