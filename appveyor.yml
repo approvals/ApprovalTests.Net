@@ -1,7 +1,10 @@
 image: Visual Studio 2019
 skip_commits:
   message: /d */
-before_build:
-  - nuget restore
+build_script:
+- ps: >-
+    dotnet build src --configuration Release
+
+    dotnet test src --configuration Release --no-build --no-restore
 artifacts:
 - path: nuget_packages\*.nupkg
