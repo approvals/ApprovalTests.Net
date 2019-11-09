@@ -15,6 +15,7 @@ namespace ApprovalTests.Tests.Async
     public class AsyncTests
     {
         [Test]
+        [Ignore("TODO")]
         public void TestAsyncExceptionFromVoid()
         {
             using (Namers.ApprovalResults.UniqueForOs())
