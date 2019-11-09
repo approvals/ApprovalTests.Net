@@ -2,6 +2,6 @@ image: Visual Studio 2019
 before_build:
   - nuget restore
 build:
-  - verbosity: minimal
+  verbosity: minimal
 artifacts:
   - path: nuget_packages\*.nupkg
