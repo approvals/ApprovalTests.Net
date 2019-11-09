@@ -47,7 +47,7 @@ namespace ApprovalUtilities.Persistence.Database
             }
             catch (Exception ex)
             {
-                return ExceptionUtilities.FormatExeption(ex);
+                return ExceptionUtilities.FormatException(ex);
             }
         }
 

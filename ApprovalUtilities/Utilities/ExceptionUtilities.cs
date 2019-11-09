@@ -5,7 +5,15 @@ namespace ApprovalUtilities.Utilities
 {
     public static class ExceptionUtilities
     {
+        [ObsoleteEx(
+            RemoveInVersion = "5.0",
+            ReplacementTypeOrMember = nameof(FormatException))]
         public static string FormatExeption(Exception exception, params string[] additional)
+        {
+            return FormatException(exception, additional);
+        }
+
+        public static string FormatException(Exception exception, params string[] additional)
         {
             return string.Join("\n", GetExceptionLines(exception, additional));
         }

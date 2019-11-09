@@ -9,7 +9,7 @@ namespace ApprovalUtilities.Tests.Utilities
         [Fact]
         public void TestGetException()
         {
-            AssertException<NotFiniteNumberException>(() => { throw new NotFiniteNumberException(); });
+            AssertException<NotFiniteNumberException>(() => throw new NotFiniteNumberException());
         }
 
         private static void AssertException<T>(Action action) where T : Exception
