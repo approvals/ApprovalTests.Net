@@ -8,4 +8,4 @@ Mechanic => Kaylee
 Muscle => Jayne
 Pastor => Book
 Pilot => Wash
-Stoaway => River
+Stowaway => River

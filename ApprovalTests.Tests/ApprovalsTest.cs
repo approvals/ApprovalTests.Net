@@ -109,7 +109,7 @@ namespace ApprovalTests.Tests
                 {"Mechanic", "Kaylee"},
                 {"Doctor", "Simon"},
                 {"Pastor", "Book"},
-                {"Stoaway", "River"}
+                {"Stowaway", "River"}
             };
         }
 
