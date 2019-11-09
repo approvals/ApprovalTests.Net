@@ -1,5 +1,4 @@
-﻿using ApprovalUtilities.Obsolete;
-using ApprovalUtilities.Persistence;
+﻿using ApprovalUtilities.Persistence;
 using ApprovalUtilities.Persistence.Database;
 
 namespace ApprovalTests.Persistence

@@ -15,7 +15,7 @@ namespace ApprovalTests.Reporters.ContinuousIntegration
 
         public void Report(string approved, string received)
         {
-            ContinousDeliveryUtils.ReportOnServer(approved, received);
+            ContinuousDeliveryUtils.ReportOnServer(approved, received);
         }
 
         private static string GetParentProcessName()
