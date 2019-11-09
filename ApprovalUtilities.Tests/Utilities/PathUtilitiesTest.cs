@@ -10,9 +10,10 @@ namespace ApprovalUtilities.Tests.Utilities
         [Fact]
         public void ScrubPathTest()
         {
-            var dir = PathUtilities.GetDirectoryForCaller();
-            var file = dir + "PathUtilitiesTest.cs";
-            AssertEqualIgnoreCase(@"...\PathUtilitiesTest.cs", file.ScrubPath(dir));
+            Assert.Null(PathUtilities.ScrubPath(null, ""));
+
+            var file = @"C:\TheDir\PathUtilitiesTest.cs";
+            AssertEqualIgnoreCase(@"...\PathUtilitiesTest.cs", file.ScrubPath(@"C:\TheDir\"));
         }
 
         [Fact]

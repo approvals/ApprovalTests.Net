@@ -28,7 +28,7 @@ namespace ApprovalUtilities.Utilities
 
         public static string ScrubPath(this string text, string path)
         {
-            return text == null ? null : text.Replace(path, "..." + Path.DirectorySeparatorChar);
+            return text?.Replace(path, $"...{Path.DirectorySeparatorChar}");
         }
 
         public static string GetAdjacentFile(string relativePath)
