@@ -9,7 +9,7 @@
   <ItemGroup>
     <PackageReference Include="Fody" Version="6.0.0" PrivateAssets="all" />
     <PackageReference Include="ModuleInit.Fody" Version="2.1.0" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0" />
     <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
     <ProjectReference Include="..\ApprovalUtilities\ApprovalUtilities.csproj" />
