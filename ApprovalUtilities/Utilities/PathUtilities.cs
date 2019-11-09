@@ -14,7 +14,6 @@ namespace ApprovalUtilities.Utilities
             return GetDirectoryForCaller(1);
         }
 
-
         public static string GetDirectoryForCaller(int callerStackDepth)
         {
             var stackFrame = new StackTrace(true).GetFrame(callerStackDepth + 1);
