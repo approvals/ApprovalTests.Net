@@ -1,4 +1,3 @@
-using System;
 using ApprovalTests.Reporters;
 using NUnit.Framework;
 

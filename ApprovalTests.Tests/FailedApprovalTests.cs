@@ -1,6 +1,8 @@
-﻿using ApprovalTests.Core.Exceptions;
+﻿using System;
+using ApprovalTests.Core.Exceptions;
 using ApprovalTests.Reporters;
 using NUnit.Framework;
+using NUnit.Framework.Internal;
 
 namespace ApprovalTests.Tests
 {
@@ -8,31 +10,39 @@ namespace ApprovalTests.Tests
     [UseReporter(typeof(CleanupReporter))]
     public class FailedApprovalTests
     {
+        private void AssertThrows<T>(TestDelegate code) where T : Exception
+        {
+            using (Approvals.SetFrontLoadedReporter(ReportWithoutFrontLoading.INSTANCE))
+            {
+                Assert.Throws<T>(code);
+            }
+        }
+
         [Test]
         public void EnumerableDoesNotMatchApproval()
         {
-            Assert.Throws<ApprovalMismatchException>(() =>
+            AssertThrows<ApprovalMismatchException>(() =>
                 Approvals.VerifyAll(new[] {"Does not match"}, "collection"));
         }
 
         [Test]
         public void EnumerableNotApprovedYet()
         {
-            Assert.Throws<ApprovalMissingException>(() =>
+            AssertThrows<ApprovalMissingException>(() =>
                 Approvals.VerifyAll(new[] {"Not approved"}, "collection"));
         }
 
         [Test]
         public void TextDoesNotMatchApproval()
         {
-            Assert.Throws<ApprovalMismatchException>(() =>
+            AssertThrows<ApprovalMismatchException>(() =>
                 Approvals.Verify("should fail with mismatch"));
         }
 
         [Test]
         public void TextNotApprovedYet()
         {
-            Assert.Throws<ApprovalMissingException>(() =>
+            AssertThrows<ApprovalMissingException>(() =>
                 Approvals.Verify("should fail with a missing exception"));
         }
     }
