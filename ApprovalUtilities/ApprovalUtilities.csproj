@@ -13,6 +13,7 @@
   <ItemGroup>
     <PackageReference Include="Fody" Version="6.0.4" PrivateAssets="all" />
     <PackageReference Include="Publicize.Fody" Version="1.8.0" PrivateAssets="All" />
+    <PackageReference Include="Obsolete.Fody" Version="5.1.0"  PrivateAssets="all" />
     <PackageReference Include="System.Management" Version="4.6.0" />
     <PackageReference Include="Virtuosity.Fody" Version="3.1.0" PrivateAssets="All" />
     <PackageReference Include="System.Data.SqlClient" Version="4.7.0" />

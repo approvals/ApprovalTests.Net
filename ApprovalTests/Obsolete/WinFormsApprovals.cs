@@ -1,13 +1,16 @@
-﻿using System;
-
-namespace ApprovalTests.Obsolete
+﻿namespace ApprovalTests.Obsolete
 {
-    [Obsolete(ObsoleteError, true)]
+    [ObsoleteEx(
+        RemoveInVersion = "5.0",
+        Message = ObsoleteError)]
     public class WinFormsApprovals
     {
         internal const string ObsoleteError = "This class has been moved to the ApprovalTests.WinForms NuGet package (https://www.nuget.org/packages/ApprovalTests.WinForms)";
     }
-    [Obsolete(WinFormsApprovals.ObsoleteError, true)]
+
+    [ObsoleteEx(
+        RemoveInVersion = "5.0",
+        Message = WinFormsApprovals.ObsoleteError)]
     public class WinFormsUtils
     {
     }

@@ -32,7 +32,9 @@ namespace ApprovalUtilities.Utilities
             return sb.ToString();
         }
 
-        [Obsolete("Use String.Format() or string interpolation instead.", true)]
+        [ObsoleteEx(
+            RemoveInVersion = "5.0",
+            Message = "Use String.Format() or string interpolation")]
         // ReSharper disable UnusedParameter.Global
         public static string FormatWith(this string mask, params object[] parameters)
         {

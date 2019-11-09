@@ -57,7 +57,9 @@ namespace ApprovalUtilities.Utilities
         }
 
         [EditorBrowsable(EditorBrowsableState.Never)]
-        [Obsolete("Use LocateFileFromEnvironmentPath().")]
+        [ObsoleteEx(
+            RemoveInVersion = "5.0",
+            ReplacementTypeOrMember = nameof(LocateFileFromEnvironmentPath))]
         public static IEnumerable<string> LocateFileFromEnviormentPath(string toFind)
         {
             return LocateFileFromEnvironmentPath(toFind);

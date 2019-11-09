@@ -1,62 +1,81 @@
-﻿
-using System;
-
-namespace ApprovalUtilities.Obsolete
+﻿namespace ApprovalUtilities.Obsolete
 {
-    [Obsolete(ObsoleteError, true)]
+    [ObsoleteEx(
+        RemoveInVersion = "5.0",
+        Message = ObsoleteError)]
     public class EntityFrameworkUtils
     {
         internal const string ObsoleteError = "This class has been moved to the ApprovalTests.EntityFramework NuGet package (https://www.nuget.org/packages/ApprovalTests.EntityFramework)";
     }
 
-    [Obsolete(EntityFrameworkUtils.ObsoleteError, true)]
+    [ObsoleteEx(
+        RemoveInVersion = "5.0",
+        Message = EntityFrameworkUtils.ObsoleteError)]
     public class ObjectContextAdaptor<T>
     {
     }
 
-    [Obsolete(EntityFrameworkUtils.ObsoleteError, true)]
+    [ObsoleteEx(
+        RemoveInVersion = "5.0",
+        Message = EntityFrameworkUtils.ObsoleteError)]
     public class Loaders
     {
     }
 
-    [Obsolete(EntityFrameworkUtils.ObsoleteError, true)]
+    [ObsoleteEx(
+        RemoveInVersion = "5.0",
+        Message = EntityFrameworkUtils.ObsoleteError)]
     public abstract class EntityFrameworkLoader<QueryType, LoaderType, DatabaseContextType>
     {
 
     }
 
-    [Obsolete(EntityFrameworkUtils.ObsoleteError, true)]
+    [ObsoleteEx(
+        RemoveInVersion = "5.0",
+        Message = EntityFrameworkUtils.ObsoleteError)]
     public static class EntityFrameworkLoadersExtensions
     {
     }
 
-    [Obsolete(EntityFrameworkUtils.ObsoleteError, true)]
+    [ObsoleteEx(
+        RemoveInVersion = "5.0",
+        Message = EntityFrameworkUtils.ObsoleteError)]
     public class LambdaEnumerableLoader<T, C>
     {
 
     }
 
-    [Obsolete(EntityFrameworkUtils.ObsoleteError, true)]
+    [ObsoleteEx(
+        RemoveInVersion = "5.0",
+        Message = EntityFrameworkUtils.ObsoleteError)]
     public class LambdaSingleLoader<T, C>
     {
     }
 
-    [Obsolete(EntityFrameworkUtils.ObsoleteError, true)]
+    [ObsoleteEx(
+        RemoveInVersion = "5.0",
+        Message = EntityFrameworkUtils.ObsoleteError)]
     public abstract class MultiRowEntityFrameworkLoader<T, DatabaseContextType>
     {
     }
 
-    [Obsolete(EntityFrameworkUtils.ObsoleteError, true)]
+    [ObsoleteEx(
+        RemoveInVersion = "5.0",
+        Message = EntityFrameworkUtils.ObsoleteError)]
     public class FirstLoader<T>
     {
     }
 
-    [Obsolete(EntityFrameworkUtils.ObsoleteError, true)]
+    [ObsoleteEx(
+        RemoveInVersion = "5.0",
+        Message = EntityFrameworkUtils.ObsoleteError)]
     public class OrderedLoader<T, TKey>
     {
     }
 
-    [Obsolete(EntityFrameworkUtils.ObsoleteError, true)]
+    [ObsoleteEx(
+        RemoveInVersion = "5.0",
+        Message = EntityFrameworkUtils.ObsoleteError)]
     public class PaginatedLoader<T>
     {
     }

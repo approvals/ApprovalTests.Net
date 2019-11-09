@@ -1,29 +1,37 @@
-﻿using System;
-
-namespace ApprovalTests.Obsolete
+﻿namespace ApprovalTests.Obsolete
 {
-    [Obsolete(ObsoleteError, true)]
+    [ObsoleteEx(
+        RemoveInVersion = "5.0",
+        Message = ObsoleteError)]
     public class WpfApprovals
     {
         internal const string ObsoleteError = "This class has been moved to the ApprovalTests.Wpf NuGet package (https://www.nuget.org/packages/ApprovalTests.Wpf)";
     }
 
-    [Obsolete(WpfApprovals.ObsoleteError, true)]
+    [ObsoleteEx(
+        RemoveInVersion = "5.0",
+        Message = WpfApprovals.ObsoleteError)]
     public class WpfBindingsAssert
     {
     }
 
-    [Obsolete(WpfApprovals.ObsoleteError, true)]
+    [ObsoleteEx(
+        RemoveInVersion = "5.0",
+        Message = WpfApprovals.ObsoleteError)]
     public class ApprovalWpfWindowWriter
     {
     }
 
-    [Obsolete(WpfApprovals.ObsoleteError, true)]
+    [ObsoleteEx(
+        RemoveInVersion = "5.0",
+        Message = WpfApprovals.ObsoleteError)]
     public class ImageWriter
     {
     }
 
-    [Obsolete(WpfApprovals.ObsoleteError, true)]
+    [ObsoleteEx(
+        RemoveInVersion = "5.0",
+        Message = WpfApprovals.ObsoleteError)]
     public class AssertNoBindingErrorsTraceListener
     {
     }

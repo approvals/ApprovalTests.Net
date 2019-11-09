@@ -1,25 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace ApprovalTests.Obsolete
 {
-    [Obsolete(ObsoleteError, true)]
+    [ObsoleteEx(
+        RemoveInVersion = "5.0",
+        Message = ObsoleteError)]
     public class RdlcApprovals
     {
         internal const string ObsoleteError =
-                "This class has been moved to the ApprovalTests.Rdlc NuGet package (https://www.nuget.org/packages/ApprovalTests.Rdlc)"
-            ;
+            "This class has been moved to the ApprovalTests.Rdlc NuGet package (https://www.nuget.org/packages/ApprovalTests.Rdlc)";
     }
 
-    [Obsolete(RdlcApprovals.ObsoleteError, true)]
+    [ObsoleteEx(
+        RemoveInVersion = "5.0",
+        Message = RdlcApprovals.ObsoleteError)]
     public class DataPairs : Dictionary<string, object>
     {
     }
-    [Obsolete(RdlcApprovals.ObsoleteError, true)]
+
+    [ObsoleteEx(
+        RemoveInVersion = "5.0",
+        Message = RdlcApprovals.ObsoleteError)]
     public static class DataSetTestingUtilities
     {
     }
-    [Obsolete(RdlcApprovals.ObsoleteError, true)]
+
+    [ObsoleteEx(
+        RemoveInVersion = "5.0",
+        Message = RdlcApprovals.ObsoleteError)]
     public class ColumnDefaults
     {
     }

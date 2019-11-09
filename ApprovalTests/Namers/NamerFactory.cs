@@ -16,13 +16,17 @@ namespace ApprovalTests.Namers
             set => additionalInformation.Value = value;
         }
 
-        [Obsolete("Use ApprovalResults.UniqueForMachineName instead.")]
+        [ObsoleteEx(
+            RemoveInVersion = "5.0",
+            ReplacementTypeOrMember = "ApprovalResults.UniqueForMachineName")]
         public static void AsMachineSpecificTest()
         {
             ApprovalResults.UniqueForMachineName();
         }
 
-        [Obsolete("Use AsEnvironmentSpecificTest instead.")]
+        [ObsoleteEx(
+            RemoveInVersion = "5.0",
+            ReplacementTypeOrMember = nameof(AsEnvironmentSpecificTest))]
         [EditorBrowsable(EditorBrowsableState.Never)]
         public static void AsMachineSpecificTest(Func<string> environmentLabeler)
         {

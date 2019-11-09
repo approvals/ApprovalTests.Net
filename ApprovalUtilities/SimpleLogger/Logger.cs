@@ -24,13 +24,17 @@ namespace ApprovalUtilities.SimpleLogger
             return new Marker();
         }
 
-        [Obsolete("Use MarkEntryPoints")]
+        [ObsoleteEx(
+            RemoveInVersion = "5.0",
+            ReplacementTypeOrMember = nameof(MarkEntryPoints))]
         public static void MarkerIn()
         {
             log.MarkerIn();
         }
 
-        [Obsolete("Use MarkEntryPoints")]
+        [ObsoleteEx(
+            RemoveInVersion = "5.0",
+            ReplacementTypeOrMember = nameof(MarkEntryPoints))]
         public static void MarkerOut()
         {
             log.MarkerOut();
