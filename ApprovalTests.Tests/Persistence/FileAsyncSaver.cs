@@ -16,14 +16,10 @@ namespace ApprovalTests.Tests.Persistence
 
         public async Task<string> Save(string objectToBeSaved)
         {
-            using (var fileStream = file.OpenWrite())
-            {
-                using (var writer = new StreamWriter(fileStream))
-                {
-                    await writer.WriteAsync(objectToBeSaved);
-                    return objectToBeSaved;
-                }
-            }
+            using var fileStream = file.OpenWrite();
+            using var writer = new StreamWriter(fileStream);
+            await writer.WriteAsync(objectToBeSaved);
+            return objectToBeSaved;
         }
     }
 }

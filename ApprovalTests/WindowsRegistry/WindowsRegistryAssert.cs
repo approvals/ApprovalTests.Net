@@ -23,10 +23,8 @@ namespace ApprovalTests.WindowsRegistry
 
         private static int ReadIntKeyValue(RegistryKey registryKey, string keyName, string valueName)
         {
-            using (var key = registryKey.OpenSubKey(keyName))
-            {
-                return key == null ? 0 : (int) key.GetValue(valueName, 0);
-            }
+            using var key = registryKey.OpenSubKey(keyName);
+            return key == null ? 0 : (int) key.GetValue(valueName, 0);
         }
     }
 }

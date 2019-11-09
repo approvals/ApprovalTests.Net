@@ -14,7 +14,7 @@ namespace ApprovalTests.Tests
         {
             using (Namers.ApprovalResults.UniqueForOs())
             {
-                Action wrapper = () => { throw new Exception(); };
+                Action wrapper = () => throw new Exception();
                 var e = ExceptionUtilities.GetException(wrapper);
                 Approvals.Verify(e);
             }

@@ -24,14 +24,14 @@ namespace ApprovalTests.WebApi.MicrosoftHttpClient
             var uri = new Uri(new Uri(GetBaseAddress()), requestUri);
             try
             {
-                using (var client = new WebClient())
+                using var client = new WebClient
                 {
-                    client.Encoding = Encoding.UTF8;
-                    var task = new TaskCompletionSource<DownloadStringCompletedEventArgs>();
-                    client.DownloadStringCompleted += (sender, args) => { task.SetResult(args); };
-                    client.DownloadStringAsync(uri);
-                    return task.Task;
-                }
+                    Encoding = Encoding.UTF8
+                };
+                var task = new TaskCompletionSource<DownloadStringCompletedEventArgs>();
+                client.DownloadStringCompleted += (sender, args) => { task.SetResult(args); };
+                client.DownloadStringAsync(uri);
+                return task.Task;
             }
             catch (Exception e)
             {

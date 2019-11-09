@@ -162,11 +162,9 @@ Received {0} ({1}, {2}, {3})", GetType().Name, diffProgram, argumentsFormat, dif
                 var fileType = new FileInfo(approved).Extension;
                 if (IMAGE_FILE_TYPES.Contains(fileType))
                 {
-                    using (var bitmap = new Bitmap(1, 1))
-                    {
-                        bitmap.SetResolution(96, 96);
-                        bitmap.Save(approved);
-                    }
+                    using var bitmap = new Bitmap(1, 1);
+                    bitmap.SetResolution(96, 96);
+                    bitmap.Save(approved);
                 }
                 else
                 {

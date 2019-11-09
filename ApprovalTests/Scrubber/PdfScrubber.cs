@@ -11,11 +11,9 @@ namespace ApprovalTests.Scrubber
     {
         public static void ScrubPdf(string pdfFilePath)
         {
-            using (var fileStream = File.Open(pdfFilePath, FileMode.Open))
-            {
-                var replacements = FindReplacements(fileStream);
-                WriteReplacements(fileStream, replacements);
-            }
+            using var fileStream = File.Open(pdfFilePath, FileMode.Open);
+            var replacements = FindReplacements(fileStream);
+            WriteReplacements(fileStream, replacements);
         }
 
         public class Replacement

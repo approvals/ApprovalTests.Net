@@ -64,9 +64,9 @@ startxref
             var pdf = PathUtilities.GetAdjacentFile("new_temp.pdf");
 
             using (var fileStream = File.Create(pdf))
-            using (var writer = new PdfWriter(fileStream))
-            using (var pdfDocument = new PdfDocument(writer))
             {
+                using var writer = new PdfWriter(fileStream);
+                using var pdfDocument = new PdfDocument(writer);
                 pdfDocument.SetTagged();
                 var document = new Document(pdfDocument);
                 document.Add(new Paragraph("Test"));
@@ -83,11 +83,9 @@ startxref
         public void TestPdf_Replacements()
         {
             var pdfOriginal = PathUtilities.GetAdjacentFile("sample.pdf");
-            using (var fileStream = File.Open(pdfOriginal, FileMode.Open))
-            {
-                var replacements = PdfScrubber.FindReplacements(fileStream);
-                Approvals.VerifyAll("Replacements", replacements, r => r.ToString());
-            }
+            using var fileStream = File.Open(pdfOriginal, FileMode.Open);
+            var replacements = PdfScrubber.FindReplacements(fileStream);
+            Approvals.VerifyAll("Replacements", replacements, r => r.ToString());
         }
 
         [Test]
@@ -124,11 +122,9 @@ startxref
         {
             var pdf = PathUtilities.GetAdjacentFile("sample.pdf");
 
-            using (var fileStream = File.OpenRead(pdf))
-            {
-                var matches = PdfScrubber.FindReplacements(fileStream);
-                Assert.AreEqual(3, matches.Count());
-            }
+            using var fileStream = File.OpenRead(pdf);
+            var matches = PdfScrubber.FindReplacements(fileStream);
+            Assert.AreEqual(3, matches.Count());
         }
     }
 }
