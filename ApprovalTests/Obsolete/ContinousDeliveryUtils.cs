@@ -1,5 +1,3 @@
-using ApprovalTests.Reporters.TestFrameworks;
-
 namespace ApprovalTests.Reporters.ContinuousIntegration
 {
     [ObsoleteEx(

@@ -6,9 +6,9 @@ using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.TheoryTests
 {
-    public class ThreadSafteyTheory
+    public class ThreadSafetyTheory
     {
-        public static void VerifyNoRaceConditions<T>(int times, Func<T> caseGenerator, Func<T, string> caseString, Func<T, object> possibleRaceConditonFunction, Func<T, object> knownGoodFunction)
+        public static void VerifyNoRaceConditions<T>(int times, Func<T> caseGenerator, Func<T, string> caseString, Func<T, object> possibleRaceConditionFunction, Func<T, object> knownGoodFunction)
         {
             var n1 = new ConcurrentBag<string>();
             var n2 = new ConcurrentBag<string>();
@@ -19,7 +19,7 @@ namespace ApprovalTests.TheoryTests
             {
                 var inputs = caseGenerator();
                 var text = caseString(inputs);
-                n1.Add(text + possibleRaceConditonFunction(inputs));
+                n1.Add(text + possibleRaceConditionFunction(inputs));
                 n2.Add(text + knownGoodFunction(inputs));
                 return 1;
             }).Sum();
