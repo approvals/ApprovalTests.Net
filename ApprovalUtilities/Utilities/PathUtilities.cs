@@ -22,7 +22,8 @@ namespace ApprovalUtilities.Utilities
 
         public static string GetDirectoryForStackFrame(StackFrame stackFrame)
         {
-            return new FileInfo(stackFrame.GetFileName()).Directory.FullName + Path.DirectorySeparatorChar;
+            var fileName = stackFrame.GetFileName();
+            return new FileInfo(fileName).Directory.FullName + Path.DirectorySeparatorChar;
         }
 
         public static string ScrubPath(this string text, string path)
