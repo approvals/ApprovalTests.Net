@@ -1,4 +1,3 @@
-using System;
 using System.IO;
 using ApprovalTests.Core;
 using ApprovalTests.Namers.StackTraceParsers;

@@ -44,7 +44,7 @@ namespace ApprovalTests.Namers
                 AdditionalInformation += "." + environmentLabeler();
             }
 
-            return new EnviromentSpecificCleanUp();
+            return new EnvironmentSpecificCleanUp();
         }
 
         public static void Clear()

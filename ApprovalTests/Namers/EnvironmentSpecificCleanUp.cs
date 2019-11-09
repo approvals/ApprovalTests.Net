@@ -2,7 +2,7 @@ using System;
 
 namespace ApprovalTests.Namers
 {
-    public class EnviromentSpecificCleanUp : IDisposable
+    public class EnvironmentSpecificCleanUp : IDisposable
     {
         public void Dispose()
         {
