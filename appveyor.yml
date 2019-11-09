@@ -1,6 +1,6 @@
 image: Visual Studio 2019
 before_build:
-  - nuget restore
+  - nuget restore -Verbosity quiet
 build:
   verbosity: minimal
 artifacts:
