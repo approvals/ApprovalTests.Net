@@ -5,7 +5,7 @@ Source File: /readme.source.md
 To change this file edit the source file and then execute run_markdown.cmd.
 -->
 
-# ApprovalTests
+# <img src="https://avatars3.githubusercontent.com/u/36907" height="30px"> ApprovalTests
 
 [![Build status](https://ci.appveyor.com/api/projects/status/5w53btmaydibgr9a?svg=true)](https://ci.appveyor.com/project/isidore/approvaltests-net) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![NuGet Status](http://img.shields.io/nuget/v/ApprovalTests.svg?style=flat)](https://www.nuget.org/packages/ApprovalTests/)
 
