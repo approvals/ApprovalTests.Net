@@ -45,12 +45,33 @@ namespace ApprovalTests.Maintenance
 
         private static bool IsAbandoned(FileInfo approvedFile, Assembly assembly)
         {
+            var rootTypes = assembly.GetTypes();
             var parts = approvedFile.Name.Split('.');
             var className = parts[0];
             var methodName = parts[1];
-            var types = assembly.GetTypes().Where(t => t.Name == className);
-            var methods = types.SelectMany(t => t.GetMethods()).Where(m => m.Name == methodName);
-            return !methods.Any();
+            var types = rootTypes
+                .Where(t => t.Name == className);
+            var methods = types.SelectMany(t => t.GetMethods())
+                .Where(m => m.Name == methodName);
+            if (methods.Any())
+            {
+                return false;
+            }
+
+            var nestedClassName = parts[1];
+            var nestedMethodName = parts[2];
+            var nestedTypes = rootTypes
+                .Where(t => t.Name == className)
+                .SelectMany(x => x.GetNestedTypes())
+                .Where(t => t.Name == nestedClassName);
+            methods = nestedTypes.SelectMany(t => t.GetMethods())
+                .Where(m => m.Name == nestedMethodName);
+            if (methods.Any())
+            {
+                return false;
+            }
+
+            return true;
         }
 
         public static void VerifyNoAbandonedFiles(params string[] ignore)

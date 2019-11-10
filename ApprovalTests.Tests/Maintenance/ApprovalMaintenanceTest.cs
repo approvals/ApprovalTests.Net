@@ -16,5 +16,15 @@ namespace ApprovalTests.Tests.Maintenance
             var list = ApprovalMaintenance.FindAbandonedFiles(path);
             Approvals.VerifyAll("Abandoned Files:", list, f => f.Name);
         }
+
+        [TestFixture]
+        public class Nested
+        {
+            [Test]
+            public void MethodName()
+            {
+                Approvals.Verify("aaa");
+            }
+        }
     }
 }
