@@ -18,7 +18,7 @@ namespace ApprovalUtilities.CallStack
 
         public Caller(StackTrace stackTrace, int currentFrame)
         {
-            this.StackTrace = stackTrace;
+            StackTrace = stackTrace;
             this.currentFrame = currentFrame;
         }
 
