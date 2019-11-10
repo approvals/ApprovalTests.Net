@@ -86,7 +86,8 @@ namespace ApprovalUtilities.CallStack
                 {
                     try
                     {
-                        var useReporters = attributeExtractor(method);
+                        var realMethod = Reflection.ReflectionUtilities.GetRealMethod(method);
+                        var useReporters = attributeExtractor(realMethod);
                         if (useReporters.Length != 0)
                         {
                             return useReporters.First();

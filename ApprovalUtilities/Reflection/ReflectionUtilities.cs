@@ -1,3 +1,5 @@
+using System.Runtime.CompilerServices;
+
 namespace ApprovalUtilities.Reflection
 {
     using System;
@@ -10,6 +12,28 @@ namespace ApprovalUtilities.Reflection
     {
         private const BindingFlags NonPublicInstance = BindingFlags.NonPublic | BindingFlags.Instance;
 
+        public static MethodBase GetRealMethod(MethodBase method)
+        {
+            var declaringType = method.DeclaringType;
+            if (typeof(IAsyncStateMachine).IsAssignableFrom(declaringType))
+            {
+                var realType = declaringType.DeclaringType;
+                foreach (var methodInfo in realType.GetMethods(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic))
+                {
+                    var stateMachineAttribute = methodInfo.GetCustomAttribute<AsyncStateMachineAttribute>();
+                    if (stateMachineAttribute == null)
+                    {
+                        continue;
+                    }
+                    if (stateMachineAttribute.StateMachineType == declaringType)
+                    {
+                        return methodInfo;
+                    }
+                }
+            }
+
+            return method;
+        }
         public static IEnumerable<CallbackDescriptor> GetEventHandlerListEvents(this object value)
         {
             Func<PropertyInfo, bool> selector = pi => string.Compare(pi.Name, "Events", false) == 0;
