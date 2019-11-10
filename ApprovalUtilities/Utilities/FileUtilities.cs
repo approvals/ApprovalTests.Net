@@ -23,15 +23,13 @@ namespace ApprovalUtilities.Utilities
 
         public static Encoding GetEncodingFor(string file)
         {
-            using (var sr = new StreamReader(file, true))
+            using var sr = new StreamReader(file, true);
+            for (var i = 0; i < 4 && sr.Peek() >= 0; i++)
             {
-                for (var i = 0; i < 4 && sr.Peek() >= 0; i++)
-                {
-                    sr.Read();
-                }
-
-                return sr.CurrentEncoding;
+                sr.Read();
             }
+
+            return sr.CurrentEncoding;
         }
     }
 }
