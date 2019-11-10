@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ApprovalTests.Combinations
 {
-    public class CombinationApprovals
+    public static class CombinationApprovals
     {
         private static readonly object[] EMPTY = {null};
 

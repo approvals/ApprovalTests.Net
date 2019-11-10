@@ -5,7 +5,7 @@ using ApprovalUtilities.Xml;
 
 namespace ApprovalTests.Xml
 {
-    public class XmlApprovals
+    public static class XmlApprovals
     {
         public static void VerifyXml(string xml, Func<string, string> scrubber = null)
         {

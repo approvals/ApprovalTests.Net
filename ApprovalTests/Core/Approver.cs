@@ -1,6 +1,6 @@
 ﻿namespace ApprovalTests.Core
 {
-    public class Approver
+    public static class Approver
     {
         public static void Verify(IApprovalApprover approver, IApprovalFailureReporter reporter)
         {

@@ -3,7 +3,7 @@ using System.Threading;
 
 namespace ApprovalTests.Namers
 {
-    public class NamerFactory
+    public static class NamerFactory
     {
         static AsyncLocal<string> additionalInformation = new AsyncLocal<string>();
 

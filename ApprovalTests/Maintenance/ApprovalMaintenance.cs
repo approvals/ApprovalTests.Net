@@ -8,7 +8,7 @@ using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.Maintenance
 {
-    public class ApprovalMaintenance
+    public static class ApprovalMaintenance
     {
         /// <summary>
         /// ** Warning : use at your own risk **

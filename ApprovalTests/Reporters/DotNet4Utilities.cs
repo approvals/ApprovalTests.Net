@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace ApprovalTests.Reporters
 {
-    public class DotNet4Utilities
+    public static class DotNet4Utilities
     {
         public static string GetFirstWorking(string path, string[] paths)
         {

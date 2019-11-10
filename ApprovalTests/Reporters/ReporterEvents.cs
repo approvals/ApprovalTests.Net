@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ApprovalTests.Reporters
 {
-    public class ReporterEvents
+    public static class ReporterEvents
     {
         public static readonly List<Action<string>> CreateNewFileEventListeners =
             new List<Action<string>>();

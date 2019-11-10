@@ -6,7 +6,7 @@ using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.TheoryTests
 {
-    public class ThreadSafetyTheory
+    public static class ThreadSafetyTheory
     {
         public static void VerifyNoRaceConditions<T>(int times, Func<T> caseGenerator, Func<T, string> caseString, Func<T, object> possibleRaceConditionFunction, Func<T, object> knownGoodFunction)
         {

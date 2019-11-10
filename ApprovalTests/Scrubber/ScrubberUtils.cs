@@ -4,7 +4,7 @@ using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.Scrubber
 {
-    public class ScrubberUtils
+    public static class ScrubberUtils
     {
         public static Func<string, string> Combine(params Func<string, string>[] scrubbers)
         {

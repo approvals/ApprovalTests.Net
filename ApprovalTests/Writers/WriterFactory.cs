@@ -3,7 +3,7 @@ using ApprovalTests.Core;
 
 namespace ApprovalTests.Writers
 {
-    public class WriterFactory
+    public static class WriterFactory
     {
         private static Func<string, IApprovalWriter> TextWriterCreator = s => new ApprovalTextWriter(s);
 

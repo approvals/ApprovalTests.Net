@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 namespace ApprovalTests.Core
 {
-    public class ConsoleUtilities
+    public static class ConsoleUtilities
     {
         public static void WriteLine(string warning)
         {

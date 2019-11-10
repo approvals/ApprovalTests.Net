@@ -3,7 +3,7 @@ using ApprovalTests.Xml;
 
 namespace ApprovalTests.Html
 {
-    public class HtmlApprovals
+    public static class HtmlApprovals
     {
         public static void VerifyHtml(string html, Func<string, string> scrubber = null)
         {

@@ -4,7 +4,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace ApprovalTests.TheoryTests
 {
-    public class SerializableTheory
+    public static class SerializableTheory
     {
         public static void Verify(object original, Action<object, object> assertEqual)
         {

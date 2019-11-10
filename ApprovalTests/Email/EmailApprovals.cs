@@ -7,7 +7,7 @@ using ApprovalTests.Writers;
 
 namespace ApprovalTests.Email
 {
-    public class EmailApprovals
+    public static class EmailApprovals
     {
         public static void Verify(MailMessage email)
         {

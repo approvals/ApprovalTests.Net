@@ -8,7 +8,7 @@ using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.Async
 {
-    public class AsyncApprovals
+    public static class AsyncApprovals
     {
         public static void VerifyException(Task task)
         {

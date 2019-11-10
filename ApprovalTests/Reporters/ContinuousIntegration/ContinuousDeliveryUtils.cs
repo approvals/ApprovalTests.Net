@@ -2,7 +2,7 @@ using ApprovalTests.Reporters.TestFrameworks;
 
 namespace ApprovalTests.Reporters.ContinuousIntegration
 {
-    public class ContinuousDeliveryUtils
+    public static class ContinuousDeliveryUtils
     {
         public static void ReportOnServer(string approved, string received)
         {

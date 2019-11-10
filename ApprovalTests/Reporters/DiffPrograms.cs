@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ApprovalTests.Reporters
 {
-    public class DiffPrograms
+    public static class DiffPrograms
     {
         public static Func<IEnumerable<string>> TEXT           = GenericDiffReporter.GetTextFileTypes;
         public static Func<IEnumerable<string>> IMAGE          = GenericDiffReporter.GetImageFileTypes;
