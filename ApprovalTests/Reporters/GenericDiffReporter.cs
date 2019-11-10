@@ -228,7 +228,7 @@ Received {0} ({1}, {2}, {3})", GetType().Name, diffProgram, argumentsFormat, dif
         {
             try
             {
-                var process = Process.Start(launchArgs.Program, launchArgs.Arguments);
+                using var process = Process.Start(launchArgs.Program, launchArgs.Arguments);
                 if (waitForExit)
                 {
                     process.WaitForExit();
@@ -236,10 +236,8 @@ Received {0} ({1}, {2}, {3})", GetType().Name, diffProgram, argumentsFormat, dif
             }
             catch (Win32Exception e)
             {
-                throw new Exception($"Unable to launch: {launchArgs.Program} with arguments {launchArgs.Arguments}\nError Message: {e.Message}",e);
+                throw new Exception($"Unable to launch: {launchArgs.Program} with arguments {launchArgs.Arguments}\nError Message: {e.Message}", e);
             }
         }
-
-        
     }
 }
