@@ -7,7 +7,11 @@ To change this file edit the source file and then execute run_markdown.cmd.
 
 # <img src="https://avatars3.githubusercontent.com/u/36907" height="30px"> ApprovalTests
 
-[![Build status](https://ci.appveyor.com/api/projects/status/5w53btmaydibgr9a?svg=true)](https://ci.appveyor.com/project/isidore/approvaltests-net) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![NuGet Status](http://img.shields.io/nuget/v/ApprovalTests.svg?style=flat)](https://www.nuget.org/packages/ApprovalTests/)
+[![Build status](https://ci.appveyor.com/api/projects/status/5w53btmaydibgr9a?svg=true)](https://ci.appveyor.com/project/isidore/approvaltests-net)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![NuGet Status](http://img.shields.io/nuget/v/ApprovalTests.svg?style=flat)](https://www.nuget.org/packages/ApprovalTests/)
+[![Backers on Open Collective](https://opencollective.com/approvals/backers/badge.svg)](#backers)
+[![Sponsors on Open Collective](https://opencollective.com/approvals/sponsors/badge.svg)](#sponsors)
 
 Capturing Human Intelligence - ApprovalTests is an open source assertion/verification library to aid unit testing.
 
@@ -25,6 +29,10 @@ It is compatible with most .Net unit testing frameworks (Nunit, MsTest, xUnit, M
   * [Approved File Artifacts](#approved-file-artifacts)
   * [More Info](#more-info)
   * [Questions?](#questions)
+  * [Credits](#credits)
+    * [Contributors](#contributors)
+    * [Backers](#backers)
+    * [Sponsors](#sponsors)
 <!-- endtoc -->
 
 
@@ -117,3 +125,25 @@ Do not add `*.received.*` files to your source control (they are transitory, and
 ## Questions?
 
 ask on twitter: [@LlewellynFalco](https://twitter.com/#!/llewellynfalco) or #ApprovalTests
+
+
+## Credits
+
+
+### Contributors
+
+This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
+
+<a href="graphs/contributors"><img src="https://opencollective.com/approvals/contributors.svg?width=890&button=false" /></a>
+
+
+### Backers
+
+Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/approvals#backer)]
+
+<a href="https://opencollective.com/approvals#backers" target="_blank"><img src="https://opencollective.com/approvals/backers.svg?width=890"></a>
+
+
+### Sponsors
+Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/approvals#sponsor)]
+<a href="https://opencollective.com/approvals/sponsor/0/website" target="_blank"><img src="https://opencollective.com/approvals/sponsor/0/avatar.svg"></a>
