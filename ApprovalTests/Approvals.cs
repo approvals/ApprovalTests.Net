@@ -28,10 +28,11 @@ namespace ApprovalTests
         {
             get
             {
-                if (currentCaller == null || currentCaller.Value==null)
+                if (currentCaller.Value == null)
                 {
                     SetCaller();
                 }
+
                 return currentCaller.Value;
             }
         }
