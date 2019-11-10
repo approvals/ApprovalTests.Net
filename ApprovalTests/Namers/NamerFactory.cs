@@ -1,5 +1,4 @@
 using System;
-using System.ComponentModel;
 using System.Threading;
 
 namespace ApprovalTests.Namers
@@ -27,7 +26,6 @@ namespace ApprovalTests.Namers
         [ObsoleteEx(
             RemoveInVersion = "5.0",
             ReplacementTypeOrMember = nameof(AsEnvironmentSpecificTest))]
-        [EditorBrowsable(EditorBrowsableState.Never)]
         public static void AsMachineSpecificTest(Func<string> environmentLabeler)
         {
             AsEnvironmentSpecificTest(environmentLabeler);

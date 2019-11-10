@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -56,7 +55,6 @@ namespace ApprovalUtilities.Utilities
             return results.Distinct();
         }
 
-        [EditorBrowsable(EditorBrowsableState.Never)]
         [ObsoleteEx(
             RemoveInVersion = "5.0",
             ReplacementTypeOrMember = nameof(LocateFileFromEnvironmentPath))]
