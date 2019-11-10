@@ -6,7 +6,6 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using ApprovalTests.Core;
 using ApprovalTests.Reporters.TestFrameworks;
 using ApprovalUtilities.Utilities;
@@ -215,11 +214,11 @@ Received {0} ({1}, {2}, {3})", GetType().Name, diffProgram, argumentsFormat, dif
         {
             if (IsMsTest())
             {
-                Launch(launchArgs, true);
+                LaunchWithWait(launchArgs);
             }
             else
             {
-                Task.Factory.StartNew(() => Launch(launchArgs, false));
+                Launch(launchArgs);
             }
         }
 
@@ -228,15 +227,24 @@ Received {0} ({1}, {2}, {3})", GetType().Name, diffProgram, argumentsFormat, dif
             return MsTestReporter.INSTANCE.IsFrameworkUsed();
         }
 
-        private static void Launch(LaunchArgs launchArgs, bool waitForExit)
+        static void LaunchWithWait(LaunchArgs launchArgs)
         {
             try
             {
                 using var process = Process.Start(launchArgs.Program, launchArgs.Arguments);
-                if (waitForExit)
-                {
-                    process.WaitForExit();
-                }
+                process.WaitForExit();
+            }
+            catch (Win32Exception e)
+            {
+                throw new Exception($"Unable to launch: {launchArgs.Program} with arguments {launchArgs.Arguments}\nError Message: {e.Message}", e);
+            }
+        }
+
+        static void Launch(LaunchArgs launchArgs)
+        {
+            try
+            {
+                Process.Start(launchArgs.Program, launchArgs.Arguments);
             }
             catch (Win32Exception e)
             {
