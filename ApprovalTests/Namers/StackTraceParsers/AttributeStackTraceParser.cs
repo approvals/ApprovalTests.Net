@@ -2,8 +2,6 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Runtime.CompilerServices;
 using ApprovalUtilities.CallStack;
 
 namespace ApprovalTests.Namers.StackTraceParsers
@@ -13,7 +11,7 @@ namespace ApprovalTests.Namers.StackTraceParsers
         protected Caller caller;
         protected Caller approvalFrame;
 
-        public virtual string TypeName => GetRecursiveTypeName(GetRealMethod(approvalFrame.Method).DeclaringType);
+        public virtual string TypeName => GetRecursiveTypeName(ApprovalUtilities.Reflection.ReflectionUtilities.GetRealMethod(approvalFrame.Method).DeclaringType);
 
         public string AdditionalInfo
         {
@@ -34,30 +32,7 @@ namespace ApprovalTests.Namers.StackTraceParsers
 
         protected virtual string GetMethodName()
         {
-            return GetRealMethod(approvalFrame.Method).Name;
-        }
-
-        static MethodBase GetRealMethod(MethodBase method)
-        {
-            var declaringType = method.DeclaringType;
-            if (typeof(IAsyncStateMachine).IsAssignableFrom(declaringType))
-            {
-                var realType = declaringType.DeclaringType;
-                foreach (var methodInfo in realType.GetMethods(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic))
-                {
-                    var stateMachineAttribute = methodInfo.GetCustomAttribute<AsyncStateMachineAttribute>();
-                    if (stateMachineAttribute == null)
-                    {
-                        continue;
-                    }
-                    if (stateMachineAttribute.StateMachineType == declaringType)
-                    {
-                        return methodInfo;
-                    }
-                }
-            }
-
-            return method;
+            return ApprovalUtilities.Reflection.ReflectionUtilities.GetRealMethod(approvalFrame.Method).Name;
         }
 
         public string SourcePath => Path.GetDirectoryName(GetFileNameForStack(approvalFrame));
@@ -70,7 +45,7 @@ namespace ApprovalTests.Namers.StackTraceParsers
 
         public static bool IsNamespaceApprovals(string classNamespace)
         {
-            return classNamespace != null && 
+            return classNamespace != null &&
                ( classNamespace.StartsWith("ApprovalTests") ||
                 classNamespace.StartsWith("ApprovalUtilities"));
         }
@@ -96,7 +71,7 @@ namespace ApprovalTests.Namers.StackTraceParsers
         {
             return caller.Callers.FirstOrDefault(c =>
             {
-                var attributes = GetRealMethod(c.Method).GetCustomAttributes(false);
+                var attributes = ApprovalUtilities.Reflection.ReflectionUtilities.GetRealMethod(c.Method).GetCustomAttributes(false);
                 return ContainsAttribute(attributes, attributeName);
             });
         }

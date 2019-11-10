@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using ApprovalTests.Core;
 using ApprovalTests.Reporters;
 using NUnit.Framework;
@@ -37,6 +38,17 @@ namespace ApprovalTests.Tests.Reporters
         [UseReporter(typeof(MethodLevelReporter))]
         public void TestMethodOverride()
         {
+            using (Approvals.SetFrontLoadedReporter(ReportWithoutFrontLoading.INSTANCE))
+            {
+                Assert.AreEqual(typeof(MethodLevelReporter), Approvals.GetReporter().GetType());
+            }
+        }
+
+        [Test]
+        [UseReporter(typeof(MethodLevelReporter))]
+        public async Task TestAsyncMethodOverride()
+        {
+            await Task.Delay(1);
             using (Approvals.SetFrontLoadedReporter(ReportWithoutFrontLoading.INSTANCE))
             {
                 Assert.AreEqual(typeof(MethodLevelReporter), Approvals.GetReporter().GetType());
