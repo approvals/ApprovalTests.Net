@@ -4,13 +4,11 @@ namespace ApprovalTests.Reporters
 {
     public class IgnoreLineEndingsAttribute : Attribute
     {
-        private readonly bool _ignoreLineEndings;
-
         public IgnoreLineEndingsAttribute(bool ignoreLineEndings)
         {
-            _ignoreLineEndings = ignoreLineEndings;
+            IgnoreLineEndings = ignoreLineEndings;
         }
 
-        public bool IgnoreLineEndings => _ignoreLineEndings;
+        public bool IgnoreLineEndings { get; }
     }
 }

@@ -10,7 +10,6 @@ namespace ApprovalUtilities.CallStack
     public class Caller
     {
         private int currentFrame;
-        private StackTrace stackTrace;
 
         public Caller()
             : this(new StackTrace(true), 2)
@@ -19,7 +18,7 @@ namespace ApprovalUtilities.CallStack
 
         public Caller(StackTrace stackTrace, int currentFrame)
         {
-            this.stackTrace = stackTrace;
+            this.StackTrace = stackTrace;
             this.currentFrame = currentFrame;
         }
 
@@ -64,7 +63,7 @@ namespace ApprovalUtilities.CallStack
 
         public StackFrame StackFrame => StackTrace.GetFrame(currentFrame);
 
-        public StackTrace StackTrace => stackTrace;
+        public StackTrace StackTrace { get; }
 
         public A GetFirstFrameForAttribute<A>() where A : Attribute
         {
