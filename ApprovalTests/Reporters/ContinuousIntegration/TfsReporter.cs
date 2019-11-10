@@ -10,7 +10,7 @@ namespace ApprovalTests.Reporters.ContinuousIntegration
 
         public bool IsWorkingInThisEnvironment(string forFile)
         {
-            return "TFSBuildServiceHost".Equals(GetParentProcessName());
+            return "TFSBuildServiceHost" == ParentProcessUtils.ParentProcessName;
         }
 
         public void Report(string approved, string received)
@@ -18,10 +18,5 @@ namespace ApprovalTests.Reporters.ContinuousIntegration
             ContinuousDeliveryUtils.ReportOnServer(approved, received);
         }
 
-        private static string GetParentProcessName()
-        {
-            var parentProcess = ParentProcessUtils.GetParentProcess(Process.GetCurrentProcess());
-            return parentProcess == null ? string.Empty : parentProcess.ProcessName;
-        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using ApprovalTests.Core;
+using ApprovalTests.Utilities;
 
 namespace ApprovalTests.Reporters.ContinuousIntegration
 {
@@ -17,8 +18,7 @@ namespace ApprovalTests.Reporters.ContinuousIntegration
         {
             if (IsRunning == null)
             {
-                var processName = System.Diagnostics.Process.GetCurrentProcess().ProcessName;
-                IsRunning = processName != null && processName.StartsWith("AutoTest.TestRunner");
+                IsRunning = ParentProcessUtils.ProcessName.StartsWith("AutoTest.TestRunner");
             }
 
             return IsRunning.Value;
