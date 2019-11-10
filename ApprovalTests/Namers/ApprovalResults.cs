@@ -6,7 +6,7 @@ using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.Namers
 {
-    public class ApprovalResults
+    public static class ApprovalResults
     {
         public static IDisposable UniqueForDotNetVersion()
         {

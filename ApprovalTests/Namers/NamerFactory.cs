@@ -5,8 +5,6 @@ namespace ApprovalTests.Namers
 {
     public class NamerFactory
     {
-        public static ApprovalResults ApprovalResults = new ApprovalResults();
-
         static AsyncLocal<string> additionalInformation = new AsyncLocal<string>();
 
         public static string AdditionalInformation
