@@ -8,6 +8,17 @@ namespace ApprovalTests.Utilities
 {
     public static class ParentProcessUtils
     {
+        public static string ProcessName { get; }
+        public static string ParentProcessName { get; }
+
+        static ParentProcessUtils()
+        {
+            using var currentProcess = Process.GetCurrentProcess();
+            ProcessName = currentProcess.ProcessName;
+            using var parentProcess = GetParentProcess(currentProcess);
+            ParentProcessName = parentProcess == null ? string.Empty : parentProcess.ProcessName;
+        }
+
         public static Process GetParentProcess(Process currentProcess)
         {
             return currentProcess.ParentProcess();
