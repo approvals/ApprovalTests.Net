@@ -16,6 +16,7 @@ namespace ApprovalTests.Reporters
     public class GenericDiffReporter : IEnvironmentAwareReporter
     {
         public const string DEFAULT_ARGUMENT_FORMAT = "{0} {1}";
+
         public static IEnumerable<string> GetTextAndImageFileTypes()
         {
             var all = new HashSet<string>();
@@ -23,9 +24,10 @@ namespace ApprovalTests.Reporters
             all.AddAll(GetImageFileTypes());
             return all;
         }
+
         private static readonly HashSet<string> TEXT_FILE_TYPES = new HashSet<string>
         {
-            // snippet: text_file_types
+            // begin-snippet: text_file_types
             ".txt",
             ".csv",
             ".htm",
@@ -42,7 +44,7 @@ namespace ApprovalTests.Reporters
 
         private static readonly HashSet<string> IMAGE_FILE_TYPES = new HashSet<string>
         {
-            // snippet: image_file_types
+            // begin-snippet: image_file_types
             ".png",
             ".gif",
             ".jpg",
@@ -82,7 +84,6 @@ namespace ApprovalTests.Reporters
             IMAGE_FILE_TYPES.AddAll(extensionsWithDots);
         }
 
-
         private static void AssertDots(string[] extensionsWithDots)
         {
             var wrong = extensionsWithDots.Where(s => !s.StartsWith(".")).ToList();
@@ -91,10 +92,12 @@ namespace ApprovalTests.Reporters
                 throw new ArgumentException($"The following extensions don't start with dots: {wrong.ToReadableString()}");
             }
         }
+
         public GenericDiffReporter(string diffProgram)
             : this(diffProgram, DEFAULT_ARGUMENT_FORMAT, $"Couldn't find: {diffProgram}")
         {
         }
+
         public GenericDiffReporter(string diffProgram, string diffProgramNotFoundMessage)
             : this(diffProgram, DEFAULT_ARGUMENT_FORMAT, diffProgramNotFoundMessage)
         {
@@ -131,6 +134,7 @@ Received {0} ({1}, {2}, {3})", GetType().Name, diffProgram, argumentsFormat, dif
             {
                 return fullPath;
             }
+
             var toFind = Path.GetFileName(fullPath);
             var output = PathUtilities.LocateFileFromEnvironmentPath(toFind).FirstOrDefault();
             return string.IsNullOrEmpty(output) ? fullPath : output;
@@ -142,6 +146,7 @@ Received {0} ({1}, {2}, {3})", GetType().Name, diffProgram, argumentsFormat, dif
             {
                 actualDiffProgram = GetActualProgramFile(originalDiffProgram);
             }
+
             return actualDiffProgram;
         }
 
@@ -151,6 +156,7 @@ Received {0} ({1}, {2}, {3})", GetType().Name, diffProgram, argumentsFormat, dif
             {
                 throw new Exception(diffProgramNotFoundMessage);
             }
+
             EnsureFileExists(approved);
             LaunchAsync(GetLaunchArguments(approved, received));
         }
@@ -170,10 +176,10 @@ Received {0} ({1}, {2}, {3})", GetType().Name, diffProgram, argumentsFormat, dif
                 {
                     File.WriteAllText(approved, " ", Encoding.UTF8);
                 }
+
                 ReporterEvents.CreatedApprovedFile(approved);
             }
         }
-
 
         public virtual bool IsWorkingInThisEnvironment(string forFile)
         {
@@ -185,7 +191,6 @@ Received {0} ({1}, {2}, {3})", GetType().Name, diffProgram, argumentsFormat, dif
             return IsFileOneOf(forFile, fileTypes());
         }
 
-
         public LaunchArgs GetLaunchArguments(string approved, string received)
         {
             return new LaunchArgs(GetDiffProgram(), string.Format(arguments, new[] {WrapPath(received), WrapPath(approved)}));
@@ -195,7 +200,6 @@ Received {0} ({1}, {2}, {3})", GetType().Name, diffProgram, argumentsFormat, dif
         {
             return '"' + path + '"';
         }
-
 
         public static bool IsTextFile(string forFile)
         {
@@ -221,7 +225,7 @@ Received {0} ({1}, {2}, {3})", GetType().Name, diffProgram, argumentsFormat, dif
 
         private static bool IsMsTest()
         {
-           return MsTestReporter.INSTANCE.IsFrameworkUsed();
+            return MsTestReporter.INSTANCE.IsFrameworkUsed();
         }
 
         private static void Launch(LaunchArgs launchArgs, bool waitForExit)

@@ -18,6 +18,9 @@ To change this file edit the source file and then execute run_markdown.cmd.
   * [Joining Reporters](#joining-reporters)
   * [Auto-Approving Reporters](#auto-approving-reporters)
   * [Continous Intergration](#continous-intergration)
+  * [File Types](#file-types)
+    * [Text File extensions](#text-file-extensions)
+    * [Image File extensions](#image-file-extensions)
 <!-- endtoc -->
 
 
@@ -30,6 +33,7 @@ The DiffReporter class goes through a chain of possible reporters to find the fi
 ### Windows
 
 <!-- snippet: windows_diff_reporters -->
+<a id='snippet-windows_diff_reporters'/></a>
 ```cs
 CodeCompareReporter.INSTANCE,
 BeyondCompareReporter.INSTANCE,
@@ -39,16 +43,18 @@ P4MergeReporter.INSTANCE,
 WinMergeReporter.INSTANCE,
 KDiffReporter.INSTANCE,
 VisualStudioReporter.INSTANCE,
+RiderReporter.INSTANCE,
 FrameworkAssertReporter.INSTANCE,
 QuietReporter.INSTANCE
 ```
-<sup>[snippet source](/ApprovalTests/Reporters/Windows/WindowsDiffReporter.cs#L12-L23)</sup>
+<sup>[snippet source](/ApprovalTests/Reporters/Windows/WindowsDiffReporter.cs#L12-L24) / [anchor](#snippet-windows_diff_reporters)</sup>
 <!-- endsnippet -->
 
 
 ### Mac
 
 <!-- snippet: mac_diff_reporters -->
+<a id='snippet-mac_diff_reporters'/></a>
 ```cs
 BeyondCompareMacReporter.INSTANCE,
 DiffMergeReporter.INSTANCE, 
@@ -59,18 +65,19 @@ TkDiffReporter.INSTANCE,
 FrameworkAssertReporter.INSTANCE,
 QuietReporter.INSTANCE
 ```
-<sup>[snippet source](/ApprovalTests/Reporters/Mac/MacDiffReporter.cs#L12-L21)</sup>
+<sup>[snippet source](/ApprovalTests/Reporters/Mac/MacDiffReporter.cs#L12-L21) / [anchor](#snippet-mac_diff_reporters)</sup>
 <!-- endsnippet -->
 
 
 ### Linux
 
 <!-- snippet: linux_diff_reporters -->
+<a id='snippet-linux_diff_reporters'/></a>
 ```cs
 DiffMergeReporter.INSTANCE,
 MeldReporter.INSTANCE
 ```
-<sup>[snippet source](/ApprovalTests/Reporters/Linux/LinuxDiffReporter.cs#L9-L12)</sup>
+<sup>[snippet source](/ApprovalTests/Reporters/Linux/LinuxDiffReporter.cs#L9-L12) / [anchor](#snippet-linux_diff_reporters)</sup>
 <!-- endsnippet -->
 
 
@@ -79,6 +86,7 @@ MeldReporter.INSTANCE
 If your favorite diff tool isn't already in ApprovalTests. There are a couple ways you can fix that. First, try a custom reporter
 
 <!-- snippet: custom_reporter -->
+<a id='snippet-custom_reporter'/></a>
 ```cs
 public class CustomReporter : GenericDiffReporter
 {
@@ -92,12 +100,13 @@ public class CustomReporter : GenericDiffReporter
 
 }
 ```
-<sup>[snippet source](/ApprovalTests.Tests/Reporters/Samples.cs#L5-L18)</sup>
+<sup>[snippet source](/ApprovalTests.Tests/Reporters/Samples.cs#L5-L18) / [anchor](#snippet-custom_reporter)</sup>
 <!-- endsnippet -->
 
 If you have more details you might want to use the DiffInfo Class.
 
 <!-- snippet: custom_reporter_diff_info -->
+<a id='snippet-custom_reporter_diff_info'/></a>
 ```cs
 public CustomReporter() :
     base(
@@ -108,7 +117,7 @@ public CustomReporter() :
 {
 }
 ```
-<sup>[snippet source](/ApprovalTests.Tests/Reporters/Samples.cs#L27-L36)</sup>
+<sup>[snippet source](/ApprovalTests.Tests/Reporters/Samples.cs#L27-L36) / [anchor](#snippet-custom_reporter_diff_info)</sup>
 <!-- endsnippet -->
 
 *note:* Please consider contributing these back via pull request.
@@ -137,6 +146,7 @@ ApprovalTests will not launch anything if you are running on a CI machine.
 Currently, we support:
 
 <!-- snippet: continuous_integration -->
+<a id='snippet-continuous_integration'/></a>
 ```cs
 TfsReporter.INSTANCE,
 TfsVnextReporter.INSTANCE,
@@ -150,11 +160,51 @@ MyGetReporter.INSTANCE,
 GoContinuousDeliveryReporter.INSTANCE,
 AppVeyorReporter.INSTANCE
 ```
-<sup>[snippet source](/ApprovalTests/Reporters/DefaultFrontLoaderReporter.cs#L11-L23)</sup>
+<sup>[snippet source](/ApprovalTests/Reporters/DefaultFrontLoaderReporter.cs#L11-L23) / [anchor](#snippet-continuous_integration)</sup>
 <!-- endsnippet -->
 
 You can add to this by configuring the FrontLoadedReporter Annotation.
 
+## File Types
+
+ApprovalTests will do different things depending on if it thinks a file is an image or not. It does this by the file extension.
+
+### Text File extensions
+
+<!-- snippet: text_file_types -->
+<a id='snippet-text_file_types'/></a>
+```cs
+".txt",
+".csv",
+".htm",
+".html",
+".xml",
+".eml",
+".cs",
+".css",
+".sql",
+".json",
+".dot"
+```
+<sup>[snippet source](/ApprovalTests/Reporters/GenericDiffReporter.cs#L30-L42) / [anchor](#snippet-text_file_types)</sup>
+<!-- endsnippet -->
+
+
+### Image File extensions
+
+<!-- snippet: image_file_types -->
+<a id='snippet-image_file_types'/></a>
+```cs
+".png",
+".gif",
+".jpg",
+".jpeg",
+".bmp",
+".tif",
+".tiff"
+```
+<sup>[snippet source](/ApprovalTests/Reporters/GenericDiffReporter.cs#L47-L55) / [anchor](#snippet-image_file_types)</sup>
+<!-- endsnippet -->
 ---
 
 [Back to User Guide](/doc/README.md#top)
