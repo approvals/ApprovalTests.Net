@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using ApprovalTests.Core;
+﻿using ApprovalTests.Core;
 using ApprovalTests.Utilities;
 
 namespace ApprovalTests.Reporters.ContinuousIntegration
@@ -17,6 +16,5 @@ namespace ApprovalTests.Reporters.ContinuousIntegration
         {
             ContinuousDeliveryUtils.ReportOnServer(approved, received);
         }
-
     }
 }
