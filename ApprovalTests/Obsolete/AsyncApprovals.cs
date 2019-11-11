@@ -16,7 +16,7 @@ This will yield better performance since other tests can run when a task is bein
     public static class AsyncApprovals
     {
         const string exceptionMessage = @"All modern unit testing frameworks now support async. So Approvals.Verify* should be used after awaiting the task to get the exception.
-For example in xUnit use Assert.ThrowsAsync to get the exception. Then use Approvals.Verify(Exception).";
+For example in xUnit or NUnit use Assert.ThrowsAsync to get the exception. Then use Approvals.Verify(Exception).";
 
         [ObsoleteEx(
             RemoveInVersion = "5.0",
