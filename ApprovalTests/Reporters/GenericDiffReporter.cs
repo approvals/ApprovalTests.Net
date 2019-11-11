@@ -141,12 +141,7 @@ Received {0} ({1}, {2}, {3})", GetType().Name, diffProgram, argumentsFormat, dif
 
         public string GetDiffProgram()
         {
-            if (actualDiffProgram == null)
-            {
-                actualDiffProgram = GetActualProgramFile(originalDiffProgram);
-            }
-
-            return actualDiffProgram;
+            return actualDiffProgram ??= GetActualProgramFile(originalDiffProgram);
         }
 
         public virtual void Report(string approved, string received)
