@@ -31,14 +31,5 @@ namespace ApprovalTests.Tests
             Approvals.Verify(text);
         }
 #endif
-
-        [Test]
-        public void TestDetectUtf8ByteOrderMark()
-        {
-            var with = PathUtilities.GetAdjacentFile("FileWithUtf8ByteOrderMark.txt");
-            var without = PathUtilities.GetAdjacentFile("FileWithoutUtf8ByteOrderMark.txt");
-            Assert.IsTrue(ApprovalTextWriter.IsUft8ByteOrderMarkPresent(with));
-            Assert.IsFalse(ApprovalTextWriter.IsUft8ByteOrderMarkPresent(without));
-        }
     }
 }
