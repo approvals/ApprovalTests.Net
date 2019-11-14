@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using ApprovalTests.Core;
 
 namespace ApprovalTests.Reporters.ContinuousIntegration
@@ -14,7 +15,15 @@ namespace ApprovalTests.Reporters.ContinuousIntegration
 
         public bool IsWorkingInThisEnvironment(string forFile)
         {
-            return Environment.GetEnvironmentVariable("CCNetBuildDate") != null;
+            var isWorking = Environment.GetEnvironmentVariable("CCNetBuildDate") != null;
+            if (isWorking)
+            {
+                var message = "CruiseControl support is being deprecated. It will be removed in V5.";
+                Trace.WriteLine(message);
+                Console.WriteLine(message);
+                Debug.WriteLine(message);
+            }
+            return isWorking;
         }
     }
 }
