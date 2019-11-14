@@ -243,6 +243,7 @@ ApprovalTests will do different things depending on if it thinks a file is an im
 ```
 <sup>[snippet source](/src/ApprovalTests/Reporters/GenericDiffReporter.cs#L46-L54) / [anchor](#snippet-image_file_types)</sup>
 <!-- endsnippet -->
+
 ---
 
-[Back to User Guide](/doc/README.md#top)
+[Back to User Guide](readme.md#top)

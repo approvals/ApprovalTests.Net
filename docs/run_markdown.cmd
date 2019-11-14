@@ -9,6 +9,7 @@
 :: To update:
 ::   dotnet tool update  -g MarkdownSnippets.Tool
 
+cd..
 
 call dotnet tool update -g MarkdownSnippets.Tool
 
