@@ -160,11 +160,17 @@ namespace ApprovalUtilities.Utilities
             return sb.ToString();
         }
 
+        [ObsoleteEx(
+            RemoveInVersion = "5.0",
+            ReplacementTypeOrMember = "String.Join(string separator, IEnumerable<string> values)")]
         public static string JoinStringsWith<T>(this IEnumerable<T> elements, Func<T, string> transform, string seperator)
         {
-            return JoinWith(elements.Select(transform), seperator);
+            return string.Join(seperator, elements.Select(transform));
         }
 
+        [ObsoleteEx(
+            RemoveInVersion = "5.0",
+            ReplacementTypeOrMember = "String.Join(string separator, IEnumerable<string> values)")]
         public static string JoinWith(this IEnumerable<string> elements, string seperator)
         {
             return string.Join(seperator, elements.ToArray());

@@ -2,7 +2,6 @@
 using System.Collections.Concurrent;
 using System.Linq;
 using ApprovalTests.Utilities;
-using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.TheoryTests
 {
@@ -51,7 +50,7 @@ namespace ApprovalTests.TheoryTests
 
         private static string ToText<T>(T[] n2, string label2)
         {
-            return label2 + "\n" + n2.JoinStringsWith(t => "" + t, "\n");
+            return $"{label2}\n{string.Join("\n", n2)}";
         }
     }
 }

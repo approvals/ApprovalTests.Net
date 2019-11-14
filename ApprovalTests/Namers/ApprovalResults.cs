@@ -126,8 +126,7 @@ https://github.com/approvals/ApprovalTests.Net/issues/new?title=Unknown%3A+%27Ru
 
         public static IDisposable ForScenario(params object[] dataPoints)
         {
-            var name = dataPoints.JoinStringsWith(o => "" + o, ".");
-            return ForScenario(name);
+            return ForScenario(string.Join(".", dataPoints));
         }
 
         public static string Scrub(string data)
