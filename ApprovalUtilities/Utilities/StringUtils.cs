@@ -160,14 +160,9 @@ namespace ApprovalUtilities.Utilities
             return sb.ToString();
         }
 
-        public static string JoinStringsWith<T>(this IEnumerable<T> elements, Func<T, string> transform, string seperator)
+        public static string JoinWith<T>(this IEnumerable<T> elements, string separator)
         {
-            return JoinWith(elements.Select(transform), seperator);
-        }
-
-        public static string JoinWith(this IEnumerable<string> elements, string seperator)
-        {
-            return string.Join(seperator, elements.ToArray());
+            return string.Join(separator, elements);
         }
     }
 }

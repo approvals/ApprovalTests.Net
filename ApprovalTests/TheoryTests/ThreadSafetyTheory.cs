@@ -51,7 +51,7 @@ namespace ApprovalTests.TheoryTests
 
         private static string ToText<T>(T[] n2, string label2)
         {
-            return label2 + "\n" + n2.JoinStringsWith(t => "" + t, "\n");
+            return label2 + "\n" + n2.JoinWith("\n");
         }
     }
 }
