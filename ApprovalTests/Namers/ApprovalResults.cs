@@ -10,7 +10,7 @@ namespace ApprovalTests.Namers
     {
         public static IDisposable UniqueForDotNetVersion()
         {
-            return NamerFactory.AsEnvironmentSpecificTest(GetDotNetVersion);
+            return NamerFactory.AsEnvironmentSpecificTest(GetDotNetVersion());
         }
 
         public static string GetDotNetVersion()
@@ -21,8 +21,9 @@ namespace ApprovalTests.Namers
 #if (!NET461)
         public static IDisposable UniqueForRuntime(bool throwOnError = true)
         {
-            return NamerFactory.AsEnvironmentSpecificTest(() => GetDotNetRuntime(throwOnError));
+            return NamerFactory.AsEnvironmentSpecificTest(GetDotNetRuntime(throwOnError));
         }
+
         public static string GetDotNetRuntime(bool throwOnError)
         {
             var frameworkDescription = System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription;
@@ -71,7 +72,7 @@ https://github.com/approvals/ApprovalTests.Net/issues/new?title=Unknown%3A+%27Ru
 
         public static IDisposable UniqueForMachineName()
         {
-            return NamerFactory.AsEnvironmentSpecificTest(GetMachineName);
+            return NamerFactory.AsEnvironmentSpecificTest(GetMachineName());
         }
 
         public static string GetMachineName()
@@ -105,7 +106,7 @@ https://github.com/approvals/ApprovalTests.Net/issues/new?title=Unknown%3A+%27Ru
 
         public static IDisposable UniqueForOs()
         {
-            return NamerFactory.AsEnvironmentSpecificTest(GetOsName);
+            return NamerFactory.AsEnvironmentSpecificTest(GetOsName());
         }
 
         public static string GetUserName()
@@ -115,13 +116,13 @@ https://github.com/approvals/ApprovalTests.Net/issues/new?title=Unknown%3A+%27Ru
 
         public static IDisposable UniqueForUserName()
         {
-            return NamerFactory.AsEnvironmentSpecificTest(GetUserName);
+            return NamerFactory.AsEnvironmentSpecificTest(GetUserName());
         }
 
         public static IDisposable ForScenario(string data)
         {
             var name = "ForScenario." + Scrub(data);
-            return NamerFactory.AsEnvironmentSpecificTest(() => name);
+            return NamerFactory.AsEnvironmentSpecificTest(name);
         }
 
         public static IDisposable ForScenario(params object[] dataPoints)
