@@ -15,7 +15,7 @@
     <PackageTags>Approvals ApprovalTests ApprovalTest Test Verification Verify Approve Testing</PackageTags>
     <PackageIconUrl>https://avatars3.githubusercontent.com/u/36907</PackageIconUrl>
     <PackageProjectUrl>https://github.com/approvals/ApprovalTests.Net</PackageProjectUrl>
-    <PackageOutputPath>$(SolutionDir)nuget_packages</PackageOutputPath>
+    <PackageOutputPath>$(SolutionDir)..\nuget_packages</PackageOutputPath>
     <DebugType>portable</DebugType>
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
