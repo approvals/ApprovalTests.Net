@@ -1,7 +1,6 @@
 image: Visual Studio 2019
-before_build:
-  - nuget restore -Verbosity quiet
-build:
-  verbosity: minimal
+build_script:
+- ps: >-
+    dotnet build src --configuration Debug
 artifacts:
   - path: nuget_packages\*.nupkg
