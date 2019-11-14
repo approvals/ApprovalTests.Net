@@ -29,18 +29,26 @@ namespace ApprovalTests.Namers
             AsEnvironmentSpecificTest(environmentLabeler);
         }
 
-        public static IDisposable AsEnvironmentSpecificTest(Func<string> environmentLabeler)
+        public static IDisposable AsEnvironmentSpecificTest(string label)
         {
             if (AdditionalInformation == null)
             {
-                AdditionalInformation = environmentLabeler();
+                AdditionalInformation = label;
             }
             else
             {
-                AdditionalInformation += "." + environmentLabeler();
+                AdditionalInformation += "." + label;
             }
 
             return new EnvironmentSpecificCleanUp();
+        }
+
+        [ObsoleteEx(
+            RemoveInVersion = "5.0",
+            ReplacementTypeOrMember = "AsEnvironmentSpecificTest(string)")]
+        public static IDisposable AsEnvironmentSpecificTest(Func<string> environmentLabeler)
+        {
+            return AsEnvironmentSpecificTest(environmentLabeler());
         }
 
         public static void Clear()
