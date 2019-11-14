@@ -23,4 +23,4 @@ As new features are added, they will be [documented here](Features.md)
 
 ---
 
-[Back to User Guide](/doc/README.md#top)
+[Back to User Guide](readme.md#top)
