@@ -20,11 +20,8 @@ namespace ApprovalTests.Tests.Reporters
         [UseReporter(typeof(MachineSpecificReporter))]
         public void TestMissingDots()
         {
-            using (Namers.ApprovalResults.UniqueForOs())
-            {
-                var e = ExceptionUtilities.GetException(() => GenericDiffReporter.RegisterTextFileTypes(".exe", "txt", ".error", "asp"));
-                Approvals.Verify(e);
-            }
+            var e = ExceptionUtilities.GetException(() => GenericDiffReporter.RegisterTextFileTypes(".exe", "txt", ".error", "asp"));
+            Approvals.VerifyException(e);
         }
 
         [Test]
