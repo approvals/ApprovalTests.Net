@@ -16,6 +16,7 @@ To change this file edit the source file and then execute run_markdown.cmd.
     * [Linux](#linux)
   * [Making Custom Reporters](#making-custom-reporters)
   * [Joining Reporters](#joining-reporters)
+    * [Choosing a diff tool preference](#choosing-a-diff-tool-preference)
   * [Auto-Approving Reporters](#auto-approving-reporters)
   * [Continous Intergration](#continous-intergration)
   * [File Types](#file-types)
@@ -129,6 +130,43 @@ These classes help you combine reporters to make more powerful combinations
 
 * FirstWorkingReporter - launch the first report for this system, only 1
 * MultiReporter - launch ALL reporters
+
+
+### Choosing a diff tool preference
+
+The preference for diff tool can often vary from the default setting. As such a custom preference can be created.
+
+<!-- snippet: CustomDiffReporter.cs -->
+<a id='snippet-CustomDiffReporter.cs'/></a>
+```cs
+using ApprovalTests.Reporters;
+using ApprovalTests.Reporters.TestFrameworks;
+using ApprovalTests.Reporters.Windows;
+
+public class CustomDiffReporter :
+    FirstWorkingReporter
+{
+    public CustomDiffReporter()
+        : base(
+            //TODO: re-order or remove as required
+            CodeCompareReporter.INSTANCE,
+            BeyondCompareReporter.INSTANCE,
+            TortoiseDiffReporter.INSTANCE,
+            AraxisMergeReporter.INSTANCE,
+            P4MergeReporter.INSTANCE,
+            WinMergeReporter.INSTANCE,
+            KDiffReporter.INSTANCE,
+            VisualStudioReporter.INSTANCE,
+            RiderReporter.INSTANCE,
+            FrameworkAssertReporter.INSTANCE,
+            QuietReporter.INSTANCE
+        )
+    {
+    }
+}
+```
+<sup>[snippet source](/ApprovalTests.Tests/Reporters/CustomDiffReporter.cs#L1-L25) / [anchor](#snippet-CustomDiffReporter.cs)</sup>
+<!-- endsnippet -->
 
 
 ## Auto-Approving Reporters

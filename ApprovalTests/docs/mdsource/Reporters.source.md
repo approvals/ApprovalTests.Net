@@ -44,6 +44,13 @@ These classes help you combine reporters to make more powerful combinations
 * MultiReporter - launch ALL reporters
 
 
+### Choosing a diff tool preference
+
+The preference for diff tool can often vary from the default setting. As such a custom preference can be created.
+
+snippet: CustomDiffReporter.cs
+
+
 ## Auto-Approving Reporters
 
 These reporters create a commandline move file to approve the results and place it on your clipboard when a test fails.
