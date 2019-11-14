@@ -17,6 +17,12 @@ namespace ApprovalTests.Tests
         }
 
         [Test]
+        public void VerifyWithExtension()
+        {
+            Approvals.VerifyWithExtension("should,be,approved", ".csv");
+        }
+
+        [Test]
         public void EnumerableWithLabel()
         {
             Approvals.VerifyAll(text, "collection");

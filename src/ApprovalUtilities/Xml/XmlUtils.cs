@@ -24,12 +24,10 @@ namespace ApprovalUtilities.Xml
 
         public static string FormatXmlWithOrderedAttributes(string xml)
         {
-            string text;
             var xElement = XElement.Parse(xml);
             SortAttributes(xElement);
 
-            text = xElement.ToString();
-            return text;
+            return xElement.ToString();
         }
 
         public static void SortAttributes(XElement xElement)

@@ -166,16 +166,23 @@ namespace ApprovalTests
 
         public static void Verify(object text)
         {
-            Verify(WriterFactory.CreateTextWriter("" + text));
+            Verify(WriterFactory.CreateTextWriter(text.ToString()));
         }
 
-        public static void Verify(string text, Func<string, string> scrubber= null)
+        public static void Verify(string text, Func<string, string> scrubber = null)
+        {
+            VerifyWithExtension(text, ".txt", scrubber);
+        }
+
+        public static void VerifyWithExtension(string text, string fileExtensionWithDot, Func<string, string> scrubber = null)
         {
             if (scrubber == null)
             {
                 scrubber = ScrubberUtils.NO_SCRUBBER;
             }
-            Verify(WriterFactory.CreateTextWriter(scrubber(text)));
+
+            var fileExtensionWithoutDot = fileExtensionWithDot.TrimStart('.');
+            Verify(WriterFactory.CreateTextWriter(scrubber(text), fileExtensionWithoutDot));
         }
 
         public static void Verify(Exception e)
@@ -235,8 +242,9 @@ namespace ApprovalTests
             VerifyAll(dictionary.OrderBy(p => p.Key), p => formatter(p.Key, p.Value));
         }
 
-        public static void VerifyBinaryFile(byte[] bytes, string fileExtensionWithoutDot)
+        public static void VerifyBinaryFile(byte[] bytes, string fileExtensionWithDot)
         {
+            var fileExtensionWithoutDot = fileExtensionWithDot.TrimStart('.');
             Verify(new ApprovalBinaryWriter(bytes, fileExtensionWithoutDot));
         }
 
@@ -252,7 +260,7 @@ namespace ApprovalTests
 
         public static void VerifyJson(string json)
         {
-            Verify(WriterFactory.CreateTextWriter(json.FormatJson(), "json"));
+            VerifyWithExtension(json.FormatJson(), ".json");
         }
 
         #endregion Enumerable
