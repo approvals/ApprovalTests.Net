@@ -152,7 +152,7 @@ Received {0} ({1}, {2}, {3})", GetType().Name, diffProgram, argumentsFormat, dif
             }
 
             EnsureFileExists(approved);
-            LaunchAsync(GetLaunchArguments(approved, received));
+            Launch(GetLaunchArguments(approved, received));
         }
 
         public static void EnsureFileExists(string approved)
@@ -205,37 +205,15 @@ Received {0} ({1}, {2}, {3})", GetType().Name, diffProgram, argumentsFormat, dif
             return fileTypes.Any(forFile.EndsWith);
         }
 
+        [ObsoleteEx(
+            RemoveInVersion = "5.0",
+            ReplacementTypeOrMember = nameof(Launch))]
         public static void LaunchAsync(LaunchArgs launchArgs)
         {
-            if (IsMsTest())
-            {
-                LaunchWithWait(launchArgs);
-            }
-            else
-            {
-                Launch(launchArgs);
-            }
+             Launch(launchArgs);
         }
 
-        private static bool IsMsTest()
-        {
-            return MsTestReporter.INSTANCE.IsFrameworkUsed();
-        }
-
-        static void LaunchWithWait(LaunchArgs launchArgs)
-        {
-            try
-            {
-                using var process = Process.Start(launchArgs.Program, launchArgs.Arguments);
-                process.WaitForExit();
-            }
-            catch (Win32Exception e)
-            {
-                throw new Exception($"Unable to launch: {launchArgs.Program} with arguments {launchArgs.Arguments}\nError Message: {e.Message}", e);
-            }
-        }
-
-        static void Launch(LaunchArgs launchArgs)
+        public static void Launch(LaunchArgs launchArgs)
         {
             try
             {
