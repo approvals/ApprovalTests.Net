@@ -1,4 +1,6 @@
-﻿using ApprovalTests.Core;
+﻿using System;
+using System.Diagnostics;
+using ApprovalTests.Core;
 using ApprovalTests.Utilities;
 
 namespace ApprovalTests.Reporters.ContinuousIntegration
@@ -19,6 +21,13 @@ namespace ApprovalTests.Reporters.ContinuousIntegration
             if (IsRunning == null)
             {
                 IsRunning = ParentProcessUtils.ProcessName.StartsWith("AutoTest.TestRunner");
+                if (IsRunning.Value)
+                {
+                    var message = "AutoTest support is being deprecated. It will be removed in V5.";
+                    Trace.WriteLine(message);
+                    Console.WriteLine(message);
+                    Debug.WriteLine(message);
+                }
             }
 
             return IsRunning.Value;
