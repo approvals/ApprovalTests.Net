@@ -69,8 +69,8 @@ If you prefer auditory learning, you might enjoy the following podcast
 
 ## Docs
 
- * [ApprovalTests](/ApprovalTests/docs/README.md)
- * [ApprovalUtilities](/ApprovalUtilities/docs/README.md)
+ * [ApprovalTests](docs/ApprovalTests/readme.md)
+ * [ApprovalUtilities](docs/ApprovalUtilities/readme.md)
 
 
 ## Available on NuGet
