@@ -35,7 +35,7 @@ You can watch a bunch of short videos on getting started and [using ApprovalTest
 
 ## Podcasts
 
-If you prefer auditory learning, you might enjoy the following podcast 
+If you prefer auditory learning, you might enjoy the following podcast
 
  * [This Agile Life](http://www.thisagilelife.com/46/)
  * [Hanselminutes](http://www.hanselminutes.com/360/approval-tests-with-llewellyn-falco)
@@ -108,7 +108,7 @@ ask on twitter: [@LlewellynFalco](https://twitter.com/#!/llewellynfalco) or #App
 
 ### Contributors
 
-This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
+This project exists thanks to all the people who contribute.
 
 <a href="graphs/contributors"><img src="https://opencollective.com/approvals/contributors.svg?width=890&button=false" /></a>
 

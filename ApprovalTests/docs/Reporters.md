@@ -186,7 +186,7 @@ ApprovalTests will do different things depending on if it thinks a file is an im
 ".json",
 ".dot"
 ```
-<sup>[snippet source](/ApprovalTests/Reporters/GenericDiffReporter.cs#L30-L42) / [anchor](#snippet-text_file_types)</sup>
+<sup>[snippet source](/ApprovalTests/Reporters/GenericDiffReporter.cs#L29-L41) / [anchor](#snippet-text_file_types)</sup>
 <!-- endsnippet -->
 
 
@@ -203,7 +203,7 @@ ApprovalTests will do different things depending on if it thinks a file is an im
 ".tif",
 ".tiff"
 ```
-<sup>[snippet source](/ApprovalTests/Reporters/GenericDiffReporter.cs#L47-L55) / [anchor](#snippet-image_file_types)</sup>
+<sup>[snippet source](/ApprovalTests/Reporters/GenericDiffReporter.cs#L46-L54) / [anchor](#snippet-image_file_types)</sup>
 <!-- endsnippet -->
 ---
 
