@@ -2,7 +2,8 @@
 {
     [ObsoleteEx(
         RemoveInVersion = "5.0",
-        ReplacementTypeOrMember = nameof(IDatabaseToExecutableQueryAdapter))]
+        ReplacementTypeOrMember = nameof(IDatabaseToExecutableQueryAdapter),
+        TreatAsErrorFromVersion = "5.0")]
     public interface IDatabaseToExecuteableQueryAdaptor :
         IDatabaseToExecutableQueryAdapter
     {

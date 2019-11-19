@@ -12,7 +12,8 @@ namespace ApprovalTests.Async
         RemoveInVersion = "5.0",
         ReplacementTypeOrMember = nameof(Approvals),
         Message = @"All modern unit testing frameworks now support async. So Approvals.Verify* should be used after awaiting the task to get the result.
-This will yield better performance since other tests can run when a task is being awaited.")]
+This will yield better performance since other tests can run when a task is being awaited.",
+        TreatAsErrorFromVersion = "5.0")]
     public static class AsyncApprovals
     {
         const string exceptionMessage = @"All modern unit testing frameworks now support async. So Approvals.Verify* should be used after awaiting the task to get the exception.
@@ -21,7 +22,8 @@ For example in xUnit or NUnit use Assert.ThrowsAsync to get the exception. Then 
         [ObsoleteEx(
             RemoveInVersion = "5.0",
             ReplacementTypeOrMember = nameof(Approvals),
-            Message = exceptionMessage)]
+            Message = exceptionMessage,
+            TreatAsErrorFromVersion = "5.0")]
         public static void VerifyException(Task task)
         {
             VerifyException(task, ScrubberUtils.NO_SCRUBBER);
@@ -30,7 +32,8 @@ For example in xUnit or NUnit use Assert.ThrowsAsync to get the exception. Then 
         [ObsoleteEx(
             RemoveInVersion = "5.0",
             ReplacementTypeOrMember = nameof(Approvals),
-            Message = exceptionMessage)]
+            Message = exceptionMessage,
+            TreatAsErrorFromVersion = "5.0")]
         public static void VerifyException(Task task, Func<string, string> scrubber)
         {
             var exceptions = new List<Exception>();
@@ -55,7 +58,8 @@ For example in xUnit or NUnit use Assert.ThrowsAsync to get the exception. Then 
         [ObsoleteEx(
             RemoveInVersion = "5.0",
             ReplacementTypeOrMember = nameof(Approvals),
-            Message = exceptionMessage)]
+            Message = exceptionMessage,
+            TreatAsErrorFromVersion = "5.0")]
         public static void VerifyException<T>(Func<Task<T>> taskRunner)
         {
             VerifyException(taskRunner(), ScrubberUtils.NO_SCRUBBER);
