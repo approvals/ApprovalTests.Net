@@ -20,5 +20,7 @@
     <ProjectReference Include="..\ApprovalUtilities\ApprovalUtilities.csproj" />
     <Content Include="build\ApprovalTests.props" PackagePath="build\ApprovalTests.props" />
     <Content Include="buildMultiTargeting\ApprovalTests.props" PackagePath="buildMultiTargeting\ApprovalTests.props" />
+    <Content Include="build\ApprovalTests.targets" PackagePath="build\ApprovalTests.targets" />
+    <Content Include="buildMultiTargeting\ApprovalTests.targets" PackagePath="buildMultiTargeting\ApprovalTests.targets" />
   </ItemGroup>
 </Project>
