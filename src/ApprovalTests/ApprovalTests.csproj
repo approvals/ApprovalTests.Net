@@ -19,5 +19,6 @@
     <PackageReference Include="TextCopy" Version="1.7.1" />
     <ProjectReference Include="..\ApprovalUtilities\ApprovalUtilities.csproj" />
     <Content Include="build\ApprovalTests.props" PackagePath="build\ApprovalTests.props" />
+    <Content Include="buildMultiTargeting\ApprovalTests.props" PackagePath="buildMultiTargeting\ApprovalTests.props" />
   </ItemGroup>
 </Project>
