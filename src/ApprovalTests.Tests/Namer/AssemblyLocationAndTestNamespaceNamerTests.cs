@@ -14,7 +14,7 @@ namespace ApprovalTests.Tests.Namer.With.Additional.Namespace.Nesting
             var expectedPath =
                 Path.Combine(
                     new AssemblyLocationNamer().SourcePath,
-                    @"Namer\With\Additional\Namespace\Nesting");
+                    @"Namer\With\Additional\Namespace\Nesting".Replace(@"\", Path.DirectorySeparatorChar.ToString()));
 
             Assert.AreEqual(expectedPath, sourcePath);
         }
