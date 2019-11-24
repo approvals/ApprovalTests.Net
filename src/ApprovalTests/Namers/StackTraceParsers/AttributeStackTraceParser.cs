@@ -29,6 +29,7 @@ namespace ApprovalTests.Namers.StackTraceParsers
         }
 
         public string ApprovalName => $"{TypeName}.{GetMethodName()}{AdditionalInfo}";
+        public Type ApprovalClass => approvalFrame.Class;
 
         protected virtual string GetMethodName()
         {

@@ -54,6 +54,8 @@ To learn how to implement one see {helpLink}")
 
         public string ApprovalName => parser.ApprovalName;
 
+        public Type ApprovalClass => parser.ApprovalClass;
+
         public string SourcePath
         {
             get

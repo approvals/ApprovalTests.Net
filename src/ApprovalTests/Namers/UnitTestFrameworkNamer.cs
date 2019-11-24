@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using ApprovalTests.Core;
 using ApprovalTests.Namers.StackTraceParsers;
@@ -24,6 +25,8 @@ namespace ApprovalTests.Namers
         }
 
         public string Name => stackTraceParser.ApprovalName;
+
+        protected Type ApprovalClass => stackTraceParser.ApprovalClass;
 
         public virtual string SourcePath => Path.Combine(stackTraceParser.SourcePath, Subdirectory);
 

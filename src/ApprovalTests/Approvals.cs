@@ -153,6 +153,7 @@ namespace ApprovalTests
         {
             return defaultNamerCreator.Invoke();
         }
+
         /// <summary>
         /// This is sometimes needed on CI systems that move/remove the original source.
         /// If you use this you will also need to set the .approved. files to "Copy Always"
@@ -161,7 +162,25 @@ namespace ApprovalTests
         /// </summary>
         public static void UseAssemblyLocationForApprovedFiles()
         {
-            RegisterDefaultNamerCreation(()=> new AssemblyLocationNamer());
+            RegisterDefaultNamerCreation(() => new AssemblyLocationNamer());
+        }
+
+        /// <summary>
+        /// This is sometimes needed on CI systems that move/remove the original source.
+        /// If you use this you will also need to set the .approved. files to "Copy Always".
+        ///
+        /// An example of when this is required is:
+        /// * The source location is D:\a\1\s\Foo.Tests\Bar\Baz\Qux.approved.txt
+        /// * The execution location is D:\a\r1\a\Foo.Tests\Bar\Baz\Qux.approved.txt
+        /// * The test namespace is Foo.Tests.Bar.Baz
+        ///
+        /// To use this the following conditions must be met:
+        /// * All test namespaces must start with the test assembly's name
+        /// * All test namespaces must align with the on-disk folder structure
+        /// </summary>
+        public static void UseAssemblyLocationAndTestNamespaceForApprovedFiles()
+        {
+            RegisterDefaultNamerCreation(() => new AssemblyLocationAndTestNamespaceNamer());
         }
 
         public static void Verify(object text)
