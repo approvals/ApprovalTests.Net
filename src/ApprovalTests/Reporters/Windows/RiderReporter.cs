@@ -7,7 +7,7 @@ namespace ApprovalTests.Reporters.Windows
 {
     public class RiderReporter : GenericDiffReporter
     {
-        public static readonly RiderReporter INSTANCE = new RiderReporter();
+        public static readonly RiderReporter INSTANCE;
         private static string PATH;
 
         static RiderReporter()
@@ -20,6 +20,8 @@ namespace ApprovalTests.Reporters.Windows
             {
                 PATH = null;
             }
+            
+            INSTANCE = new RiderReporter();
         }
 
         public RiderReporter()
