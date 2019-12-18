@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project>
-  <ItemGroup Condition="$(NestApprovedFiles) == true">
+  <ItemGroup>
     <None Update="**\*.approved.*"
           DependentUpon="$(
   [System.String]::Copy('%(FileName)')
