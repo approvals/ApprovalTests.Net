@@ -1,86 +1,45 @@
-# Reporters
+# Getting Started with Reporters
 
 toc
 
 
-## Supported Diff Tools
+## Configuring Reporters
 
-The DiffReporter class goes through a chain of possible reporters to find the first option installed on your system. Currently the search goes in this order:
+Reporters are set using the `[UseReporter(typeof(YourReporter))]` attribute. This can occur in 3 different places, and will be used in order of least surprise.
 
+1. On the method
+1. On the Class
+1. On the assembly
 
-### Windows
+## When to use different reporters
 
-snippet: windows_diff_reporters
+Reporters help you in different ways
 
+1. To see differences in your test results
+1. To see how a test result would render
+1. To explore a test result or domain 
+1. To approve / manipulate a test result
 
-### Mac
+Based on what you are doing, you will want to switch which reporter you are using. Maybe even use multiple reporters at a time to acomplish different roles.
 
-snippet: mac_diff_reporters
+### Differences
 
+The main use for seeing differeneces is to use a reporter that will open a DiffTool. [Full list of supported diff tools here](Reporters.md#supported-diff-tools)
 
-### Linux
+### Rendering 
+Let's say your test result is some HTML. In the beginning you might want to render it in a bowser to be able to see that it is indeed what you want. In this moment, try the  `FileLauncherReporter`. Which will open the `.received.` file in the application associated to it on your machine.
 
-snippet: linux_diff_reporters
+This is useful for many types of test results including, xml, svg, csv, html, images, sound files, etc...
 
+### Exploring Results
 
-## Making Custom Reporters
+Like rendering, you might need to use different tools to examine a file to see that it's what you actually want. Sometimes you need to open them in excel or other places just to play. If you don't have a reporter that will open in your desired tool (and you don't want to [build a custom one](Reporters.md#)) you might just want to use the `QuiteReporter` which will do nothing, allowing you to open whatever you need without distruption
 
-If your favorite diff tool isn't already in ApprovalTests. There are a couple ways you can fix that. First, try a custom reporter
+### Approving
 
-snippet: custom_reporter
+DiffTools can be a great way to approve most text files (just copy everything to the `.approved.` file.) However, some DiffTools will break this because they are trying to help (prettifing, triming or otherwise formatting the text)
+The `ClipboardReporter` or `AllFailingTestsClipboardReporter` can be useful in these cases. Writing the command line text to move the files to your clipboard so you can paste them into your terminal to approve the test.
 
-If you have more details you might want to use the DiffInfo Class.
-
-snippet: custom_reporter_diff_info
-
-*note:* Please consider contributing these back via pull request.
-
-
-## Joining Reporters
-
-These classes help you combine reporters to make more powerful combinations
-
-* FirstWorkingReporter - launch the first report for this system, only 1
-* MultiReporter - launch ALL reporters
-
-
-### Choosing a diff tool preference
-
-The preference for diff tool can often vary from the default setting. As such a custom preference can be created.
-
-snippet: CustomDiffReporter.cs
-
-
-## Auto-Approving Reporters
-
-These reporters create a commandline move file to approve the results and place it on your clipboard when a test fails.
-
-* ClipboardReporter - This test only
-* AllFailingTestsClipboardReporter - All tests (this might make a long command line)
-
-
-## Continous Intergration
-
-ApprovalTests will not launch anything if you are running on a CI machine.
-
-Currently, we support:
-
-snippet: continuous_integration
-
-You can add to this by configuring the FrontLoadedReporter Annotation.
-
-## File Types
-
-ApprovalTests will do different things depending on if it thinks a file is an image or not. It does this by the file extension.
-
-### Text File extensions
-
-snippet: text_file_types
-
-
-### Image File extensions
-
-snippet: image_file_types
 
 ---
 
