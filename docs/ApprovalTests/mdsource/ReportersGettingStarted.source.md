@@ -2,9 +2,6 @@
 
 toc
 
-## Using Reporters
-
-For an introduction on how to use reporters check out [ getting started with reporters ](./ReportersGettingStarted.md)
 
 ## Supported Diff Tools
 
