@@ -10,10 +10,53 @@ To change this file edit the source file and then execute run_markdown.cmd.
 <!-- toc -->
 ## Contents
 
+  * [Approvals.AssertText](#approvalsasserttext)
   * [MachineSpecificReporter](#machinespecificreporter)
   * [ApprovalsFilename](#approvalsfilename)
   * [Making Custom Reporters](#making-custom-reporters)
   * [Environment SpecificTests](#environment-specifictests)<!-- endtoc -->
+
+## Approvals.AssertText
+
+If you prefer not to store your expectations in the `.approved.` files, you can store them directly inline with your code.
+Sample:
+
+(Before):
+
+<!-- snippet: assert_text_before -->
+<a id='snippet-assert_text_before'/></a>
+```cs
+var header = new Header();
+var actual = header.MakeHeading("I am ten chars");
+var expected = "";
+Approvals.AssertText(expected, actual);
+```
+<sup><a href='/src/ApprovalTests.Tests/Reporters/InlineTextReporterTest.cs#L54-L59' title='File snippet `assert_text_before` was extracted from'>snippet source</a> | <a href='#snippet-assert_text_before' title='Navigate to start of snippet `assert_text_before`'>anchor</a></sup>
+<!-- endsnippet -->
+
+When you do this, it will copy the c# for the `.recieved.` to your clipboard, so you can paste it inline.
+
+(After)
+<!-- snippet: assert_text -->
+<a id='snippet-assert_text'/></a>
+```cs
+var header = new Header();
+var actual = header.MakeHeading("I am ten chars");
+var expected = new[]{
+    "**************",
+    "I am ten chars",
+    "**************",
+
+};
+Approvals.AssertText(expected, actual);
+```
+<sup><a href='/src/ApprovalTests.Tests/Reporters/InlineTextReporterTest.cs#L39-L49' title='File snippet `assert_text` was extracted from'>snippet source</a> | <a href='#snippet-assert_text' title='Navigate to start of snippet `assert_text`'>anchor</a></sup>
+<!-- endsnippet -->
+
+
+Currently, it put the text as an array of strings that gets concatenated as this tends to read better.
+
+It will also write the results to a temp files on failure and open a DiffTool, so you can easily view the results and differences.
 
 
 ## [MachineSpecificReporter](EnvironmentSpecificTests.md#machinespecificreporter)

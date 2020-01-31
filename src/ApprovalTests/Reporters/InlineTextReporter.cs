@@ -27,7 +27,7 @@ namespace ApprovalTests.Reporters
             return
                 "                var expected = new[]{\n" +
                 text.Split('\n').Select(s => "                \"" + HandleEscapeChars(s) + "\"," ).JoinWith("\n") +
-                "                };";
+                "\n                };";
         }
 
         private static string HandleEscapeChars(string text)

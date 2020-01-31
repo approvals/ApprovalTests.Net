@@ -21,3 +21,5 @@ call mdsnippets ^
 :: Custom Markdown linting
 :: todo: fix
 :: ./fix_markdown.sh
+
+pause
