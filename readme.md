@@ -78,31 +78,55 @@ If you prefer auditory learning, you might enjoy the following podcast
 
 ## Examples
 
-```c#
-[UseReporter(typeof(DiffReporter))]
-[TestFixture]
-public class SampleTest
-{
-	[Test]
-	public void TestList()
-	{
-		var names = new[] {"Llewellyn", "James", "Dan", "Jason", "Katrina"};
-		Array.Sort(names);
-		Approvals.VerifyAll(names, "");
-	}
-}
+
+<!-- snippet: sample_test -->
+<a id='snippet-sample_test'/></a>
+```cs
+[UseReporter(typeof(VisualStudioReporter))]
+    [TestFixture]
+    public class SampleTest
+    {
+        [Test]
+        public void TestList()
+        {
+            var names = new[] { "Llewellyn", "James", "Dan", "Jason", "Katrina" };
+            Array.Sort(names);
+            Approvals.VerifyAll(names, label:"");
+        }
+    }
 ```
+<sup><a href='/src/ApprovalTests.Tests/SampleTest.cs#L8-L21' title='File snippet `sample_test` was extracted from'>snippet source</a> | <a href='#snippet-sample_test' title='Navigate to start of snippet `sample_test`'>anchor</a></sup>
+<!-- endsnippet -->
 
 Will Produce a File
 
-    SampleTest.TestList.received.txt
-    [0] = Dan
-    [1] = James
-    [2] = Jason
-    [3] = Katrina
-    [4] = Llewellyn
+    `SampleTest.TestList.received.txt`
+	
+<!-- snippet: SampleTest.TestList.approved.txt -->
+<a id='snippet-SampleTest.TestList.approved.txt'/></a>
+```txt
+[0] = Dan
+[1] = James
+[2] = Jason
+[3] = Katrina
+[4] = Llewellyn
+```
+<sup><a href='/src/ApprovalTests.Tests/SampleTest.TestList.approved.txt#L1-L5' title='File snippet `SampleTest.TestList.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-SampleTest.TestList.approved.txt' title='Navigate to start of snippet `SampleTest.TestList.approved.txt`'>anchor</a></sup>
+<!-- endsnippet -->
 
-Simply rename this to SampleTest.TestList.**approved**.txt and the test will now pass.
+It will also open these 2 files (`.received.` & `.approved.` ) in a diff editor. 
+
+<img src="docs/images/sample_test_01_open_diff.png"  width="50%" height="50%">
+
+You can **approve** these results by copying everything (ctrl+a, ctrl+c) and pasting it in the right hand side (ctrl+a, ctrl+v)
+
+<img src="docs/images/sample_test_02_approving.png"  width="50%" height="50%">
+
+
+Alternatively, you can rename the `.received.` file to SampleTest.TestList.**approved**.txt and the test will now pass. 
+
+
+**note:** The diff tools are **NOT** opened when the tests pass, only on failure.
 
 
 ## Approved File Artifacts
