@@ -4,7 +4,9 @@ using NUnit.Framework;
 namespace ApprovalTests.Tests.Html
 {
     [TestFixture]
+    // begin-snippet: multiple_reporters
     [UseReporter(typeof(DiffReporter), typeof(FileLauncherReporter))]
+    // end-snippet:
     public class HtmlTest
     {
         [Test]

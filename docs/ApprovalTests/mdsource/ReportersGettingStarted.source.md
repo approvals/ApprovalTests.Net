@@ -11,6 +11,16 @@ Reporters are set using the `[UseReporter(typeof(YourReporter))]` attribute. Thi
 1. On the Class
 1. On the assembly
 
+Approvaltests suggest you make a assembly level configuration file for approvaltests named `ApprovalTestsConfig.cs`:  
+
+snippet: ApprovalTestsConfig.cs
+
+### Launching Multiple Reproters
+
+If you wanted to have multiple reporters launch on failure, you can also combine as many as you wish using the following syntax: 
+
+snippet: multiple_reporters
+
 ## When to use different reporters
 
 Reporters help you in different ways
@@ -33,7 +43,7 @@ This is useful for many types of test results including, xml, svg, csv, html, im
 
 ### Exploring Results
 
-Like rendering, you might need to use different tools to examine a file to see that it's what you actually want. Sometimes you need to open them in excel or other places just to play. If you don't have a reporter that will open in your desired tool (and you don't want to [build a custom one](Reporters.md##making-custom-reporters)) you might just want to use the `QuiteReporter` which will do nothing, allowing you to open whatever you need without distruption
+Like rendering, you might need to use different tools to examine a file to see that it's what you actually want. Sometimes you need to open them in excel or other places just to play. If you don't have a reporter that will open in your desired tool (and you don't want to [build a custom one](Reporters.md#making-custom-reporters)) you might just want to use the `QuiteReporter` which will do nothing, allowing you to open whatever you need without distruption
 
 ### Approving
 

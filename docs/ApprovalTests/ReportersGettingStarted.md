@@ -11,6 +11,7 @@ To change this file edit the source file and then execute run_markdown.cmd.
 ## Contents
 
   * [Configuring Reporters](#configuring-reporters)
+    * [Launching Multiple Reproters](#launching-multiple-reproters)
   * [When to use different reporters](#when-to-use-different-reporters)
     * [Differences](#differences)
     * [Rendering](#rendering)
@@ -25,6 +26,51 @@ Reporters are set using the `[UseReporter(typeof(YourReporter))]` attribute. Thi
 1. On the method
 1. On the Class
 1. On the assembly
+
+Approvaltests suggest you make a assembly level configuration file for approvaltests named `ApprovalTestsConfig.cs`:  
+
+<!-- snippet: ApprovalTestsConfig.cs -->
+<a id='snippet-ApprovalTestsConfig.cs'/></a>
+```cs
+using ApprovalTests.Reporters;
+
+[assembly: UseReporter(typeof(DiffReporter))]
+```
+<sup><a href='/src/ApprovalTests.MachineSpecific.Tests/ApprovalTestsConfig.cs#L1-L3' title='File snippet `ApprovalTestsConfig.cs` was extracted from'>snippet source</a> | <a href='#snippet-ApprovalTestsConfig.cs' title='Navigate to start of snippet `ApprovalTestsConfig.cs`'>anchor</a></sup>
+<a id='snippet-ApprovalTestsConfig.cs-1'/></a>
+```cs
+using ApprovalTests.Reporters;
+
+[assembly: UseReporter(typeof(DiffReporter))]
+```
+<sup><a href='/src/ApprovalTests.Tests/ApprovalTestsConfig.cs#L1-L3' title='File snippet `ApprovalTestsConfig.cs` was extracted from'>snippet source</a> | <a href='#snippet-ApprovalTestsConfig.cs-1' title='Navigate to start of snippet `ApprovalTestsConfig.cs`'>anchor</a></sup>
+<a id='snippet-ApprovalTestsConfig.cs-2'/></a>
+```cs
+using ApprovalTests.Reporters;
+
+[assembly: UseReporter(typeof(DiffReporter))]
+```
+<sup><a href='/src/ApprovalTests.Xunit2/ApprovalTestsConfig.cs#L1-L3' title='File snippet `ApprovalTestsConfig.cs` was extracted from'>snippet source</a> | <a href='#snippet-ApprovalTestsConfig.cs-2' title='Navigate to start of snippet `ApprovalTestsConfig.cs`'>anchor</a></sup>
+<a id='snippet-ApprovalTestsConfig.cs-3'/></a>
+```cs
+using ApprovalTests.Reporters;
+
+[assembly: UseReporter(typeof(DiffReporter))]
+```
+<sup><a href='/src/ApprovalUtilities.Tests/ApprovalTestsConfig.cs#L1-L3' title='File snippet `ApprovalTestsConfig.cs` was extracted from'>snippet source</a> | <a href='#snippet-ApprovalTestsConfig.cs-3' title='Navigate to start of snippet `ApprovalTestsConfig.cs`'>anchor</a></sup>
+<!-- endsnippet -->
+
+### Launching Multiple Reproters
+
+If you wanted to have multiple reporters launch on failure, you can also combine as many as you wish using the following syntax: 
+
+<!-- snippet: multiple_reporters -->
+<a id='snippet-multiple_reporters'/></a>
+```cs
+[UseReporter(typeof(DiffReporter), typeof(FileLauncherReporter))]
+```
+<sup><a href='/src/ApprovalTests.Tests/Html/HtmlTest.cs#L7-L9' title='File snippet `multiple_reporters` was extracted from'>snippet source</a> | <a href='#snippet-multiple_reporters' title='Navigate to start of snippet `multiple_reporters`'>anchor</a></sup>
+<!-- endsnippet -->
 
 ## When to use different reporters
 
@@ -48,7 +94,7 @@ This is useful for many types of test results including, xml, svg, csv, html, im
 
 ### Exploring Results
 
-Like rendering, you might need to use different tools to examine a file to see that it's what you actually want. Sometimes you need to open them in excel or other places just to play. If you don't have a reporter that will open in your desired tool (and you don't want to [build a custom one](Reporters.md##making-custom-reporters)) you might just want to use the `QuiteReporter` which will do nothing, allowing you to open whatever you need without distruption
+Like rendering, you might need to use different tools to examine a file to see that it's what you actually want. Sometimes you need to open them in excel or other places just to play. If you don't have a reporter that will open in your desired tool (and you don't want to [build a custom one](Reporters.md#making-custom-reporters)) you might just want to use the `QuiteReporter` which will do nothing, allowing you to open whatever you need without distruption
 
 ### Approving
 
