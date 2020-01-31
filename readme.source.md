@@ -73,6 +73,8 @@ You can **approve** these results by copying everything (ctrl+a, ctrl+c) and pas
 <img src="docs/images/sample_test_02_approving.png"  width="50%" height="50%">
 
 
+In most situations, you will use one of the [supported DiffTools](docs/ApprovalTests/Reporters.md#supported-diff-tools) to examine and approve the result.
+
 Alternatively, you can rename the `.received.` file to SampleTest.TestList.**approved**.txt and the test will now pass. 
 
 
