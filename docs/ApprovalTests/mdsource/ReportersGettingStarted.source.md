@@ -33,12 +33,13 @@ This is useful for many types of test results including, xml, svg, csv, html, im
 
 ### Exploring Results
 
-Like rendering, you might need to use different tools to examine a file to see that it's what you actually want. Sometimes you need to open them in excel or other places just to play. If you don't have a reporter that will open in your desired tool (and you don't want to [build a custom one](Reporters.md#)) you might just want to use the `QuiteReporter` which will do nothing, allowing you to open whatever you need without distruption
+Like rendering, you might need to use different tools to examine a file to see that it's what you actually want. Sometimes you need to open them in excel or other places just to play. If you don't have a reporter that will open in your desired tool (and you don't want to [build a custom one](Reporters.md##making-custom-reporters)) you might just want to use the `QuiteReporter` which will do nothing, allowing you to open whatever you need without distruption
 
 ### Approving
 
 DiffTools can be a great way to approve most text files (just copy everything to the `.approved.` file.) However, some DiffTools will break this because they are trying to help (prettifing, triming or otherwise formatting the text)
 The `ClipboardReporter` or `AllFailingTestsClipboardReporter` can be useful in these cases. Writing the command line text to move the files to your clipboard so you can paste them into your terminal to approve the test.
+
 
 
 ---
