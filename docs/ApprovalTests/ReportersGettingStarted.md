@@ -29,35 +29,14 @@ Reporters are set using the `[UseReporter(typeof(YourReporter))]` attribute. Thi
 
 Approvaltests suggest you make a assembly level configuration file for approvaltests named `ApprovalTestsConfig.cs`:  
 
-<!-- snippet: ApprovalTestsConfig.cs -->
-<a id='snippet-ApprovalTestsConfig.cs'/></a>
+<!-- snippet: config_file -->
+<a id='snippet-config_file'/></a>
 ```cs
 using ApprovalTests.Reporters;
 
 [assembly: UseReporter(typeof(DiffReporter))]
 ```
-<sup><a href='/src/ApprovalTests.MachineSpecific.Tests/ApprovalTestsConfig.cs#L1-L3' title='File snippet `ApprovalTestsConfig.cs` was extracted from'>snippet source</a> | <a href='#snippet-ApprovalTestsConfig.cs' title='Navigate to start of snippet `ApprovalTestsConfig.cs`'>anchor</a></sup>
-<a id='snippet-ApprovalTestsConfig.cs-1'/></a>
-```cs
-using ApprovalTests.Reporters;
-
-[assembly: UseReporter(typeof(DiffReporter))]
-```
-<sup><a href='/src/ApprovalTests.Tests/ApprovalTestsConfig.cs#L1-L3' title='File snippet `ApprovalTestsConfig.cs` was extracted from'>snippet source</a> | <a href='#snippet-ApprovalTestsConfig.cs-1' title='Navigate to start of snippet `ApprovalTestsConfig.cs`'>anchor</a></sup>
-<a id='snippet-ApprovalTestsConfig.cs-2'/></a>
-```cs
-using ApprovalTests.Reporters;
-
-[assembly: UseReporter(typeof(DiffReporter))]
-```
-<sup><a href='/src/ApprovalTests.Xunit2/ApprovalTestsConfig.cs#L1-L3' title='File snippet `ApprovalTestsConfig.cs` was extracted from'>snippet source</a> | <a href='#snippet-ApprovalTestsConfig.cs-2' title='Navigate to start of snippet `ApprovalTestsConfig.cs`'>anchor</a></sup>
-<a id='snippet-ApprovalTestsConfig.cs-3'/></a>
-```cs
-using ApprovalTests.Reporters;
-
-[assembly: UseReporter(typeof(DiffReporter))]
-```
-<sup><a href='/src/ApprovalUtilities.Tests/ApprovalTestsConfig.cs#L1-L3' title='File snippet `ApprovalTestsConfig.cs` was extracted from'>snippet source</a> | <a href='#snippet-ApprovalTestsConfig.cs-3' title='Navigate to start of snippet `ApprovalTestsConfig.cs`'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests.MachineSpecific.Tests/ApprovalTestsConfig.cs#L1-L5' title='File snippet `config_file` was extracted from'>snippet source</a> | <a href='#snippet-config_file' title='Navigate to start of snippet `config_file`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ### Launching Multiple Reproters

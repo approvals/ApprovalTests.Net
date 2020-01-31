@@ -13,7 +13,7 @@ Reporters are set using the `[UseReporter(typeof(YourReporter))]` attribute. Thi
 
 Approvaltests suggest you make a assembly level configuration file for approvaltests named `ApprovalTestsConfig.cs`:  
 
-snippet: ApprovalTestsConfig.cs
+snippet: config_file
 
 ### Launching Multiple Reproters
 
