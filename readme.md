@@ -26,6 +26,7 @@ It is compatible with most .Net unit testing frameworks (Nunit, MsTest, xUnit, M
   * [Docs](#docs)
   * [Available on NuGet](#available-on-nuget)
   * [Examples](#examples)
+    * [Verifing a List](#verifing-a-list)
   * [Approved File Artifacts](#approved-file-artifacts)
   * [More Info](#more-info)
   * [Questions?](#questions)
@@ -62,8 +63,6 @@ If you prefer auditory learning, you might enjoy the following podcast
  * [This Agile Life](http://www.thisagilelife.com/46/)
  * [Hanselminutes](http://www.hanselminutes.com/360/approval-tests-with-llewellyn-falco)
  * [Herding Code](http://www.developerfusion.com/media/122649/herding-code-117-llewellyn-falcon-on-approval-tests/)
- * [The Watir Podcast](http://watirpodcast.com/podcast-53/)
-
 
 ## Docs
 
@@ -78,6 +77,7 @@ If you prefer auditory learning, you might enjoy the following podcast
 
 ## Examples
 
+### Verifing a List
 
 <!-- snippet: sample_test -->
 <a id='snippet-sample_test'/></a>
