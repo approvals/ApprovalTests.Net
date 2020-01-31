@@ -1,0 +1,8 @@
+﻿C# Strings
+
+var expected = "boo";
+var expected = "with \"quotes\".";
+                var expected = new[]{
+                "**************",
+                "I am ten chars",
+                "**************",                };

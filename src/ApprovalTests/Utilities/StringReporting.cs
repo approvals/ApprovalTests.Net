@@ -16,7 +16,7 @@ namespace ApprovalTests.Utilities
             if (expected != actual)
             {
                 var expectedFile = Path.GetTempPath() + "Expected.Approvals.Temp.txt";
-                var actualFile = Path.GetTempPath() + "Actual.Approvals.Temp.txt";
+                var actualFile = TempApprovalFile;
 
                 File.WriteAllText(expectedFile, expected);
                 File.WriteAllText(actualFile, actual);
@@ -25,5 +25,7 @@ namespace ApprovalTests.Utilities
                 throw new Exception($"<{expected}> != <{actual}>");
             }
         }
+
+        public static string TempApprovalFile => Path.GetTempPath() + "Actual.Approvals.Temp.txt";
     }
 }

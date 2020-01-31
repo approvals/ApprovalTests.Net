@@ -301,5 +301,19 @@ namespace ApprovalTests
         {
             return new FrontLoadedReporterDisposer(reporter);
         }
+
+        public static void AssertText(string[] expected, string actual, IApprovalFailureReporter reporter = null)
+        {
+            AssertText(expected.JoinWith("\n"), actual);
+        }
+        public static void AssertText(string expected, string actual, IApprovalFailureReporter reporter = null)
+        {
+            if (reporter == null)
+            {
+                reporter = Approvals.GetReporter(DiffReporter.INSTANCE);
+            }
+            reporter = new MultiReporter(reporter, InlineTextReporter.INSTANCE);
+            StringReporting.AssertEqual(expected, actual, reporter);
+        }
     }
 }
