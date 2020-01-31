@@ -12,9 +12,7 @@ To change this file edit the source file and then execute run_markdown.cmd.
 
   * [Features](#features)
   * [Main concepts for ApprovalTests](#main-concepts-for-approvaltests)
-  * [Approval Output Files](#approval-output-files)
-<!-- endtoc -->
-
+  * [Approval Output Files](#approval-output-files)<!-- endtoc -->
 
 
 ## Features

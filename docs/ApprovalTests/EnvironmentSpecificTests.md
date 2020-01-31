@@ -9,9 +9,7 @@ To change this file edit the source file and then execute run_markdown.cmd.
 ## Contents
 
   * [EnvironmentSpecificTest](#environmentspecifictest)
-  * [MachineSpecificReporter](#machinespecificreporter)
-<!-- endtoc -->
-
+  * [MachineSpecificReporter](#machinespecificreporter)<!-- endtoc -->
 
 
 ## EnvironmentSpecificTest
@@ -52,7 +50,7 @@ using (ApprovalResults.UniqueForOs())
     Approvals.Verify("Data");
 }
 ```
-<sup>[snippet source](/src/ApprovalTests.Tests/Namer/ApprovalResultsTest.cs#L21-L26) / [anchor](#snippet-unique_for_os)</sup>
+<sup><a href='/src/ApprovalTests.Tests/Namer/ApprovalResultsTest.cs#L21-L26' title='File snippet `unique_for_os` was extracted from'>snippet source</a> | <a href='#snippet-unique_for_os' title='Navigate to start of snippet `unique_for_os`'>anchor</a></sup>
 <!-- endsnippet -->
 
 This can produce files such as:
@@ -66,7 +64,7 @@ EmailTest.Testname.Microsoft_Windows_10_Pro.approved.eml
 EmailTest.Testname.Microsoft_Windows_Server_2016_Datacenter.approved.eml
 EmailTest.Testname.Microsoft_Windows_Server_2019_Datacenter.approved.eml
 ```
-<sup>[snippet source](/src/ApprovalTests.Tests/Namer/ApprovalsFilenameTest.TestSimilarFiles.approved.txt#L1-L6) / [anchor](#snippet-ApprovalsFilenameTest.TestSimilarFiles.approved.txt)</sup>
+<sup><a href='/src/ApprovalTests.Tests/Namer/ApprovalsFilenameTest.TestSimilarFiles.approved.txt#L1-L6' title='File snippet `ApprovalsFilenameTest.TestSimilarFiles.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-ApprovalsFilenameTest.TestSimilarFiles.approved.txt' title='Navigate to start of snippet `ApprovalsFilenameTest.TestSimilarFiles.approved.txt`'>anchor</a></sup>
 <!-- endsnippet -->
 
 If this is run on a new machine, it could produce a new approval file. This can be confusing as you might not remember what the old system used to produce.
@@ -76,7 +74,7 @@ If this is run on a new machine, it could produce a new approval file. This can 
 ```cs
 [UseReporter(typeof(MachineSpecificReporter))]
 ```
-<sup>[snippet source](/src/ApprovalTests.Tests/Namer/ApprovalResultsTest.cs#L8-L10) / [anchor](#snippet-use_machinespecificreporter)</sup>
+<sup><a href='/src/ApprovalTests.Tests/Namer/ApprovalResultsTest.cs#L8-L10' title='File snippet `use_machinespecificreporter` was extracted from'>snippet source</a> | <a href='#snippet-use_machinespecificreporter' title='Navigate to start of snippet `use_machinespecificreporter`'>anchor</a></sup>
 <!-- endsnippet -->
 
 If you use a MachineSpecificReporter and the existing approval file does not exist (or is empty), it will search or the last approved version from a different machine and copy it over as a starting point. This will always start with a line:

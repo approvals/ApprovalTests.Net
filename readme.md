@@ -32,9 +32,7 @@ It is compatible with most .Net unit testing frameworks (Nunit, MsTest, xUnit, M
   * [Credits](#credits)
     * [Contributors](#contributors)
     * [Backers](#backers)
-    * [Sponsors](#sponsors)
-<!-- endtoc -->
-
+    * [Sponsors](#sponsors)<!-- endtoc -->
 
 
 ## What can it be used for?

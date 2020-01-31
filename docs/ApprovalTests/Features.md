@@ -13,9 +13,7 @@ To change this file edit the source file and then execute run_markdown.cmd.
   * [MachineSpecificReporter](#machinespecificreporter)
   * [ApprovalsFilename](#approvalsfilename)
   * [Making Custom Reporters](#making-custom-reporters)
-  * [Environment SpecificTests](#environment-specifictests)
-<!-- endtoc -->
-
+  * [Environment SpecificTests](#environment-specifictests)<!-- endtoc -->
 
 
 ## [MachineSpecificReporter](EnvironmentSpecificTests.md#machinespecificreporter)
@@ -30,7 +28,7 @@ Sometimes you want to parse an approvals filename to get the parts.
 ```cs
 var approvalsFilename = ApprovalsFilename.Parse(@"..\Email\EmailTest.Testname.Microsoft_Windows_10_Education.approved.eml");
 ```
-<sup>[snippet source](/src/ApprovalTests.Tests/Namer/ApprovalsFilenameTest.cs#L12-L14) / [anchor](#snippet-approvals_filename)</sup>
+<sup><a href='/src/ApprovalTests.Tests/Namer/ApprovalsFilenameTest.cs#L12-L14' title='File snippet `approvals_filename` was extracted from'>snippet source</a> | <a href='#snippet-approvals_filename' title='Navigate to start of snippet `approvals_filename`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Will produce
@@ -46,7 +44,7 @@ AdditionalInformation: [Microsoft_Windows_10_Education]
 ApprovedStatus: approved
 Extension: eml
 ```
-<sup>[snippet source](/src/ApprovalTests.Tests/Namer/ApprovalsFilenameTest.TestMachineSpecificName.approved.txt#L1-L7) / [anchor](#snippet-ApprovalsFilenameTest.TestMachineSpecificName.approved.txt)</sup>
+<sup><a href='/src/ApprovalTests.Tests/Namer/ApprovalsFilenameTest.TestMachineSpecificName.approved.txt#L1-L7' title='File snippet `ApprovalsFilenameTest.TestMachineSpecificName.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-ApprovalsFilenameTest.TestMachineSpecificName.approved.txt' title='Navigate to start of snippet `ApprovalsFilenameTest.TestMachineSpecificName.approved.txt`'>anchor</a></sup>
 <!-- endsnippet -->
 
 

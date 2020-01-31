@@ -17,7 +17,7 @@ Guards are convenient functions if incorrect values are passed in.
 ```cs
 Guard.AgainstNullAndEmpty(subdirectory, nameof(subdirectory));
 ```
-<sup>[snippet source](/src/ApprovalTests/Namers/UseApprovalSubdirectoryAttribute.cs#L10-L12) / [anchor](#snippet-guard_usage)</sup>
+<sup><a href='/src/ApprovalTests/Namers/UseApprovalSubdirectoryAttribute.cs#L10-L12' title='File snippet `guard_usage` was extracted from'>snippet source</a> | <a href='#snippet-guard_usage' title='Navigate to start of snippet `guard_usage`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
@@ -33,7 +33,7 @@ using (var cleanup = Disposables.Create(() => callCount++))
     //code
 }
 ```
-<sup>[snippet source](/src/ApprovalUtilities.Tests/Utilities/DisposablesTest.cs#L12-L17) / [anchor](#snippet-disposables)</sup>
+<sup><a href='/src/ApprovalUtilities.Tests/Utilities/DisposablesTest.cs#L12-L17' title='File snippet `disposables` was extracted from'>snippet source</a> | <a href='#snippet-disposables' title='Navigate to start of snippet `disposables`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ---

@@ -10,6 +10,7 @@ To change this file edit the source file and then execute run_markdown.cmd.
 <!-- toc -->
 ## Contents
 
+  * [Using Reporters](#using-reporters)
   * [Supported Diff Tools](#supported-diff-tools)
     * [Windows](#windows)
     * [Mac](#mac)
@@ -21,10 +22,11 @@ To change this file edit the source file and then execute run_markdown.cmd.
   * [Continous Intergration](#continous-intergration)
   * [File Types](#file-types)
     * [Text File extensions](#text-file-extensions)
-    * [Image File extensions](#image-file-extensions)
-<!-- endtoc -->
+    * [Image File extensions](#image-file-extensions)<!-- endtoc -->
 
+## Using Reporters
 
+For an introduction on how to use reporters check out [ getting started with reporters ](./ReportersGettingStarted.md)
 
 ## Supported Diff Tools
 
@@ -48,7 +50,7 @@ RiderReporter.INSTANCE,
 FrameworkAssertReporter.INSTANCE,
 QuietReporter.INSTANCE
 ```
-<sup>[snippet source](/src/ApprovalTests/Reporters/Windows/WindowsDiffReporter.cs#L12-L24) / [anchor](#snippet-windows_diff_reporters)</sup>
+<sup><a href='/src/ApprovalTests/Reporters/Windows/WindowsDiffReporter.cs#L12-L24' title='File snippet `windows_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-windows_diff_reporters' title='Navigate to start of snippet `windows_diff_reporters`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
@@ -66,7 +68,7 @@ TkDiffReporter.INSTANCE,
 FrameworkAssertReporter.INSTANCE,
 QuietReporter.INSTANCE
 ```
-<sup>[snippet source](/src/ApprovalTests/Reporters/Mac/MacDiffReporter.cs#L12-L21) / [anchor](#snippet-mac_diff_reporters)</sup>
+<sup><a href='/src/ApprovalTests/Reporters/Mac/MacDiffReporter.cs#L12-L21' title='File snippet `mac_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-mac_diff_reporters' title='Navigate to start of snippet `mac_diff_reporters`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
@@ -78,7 +80,7 @@ QuietReporter.INSTANCE
 DiffMergeReporter.INSTANCE,
 MeldReporter.INSTANCE
 ```
-<sup>[snippet source](/src/ApprovalTests/Reporters/Linux/LinuxDiffReporter.cs#L9-L12) / [anchor](#snippet-linux_diff_reporters)</sup>
+<sup><a href='/src/ApprovalTests/Reporters/Linux/LinuxDiffReporter.cs#L9-L12' title='File snippet `linux_diff_reporters` was extracted from'>snippet source</a> | <a href='#snippet-linux_diff_reporters' title='Navigate to start of snippet `linux_diff_reporters`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
@@ -101,7 +103,7 @@ public class CustomReporter : GenericDiffReporter
 
 }
 ```
-<sup>[snippet source](/src/ApprovalTests.Tests/Reporters/Samples.cs#L5-L18) / [anchor](#snippet-custom_reporter)</sup>
+<sup><a href='/src/ApprovalTests.Tests/Reporters/Samples.cs#L5-L18' title='File snippet `custom_reporter` was extracted from'>snippet source</a> | <a href='#snippet-custom_reporter' title='Navigate to start of snippet `custom_reporter`'>anchor</a></sup>
 <!-- endsnippet -->
 
 If you have more details you might want to use the DiffInfo Class.
@@ -118,7 +120,7 @@ public CustomReporter() :
 {
 }
 ```
-<sup>[snippet source](/src/ApprovalTests.Tests/Reporters/Samples.cs#L27-L36) / [anchor](#snippet-custom_reporter_diff_info)</sup>
+<sup><a href='/src/ApprovalTests.Tests/Reporters/Samples.cs#L27-L36' title='File snippet `custom_reporter_diff_info` was extracted from'>snippet source</a> | <a href='#snippet-custom_reporter_diff_info' title='Navigate to start of snippet `custom_reporter_diff_info`'>anchor</a></sup>
 <!-- endsnippet -->
 
 *note:* Please consider contributing these back via pull request.
@@ -165,7 +167,7 @@ public class CustomDiffReporter :
     }
 }
 ```
-<sup>[snippet source](/src/ApprovalTests.Tests/Reporters/CustomDiffReporter.cs#L1-L25) / [anchor](#snippet-CustomDiffReporter.cs)</sup>
+<sup><a href='/src/ApprovalTests.Tests/Reporters/CustomDiffReporter.cs#L1-L25' title='File snippet `CustomDiffReporter.cs` was extracted from'>snippet source</a> | <a href='#snippet-CustomDiffReporter.cs' title='Navigate to start of snippet `CustomDiffReporter.cs`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
@@ -198,7 +200,7 @@ MyGetReporter.INSTANCE,
 GoContinuousDeliveryReporter.INSTANCE,
 AppVeyorReporter.INSTANCE
 ```
-<sup>[snippet source](/src/ApprovalTests/Reporters/DefaultFrontLoaderReporter.cs#L11-L23) / [anchor](#snippet-continuous_integration)</sup>
+<sup><a href='/src/ApprovalTests/Reporters/DefaultFrontLoaderReporter.cs#L11-L23' title='File snippet `continuous_integration` was extracted from'>snippet source</a> | <a href='#snippet-continuous_integration' title='Navigate to start of snippet `continuous_integration`'>anchor</a></sup>
 <!-- endsnippet -->
 
 You can add to this by configuring the FrontLoadedReporter Annotation.
@@ -224,7 +226,7 @@ ApprovalTests will do different things depending on if it thinks a file is an im
 ".json",
 ".dot"
 ```
-<sup>[snippet source](/src/ApprovalTests/Reporters/GenericDiffReporter.cs#L29-L41) / [anchor](#snippet-text_file_types)</sup>
+<sup><a href='/src/ApprovalTests/Reporters/GenericDiffReporter.cs#L29-L41' title='File snippet `text_file_types` was extracted from'>snippet source</a> | <a href='#snippet-text_file_types' title='Navigate to start of snippet `text_file_types`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
@@ -241,7 +243,7 @@ ApprovalTests will do different things depending on if it thinks a file is an im
 ".tif",
 ".tiff"
 ```
-<sup>[snippet source](/src/ApprovalTests/Reporters/GenericDiffReporter.cs#L46-L54) / [anchor](#snippet-image_file_types)</sup>
+<sup><a href='/src/ApprovalTests/Reporters/GenericDiffReporter.cs#L46-L54' title='File snippet `image_file_types` was extracted from'>snippet source</a> | <a href='#snippet-image_file_types' title='Navigate to start of snippet `image_file_types`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ---
