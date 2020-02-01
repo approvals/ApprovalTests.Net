@@ -302,6 +302,11 @@ namespace ApprovalTests
             return new FrontLoadedReporterDisposer(reporter);
         }
 
+        public static void AssertText(string[] expected, string[] actual, IApprovalFailureReporter reporter = null)
+        {
+            AssertText(expected.JoinWith("\n"), actual.JoinWith("\n"));
+        }
+
         public static void AssertText(string[] expected, string actual, IApprovalFailureReporter reporter = null)
         {
             AssertText(expected.JoinWith("\n"), actual);

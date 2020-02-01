@@ -27,11 +27,11 @@ Sample:
 <a id='snippet-assert_text_before'/></a>
 ```cs
 var header = new Header();
-var actual = header.MakeHeading("I am ten chars");
+var actual = header.MakeHeading("I am a heading");
 var expected = "";
 Approvals.AssertText(expected, actual);
 ```
-<sup><a href='/src/ApprovalTests.Tests/Reporters/InlineTextReporterTest.cs#L54-L59' title='File snippet `assert_text_before` was extracted from'>snippet source</a> | <a href='#snippet-assert_text_before' title='Navigate to start of snippet `assert_text_before`'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests.Tests/Reporters/InlineTextReporterTest.cs#L68-L73' title='File snippet `assert_text_before` was extracted from'>snippet source</a> | <a href='#snippet-assert_text_before' title='Navigate to start of snippet `assert_text_before`'>anchor</a></sup>
 <!-- endsnippet -->
 
 When you do this, it will copy the c# for the `.recieved.` to your clipboard, so you can paste it inline.
@@ -41,20 +41,19 @@ When you do this, it will copy the c# for the `.recieved.` to your clipboard, so
 <a id='snippet-assert_text'/></a>
 ```cs
 var header = new Header();
-var actual = header.MakeHeading("I am ten chars");
+var actual = header.MakeHeading("I am a heading");
 var expected = new[]{
     "**************",
-    "I am ten chars",
+    "I am a heading",
     "**************",
-
 };
 Approvals.AssertText(expected, actual);
 ```
-<sup><a href='/src/ApprovalTests.Tests/Reporters/InlineTextReporterTest.cs#L39-L49' title='File snippet `assert_text` was extracted from'>snippet source</a> | <a href='#snippet-assert_text' title='Navigate to start of snippet `assert_text`'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests.Tests/Reporters/InlineTextReporterTest.cs#L38-L47' title='File snippet `assert_text` was extracted from'>snippet source</a> | <a href='#snippet-assert_text' title='Navigate to start of snippet `assert_text`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
-Currently, it put the text as an array of strings that gets concatenated as this tends to read better.
+Currently, it put the text as an array of strings that gets concatenated as this tends to read better. Actual can be a string, or an array of strings.
 
 It will also write the results to a temp files on failure and open a DiffTool, so you can easily view the results and differences.
 

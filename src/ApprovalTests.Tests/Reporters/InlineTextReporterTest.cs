@@ -24,8 +24,7 @@ namespace ApprovalTests.Tests.Reporters
             var example1 = new[]
             {
                 "**************",
-
-                "I am ten chars",
+                "I am a heading",
                 "**************",
             };
             var samples = new[] { "boo","with \"quotes\".", example1.JoinWith("\n"), };
@@ -34,46 +33,62 @@ namespace ApprovalTests.Tests.Reporters
         }
 
         [Test]
-        public void Makerheadertest()
+        public void AssertTextTest()
         {
             // begin-snippet: assert_text
             var header = new Header();
-            var actual = header.MakeHeading("I am ten chars");
+            var actual = header.MakeHeading("I am a heading");
             var expected = new[]{
                 "**************",
-                "I am ten chars",
+                "I am a heading",
                 "**************",
-
             };
             Approvals.AssertText(expected, actual);
             // end-snippet
         }
 
-        public void MakerheaderBefore()
+        [Test]
+        public void AssertTextArraysTest()
         {
-            // begin-snippet: assert_text_before
+            // begin-snippet: assert_text_arrays
             var header = new Header();
-            var actual = header.MakeHeading("I am ten chars");
-            var expected = "";
+            var actual = header.MakeArrayHeading("I am a heading");
+            var expected = new[]{
+                "**************",
+                "I am a heading",
+                "**************",
+            };
             Approvals.AssertText(expected, actual);
             // end-snippet
         }
 
 
-
+        public void MakerheaderBefore()
+        {
+            // begin-snippet: assert_text_before
+            var header = new Header();
+            var actual = header.MakeHeading("I am a heading");
+            var expected = "";
+            Approvals.AssertText(expected, actual);
+            // end-snippet
+        }
     }
 
     public class Header
     {
-        public string MakeHeading(string iAmTenChars)
+        public string MakeHeading(string heading)
         {
-           return new[]
-           {
-               "**************",
-
-               "I am ten chars",
-               "**************",
-           }.JoinWith("\n");
+           return MakeArrayHeading(heading).JoinWith("\n");
         }
+        public string[] MakeArrayHeading(string heading)
+        {
+            return new[]
+            {
+               "**************",
+               "I am a heading",
+               "**************",
+           };
+        }
+
     }
 }
