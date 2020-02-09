@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using ApprovalTests.Email;
 using ApprovalUtilities.Utilities;
 using NUnit.Framework;
 
@@ -13,10 +14,16 @@ namespace ApprovalTests.Tests
     {
 
         [Test]
+        public void LinkTest()
+        {
+           // Assert.AreEqual("", GetLink(typeof(EmailApprovals).GetMethod("Verify")));
+        }
+        [Test]
         public void ListAllVerifyFunctions()
         {
-            // get all classes with verify
-            var methodInfos = typeof(Approvals).Assembly.GetTypes().SelectMany(t => t.GetMethods());
+            var allClasses  = typeof(Approvals).Assembly.GetTypes();
+            var classes = allClasses.Where(c => !c.GetCustomAttributes(false).Any(a => a.GetType().Name.Contains("Obsolete")));
+            var methodInfos= classes.SelectMany(t => t.GetMethods());
 
             var verifys = methodInfos.Where(m => m.Name.StartsWith("Verify"));
             var duplicateNames = new HashSet<string>();
@@ -36,7 +43,18 @@ namespace ApprovalTests.Tests
         {
             var baseUrl = "https://github.com/approvals/ApprovalTests.Net/blob/master/src/";
             var classPath = m.DeclaringType.FullName.Replace(".", "/");
-            return $"{baseUrl}{classPath}.cs";
+            var filePath = PathUtilities.GetAdjacentFile($"../../{classPath}.cs");
+            var code = File.ReadAllLines(filePath);
+            var lineNumber = 0;
+            for (var i = 0; i < code.Length; i++)
+            {
+                if (code[i].Contains("void "+ m.Name))
+                {
+                    lineNumber = i+1;
+                    break;
+                }
+            }
+            return $"{baseUrl}{classPath}.cs#L{lineNumber}";
         }
 
         private string ShowParameters(ParameterInfo[] parameters)
