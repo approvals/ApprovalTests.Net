@@ -1,0 +1,1 @@
+﻿[Approvals.Verify(String text)](Approvals.cs)
