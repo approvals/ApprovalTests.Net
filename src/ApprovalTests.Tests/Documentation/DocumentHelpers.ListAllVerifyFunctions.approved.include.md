@@ -1,55 +1,55 @@
-﻿[Approvals.Verify(IApprovalWriter writer, IApprovalNamer namer, IApprovalFailureReporter reporter)](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L45)  
+﻿Approvals.[Verify](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L45)(IApprovalWriter writer, IApprovalNamer namer, IApprovalFailureReporter reporter)  
   
-[Approvals.VerifyFile(String receivedFilePath)](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L125)  
+Approvals.[VerifyFile](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L125)(String receivedFilePath)  
   
-[Approvals.VerifyWithCallback(Object text, Action&lt;String> callBackOnFailure)](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L135)  
+Approvals.[VerifyWithCallback](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L135)(Object text, Action&lt;String> callBackOnFailure)  
   
-[Approvals.VerifyWithExtension(String text, String fileExtensionWithDot, Func&lt;String, String> scrubber)](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L177)  
+Approvals.[VerifyWithExtension](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L177)(String text, String fileExtensionWithDot, Func&lt;String, String> scrubber)  
   
-[Approvals.VerifyException(Exception e)](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L196)  
+Approvals.[VerifyException](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L196)(Exception e)  
   
-[Approvals.VerifyExceptionWithStacktrace(Exception e)](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L201)  
+Approvals.[VerifyExceptionWithStacktrace](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L201)(Exception e)  
   
-[Approvals.VerifyAll(String header, IEnumerable&lt;T> enumerable, String label)](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L210)  
+Approvals.[VerifyAll](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L210)(String header, IEnumerable&lt;T> enumerable, String label)  
   
-[Approvals.VerifyBinaryFile(Byte[] bytes, String fileExtensionWithDot)](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L258)  
+Approvals.[VerifyBinaryFile](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L258)(Byte[] bytes, String fileExtensionWithDot)  
   
-[Approvals.VerifyHtml(String html)](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L264)  
+Approvals.[VerifyHtml](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L264)(String html)  
   
-[Approvals.VerifyXml(String xml)](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L269)  
+Approvals.[VerifyXml](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L269)(String xml)  
   
-[Approvals.VerifyJson(String json)](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L274)  
+Approvals.[VerifyJson](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L274)(String json)  
   
-[Approvals.VerifyPdfFile(String pdfFilePath)](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L294)  
+Approvals.[VerifyPdfFile](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L294)(String pdfFilePath)  
   
-[XmlApprovals.VerifyXml(String xml, Func&lt;String, String> scrubber)](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Xml/XmlApprovals.cs#L10)  
+XmlApprovals.[VerifyXml](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Xml/XmlApprovals.cs#L10)(String xml, Func&lt;String, String> scrubber)  
   
-[XmlApprovals.VerifyText(String text, String fileExtensionWithoutDot, Boolean safely, Func&lt;String, String> scrubber)](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Xml/XmlApprovals.cs#L18)  
+XmlApprovals.[VerifyText](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Xml/XmlApprovals.cs#L18)(String text, String fileExtensionWithoutDot, Boolean safely, Func&lt;String, String> scrubber)  
   
-[XmlApprovals.VerifyOrderedXml(String text, Func&lt;String, String> scrubber)](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Xml/XmlApprovals.cs#L29)  
+XmlApprovals.[VerifyOrderedXml](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Xml/XmlApprovals.cs#L29)(String text, Func&lt;String, String> scrubber)  
   
-[SetApprovals.VerifySet(IEnumerable&lt;T> enumerable, Func&lt;T, String> formatter)](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Set/SetApprovals.cs#L15)  
+SetApprovals.[VerifySet](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Set/SetApprovals.cs#L15)(IEnumerable&lt;T> enumerable, Func&lt;T, String> formatter)  
   
-[SetApprovals.VerifyFileAsSet(String filename, Func&lt;String, String> scrubber)](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Set/SetApprovals.cs#L40)  
+SetApprovals.[VerifyFileAsSet](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Set/SetApprovals.cs#L40)(String filename, Func&lt;String, String> scrubber)  
   
-[DatabaseApprovals.Verify(IDatabaseToExecuteableQueryAdaptor adapter)](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Persistence/DatabaseApprovals.cs#L10)  
+DatabaseApprovals.[Verify](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Persistence/DatabaseApprovals.cs#L10)(IDatabaseToExecuteableQueryAdaptor adapter)  
   
-[SerializableTheory.Verify(Object original, Action&lt;Object, Object> assertEqual)](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/TheoryTests/SerializableTheory.cs#L9)  
+SerializableTheory.[Verify](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/TheoryTests/SerializableTheory.cs#L9)(Object original, Action&lt;Object, Object> assertEqual)  
   
-[ThreadSafetyTheory.VerifyNoRaceConditions(Int32 times, Func&lt;T> caseGenerator, Func&lt;T, String> caseString, Func&lt;T, Object> possibleRaceConditionFunction, Func&lt;T, Object> knownGoodFunction)](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/TheoryTests/ThreadSafetyTheory.cs#L13)  
+ThreadSafetyTheory.[VerifyNoRaceConditions](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/TheoryTests/ThreadSafetyTheory.cs#L13)(Int32 times, Func&lt;T> caseGenerator, Func&lt;T, String> caseString, Func&lt;T, Object> possibleRaceConditionFunction, Func&lt;T, Object> knownGoodFunction)  
   
-[ApprovalMaintenance.VerifyNoAbandonedFiles(String[] ignore)](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Maintenance/ApprovalMaintenance.cs#L77)  
+ApprovalMaintenance.[VerifyNoAbandonedFiles](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Maintenance/ApprovalMaintenance.cs#L77)(String[] ignore)  
   
-[HtmlApprovals.VerifyHtml(String html, Func&lt;String, String> scrubber)](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Html/HtmlApprovals.cs#L8)  
+HtmlApprovals.[VerifyHtml](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Html/HtmlApprovals.cs#L8)(String html, Func&lt;String, String> scrubber)  
   
-[HtmlApprovals.VerifyHtmlStrict(String html)](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Html/HtmlApprovals.cs#L16)  
+HtmlApprovals.[VerifyHtmlStrict](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Html/HtmlApprovals.cs#L16)(String html)  
   
-[EventApprovals.VerifyEvents(Object value)](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Events/EventApprovals.cs#L10)  
+EventApprovals.[VerifyEvents](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Events/EventApprovals.cs#L10)(Object value)  
   
-[EmailApprovals.Verify(MailMessage email)](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Email/EmailApprovals.cs#L13)  
+EmailApprovals.[Verify](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Email/EmailApprovals.cs#L13)(MailMessage email)  
   
-[EmailApprovals.VerifyScrubbed(MailMessage email, Func&lt;String, String> scrubber)](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Email/EmailApprovals.cs#L17)  
+EmailApprovals.[VerifyScrubbed](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Email/EmailApprovals.cs#L17)(MailMessage email, Func&lt;String, String> scrubber)  
   
-[Approver.Verify(IApprovalApprover approver, IApprovalFailureReporter reporter)](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Core/Approver.cs#L5)  
+Approver.[Verify](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Core/Approver.cs#L5)(IApprovalApprover approver, IApprovalFailureReporter reporter)  
   
-[CombinationApprovals.VerifyAllCombinations(Func&lt;A, Object> processCall, IEnumerable&lt;A> aList)](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Combinations/CombinationApprovals.cs#L12)
+CombinationApprovals.[VerifyAllCombinations](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Combinations/CombinationApprovals.cs#L12)(Func&lt;A, Object> processCall, IEnumerable&lt;A> aList)

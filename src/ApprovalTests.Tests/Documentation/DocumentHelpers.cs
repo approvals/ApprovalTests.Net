@@ -34,7 +34,7 @@ namespace ApprovalTests.Tests
                 duplicateNames.Add(n);
                 return dup;
             });
-            var linkText = unique.Select(v => $"[{v.DeclaringType.Name}.{v.Name}({ShowParameters(v.GetParameters())})]({GetLink(v)})").JoinWith("  \n  \n");
+            var linkText = unique.Select(v => $"{v.DeclaringType.Name}.[{v.Name}]({GetLink(v)})({ShowParameters(v.GetParameters())})").JoinWith("  \n  \n");
 
             Approvals.VerifyWithExtension(linkText, ".include.md");
         }
