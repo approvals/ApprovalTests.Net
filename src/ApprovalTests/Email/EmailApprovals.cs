@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Mail;
+using ApprovalTests.Scrubber;
 using ApprovalTests.Writers;
 
 namespace ApprovalTests.Email
@@ -13,16 +14,16 @@ namespace ApprovalTests.Email
         {
             VerifyScrubbed(email, ScrubBoundaries);
         }
-
-        public static void VerifyScrubbed(MailMessage email, params Func<string, string>[] scrubbers)
+        public static void VerifyScrubbed(MailMessage email, Func<string, string> scrubber)
         {
             var emailText = CreateEmail(email);
-            foreach (var scrubber in scrubbers)
-            {
-                emailText = scrubber.Invoke(emailText);
-            }
+            emailText = scrubber.Invoke(emailText);
 
             Approvals.Verify(WriterFactory.CreateTextWriter(emailText, "eml"));
+        }
+        public static void VerifyScrubbed(MailMessage email, params Func<string, string>[] scrubbers)
+        {
+            VerifyScrubbed(email, ScrubberUtils.Combine(scrubbers));
         }
 
         public static string CreateEmail(MailMessage email)

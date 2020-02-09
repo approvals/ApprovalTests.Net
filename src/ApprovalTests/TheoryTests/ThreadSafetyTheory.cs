@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Linq;
+using System.Threading;
 using ApprovalTests.Utilities;
 using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.TheoryTests
 {
+
     public static class ThreadSafetyTheory
     {
         public static void VerifyNoRaceConditions<T>(int times, Func<T> caseGenerator, Func<T, string> caseString, Func<T, object> possibleRaceConditionFunction, Func<T, object> knownGoodFunction)
