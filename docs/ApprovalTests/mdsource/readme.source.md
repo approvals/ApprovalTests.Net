@@ -26,6 +26,9 @@ toc
 
 
 ## Verify
+The entry point to ApprovalTests is almost always some variation of a [Verify method](Verify.md).
+
+For example: 
 
 ## Writers write to a file.
 ## Namers figure out what the file should be called and where it is located.
