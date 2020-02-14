@@ -1,0 +1,2 @@
+﻿GetOsName => Microsoft_Windows_10_Home_N
+GetUserName => ForUser.Tomas

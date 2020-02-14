@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net461;netstandard2.0</TargetFrameworks>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>Common helper classes developed with ApprovalTests</Description>
+  </PropertyGroup>
+  <ItemGroup Condition="$(TargetFramework) != 'net461'">
+    <Compile Remove="**\*_desktop.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Fody" Version="6.0.4" PrivateAssets="all" />
+    <PackageReference Include="Publicize.Fody" Version="1.8.0" PrivateAssets="All" />
+    <PackageReference Include="Obsolete.Fody" Version="5.2.0" PrivateAssets="all" />
+    <PackageReference Include="System.Management" Version="4.6.0" />
+    <PackageReference Include="Virtuosity.Fody" Version="3.1.0" PrivateAssets="All" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.7.0" />
+  </ItemGroup>
+</Project>

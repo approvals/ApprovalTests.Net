@@ -1,0 +1,6 @@
+image: Visual Studio 2019
+build_script:
+- ps: >-
+    dotnet build src --configuration Debug
+artifacts:
+  - path: nuget_packages\*.nupkg

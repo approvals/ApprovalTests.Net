@@ -1,0 +1,7 @@
+﻿<Project>
+  <PropertyGroup>
+    <DebugType Condition="'$(DebugType)' == ''">portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+</Project>

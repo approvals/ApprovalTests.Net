@@ -1,9 +1,0 @@
-﻿"2nd In Command" => Zoey
-"Caption" => Mal
-"Companion" => Inara
-"Doctor" => Simon
-"Mechanic" => Kaylee
-"Muscle" => Jayne
-"Pastor" => Book
-"Pilot" => Wash
-"Stoaway" => River

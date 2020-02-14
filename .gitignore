@@ -6,7 +6,7 @@ bin/
 tmp/
 *.tmp
 *.bak
-
+temp.*
 
 #################
 ## Visual Studio
@@ -84,3 +84,4 @@ Desktop.ini
 RealTests.playlist
 ApprovalTests.Tests/UnixLineEndings.txt
 ApprovalTests.Tests/WindowsLineEndings.txt
+ApprovalTests.Tests/Pdf/sample_temp.pdf
