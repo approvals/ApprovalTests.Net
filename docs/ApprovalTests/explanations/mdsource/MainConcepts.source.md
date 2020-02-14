@@ -1,11 +1,11 @@
-# ApprovalTests
+# Main Concepts in ApprovalTests
 
 toc
 
 ## Tutorials
 ## How-To's
   * [How to use Reporters](ReportersGettingStarted.md)
-  * [How to run Approval Tests in different ecosystems](EnvironmentSpecificTests.md)
+  * [How to run ApprovalTests in different ecosystems](EnvironmentSpecificTests.md)
    
 
 ## References
@@ -25,11 +25,10 @@ toc
 
 
 
-## Verify
 
-## Writers write to a file.
-## Namers figure out what the file should be called and where it is located.
-## Reporters** are called on failure to help you determine what went wrong. 
+ * **Writers** write to a file.
+ * **Namers** figure out what the file should be called and where it is located.
+ * **Reporters** are called on failure to help you determine what went wrong. 
 
 
 ## Approval Output Files
