@@ -24,8 +24,7 @@ To change this file edit the source file and then execute run_markdown.cmd.
 ## References
  * [Verify](Verify.md)
  * [List of new features](Features.md)
- * [Reporters](Reporters.md#top) Namers & Writers are the 3 pieces that allow ApprovalTests to work.
-
+ * [Reporters](Reporters.md#top)
 
 ## Explanations
  * [Main concepts for ApprovalTests](explanations/MainConcepts.md)
