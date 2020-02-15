@@ -17,9 +17,6 @@ toc
 ## Explanations
  * [Main concepts for ApprovalTests](explanations/MainConcepts.md)
 
-
-## Features
-
 ---
 
 [Back to User Guide](readme.md#top)
