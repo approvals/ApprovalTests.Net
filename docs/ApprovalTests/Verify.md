@@ -10,14 +10,7 @@ To change this file edit the source file and then execute run_markdown.cmd.
 <!-- toc -->
 ## Contents
 
-  * [Features](#features)
   * [Verify](#verify)<!-- endtoc -->
-
-
-## Features
-
-As new features are added, they will be [documented here](Features.md)
-
 
 ## Verify
 
@@ -76,7 +69,6 @@ EmailApprovals.[VerifyScrubbed](https://github.com/approvals/ApprovalTests.Net/b
 Approver.[Verify](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Core/Approver.cs#L5)(IApprovalApprover approver, IApprovalFailureReporter reporter)  
   
 CombinationApprovals.[VerifyAllCombinations](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Combinations/CombinationApprovals.cs#L12)(Func&lt;A, Object> processCall, IEnumerable&lt;A> aList) <!-- end include: DocumentHelpers.ListAllVerifyFunctions.approved. path: /src/ApprovalTests.Tests/Documentation/DocumentHelpers.ListAllVerifyFunctions.approved.include.md -->
-
 
 ---
 

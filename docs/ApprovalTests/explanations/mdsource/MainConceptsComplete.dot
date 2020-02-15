@@ -1,0 +1,35 @@
+digraph G { node [style=filled, shape=rec]
+
+# Nodes
+"Verify" -> {"Namer", "Writer", "Approver", "Reporter"}
+"Namer" -> "BaseName" -> "TestFile.TestMethod"
+"BaseName" -> "Writer1"
+"Writer1" -> "Creates" -> "TestFile.TestMethod.received.txt" -> "Approver1"
+"Writer1" -> "Reads" -> "TestFile.TestMethod.approved.txt" -> "Approver1"
+"Approver1" -> "Compares" -> {"Pass", "Fail"}
+"Writer" -> "Writer1" [style=dashed, color=grey]
+"Approver" -> "Approver1" [style=dashed, color=grey]
+"Reporter" -> "Reporter1" [style=dashed, color=grey]
+
+"Fail" -> "Reporter1" -> "Open in a Diff Tool"
+
+# Formatting
+"Pass" [color=green]
+"Fail" [color=red]
+"TestFile.TestMethod.received.txt" [fontsize=8]
+"TestFile.TestMethod.approved.txt" [fontsize=8]
+"Approver1" [label="Approver"]
+"Writer1" [label="Writer"]
+"Reporter1" [label="Reporter"]
+
+"Writer", "Writer1", "Reporter", "Reporter1", "Namer" [color=lightblue]
+"Approver", "Approver1" [color=lightblue, fillcolor=white, style=bold]
+"Approver1", "Writer1", "Reporter1", "Namer", "BaseName", "Compares", "Fail" [group=g1]
+edge [style=invis]
+"Namer" -> "BaseName" -> "Writer1" -> "Approver1" -> "Compares" -> "Fail" ->  "Reporter1"
+
+{ rank=same; "Pass", "Compares"}
+{ rank=same; "TestFile.TestMethod", "BaseName"}
+{ rank=same; "Namer", "Writer", "Approver", "Reporter"}
+
+}

@@ -10,30 +10,25 @@ To change this file edit the source file and then execute run_markdown.cmd.
 <!-- toc -->
 ## Contents
 
-  * [Features](#features)
-  * [Main concepts for ApprovalTests](#main-concepts-for-approvaltests)
-  * [Approval Output Files](#approval-output-files)<!-- endtoc -->
+  * [Tutorials](#tutorials)
+  * [How-To's](#how-tos)
+  * [References](#references)
+  * [Explanations](#explanations)<!-- endtoc -->
+
+## Tutorials
+## How-To's
+  * [How to use Reporters](ReportersGettingStarted.md)
+  * [How to run Approval Tests in different ecosystems](EnvironmentSpecificTests.md)
+   
+
+## References
+ * [Verify](Verify.md)
+ * [List of new features](Features.md)
+ * [Reporters](Reporters.md#top) Namers & Writers are the 3 pieces that allow ApprovalTests to work.
 
 
-## Features
-
-As new features are added, they will be [documented here](Features.md)
-
-
-## Main concepts for ApprovalTests
-
-[Reporters](Reporters.md#top) Namers & Writers are the 3 pieces that allow ApprovalTests to work.
-
- * [**Verify**](Verify.md)
- * **Writers** write to a file.
- * **Namers** figure out what the file should be called and where it is located.
- * **Reporters** are called on failure to help you determine what went wrong. 
-   * [Getting started with Reporters](ReportersGettingStarted.md)
-
-
-## Approval Output Files
-
-* [Environment SpecificTests](EnvironmentSpecificTests.md)
+## Explanations
+ * [Main concepts for ApprovalTests](explanations/MainConcepts.md)
 
 ---
 

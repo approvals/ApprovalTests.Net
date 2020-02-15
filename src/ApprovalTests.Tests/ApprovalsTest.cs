@@ -9,12 +9,14 @@ namespace ApprovalTests.Tests
     public class ApprovalsTest
     {
         private static readonly string[] text = {"abc", "123", "!@#"};
-
+        
+        // begin-snippet: simple_verify
         [Test]
         public void Text()
         {
             Approvals.Verify("should be approved");
         }
+        // end-snippet
 
         [Test]
         public void VerifyWithExtension()

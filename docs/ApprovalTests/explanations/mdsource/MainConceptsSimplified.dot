@@ -1,0 +1,17 @@
+digraph G { node [style=filled, shape=rec]
+
+# Nodes
+"Namer" -> "TestFile.TestMethod.received.txt" -> "Writer" -> "Approver" -> {"Pass", "Fail"}
+"TestFile.TestMethod.approved.txt" -> "Approver"
+"Fail" -> "Reporter"
+
+# Formatting
+"Pass" [color=green]
+"Fail" [color=red]
+
+{ rank=same; "Approver", "Pass"}
+
+"Writer", "Reporter", "Namer" [color=lightblue]
+"Approver" [color=lightblue, fillcolor=white, style=bold]
+
+}
