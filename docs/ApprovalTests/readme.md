@@ -13,8 +13,7 @@ To change this file edit the source file and then execute run_markdown.cmd.
   * [Tutorials](#tutorials)
   * [How-To's](#how-tos)
   * [References](#references)
-  * [Explanations](#explanations)
-  * [Features](#features)<!-- endtoc -->
+  * [Explanations](#explanations)<!-- endtoc -->
 
 ## Tutorials
 ## How-To's
@@ -30,9 +29,6 @@ To change this file edit the source file and then execute run_markdown.cmd.
 
 ## Explanations
  * [Main concepts for ApprovalTests](explanations/MainConcepts.md)
-
-
-## Features
 
 ---
 

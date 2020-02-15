@@ -17,7 +17,7 @@ To change this file edit the source file and then execute run_markdown.cmd.
   * [Approval Output Files](#approval-output-files)<!-- endtoc -->
 
 ## Verify
-The entry point to ApprovalTests is almost always some variation of a [Verify method](Verify.md).
+The entry point to ApprovalTests is almost always some variation of a [Verify method](../Verify.md).
 
 For example: 
 <!-- snippet: simple_verify -->
@@ -32,7 +32,7 @@ public void Text()
 <sup><a href='/src/ApprovalTests.Tests/ApprovalsTest.cs#L13-L19' title='File snippet `simple_verify` was extracted from'>snippet source</a> | <a href='#snippet-simple_verify' title='Navigate to start of snippet `simple_verify`'>anchor</a></sup>
 <!-- endsnippet -->
 
-This call brings together three things to produce a `.received.` file which is a compared to an `.approved.` file.
+This call brings together 3 things + default Approver to produce a `.received.` file which is a compared to an `.approved.` file.
 ![](MainConceptsSimplified.svg)
 
 **Note:** This is a simplified version of what ApprovalTests does. You can see a [full picture here](MainConceptsComplete.svg)
