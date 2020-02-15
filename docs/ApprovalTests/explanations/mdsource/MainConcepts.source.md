@@ -36,4 +36,4 @@ The expected files (`.approved.`) need to be checked into your source control.
 
 ---
 
-[Back to User Guide](readme.md#top)
+[Back to User Guide](../readme.md#top)
