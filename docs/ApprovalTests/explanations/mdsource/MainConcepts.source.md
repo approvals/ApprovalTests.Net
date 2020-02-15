@@ -29,6 +29,7 @@ The only reason you will want to create a Namer on your own is to support a new 
 ## Reporters
 [Reporters](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Core/IApprovalReporter.cs) are called only on failure.
 They are responsible for such as opening Diff tools, copying commands to your clipboard or anything else that can help you determine what went wrong and fix it. 
+
 It is very common to switch between Reporters for both personal preferences(a preferred Diff tool) and contextual preferences(at this moment I want to...).
 There is also a chance you will create your own custom Reporter to support a tool you like or change the order in which Diff tools are selected.
 Because using a right Reporter at the right time is so important, there are multiple places they can be configured, including which is Reporter is default Reporter.
