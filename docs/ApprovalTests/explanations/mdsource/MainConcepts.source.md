@@ -3,7 +3,7 @@
 toc
 
 ## Verify
-The entry point to ApprovalTests is almost always some variation of a [Verify method](Verify.md).
+The entry point to ApprovalTests is almost always some variation of a [Verify method](../Verify.md).
 
 For example: 
 snippet: simple_verify
