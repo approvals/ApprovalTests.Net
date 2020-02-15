@@ -9,6 +9,7 @@ For example:
 snippet: simple_verify
 
 This call brings together 3 things + default Approver to produce a `.received.` file which is a compared to an `.approved.` file.
+
 ![](MainConceptsSimplified.svg)
 
 **Note:** This is a simplified version of what ApprovalTests does. You can see a [full picture here](MainConceptsComplete.svg)
