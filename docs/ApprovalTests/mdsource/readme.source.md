@@ -20,24 +20,6 @@ toc
 
 ## Features
 
-
-
-
-
-
-## Verify
-The entry point to ApprovalTests is almost always some variation of a [Verify method](Verify.md).
-
-For example: 
-
-## Writers write to a file.
-## Namers figure out what the file should be called and where it is located.
-## Reporters** are called on failure to help you determine what went wrong. 
-
-
-## Approval Output Files
-
-
 ---
 
 [Back to User Guide](readme.md#top)

@@ -2,33 +2,18 @@
 
 toc
 
-## Tutorials
-## How-To's
-  * [How to use Reporters](ReportersGettingStarted.md)
-  * [How to run ApprovalTests in different ecosystems](EnvironmentSpecificTests.md)
-   
+## Verify
+The entry point to ApprovalTests is almost always some variation of a [Verify method](Verify.md).
 
-## References
- * [Verify](Verify.md)
- * [List of new features](Features.md)
- * [Reporters](Reporters.md#top) Namers & Writers are the 3 pieces that allow ApprovalTests to work.
+For example: 
+snippet: simple_verify
 
+This call brings together three things to produce a .received. file which is a compared to .approved. file.
+![](MainConcepts.svg)
 
-## Explanations
- * [Main concepts for ApprovalTests](explanations/MainConcepts.md)
-
-
-## Features
-
-
-
-
-
-
-
- * **Writers** write to a file.
- * **Namers** figure out what the file should be called and where it is located.
- * **Reporters** are called on failure to help you determine what went wrong. 
+## Writers write to a file.
+## Namers figure out what the file should be called and where it is located.
+## Reporters** are called on failure to help you determine what went wrong. 
 
 
 ## Approval Output Files
