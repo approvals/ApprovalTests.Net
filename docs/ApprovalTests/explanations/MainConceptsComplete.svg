@@ -42,7 +42,7 @@
 <!-- Approver -->
 <g id="node4" class="node">
 <title>Approver</title>
-<polygon fill="#add8e6" stroke="#add8e6" points="428.8501,-684 359.5635,-684 359.5635,-648 428.8501,-648 428.8501,-684"/>
+<polygon fill="none" stroke="#add8e6" stroke-width="2" points="428.8501,-684 359.5635,-684 359.5635,-648 428.8501,-648 428.8501,-684"/>
 <text text-anchor="middle" x="394.2068" y="-661.8" font-family="Times,serif" font-size="14.00" fill="#000000">Approver</text>
 </g>
 <!-- Verify&#45;&gt;Approver -->
@@ -91,7 +91,7 @@
 <!-- Approver1 -->
 <g id="node11" class="node">
 <title>Approver1</title>
-<polygon fill="#add8e6" stroke="#add8e6" points="184.8501,-324 115.5635,-324 115.5635,-288 184.8501,-288 184.8501,-324"/>
+<polygon fill="none" stroke="#add8e6" stroke-width="2" points="184.8501,-324 115.5635,-324 115.5635,-288 184.8501,-288 184.8501,-324"/>
 <text text-anchor="middle" x="150.2068" y="-301.8" font-family="Times,serif" font-size="14.00" fill="#000000">Approver</text>
 </g>
 <!-- Approver&#45;&gt;Approver1 -->

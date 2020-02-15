@@ -11,7 +11,7 @@ digraph G { node [style=filled, shape=rec]
 
 { rank=same; "Approver", "Pass"}
 
-"Writer", "Approver", "Reporter", "Namer" [color=lightblue]
-
+"Writer", "Reporter", "Namer" [color=lightblue]
+"Approver" [color=lightblue, fillcolor=white, style=bold]
 
 }

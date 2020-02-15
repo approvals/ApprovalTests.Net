@@ -42,7 +42,7 @@
 <!-- Approver -->
 <g id="node4" class="node">
 <title>Approver</title>
-<polygon fill="#add8e6" stroke="#add8e6" points="209.7552,-180 140.4686,-180 140.4686,-144 209.7552,-144 209.7552,-180"/>
+<polygon fill="none" stroke="#add8e6" stroke-width="2" points="209.7552,-180 140.4686,-180 140.4686,-144 209.7552,-144 209.7552,-180"/>
 <text text-anchor="middle" x="175.1119" y="-157.8" font-family="Times,serif" font-size="14.00" fill="#000000">Approver</text>
 </g>
 <!-- Writer&#45;&gt;Approver -->

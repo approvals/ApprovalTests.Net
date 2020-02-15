@@ -22,7 +22,8 @@ digraph G { node [style=filled, shape=rec]
 "Writer1" [label="Writer"]
 "Reporter1" [label="Reporter"]
 
-"Writer", "Writer1", "Approver", "Approver1", "Reporter", "Reporter1", "Namer" [color=lightblue]
+"Writer", "Writer1", "Reporter", "Reporter1", "Namer" [color=lightblue]
+"Approver", "Approver1" [color=lightblue, fillcolor=white, style=bold]
 "Approver1", "Writer1", "Reporter1", "Namer", "BaseName", "Compares", "Fail" [group=g1]
 edge [style=invis]
 "Namer" -> "BaseName" -> "Writer1" -> "Approver1" -> "Compares" -> "Fail" ->  "Reporter1"
