@@ -4,6 +4,8 @@ toc
 
 ## Approvals.AssertText
 
+Watch a [Video demo of this feature](https://youtu.be/O-71uaEpCsQ)  
+
 If you prefer not to store your expectations in the `.approved.` files, you can store them directly inline with your code.
 Sample:
 
