@@ -42,7 +42,9 @@ namespace ApprovalTests
             currentCaller.Value = new Caller();
         }
 
+        //begin-snippet: complete_verify_call
         public static void Verify(IApprovalWriter writer, IApprovalNamer namer, IApprovalFailureReporter reporter)
+        //end-snippet
         {
             var normalizeLineEndingsForTextFiles = CurrentCaller.GetFirstFrameForAttribute<IgnoreLineEndingsAttribute>();
             var shouldIgnoreLineEndings = normalizeLineEndingsForTextFiles == null || normalizeLineEndingsForTextFiles.IgnoreLineEndings;
@@ -174,7 +176,9 @@ namespace ApprovalTests
             VerifyWithExtension(text, ".txt", scrubber);
         }
 
+        //begin-snippet: verify_with_extension
         public static void VerifyWithExtension(string text, string fileExtensionWithDot, Func<string, string> scrubber = null)
+        //end-snippet
         {
             if (scrubber == null)
             {

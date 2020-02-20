@@ -47,12 +47,9 @@ These classes help you combine reporters to make more powerful combinations
 * MultiReporter - launch ALL reporters
 
 
-### Choosing a diff tool preference
+### Choosing a DiffTool preference
 
-The preference for diff tool can often vary from the default setting. As such a custom preference can be created.
-
-snippet: CustomDiffReporter.cs
-
+See [How to customize the order of DiffTools in your Reporter](howtos/CustomizingDiffToolSelectionOrder.md)
 
 ## Auto-Approving Reporters
 
@@ -62,7 +59,7 @@ These reporters create a commandline move file to approve the results and place 
 * AllFailingTestsClipboardReporter - All tests (this might make a long command line)
 
 
-## Continous Intergration
+## Continous Integration
 
 ApprovalTests will not launch anything if you are running on a CI machine.
 
