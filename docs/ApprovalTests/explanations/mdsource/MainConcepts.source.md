@@ -53,21 +53,43 @@ The vast majority of the time you will not interact directly with the Namers.
 The only reason you will want to create a Namer on your own is to support a new testing framework.
 
 ## Reporters
+### What it does?
 [Reporters](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Core/IApprovalReporter.cs) are called only on failure.
 They are responsible for things such as opening Diff tools, copying commands to your clipboard or anything else that can help you determine what went wrong and so you can fix it.
 
+### How it does it?
+Reporters are very simple. They are called with a recieved and approved file names on failure. Usually, they make a call to a command line using these filenames as parameters.
+For example: `YourDiffTool filename1 filename2`
+
+### General usage
 It is very common to switch between Reporters for both personal preferences (a preferred Diff tool) and contextual preferences (at this moment I want to...).
-There is also a chance you will create your own custom Reporter to support a tool you like or change the order in which Diff tools are selected.
+
 Because using the right Reporter at the right time is so important, there are multiple places they can be configured, including which Reporter is the default Reporter.
 
-## Approval Output Files
-The core of Approvals is that your result and expectations are saved in output files.
+### Why would you customize it
+There are two reasons you want to write your custom Reporter:
+1. To support a tool you like that is not currently supported 
+1. To change the order in which Diff tools are selected
 
+## Approval Output Files
+### What it does?
+The core of Approvals is that your result and expectations are saved in output files. These files allow us to verify expectations in future runs as well as use external tools.
+
+### How it does it?
+Approvals create two files:
 * Actual: `ClassName.TestMethodName.received.txt`
 * Expected: `ClassName.TestMethodName.approved.txt`
-
+  
 The actual files (`.received.`) are deleted on success and should never be checked on your source control.
 The expected files (`.approved.`) need to be checked into your source control.
+
+### General usage
+Every ApprovalTest will be generating these files.
+
+### Why would you customize it
+The two main ways of customizing the output files are:
+1. To store all the output files in the subdirectory
+1. Adding additional information for Data Driven Tests or [machine specific tests](../EnvironmentSpecificTests.md)
 
 ---
 
