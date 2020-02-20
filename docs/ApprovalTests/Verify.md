@@ -14,29 +14,29 @@ To change this file edit the source file and then execute run_markdown.cmd.
 
 ## Verify
 
-Approvals.[Verify](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L45)(IApprovalWriter writer, IApprovalNamer namer, IApprovalFailureReporter reporter)   <!-- include: DocumentHelpers.ListAllVerifyFunctions.approved. path: /src/ApprovalTests.Tests/Documentation/DocumentHelpers.ListAllVerifyFunctions.approved.include.md -->
+Approvals.[Verify](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L46)(IApprovalWriter writer, IApprovalNamer namer, IApprovalFailureReporter reporter)   <!-- include: DocumentHelpers.ListAllVerifyFunctions.approved. path: /src/ApprovalTests.Tests/Documentation/DocumentHelpers.ListAllVerifyFunctions.approved.include.md -->
   
-Approvals.[VerifyFile](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L125)(String receivedFilePath)  
+Approvals.[VerifyFile](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L127)(String receivedFilePath)  
   
-Approvals.[VerifyWithCallback](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L135)(Object text, Action&lt;String> callBackOnFailure)  
+Approvals.[VerifyWithCallback](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L137)(Object text, Action&lt;String> callBackOnFailure)  
   
-Approvals.[VerifyWithExtension](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L177)(String text, String fileExtensionWithDot, Func&lt;String, String> scrubber)  
+Approvals.[VerifyWithExtension](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L180)(String text, String fileExtensionWithDot, Func&lt;String, String> scrubber)  
   
-Approvals.[VerifyException](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L196)(Exception e)  
+Approvals.[VerifyException](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L200)(Exception e)  
   
-Approvals.[VerifyExceptionWithStacktrace](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L201)(Exception e)  
+Approvals.[VerifyExceptionWithStacktrace](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L205)(Exception e)  
   
-Approvals.[VerifyAll](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L210)(String header, IEnumerable&lt;T> enumerable, String label)  
+Approvals.[VerifyAll](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L214)(String header, IEnumerable&lt;T> enumerable, String label)  
   
-Approvals.[VerifyBinaryFile](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L258)(Byte[] bytes, String fileExtensionWithDot)  
+Approvals.[VerifyBinaryFile](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L262)(Byte[] bytes, String fileExtensionWithDot)  
   
-Approvals.[VerifyHtml](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L264)(String html)  
+Approvals.[VerifyHtml](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L268)(String html)  
   
-Approvals.[VerifyXml](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L269)(String xml)  
+Approvals.[VerifyXml](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L273)(String xml)  
   
-Approvals.[VerifyJson](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L274)(String json)  
+Approvals.[VerifyJson](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L278)(String json)  
   
-Approvals.[VerifyPdfFile](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L294)(String pdfFilePath)  
+Approvals.[VerifyPdfFile](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L298)(String pdfFilePath)  
   
 XmlApprovals.[VerifyXml](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Xml/XmlApprovals.cs#L10)(String xml, Func&lt;String, String> scrubber)  
   
