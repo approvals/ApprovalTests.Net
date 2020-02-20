@@ -17,9 +17,9 @@ To change this file edit the source file and then execute run_markdown.cmd.
     * [Linux](#linux)
   * [Making Custom Reporters](#making-custom-reporters)
   * [Joining Reporters](#joining-reporters)
-    * [Choosing a diff tool preference](#choosing-a-diff-tool-preference)
+    * [Choosing a DiffTool preference](#choosing-a-difftool-preference)
   * [Auto-Approving Reporters](#auto-approving-reporters)
-  * [Continous Intergration](#continous-intergration)
+  * [Continous Integration](#continous-integration)
   * [File Types](#file-types)
     * [Text File extensions](#text-file-extensions)
     * [Image File extensions](#image-file-extensions)<!-- endtoc -->
@@ -134,42 +134,9 @@ These classes help you combine reporters to make more powerful combinations
 * MultiReporter - launch ALL reporters
 
 
-### Choosing a diff tool preference
+### Choosing a DiffTool preference
 
-The preference for diff tool can often vary from the default setting. As such a custom preference can be created.
-
-<!-- snippet: CustomDiffReporter.cs -->
-<a id='snippet-CustomDiffReporter.cs'/></a>
-```cs
-using ApprovalTests.Reporters;
-using ApprovalTests.Reporters.TestFrameworks;
-using ApprovalTests.Reporters.Windows;
-
-public class CustomDiffReporter :
-    FirstWorkingReporter
-{
-    public CustomDiffReporter()
-        : base(
-            //TODO: re-order or remove as required
-            CodeCompareReporter.INSTANCE,
-            BeyondCompareReporter.INSTANCE,
-            TortoiseDiffReporter.INSTANCE,
-            AraxisMergeReporter.INSTANCE,
-            P4MergeReporter.INSTANCE,
-            WinMergeReporter.INSTANCE,
-            KDiffReporter.INSTANCE,
-            VisualStudioReporter.INSTANCE,
-            RiderReporter.INSTANCE,
-            FrameworkAssertReporter.INSTANCE,
-            QuietReporter.INSTANCE
-        )
-    {
-    }
-}
-```
-<sup><a href='/src/ApprovalTests.Tests/Reporters/CustomDiffReporter.cs#L1-L25' title='File snippet `CustomDiffReporter.cs` was extracted from'>snippet source</a> | <a href='#snippet-CustomDiffReporter.cs' title='Navigate to start of snippet `CustomDiffReporter.cs`'>anchor</a></sup>
-<!-- endsnippet -->
-
+See [How to customize the order of DiffTools in your Reporter](howtos/CustomizingDiffToolSelectionOrder.md)
 
 ## Auto-Approving Reporters
 
@@ -179,7 +146,7 @@ These reporters create a commandline move file to approve the results and place 
 * AllFailingTestsClipboardReporter - All tests (this might make a long command line)
 
 
-## Continous Intergration
+## Continous Integration
 
 ApprovalTests will not launch anything if you are running on a CI machine.
 
