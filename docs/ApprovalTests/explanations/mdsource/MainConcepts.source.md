@@ -6,7 +6,7 @@ toc
 ### What it does?
 ### How it does it?
 ### General usage
-### Why would you customize it
+### Why would you customize it?
 
 The entry point to ApprovalTests is almost always some variation of a [Verify method](../Verify.md).
 
@@ -33,9 +33,10 @@ Most of the time this is hidden in an underlying a Verify call.
 ### General usage
 The vast majority of the time you will not interact directly with the Writers.
 
-### Why would you customize it
-If you want it to approve something that wrote to a new type of a binary file, you would create a custom Writer.
-If you simply wanted to format text this is usually done as a step before calling:
+### Why would you customize it?
+If you want it to approve something that writes to a new type of a binary file, you would create a custom Writer.
+
+If you simply wanted to format text this is usually done in a separate step before calling:
 snippet: verify_with_extension
 
 ## Namers
@@ -43,14 +44,15 @@ snippet: verify_with_extension
 [Namers](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Core/IApprovalNamer.cs) are responsible for figuring out what the `.approved.` and `.received.` files should be called and where they are located.
 
 ### How it does it?
-This is primarily done by inspecting a stack trace to detect your test framework's attributes.
-It chooses the name as such `{ClassName}.{MethodName}.{AdditionalInformation(optional)}.approved.{Extension}`
+This is primarily done by inspecting a stack trace to detect your test framework's attributes. 
+
+The naming pattern is: `{ClassName}.{MethodName}.{AdditionalInformation(optional)}.approved.{Extension}`
 
 ### General usage
 The vast majority of the time you will not interact directly with the Namers.
 
-### Why would you customize it
-The only reason you will want to create a Namer on your own is to support a new testing framework.
+### Why would you customize it?
+To **support a new testing framerwork** is a main reason you would create your own Namer.
 
 ## Reporters
 ### What it does?
@@ -59,6 +61,7 @@ They are responsible for things such as opening Diff tools, copying commands to 
 
 ### How it does it?
 Reporters are very simple. They are called with a recieved and approved file names on failure. Usually, they make a call to a command line using these filenames as parameters.
+
 For example: `YourDiffTool filename1 filename2`
 
 ### General usage
@@ -66,7 +69,7 @@ It is very common to switch between Reporters for both personal preferences (a p
 
 Because using the right Reporter at the right time is so important, there are multiple places they can be configured, including which Reporter is the default Reporter.
 
-### Why would you customize it
+### Why would you customize it?
 There are two reasons you want to write your custom Reporter:
 1. To support a tool you like that is not currently supported 
 1. To change the order in which Diff tools are selected
@@ -80,7 +83,7 @@ Approvals create two files:
 * Actual: `ClassName.TestMethodName.received.txt`
 * Expected: `ClassName.TestMethodName.approved.txt`
   
-The actual files (`.received.`) are deleted on success and should never be checked on your source control.
+The actual files (`.received.`) are deleted on success and should never be checked on your source control.  
 The expected files (`.approved.`) need to be checked into your source control.
 
 ### General usage
