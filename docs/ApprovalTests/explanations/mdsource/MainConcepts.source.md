@@ -3,6 +3,11 @@
 toc
 
 ## Verify
+### What it does?
+### How it does it?
+### General usage
+### Why would you customize it
+
 The entry point to ApprovalTests is almost always some variation of a [Verify method](../Verify.md).
 
 For example: 
@@ -15,15 +20,36 @@ This call brings together 3 things + default Approver to produce a `.received.` 
 **Note:** This is a simplified version of what ApprovalTests does. You can see a [full picture here](MainConceptsComplete.svg)
 
 ## Writers
+### What it does?
 [Writers](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Core/IApprovalWriter.cs) are responsible for writing the `.received.` file to the disk.
 They also determine the extension for both `.received.` and `.approved.` files.
 
-The text writer is most commonly used. But there also exist binary writers for things such as images and pdf files. It is rare to have to create one of these and most of the time they are chosen by an underlying `Verify()` function.
+### How it does it?
+Eventually, all Verify methods call:
+snippet: complete_verify_call
+
+Most of the time this is hidden in an underlying a Verify call.
+
+### General usage
+The vast majority of the time you will not interact directly with the Writers.
+
+### Why would you customize it
+If you want it to approve something that wrote to a new type of a binary file, you would create a custom Writer.
+If you simply wanted to format text this is usually done as a step before calling:
+snippet: verify_with_extension
 
 ## Namers
-[Namers](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Core/IApprovalNamer.cs) are responsible for figuring out what the file should be called and where it is located.
-They primarily do this by inspecting a stack trace to detect your test framework's attributes.
+### What it does?
+[Namers](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Core/IApprovalNamer.cs) are responsible for figuring out what the `.approved.` and `.received.` files should be called and where they are located.
 
+### How it does it?
+This is primarily done by inspecting a stack trace to detect your test framework's attributes.
+It chooses the name as such `{ClassName}.{MethodName}.{AdditionalInformation(optional)}.approved.{Extension}`
+
+### General usage
+The vast majority of the time you will not interact directly with the Namers.
+
+### Why would you customize it
 The only reason you will want to create a Namer on your own is to support a new testing framework.
 
 ## Reporters
