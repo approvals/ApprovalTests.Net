@@ -38,13 +38,16 @@ To change this file edit the source file and then execute run_markdown.cmd.
 
 ## Verify
 ### What it does?
+The entry point to ApprovalTests is almost always some variation of a [Verify method](../Verify.md).  
+These helper methods make it easy to test many common scenarios.
+
+This method will:
+1. Serialize the object passed to it to the `.received.` file
+1. Compare it to the `.approved.` file
+1. Lunch a DiffTool on failure
+
 ### How it does it?
-### General usage
-### Why would you customize it?
-
-The entry point to ApprovalTests is almost always some variation of a [Verify method](../Verify.md).
-
-For example: 
+Let's take the example: 
 <!-- snippet: simple_verify -->
 <a id='snippet-simple_verify'/></a>
 ```cs
@@ -62,6 +65,33 @@ This call brings together 3 things + default Approver to produce a `.received.` 
 ![](MainConceptsSimplified.svg)
 
 **Note:** This is a simplified version of what ApprovalTests does. You can see a [full picture here](MainConceptsComplete.svg)
+
+### General usage
+You will be using a Verify calls all the time with the ApprovalTests.  
+The more complicated the object you are trying to test, the more you will want to use a Verify.
+
+### Why would you customize it?
+It is fairly common to make a custom Verify call.  
+Anytime you find a repeated block
+```cs
+// Do something to an Object
+// Print an Object ToString
+// Verify the ToString
+```
+
+You will want to extract a custom Verify helper method
+```cs
+public static void VerifyMyObject(MyObject o)
+{
+    // Do something to an Object
+    // Print an Object ToString
+    // Verify the ToString
+} 
+```
+
+**Note:** Because ApprovalTests allow testing of whole objects, you will often find this type of duplication showing more often than a traditional Unit Testing. This is because developers usually add extra complexity to their test scenarios to make results easier to test with a assert.  
+This traditional complexity makes the duplication hard to see.  
+All of the [Verify methods](../Verify.md) were created by following the above pattern.
 
 ## Writers
 ### What it does?
