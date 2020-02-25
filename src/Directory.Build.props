@@ -20,7 +20,7 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
  <ItemGroup>
-   <None Include="..\docs\images\approvaltests_icon.png">
+   <None Include="..\..\docs\images\approvaltests_icon.png">
      <Pack>True</Pack>
      <PackagePath />
    </None>
