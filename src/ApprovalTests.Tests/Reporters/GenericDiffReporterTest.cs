@@ -39,7 +39,7 @@ namespace ApprovalTests.Tests.Reporters
         }
 
         [Test]
-        [UseReporter(typeof(ClipboardReporter))]
+        [UseReporter(typeof(TortoiseDiffReporter))]
         public void TestEnsureFileExist()
         {
             var imageFile = PathUtilities.GetAdjacentFile("TestImage.png");

@@ -467,8 +467,8 @@ Received {0} ({1}, {2}, {3})", GetType().Name, diffProgram, argumentsFormat, dif
         {
             if (!File.Exists(approved))
             {
-                var fileType = new FileInfo(approved).Extension;
-                if (EmptyFiles.TryGetPathFor(fileType, out var emptyFile))
+                var extensionWithoutDot = new FileInfo(approved).Extension.Substring(1);
+                if (EmptyFiles.TryGetPathFor(extensionWithoutDot, out var emptyFile))
                 {
                     File.Copy(emptyFile, approved, true);
 
