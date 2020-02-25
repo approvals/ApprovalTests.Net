@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using ApprovalTests.Email;
 using ApprovalUtilities.Utilities;
 using NUnit.Framework;
 
@@ -34,7 +33,7 @@ namespace ApprovalTests.Tests
                 duplicateNames.Add(n);
                 return dup;
             });
-            var linkText = unique.Select(v => $"{v.DeclaringType.Name}.[{v.Name}]({GetLink(v)})({ShowParameters(v.GetParameters())})").JoinWith("  \n  \n");
+            var linkText = unique.Select(v => $"{v.DeclaringType.Name}.[{v.Name}]({GetLink(v)})({ShowParameters(v.GetParameters())})").OrderBy(n => n).JoinWith("  \n  \n");
 
             Approvals.VerifyWithExtension(linkText, ".include.md");
         }
