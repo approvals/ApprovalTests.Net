@@ -1,8 +1,8 @@
 ﻿ApprovalMaintenance.[VerifyNoAbandonedFiles](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Maintenance/ApprovalMaintenance.cs#L77)(String[] ignore)  
   
-Approvals.[Verify](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L46)(IApprovalWriter writer, IApprovalNamer namer, IApprovalFailureReporter reporter)  
+Approvals.[Verify](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L46)(Exception e)  
   
-Approvals.[VerifyAll](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L214)(String header, IEnumerable&lt;T> enumerable, String label)  
+Approvals.[VerifyAll](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L214)(IDictionary&lt;K, V> dictionary)  
   
 Approvals.[VerifyBinaryFile](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L262)(Byte[] bytes, String fileExtensionWithDot)  
   
@@ -26,9 +26,9 @@ Approvals.[VerifyXml](https://github.com/approvals/ApprovalTests.Net/blob/master
   
 Approver.[Verify](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Core/Approver.cs#L5)(IApprovalApprover approver, IApprovalFailureReporter reporter)  
   
-CombinationApprovals.[VerifyAllCombinations](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Combinations/CombinationApprovals.cs#L12)(Func&lt;A, Object> processCall, IEnumerable&lt;A> aList)  
+CombinationApprovals.[VerifyAllCombinations](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Combinations/CombinationApprovals.cs#L12)(Func&lt;A, B, C, D, E, F, G, H, I, Object> processCall, Func&lt;Object, String> resultFormatter, IEnumerable&lt;A> aList, IEnumerable&lt;B> bList, IEnumerable&lt;C> cList, IEnumerable&lt;D> dList, IEnumerable&lt;E> eList, IEnumerable&lt;F> fList, IEnumerable&lt;G> gList, IEnumerable&lt;H> hList, IEnumerable&lt;I> iList)  
   
-DatabaseApprovals.[Verify](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Persistence/DatabaseApprovals.cs#L10)(IDatabaseToExecuteableQueryAdaptor adapter)  
+DatabaseApprovals.[Verify](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Persistence/DatabaseApprovals.cs#L10)(IDatabaseToExecutableQueryAdapter adapter)  
   
 EmailApprovals.[Verify](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Email/EmailApprovals.cs#L13)(MailMessage email)  
   
@@ -42,7 +42,7 @@ HtmlApprovals.[VerifyHtmlStrict](https://github.com/approvals/ApprovalTests.Net/
   
 SerializableTheory.[Verify](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/TheoryTests/SerializableTheory.cs#L9)(Object original, Action&lt;Object, Object> assertEqual)  
   
-SetApprovals.[VerifyFileAsSet](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Set/SetApprovals.cs#L40)(String filename, Func&lt;String, String> scrubber)  
+SetApprovals.[VerifyFileAsSet](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Set/SetApprovals.cs#L40)(String filename)  
   
 SetApprovals.[VerifySet](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Set/SetApprovals.cs#L15)(IEnumerable&lt;T> enumerable, Func&lt;T, String> formatter)  
   
