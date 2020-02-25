@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -469,11 +468,10 @@ Received {0} ({1}, {2}, {3})", GetType().Name, diffProgram, argumentsFormat, dif
             if (!File.Exists(approved))
             {
                 var fileType = new FileInfo(approved).Extension;
-                if (IMAGE_FILE_TYPES.Contains(fileType))
+                if (EmptyFiles.TryGetPathFor(fileType, out var emptyFile))
                 {
-                    using var bitmap = new Bitmap(1, 1);
-                    bitmap.SetResolution(96, 96);
-                    bitmap.Save(approved);
+                    File.Copy(emptyFile, approved, true);
+
                 }
                 else
                 {

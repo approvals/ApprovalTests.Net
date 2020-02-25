@@ -9,12 +9,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="..\ApprovalUtilities\InternalsVisibleTo.cs" Link="InternalsVisibleTo.cs" />
+    <PackageReference Include="EmptyFiles" Version="0.7.0" />
 
     <PackageReference Include="Fody" Version="6.0.4" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Win32.Registry" Version="4.6.0" />
     <PackageReference Include="Obsolete.Fody" Version="5.2.0" PrivateAssets="all" />
     <PackageReference Include="Publicize.Fody" Version="1.8.0" PrivateAssets="All" />
-    <PackageReference Include="System.Drawing.Common" Version="4.6.0" />
     <PackageReference Include="Virtuosity.Fody" Version="3.1.0" PrivateAssets="All" />
     <PackageReference Include="TextCopy" Version="1.7.1" />
     <ProjectReference Include="..\ApprovalUtilities\ApprovalUtilities.csproj" />
