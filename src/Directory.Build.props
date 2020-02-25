@@ -3,7 +3,7 @@
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
     <NoWarn>CS1591</NoWarn>
-    <Version>4.5.0</Version>
+    <Version>4.5.1</Version>
     <AssemblyVersion>3.0</AssemblyVersion>
     <AssemblyOriginatorKeyFile>$(SolutionDir)\ApprovalsKeyPair.snk</AssemblyOriginatorKeyFile>
     <SignAssembly>true</SignAssembly>
@@ -13,10 +13,16 @@
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <Copyright>Copyright $([System.DateTime]::UtcNow.ToString(yyyy)) Llewellyn Falco &amp; Dan Gilkerson. All rights reserved</Copyright>
     <PackageTags>Approvals ApprovalTests ApprovalTest Test Verification Verify Approve Testing</PackageTags>
-    <PackageIconUrl>https://avatars3.githubusercontent.com/u/36907</PackageIconUrl>
+    <PackageIcon>approvaltests_icon.png</PackageIcon>
     <PackageProjectUrl>https://github.com/approvals/ApprovalTests.Net</PackageProjectUrl>
     <PackageOutputPath>$(SolutionDir)..\nuget_packages</PackageOutputPath>
     <DebugType>portable</DebugType>
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
+ <ItemGroup>
+   <None Include="..\docs\images\approvaltests_icon.png">
+     <Pack>True</Pack>
+     <PackagePath />
+   </None>
+ </ItemGroup>
 </Project>
