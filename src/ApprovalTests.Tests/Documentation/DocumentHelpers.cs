@@ -25,15 +25,16 @@ namespace ApprovalTests.Tests
             var methodInfos= classes.SelectMany(t => t.GetMethods());
 
             var verifys = methodInfos.Where(m => m.Name.StartsWith("Verify"));
+            var sorted = verifys.OrderBy(v => $"{v.DeclaringType.Name}.{v.Name}]({ShowParameters(v.GetParameters())})");
             var duplicateNames = new HashSet<string>();
-            var unique = verifys.Where(v =>
+            var unique = sorted.Where(v =>
             {
                 var n = $"{v.DeclaringType.Name}.{v.Name}";
                 var dup = !duplicateNames.Contains(n);
                 duplicateNames.Add(n);
                 return dup;
             });
-            var linkText = unique.Select(v => $"{v.DeclaringType.Name}.[{v.Name}]({GetLink(v)})({ShowParameters(v.GetParameters())})").OrderBy(n => n).JoinWith("  \n  \n");
+            var linkText = unique.Select(v => $"{v.DeclaringType.Name}.[{v.Name}]({GetLink(v)})({ShowParameters(v.GetParameters())})").JoinWith("  \n  \n");
 
             Approvals.VerifyWithExtension(linkText, ".include.md");
         }
