@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using ApprovalUtilities.Utilities;
 using Xunit;
 
 namespace ApprovalUtilities.Tests.Utilities
