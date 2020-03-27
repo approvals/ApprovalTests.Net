@@ -19,10 +19,10 @@
     <DebugType>portable</DebugType>
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
- <ItemGroup>
-   <None Include="..\..\docs\images\approvaltests_icon.png">
+  <ItemGroup>
+    <None Include="..\..\docs\images\approvaltests_icon.png">
      <Pack>True</Pack>
      <PackagePath />
-   </None>
- </ItemGroup>
+    </None>
+  </ItemGroup>
 </Project>
