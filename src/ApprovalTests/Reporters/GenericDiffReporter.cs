@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using ApprovalTests.Core;
 using ApprovalUtilities.Utilities;
+using EmptyFiles;
 
 namespace ApprovalTests.Reporters
 {
@@ -467,8 +468,7 @@ Received {0} ({1}, {2}, {3})", GetType().Name, diffProgram, argumentsFormat, dif
         {
             if (!File.Exists(approved))
             {
-                var extensionWithoutDot = new FileInfo(approved).Extension.Substring(1);
-                if (EmptyFiles.TryGetPathFor(extensionWithoutDot, out var emptyFile))
+                if (AllFiles.TryGetPathFor(approved, out var emptyFile))
                 {
                     File.Copy(emptyFile, approved, true);
 
