@@ -1,7 +1,4 @@
-﻿using System;
-using ApprovalTests.Core;
-using ApprovalTests.Reporters;
-using ApprovalTests.Utilities;
+﻿using ApprovalTests.Reporters;
 using ApprovalUtilities.Utilities;
 using NUnit.Framework;
 
@@ -30,11 +27,11 @@ namespace ApprovalTests.Tests.Reporters
             };
             var samples = new[] { "boo","with \"quotes\".", example1.JoinWith("\n"), };
 
-            Approvals.VerifyAll("C# Strings", samples, s => InlineTextReporter.ConvertToCSharp(s));
+            Approvals.VerifyAll("C# Strings", samples, InlineTextReporter.ConvertToCSharp);
         }
 
         [Test]
-        public void Makerheadertest()
+        public void MakerHeadertest()
         {
             // begin-snippet: assert_text
             var header = new Header();
@@ -49,7 +46,7 @@ namespace ApprovalTests.Tests.Reporters
             // end-snippet
         }
 
-        public void MakerheaderBefore()
+        public void MakerHeaderBefore()
         {
             // begin-snippet: assert_text_before
             var header = new Header();
@@ -58,9 +55,6 @@ namespace ApprovalTests.Tests.Reporters
             Approvals.AssertText(expected, actual);
             // end-snippet
         }
-
-
-
     }
 
     public class Header

@@ -314,7 +314,7 @@ namespace ApprovalTests
         {
             if (reporter == null)
             {
-                reporter = Approvals.GetReporter(DiffReporter.INSTANCE);
+                reporter = GetReporter(DiffReporter.INSTANCE);
             }
             reporter = new MultiReporter(reporter, InlineTextReporter.INSTANCE);
             StringReporting.AssertEqual(expected, actual, reporter);

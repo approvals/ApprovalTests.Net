@@ -10,7 +10,7 @@ namespace ApprovalUtilities.Tests.Utilities
         {
             var callCount = 1;
             // begin-snippet: disposables
-            using (var cleanup = Disposables.Create(() => callCount++))
+            using (Disposables.Create(() => callCount++))
             {
                 //code
             }

@@ -13,6 +13,7 @@ namespace ApprovalTests.Tests.Events
         {
             return;
         }
+
         public static void StandardCallback(object sender, EventArgs e)
         {
             throw new NotImplementedException();
