@@ -73,7 +73,7 @@ namespace ApprovalTests.Scrubber
 
         static IEnumerable<Replacement> GetDateReplacements(string input, long positionOffset)
         {
-            // This would be a cleaner value, but would represent a breaking change because people might already be successfully approving with the old arbitrary valu
+            // This would be a cleaner value, but would represent a breaking change because people might already be successfully approving with the old arbitrary value
             // var scrubbedDateTemplate = "19000101000000+00'00'";
 
             var scrubbedDateTemplate = "20110426104115-07'00'";

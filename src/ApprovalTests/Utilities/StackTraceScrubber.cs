@@ -35,7 +35,7 @@ namespace ApprovalTests.Utilities
 
         public static string Scrub(this Exception exception)
         {
-            return ("" + exception.ToString()).ScrubStackTrace();
+            return ("" + exception).ScrubStackTrace();
         }
     }
 }
