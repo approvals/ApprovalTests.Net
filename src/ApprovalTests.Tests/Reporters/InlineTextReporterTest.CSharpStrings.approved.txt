@@ -4,6 +4,6 @@ var expected = "boo";
 var expected = "with \"quotes\".";
                 var expected = new[]{
                 "**************",
-                "I am ten chars",
+                "I am a heading",
                 "**************",
                 };
