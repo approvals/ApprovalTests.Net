@@ -9,7 +9,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="..\ApprovalUtilities\InternalsVisibleTo.cs" Link="InternalsVisibleTo.cs" />
-    <PackageReference Include="EmptyFiles" Version="0.7.0" PrivateAssets="None" />
+    <PackageReference Include="EmptyFiles" Version="0.10.0" PrivateAssets="None" />
 
     <PackageReference Include="Fody" Version="6.1.1" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Win32.Registry" Version="4.7.0" />
