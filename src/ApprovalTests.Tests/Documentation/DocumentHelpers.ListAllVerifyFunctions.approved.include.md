@@ -46,7 +46,7 @@ SetApprovals.[VerifyFileAsSet](https://github.com/approvals/ApprovalTests.Net/bl
   
 SetApprovals.[VerifySet](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Set/SetApprovals.cs#L15)(IEnumerable&lt;T> enumerable, Func&lt;T, String> formatter)  
   
-ThreadSafetyTheory.[VerifyNoRaceConditions](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/TheoryTests/ThreadSafetyTheory.cs#L13)(Int32 times, Func&lt;T> caseGenerator, Func&lt;T, String> caseString, Func&lt;T, Object> possibleRaceConditionFunction, Func&lt;T, Object> knownGoodFunction)  
+ThreadSafetyTheory.[VerifyNoRaceConditions](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/TheoryTests/ThreadSafetyTheory.cs#L11)(Int32 times, Func&lt;T> caseGenerator, Func&lt;T, String> caseString, Func&lt;T, Object> possibleRaceConditionFunction, Func&lt;T, Object> knownGoodFunction)  
   
 XmlApprovals.[VerifyOrderedXml](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Xml/XmlApprovals.cs#L29)(String text, Func&lt;String, String> scrubber)  
   
