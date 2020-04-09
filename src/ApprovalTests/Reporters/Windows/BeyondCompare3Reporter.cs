@@ -1,11 +1,13 @@
+using DiffEngine;
+
 namespace ApprovalTests.Reporters.Windows
 {
-    public class BeyondCompare3Reporter : GenericDiffReporter
+    public class BeyondCompare3Reporter : DiffToolReporter
     {
         public static readonly BeyondCompare3Reporter INSTANCE = new BeyondCompare3Reporter();
 
         public BeyondCompare3Reporter()
-            : base(DiffPrograms.Windows.BEYOND_COMPARE_3)
+            : base(DiffTool.BeyondCompare)
         {
         }
     }

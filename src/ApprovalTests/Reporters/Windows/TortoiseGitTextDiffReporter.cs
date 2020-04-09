@@ -1,10 +1,12 @@
-﻿namespace ApprovalTests.Reporters.Windows
+﻿using DiffEngine;
+
+namespace ApprovalTests.Reporters.Windows
 {
-    public class TortoiseGitTextDiffReporter : GenericDiffReporter
+    public class TortoiseGitTextDiffReporter : DiffToolReporter
     {
         public static readonly TortoiseGitTextDiffReporter INSTANCE = new TortoiseGitTextDiffReporter();
 
-        public TortoiseGitTextDiffReporter() : base(DiffPrograms.Windows.TORTOISEGIT_TEXT_DIFF)
+        public TortoiseGitTextDiffReporter() : base(DiffTool.TortoiseGitMerge)
         {
         }
     }

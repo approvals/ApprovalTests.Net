@@ -1,15 +1,14 @@
-﻿namespace ApprovalTests.Reporters.Mac
-{
-    public class DiffMergeReporter : GenericDiffReporter
-    {
+﻿using DiffEngine;
 
+namespace ApprovalTests.Reporters.Mac
+{
+    public class DiffMergeReporter : DiffToolReporter
+    {
         public static readonly DiffMergeReporter INSTANCE = new DiffMergeReporter();
 
-        public DiffMergeReporter() : base(DiffPrograms.Mac.DIFF_MERGE)
+        public DiffMergeReporter() : base(DiffTool.DiffMerge)
         {
 
         }
     }
-
-
 }

@@ -11,11 +11,11 @@ namespace ApprovalTests.Reporters.Mac
             : base(
                 // begin-snippet: mac_diff_reporters
                 BeyondCompareMacReporter.INSTANCE,
-                DiffMergeReporter.INSTANCE, 
+                DiffMergeReporter.INSTANCE,
                 KaleidoscopeDiffReporter.INSTANCE,
-                Windows.P4MergeReporter.INSTANCE, 
+                Windows.P4MergeReporter.INSTANCE,
                 KDiff3Reporter.INSTANCE,
-                TkDiffReporter.INSTANCE, 
+                TkDiffReporter.INSTANCE,
                 FrameworkAssertReporter.INSTANCE,
                 QuietReporter.INSTANCE
                 // end-snippet

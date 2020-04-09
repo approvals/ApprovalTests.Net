@@ -1,11 +1,13 @@
-﻿namespace ApprovalTests.Reporters.Windows
+﻿using DiffEngine;
+
+namespace ApprovalTests.Reporters.Windows
 {
-    public class CodeCompareReporter : GenericDiffReporter
+    public class CodeCompareReporter : DiffToolReporter
     {
         public static readonly CodeCompareReporter INSTANCE = new CodeCompareReporter();
 
         public CodeCompareReporter()
-            : base(DiffPrograms.Windows.CODE_COMPARE)
+            : base(DiffTool.CodeCompare)
         {
         }
     }

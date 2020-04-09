@@ -1,11 +1,12 @@
-﻿namespace ApprovalTests.Reporters.Mac
-{
-    public class KaleidoscopeDiffReporter : GenericDiffReporter
-    {
+﻿using DiffEngine;
 
+namespace ApprovalTests.Reporters.Mac
+{
+    public class KaleidoscopeDiffReporter : DiffToolReporter
+    {
         public static readonly KaleidoscopeDiffReporter INSTANCE = new KaleidoscopeDiffReporter();
 
-        public KaleidoscopeDiffReporter() : base(DiffPrograms.Mac.KALEIDOSCOPE)
+        public KaleidoscopeDiffReporter() : base(DiffTool.Kaleidoscope)
         {
 
         }

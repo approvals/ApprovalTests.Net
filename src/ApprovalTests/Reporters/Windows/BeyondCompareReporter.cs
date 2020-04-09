@@ -1,11 +1,13 @@
-﻿namespace ApprovalTests.Reporters.Windows
+﻿using DiffEngine;
+
+namespace ApprovalTests.Reporters.Windows
 {
-    public class BeyondCompareReporter : FirstWorkingReporter
+    public class BeyondCompareReporter : DiffToolReporter
     {
         public static readonly BeyondCompareReporter INSTANCE = new BeyondCompareReporter();
 
         public BeyondCompareReporter()
-            : base(BeyondCompare4Reporter.INSTANCE, BeyondCompare3Reporter.INSTANCE)
+            : base(DiffTool.BeyondCompare)
         {
         }
     }

@@ -1,11 +1,13 @@
-﻿namespace ApprovalTests.Reporters.Windows
+﻿using DiffEngine;
+
+namespace ApprovalTests.Reporters.Windows
 {
-    public class KDiffReporter : GenericDiffReporter
+    public class KDiffReporter : DiffToolReporter
     {
         public static readonly KDiffReporter INSTANCE = new KDiffReporter();
 
         public KDiffReporter()
-            : base(DiffPrograms.Windows.KDIFF3)
+            : base(DiffTool.KDiff3)
         {
         }
     }

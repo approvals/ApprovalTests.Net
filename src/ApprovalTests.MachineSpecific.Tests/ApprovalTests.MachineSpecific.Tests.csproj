@@ -17,4 +17,7 @@
     <Content Include="a.png" />
     <Content Include="b.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reporters\" />
+  </ItemGroup>
 </Project>

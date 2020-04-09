@@ -1,11 +1,13 @@
-﻿namespace ApprovalTests.Reporters.Windows
+﻿using DiffEngine;
+
+namespace ApprovalTests.Reporters.Windows
 {
-    public class TortoiseImageDiffReporter : GenericDiffReporter
+    public class TortoiseImageDiffReporter : DiffToolReporter
     {
         public static readonly TortoiseImageDiffReporter INSTANCE = new TortoiseImageDiffReporter();
 
         public TortoiseImageDiffReporter()
-            : base(DiffPrograms.Windows.TORTOISE_IMAGE_DIFF)
+            : base(DiffTool.TortoiseIDiff)
         {
         }
     }
