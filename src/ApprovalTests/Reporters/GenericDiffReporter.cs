@@ -19,22 +19,9 @@ namespace ApprovalTests.Reporters
         {
             var all = new HashSet<string>();
             all.AddAll(Extensions.TextExtensions);
-            all.AddAll(GetImageFileTypes());
+            all.AddAll(AllFiles.ImageExtensions);
             return all;
         }
-
-        private static readonly HashSet<string> IMAGE_FILE_TYPES = new HashSet<string>
-        {
-            // begin-snippet: image_file_types
-            ".png",
-            ".gif",
-            ".jpg",
-            ".jpeg",
-            ".bmp",
-            ".tif",
-            ".tiff"
-            // end-snippet
-        };
 
         protected string arguments;
         protected string originalDiffProgram;
@@ -50,9 +37,12 @@ namespace ApprovalTests.Reporters
             return new HashSet<string>(Extensions.TextExtensions);
         }
 
+        [ObsoleteEx(
+            RemoveInVersion = "5.0",
+            ReplacementTypeOrMember = "EmptyFiles.AllFiles.ImageExtensions")]
         public static HashSet<string> GetImageFileTypes()
         {
-            return IMAGE_FILE_TYPES;
+            return new HashSet<string>(AllFiles.ImageExtensions);
         }
 
         [ObsoleteEx(
@@ -60,23 +50,15 @@ namespace ApprovalTests.Reporters
             ReplacementTypeOrMember = "EmptyFiles.Extensions.AddTextExtensions")]
         public static void RegisterTextFileTypes(params string[] extensionsWithDots)
         {
-            AssertDots(extensionsWithDots);
             Extensions.AddTextExtensions(extensionsWithDots);
         }
 
+        [ObsoleteEx(
+            TreatAsErrorFromVersion = "4.0",
+            ReplacementTypeOrMember = "EmptyFiles.AllFiles.UseFile")]
         public static void RegisterImageFileTypes(params string[] extensionsWithDots)
         {
-            AssertDots(extensionsWithDots);
-            IMAGE_FILE_TYPES.AddAll(extensionsWithDots);
-        }
-
-        private static void AssertDots(string[] extensionsWithDots)
-        {
-            var wrong = extensionsWithDots.Where(s => !s.StartsWith(".")).ToList();
-            if (wrong.Any())
-            {
-                throw new ArgumentException($"The following extensions don't start with dots: {wrong.ToReadableString()}");
-            }
+            throw new NotImplementedException();
         }
 
         public GenericDiffReporter(string diffProgram)
