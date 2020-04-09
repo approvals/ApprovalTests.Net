@@ -3,7 +3,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using ApprovalTests.Async;
 using ApprovalTests.Reporters;
+#if(NETFRAMEWORK)
 using ApprovalTests.Scrubber;
+#endif
 using NUnit.Framework;
 #pragma warning disable 162
 #pragma warning disable 1998
