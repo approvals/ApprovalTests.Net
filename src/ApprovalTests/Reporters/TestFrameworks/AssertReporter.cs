@@ -3,6 +3,7 @@ using System.IO;
 using System.Reflection;
 using ApprovalTests.Core;
 using ApprovalTests.Namers.StackTraceParsers;
+using EmptyFiles;
 
 namespace ApprovalTests.Reporters.TestFrameworks
 {
@@ -26,7 +27,7 @@ namespace ApprovalTests.Reporters.TestFrameworks
 
         public virtual bool IsWorkingInThisEnvironment(string forFile)
         {
-            return GenericDiffReporter.IsTextFile(forFile) && IsFrameworkUsed();
+            return Extensions.IsText(forFile) && IsFrameworkUsed();
         }
 
         public bool IsFrameworkUsed()

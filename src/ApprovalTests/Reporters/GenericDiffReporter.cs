@@ -18,337 +18,10 @@ namespace ApprovalTests.Reporters
         public static IEnumerable<string> GetTextAndImageFileTypes()
         {
             var all = new HashSet<string>();
-            all.AddAll(GetTextFileTypes());
+            all.AddAll(Extensions.TextExtensions);
             all.AddAll(GetImageFileTypes());
             return all;
         }
-
-        private static readonly HashSet<string> TEXT_FILE_TYPES = new HashSet<string>
-        {
-            // begin-snippet: text_file_types
-            "ada",
-            "adb",
-            "ads",
-            "applescript",
-            "au3",
-            "as",
-            "asc",
-            "ascx",
-            "ascii",
-            "asm",
-            "asmx",
-            "asp",
-            "aspx",
-            "atom",
-            "awk",
-            "bas",
-            "bash",
-            "bashrc",
-            "bat",
-            "bbcolors",
-            "bcp",
-            "bdsgroup",
-            "bdsproj",
-            "bib",
-            "bowerrc",
-            "c",
-            "cbl",
-            "cc",
-            "cfc",
-            "cfg",
-            "cfm",
-            "cfml",
-            "cgi",
-            "clj",
-            "cljs",
-            "cls",
-            "cmake",
-            "cmd",
-            "cnf",
-            "cob",
-            "code-snippets",
-            "coffee",
-            "coffeekup",
-            "conf",
-            "cp",
-            "cpp",
-            "cpt",
-            "cpy",
-            "crt",
-            "cs",
-            "csh",
-            "cson",
-            "csproj",
-            "csr",
-            "css",
-            "csslintrc",
-            "csv",
-            "ctl",
-            "curlrc",
-            "cxx",
-            "d",
-            "dart",
-            "dfm",
-            "diff",
-            "dof",
-            "dpk",
-            "dpr",
-            "dproj",
-            "dtd",
-            "eco",
-            "editorconfig",
-            "ejs",
-            "el",
-            "elm",
-            "emacs",
-            "eml",
-            "ent",
-            "erb",
-            "erl",
-            "eslintignore",
-            "eslintrc",
-            "ex",
-            "exs",
-            "f",
-            "f03",
-            "f77",
-            "f90",
-            "f95",
-            "fish",
-            "for",
-            "fpp",
-            "frm",
-            "fs",
-            "fsproj",
-            "fsx",
-            "ftn",
-            "gemrc",
-            "gemspec",
-            "gitattributes",
-            "gitconfig",
-            "gitignore",
-            "gitkeep",
-            "gitmodules",
-            "go",
-            "gpp",
-            "gradle",
-            "groovy",
-            "groupproj",
-            "grunit",
-            "gtmpl",
-            "gvimrc",
-            "h",
-            "haml",
-            "hbs",
-            "hgignore",
-            "hh",
-            "hrl",
-            "hpp",
-            "hs",
-            "hta",
-            "htaccess",
-            "htc",
-            "htm",
-            "html",
-            "htpasswd",
-            "hxx",
-            "iced",
-            "iml",
-            "inc",
-            "ini",
-            "ino",
-            "int",
-            "irbrc",
-            "itcl",
-            "itermcolors",
-            "itk",
-            "jade",
-            "java",
-            "jhtm",
-            "jhtml",
-            "js",
-            "jscsrc",
-            "jshintignore",
-            "jshintrc",
-            "json",
-            "json5",
-            "jsonld",
-            "jsp",
-            "jspx",
-            "jsx",
-            "ksh",
-            "less",
-            "lhs",
-            "lisp",
-            "log",
-            "ls",
-            "lsp",
-            "lua",
-            "m",
-            "m4",
-            "mak",
-            "map",
-            "markdown",
-            "master",
-            "md",
-            "mdown",
-            "mdwn",
-            "mdx",
-            "metadata",
-            "mht",
-            "mhtml",
-            "mjs",
-            "mk",
-            "mkd",
-            "mkdn",
-            "mkdown",
-            "ml",
-            "mli",
-            "mm",
-            "mxml",
-            "nfm",
-            "nfo",
-            "noon",
-            "npmignore",
-            "npmrc",
-            "nuspec",
-            "nvmrc",
-            "ops",
-            "pas",
-            "pasm",
-            "patch",
-            "pbxproj",
-            "pch",
-            "pem",
-            "pg",
-            "php",
-            "php3",
-            "php4",
-            "php5",
-            "phpt",
-            "phtml",
-            "pir",
-            "pl",
-            "pm",
-            "pmc",
-            "pod",
-            "pot",
-            "prettierrc",
-            "properties",
-            "props",
-            "pt",
-            "pug",
-            "purs",
-            "py",
-            "pyx",
-            "r",
-            "rake",
-            "rb",
-            "rbw",
-            "rc",
-            "rdoc",
-            "rdoc_options",
-            "resx",
-            "rexx",
-            "rhtml",
-            "rjs",
-            "rlib",
-            "ron",
-            "rs",
-            "rss",
-            "rst",
-            "rtf",
-            "rvmrc",
-            "rxml",
-            "s",
-            "sass",
-            "scala",
-            "scm",
-            "scss",
-            "seestyle",
-            "sh",
-            "shtml",
-            "sln",
-            "sls",
-            "spec",
-            "sql",
-            "sqlite",
-            "sqlproj",
-            "ss",
-            "sss",
-            "st",
-            "strings",
-            "sty",
-            "styl",
-            "stylus",
-            "sub",
-            "sublime-build",
-            "sublime-commands",
-            "sublime-completions",
-            "sublime-keymap",
-            "sublime-macro",
-            "sublime-menu",
-            "sublime-project",
-            "sublime-settings",
-            "sublime-workspace",
-            "sv",
-            "svc",
-            "svg",
-            "swift",
-            "t",
-            "tcl",
-            "tcsh",
-            "terminal",
-            "tex",
-            "text",
-            "textile",
-            "tg",
-            "tk",
-            "tmLanguage",
-            "tmTheme",
-            "tmpl",
-            "tpl",
-            "ts",
-            "tsv",
-            "tsx",
-            "tt",
-            "tt2",
-            "ttml",
-            "twig",
-            "txt",
-            "text",
-            "v",
-            "vb",
-            "vbproj",
-            "vbs",
-            "vcproj",
-            "vcxproj",
-            "vh",
-            "vhd",
-            "vhdl",
-            "vim",
-            "viminfo",
-            "vimrc",
-            "vm",
-            "vue",
-            "webapp",
-            "x-php",
-            "wsc",
-            "xaml",
-            "xht",
-            "xhtml",
-            "xml",
-            "xs",
-            "xsd",
-            "xsl",
-            "xslt",
-            "y",
-            "yaml",
-            "yml",
-            "zsh",
-            "zshrc"
-            // end-snippet
-        };
 
         private static readonly HashSet<string> IMAGE_FILE_TYPES = new HashSet<string>
         {
@@ -367,23 +40,28 @@ namespace ApprovalTests.Reporters
         protected string originalDiffProgram;
         protected string actualDiffProgram;
         protected string diffProgramNotFoundMessage;
-        protected Func<IEnumerable<string>> fileTypes = GetTextFileTypes;
+        protected Func<IEnumerable<string>> fileTypes;
 
+        [ObsoleteEx(
+            RemoveInVersion = "5.0",
+            ReplacementTypeOrMember = "EmptyFiles.Extensions.TextExtensions")]
         public static HashSet<string> GetTextFileTypes()
         {
-            return TEXT_FILE_TYPES;
+            return new HashSet<string>(Extensions.TextExtensions);
         }
-
 
         public static HashSet<string> GetImageFileTypes()
         {
             return IMAGE_FILE_TYPES;
         }
 
+        [ObsoleteEx(
+            RemoveInVersion = "5.0",
+            ReplacementTypeOrMember = "EmptyFiles.Extensions.AddTextExtensions")]
         public static void RegisterTextFileTypes(params string[] extensionsWithDots)
         {
             AssertDots(extensionsWithDots);
-            TEXT_FILE_TYPES.AddAll(extensionsWithDots);
+            Extensions.AddTextExtensions(extensionsWithDots);
         }
 
         public static void RegisterImageFileTypes(params string[] extensionsWithDots)
@@ -412,7 +90,7 @@ namespace ApprovalTests.Reporters
         }
 
         public GenericDiffReporter(string diffProgram, string argumentsFormat, string diffProgramNotFoundMessage)
-            : this(diffProgram, argumentsFormat, diffProgramNotFoundMessage, GetTextFileTypes)
+            : this(diffProgram, argumentsFormat, diffProgramNotFoundMessage, () => Extensions.TextExtensions)
         {
         }
 
@@ -471,7 +149,6 @@ Received {0} ({1}, {2}, {3})", GetType().Name, diffProgram, argumentsFormat, dif
                 if (AllFiles.TryGetPathFor(approved, out var emptyFile))
                 {
                     File.Copy(emptyFile, approved, true);
-
                 }
                 else
                 {
@@ -502,9 +179,12 @@ Received {0} ({1}, {2}, {3})", GetType().Name, diffProgram, argumentsFormat, dif
             return '"' + path + '"';
         }
 
+        [ObsoleteEx(
+            RemoveInVersion = "5.0",
+            ReplacementTypeOrMember = "EmptyFiles.Extensions.IsText")]
         public static bool IsTextFile(string forFile)
         {
-            return IsFileOneOf(forFile, GetTextFileTypes());
+            return Extensions.IsText(forFile);
         }
 
         public static bool IsFileOneOf(string forFile, IEnumerable<string> fileTypes)

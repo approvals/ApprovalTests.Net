@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using EmptyFiles;
 
 namespace ApprovalTests.Reporters
 {
     public static class DiffPrograms
     {
-        public static Func<IEnumerable<string>> TEXT           = GenericDiffReporter.GetTextFileTypes;
+        public static Func<IEnumerable<string>> TEXT           = () => Extensions.TextExtensions;
         public static Func<IEnumerable<string>> IMAGE          = GenericDiffReporter.GetImageFileTypes;
         public static Func<IEnumerable<string>> TEXT_AND_IMAGE = GenericDiffReporter.GetTextAndImageFileTypes;
         public static class Mac
