@@ -4,6 +4,7 @@ using System.Linq;
 
 namespace ApprovalUtilities.Utilities
 {
+    // ReSharper disable once PartialTypeWithSinglePart
     public static partial class CollectionUtilities
     {
         public static ICollection<T> AddAll<T>(this ICollection<T> collection, IEnumerable<T> additions)

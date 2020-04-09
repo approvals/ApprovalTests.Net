@@ -1,5 +1,4 @@
-﻿using System.Text;
-using ApprovalTests.Reporters;
+﻿using ApprovalTests.Reporters;
 using NUnit.Framework;
 
 namespace ApprovalTests.Tests
@@ -26,7 +25,7 @@ namespace ApprovalTests.Tests
         [Test]
         public void TestUnicode()
         {
-            var text = Encoding.Default.GetString(new byte[] {101, 235, 110, 116});
+            var text = System.Text.Encoding.Default.GetString(new byte[] {101, 235, 110, 116});
             Approvals.Verify(text);
         }
 #endif

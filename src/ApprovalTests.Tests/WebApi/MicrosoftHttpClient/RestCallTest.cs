@@ -41,6 +41,7 @@ namespace ApprovalTests.Tests.WebApi.MicrosoftHttpClient
 
     public class GoogleQueryResults
     {
+        // ReSharper disable once UnusedParameter.Local
         public GoogleQueryResults(DownloadStringCompletedEventArgs result)
         {
             //do extraction stuff

@@ -37,6 +37,7 @@ namespace ApprovalTests.ExceptionalExceptions
             return exception;
         }
 
+        // ReSharper disable once UnusedParameter.Local
         private static string GetTlDr(ExceptionalId uid)
         {
             return "";

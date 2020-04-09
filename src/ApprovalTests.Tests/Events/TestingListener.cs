@@ -11,7 +11,6 @@ namespace ApprovalTests.Tests.Events
 
         public static void PropertyChangedCallback(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            return;
         }
 
         public static void StandardCallback(object sender, EventArgs e)
