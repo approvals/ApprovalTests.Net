@@ -8,7 +8,6 @@ namespace ApprovalTests.Reporters
 
         public MeldReporter() : base(DiffTool.Meld)
         {
-
         }
     }
 }

@@ -6,8 +6,7 @@ namespace ApprovalTests.Reporters
     {
         public static readonly WinMergeReporter INSTANCE = new WinMergeReporter();
 
-        public WinMergeReporter()
-            : base(DiffTool.WinMerge)
+        public WinMergeReporter() : base(DiffTool.WinMerge)
         {
         }
     }

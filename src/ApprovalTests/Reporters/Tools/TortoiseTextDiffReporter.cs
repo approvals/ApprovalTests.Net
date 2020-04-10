@@ -6,7 +6,7 @@ namespace ApprovalTests.Reporters
     {
         public static readonly TortoiseTextDiffReporter INSTANCE = new TortoiseTextDiffReporter();
 
-        public TortoiseTextDiffReporter(): base(DiffTool.TortoiseMerge)
+        public TortoiseTextDiffReporter() : base(DiffTool.TortoiseMerge)
         {
         }
     }

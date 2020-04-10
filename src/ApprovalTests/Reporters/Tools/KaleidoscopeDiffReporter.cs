@@ -8,7 +8,6 @@ namespace ApprovalTests.Reporters
 
         public KaleidoscopeDiffReporter() : base(DiffTool.Kaleidoscope)
         {
-
         }
     }
 }

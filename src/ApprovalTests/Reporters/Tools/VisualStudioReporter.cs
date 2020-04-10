@@ -6,8 +6,7 @@ namespace ApprovalTests.Reporters
     {
         public static readonly VisualStudioReporter INSTANCE = new VisualStudioReporter();
 
-        public VisualStudioReporter()
-            : base(DiffTool.VisualStudio)
+        public VisualStudioReporter() : base(DiffTool.VisualStudio)
         {
         }
     }

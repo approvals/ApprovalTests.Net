@@ -8,7 +8,6 @@ namespace ApprovalTests.Reporters
 
         public TkDiffReporter() : base(DiffTool.TkDiff)
         {
-
         }
     }
 }

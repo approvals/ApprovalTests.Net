@@ -6,8 +6,7 @@ namespace ApprovalTests.Reporters
     {
         public static readonly CodeCompareReporter INSTANCE = new CodeCompareReporter();
 
-        public CodeCompareReporter()
-            : base(DiffTool.CodeCompare)
+        public CodeCompareReporter() : base(DiffTool.CodeCompare)
         {
         }
     }

@@ -8,7 +8,6 @@ namespace ApprovalTests.Reporters
 
         public KDiff3Reporter() : base(DiffTool.KDiff3)
         {
-
         }
     }
 }
