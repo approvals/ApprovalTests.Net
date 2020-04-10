@@ -95,7 +95,7 @@ If you prefer auditory learning, you might enjoy the following podcast
         }
     }
 ```
-<sup><a href='/src/ApprovalTests.Tests/SampleTest.cs#L8-L21' title='File snippet `sample_test` was extracted from'>snippet source</a> | <a href='#snippet-sample_test' title='Navigate to start of snippet `sample_test`'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests.Tests/SampleTest.cs#L7-L20' title='File snippet `sample_test` was extracted from'>snippet source</a> | <a href='#snippet-sample_test' title='Navigate to start of snippet `sample_test`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Will Produce a File

@@ -28,15 +28,7 @@ snippet: linux_diff_reporters
 
 ## Making Custom Reporters
 
-If your favorite diff tool isn't already in ApprovalTests. There are a couple ways you can fix that. First, try a custom reporter
-
-snippet: custom_reporter
-
-If you have more details you might want to use the DiffInfo Class.
-
-snippet: custom_reporter_diff_info
-
-*note:* Please consider contributing these back via pull request.
+See https://github.com/SimonCropp/Verify/blob/master/docs/diff-tool.custom.md
 
 
 ## Joining Reporters
