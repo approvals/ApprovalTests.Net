@@ -14,7 +14,7 @@ public class CustomDiffReporter :
             AraxisMergeReporter.INSTANCE,
             P4MergeReporter.INSTANCE,
             WinMergeReporter.INSTANCE,
-            KDiffReporter.INSTANCE,
+            KDiff3Reporter.INSTANCE,
             VisualStudioReporter.INSTANCE,
             RiderReporter.INSTANCE,
             FrameworkAssertReporter.INSTANCE,

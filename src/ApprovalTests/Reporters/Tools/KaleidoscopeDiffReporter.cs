@@ -1,6 +1,6 @@
 ﻿using DiffEngine;
 
-namespace ApprovalTests.Reporters.Mac
+namespace ApprovalTests.Reporters
 {
     public class KaleidoscopeDiffReporter : DiffToolReporter
     {

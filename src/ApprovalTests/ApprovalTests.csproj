@@ -24,7 +24,4 @@
     <Content Include="build\ApprovalTests.targets" PackagePath="build\ApprovalTests.targets" />
     <Content Include="buildMultiTargeting\ApprovalTests.targets" PackagePath="buildMultiTargeting\ApprovalTests.targets" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Reporters\Tools\" />
-  </ItemGroup>
 </Project>

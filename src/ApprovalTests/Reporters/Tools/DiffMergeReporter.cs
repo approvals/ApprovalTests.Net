@@ -1,6 +1,6 @@
 ﻿using DiffEngine;
 
-namespace ApprovalTests.Reporters.Linux
+namespace ApprovalTests.Reporters
 {
     public class DiffMergeReporter : DiffToolReporter
     {
