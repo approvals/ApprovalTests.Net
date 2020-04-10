@@ -6,7 +6,7 @@
 
         public ImageReporter() : base(TortoiseImageDiffReporter.INSTANCE,
             BeyondCompareReporter.INSTANCE,
-            P4MergeImageReporter.INSTANCE)
+            P4MergeReporter.INSTANCE)
         {
         }
     }
