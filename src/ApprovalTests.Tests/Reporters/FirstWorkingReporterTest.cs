@@ -1,6 +1,6 @@
+using System.IO;
 using ApprovalTests.Core;
 using ApprovalTests.Reporters;
-using ApprovalTests.Reporters.Windows;
 using ApprovalUtilities.Utilities;
 using NUnit.Framework;
 
@@ -27,8 +27,16 @@ namespace ApprovalTests.Tests.Reporters
         [Test]
         public void TestException()
         {
-            var ex = ExceptionUtilities.GetException(() => new ImageReporter().Report("received.notreal", "received.notreal"));
-            Assert.AreEqual("ImageReporter Could not find a Reporter for file received.notreal", ex.Message);
+            File.Create("received.notreal").Close();
+            try
+            {
+                var ex = ExceptionUtilities.GetException(() => new DiffReporter().Report("received.notreal", "received.notreal"));
+                Assert.AreEqual("Could not find a diff tool for extension: .notreal", ex.Message);
+            }
+            finally
+            {
+                File.Delete("received.notreal");
+            }
         }
 
         [Test]

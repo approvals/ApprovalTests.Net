@@ -1,4 +1,6 @@
-﻿using ApprovalTests.Core;
+﻿using System;
+using System.IO;
+using ApprovalTests.Core;
 using DiffEngine;
 
 namespace ApprovalTests.Reporters
@@ -9,7 +11,10 @@ namespace ApprovalTests.Reporters
 
         public void Report(string approved, string received)
         {
-            DiffRunner.Launch(received, approved);
+            if (DiffRunner.Launch(received, approved) == LaunchResult.NoDiffToolForExtension)
+            {
+                throw new Exception($"Could not find a diff tool for extension: {Path.GetExtension(received)}");
+            }
         }
 
         public bool IsWorkingInThisEnvironment(string forFile)
