@@ -6,37 +6,21 @@ toc
 
 For an introduction on how to use reporters check out [ getting started with reporters ](./ReportersGettingStarted.md)
 
-## Supported Diff Tools
+### Supported Diff Tools
 
-The DiffReporter class goes through a chain of possible reporters to find the first option installed on your system. Currently the search goes in this order:
-
-
-### Windows
-
-snippet: windows_diff_reporters
+ApprovalTests Diff Reporters use [DiffEngine](https://github.com/SimonCropp/DiffEngine) which supports the following [diff tools](https://github.com/SimonCropp/DiffEngine/#supported-diff-tools)
 
 
-### Mac
+#### Custom Diff Tool
 
-snippet: mac_diff_reporters
-
-
-### Linux
-
-snippet: linux_diff_reporters
+Custom Diff Tools can be added via DiffEngine. See: https://github.com/SimonCropp/Verify/blob/master/docs/diff-tool.custom.md
 
 
 ## Making Custom Reporters
 
-If your favorite diff tool isn't already in ApprovalTests. There are a couple ways you can fix that. First, try a custom reporter
+Extend `IApprovalFailureReporter`. For example a file can be launched on failure:
 
-snippet: custom_reporter
-
-If you have more details you might want to use the DiffInfo Class.
-
-snippet: custom_reporter_diff_info
-
-*note:* Please consider contributing these back via pull request.
+snippet: FileLauncherReporter.cs
 
 
 ## Joining Reporters
@@ -68,19 +52,6 @@ Currently, we support:
 snippet: continuous_integration
 
 You can add to this by configuring the FrontLoadedReporter Annotation.
-
-## File Types
-
-ApprovalTests will do different things depending on if it thinks a file is an image or not. It does this by the file extension.
-
-### Text File extensions
-
-snippet: text_file_types
-
-
-### Image File extensions
-
-snippet: image_file_types
 
 ---
 

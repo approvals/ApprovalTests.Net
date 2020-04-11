@@ -1,6 +1,5 @@
 ﻿using ApprovalTests.Reporters;
 using ApprovalTests.Reporters.TestFrameworks;
-using ApprovalTests.Reporters.Windows;
 
 public class CustomDiffReporter :
     FirstWorkingReporter
@@ -14,7 +13,7 @@ public class CustomDiffReporter :
             AraxisMergeReporter.INSTANCE,
             P4MergeReporter.INSTANCE,
             WinMergeReporter.INSTANCE,
-            KDiffReporter.INSTANCE,
+            KDiff3Reporter.INSTANCE,
             VisualStudioReporter.INSTANCE,
             RiderReporter.INSTANCE,
             FrameworkAssertReporter.INSTANCE,
