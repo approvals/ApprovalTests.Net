@@ -13,13 +13,14 @@ public class SetUpFixture
     {
         AttributeStackTraceParser.FileInfoIsValidFilter = caller => true;
         FixCurrentDirectory();
-        var machinesToRun = new[] { "LLEWELLYN-PC", "LLEWELLYNWINDOW" };
+        var machinesToRun = new[] {"LLEWELLYN-PC", "LLEWELLYNWINDOW"};
 
         if (!machinesToRun.Contains(Environment.MachineName))
         {
             Assert.Inconclusive($"Machine name '{Environment.MachineName}' not in allowed list: {string.Join(", ", machinesToRun)}. See ApprovalTestsConfig.cs");
         }
     }
+
     void FixCurrentDirectory([CallerFilePath] string callerFilePath = "")
     {
         Environment.CurrentDirectory = Directory.GetParent(callerFilePath).FullName;
