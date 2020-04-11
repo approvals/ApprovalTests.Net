@@ -189,14 +189,6 @@ namespace ApprovalTests
             Verify(WriterFactory.CreateTextWriter(scrubber(text), fileExtensionWithoutDot));
         }
 
-        [ObsoleteEx(
-            RemoveInVersion = "5.0",
-            ReplacementTypeOrMember = nameof(VerifyExceptionWithStacktrace))]
-        public static void Verify(Exception e)
-        {
-            Verify(e.Scrub());
-        }
-
         public static void VerifyException(Exception e)
         {
             Verify($"{e.GetType().FullName}: {e.Message}");

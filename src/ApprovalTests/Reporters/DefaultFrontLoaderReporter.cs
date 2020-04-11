@@ -14,7 +14,6 @@ namespace ApprovalTests.Reporters
             TeamCityReporter.INSTANCE,
             JenkinsReporter.INSTANCE,
             BambooReporter.INSTANCE,
-            CruiseControlNetReporter.INSTANCE,
             NCrunchReporter.INSTANCE,
             MightyMooseAutoTestReporter.INSTANCE,
             MyGetReporter.INSTANCE,

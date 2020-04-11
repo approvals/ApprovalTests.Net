@@ -95,14 +95,13 @@ TfsVnextReporter.INSTANCE,
 TeamCityReporter.INSTANCE,
 JenkinsReporter.INSTANCE,
 BambooReporter.INSTANCE,
-CruiseControlNetReporter.INSTANCE,
 NCrunchReporter.INSTANCE,
 MightyMooseAutoTestReporter.INSTANCE,
 MyGetReporter.INSTANCE,
 GoContinuousDeliveryReporter.INSTANCE,
 AppVeyorReporter.INSTANCE
 ```
-<sup><a href='/src/ApprovalTests/Reporters/DefaultFrontLoaderReporter.cs#L11-L23' title='File snippet `continuous_integration` was extracted from'>snippet source</a> | <a href='#snippet-continuous_integration' title='Navigate to start of snippet `continuous_integration`'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests/Reporters/DefaultFrontLoaderReporter.cs#L11-L22' title='File snippet `continuous_integration` was extracted from'>snippet source</a> | <a href='#snippet-continuous_integration' title='Navigate to start of snippet `continuous_integration`'>anchor</a></sup>
 <!-- endsnippet -->
 
 You can add to this by configuring the FrontLoadedReporter Annotation.

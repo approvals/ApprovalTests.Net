@@ -55,14 +55,6 @@ namespace ApprovalUtilities.Utilities
             return results.Distinct();
         }
 
-        [ObsoleteEx(
-            RemoveInVersion = "5.0",
-            ReplacementTypeOrMember = nameof(LocateFileFromEnvironmentPath))]
-        public static IEnumerable<string> LocateFileFromEnviormentPath(string toFind)
-        {
-            return LocateFileFromEnvironmentPath(toFind);
-        }
-
         private static IList<string> EnvironmentPaths;
 
         private static IEnumerable<string> FindProgramOnPath(string programName)

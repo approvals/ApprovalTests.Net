@@ -7,14 +7,6 @@ namespace ApprovalTests.Persistence
     {
         private readonly IDatabaseToExecutableQueryAdapter adapter;
 
-        [ObsoleteEx(
-            RemoveInVersion = "5.0",
-            ReplacementTypeOrMember = "ExecutableSqlQuery(IDatabaseToExecutableQueryAdapter)")]
-        public ExecutableSqlQuery(IDatabaseToExecuteableQueryAdaptor adapter)
-        {
-            this.adapter = adapter;
-        }
-
         public ExecutableSqlQuery(IDatabaseToExecutableQueryAdapter adapter)
         {
             this.adapter = adapter;

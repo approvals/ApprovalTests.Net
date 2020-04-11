@@ -1,34 +1,32 @@
 ﻿ApprovalMaintenance.[VerifyNoAbandonedFiles](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Maintenance/ApprovalMaintenance.cs#L77)(String[] ignore)  
   
-Approvals.[Verify](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L46)(Exception e)  
+Approvals.[Verify](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L46)(FileInfo receivedFilePath)  
   
-Approvals.[VerifyAll](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L214)(IDictionary&lt;K, V> dictionary)  
+Approvals.[VerifyAll](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L206)(IDictionary&lt;K, V> dictionary)  
   
-Approvals.[VerifyBinaryFile](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L262)(Byte[] bytes, String fileExtensionWithDot)  
+Approvals.[VerifyBinaryFile](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L254)(Byte[] bytes, String fileExtensionWithDot)  
   
-Approvals.[VerifyException](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L200)(Exception e)  
+Approvals.[VerifyException](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L192)(Exception e)  
   
-Approvals.[VerifyExceptionWithStacktrace](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L205)(Exception e)  
+Approvals.[VerifyExceptionWithStacktrace](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L197)(Exception e)  
   
 Approvals.[VerifyFile](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L127)(String receivedFilePath)  
   
-Approvals.[VerifyHtml](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L268)(String html)  
+Approvals.[VerifyHtml](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L260)(String html)  
   
-Approvals.[VerifyJson](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L278)(String json)  
+Approvals.[VerifyJson](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L270)(String json)  
   
-Approvals.[VerifyPdfFile](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L298)(String pdfFilePath)  
+Approvals.[VerifyPdfFile](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L290)(String pdfFilePath)  
   
 Approvals.[VerifyWithCallback](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L137)(Object text, Action&lt;String> callBackOnFailure)  
   
 Approvals.[VerifyWithExtension](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L180)(String text, String fileExtensionWithDot, Func&lt;String, String> scrubber)  
   
-Approvals.[VerifyXml](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L273)(String xml)  
+Approvals.[VerifyXml](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Approvals.cs#L265)(String xml)  
   
 Approver.[Verify](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Core/Approver.cs#L5)(IApprovalApprover approver, IApprovalFailureReporter reporter)  
   
 CombinationApprovals.[VerifyAllCombinations](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Combinations/CombinationApprovals.cs#L12)(Func&lt;A, B, C, D, E, F, G, H, I, Object> processCall, Func&lt;Object, String> resultFormatter, IEnumerable&lt;A> aList, IEnumerable&lt;B> bList, IEnumerable&lt;C> cList, IEnumerable&lt;D> dList, IEnumerable&lt;E> eList, IEnumerable&lt;F> fList, IEnumerable&lt;G> gList, IEnumerable&lt;H> hList, IEnumerable&lt;I> iList)  
-  
-DatabaseApprovals.[Verify](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Persistence/DatabaseApprovals.cs#L10)(IDatabaseToExecutableQueryAdapter adapter)  
   
 EmailApprovals.[Verify](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Email/EmailApprovals.cs#L13)(MailMessage email)  
   

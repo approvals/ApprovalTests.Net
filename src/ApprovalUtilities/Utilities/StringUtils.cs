@@ -32,16 +32,6 @@ namespace ApprovalUtilities.Utilities
             return sb.ToString();
         }
 
-        [ObsoleteEx(
-            RemoveInVersion = "5.0",
-            Message = "Use String.Format() or string interpolation")]
-        // ReSharper disable UnusedParameter.Global
-        public static string FormatWith(this string mask, params object[] parameters)
-        {
-            throw new Exception("Use String.Format() or string interpolation instead.");
-        }
-        // ReSharper restore UnusedParameter.Global
-
         public static string DisplayGrid(int width, int height, Func<int, int, string> func)
         {
             var b = new StringBuilder("  ");

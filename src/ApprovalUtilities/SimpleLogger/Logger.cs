@@ -21,23 +21,7 @@ namespace ApprovalUtilities.SimpleLogger
 
         public static IDisposable MarkEntryPoints()
         {
-            return new Marker();
-        }
-
-        [ObsoleteEx(
-            RemoveInVersion = "5.0",
-            ReplacementTypeOrMember = nameof(MarkEntryPoints))]
-        public static void MarkerIn()
-        {
-            log.MarkerIn();
-        }
-
-        [ObsoleteEx(
-            RemoveInVersion = "5.0",
-            ReplacementTypeOrMember = nameof(MarkEntryPoints))]
-        public static void MarkerOut()
-        {
-            log.MarkerOut();
+            return new Marker(log);
         }
 
         public static string Event(string message, params object[] items)
@@ -100,18 +84,19 @@ namespace ApprovalUtilities.SimpleLogger
         }
     }
 
-#pragma warning disable 618
     public class Marker : IDisposable
     {
-        public Marker()
+        private readonly LoggerInstance log;
+
+        public Marker(LoggerInstance log)
         {
-            Logger.MarkerIn();
+            this.log = log;
+            log.MarkerIn();
         }
 
         public void Dispose()
         {
-            Logger.MarkerOut();
+            log.MarkerOut();
         }
     }
-#pragma warning restore 618
 }

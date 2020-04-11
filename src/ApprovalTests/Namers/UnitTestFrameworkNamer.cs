@@ -26,13 +26,5 @@ namespace ApprovalTests.Namers
         public string Name => stackTraceParser.ApprovalName;
 
         public virtual string SourcePath => Path.Combine(stackTraceParser.SourcePath, Subdirectory);
-
-        [ObsoleteEx(
-            RemoveInVersion = "5.0",
-            ReplacementTypeOrMember = nameof(Subdirectory))]
-        public string GetSubdirectory()
-        {
-            return Subdirectory;
-        }
     }
 }

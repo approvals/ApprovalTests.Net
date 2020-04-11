@@ -13,22 +13,6 @@ namespace ApprovalTests.Namers
             set => additionalInformation.Value = value;
         }
 
-        [ObsoleteEx(
-            RemoveInVersion = "5.0",
-            ReplacementTypeOrMember = "ApprovalResults.UniqueForMachineName")]
-        public static void AsMachineSpecificTest()
-        {
-            ApprovalResults.UniqueForMachineName();
-        }
-
-        [ObsoleteEx(
-            RemoveInVersion = "5.0",
-            ReplacementTypeOrMember = nameof(AsEnvironmentSpecificTest))]
-        public static void AsMachineSpecificTest(Func<string> environmentLabeler)
-        {
-            AsEnvironmentSpecificTest(environmentLabeler);
-        }
-
         public static IDisposable AsEnvironmentSpecificTest(string label)
         {
             if (AdditionalInformation == null)
@@ -41,14 +25,6 @@ namespace ApprovalTests.Namers
             }
 
             return new EnvironmentSpecificCleanUp();
-        }
-
-        [ObsoleteEx(
-            RemoveInVersion = "5.0",
-            ReplacementTypeOrMember = "AsEnvironmentSpecificTest(string)")]
-        public static IDisposable AsEnvironmentSpecificTest(Func<string> environmentLabeler)
-        {
-            return AsEnvironmentSpecificTest(environmentLabeler());
         }
 
         public static void Clear()
