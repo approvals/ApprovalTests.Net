@@ -1,4 +1,6 @@
-﻿using ApprovalTests.Namers;
+﻿using System;
+using System.Linq;
+using ApprovalTests.Namers;
 using ApprovalTests.Reporters;
 using NUnit.Framework;
 
@@ -10,6 +12,28 @@ namespace ApprovalTests.Tests.Namer
     // end-snippet
     public class ApprovalResultsTest
     {
+        [Test]
+        public void TestUniqueNames()
+        {
+            var machinesToRun = new[] {"LLEWELLYN-PC", "LLEWELLYNWINDOW"};
+
+            if (!machinesToRun.Contains(Environment.MachineName))
+            {
+                Assert.Inconclusive($"Machine name '{Environment.MachineName}' not in allowed list: {string.Join(", ", machinesToRun)}. See ApprovalTestsConfig.cs");
+            }
+
+            ApprovalResults.UniqueForMachineName();
+            var methods = new Func<string>[]
+            {
+                //ApprovalResults.GetDotNetVersion,
+                ApprovalResults.GetOsName,
+                ApprovalResults.GetUserName
+            };
+            Approvals.VerifyAll(
+                methods,
+                m => $"{m.Method.Name} => {m.Invoke()}");
+        }
+
         [Test]
         public void TestEasyNames()
         {

@@ -36,7 +36,7 @@ using ApprovalTests.Reporters;
 
 [assembly: UseReporter(typeof(DiffReporter))]
 ```
-<sup><a href='/src/ApprovalTests.MachineSpecific.Tests/ApprovalTestsConfig.cs#L1-L5' title='File snippet `config_file` was extracted from'>snippet source</a> | <a href='#snippet-config_file' title='Navigate to start of snippet `config_file`'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests.Tests/ApprovalTestsConfig.cs#L1-L5' title='File snippet `config_file` was extracted from'>snippet source</a> | <a href='#snippet-config_file' title='Navigate to start of snippet `config_file`'>anchor</a></sup>
 <!-- endsnippet -->
 
 ### Launching Multiple Reproters

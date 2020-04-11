@@ -17,8 +17,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApprovalUtilities.Tests", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApprovalUtilities", "ApprovalUtilities\ApprovalUtilities.csproj", "{E9683C33-7A71-4776-B7C9-E89C565AC16B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApprovalTests.MachineSpecific.Tests", "ApprovalTests.MachineSpecific.Tests\ApprovalTests.MachineSpecific.Tests.csproj", "{E9786FB3-9A3A-4072-A799-CF867844BEF5}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApprovalTests.Xunit2", "ApprovalTests.Xunit2\ApprovalTests.Xunit2.csproj", "{E9BD0B96-01C4-4B25-ADFD-3A630970D267}"
 EndProject
 Global
@@ -47,10 +45,6 @@ Global
 		{E9683C33-7A71-4776-B7C9-E89C565AC16B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9683C33-7A71-4776-B7C9-E89C565AC16B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9683C33-7A71-4776-B7C9-E89C565AC16B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E9786FB3-9A3A-4072-A799-CF867844BEF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E9786FB3-9A3A-4072-A799-CF867844BEF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E9786FB3-9A3A-4072-A799-CF867844BEF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E9786FB3-9A3A-4072-A799-CF867844BEF5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E9BD0B96-01C4-4B25-ADFD-3A630970D267}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E9BD0B96-01C4-4B25-ADFD-3A630970D267}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9BD0B96-01C4-4B25-ADFD-3A630970D267}.Release|Any CPU.ActiveCfg = Release|Any CPU
