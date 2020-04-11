@@ -1,4 +1,4 @@
-﻿namespace ApprovalTests.Reporters.Windows
+﻿namespace ApprovalTests.Reporters
 {
     public class TortoiseDiffReporter : FirstWorkingReporter
     {
