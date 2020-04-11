@@ -6,7 +6,7 @@ namespace ApprovalTests.Reporters
     {
         public static readonly RiderReporter INSTANCE = new RiderReporter();
 
-        public RiderReporter() : base(DiffTool.P4Merge)
+        public RiderReporter() : base(DiffTool.Rider)
         {
         }
     }
