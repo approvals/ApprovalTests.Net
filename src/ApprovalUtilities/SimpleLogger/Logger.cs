@@ -44,14 +44,6 @@ namespace ApprovalUtilities.SimpleLogger
             return log.Sql(sql);
         }
 
-        [ObsoleteEx(
-            RemoveInVersion = "5.0",
-            ReplacementTypeOrMember = nameof(Miscellaneous))]
-        public static string Miscelleneous(string label, string message)
-        {
-            return Miscellaneous(label, message);
-        }
-
         public static string Miscellaneous(string label, string message)
         {
             return log.Miscellaneous(label, message);

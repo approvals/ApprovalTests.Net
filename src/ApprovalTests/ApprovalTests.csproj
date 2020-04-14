@@ -14,7 +14,7 @@
 
     <PackageReference Include="Fody" Version="6.1.1" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Win32.Registry" Version="4.7.0" />
-    <PackageReference Include="Obsolete.Fody" Version="5.2.0" PrivateAssets="all" />
+    <PackageReference Include="Obsolete.Fody" Version="5.2.1" PrivateAssets="all" />
     <PackageReference Include="Publicize.Fody" Version="1.8.0" PrivateAssets="All" />
     <PackageReference Include="Virtuosity.Fody" Version="3.1.0" PrivateAssets="All" />
     <PackageReference Include="TextCopy" Version="3.0.1" />
