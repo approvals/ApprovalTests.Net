@@ -63,8 +63,9 @@ EmailTest.Testname.Microsoft_Windows_10_Home_N.approved.eml
 EmailTest.Testname.Microsoft_Windows_10_Pro.approved.eml
 EmailTest.Testname.Microsoft_Windows_Server_2016_Datacenter.approved.eml
 EmailTest.Testname.Microsoft_Windows_Server_2019_Datacenter.approved.eml
+EmailTest.Testname.Microsoft_Windows?10_Professionnel.approved.eml
 ```
-<sup><a href='/src/ApprovalTests.Tests/Namer/ApprovalsFilenameTest.TestSimilarFiles.approved.txt#L1-L6' title='File snippet `ApprovalsFilenameTest.TestSimilarFiles.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-ApprovalsFilenameTest.TestSimilarFiles.approved.txt' title='Navigate to start of snippet `ApprovalsFilenameTest.TestSimilarFiles.approved.txt`'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests.Tests/Namer/ApprovalsFilenameTest.TestSimilarFiles.approved.txt#L1-L7' title='File snippet `ApprovalsFilenameTest.TestSimilarFiles.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-ApprovalsFilenameTest.TestSimilarFiles.approved.txt' title='Navigate to start of snippet `ApprovalsFilenameTest.TestSimilarFiles.approved.txt`'>anchor</a></sup>
 <!-- endsnippet -->
 
 If this is run on a new machine, it could produce a new approval file. This can be confusing as you might not remember what the old system used to produce.

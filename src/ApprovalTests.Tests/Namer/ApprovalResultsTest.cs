@@ -25,7 +25,7 @@ namespace ApprovalTests.Tests.Namer
             ApprovalResults.UniqueForMachineName();
             var methods = new Func<string>[]
             {
-                //ApprovalResults.GetDotNetVersion,
+                ApprovalResults.GetDotNetVersion,
                 ApprovalResults.GetOsName,
                 ApprovalResults.GetUserName
             };
