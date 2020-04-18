@@ -83,19 +83,19 @@ If you prefer auditory learning, you might enjoy the following podcast
 <a id='snippet-sample_test'/></a>
 ```cs
 [UseReporter(typeof(VisualStudioReporter))]
-    [TestFixture]
-    public class SampleTest
+[TestFixture]
+public class SampleTest
+{
+    [Test]
+    public void TestList()
     {
-        [Test]
-        public void TestList()
-        {
-            var names = new[] { "Llewellyn", "James", "Dan", "Jason", "Katrina" };
-            Array.Sort(names);
-            Approvals.VerifyAll(names, label:"");
-        }
+        var names = new[] {"Llewellyn", "James", "Dan", "Jason", "Katrina"};
+        Array.Sort(names);
+        Approvals.VerifyAll(names, label: "");
     }
+}
 ```
-<sup><a href='/src/ApprovalTests.Tests/SampleTest.cs#L7-L20' title='File snippet `sample_test` was extracted from'>snippet source</a> | <a href='#snippet-sample_test' title='Navigate to start of snippet `sample_test`'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests.Tests/SampleTest.cs#L7-L21' title='File snippet `sample_test` was extracted from'>snippet source</a> | <a href='#snippet-sample_test' title='Navigate to start of snippet `sample_test`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Will Produce a File
