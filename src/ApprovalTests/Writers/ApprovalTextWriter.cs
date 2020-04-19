@@ -34,7 +34,7 @@ namespace ApprovalTests
         public string WriteReceivedFile(string received)
         {
             Directory.CreateDirectory(Path.GetDirectoryName(received));
-            File.WriteAllText(received, Data, Encoding.UTF8);
+            File.WriteAllText(received, Data);
             return received;
         }
     }
