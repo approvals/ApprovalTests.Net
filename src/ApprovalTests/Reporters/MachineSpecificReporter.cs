@@ -24,7 +24,7 @@ namespace ApprovalTests.Reporters
                 if (nearest != null)
                 {
                     var text = File.ReadAllText(nearest.FullName);
-                    File.WriteAllText(approved, $"Copied from: {nearest.Name}\n{text}");
+                    File.WriteAllText(approved, $"Copied from: {nearest.Name}\n{text}", Encoding.UTF8);
                 }
             }
             DiffReporter.INSTANCE.Report(approved, received);
