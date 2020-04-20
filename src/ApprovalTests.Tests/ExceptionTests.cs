@@ -10,8 +10,10 @@ namespace ApprovalTests.Tests
     public class ExceptionTests
     {
         [Test]
+        [Ignore("This test is language specific and depends of the language of the computer")]
         public void VerifyExceptionWithStacktrace()
         {
+      
             using (Namers.ApprovalResults.UniqueForOs())
             {
                 Action wrapper = () => throw new Exception("https://github.com/approvals/ApprovalTests.Net/issues/242");
