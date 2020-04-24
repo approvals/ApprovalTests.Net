@@ -11,7 +11,7 @@ namespace ApprovalTests.Reporters
 
         public void Report(string approved, string received)
         {
-            if (DiffRunner.Launch(received, approved) == LaunchResult.NoDiffToolForExtension)
+            if (DiffRunner.Launch(received, approved) == LaunchResult.NoDiffToolFound)
             {
                 throw new Exception($"Could not find a diff tool for extension: {Path.GetExtension(received)}");
             }
