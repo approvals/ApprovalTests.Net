@@ -12,6 +12,8 @@ namespace ApprovalTests.MSTest
         [UseReporter(typeof(MsTestReporter))]
         public void TestReporter()
         {
+            Assert.IsTrue(MsTestReporter.INSTANCE.IsWorkingInThisEnvironment("a.txt"));
+
             try
             {
                 Approvals.Verify("Hello");

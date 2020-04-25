@@ -1,0 +1,4 @@
+﻿[0,0] => Attempted to divide by zero.
+[0,2] => 0
+[2,0] => Attempted to divide by zero.
+[2,2] => 1

@@ -111,6 +111,17 @@ startxref
         }
 
         [Test]
+        public void TestPdf_ScrubberForITextVersion()
+        {
+            var cases = new[]
+            {
+                "xxxxiText-7.1.11 for .NETxxxx",
+                "xxxxiText® 7.1.11 ©2000-2020xxxx",
+            };
+            Approvals.VerifyAll("IText Version", cases, c => $@"{PdfScrubber.FindITextVersion(c).ToList().ToReadableString()} For {c}");
+        }
+
+        [Test]
         public void TestPdf_ScrubberDateNotMatch()
         {
             var cases = new[] {"xxx(D:)xxx", "xxx(D:20)xxx", "xxx(D:201)xxx", "xxx(D:20191)xxx", "xxx(D:2019123)xxx", "xxx(D:201912312)xxx", "xxx(D:20191231235)xxx", "xxx(D:2019123123595)xxx", "xxx(D:20191231235959+2)xxx", "xxx(D:20191231235959+23'5)xxx", "xxx(D:20191230235959+23'59'59)xxx"};
@@ -118,6 +129,7 @@ startxref
         }
 
         [Test]
+        [UseReporter(typeof(DiffReporter))]
         public void TestPdf_ScrubberFindAllReplacementsInFile()
         {
             var pdf = PathUtilities.GetAdjacentFile("sample.pdf");
