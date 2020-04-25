@@ -1,0 +1,4 @@
+﻿IText Version
+
+[start: 4, length: 12] For xxxxiText-7.1.11 for .NETxxxx
+[start: 4, length: 24] For xxxxiText® 7.1.11 ©2000-2020xxxx

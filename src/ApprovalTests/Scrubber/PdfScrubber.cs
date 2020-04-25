@@ -11,9 +11,11 @@ namespace ApprovalTests.Scrubber
     {
         public static void ScrubPdf(string pdfFilePath)
         {
-            using var fileStream = File.Open(pdfFilePath, FileMode.Open);
-            var replacements = FindReplacements(fileStream);
-            WriteReplacements(fileStream, replacements);
+            using (var fileStream = File.Open(pdfFilePath, FileMode.Open))
+            {
+                var replacements = FindReplacements(fileStream);
+                WriteReplacements(fileStream, replacements);
+            }
         }
 
         public class Replacement
@@ -63,12 +65,13 @@ namespace ApprovalTests.Scrubber
                 var chunk = Encoding.ASCII.GetString(buffer, 0, readSize + bytesRead);
                 replacements.AddRange(GetDateReplacements(chunk, bufferToPositionOffset));
                 replacements.AddRange(GetIdReplacements(chunk, bufferToPositionOffset));
+                replacements.AddRange(GetITextVersionReplacements(chunk, bufferToPositionOffset));
             }
 
             // De-dupe because some matches might occur in both the left and right sides of the buffer
             return replacements
-                .GroupBy(x=>x.start)
-                .Select(x=>x.First());
+                .GroupBy(x => x.start)
+                .Select(x => x.First());
         }
 
         static IEnumerable<Replacement> GetDateReplacements(string input, long positionOffset)
@@ -89,7 +92,13 @@ namespace ApprovalTests.Scrubber
         static IEnumerable<Replacement> GetIdReplacements(string input, long positionOffset)
         {
             return FindIds(input)
-                .Select(pos => new Replacement{start = positionOffset + pos.start,text = new string('0', pos.length)});
+                .Select(pos => new Replacement {start = positionOffset + pos.start, text = new string('0', pos.length)});
+        }
+
+        static IEnumerable<Replacement> GetITextVersionReplacements(string input, long positionOffset)
+        {
+            return FindITextVersion(input)
+                .Select(pos => new Replacement {start = positionOffset + pos.start, text = "iText".PadRight(pos.length)});
         }
 
         public static IEnumerable<Id> FindDates(string input)
@@ -118,7 +127,7 @@ namespace ApprovalTests.Scrubber
             var matches = regex.Matches(input);
             return matches
                 .OfType<Match>()
-                .Select(match => new Id{start = match.Groups[1].Index,length = match.Groups[1].Length});
+                .Select(match => new Id {start = match.Groups[1].Index, length = match.Groups[1].Length});
         }
 
         public class Id
@@ -167,10 +176,25 @@ namespace ApprovalTests.Scrubber
             {
                 return match.Groups.OfType<Group>()
                     .Skip(1) // Skip the first group which contains the entire match
-                    .Select(group => new Id{start = group.Index, length = group.Length});
+                    .Select(group => new Id {start = group.Index, length = group.Length});
             }
 
             return new List<Id>();
+        }
+
+        public static IEnumerable<Id> FindITextVersion(string input)
+        {
+            var regex = new Regex(@"(?x)
+                (iText-\d+\.\d+\.\d+)
+                |
+                (iText.. \d+\.\d+\.\d+ ..2000-20\d\d)
+            ");
+
+            var matches = regex.Matches(input);
+
+            return matches.OfType<Match>()
+                .SelectMany(match => match.Groups.Cast<Group>().Skip(1).Where(group => group.Success)
+                    .Select(group => new Id {start = group.Index, length = group.Length}));
         }
     }
 }
