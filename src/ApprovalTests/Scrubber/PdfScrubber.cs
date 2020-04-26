@@ -129,7 +129,8 @@ namespace ApprovalTests.Scrubber
             var matches = regex.Matches(input);
             return matches
                 .OfType<Match>()
-                .Select(match => new Id {start = match.Groups["value"].Index, length = match.Groups["value"].Length});
+                .Select(_ => _.Groups["value"])
+                .Select(_ => new Id {start = _.Index, length = _.Length});
         }
 
         public class Id
