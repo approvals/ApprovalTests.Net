@@ -126,8 +126,7 @@ namespace ApprovalTests.Scrubber
                 \)                      # End of date metadata
             ", RegexOptions.IgnorePatternWhitespace | RegexOptions.ExplicitCapture);
 
-            var matches = regex.Matches(input);
-            return matches
+            return regex.Matches(input)
                 .OfType<Match>()
                 .Select(_ => _.Groups["value"])
                 .Select(_ => new Id {start = _.Index, length = _.Length});
