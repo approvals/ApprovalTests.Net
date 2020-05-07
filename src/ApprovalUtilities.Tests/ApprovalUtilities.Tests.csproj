@@ -2,7 +2,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>net48;netcoreapp3.0</TargetFrameworks>
-    <Optimize>false</Optimize>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Fody" Version="6.1.1" PrivateAssets="all" />
@@ -12,6 +11,7 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.6.1" />
     <ProjectReference Include="..\ApprovalTests\ApprovalTests.csproj" />
     <ProjectReference Include="..\ApprovalUtilities\ApprovalUtilities.csproj" />
+    <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
   </ItemGroup>
   <ItemGroup Condition="$(TargetFramework) != 'net461'">
     <Compile Remove="Reflection\*.*" />
@@ -21,7 +21,6 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
-  <ItemGroup>
-    <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
-  </ItemGroup>
+  <Import Project="$(ProjectDir)..\ApprovalTests\build\ApprovalTests.targets" />
+  <Import Project="$(ProjectDir)..\ApprovalTests\build\ApprovalTests.props" />
 </Project>
