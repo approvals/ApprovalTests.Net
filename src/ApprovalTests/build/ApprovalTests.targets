@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project>
   <ItemGroup>
-    <None Update="**\*.approved.*"
-          DependentUpon="$(
-  [System.String]::Copy('%(FileName)')
-    .SubString(
-      0,
-      $([System.String]::Copy('%(FileName)').IndexOf('.'))
-    )
-)$(ProjectExt.Replace('proj', ''))" />
+    <None Update="**\*.approved.*">
+      <ParentExtension>$(ProjectExt.Replace('proj', ''))</ParentExtension>
+      <ParentFile>$([System.String]::Copy('%(FileName)').Split('.')[0])</ParentFile>
+      <DependentUpon>%(ParentFile)%(ParentExtension)</DependentUpon>
+    </None>
   </ItemGroup>
 </Project>
