@@ -64,7 +64,7 @@ Based on what you are doing, you will want to switch which reporter you are usin
 
 ### Differences
 
-The main use for seeing differeneces is to use a reporter that will open a DiffTool. [Full list of supported diff tools here](Reporters.md#supported-diff-tools)
+The main use for seeing differences is to use a reporter that will open a DiffTool. [Full list of supported diff tools here](Reporters.md#supported-diff-tools)
 
 ### Rendering 
 Let's say your test result is some HTML. In the beginning you might want to render it in a bowser to be able to see that it is indeed what you want. In this moment, try the  `FileLauncherReporter`. Which will open the `.received.` file in the application associated to it on your machine.
