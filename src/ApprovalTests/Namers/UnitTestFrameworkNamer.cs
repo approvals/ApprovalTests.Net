@@ -17,7 +17,7 @@ namespace ApprovalTests.Namers
             Subdirectory = GetSubdirectoryFromAttribute();
         }
 
-        private string GetSubdirectoryFromAttribute()
+        static string GetSubdirectoryFromAttribute()
         {
             var subdirectoryAttribute = Approvals.CurrentCaller.GetFirstFrameForAttribute<UseApprovalSubdirectoryAttribute>();
             return subdirectoryAttribute == null ? string.Empty : subdirectoryAttribute.Subdirectory;
