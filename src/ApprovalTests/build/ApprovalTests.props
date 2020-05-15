@@ -3,5 +3,7 @@
     <DebugType Condition="'$(DebugType)' == ''">portable</DebugType>
     <DebugSymbols>true</DebugSymbols>
     <Optimize>false</Optimize>
+    <Deterministic>false</Deterministic>
+    <DeterministicSourcePaths>false</DeterministicSourcePaths>
   </PropertyGroup>
 </Project>
