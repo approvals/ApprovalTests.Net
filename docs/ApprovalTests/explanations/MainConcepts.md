@@ -44,7 +44,7 @@ These helper methods make it easy to test many common scenarios.
 This method will:
 1. Serialize the object passed to it to the `.received.` file
 1. Compare it to the `.approved.` file
-1. Lunch a DiffTool on failure
+1. Launch a DiffTool on failure
 
 ### How it does it?
 Let's take the example: 
