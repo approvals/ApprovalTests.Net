@@ -106,28 +106,30 @@ namespace ApprovalTests.Scrubber
             // PDF Date format is at least (D:YYYY), but can be as long as (D:YYYYMMDDHHmmSSOHH'mm'), where O can be Z, + or -. Chars after the O denote offset.
             // "Closely follow that of the international standard ASN.1 (Abstract Syntax Notation One), defined in ISO/IEC 8824."
 
-            var regex = new Regex(@"(?x)  # Allow comments and ignore whitespace
-                \(D:                    # Denotes the start of date metadata
-                (                       # Open Group 1: Main capturing group that we are interested in
-                    \d{4}               # Mandatory 4 digit year (YYYY)
-                    ([0-1]\d)?          # Group 2: Month (MM). Optional.
-                    (?(2)([0-3]\d)?)    # Group 3: Day (DD). Optional, only match if previous group matches.
-                    (?(3)([0-2]\d)?)    # Group 4: Optional hour (HH). Optional, only match if previous group matches.
-                    (?(4)([0-5]\d)?)    # Group 5: Optional minutes (mm). Optional, only match if previous group matches.
-                    (?(5)([0-5]\d)?)    # Group 6: Optional seconds (SS). Optional, only match if previous group matches.
-                    (?(6)([Z+-])?)      # Group 7: Optional offset (Z, -, +). Optional, only match if previous group matches.
-                    (?(7)([0-2]\d)?)    # Group 8: Optional offset hours (HH). Optional, only match if previous group matches.
-                    (?(8)(')?)          # Group 9: Optional offset delimiter ('). Optional, only match if previous group matches.
-                    (?(9)([0-5]\d)?)    # Group 10: Optional offset minutes (mm). Optional, only match if previous group matches.
-                    (?(10)'?)           # Optional offset delimiter (') Optional, only match if previous group matches.
-                )                       # Close Group 1
+            var regex = new Regex(@"
+                \(D:                    # Start of date metadata
+                (?<value>(
+                    # only year is required; every other value only match if previous value matches.
+                    \d{4}               # year (YYYY)
+                    ([0-1]\d            # month (MM)
+                        ([0-3]\d            # day (DD)
+                            ([0-2]\d            # hour (HH)
+                                ([0-5]\d            # minutes (mm)
+                                    ([0-5]\d            # seconds (SS)
+                                        ([Z+-]              # offset (Z, -, +)
+                                            ([0-2]\d            # offset hours (HH)
+                                                ('                  # offset delimiter (')
+                                                    ([0-5]\d            # offset minutes (mm)
+                                                        ('                  # offset delimiter (')
+                    )?)?)?)?)?)?)?)?)?)?
+                ))
                 \)                      # End of date metadata
-            ");
+            ", RegexOptions.IgnorePatternWhitespace | RegexOptions.ExplicitCapture);
 
-            var matches = regex.Matches(input);
-            return matches
+            return regex.Matches(input)
                 .OfType<Match>()
-                .Select(match => new Id {start = match.Groups[1].Index, length = match.Groups[1].Length});
+                .Select(_ => _.Groups["value"])
+                .Select(_ => new Id {start = _.Index, length = _.Length});
         }
 
         public class Id
