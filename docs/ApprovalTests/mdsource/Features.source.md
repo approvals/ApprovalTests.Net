@@ -2,18 +2,19 @@
 
 toc
 
+
 ## Approvals.AssertText
 
 Watch a [Video demo of this feature](https://youtu.be/O-71uaEpCsQ)  
 
-If you prefer not to store your expectations in the `.approved.` files, you can store them directly inline with your code.
+If you prefer not to store your expectations in the `.approved.` files, you can store them directly in-line with your code.
 Sample:
 
 (Before):
 
 snippet: assert_text_before
 
-When you do this, it will copy the c# for the `.recieved.` to your clipboard, so you can paste it inline.
+When you do this, it will copy the c# for the `.received.` to your clipboard, so you can paste it in-line.
 
 (After)
 snippet: assert_text

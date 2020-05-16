@@ -54,6 +54,7 @@ using (ApprovalResults.UniqueForOs())
 <!-- endsnippet -->
 
 This can produce files such as:
+
 <!-- snippet: ApprovalsFilenameTest.TestSimilarFiles.approved.txt -->
 <a id='snippet-ApprovalsFilenameTest.TestSimilarFiles.approved.txt'/></a>
 ```txt

@@ -34,6 +34,7 @@ for example:
 snippet: unique_for_os
 
 This can produce files such as:
+
 snippet: ApprovalsFilenameTest.TestSimilarFiles.approved.txt
 
 If this is run on a new machine, it could produce a new approval file. This can be confusing as you might not remember what the old system used to produce.

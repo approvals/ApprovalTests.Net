@@ -41,6 +41,7 @@ If you prefer auditory learning, you might enjoy the following podcast
  * [Hanselminutes](http://www.hanselminutes.com/360/approval-tests-with-llewellyn-falco)
  * [Herding Code](http://www.developerfusion.com/media/122649/herding-code-117-llewellyn-falcon-on-approval-tests/)
 
+
 ## Docs
 
  * [ApprovalTests](docs/ApprovalTests/readme.md)
@@ -54,14 +55,15 @@ If you prefer auditory learning, you might enjoy the following podcast
 
 ## Examples
 
-### Verifing a List
+
+### Verifying a List
 
 snippet: sample_test
 
 Will Produce a File
 
     `SampleTest.TestList.received.txt`
-	
+
 snippet: SampleTest.TestList.approved.txt
 
 It will also open these 2 files (`.received.` & `.approved.` ) in a diff editor. 
@@ -119,5 +121,6 @@ Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com
 
 
 ### Sponsors
+
 Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/approvals#sponsor)]
 <a href="https://opencollective.com/approvals/sponsor/0/website" target="_blank"><img src="https://opencollective.com/approvals/sponsor/0/avatar.svg"></a>

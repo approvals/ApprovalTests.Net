@@ -12,9 +12,10 @@ To change this file edit the source file and then run MarkdownSnippets.
 
     * [Choosing a DiffTool preference](#choosing-a-difftool-preference)<!-- endtoc -->
 
+
 ### Choosing a DiffTool preference
 
-If you do not like the default order that DiffTools are choosen, you can easily create a custom Reporter with your own preferences.  
+If you do not like the default order that DiffTools are chosen, you can easily create a custom Reporter with your own preferences.  
 Once you create the class, you select it with the `[UseReporter(typeof(CustomDiffReporter))]`
 
 <!-- snippet: CustomDiffReporter.cs -->

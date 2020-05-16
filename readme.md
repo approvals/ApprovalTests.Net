@@ -26,7 +26,7 @@ It is compatible with most .Net unit testing frameworks (Nunit, MsTest, xUnit, M
   * [Docs](#docs)
   * [Available on NuGet](#available-on-nuget)
   * [Examples](#examples)
-    * [Verifing a List](#verifing-a-list)
+    * [Verifying a List](#verifying-a-list)
   * [Approved File Artifacts](#approved-file-artifacts)
   * [More Info](#more-info)
   * [Questions?](#questions)
@@ -64,6 +64,7 @@ If you prefer auditory learning, you might enjoy the following podcast
  * [Hanselminutes](http://www.hanselminutes.com/360/approval-tests-with-llewellyn-falco)
  * [Herding Code](http://www.developerfusion.com/media/122649/herding-code-117-llewellyn-falcon-on-approval-tests/)
 
+
 ## Docs
 
  * [ApprovalTests](docs/ApprovalTests/readme.md)
@@ -77,7 +78,8 @@ If you prefer auditory learning, you might enjoy the following podcast
 
 ## Examples
 
-### Verifing a List
+
+### Verifying a List
 
 <!-- snippet: sample_test -->
 <a id='snippet-sample_test'/></a>
@@ -101,7 +103,7 @@ public class SampleTest
 Will Produce a File
 
     `SampleTest.TestList.received.txt`
-	
+
 <!-- snippet: SampleTest.TestList.approved.txt -->
 <a id='snippet-SampleTest.TestList.approved.txt'/></a>
 ```txt
@@ -169,5 +171,6 @@ Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com
 
 
 ### Sponsors
+
 Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/approvals#sponsor)]
 <a href="https://opencollective.com/approvals/sponsor/0/website" target="_blank"><img src="https://opencollective.com/approvals/sponsor/0/avatar.svg"></a>

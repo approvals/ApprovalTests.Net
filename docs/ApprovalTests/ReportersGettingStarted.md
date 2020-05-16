@@ -11,7 +11,7 @@ To change this file edit the source file and then run MarkdownSnippets.
 ## Contents
 
   * [Configuring Reporters](#configuring-reporters)
-    * [Launching Multiple Reproters](#launching-multiple-reproters)
+    * [Launching Multiple Reporters](#launching-multiple-reporters)
   * [When to use different reporters](#when-to-use-different-reporters)
     * [Differences](#differences)
     * [Rendering](#rendering)
@@ -27,7 +27,7 @@ Reporters are set using the `[UseReporter(typeof(YourReporter))]` attribute. Thi
 1. On the Class
 1. On the assembly
 
-Approvaltests suggest you make a assembly level configuration file for approvaltests named `ApprovalTestsConfig.cs`:  
+ApprovalTests suggest you make a assembly level configuration file for approvaltests named `ApprovalTestsConfig.cs`:  
 
 <!-- snippet: config_file -->
 <a id='snippet-config_file'/></a>
@@ -39,7 +39,8 @@ using ApprovalTests.Reporters;
 <sup><a href='/src/ApprovalTests.Tests/ApprovalTestsConfig.cs#L1-L5' title='File snippet `config_file` was extracted from'>snippet source</a> | <a href='#snippet-config_file' title='Navigate to start of snippet `config_file`'>anchor</a></sup>
 <!-- endsnippet -->
 
-### Launching Multiple Reproters
+
+### Launching Multiple Reporters
 
 If you wanted to have multiple reporters launch on failure, you can also combine as many as you wish using the following syntax: 
 
@@ -51,6 +52,7 @@ If you wanted to have multiple reporters launch on failure, you can also combine
 <sup><a href='/src/ApprovalTests.Tests/Html/HtmlTest.cs#L7-L9' title='File snippet `multiple_reporters` was extracted from'>snippet source</a> | <a href='#snippet-multiple_reporters' title='Navigate to start of snippet `multiple_reporters`'>anchor</a></sup>
 <!-- endsnippet -->
 
+
 ## When to use different reporters
 
 Reporters help you in different ways
@@ -60,24 +62,29 @@ Reporters help you in different ways
 1. To explore a test result or domain 
 1. To approve / manipulate a test result
 
-Based on what you are doing, you will want to switch which reporter you are using. Maybe even use multiple reporters at a time to acomplish different roles.
+Based on what you are doing, you will want to switch which reporter you are using. Maybe even use multiple reporters at a time to accomplish different roles.
+
 
 ### Differences
 
 The main use for seeing differences is to use a reporter that will open a DiffTool. [Full list of supported diff tools here](Reporters.md#supported-diff-tools)
 
-### Rendering 
+
+### Rendering
+
 Let's say your test result is some HTML. In the beginning you might want to render it in a bowser to be able to see that it is indeed what you want. In this moment, try the  `FileLauncherReporter`. Which will open the `.received.` file in the application associated to it on your machine.
 
 This is useful for many types of test results including, xml, svg, csv, html, images, sound files, etc...
 
+
 ### Exploring Results
 
-Like rendering, you might need to use different tools to examine a file to see that it's what you actually want. Sometimes you need to open them in excel or other places just to play. If you don't have a reporter that will open in your desired tool (and you don't want to [build a custom one](Reporters.md#making-custom-reporters)) you might just want to use the `QuiteReporter` which will do nothing, allowing you to open whatever you need without distruption
+Like rendering, you might need to use different tools to examine a file to see that it's what you actually want. Sometimes you need to open them in excel or other places just to play. If you don't have a reporter that will open in your desired tool (and you don't want to [build a custom one](Reporters.md#making-custom-reporters)) you might just want to use the `QuiteReporter` which will do nothing, allowing you to open whatever you need without disruption.
+
 
 ### Approving
 
-DiffTools can be a great way to approve most text files (just copy everything to the `.approved.` file.) However, some DiffTools will break this because they are trying to help (prettifing, triming or otherwise formatting the text)
+DiffTools can be a great way to approve most text files (just copy everything to the `.approved.` file.) However, some DiffTools will break this because they are trying to help (prettifing, trimming or otherwise formatting the text)
 The `ClipboardReporter` or `AllFailingTestsClipboardReporter` can be useful in these cases. Writing the command line text to move the files to your clipboard so you can paste them into your terminal to approve the test.
 
 

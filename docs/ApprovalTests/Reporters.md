@@ -17,11 +17,13 @@ To change this file edit the source file and then run MarkdownSnippets.
   * [Joining Reporters](#joining-reporters)
     * [Choosing a DiffTool preference](#choosing-a-difftool-preference)
   * [Auto-Approving Reporters](#auto-approving-reporters)
-  * [Continous Integration](#continous-integration)<!-- endtoc -->
+  * [Continuous Integration](#continuous-integration)<!-- endtoc -->
+
 
 ## Using Reporters
 
 For an introduction on how to use reporters check out [ getting started with reporters ](./ReportersGettingStarted.md)
+
 
 ### Supported Diff Tools
 
@@ -81,7 +83,7 @@ These reporters create a commandline move file to approve the results and place 
 * AllFailingTestsClipboardReporter - All tests (this might make a long command line)
 
 
-## Continous Integration
+## Continuous Integration
 
 ApprovalTests will not launch anything if you are running on a CI machine.
 

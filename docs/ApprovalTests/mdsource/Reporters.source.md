@@ -2,9 +2,11 @@
 
 toc
 
+
 ## Using Reporters
 
 For an introduction on how to use reporters check out [ getting started with reporters ](./ReportersGettingStarted.md)
+
 
 ### Supported Diff Tools
 
@@ -43,7 +45,7 @@ These reporters create a commandline move file to approve the results and place 
 * AllFailingTestsClipboardReporter - All tests (this might make a long command line)
 
 
-## Continous Integration
+## Continuous Integration
 
 ApprovalTests will not launch anything if you are running on a CI machine.
 

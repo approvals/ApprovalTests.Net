@@ -16,11 +16,12 @@ To change this file edit the source file and then run MarkdownSnippets.
   * [Making Custom Reporters](#making-custom-reporters)
   * [Environment SpecificTests](#environment-specifictests)<!-- endtoc -->
 
+
 ## Approvals.AssertText
 
 Watch a [Video demo of this feature](https://youtu.be/O-71uaEpCsQ)  
 
-If you prefer not to store your expectations in the `.approved.` files, you can store them directly inline with your code.
+If you prefer not to store your expectations in the `.approved.` files, you can store them directly in-line with your code.
 Sample:
 
 (Before):
@@ -36,7 +37,7 @@ Approvals.AssertText(expected, actual);
 <sup><a href='/src/ApprovalTests.Tests/Reporters/InlineTextReporterTest.cs#L51-L56' title='File snippet `assert_text_before` was extracted from'>snippet source</a> | <a href='#snippet-assert_text_before' title='Navigate to start of snippet `assert_text_before`'>anchor</a></sup>
 <!-- endsnippet -->
 
-When you do this, it will copy the c# for the `.recieved.` to your clipboard, so you can paste it inline.
+When you do this, it will copy the c# for the `.received.` to your clipboard, so you can paste it in-line.
 
 (After)
 <!-- snippet: assert_text -->
