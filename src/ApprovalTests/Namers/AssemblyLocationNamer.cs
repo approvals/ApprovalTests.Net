@@ -1,6 +1,5 @@
-﻿using System;
 using System.IO;
-using System.Reflection;
+using System.Linq;
 
 namespace ApprovalTests.Namers
 {
@@ -10,11 +9,11 @@ namespace ApprovalTests.Namers
         {
             get
             {
-                // CodeBase is used because the NUnit test runner is otherwise quirky
-                var codeBase = Assembly.GetExecutingAssembly().CodeBase;
-                var uri = new UriBuilder(codeBase);
-                var path = Uri.UnescapeDataString(uri.Path);
-                return Path.GetDirectoryName(path);
+                var currentTestCaller = Approvals.CurrentCaller.NonLambdaCallers
+                    .First(c =>
+                        c.Class.Namespace.StartsWith("ApprovalTests") == false &&
+                        c.Class.Namespace.StartsWith("ApprovalUtilities") == false);
+                return Path.GetDirectoryName(currentTestCaller.Class.Assembly.Location);
             }
         }
 
