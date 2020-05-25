@@ -13,7 +13,7 @@ namespace ApprovalTests.Reporters
         public void Report(string approved, string received)
         {
             var text = File.ReadAllText(received);
-             Clipboard.SetText(ConvertToCSharp(text));
+            ClipboardService.SetText(ConvertToCSharp(text));
         }
 
         public static string ConvertToCSharp(string text)

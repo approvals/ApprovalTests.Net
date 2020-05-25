@@ -10,7 +10,7 @@ namespace ApprovalTests.Reporters
         public void Report(string approved, string received)
         {
             var text = QuietReporter.GetCommandLineForApproval(approved, received);
-            Clipboard.SetText(text);
+            ClipboardService.SetText(text);
         }
     }
 }
