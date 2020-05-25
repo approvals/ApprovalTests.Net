@@ -15,7 +15,7 @@ namespace ApprovalTests.Reporters
             lock (builder)
             {
                 builder.AppendLine(temp);
-                Clipboard.SetText(builder.ToString());
+                ClipboardService.SetText(builder.ToString());
             }
         }
     }
