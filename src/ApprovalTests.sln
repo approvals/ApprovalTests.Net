@@ -19,6 +19,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApprovalUtilities", "Approv
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApprovalTests.Xunit2", "ApprovalTests.Xunit2\ApprovalTests.Xunit2.csproj", "{E9BD0B96-01C4-4B25-ADFD-3A630970D267}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssembliesExistInBin", "AssembliesExistInBin\AssembliesExistInBin.csproj", "{1A707DFC-9506-4D22-8022-870C11B82DC6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssembliesExistInNuget", "AssembliesExistInNuget\AssembliesExistInNuget.csproj", "{B2141011-E1D7-44FB-AD55-240F8E89E911}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +53,14 @@ Global
 		{E9BD0B96-01C4-4B25-ADFD-3A630970D267}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9BD0B96-01C4-4B25-ADFD-3A630970D267}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9BD0B96-01C4-4B25-ADFD-3A630970D267}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A707DFC-9506-4D22-8022-870C11B82DC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A707DFC-9506-4D22-8022-870C11B82DC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A707DFC-9506-4D22-8022-870C11B82DC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A707DFC-9506-4D22-8022-870C11B82DC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2141011-E1D7-44FB-AD55-240F8E89E911}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2141011-E1D7-44FB-AD55-240F8E89E911}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2141011-E1D7-44FB-AD55-240F8E89E911}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2141011-E1D7-44FB-AD55-240F8E89E911}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
