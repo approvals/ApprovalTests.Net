@@ -22,6 +22,10 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssembliesExistInBin", "AssembliesExistInBin\AssembliesExistInBin.csproj", "{1A707DFC-9506-4D22-8022-870C11B82DC6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssembliesExistInNuget", "AssembliesExistInNuget\AssembliesExistInNuget.csproj", "{B2141011-E1D7-44FB-AD55-240F8E89E911}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E9683C33-7A71-4776-B7C9-E89C565AC16B} = {E9683C33-7A71-4776-B7C9-E89C565AC16B}
+		{F70C9A76-F797-4167-8178-14821F8634BC} = {F70C9A76-F797-4167-8178-14821F8634BC}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
