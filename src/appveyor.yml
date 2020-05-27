@@ -1,6 +1,8 @@
 image: Visual Studio 2019
 build_script:
 - ps: >-
+    dotnet build src\ApprovalUtilities\ApprovalUtilities.csproj --configuration Debug
+    dotnet build src\ApprovalTests\ApprovalTests.csproj --configuration Debug
     dotnet build src --configuration Debug
 artifacts:
   - path: nuget_packages\*.nupkg
