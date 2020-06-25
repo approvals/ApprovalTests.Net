@@ -4,7 +4,15 @@
     <TargetFrameworks>netcoreapp3.0</TargetFrameworks>
     <!-- do not copy reference assemblies to bin. So approvalTests.dll is resolved from nuget cache dir -->
     <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
+  </ItemGroup>
+
   <ItemGroup>
     <PackageReference Include="ApprovalTests" Version="$(Version)" />
     <PackageReference Include="NUnit" Version="3.12.0" />
