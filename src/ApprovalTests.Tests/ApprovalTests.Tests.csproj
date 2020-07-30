@@ -5,7 +5,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Fody" Version="6.2.0" PrivateAssets="all" />
-    <PackageReference Include="MarkdownSnippets.MsBuild" Version="19.0.1" />
+    <PackageReference Include="MarkdownSnippets.MsBuild" Version="19.0.2" />
     <PackageReference Include="ModuleInit.Fody" Version="2.1.0" PrivateAssets="All" />
     <PackageReference Include="itext7" Version="7.1.11" />
     <PackageReference Include="NUnit" Version="3.12.0" />
