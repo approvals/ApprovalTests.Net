@@ -7,7 +7,7 @@
   <ItemGroup>
     <PackageReference Include="NUnit" Version="3.12.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.17.0" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.6.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.0" />
     <ProjectReference Include="..\ApprovalTests\ApprovalTests.csproj" />
     <ProjectReference Include="..\ApprovalUtilities\ApprovalUtilities.csproj" />
     <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
