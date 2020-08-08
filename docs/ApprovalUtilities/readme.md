@@ -13,7 +13,7 @@ To change this file edit the source file and then run MarkdownSnippets.
 Guards are convenient functions if incorrect values are passed in.
 
 <!-- snippet: guard_usage -->
-<a id='snippet-guard_usage'/></a>
+<a id='snippet-guard_usage'></a>
 ```cs
 Guard.AgainstNullAndEmpty(subdirectory, nameof(subdirectory));
 ```
@@ -26,7 +26,7 @@ Guard.AgainstNullAndEmpty(subdirectory, nameof(subdirectory));
 `using` statements nicely cleanup on exit if you have a `IDisposable` or you can create a simple disposable object by passing in a lambda.  
 
 <!-- snippet: disposables -->
-<a id='snippet-disposables'/></a>
+<a id='snippet-disposables'></a>
 ```cs
 using (Disposables.Create(() => callCount++))
 {

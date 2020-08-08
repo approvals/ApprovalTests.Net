@@ -27,7 +27,7 @@ Sample:
 (Before):
 
 <!-- snippet: assert_text_before -->
-<a id='snippet-assert_text_before'/></a>
+<a id='snippet-assert_text_before'></a>
 ```cs
 var header = new Header();
 var actual = header.MakeHeading("I am ten chars");
@@ -41,7 +41,7 @@ When you do this, it will copy the c# for the `.received.` to your clipboard, so
 
 (After)
 <!-- snippet: assert_text -->
-<a id='snippet-assert_text'/></a>
+<a id='snippet-assert_text'></a>
 ```cs
 var header = new Header();
 var actual = header.MakeHeading("I am ten chars");
@@ -70,7 +70,7 @@ It will also write the results to a temp files on failure and open a DiffTool, s
 Sometimes you want to parse an approvals filename to get the parts.
 
 <!-- snippet: approvals_filename -->
-<a id='snippet-approvals_filename'/></a>
+<a id='snippet-approvals_filename'></a>
 ```cs
 var approvalsFilename = ApprovalsFilename.Parse(@"..\Email\EmailTest.Testname.Microsoft_Windows_10_Education.approved.eml");
 ```
@@ -80,7 +80,7 @@ var approvalsFilename = ApprovalsFilename.Parse(@"..\Email\EmailTest.Testname.Mi
 Will produce
 
 <!-- snippet: ApprovalsFilenameTest.TestMachineSpecificName.approved.txt -->
-<a id='snippet-ApprovalsFilenameTest.TestMachineSpecificName.approved.txt'/></a>
+<a id='snippet-ApprovalsFilenameTest.TestMachineSpecificName.approved.txt'></a>
 ```txt
 GetFullPath: ..\Email\EmailTest.Testname.Microsoft_Windows_10_Education.approved.eml
 Directory: ..\Email

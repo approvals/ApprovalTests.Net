@@ -9,7 +9,7 @@ To change this file edit the source file and then run MarkdownSnippets.
 
 [![Build status](https://ci.appveyor.com/api/projects/status/5w53btmaydibgr9a?svg=true)](https://ci.appveyor.com/project/isidore/approvaltests-net)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-<a href="https://www.nuget.org/packages/approvaltests"><img alt="Nuget" src="https://buildstats.info/nuget/approvaltests"></a>
+[![NuGet Status](http://img.shields.io/nuget/v/ApprovalTests.svg?style=flat)](https://www.nuget.org/packages/ApprovalTests/)
 [![Backers on Open Collective](https://opencollective.com/approvals/backers/badge.svg)](#backers)
 [![Sponsors on Open Collective](https://opencollective.com/approvals/sponsors/badge.svg)](#sponsors)
 
@@ -82,7 +82,7 @@ If you prefer auditory learning, you might enjoy the following podcast
 ### Verifying a List
 
 <!-- snippet: sample_test -->
-<a id='snippet-sample_test'/></a>
+<a id='snippet-sample_test'></a>
 ```cs
 [UseReporter(typeof(VisualStudioReporter))]
 [TestFixture]
@@ -105,7 +105,7 @@ Will Produce a File
     `SampleTest.TestList.received.txt`
 
 <!-- snippet: SampleTest.TestList.approved.txt -->
-<a id='snippet-SampleTest.TestList.approved.txt'/></a>
+<a id='snippet-SampleTest.TestList.approved.txt'></a>
 ```txt
 [0] = Dan
 [1] = James

@@ -30,7 +30,7 @@ Reporters are set using the `[UseReporter(typeof(YourReporter))]` attribute. Thi
 ApprovalTests suggest you make a assembly level configuration file for approvaltests named `ApprovalTestsConfig.cs`:  
 
 <!-- snippet: config_file -->
-<a id='snippet-config_file'/></a>
+<a id='snippet-config_file'></a>
 ```cs
 using ApprovalTests.Reporters;
 
@@ -45,7 +45,7 @@ using ApprovalTests.Reporters;
 If you wanted to have multiple reporters launch on failure, you can also combine as many as you wish using the following syntax: 
 
 <!-- snippet: multiple_reporters -->
-<a id='snippet-multiple_reporters'/></a>
+<a id='snippet-multiple_reporters'></a>
 ```cs
 [UseReporter(typeof(DiffReporter), typeof(FileLauncherReporter))]
 ```

@@ -57,7 +57,7 @@ This method will:
 Let's take the example:
 
 <!-- snippet: simple_verify -->
-<a id='snippet-simple_verify'/></a>
+<a id='snippet-simple_verify'></a>
 ```cs
 [Test]
 public void Text()
@@ -119,7 +119,7 @@ They also determine the extension for both `.received.` and `.approved.` files.
 
 Eventually, all Verify methods call:
 <!-- snippet: complete_verify_call -->
-<a id='snippet-complete_verify_call'/></a>
+<a id='snippet-complete_verify_call'></a>
 ```cs
 public static void Verify(IApprovalWriter writer, IApprovalNamer namer, IApprovalFailureReporter reporter)
 ```
@@ -141,7 +141,7 @@ If you want it to approve something that writes to a new type of a binary file, 
 If you simply wanted to format text this is usually done in a separate step before calling:
 
 <!-- snippet: verify_with_extension -->
-<a id='snippet-verify_with_extension'/></a>
+<a id='snippet-verify_with_extension'></a>
 ```cs
 public static void VerifyWithExtension(string text, string fileExtensionWithDot, Func<string, string> scrubber = null)
 ```

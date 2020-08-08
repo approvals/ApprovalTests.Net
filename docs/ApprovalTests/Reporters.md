@@ -40,7 +40,7 @@ Custom Diff Tools can be added via DiffEngine. See: https://github.com/SimonCrop
 Extend `IApprovalFailureReporter`. For example a file can be launched on failure:
 
 <!-- snippet: FileLauncherReporter.cs -->
-<a id='snippet-FileLauncherReporter.cs'/></a>
+<a id='snippet-FileLauncherReporter.cs'></a>
 ```cs
 using System.Diagnostics;
 using ApprovalTests.Core;
@@ -90,7 +90,7 @@ ApprovalTests will not launch anything if you are running on a CI machine.
 Currently, we support:
 
 <!-- snippet: continuous_integration -->
-<a id='snippet-continuous_integration'/></a>
+<a id='snippet-continuous_integration'></a>
 ```cs
 TfsReporter.INSTANCE,
 TfsVnextReporter.INSTANCE,

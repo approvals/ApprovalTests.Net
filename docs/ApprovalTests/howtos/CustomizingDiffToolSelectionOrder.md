@@ -19,7 +19,7 @@ If you do not like the default order that DiffTools are chosen, you can easily c
 Once you create the class, you select it with the `[UseReporter(typeof(CustomDiffReporter))]`
 
 <!-- snippet: CustomDiffReporter.cs -->
-<a id='snippet-CustomDiffReporter.cs'/></a>
+<a id='snippet-CustomDiffReporter.cs'></a>
 ```cs
 using ApprovalTests.Reporters;
 using ApprovalTests.Reporters.TestFrameworks;

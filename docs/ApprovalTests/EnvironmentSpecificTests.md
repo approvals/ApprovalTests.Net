@@ -43,7 +43,7 @@ If you are using a machine specific name in your approval tests
 for example:
 
 <!-- snippet: unique_for_os -->
-<a id='snippet-unique_for_os'/></a>
+<a id='snippet-unique_for_os'></a>
 ```cs
 using (ApprovalResults.UniqueForOs())
 {
@@ -56,7 +56,7 @@ using (ApprovalResults.UniqueForOs())
 This can produce files such as:
 
 <!-- snippet: ApprovalsFilenameTest.TestSimilarFiles.approved.txt -->
-<a id='snippet-ApprovalsFilenameTest.TestSimilarFiles.approved.txt'/></a>
+<a id='snippet-ApprovalsFilenameTest.TestSimilarFiles.approved.txt'></a>
 ```txt
 Like EmailTest.Testname.Microsoft_Windows_10_Education.approved.eml
 
@@ -72,7 +72,7 @@ EmailTest.Testname.Microsoft_Windows_Server_2019_Datacenter.approved.eml
 If this is run on a new machine, it could produce a new approval file. This can be confusing as you might not remember what the old system used to produce.
 
 <!-- snippet: use_MachineSpecificReporter -->
-<a id='snippet-use_machinespecificreporter'/></a>
+<a id='snippet-use_machinespecificreporter'></a>
 ```cs
 [UseReporter(typeof(MachineSpecificReporter))]
 ```
