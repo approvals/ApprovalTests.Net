@@ -14,7 +14,7 @@ To change this file edit the source file and then run MarkdownSnippets.
   * [MachineSpecificReporter](#machinespecificreporter)
   * [ApprovalsFilename](#approvalsfilename)
   * [Making Custom Reporters](#making-custom-reporters)
-  * [Environment SpecificTests](#environment-specifictests)<!-- endtoc -->
+  * [Environment SpecificTests](#environment-specifictests)<!-- endToc -->
 
 
 ## Approvals.AssertText
@@ -35,7 +35,7 @@ var expected = "";
 Approvals.AssertText(expected, actual);
 ```
 <sup><a href='/src/ApprovalTests.Tests/Reporters/InlineTextReporterTest.cs#L51-L56' title='File snippet `assert_text_before` was extracted from'>snippet source</a> | <a href='#snippet-assert_text_before' title='Navigate to start of snippet `assert_text_before`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 When you do this, it will copy the c# for the `.received.` to your clipboard, so you can paste it in-line.
 
@@ -54,7 +54,7 @@ var expected = new[]{
 Approvals.AssertText(expected, actual);
 ```
 <sup><a href='/src/ApprovalTests.Tests/Reporters/InlineTextReporterTest.cs#L36-L46' title='File snippet `assert_text` was extracted from'>snippet source</a> | <a href='#snippet-assert_text' title='Navigate to start of snippet `assert_text`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 
 Currently, it put the text as an array of strings that gets concatenated as this tends to read better.
@@ -75,7 +75,7 @@ Sometimes you want to parse an approvals filename to get the parts.
 var approvalsFilename = ApprovalsFilename.Parse(@"..\Email\EmailTest.Testname.Microsoft_Windows_10_Education.approved.eml");
 ```
 <sup><a href='/src/ApprovalTests.Tests/Namer/ApprovalsFilenameTest.cs#L12-L14' title='File snippet `approvals_filename` was extracted from'>snippet source</a> | <a href='#snippet-approvals_filename' title='Navigate to start of snippet `approvals_filename`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 Will produce
 
@@ -91,7 +91,7 @@ ApprovedStatus: approved
 Extension: eml
 ```
 <sup><a href='/src/ApprovalTests.Tests/Namer/ApprovalsFilenameTest.TestMachineSpecificName.approved.txt#L1-L7' title='File snippet `ApprovalsFilenameTest.TestMachineSpecificName.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-ApprovalsFilenameTest.TestMachineSpecificName.approved.txt' title='Navigate to start of snippet `ApprovalsFilenameTest.TestMachineSpecificName.approved.txt`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 
 ## [Making Custom Reporters](Reporters.md##making-custom-reporters)

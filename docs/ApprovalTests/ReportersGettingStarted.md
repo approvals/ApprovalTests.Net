@@ -16,7 +16,7 @@ To change this file edit the source file and then run MarkdownSnippets.
     * [Differences](#differences)
     * [Rendering](#rendering)
     * [Exploring Results](#exploring-results)
-    * [Approving](#approving)<!-- endtoc -->
+    * [Approving](#approving)<!-- endToc -->
 
 
 ## Configuring Reporters
@@ -37,7 +37,7 @@ using ApprovalTests.Reporters;
 [assembly: UseReporter(typeof(DiffReporter))]
 ```
 <sup><a href='/src/ApprovalTests.Tests/ApprovalTestsConfig.cs#L1-L5' title='File snippet `config_file` was extracted from'>snippet source</a> | <a href='#snippet-config_file' title='Navigate to start of snippet `config_file`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 
 ### Launching Multiple Reporters
@@ -50,7 +50,7 @@ If you wanted to have multiple reporters launch on failure, you can also combine
 [UseReporter(typeof(DiffReporter), typeof(FileLauncherReporter))]
 ```
 <sup><a href='/src/ApprovalTests.Tests/Html/HtmlTest.cs#L7-L9' title='File snippet `multiple_reporters` was extracted from'>snippet source</a> | <a href='#snippet-multiple_reporters' title='Navigate to start of snippet `multiple_reporters`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 
 ## When to use different reporters

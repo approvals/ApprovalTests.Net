@@ -10,7 +10,7 @@ To change this file edit the source file and then run MarkdownSnippets.
 <!-- toc -->
 ## Contents
 
-    * [Choosing a DiffTool preference](#choosing-a-difftool-preference)<!-- endtoc -->
+    * [Choosing a DiffTool preference](#choosing-a-difftool-preference)<!-- endToc -->
 
 
 ### Choosing a DiffTool preference
@@ -47,7 +47,7 @@ public class CustomDiffReporter :
 }
 ```
 <sup><a href='/src/ApprovalTests.Tests/Reporters/CustomDiffReporter.cs#L1-L24' title='File snippet `CustomDiffReporter.cs` was extracted from'>snippet source</a> | <a href='#snippet-CustomDiffReporter.cs' title='Navigate to start of snippet `CustomDiffReporter.cs`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 ---
 

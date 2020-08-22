@@ -10,7 +10,7 @@ To change this file edit the source file and then run MarkdownSnippets.
 <!-- toc -->
 ## Contents
 
-  * [Verify](#verify)<!-- endtoc -->
+  * [Verify](#verify)<!-- endToc -->
 
 ## Verify
 
@@ -66,7 +66,7 @@ XmlApprovals.[VerifyOrderedXml](https://github.com/approvals/ApprovalTests.Net/b
   
 XmlApprovals.[VerifyText](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Xml/XmlApprovals.cs#L18)(String text, String fileExtensionWithoutDot, Boolean safely, Func&lt;String, String> scrubber)  
   
-XmlApprovals.[VerifyXml](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Xml/XmlApprovals.cs#L10)(String xml, Func&lt;String, String> scrubber) <!-- end include: DocumentHelpers.ListAllVerifyFunctions.approved. path: /src/ApprovalTests.Tests/Documentation/DocumentHelpers.ListAllVerifyFunctions.approved.include.md -->
+XmlApprovals.[VerifyXml](https://github.com/approvals/ApprovalTests.Net/blob/master/src/ApprovalTests/Xml/XmlApprovals.cs#L10)(String xml, Func&lt;String, String> scrubber) <!-- endInclude -->
 
 ---
 

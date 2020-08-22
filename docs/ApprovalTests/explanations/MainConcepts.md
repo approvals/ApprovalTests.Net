@@ -34,7 +34,7 @@ To change this file edit the source file and then run MarkdownSnippets.
     * [What it does?](#what-it-does-4)
     * [How it does it?](#how-it-does-it-4)
     * [General usage](#general-usage-4)
-    * [Why would you customize it](#why-would-you-customize-it)<!-- endtoc -->
+    * [Why would you customize it](#why-would-you-customize-it)<!-- endToc -->
 
 
 ## Verify
@@ -66,7 +66,7 @@ public void Text()
 }
 ```
 <sup><a href='/src/ApprovalTests.Tests/ApprovalsTest.cs#L13-L19' title='File snippet `simple_verify` was extracted from'>snippet source</a> | <a href='#snippet-simple_verify' title='Navigate to start of snippet `simple_verify`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 This call brings together 3 things + default Approver to produce a `.received.` file which is compared to an `.approved.` file.
 
@@ -124,7 +124,7 @@ Eventually, all Verify methods call:
 public static void Verify(IApprovalWriter writer, IApprovalNamer namer, IApprovalFailureReporter reporter)
 ```
 <sup><a href='/src/ApprovalTests/Approvals.cs#L45-L47' title='File snippet `complete_verify_call` was extracted from'>snippet source</a> | <a href='#snippet-complete_verify_call' title='Navigate to start of snippet `complete_verify_call`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 Most of the time this is hidden in an underlying a Verify call.
 
@@ -146,7 +146,7 @@ If you simply wanted to format text this is usually done in a separate step befo
 public static void VerifyWithExtension(string text, string fileExtensionWithDot, Func<string, string> scrubber = null)
 ```
 <sup><a href='/src/ApprovalTests/Approvals.cs#L179-L181' title='File snippet `verify_with_extension` was extracted from'>snippet source</a> | <a href='#snippet-verify_with_extension' title='Navigate to start of snippet `verify_with_extension`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 
 ## Namers

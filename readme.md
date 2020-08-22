@@ -33,7 +33,7 @@ It is compatible with most .Net unit testing frameworks (Nunit, MsTest, xUnit, M
   * [Credits](#credits)
     * [Contributors](#contributors)
     * [Backers](#backers)
-    * [Sponsors](#sponsors)<!-- endtoc -->
+    * [Sponsors](#sponsors)<!-- endToc -->
 
 
 ## What can it be used for?
@@ -98,7 +98,7 @@ public class SampleTest
 }
 ```
 <sup><a href='/src/ApprovalTests.Tests/SampleTest.cs#L7-L21' title='File snippet `sample_test` was extracted from'>snippet source</a> | <a href='#snippet-sample_test' title='Navigate to start of snippet `sample_test`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 Will Produce a File
 
@@ -114,7 +114,7 @@ Will Produce a File
 [4] = Llewellyn
 ```
 <sup><a href='/src/ApprovalTests.Tests/SampleTest.TestList.approved.txt#L1-L5' title='File snippet `SampleTest.TestList.approved.txt` was extracted from'>snippet source</a> | <a href='#snippet-SampleTest.TestList.approved.txt' title='Navigate to start of snippet `SampleTest.TestList.approved.txt`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 It will also open these 2 files (`.received.` & `.approved.` ) in a diff editor. 
 

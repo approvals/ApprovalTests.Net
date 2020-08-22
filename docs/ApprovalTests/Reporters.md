@@ -17,7 +17,7 @@ To change this file edit the source file and then run MarkdownSnippets.
   * [Joining Reporters](#joining-reporters)
     * [Choosing a DiffTool preference](#choosing-a-difftool-preference)
   * [Auto-Approving Reporters](#auto-approving-reporters)
-  * [Continuous Integration](#continuous-integration)<!-- endtoc -->
+  * [Continuous Integration](#continuous-integration)<!-- endToc -->
 
 
 ## Using Reporters
@@ -60,7 +60,7 @@ namespace ApprovalTests.Reporters
 }
 ```
 <sup><a href='/src/ApprovalTests/Reporters/FileLauncherReporter.cs#L1-L16' title='File snippet `FileLauncherReporter.cs` was extracted from'>snippet source</a> | <a href='#snippet-FileLauncherReporter.cs' title='Navigate to start of snippet `FileLauncherReporter.cs`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 
 ## Joining Reporters
@@ -104,7 +104,7 @@ GoContinuousDeliveryReporter.INSTANCE,
 AppVeyorReporter.INSTANCE
 ```
 <sup><a href='/src/ApprovalTests/Reporters/DefaultFrontLoaderReporter.cs#L11-L22' title='File snippet `continuous_integration` was extracted from'>snippet source</a> | <a href='#snippet-continuous_integration' title='Navigate to start of snippet `continuous_integration`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 You can add to this by configuring the FrontLoadedReporter Annotation.
 

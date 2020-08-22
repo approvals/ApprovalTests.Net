@@ -13,7 +13,7 @@ To change this file edit the source file and then run MarkdownSnippets.
   * [Tutorials](#tutorials)
   * [How-To's](#how-tos)
   * [References](#references)
-  * [Explanations](#explanations)<!-- endtoc -->
+  * [Explanations](#explanations)<!-- endToc -->
 
 
 ## Tutorials
