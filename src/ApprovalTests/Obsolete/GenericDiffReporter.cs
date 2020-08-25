@@ -1,7 +1,7 @@
 namespace ApprovalTests.Reporters
 {
     [ObsoleteEx(
-        RemoveInVersion = "5.3",
+        RemoveInVersion = "6.0",
         TreatAsErrorFromVersion = "5.0",
         ReplacementTypeOrMember = "DiffTools.AddCustomTool")]
     public class GenericDiffReporter

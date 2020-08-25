@@ -1,7 +1,7 @@
 ﻿namespace ApprovalTests.Reporters.Windows
 {
     [ObsoleteEx(
-        RemoveInVersion = "5.3",
+        RemoveInVersion = "6.0",
         ReplacementTypeOrMember = "DiffReporter")]
     public class ImageReporter
     {
