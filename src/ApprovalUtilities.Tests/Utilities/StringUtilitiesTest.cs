@@ -21,6 +21,26 @@ namespace ApprovalUtilities.Tests.Utilities
             var grid = StringUtils.DisplayGrid(4, 4, (x, y) => x == y ? "x" : "_");
             Approvals.Verify(grid);
         }
+        [Fact]
+        public void TestRemoveIndentation()
+        {
+            var text = @"
+
+                      ^^ Blank line above ^^
+                      
+                      Here is some text
+                        1. with some indentation
+                        2. and more
+                          a. even more
+                        3. little less
+                      
+                      VV Blank line Below VV 
+                      
+                      ".RemoveIndentation();
+
+            Approvals.Verify(text);
+        }
+
 
         [Fact]
         public void WritePropertiesToStringTest()

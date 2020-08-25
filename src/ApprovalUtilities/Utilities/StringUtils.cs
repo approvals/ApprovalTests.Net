@@ -154,5 +154,26 @@ namespace ApprovalUtilities.Utilities
         {
             return string.Join(separator, elements);
         }
+
+        public static string RemoveIndentation(this string indentedText)
+        {
+
+            var firstRemoved = indentedText.Split('\n').Skip(1).ToArray();
+            var lastRemoved = firstRemoved.Take(firstRemoved.Length - 1);
+            var space = FindSpaces(lastRemoved);
+            var dedented = lastRemoved.Select( l => RemoveSpaces(space, l)).JoinWith("\n");
+
+            return dedented;
+        }
+
+        private static string RemoveSpaces(int space, string s)
+        {
+            return space < s.Length ?  s.Substring(space) : "";
+        }
+
+        private static int FindSpaces(IEnumerable<string> lines)
+        {
+            return lines.Where(l => !string.IsNullOrWhiteSpace(l)).Min(l => l.Length - l.TrimStart().Length);
+        }
     }
 }
