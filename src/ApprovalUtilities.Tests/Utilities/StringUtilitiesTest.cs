@@ -37,8 +37,18 @@ namespace ApprovalUtilities.Tests.Utilities
                       VV Blank line Below VV 
                       
                       ".RemoveIndentation();
-
+          //  Assert.True( text.EndsWith("VV\n"),text.Replace("\n","\\n"));
             Approvals.Verify(text);
+        }
+        [Fact]
+        public void TestRemoveIndentationEnding()
+        {
+            var text = @"
+                      #1 list
+                      #2 list
+                      ".RemoveIndentation();
+
+            Assert.Equal("#1 list\n#2 list", text);
         }
 
 

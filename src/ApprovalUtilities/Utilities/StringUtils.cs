@@ -158,12 +158,13 @@ namespace ApprovalUtilities.Utilities
         public static string RemoveIndentation(this string indentedText)
         {
 
-            var firstRemoved = indentedText.Split('\n').Skip(1).ToArray();
+            var firstRemoved = indentedText.Replace("\r\n","\n").Split('\n').Skip(1).ToArray();
             var lastRemoved = firstRemoved.Take(firstRemoved.Length - 1);
             var space = FindSpaces(lastRemoved);
-            var dedented = lastRemoved.Select( l => RemoveSpaces(space, l)).JoinWith("\n");
+            var dedented = lastRemoved.Select( l => RemoveSpaces(space, l)).ToArray();
+            var combined = dedented.JoinWith("\n");
 
-            return dedented;
+            return combined;
         }
 
         private static string RemoveSpaces(int space, string s)
