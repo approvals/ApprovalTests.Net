@@ -1,32 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(OS)' == 'Windows_NT' ">
-    <TargetFrameworks>netstandard2.0;netstandard2.1;net461</TargetFrameworks>
-  </PropertyGroup>
-  <PropertyGroup>
+    <TargetFrameworks>net461;netstandard2.0</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>A picture's worth a 1000 tests. Unit testing asserts can be difficult to use. Approval tests simplify this by taking a snapshot of the results, and confirming that they have not changed.</Description>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="..\ApprovalUtilities\InternalsVisibleTo.cs" Link="InternalsVisibleTo.cs"/>
-    <PackageReference Include="DiffEngine" Version="4.5.0"/>
-    <PackageReference Include="EmptyFiles" Version="2.0.4" PrivateAssets="None"/>
-    <PackageReference Include="Fody" Version="6.2.4" PrivateAssets="all"/>
-    <PackageReference Include="Microsoft.Win32.Registry" Version="4.7.0"/>
-    <PackageReference Include="Obsolete.Fody" Version="5.2.1" PrivateAssets="all"/>
-    <PackageReference Include="Publicize.Fody" Version="1.8.0" PrivateAssets="All"/>
-    <PackageReference Include="Virtuosity.Fody" Version="3.1.0" PrivateAssets="All"/>
-    <PackageReference Include="TextCopy" Version="4.2.0"/>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>
-    <ProjectReference Include="..\ApprovalUtilities\ApprovalUtilities.csproj"/>
-    <Content Include="build\ApprovalTests.props" PackagePath="build\ApprovalTests.props"/>
-    <Content Include="buildMultiTargeting\ApprovalTests.props" PackagePath="buildMultiTargeting\ApprovalTests.props"/>
-    <Content Include="build\ApprovalTests.targets" PackagePath="build\ApprovalTests.targets"/>
-    <Content Include="buildMultiTargeting\ApprovalTests.targets" PackagePath="buildMultiTargeting\ApprovalTests.targets"/>
+    <Compile Include="..\ApprovalUtilities\InternalsVisibleTo.cs" Link="InternalsVisibleTo.cs" />
+    <PackageReference Include="DiffEngine" Version="4.5.0" />
+    <PackageReference Include="EmptyFiles" Version="2.0.4" PrivateAssets="None" />
+    <PackageReference Include="Fody" Version="6.2.4" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.Win32.Registry" Version="4.7.0" />
+    <PackageReference Include="Obsolete.Fody" Version="5.2.1" PrivateAssets="all" />
+    <PackageReference Include="Publicize.Fody" Version="1.8.0" PrivateAssets="All" />
+    <PackageReference Include="Virtuosity.Fody" Version="3.1.0" PrivateAssets="All" />
+    <PackageReference Include="TextCopy" Version="4.2.0" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
+    <ProjectReference Include="..\ApprovalUtilities\ApprovalUtilities.csproj" />
+    <Content Include="build\ApprovalTests.props" PackagePath="build\ApprovalTests.props" />
+    <Content Include="buildMultiTargeting\ApprovalTests.props" PackagePath="buildMultiTargeting\ApprovalTests.props" />
+    <Content Include="build\ApprovalTests.targets" PackagePath="build\ApprovalTests.targets" />
+    <Content Include="buildMultiTargeting\ApprovalTests.targets" PackagePath="buildMultiTargeting\ApprovalTests.targets" />
   </ItemGroup>
 </Project>
