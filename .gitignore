@@ -1,7 +1,7 @@
 *.received.*
 nuget_packages/
 nuget_cli/
-
+.idea/
 bin/
 tmp/
 *.tmp
