@@ -11,7 +11,7 @@
     <Compile Remove="**\*_desktop.cs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Fody" Version="6.2.4" PrivateAssets="all" />
+    <PackageReference Include="Fody" Version="6.2.5" PrivateAssets="all" />
     <PackageReference Include="Publicize.Fody" Version="1.8.0" PrivateAssets="All" />
     <PackageReference Include="Obsolete.Fody" Version="5.2.1" PrivateAssets="all" />
     <PackageReference Include="System.Management" Version="4.7.0" />
