@@ -9,7 +9,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="..\ApprovalUtilities\InternalsVisibleTo.cs" Link="InternalsVisibleTo.cs" />
-    <PackageReference Include="DiffEngine" Version="5.2.0" />
+    <PackageReference Include="DiffEngine" Version="5.3.0" />
     <PackageReference Include="EmptyFiles" Version="2.0.4" PrivateAssets="None" />
     <PackageReference Include="Fody" Version="6.2.5" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Win32.Registry" Version="4.7.0" />
