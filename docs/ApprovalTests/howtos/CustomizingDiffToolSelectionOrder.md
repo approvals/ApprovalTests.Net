@@ -19,7 +19,7 @@ If you do not like the default order that DiffTools are chosen, you can easily c
 Once you create the class, you select it with the `[UseReporter(typeof(CustomDiffReporter))]`
 
 <!-- snippet: CustomDiffReporter.cs -->
-<a id='snippet-CustomDiffReporter.cs'></a>
+<a id='a429f9e3'></a>
 ```cs
 using ApprovalTests.Reporters;
 using ApprovalTests.Reporters.TestFrameworks;
@@ -46,7 +46,7 @@ public class CustomDiffReporter :
     }
 }
 ```
-<sup><a href='/src/ApprovalTests.Tests/Reporters/CustomDiffReporter.cs#L1-L24' title='File snippet `CustomDiffReporter.cs` was extracted from'>snippet source</a> | <a href='#snippet-CustomDiffReporter.cs' title='Navigate to start of snippet `CustomDiffReporter.cs`'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests.Tests/Reporters/CustomDiffReporter.cs#L1-L24' title='Snippet source file'>snippet source</a> | <a href='#a429f9e3' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ---

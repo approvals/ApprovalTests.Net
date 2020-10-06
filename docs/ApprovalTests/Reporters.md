@@ -40,7 +40,7 @@ Custom Diff Tools can be added via DiffEngine. See: https://github.com/SimonCrop
 Extend `IApprovalFailureReporter`. For example a file can be launched on failure:
 
 <!-- snippet: FileLauncherReporter.cs -->
-<a id='snippet-FileLauncherReporter.cs'></a>
+<a id='9508d2ac'></a>
 ```cs
 using System.Diagnostics;
 using ApprovalTests.Core;
@@ -59,7 +59,7 @@ namespace ApprovalTests.Reporters
     }
 }
 ```
-<sup><a href='/src/ApprovalTests/Reporters/FileLauncherReporter.cs#L1-L16' title='File snippet `FileLauncherReporter.cs` was extracted from'>snippet source</a> | <a href='#snippet-FileLauncherReporter.cs' title='Navigate to start of snippet `FileLauncherReporter.cs`'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests/Reporters/FileLauncherReporter.cs#L1-L16' title='Snippet source file'>snippet source</a> | <a href='#9508d2ac' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -90,7 +90,7 @@ ApprovalTests will not launch anything if you are running on a CI machine.
 Currently, we support:
 
 <!-- snippet: continuous_integration -->
-<a id='snippet-continuous_integration'></a>
+<a id='33e4ede3'></a>
 ```cs
 TfsReporter.INSTANCE,
 TfsVnextReporter.INSTANCE,
@@ -103,7 +103,7 @@ MyGetReporter.INSTANCE,
 GoContinuousDeliveryReporter.INSTANCE,
 AppVeyorReporter.INSTANCE
 ```
-<sup><a href='/src/ApprovalTests/Reporters/DefaultFrontLoaderReporter.cs#L11-L22' title='File snippet `continuous_integration` was extracted from'>snippet source</a> | <a href='#snippet-continuous_integration' title='Navigate to start of snippet `continuous_integration`'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests/Reporters/DefaultFrontLoaderReporter.cs#L11-L22' title='Snippet source file'>snippet source</a> | <a href='#33e4ede3' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 You can add to this by configuring the FrontLoadedReporter Annotation.
