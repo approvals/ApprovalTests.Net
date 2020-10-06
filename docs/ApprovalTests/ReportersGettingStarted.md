@@ -30,13 +30,13 @@ Reporters are set using the `[UseReporter(typeof(YourReporter))]` attribute. Thi
 ApprovalTests suggest you make a assembly level configuration file for approvaltests named `ApprovalTestsConfig.cs`:  
 
 <!-- snippet: config_file -->
-<a id='snippet-config_file'></a>
+<a id='d6fbf2db'></a>
 ```cs
 using ApprovalTests.Reporters;
 
 [assembly: UseReporter(typeof(DiffReporter))]
 ```
-<sup><a href='/src/ApprovalTests.Tests/ApprovalTestsConfig.cs#L1-L5' title='File snippet `config_file` was extracted from'>snippet source</a> | <a href='#snippet-config_file' title='Navigate to start of snippet `config_file`'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests.Tests/ApprovalTestsConfig.cs#L1-L5' title='Snippet source file'>snippet source</a> | <a href='#d6fbf2db' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -45,11 +45,11 @@ using ApprovalTests.Reporters;
 If you wanted to have multiple reporters launch on failure, you can also combine as many as you wish using the following syntax: 
 
 <!-- snippet: multiple_reporters -->
-<a id='snippet-multiple_reporters'></a>
+<a id='5f4d5967'></a>
 ```cs
 [UseReporter(typeof(DiffReporter), typeof(FileLauncherReporter))]
 ```
-<sup><a href='/src/ApprovalTests.Tests/Html/HtmlTest.cs#L7-L9' title='File snippet `multiple_reporters` was extracted from'>snippet source</a> | <a href='#snippet-multiple_reporters' title='Navigate to start of snippet `multiple_reporters`'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests.Tests/Html/HtmlTest.cs#L7-L9' title='Snippet source file'>snippet source</a> | <a href='#5f4d5967' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
