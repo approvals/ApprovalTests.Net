@@ -27,21 +27,21 @@ Sample:
 (Before):
 
 <!-- snippet: assert_text_before -->
-<a id='7ddbc7db'></a>
+<a id='snippet-assert_text_before'></a>
 ```cs
 var header = new Header();
 var actual = header.MakeHeading("I am ten chars");
 var expected = "";
 Approvals.AssertText(expected, actual);
 ```
-<sup><a href='/src/ApprovalTests.Tests/Reporters/InlineTextReporterTest.cs#L51-L56' title='Snippet source file'>snippet source</a> | <a href='#7ddbc7db' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests.Tests/Reporters/InlineTextReporterTest.cs#L51-L56' title='Snippet source file'>snippet source</a> | <a href='#snippet-assert_text_before' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 When you do this, it will copy the c# for the `.received.` to your clipboard, so you can paste it in-line.
 
 (After)
 <!-- snippet: assert_text -->
-<a id='6cafb7b0'></a>
+<a id='snippet-assert_text'></a>
 ```cs
 var header = new Header();
 var actual = header.MakeHeading("I am ten chars");
@@ -53,7 +53,7 @@ var expected = new[]{
 };
 Approvals.AssertText(expected, actual);
 ```
-<sup><a href='/src/ApprovalTests.Tests/Reporters/InlineTextReporterTest.cs#L36-L46' title='Snippet source file'>snippet source</a> | <a href='#6cafb7b0' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests.Tests/Reporters/InlineTextReporterTest.cs#L36-L46' title='Snippet source file'>snippet source</a> | <a href='#snippet-assert_text' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -70,17 +70,17 @@ It will also write the results to a temp files on failure and open a DiffTool, s
 Sometimes you want to parse an approvals filename to get the parts.
 
 <!-- snippet: approvals_filename -->
-<a id='4b66b4cf'></a>
+<a id='snippet-approvals_filename'></a>
 ```cs
 var approvalsFilename = ApprovalsFilename.Parse(@"..\Email\EmailTest.Testname.Microsoft_Windows_10_Education.approved.eml");
 ```
-<sup><a href='/src/ApprovalTests.Tests/Namer/ApprovalsFilenameTest.cs#L12-L14' title='Snippet source file'>snippet source</a> | <a href='#4b66b4cf' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests.Tests/Namer/ApprovalsFilenameTest.cs#L12-L14' title='Snippet source file'>snippet source</a> | <a href='#snippet-approvals_filename' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Will produce
 
 <!-- snippet: ApprovalsFilenameTest.TestMachineSpecificName.approved.txt -->
-<a id='6635e571'></a>
+<a id='snippet-ApprovalsFilenameTest.TestMachineSpecificName.approved.txt'></a>
 ```txt
 GetFullPath: ..\Email\EmailTest.Testname.Microsoft_Windows_10_Education.approved.eml
 Directory: ..\Email
@@ -90,7 +90,7 @@ AdditionalInformation: [Microsoft_Windows_10_Education]
 ApprovedStatus: approved
 Extension: eml
 ```
-<sup><a href='/src/ApprovalTests.Tests/Namer/ApprovalsFilenameTest.TestMachineSpecificName.approved.txt#L1-L7' title='Snippet source file'>snippet source</a> | <a href='#6635e571' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests.Tests/Namer/ApprovalsFilenameTest.TestMachineSpecificName.approved.txt#L1-L7' title='Snippet source file'>snippet source</a> | <a href='#snippet-ApprovalsFilenameTest.TestMachineSpecificName.approved.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 

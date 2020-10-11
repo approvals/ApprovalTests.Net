@@ -82,7 +82,7 @@ If you prefer auditory learning, you might enjoy the following podcast
 ### Verifying a List
 
 <!-- snippet: sample_test -->
-<a id='d921639c'></a>
+<a id='snippet-sample_test'></a>
 ```cs
 [UseReporter(typeof(VisualStudioReporter))]
 [TestFixture]
@@ -97,7 +97,7 @@ public class SampleTest
     }
 }
 ```
-<sup><a href='/src/ApprovalTests.Tests/SampleTest.cs#L7-L21' title='Snippet source file'>snippet source</a> | <a href='#d921639c' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests.Tests/SampleTest.cs#L7-L21' title='Snippet source file'>snippet source</a> | <a href='#snippet-sample_test' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Will Produce a File
@@ -105,7 +105,7 @@ Will Produce a File
     `SampleTest.TestList.received.txt`
 
 <!-- snippet: SampleTest.TestList.approved.txt -->
-<a id='6760127c'></a>
+<a id='snippet-SampleTest.TestList.approved.txt'></a>
 ```txt
 [0] = Dan
 [1] = James
@@ -113,7 +113,7 @@ Will Produce a File
 [3] = Katrina
 [4] = Llewellyn
 ```
-<sup><a href='/src/ApprovalTests.Tests/SampleTest.TestList.approved.txt#L1-L5' title='Snippet source file'>snippet source</a> | <a href='#6760127c' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests.Tests/SampleTest.TestList.approved.txt#L1-L5' title='Snippet source file'>snippet source</a> | <a href='#snippet-SampleTest.TestList.approved.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 It will also open these 2 files (`.received.` & `.approved.` ) in a diff editor. 
