@@ -13,11 +13,11 @@ To change this file edit the source file and then run MarkdownSnippets.
 Guards are convenient functions if incorrect values are passed in.
 
 <!-- snippet: guard_usage -->
-<a id='f54c745f'></a>
+<a id='snippet-guard_usage'></a>
 ```cs
 Guard.AgainstNullAndEmpty(subdirectory, nameof(subdirectory));
 ```
-<sup><a href='/src/ApprovalTests/Namers/UseApprovalSubdirectoryAttribute.cs#L10-L12' title='Snippet source file'>snippet source</a> | <a href='#f54c745f' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests/Namers/UseApprovalSubdirectoryAttribute.cs#L10-L12' title='Snippet source file'>snippet source</a> | <a href='#snippet-guard_usage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -26,14 +26,14 @@ Guard.AgainstNullAndEmpty(subdirectory, nameof(subdirectory));
 `using` statements nicely cleanup on exit if you have a `IDisposable` or you can create a simple disposable object by passing in a lambda.  
 
 <!-- snippet: disposables -->
-<a id='b3d2626e'></a>
+<a id='snippet-disposables'></a>
 ```cs
 using (Disposables.Create(() => callCount++))
 {
     //code
 }
 ```
-<sup><a href='/src/ApprovalUtilities.Tests/Utilities/DisposablesTest.cs#L12-L17' title='Snippet source file'>snippet source</a> | <a href='#b3d2626e' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/ApprovalUtilities.Tests/Utilities/DisposablesTest.cs#L12-L17' title='Snippet source file'>snippet source</a> | <a href='#snippet-disposables' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ---
