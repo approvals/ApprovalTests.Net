@@ -57,7 +57,7 @@ This method will:
 Let's take the example:
 
 <!-- snippet: simple_verify -->
-<a id='cc5bb7d8'></a>
+<a id='snippet-simple_verify'></a>
 ```cs
 [Test]
 public void Text()
@@ -65,7 +65,7 @@ public void Text()
     Approvals.Verify("should be approved");
 }
 ```
-<sup><a href='/src/ApprovalTests.Tests/ApprovalsTest.cs#L13-L19' title='Snippet source file'>snippet source</a> | <a href='#cc5bb7d8' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests.Tests/ApprovalsTest.cs#L13-L19' title='Snippet source file'>snippet source</a> | <a href='#snippet-simple_verify' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 This call brings together 3 things + default Approver to produce a `.received.` file which is compared to an `.approved.` file.
@@ -119,11 +119,11 @@ They also determine the extension for both `.received.` and `.approved.` files.
 
 Eventually, all Verify methods call:
 <!-- snippet: complete_verify_call -->
-<a id='14c21b1c'></a>
+<a id='snippet-complete_verify_call'></a>
 ```cs
 public static void Verify(IApprovalWriter writer, IApprovalNamer namer, IApprovalFailureReporter reporter)
 ```
-<sup><a href='/src/ApprovalTests/Approvals.cs#L45-L47' title='Snippet source file'>snippet source</a> | <a href='#14c21b1c' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests/Approvals.cs#L45-L47' title='Snippet source file'>snippet source</a> | <a href='#snippet-complete_verify_call' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Most of the time this is hidden in an underlying a Verify call.
@@ -141,11 +141,11 @@ If you want it to approve something that writes to a new type of a binary file, 
 If you simply wanted to format text this is usually done in a separate step before calling:
 
 <!-- snippet: verify_with_extension -->
-<a id='0d69ba89'></a>
+<a id='snippet-verify_with_extension'></a>
 ```cs
 public static void VerifyWithExtension(string text, string fileExtensionWithDot, Func<string, string> scrubber = null)
 ```
-<sup><a href='/src/ApprovalTests/Approvals.cs#L179-L181' title='Snippet source file'>snippet source</a> | <a href='#0d69ba89' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests/Approvals.cs#L179-L181' title='Snippet source file'>snippet source</a> | <a href='#snippet-verify_with_extension' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 

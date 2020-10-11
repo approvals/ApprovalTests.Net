@@ -43,20 +43,20 @@ If you are using a machine specific name in your approval tests
 for example:
 
 <!-- snippet: unique_for_os -->
-<a id='31144950'></a>
+<a id='snippet-unique_for_os'></a>
 ```cs
 using (ApprovalResults.UniqueForOs())
 {
     Approvals.Verify("Data");
 }
 ```
-<sup><a href='/src/ApprovalTests.Tests/Namer/ApprovalResultsTest.cs#L45-L50' title='Snippet source file'>snippet source</a> | <a href='#31144950' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests.Tests/Namer/ApprovalResultsTest.cs#L45-L50' title='Snippet source file'>snippet source</a> | <a href='#snippet-unique_for_os' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 This can produce files such as:
 
 <!-- snippet: ApprovalsFilenameTest.TestSimilarFiles.approved.txt -->
-<a id='ec711f32'></a>
+<a id='snippet-ApprovalsFilenameTest.TestSimilarFiles.approved.txt'></a>
 ```txt
 Like EmailTest.Testname.Microsoft_Windows_10_Education.approved.eml
 
@@ -66,17 +66,17 @@ EmailTest.Testname.Microsoft_Windows_10_Pro.approved.eml
 EmailTest.Testname.Microsoft_Windows_Server_2016_Datacenter.approved.eml
 EmailTest.Testname.Microsoft_Windows_Server_2019_Datacenter.approved.eml
 ```
-<sup><a href='/src/ApprovalTests.Tests/Namer/ApprovalsFilenameTest.TestSimilarFiles.approved.txt#L1-L7' title='Snippet source file'>snippet source</a> | <a href='#ec711f32' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests.Tests/Namer/ApprovalsFilenameTest.TestSimilarFiles.approved.txt#L1-L7' title='Snippet source file'>snippet source</a> | <a href='#snippet-ApprovalsFilenameTest.TestSimilarFiles.approved.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 If this is run on a new machine, it could produce a new approval file. This can be confusing as you might not remember what the old system used to produce.
 
 <!-- snippet: use_MachineSpecificReporter -->
-<a id='f6dbed17'></a>
+<a id='snippet-use_machinespecificreporter'></a>
 ```cs
 [UseReporter(typeof(MachineSpecificReporter))]
 ```
-<sup><a href='/src/ApprovalTests.Tests/Namer/ApprovalResultsTest.cs#L10-L12' title='Snippet source file'>snippet source</a> | <a href='#f6dbed17' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests.Tests/Namer/ApprovalResultsTest.cs#L10-L12' title='Snippet source file'>snippet source</a> | <a href='#snippet-use_machinespecificreporter' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 If you use a MachineSpecificReporter and the existing approval file does not exist (or is empty), it will search or the last approved version from a different machine and copy it over as a starting point. This will always start with a line:
