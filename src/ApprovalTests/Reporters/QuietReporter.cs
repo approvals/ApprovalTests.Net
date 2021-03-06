@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 using ApprovalTests.Core;
 
 namespace ApprovalTests.Reporters
@@ -22,7 +23,12 @@ namespace ApprovalTests.Reporters
 
         public static string GetCommandLineForApproval(string approved, string received)
         {
-            return $"cmd /c move /Y \"{received}\" \"{approved}\"";
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+                   return $"cmd /c move /Y \"{received}\" \"{approved}\"";
+            }
+
+            return $"mv -f \"{received}\" \"{approved}\"";
         }
 
         public bool IsWorkingInThisEnvironment(string forFile)
