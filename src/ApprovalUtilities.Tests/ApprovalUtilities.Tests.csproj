@@ -11,9 +11,10 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.1" />
     <ProjectReference Include="..\ApprovalTests\ApprovalTests.csproj" />
     <ProjectReference Include="..\ApprovalUtilities\ApprovalUtilities.csproj" />
+    <Reference Include="System.Windows.Forms" />
     <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
   </ItemGroup>
-  <ItemGroup Condition="$(TargetFramework) != 'net461'">
+  <ItemGroup Condition="$(TargetFramework) != 'net48'">
     <Compile Remove="Reflection\*.*" />
   </ItemGroup>
   <Import Project="$(ProjectDir)..\ApprovalTests\build\ApprovalTests.targets" />
