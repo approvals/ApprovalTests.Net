@@ -16,11 +16,6 @@
   <ItemGroup Condition="$(TargetFramework) != 'net461'">
     <Compile Remove="Reflection\*.*" />
   </ItemGroup>
-  <ItemGroup Condition="$(TargetFramework) == 'net461'">
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Windows.Forms" />
-  </ItemGroup>
   <Import Project="$(ProjectDir)..\ApprovalTests\build\ApprovalTests.targets" />
   <Import Project="$(ProjectDir)..\ApprovalTests\build\ApprovalTests.props" />
 </Project>
