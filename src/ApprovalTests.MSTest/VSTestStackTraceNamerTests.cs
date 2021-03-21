@@ -8,7 +8,6 @@ namespace ApprovalTests.Tests.Namer
     [TestClass]
     public class VsTestStackTraceNamerTests
     {
-
         [TestMethod]
         public void TestApprovalName()
         {
