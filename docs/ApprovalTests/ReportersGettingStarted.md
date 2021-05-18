@@ -72,7 +72,7 @@ The main use for seeing differences is to use a reporter that will open a DiffTo
 
 ### Rendering
 
-Let's say your test result is some HTML. In the beginning you might want to render it in a bowser to be able to see that it is indeed what you want. In this moment, try the  `FileLauncherReporter`. Which will open the `.received.` file in the application associated to it on your machine.
+Let's say your test result is some HTML. In the beginning you might want to render it in a browser to be able to see that it is indeed what you want. In this moment, try the  `FileLauncherReporter`. Which will open the `.received.` file in the application associated to it on your machine.
 
 This is useful for many types of test results including, xml, svg, csv, html, images, sound files, etc...
 
