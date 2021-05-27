@@ -3,6 +3,7 @@ using NUnit.Framework;
 
 namespace ApprovalTests.Tests
 {
+    #if(NET48)
     [TestFixture]
     public class RunMaintenance
     {
@@ -23,4 +24,5 @@ namespace ApprovalTests.Tests
                 );
         }
     }
+    #endif
 }
