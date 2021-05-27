@@ -28,6 +28,7 @@ your biggest fan";
             }
         }
 
+        #if(NET48)
         [Test]
         public void TestAttachment()
         {
@@ -43,6 +44,7 @@ your biggest fan";
                 EmailApprovals.Verify(message);
             }
         }
+        #endif
 
         [Test]
         public void TestCollectBoundaries()
