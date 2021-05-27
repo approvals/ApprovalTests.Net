@@ -1,5 +1,6 @@
 # Auto detect text files and perform LF normalization
 * text eol=crlf
+*.json -text
 
 # Custom for Visual Studio
 *.cs     diff=csharp
