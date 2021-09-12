@@ -4,7 +4,7 @@
     <TargetFrameworks>net48;net6</TargetFrameworks>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Fody" Version="6.5.2" PrivateAssets="all" />
+    <PackageReference Include="Fody" Version="6.5.3" PrivateAssets="all" />
     <PackageReference Include="MarkdownSnippets.MsBuild" Version="24.0.0" />
     <PackageReference Include="ModuleInit.Fody" Version="2.1.1" PrivateAssets="All" />
     <PackageReference Include="itext7" Version="7.1.16" />
