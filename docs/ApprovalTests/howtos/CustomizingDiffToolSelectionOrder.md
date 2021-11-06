@@ -51,6 +51,4 @@ public class CustomDiffReporter :
 
 ---
 
-You can also override the default order while using `DiffReporter` by defining `DiffEngine_ToolOrder` environment variable. The value of that variable should contain a delimiter (`,`, `|`, ` `) separated list of the diff tool names in the desired order. More details about that in [Diff Tool Order](https://github.com/VerifyTests/DiffEngine/blob/main/docs/diff-tool.order.md)
-
 [Back to User Guide](../readme.md#top)
