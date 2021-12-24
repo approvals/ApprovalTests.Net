@@ -13,6 +13,8 @@ To change this file edit the source file and then run MarkdownSnippets.
 [![Backers on Open Collective](https://opencollective.com/approvals/backers/badge.svg)](#backers)
 [![Sponsors on Open Collective](https://opencollective.com/approvals/sponsors/badge.svg)](#sponsors)
 
+**This project is not being actively maintained. Instead consider using [Verify](https://github.com/VerifyTests/Verify/). See [Migrating from ApprovalTests](https://github.com/VerifyTests/Verify/blob/main/docs/compared-to-approvaltests.md#migrating-from-approvaltests) for more information.**
+
 Capturing Human Intelligence - ApprovalTests is an open source assertion/verification library to aid unit testing.
 
 It is compatible with most .Net unit testing frameworks (Nunit, MsTest, xUnit, MBUnit)
