@@ -9,7 +9,7 @@ namespace ApprovalTests.Tests
     public class ApprovalsTest
     {
         private static readonly string[] text = {"abc", "123", "!@#"};
-        
+
         // begin-snippet: simple_verify
         [Test]
         public void Text()
