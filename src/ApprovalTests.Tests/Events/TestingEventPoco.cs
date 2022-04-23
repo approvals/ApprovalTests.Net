@@ -1,24 +1,23 @@
-namespace ApprovalTests.Tests.Events
+namespace ApprovalTests.Tests.Events;
+
+using System;
+using System.ComponentModel;
+
+public class TestingEventPoco : INotifyPropertyChanged
 {
-    using System;
-    using System.ComponentModel;
+    private readonly object NonEventField = new();
 
-    public class TestingEventPoco : INotifyPropertyChanged
-    {
-        private readonly object NonEventField = new object();
-
-        public event EventHandler MyEvent;
+    public event EventHandler MyEvent;
 
 #pragma warning disable 67
 
-        public event PropertyChangedEventHandler PropertyChanged;
+    public event PropertyChangedEventHandler PropertyChanged;
 
 #pragma warning restore 67
 
-        protected virtual void OnMyEvent(object sender, EventArgs e)
-        {
-            var handler = MyEvent;
-            handler?.Invoke(sender, e);
-        }
+    protected virtual void OnMyEvent(object sender, EventArgs e)
+    {
+        var handler = MyEvent;
+        handler?.Invoke(sender, e);
     }
 }
