@@ -1,13 +1,12 @@
 ﻿using DiffEngine;
 
-namespace ApprovalTests.Reporters
-{
-    public class TkDiffReporter : DiffToolReporter
-    {
-        public static readonly TkDiffReporter INSTANCE = new TkDiffReporter();
+namespace ApprovalTests.Reporters;
 
-        public TkDiffReporter() : base(DiffTool.TkDiff)
-        {
-        }
+public class TkDiffReporter : DiffToolReporter
+{
+    public static readonly TkDiffReporter INSTANCE = new TkDiffReporter();
+
+    public TkDiffReporter() : base(DiffTool.TkDiff)
+    {
     }
 }

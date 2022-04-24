@@ -1,15 +1,14 @@
 ﻿using ApprovalTests.Reporters;
 using NUnit.Framework;
 
-namespace ApprovalTests.Tests.Reporters
+namespace ApprovalTests.Tests.Reporters;
+
+[TestFixture]
+public class IntroductionReporterTest
 {
-    [TestFixture]
-    public class IntroductionReporterTest
+    [Test]
+    public void TestComment()
     {
-        [Test]
-        public void TestComment()
-        {
-            Approvals.Verify(new IntroductionReporter().GetFriendlyWelcomeMessage());
-        }
+        Approvals.Verify(new IntroductionReporter().GetFriendlyWelcomeMessage());
     }
 }

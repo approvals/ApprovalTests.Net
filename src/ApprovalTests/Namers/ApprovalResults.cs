@@ -4,19 +4,19 @@ using System.IO;
 using System.Linq;
 using ApprovalUtilities.Utilities;
 
-namespace ApprovalTests.Namers
-{
-    public static class ApprovalResults
-    {
-        public static IDisposable UniqueForDotNetVersion()
-        {
-            return NamerFactory.AsEnvironmentSpecificTest(GetDotNetVersion());
-        }
+namespace ApprovalTests.Namers;
 
-        public static string GetDotNetVersion()
-        {
-            return "Net_v" + Environment.Version;
-        }
+public static class ApprovalResults
+{
+    public static IDisposable UniqueForDotNetVersion()
+    {
+        return NamerFactory.AsEnvironmentSpecificTest(GetDotNetVersion());
+    }
+
+    public static string GetDotNetVersion()
+    {
+        return "Net_v" + Environment.Version;
+    }
 
 #if (!NET461)
         public static IDisposable UniqueForRuntime(bool throwOnError = true)
@@ -31,32 +31,32 @@ namespace ApprovalTests.Namers
         }
 #endif
 
-        public static string GetDotNetRuntime(bool throwOnError, string frameworkDescription)
+    public static string GetDotNetRuntime(bool throwOnError, string frameworkDescription)
+    {
+        if (frameworkDescription.StartsWith(".NET Framework", StringComparison.OrdinalIgnoreCase))
         {
-            if (frameworkDescription.StartsWith(".NET Framework", StringComparison.OrdinalIgnoreCase))
-            {
-                var version = Version.Parse(frameworkDescription.Replace(".NET Framework ", ""));
-                return $"Net_{version.Major}.{version.Minor}";
-            }
+            var version = Version.Parse(frameworkDescription.Replace(".NET Framework ", ""));
+            return $"Net_{version.Major}.{version.Minor}";
+        }
 
-            if (frameworkDescription.StartsWith(".NET Core", StringComparison.OrdinalIgnoreCase))
+        if (frameworkDescription.StartsWith(".NET Core", StringComparison.OrdinalIgnoreCase))
+        {
+            var version = Version.Parse(frameworkDescription.Replace(".NET Core ", ""));
+            var map = new Dictionary<string, string>
             {
-                var version = Version.Parse(frameworkDescription.Replace(".NET Core ", ""));
-                var map = new Dictionary<string, string>
                 {
-                    {
-                        "4.6","2.1"
-                    }
-                };
-                if (map.TryGetValue($"{version.Major}.{version.Minor}", out var result))
-                {
-                    return "NetCore_" + result;
+                    "4.6","2.1"
                 }
-            }
-
-            if (throwOnError)
+            };
+            if (map.TryGetValue($"{version.Major}.{version.Minor}", out var result))
             {
-                throw new NotImplementedException($@"Your current framework is not properly handled by ApprovalTests
+                return "NetCore_" + result;
+            }
+        }
+
+        if (throwOnError)
+        {
+            throw new NotImplementedException($@"Your current framework is not properly handled by ApprovalTests
 Framework: {frameworkDescription}.
 To suppress this error and make the test pass using the full FrameworkDescription use:
 using (Namers.ApprovalResults.UniqueForRuntime(throwOnError: true)){{
@@ -65,76 +65,75 @@ using (Namers.ApprovalResults.UniqueForRuntime(throwOnError: true)){{
 To help ApprovalTest please submit a new issue using the following link:
 https://github.com/approvals/ApprovalTests.Net/issues/new?title=Unknown%3A+%27Runtime%27&body={frameworkDescription}
 ");
-            }
-
-            return frameworkDescription;
         }
 
-        public static IDisposable UniqueForMachineName()
+        return frameworkDescription;
+    }
+
+    public static IDisposable UniqueForMachineName()
+    {
+        return NamerFactory.AsEnvironmentSpecificTest(GetMachineName());
+    }
+
+    public static string GetMachineName()
+    {
+        return "ForMachine." + Environment.MachineName;
+    }
+
+    public static string GetOsName()
+    {
+        var name = TransformEasyOsName(OsUtils.GetFullOsNameFromWmi());
+        return name.Trim().Replace(' ', '_');
+    }
+
+    public static string GetFullOsName()
+    {
+        var name = OsUtils.GetFullOsNameFromWmi();
+        return name.Trim().Replace(' ', '_');
+    }
+
+    public static string TransformEasyOsName(string captionName)
+    {
+        string[] known = {"XP", "2000", "Vista", "7", "8", "Server 2003", "Server 2008", "Server 2012"};
+        var matched = known.FirstOrDefault(s => captionName.StartsWith("Microsoft Windows " + s));
+        if (matched != null)
         {
-            return NamerFactory.AsEnvironmentSpecificTest(GetMachineName());
+            return "Windows " + matched;
         }
 
-        public static string GetMachineName()
-        {
-            return "ForMachine." + Environment.MachineName;
-        }
+        return captionName;
+    }
 
-        public static string GetOsName()
-        {
-            var name = TransformEasyOsName(OsUtils.GetFullOsNameFromWmi());
-            return name.Trim().Replace(' ', '_');
-        }
+    public static IDisposable UniqueForOs()
+    {
+        return NamerFactory.AsEnvironmentSpecificTest(GetOsName());
+    }
 
-        public static string GetFullOsName()
-        {
-            var name = OsUtils.GetFullOsNameFromWmi();
-            return name.Trim().Replace(' ', '_');
-        }
+    public static string GetUserName()
+    {
+        return "ForUser." + Environment.UserName;
+    }
 
-        public static string TransformEasyOsName(string captionName)
-        {
-            string[] known = {"XP", "2000", "Vista", "7", "8", "Server 2003", "Server 2008", "Server 2012"};
-            var matched = known.FirstOrDefault(s => captionName.StartsWith("Microsoft Windows " + s));
-            if (matched != null)
-            {
-                return "Windows " + matched;
-            }
+    public static IDisposable UniqueForUserName()
+    {
+        return NamerFactory.AsEnvironmentSpecificTest(GetUserName());
+    }
 
-            return captionName;
-        }
+    public static IDisposable ForScenario(string data)
+    {
+        var name = "ForScenario." + Scrub(data);
+        return NamerFactory.AsEnvironmentSpecificTest(name);
+    }
 
-        public static IDisposable UniqueForOs()
-        {
-            return NamerFactory.AsEnvironmentSpecificTest(GetOsName());
-        }
+    public static IDisposable ForScenario(params object[] dataPoints)
+    {
+        return ForScenario(dataPoints.JoinWith("."));
+    }
 
-        public static string GetUserName()
-        {
-            return "ForUser." + Environment.UserName;
-        }
-
-        public static IDisposable UniqueForUserName()
-        {
-            return NamerFactory.AsEnvironmentSpecificTest(GetUserName());
-        }
-
-        public static IDisposable ForScenario(string data)
-        {
-            var name = "ForScenario." + Scrub(data);
-            return NamerFactory.AsEnvironmentSpecificTest(name);
-        }
-
-        public static IDisposable ForScenario(params object[] dataPoints)
-        {
-            return ForScenario(dataPoints.JoinWith("."));
-        }
-
-        public static string Scrub(string data)
-        {
-            var invalid = Path.GetInvalidFileNameChars().ToArray();
-            var chars = data.Select(c => invalid.Contains(c) ? '_' : c).ToArray();
-            return new string(chars);
-        }
+    public static string Scrub(string data)
+    {
+        var invalid = Path.GetInvalidFileNameChars().ToArray();
+        var chars = data.Select(c => invalid.Contains(c) ? '_' : c).ToArray();
+        return new string(chars);
     }
 }

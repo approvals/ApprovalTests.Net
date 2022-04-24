@@ -1,7 +1,6 @@
-namespace ApprovalUtilities.Persistence
+namespace ApprovalUtilities.Persistence;
+
+public interface ISaver<T>
 {
-    public interface ISaver<T>
-    {
-        T Save(T objectToBeSaved);
-    }
+    T Save(T objectToBeSaved);
 }

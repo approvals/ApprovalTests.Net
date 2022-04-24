@@ -1,6 +1,5 @@
-namespace ApprovalTests.Tests.Events
+namespace ApprovalTests.Tests.Events;
+
+public class InheritsTestingEventPoco : TestingEventPoco
 {
-    public class InheritsTestingEventPoco : TestingEventPoco
-    {
-    }
 }

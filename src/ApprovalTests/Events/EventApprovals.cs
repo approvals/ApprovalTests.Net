@@ -3,33 +3,32 @@ using System.Linq;
 using System.Text;
 using ApprovalUtilities.Reflection;
 
-namespace ApprovalTests.Events
+namespace ApprovalTests.Events;
+
+public static class EventApprovals
 {
-    public static class EventApprovals
+    public static void VerifyEvents(object value)
     {
-        public static void VerifyEvents(object value)
+        Approvals.Verify(WriteEventsToString(value, ""));
+    }
+
+    public static IEnumerable<CallbackDescriptor> GetEventsInformationFor(object value)
+    {
+        return value.GetPocoEvents().Concat(value.GetEventHandlerListEvents()).OrderBy(e => e.EventName);
+    }
+
+    public static string WriteEventsToString(object value, string label)
+    {
+        var events = GetEventsInformationFor(value);
+
+        var sb = new StringBuilder();
+        sb.AppendLine($"Event Configuration for {value.GetType().Name} {label}");
+        sb.AppendLine();
+
+        foreach (var ev in events)
         {
-            Approvals.Verify(WriteEventsToString(value, ""));
+            sb.AppendLine(ev.ToString());
         }
-
-        public static IEnumerable<CallbackDescriptor> GetEventsInformationFor(object value)
-        {
-            return value.GetPocoEvents().Concat(value.GetEventHandlerListEvents()).OrderBy(e => e.EventName);
-        }
-
-        public static string WriteEventsToString(object value, string label)
-        {
-            var events = GetEventsInformationFor(value);
-
-            var sb = new StringBuilder();
-            sb.AppendLine($"Event Configuration for {value.GetType().Name} {label}");
-            sb.AppendLine();
-
-            foreach (var ev in events)
-            {
-                sb.AppendLine(ev.ToString());
-            }
-            return sb.ToString();
-        }
+        return sb.ToString();
     }
 }

@@ -1,14 +1,13 @@
 ﻿using DiffEngine;
 
-namespace ApprovalTests.Reporters
-{
-    public class BeyondCompareReporter : DiffToolReporter
-    {
-        public static readonly BeyondCompareReporter INSTANCE = new BeyondCompareReporter();
+namespace ApprovalTests.Reporters;
 
-        public BeyondCompareReporter()
-            : base(DiffTool.BeyondCompare)
-        {
-        }
+public class BeyondCompareReporter : DiffToolReporter
+{
+    public static readonly BeyondCompareReporter INSTANCE = new BeyondCompareReporter();
+
+    public BeyondCompareReporter()
+        : base(DiffTool.BeyondCompare)
+    {
     }
 }

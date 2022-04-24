@@ -1,12 +1,11 @@
 using System.Diagnostics;
 
-namespace ApprovalUtilities.SimpleLogger.Writers
+namespace ApprovalUtilities.SimpleLogger.Writers;
+
+public class DebuggerWriter : IAppendable
 {
-    public class DebuggerWriter : IAppendable
+    public void AppendLine(string text)
     {
-        public void AppendLine(string text)
-        {
-            Debug.WriteLine(text);
-        }
+        Debug.WriteLine(text);
     }
 }

@@ -1,9 +1,8 @@
-namespace ApprovalTests.Core
+namespace ApprovalTests.Core;
+
+public interface IApprovalWriter
 {
-    public interface IApprovalWriter
-    {
-        string GetApprovalFilename(string basename);
-        string GetReceivedFilename(string basename);
-        string WriteReceivedFile(string received);
-    }
+    string GetApprovalFilename(string basename);
+    string GetReceivedFilename(string basename);
+    string WriteReceivedFile(string received);
 }

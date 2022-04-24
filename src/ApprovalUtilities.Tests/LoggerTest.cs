@@ -7,100 +7,99 @@ using ApprovalUtilities.SimpleLogger;
 using ApprovalUtilities.Utilities;
 using Xunit;
 
-namespace ApprovalUtilities.Tests
+namespace ApprovalUtilities.Tests;
+
+[UseReporter(typeof(DiffReporter))]
+public class LoggerTest
 {
-    [UseReporter(typeof(DiffReporter))]
-    public class LoggerTest
+    [Fact]
+    public void TestMainPath()
     {
-        [Fact]
-        public void TestMainPath()
+        var log = Logger.LogToStringBuilder();
+        using (Logger.MarkEntryPoints())
         {
-            var log = Logger.LogToStringBuilder();
-            using (Logger.MarkEntryPoints())
+            Logger.Event("Starting");
+            var name = "Llewellyn";
+            Logger.Variable("name", name);
+            Logger.Message("I Got here");
+            Logger.Sql("Select * From table_name");
+            try
             {
-                Logger.Event("Starting");
-                var name = "Llewellyn";
-                Logger.Variable("name", name);
-                Logger.Message("I Got here");
-                Logger.Sql("Select * From table_name");
-                try
-                {
-                    throw new Exception(" Problem");
-                }
-                catch (Exception e)
-                {
-                    Logger.Warning(e);
-                }
+                throw new Exception(" Problem");
             }
-
-            var logText = log.ScrubPath(PathUtilities.GetDirectoryForCaller());
-            logText = logText.ScrubStackTrace();
-            Approvals.Verify(logText);
+            catch (Exception e)
+            {
+                Logger.Warning(e);
+            }
         }
 
-        [Fact]
-        public void TestShowMarker()
-        {
-            var log = Logger.LogToStringBuilder();
-            Logger.Show(markerIn: false);
-            using(Logger.MarkEntryPoints()){}
-            Assert.Equal("", log.ToString());
-        }
-
-        [Fact]
-        public void TestShowEvents()
-        {
-            var log = Logger.LogToStringBuilder();
-            Logger.Show(events: false);
-            Logger.Event("ignored event");
-
-            Assert.Equal("", log.ToString());
-        }
-
-        [Fact]
-        public void TestSql()
-        {
-            var log = Logger.LogToStringBuilder();
-            Logger.Show(sql: false);
-            Logger.Sql("ignored event");
-
-            Assert.Equal("", log.ToString());
-        }
-
-        [Fact]
-        public void TestShowVariables()
-        {
-            var log = Logger.LogToStringBuilder();
-            Logger.Show(variables: false);
-            Logger.Variable("name", "Llewellyn");
-
-            Assert.Equal("", log.ToString());
-        }
-
-        [Fact]
-        public void TestTimes()
-        {
-            CultureUtilities.ForceCulture();
-            var log = Logger.LogToStringBuilder();
-            Logger.UseTimer(new MockTimer());
-            Logger.Show();
-            Logger.Variable("name", "Llewellyn");
-            Logger.Variable("name", "Llewellyn");
-            Logger.Variable("name", "Llewellyn");
-
-            Approvals.Verify(log.ToString());
-        }
+        var logText = log.ScrubPath(PathUtilities.GetDirectoryForCaller());
+        logText = logText.ScrubStackTrace();
+        Approvals.Verify(logText);
     }
 
-    public class MockTimer : ILoader<DateTime>
+    [Fact]
+    public void TestShowMarker()
     {
-        private int ticks;
+        var log = Logger.LogToStringBuilder();
+        Logger.Show(markerIn: false);
+        using(Logger.MarkEntryPoints()){}
+        Assert.Equal("", log.ToString());
+    }
 
-        public DateTime Load()
-        {
-            ticks += 10;
-            ticks = ticks % 999;
-            return new DateTime(2011, 5, 6, 10, 30, 0, ticks);
-        }
+    [Fact]
+    public void TestShowEvents()
+    {
+        var log = Logger.LogToStringBuilder();
+        Logger.Show(events: false);
+        Logger.Event("ignored event");
+
+        Assert.Equal("", log.ToString());
+    }
+
+    [Fact]
+    public void TestSql()
+    {
+        var log = Logger.LogToStringBuilder();
+        Logger.Show(sql: false);
+        Logger.Sql("ignored event");
+
+        Assert.Equal("", log.ToString());
+    }
+
+    [Fact]
+    public void TestShowVariables()
+    {
+        var log = Logger.LogToStringBuilder();
+        Logger.Show(variables: false);
+        Logger.Variable("name", "Llewellyn");
+
+        Assert.Equal("", log.ToString());
+    }
+
+    [Fact]
+    public void TestTimes()
+    {
+        CultureUtilities.ForceCulture();
+        var log = Logger.LogToStringBuilder();
+        Logger.UseTimer(new MockTimer());
+        Logger.Show();
+        Logger.Variable("name", "Llewellyn");
+        Logger.Variable("name", "Llewellyn");
+        Logger.Variable("name", "Llewellyn");
+
+        Approvals.Verify(log.ToString());
+    }
+}
+
+public class MockTimer : ILoader<DateTime>
+{
+    private int ticks;
+
+    public DateTime Load()
+    {
+        ticks += 10;
+        ticks = ticks % 999;
+        return new DateTime(2011, 5, 6, 10, 30, 0, ticks);
     }
 }

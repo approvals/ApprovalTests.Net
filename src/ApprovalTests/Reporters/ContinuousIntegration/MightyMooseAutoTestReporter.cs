@@ -3,34 +3,33 @@ using System.Diagnostics;
 using ApprovalTests.Core;
 using ApprovalTests.Utilities;
 
-namespace ApprovalTests.Reporters.ContinuousIntegration
+namespace ApprovalTests.Reporters.ContinuousIntegration;
+
+public class MightyMooseAutoTestReporter : IEnvironmentAwareReporter
 {
-    public class MightyMooseAutoTestReporter : IEnvironmentAwareReporter
+    public static readonly MightyMooseAutoTestReporter INSTANCE = new MightyMooseAutoTestReporter();
+
+    public static bool? IsRunning;
+
+    public void Report(string approved, string received)
     {
-        public static readonly MightyMooseAutoTestReporter INSTANCE = new MightyMooseAutoTestReporter();
+        // do nothing
+    }
 
-        public static bool? IsRunning;
-
-        public void Report(string approved, string received)
+    public bool IsWorkingInThisEnvironment(string forFile)
+    {
+        if (IsRunning == null)
         {
-            // do nothing
-        }
-
-        public bool IsWorkingInThisEnvironment(string forFile)
-        {
-            if (IsRunning == null)
+            IsRunning = ParentProcessUtils.ProcessName.StartsWith("AutoTest.TestRunner");
+            if (IsRunning.Value)
             {
-                IsRunning = ParentProcessUtils.ProcessName.StartsWith("AutoTest.TestRunner");
-                if (IsRunning.Value)
-                {
-                    var message = "AutoTest support is being deprecated. It will be removed in V5.";
-                    Trace.WriteLine(message);
-                    Console.WriteLine(message);
-                    Debug.WriteLine(message);
-                }
+                var message = "AutoTest support is being deprecated. It will be removed in V5.";
+                Trace.WriteLine(message);
+                Console.WriteLine(message);
+                Debug.WriteLine(message);
             }
-
-            return IsRunning.Value;
         }
+
+        return IsRunning.Value;
     }
 }

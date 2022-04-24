@@ -1,14 +1,13 @@
 ﻿using DiffEngine;
 
-namespace ApprovalTests.Reporters
-{
-    public class AraxisMergeReporter : DiffToolReporter
-    {
-        public static readonly AraxisMergeReporter INSTANCE = new AraxisMergeReporter();
+namespace ApprovalTests.Reporters;
 
-        public AraxisMergeReporter()
-            : base(DiffTool.AraxisMerge)
-        {
-        }
+public class AraxisMergeReporter : DiffToolReporter
+{
+    public static readonly AraxisMergeReporter INSTANCE = new AraxisMergeReporter();
+
+    public AraxisMergeReporter()
+        : base(DiffTool.AraxisMerge)
+    {
     }
 }

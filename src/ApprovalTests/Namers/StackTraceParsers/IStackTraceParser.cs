@@ -1,12 +1,11 @@
 using System.Diagnostics;
 
-namespace ApprovalTests.Namers.StackTraceParsers
+namespace ApprovalTests.Namers.StackTraceParsers;
+
+public interface IStackTraceParser
 {
-    public interface IStackTraceParser
-    {
-        string ApprovalName { get; }
-        string SourcePath { get; }
-        string ForTestingFramework { get; }
-        bool Parse(StackTrace stackTrace);
-    }
+    string ApprovalName { get; }
+    string SourcePath { get; }
+    string ForTestingFramework { get; }
+    bool Parse(StackTrace stackTrace);
 }

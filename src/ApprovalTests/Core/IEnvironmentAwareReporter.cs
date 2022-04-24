@@ -1,7 +1,6 @@
-namespace ApprovalTests.Core
+namespace ApprovalTests.Core;
+
+public interface IEnvironmentAwareReporter : IApprovalFailureReporter
 {
-    public interface IEnvironmentAwareReporter : IApprovalFailureReporter
-    {
-        bool IsWorkingInThisEnvironment(string forFile);
-    }
+    bool IsWorkingInThisEnvironment(string forFile);
 }

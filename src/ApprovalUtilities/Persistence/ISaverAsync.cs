@@ -1,9 +1,8 @@
 using System.Threading.Tasks;
 
-namespace ApprovalUtilities.Persistence
+namespace ApprovalUtilities.Persistence;
+
+public interface ISaverAsync<T>
 {
-    public interface ISaverAsync<T>
-    {
-        Task<T> Save(T objectToBeSaved);
-    }
+    Task<T> Save(T objectToBeSaved);
 }

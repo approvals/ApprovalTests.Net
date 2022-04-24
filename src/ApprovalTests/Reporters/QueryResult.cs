@@ -1,8 +1,7 @@
-namespace ApprovalTests.Reporters
+namespace ApprovalTests.Reporters;
+
+public class QueryResult
 {
-    public class QueryResult
-    {
-        public string Query { get; set; }
-        public string Result { get; set; }
-    }
+    public string Query { get; set; }
+    public string Result { get; set; }
 }

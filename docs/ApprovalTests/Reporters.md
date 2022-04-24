@@ -45,21 +45,20 @@ Extend `IApprovalFailureReporter`. For example a file can be launched on failure
 using System.Diagnostics;
 using ApprovalTests.Core;
 
-namespace ApprovalTests.Reporters
-{
-    public class FileLauncherReporter : IApprovalFailureReporter
-    {
-        public static readonly FileLauncherReporter INSTANCE = new FileLauncherReporter();
+namespace ApprovalTests.Reporters;
 
-        public void Report(string approved, string received)
-        {
-            QuietReporter.DisplayCommandLineApproval(approved, received);
-            Process.Start(received);
-        }
+public class FileLauncherReporter : IApprovalFailureReporter
+{
+    public static readonly FileLauncherReporter INSTANCE = new FileLauncherReporter();
+
+    public void Report(string approved, string received)
+    {
+        QuietReporter.DisplayCommandLineApproval(approved, received);
+        Process.Start(received);
     }
 }
 ```
-<sup><a href='/src/ApprovalTests/Reporters/FileLauncherReporter.cs#L1-L16' title='Snippet source file'>snippet source</a> | <a href='#snippet-FileLauncherReporter.cs' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests/Reporters/FileLauncherReporter.cs#L1-L15' title='Snippet source file'>snippet source</a> | <a href='#snippet-FileLauncherReporter.cs' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 

@@ -1,10 +1,9 @@
 ﻿using System.Data.Common;
 
-namespace ApprovalUtilities.Persistence.Database
+namespace ApprovalUtilities.Persistence.Database;
+
+public interface IDatabaseToExecutableQueryAdapter
 {
-    public interface IDatabaseToExecutableQueryAdapter
-    {
-        string GetQuery();
-        DbConnection GetConnection();
-    }
+    string GetQuery();
+    DbConnection GetConnection();
 }

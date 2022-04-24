@@ -1,7 +1,6 @@
-﻿namespace ApprovalUtilities.SimpleLogger
+﻿namespace ApprovalUtilities.SimpleLogger;
+
+public interface IAppendable
 {
-    public interface IAppendable
-    {
-        void AppendLine(string text);
-    }
+    void AppendLine(string text);
 }

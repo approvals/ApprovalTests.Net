@@ -1,35 +1,34 @@
 using System;
 using System.Threading;
 
-namespace ApprovalTests.Namers
+namespace ApprovalTests.Namers;
+
+public static class NamerFactory
 {
-    public static class NamerFactory
+    static AsyncLocal<string> additionalInformation = new AsyncLocal<string>();
+
+    public static string AdditionalInformation
     {
-        static AsyncLocal<string> additionalInformation = new AsyncLocal<string>();
+        get => additionalInformation.Value;
+        set => additionalInformation.Value = value;
+    }
 
-        public static string AdditionalInformation
+    public static IDisposable AsEnvironmentSpecificTest(string label)
+    {
+        if (AdditionalInformation == null)
         {
-            get => additionalInformation.Value;
-            set => additionalInformation.Value = value;
+            AdditionalInformation = label;
+        }
+        else
+        {
+            AdditionalInformation += "." + label;
         }
 
-        public static IDisposable AsEnvironmentSpecificTest(string label)
-        {
-            if (AdditionalInformation == null)
-            {
-                AdditionalInformation = label;
-            }
-            else
-            {
-                AdditionalInformation += "." + label;
-            }
+        return new EnvironmentSpecificCleanUp();
+    }
 
-            return new EnvironmentSpecificCleanUp();
-        }
-
-        public static void Clear()
-        {
-            AdditionalInformation = null;
-        }
+    public static void Clear()
+    {
+        AdditionalInformation = null;
     }
 }

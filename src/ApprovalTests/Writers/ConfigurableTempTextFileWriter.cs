@@ -1,31 +1,30 @@
 ﻿using System.IO;
 
-namespace ApprovalTests.Writers
+namespace ApprovalTests.Writers;
+
+public class ConfigurableTempTextFileWriter : ApprovalTextWriter
 {
-    public class ConfigurableTempTextFileWriter : ApprovalTextWriter
+    private string receivedFilePath;
+    private string approvedFilePath;
+
+    public ConfigurableTempTextFileWriter(string approvedFilePath, string data)
+        : base(data, Path.GetExtension(approvedFilePath))
     {
-        private string receivedFilePath;
-        private string approvedFilePath;
+        this.approvedFilePath = Path.GetFullPath(approvedFilePath);
+    }
 
-        public ConfigurableTempTextFileWriter(string approvedFilePath, string data)
-            : base(data, Path.GetExtension(approvedFilePath))
+    public override string GetApprovalFilename(string basename)
+    {
+        return approvedFilePath;
+    }
+
+    public override string GetReceivedFilename(string basename)
+    {
+        if (string.IsNullOrEmpty(receivedFilePath))
         {
-            this.approvedFilePath = Path.GetFullPath(approvedFilePath);
+            receivedFilePath = Path.ChangeExtension(Path.Combine(Path.GetTempPath(), Path.GetTempFileName()), ExtensionWithDot);
         }
 
-        public override string GetApprovalFilename(string basename)
-        {
-            return approvedFilePath;
-        }
-
-        public override string GetReceivedFilename(string basename)
-        {
-            if (string.IsNullOrEmpty(receivedFilePath))
-            {
-                receivedFilePath = Path.ChangeExtension(Path.Combine(Path.GetTempPath(), Path.GetTempFileName()), ExtensionWithDot);
-            }
-
-            return receivedFilePath;
-        }
+        return receivedFilePath;
     }
 }

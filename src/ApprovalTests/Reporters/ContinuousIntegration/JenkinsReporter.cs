@@ -1,20 +1,19 @@
 ﻿using System;
 using ApprovalTests.Core;
 
-namespace ApprovalTests.Reporters.ContinuousIntegration
+namespace ApprovalTests.Reporters.ContinuousIntegration;
+
+public class JenkinsReporter : IEnvironmentAwareReporter
 {
-    public class JenkinsReporter : IEnvironmentAwareReporter
+    public static readonly JenkinsReporter INSTANCE = new JenkinsReporter();
+
+    public void Report(string approved, string received)
     {
-        public static readonly JenkinsReporter INSTANCE = new JenkinsReporter();
+        ContinuousDeliveryUtils.ReportOnServer(approved, received);
+    }
 
-        public void Report(string approved, string received)
-        {
-            ContinuousDeliveryUtils.ReportOnServer(approved, received);
-        }
-
-        public bool IsWorkingInThisEnvironment(string forFile)
-        {
-            return Environment.GetEnvironmentVariable("JENKINS_URL") != null;
-        }
+    public bool IsWorkingInThisEnvironment(string forFile)
+    {
+        return Environment.GetEnvironmentVariable("JENKINS_URL") != null;
     }
 }

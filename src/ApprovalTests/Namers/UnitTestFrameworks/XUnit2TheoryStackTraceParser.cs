@@ -1,16 +1,15 @@
-namespace ApprovalTests.Namers.UnitTestFrameworks
+namespace ApprovalTests.Namers.UnitTestFrameworks;
+
+using StackTraceParsers;
+
+public class XUnit2TheoryStackTraceParser : AttributeStackTraceParser
 {
-    using StackTraceParsers;
+    public const string TheoryAttribute = "Xunit.TheoryAttribute";
 
-    public class XUnit2TheoryStackTraceParser : AttributeStackTraceParser
+    public override string ForTestingFramework => "xUnit2.net";
+
+    protected override string GetAttributeType()
     {
-        public const string TheoryAttribute = "Xunit.TheoryAttribute";
-
-        public override string ForTestingFramework => "xUnit2.net";
-
-        protected override string GetAttributeType()
-        {
-            return TheoryAttribute;
-        }
+        return TheoryAttribute;
     }
 }

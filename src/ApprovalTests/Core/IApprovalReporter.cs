@@ -1,8 +1,7 @@
 
-namespace ApprovalTests.Core
+namespace ApprovalTests.Core;
+
+public interface IApprovalFailureReporter
 {
-    public interface IApprovalFailureReporter
-    {
-        void Report(string approved, string received);
-    }
+    void Report(string approved, string received);
 }

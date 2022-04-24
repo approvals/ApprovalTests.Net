@@ -1,20 +1,19 @@
 using ApprovalTests.Reporters;
 using NUnit.Framework;
 
-namespace ApprovalTests.Tests.Reporters
+namespace ApprovalTests.Tests.Reporters;
+
+[TestFixture]
+public class AssemblyLevelTest
 {
-    [TestFixture]
-    public class AssemblyLevelTest
+    [Test]
+    public void TestClassLevel()
     {
-        [Test]
-        public void TestClassLevel()
+        using (Approvals.SetFrontLoadedReporter(ReportWithoutFrontLoading.INSTANCE))
         {
-            using (Approvals.SetFrontLoadedReporter(ReportWithoutFrontLoading.INSTANCE))
-            {
-                Assert.AreEqual(typeof(DiffReporter), Approvals.GetReporter().GetType());
-            }
+            Assert.AreEqual(typeof(DiffReporter), Approvals.GetReporter().GetType());
         }
-
-
     }
+
+
 }

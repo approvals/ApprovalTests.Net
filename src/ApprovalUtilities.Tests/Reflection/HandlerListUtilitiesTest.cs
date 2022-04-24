@@ -6,30 +6,28 @@ using ApprovalTests.Tests.Events;
 using Xunit;
 using ApprovalUtilities.Reflection;
 
-namespace ApprovalUtilities.Tests.Reflection
+namespace ApprovalUtilities.Tests.Reflection;
+
+public class HandlerListUtilitiesTest
 {
-
-    public class HandlerListUtilitiesTest
+    [Fact]
+    public void EnumerateList()
     {
-        [Fact]
-        public void EnumerateList()
-        {
-            Approvals.VerifyAll(GetEventHandlerList().AsEnumerable(), string.Empty);
-        }
+        Approvals.VerifyAll(GetEventHandlerList().AsEnumerable(), string.Empty);
+    }
 
-        [Fact]
-        public void GetListHead()
-        {
-            Approvals.Verify(GetEventHandlerList().GetHead());
-        }
+    [Fact]
+    public void GetListHead()
+    {
+        Approvals.Verify(GetEventHandlerList().GetHead());
+    }
 
-        private static EventHandlerList GetEventHandlerList()
-        {
-            var button = new Button();
-            button.Click += TestingListener.AnotherStandardCallback;
-            button.GotFocus += TestingListener.StandardCallback;
-            var eventListInfo = button.NonPublicInstanceProperties(pi => pi.Name == "Events").Single();
-            return eventListInfo.GetValue<EventHandlerList>(button, null);
-        }
+    private static EventHandlerList GetEventHandlerList()
+    {
+        var button = new Button();
+        button.Click += TestingListener.AnotherStandardCallback;
+        button.GotFocus += TestingListener.StandardCallback;
+        var eventListInfo = button.NonPublicInstanceProperties(pi => pi.Name == "Events").Single();
+        return eventListInfo.GetValue<EventHandlerList>(button, null);
     }
 }

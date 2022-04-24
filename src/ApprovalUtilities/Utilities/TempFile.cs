@@ -1,37 +1,36 @@
 ﻿using System;
 using System.IO;
 
-namespace ApprovalUtilities.Utilities
+namespace ApprovalUtilities.Utilities;
+
+public class TempFile : IDisposable
 {
-    public class TempFile : IDisposable
+    private readonly FileInfo backingFile;
+
+    public TempFile(string name)
     {
-        private readonly FileInfo backingFile;
+        backingFile = new FileInfo(name);
+        backingFile.Create().Close();
+    }
 
-        public TempFile(string name)
+    ~TempFile()
+    {
+        Dispose();
+    }
+
+    public FileInfo File => backingFile;
+
+    public void Dispose()
+    {
+        // File on the file system is not a managed resource :)
+        if (backingFile.Exists)
         {
-            backingFile = new FileInfo(name);
-            backingFile.Create().Close();
+            backingFile.Delete();
         }
+    }
 
-        ~TempFile()
-        {
-            Dispose();
-        }
-
-        public FileInfo File => backingFile;
-
-        public void Dispose()
-        {
-            // File on the file system is not a managed resource :)
-            if (backingFile.Exists)
-            {
-                backingFile.Delete();
-            }
-        }
-
-        public void WriteAllText(string text)
-        {
-            System.IO.File.WriteAllText(File.FullName, text);
-        }
+    public void WriteAllText(string text)
+    {
+        System.IO.File.WriteAllText(File.FullName, text);
     }
 }

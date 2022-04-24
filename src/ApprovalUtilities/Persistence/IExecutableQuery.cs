@@ -1,9 +1,8 @@
-namespace ApprovalUtilities.Persistence
-{
-    public interface IExecutableQuery
-    {
-        string GetQuery();
+namespace ApprovalUtilities.Persistence;
 
-        string ExecuteQuery(string query);
-    }
+public interface IExecutableQuery
+{
+    string GetQuery();
+
+    string ExecuteQuery(string query);
 }

@@ -1,17 +1,16 @@
-namespace ApprovalUtilities.Persistence
+namespace ApprovalUtilities.Persistence;
+
+public class SaverSynchronousWrapper<T> : ISaver<T>
 {
-    public class SaverSynchronousWrapper<T> : ISaver<T>
+    private readonly ISaverAsync<T> saver;
+
+    public SaverSynchronousWrapper(ISaverAsync<T> saver)
     {
-        private readonly ISaverAsync<T> saver;
+        this.saver = saver;
+    }
 
-        public SaverSynchronousWrapper(ISaverAsync<T> saver)
-        {
-            this.saver = saver;
-        }
-
-        public T Save(T objectToBeSaved)
-        {
-            return saver.Save(objectToBeSaved).Result;
-        }
+    public T Save(T objectToBeSaved)
+    {
+        return saver.Save(objectToBeSaved).Result;
     }
 }

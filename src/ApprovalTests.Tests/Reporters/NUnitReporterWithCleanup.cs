@@ -1,20 +1,19 @@
 using System.IO;
 using ApprovalTests.Reporters.TestFrameworks;
 
-namespace ApprovalTests.Tests.Reporters
+namespace ApprovalTests.Tests.Reporters;
+
+public class NUnitReporterWithCleanup : NUnitReporter
 {
-    public class NUnitReporterWithCleanup : NUnitReporter
+    public override void Report(string approved, string received)
     {
-        public override void Report(string approved, string received)
+        try
         {
-            try
-            {
-                base.Report(approved, received);
-            }
-            finally
-            {
-                File.Delete(received);
-            }
+            base.Report(approved, received);
+        }
+        finally
+        {
+            File.Delete(received);
         }
     }
 }

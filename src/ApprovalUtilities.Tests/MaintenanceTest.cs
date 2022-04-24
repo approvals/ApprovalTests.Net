@@ -1,14 +1,13 @@
 ﻿using ApprovalTests.Maintenance;
 using Xunit;
 
-namespace ApprovalUtilities.Tests
+namespace ApprovalUtilities.Tests;
+
+public class MaintenanceTest
 {
-    public class MaintenanceTest
+    [Fact]
+    public void EnsureNoAbandonedFiles()
     {
-        [Fact]
-        public void EnsureNoAbandonedFiles()
-        {
-            ApprovalMaintenance.VerifyNoAbandonedFiles("Reflection");
-        }
+        ApprovalMaintenance.VerifyNoAbandonedFiles("Reflection");
     }
 }

@@ -1,21 +1,20 @@
 
-namespace ApprovalUtilities.SimpleLogger.Writers
+namespace ApprovalUtilities.SimpleLogger.Writers;
+
+public class MultiWriter : IAppendable
 {
-    public class MultiWriter : IAppendable
+    private readonly IAppendable[] writers;
+
+    public MultiWriter(params IAppendable[] writers)
     {
-        private readonly IAppendable[] writers;
+        this.writers = writers;
+    }
 
-        public MultiWriter(params IAppendable[] writers)
+    public void AppendLine(string text)
+    {
+        foreach (var writer in writers)
         {
-            this.writers = writers;
-        }
-
-        public void AppendLine(string text)
-        {
-            foreach (var writer in writers)
-            {
-                writer.AppendLine(text);
-            }
+            writer.AppendLine(text);
         }
     }
 }

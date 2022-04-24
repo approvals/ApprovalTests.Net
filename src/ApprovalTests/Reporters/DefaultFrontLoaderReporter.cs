@@ -1,13 +1,13 @@
 ﻿using ApprovalTests.Reporters.ContinuousIntegration;
 
-namespace ApprovalTests.Reporters
-{
-    public class DefaultFrontLoaderReporter : FirstWorkingReporter
-    {
-        public static readonly DefaultFrontLoaderReporter INSTANCE = new DefaultFrontLoaderReporter();
+namespace ApprovalTests.Reporters;
 
-        public DefaultFrontLoaderReporter()
-            : base(
+public class DefaultFrontLoaderReporter : FirstWorkingReporter
+{
+    public static readonly DefaultFrontLoaderReporter INSTANCE = new DefaultFrontLoaderReporter();
+
+    public DefaultFrontLoaderReporter()
+        : base(
             // begin-snippet: continuous_integration
             TfsReporter.INSTANCE,
             TfsVnextReporter.INSTANCE,
@@ -20,8 +20,7 @@ namespace ApprovalTests.Reporters
             GoContinuousDeliveryReporter.INSTANCE,
             AppVeyorReporter.INSTANCE
             // end-snippet
-            )
-        {
-        }
+        )
+    {
     }
 }

@@ -1,13 +1,12 @@
 ﻿using DiffEngine;
 
-namespace ApprovalTests.Reporters
-{
-    public class TortoiseTextDiffReporter : DiffToolReporter
-    {
-        public static readonly TortoiseTextDiffReporter INSTANCE = new TortoiseTextDiffReporter();
+namespace ApprovalTests.Reporters;
 
-        public TortoiseTextDiffReporter() : base(DiffTool.TortoiseMerge)
-        {
-        }
+public class TortoiseTextDiffReporter : DiffToolReporter
+{
+    public static readonly TortoiseTextDiffReporter INSTANCE = new TortoiseTextDiffReporter();
+
+    public TortoiseTextDiffReporter() : base(DiffTool.TortoiseMerge)
+    {
     }
 }

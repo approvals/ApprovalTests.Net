@@ -6,89 +6,88 @@ using System.Net.Mail;
 using ApprovalTests.Scrubber;
 using ApprovalTests.Writers;
 
-namespace ApprovalTests.Email
+namespace ApprovalTests.Email;
+
+public static class EmailApprovals
 {
-    public static class EmailApprovals
+    public static void Verify(MailMessage email)
     {
-        public static void Verify(MailMessage email)
-        {
-            VerifyScrubbed(email, ScrubBoundaries);
-        }
-        public static void VerifyScrubbed(MailMessage email, Func<string, string> scrubber)
-        {
-            var emailText = CreateEmail(email);
-            emailText = scrubber.Invoke(emailText);
+        VerifyScrubbed(email, ScrubBoundaries);
+    }
+    public static void VerifyScrubbed(MailMessage email, Func<string, string> scrubber)
+    {
+        var emailText = CreateEmail(email);
+        emailText = scrubber.Invoke(emailText);
 
-            Approvals.Verify(WriterFactory.CreateTextWriter(emailText, "eml"));
-        }
-        public static void VerifyScrubbed(MailMessage email, params Func<string, string>[] scrubbers)
-        {
-            VerifyScrubbed(email, ScrubberUtils.Combine(scrubbers));
-        }
+        Approvals.Verify(WriterFactory.CreateTextWriter(emailText, "eml"));
+    }
+    public static void VerifyScrubbed(MailMessage email, params Func<string, string>[] scrubbers)
+    {
+        VerifyScrubbed(email, ScrubberUtils.Combine(scrubbers));
+    }
 
-        public static string CreateEmail(MailMessage email)
+    public static string CreateEmail(MailMessage email)
+    {
+        var tempDir = Path.GetTempFileName();
+        File.Delete(tempDir);
+        Directory.CreateDirectory(tempDir);
+        var client = new SmtpClient("doesntmatter")
         {
-            var tempDir = Path.GetTempFileName();
-            File.Delete(tempDir);
-            Directory.CreateDirectory(tempDir);
-            var client = new SmtpClient("doesntmatter")
-            {
-                DeliveryMethod = SmtpDeliveryMethod.SpecifiedPickupDirectory,
-                PickupDirectoryLocation = tempDir
-            };
-            client.Send(email);
-            var emailText = ReadFileWhereLines(GetLatestFile(client.PickupDirectoryLocation), l => !l.StartsWith("Date"));
-            return emailText;
-        }
+            DeliveryMethod = SmtpDeliveryMethod.SpecifiedPickupDirectory,
+            PickupDirectoryLocation = tempDir
+        };
+        client.Send(email);
+        var emailText = ReadFileWhereLines(GetLatestFile(client.PickupDirectoryLocation), l => !l.StartsWith("Date"));
+        return emailText;
+    }
 
-        private static string ScrubBoundaries(string emailText)
+    private static string ScrubBoundaries(string emailText)
+    {
+        var boundaries = FindBoundaries(emailText);
+        emailText = ScrubBoundaries(emailText, boundaries);
+        return emailText;
+    }
+
+    private static string ScrubBoundaries(string emailText, string[] boundaries)
+    {
+        var count = 0;
+        var guid = "--boundary_{0}_00000000-0000-0000-0000-00000000000{0}";
+        foreach (var b in boundaries)
         {
-            var boundaries = FindBoundaries(emailText);
-            emailText = ScrubBoundaries(emailText, boundaries);
-            return emailText;
-        }
-
-        private static string ScrubBoundaries(string emailText, string[] boundaries)
-        {
-            var count = 0;
-            var guid = "--boundary_{0}_00000000-0000-0000-0000-00000000000{0}";
-            foreach (var b in boundaries)
-            {
-                emailText = emailText.Replace(b, string.Format(guid,count++));
-            }
-
-            return emailText;
+            emailText = emailText.Replace(b, string.Format(guid,count++));
         }
 
-        public static string[] FindBoundaries(string emailText)
-        {
-            var startPoint = 0;
-            var boundaries = new HashSet<string>();
-            while ((startPoint = emailText.IndexOf("boundary=--", startPoint)) != -1)
-            {
-                var preamble = "boundary=--boundary_0_".Length;
-                var guid = "7ddc4a25-b0f6-44d4-bcb0-03f577170c19".Length;
-                boundaries.Add(emailText.Substring(preamble + startPoint, guid));
-                startPoint++;
-            }
+        return emailText;
+    }
 
-            return boundaries.ToArray();
+    public static string[] FindBoundaries(string emailText)
+    {
+        var startPoint = 0;
+        var boundaries = new HashSet<string>();
+        while ((startPoint = emailText.IndexOf("boundary=--", startPoint)) != -1)
+        {
+            var preamble = "boundary=--boundary_0_".Length;
+            var guid = "7ddc4a25-b0f6-44d4-bcb0-03f577170c19".Length;
+            boundaries.Add(emailText.Substring(preamble + startPoint, guid));
+            startPoint++;
         }
 
-        public static string ReadFileWhereLines(string latestFile, Func<string, bool> predicate)
-        {
-            var latestFileLines = File.ReadAllLines(latestFile).Where(predicate).ToArray();
-            var newText = string.Join(Environment.NewLine, latestFileLines);
-            return newText;
-        }
+        return boundaries.ToArray();
+    }
 
-        public static string GetLatestFile(string dir)
-        {
-            return new DirectoryInfo(dir)
-                .GetFiles("*.eml")
-                .OrderBy(f => f.CreationTime)
-                .Last()
-                .FullName;
-        }
+    public static string ReadFileWhereLines(string latestFile, Func<string, bool> predicate)
+    {
+        var latestFileLines = File.ReadAllLines(latestFile).Where(predicate).ToArray();
+        var newText = string.Join(Environment.NewLine, latestFileLines);
+        return newText;
+    }
+
+    public static string GetLatestFile(string dir)
+    {
+        return new DirectoryInfo(dir)
+            .GetFiles("*.eml")
+            .OrderBy(f => f.CreationTime)
+            .Last()
+            .FullName;
     }
 }

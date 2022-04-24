@@ -1,12 +1,11 @@
 using System;
 
-namespace ApprovalTests.Namers
+namespace ApprovalTests.Namers;
+
+public class EnvironmentSpecificCleanUp : IDisposable
 {
-    public class EnvironmentSpecificCleanUp : IDisposable
+    public void Dispose()
     {
-        public void Dispose()
-        {
-            NamerFactory.Clear();
-        }
+        NamerFactory.Clear();
     }
 }

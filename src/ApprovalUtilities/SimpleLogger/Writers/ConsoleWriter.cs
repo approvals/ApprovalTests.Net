@@ -1,12 +1,11 @@
 ﻿using System;
 
-namespace ApprovalUtilities.SimpleLogger.Writers
+namespace ApprovalUtilities.SimpleLogger.Writers;
+
+public class ConsoleWriter : IAppendable
 {
-    public class ConsoleWriter : IAppendable
+    public void AppendLine(string text)
     {
-        public void AppendLine(string text)
-        {
-            Console.WriteLine(text);
-        }
+        Console.WriteLine(text);
     }
 }

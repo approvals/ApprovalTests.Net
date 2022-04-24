@@ -1,16 +1,15 @@
 using ApprovalTests.Core;
 using TextCopy;
 
-namespace ApprovalTests.Reporters
-{
-    public class ClipboardReporter : IApprovalFailureReporter
-    {
-        public static readonly ClipboardReporter INSTANCE = new ClipboardReporter();
+namespace ApprovalTests.Reporters;
 
-        public void Report(string approved, string received)
-        {
-            var text = QuietReporter.GetCommandLineForApproval(approved, received);
-            ClipboardService.SetText(text);
-        }
+public class ClipboardReporter : IApprovalFailureReporter
+{
+    public static readonly ClipboardReporter INSTANCE = new ClipboardReporter();
+
+    public void Report(string approved, string received)
+    {
+        var text = QuietReporter.GetCommandLineForApproval(approved, received);
+        ClipboardService.SetText(text);
     }
 }

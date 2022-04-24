@@ -5,56 +5,55 @@ using ApprovalTests.Set;
 using ApprovalUtilities.Utilities;
 using System.Text.RegularExpressions;
 
-namespace ApprovalTests.Tests.Set
+namespace ApprovalTests.Tests.Set;
+
+[TestFixture]
+public class SetTests
 {
-    [TestFixture]
-    public class SetTests
+    [Test]
+    public void TestListString()
     {
-        [Test]
-        public void TestListString()
-        {
-            // Approved file has order apple, banana, carrot
-            var list = new List<string> { "carrot", "apple", "banana" };
-            SetApprovals.VerifySet(list, string.Empty);
-        }
+        // Approved file has order apple, banana, carrot
+        var list = new List<string> { "carrot", "apple", "banana" };
+        SetApprovals.VerifySet(list, string.Empty);
+    }
 
-        public class Foo: IComparable<Foo>
-        {
-            public string Bar { get; set; }
+    public class Foo: IComparable<Foo>
+    {
+        public string Bar { get; set; }
 
-            public int CompareTo(Foo other)
-            {
-                return Bar.CompareTo(other.Bar);
-            }
-        }
-
-        [Test]
-        public void TestListObject()
+        public int CompareTo(Foo other)
         {
-            var list = new List<Foo>
-            {
-                new Foo { Bar = "carrot" },
-                new Foo { Bar = "apple" },
-                new Foo { Bar = "banana" },
-            };
-            SetApprovals.VerifySet(list, string.Empty, f => f.Bar);
+            return Bar.CompareTo(other.Bar);
         }
+    }
 
-        [Test]
-        public void TestFile()
+    [Test]
+    public void TestListObject()
+    {
+        var list = new List<Foo>
         {
-            var path = PathUtilities.GetDirectoryForCaller();
-            var file = path + "a.txt";
-            SetApprovals.VerifyFileAsSet(file);
-        }
+            new Foo { Bar = "carrot" },
+            new Foo { Bar = "apple" },
+            new Foo { Bar = "banana" },
+        };
+        SetApprovals.VerifySet(list, string.Empty, f => f.Bar);
+    }
 
-        [Test]
-        public void TestFileWithScrubber()
-        {
-            var path = PathUtilities.GetDirectoryForCaller();
-            var file = path + "a.txt";
-            Func<string, string> scrubber =  s => Regex.Replace(s, @"^[^\|]*", "");
-            SetApprovals.VerifyFileAsSet(file, scrubber);
-        }
+    [Test]
+    public void TestFile()
+    {
+        var path = PathUtilities.GetDirectoryForCaller();
+        var file = path + "a.txt";
+        SetApprovals.VerifyFileAsSet(file);
+    }
+
+    [Test]
+    public void TestFileWithScrubber()
+    {
+        var path = PathUtilities.GetDirectoryForCaller();
+        var file = path + "a.txt";
+        Func<string, string> scrubber =  s => Regex.Replace(s, @"^[^\|]*", "");
+        SetApprovals.VerifyFileAsSet(file, scrubber);
     }
 }

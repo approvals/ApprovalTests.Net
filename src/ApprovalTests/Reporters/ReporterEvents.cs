@@ -1,19 +1,18 @@
 using System;
 using System.Collections.Generic;
 
-namespace ApprovalTests.Reporters
-{
-    public static class ReporterEvents
-    {
-        public static readonly List<Action<string>> CreateNewFileEventListeners =
-            new List<Action<string>>();
+namespace ApprovalTests.Reporters;
 
-        public static void CreatedApprovedFile(string approved)
+public static class ReporterEvents
+{
+    public static readonly List<Action<string>> CreateNewFileEventListeners =
+        new List<Action<string>>();
+
+    public static void CreatedApprovedFile(string approved)
+    {
+        foreach (var listener in CreateNewFileEventListeners)
         {
-            foreach (var listener in CreateNewFileEventListeners)
-            {
-                listener(approved);
-            }
+            listener(approved);
         }
     }
 }

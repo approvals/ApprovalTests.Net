@@ -1,20 +1,19 @@
 using System;
 using ApprovalTests.Core;
 
-namespace ApprovalTests.Reporters.ContinuousIntegration
+namespace ApprovalTests.Reporters.ContinuousIntegration;
+
+public class TfsVnextReporter : IEnvironmentAwareReporter
 {
-    public class TfsVnextReporter : IEnvironmentAwareReporter
+    public static readonly TfsVnextReporter INSTANCE = new TfsVnextReporter();
+
+    public void Report(string approved, string received)
     {
-        public static readonly TfsVnextReporter INSTANCE = new TfsVnextReporter();
+        ContinuousDeliveryUtils.ReportOnServer(approved, received);
+    }
 
-        public void Report(string approved, string received)
-        {
-            ContinuousDeliveryUtils.ReportOnServer(approved, received);
-        }
-
-        public bool IsWorkingInThisEnvironment(string forFile)
-        {
-            return Environment.GetEnvironmentVariable("SYSTEM_TEAMPROJECT") != null;
-        }
+    public bool IsWorkingInThisEnvironment(string forFile)
+    {
+        return Environment.GetEnvironmentVariable("SYSTEM_TEAMPROJECT") != null;
     }
 }

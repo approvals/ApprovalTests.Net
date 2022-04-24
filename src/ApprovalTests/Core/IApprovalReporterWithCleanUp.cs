@@ -1,7 +1,6 @@
-﻿namespace ApprovalTests.Core
+﻿namespace ApprovalTests.Core;
+
+public interface IApprovalReporterWithCleanUp
 {
-    public interface IApprovalReporterWithCleanUp
-    {
-        void CleanUp(string approved, string received);
-    }
+    void CleanUp(string approved, string received);
 }

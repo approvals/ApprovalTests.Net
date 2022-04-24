@@ -1,25 +1,24 @@
 using ApprovalTests.Core;
 using DiffEngine;
 
-namespace ApprovalTests.Reporters
+namespace ApprovalTests.Reporters;
+
+public class DiffToolReporter : IEnvironmentAwareReporter
 {
-    public class DiffToolReporter : IEnvironmentAwareReporter
+    DiffTool diffTool;
+
+    public DiffToolReporter(DiffTool diffTool)
     {
-        DiffTool diffTool;
+        this.diffTool = diffTool;
+    }
 
-        public DiffToolReporter(DiffTool diffTool)
-        {
-            this.diffTool = diffTool;
-        }
+    public void Report(string approved, string received)
+    {
+        DiffRunner.Launch(diffTool, received, approved);
+    }
 
-        public void Report(string approved, string received)
-        {
-            DiffRunner.Launch(diffTool, received, approved);
-        }
-
-        public bool IsWorkingInThisEnvironment(string forFile)
-        {
-            return DiffTools.IsDetectedFor(diffTool, forFile);
-        }
+    public bool IsWorkingInThisEnvironment(string forFile)
+    {
+        return DiffTools.IsDetectedFor(diffTool, forFile);
     }
 }

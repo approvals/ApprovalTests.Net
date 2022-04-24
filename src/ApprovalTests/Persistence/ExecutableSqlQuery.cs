@@ -1,25 +1,24 @@
 ﻿using ApprovalUtilities.Persistence;
 using ApprovalUtilities.Persistence.Database;
 
-namespace ApprovalTests.Persistence
+namespace ApprovalTests.Persistence;
+
+public class ExecutableSqlQuery : IExecutableQuery
 {
-    public class ExecutableSqlQuery : IExecutableQuery
+    private readonly IDatabaseToExecutableQueryAdapter adapter;
+
+    public ExecutableSqlQuery(IDatabaseToExecutableQueryAdapter adapter)
     {
-        private readonly IDatabaseToExecutableQueryAdapter adapter;
+        this.adapter = adapter;
+    }
 
-        public ExecutableSqlQuery(IDatabaseToExecutableQueryAdapter adapter)
-        {
-            this.adapter = adapter;
-        }
+    public string GetQuery()
+    {
+        return adapter.GetQuery();
+    }
 
-        public string GetQuery()
-        {
-            return adapter.GetQuery();
-        }
-
-        public string ExecuteQuery(string query)
-        {
-            return SqlLoaderUtils.ExecuteQueryToDisplayString(query, adapter.GetConnection());
-        }
+    public string ExecuteQuery(string query)
+    {
+        return SqlLoaderUtils.ExecuteQueryToDisplayString(query, adapter.GetConnection());
     }
 }

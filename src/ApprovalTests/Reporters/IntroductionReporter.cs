@@ -2,24 +2,24 @@
 using System.Diagnostics;
 using ApprovalTests.Core;
 
-namespace ApprovalTests.Reporters
+namespace ApprovalTests.Reporters;
+
+public class IntroductionReporter : IApprovalFailureReporter
 {
-    public class IntroductionReporter : IApprovalFailureReporter
+    public static readonly IntroductionReporter INSTANCE = new IntroductionReporter();
+
+    public void Report(string approved, string received)
     {
-        public static readonly IntroductionReporter INSTANCE = new IntroductionReporter();
+        var message = GetFriendlyWelcomeMessage();
+        Debug.WriteLine(message);
+        Console.WriteLine(message);
+        throw new Exception(message);
+    }
 
-        public void Report(string approved, string received)
-        {
-            var message = GetFriendlyWelcomeMessage();
-            Debug.WriteLine(message);
-            Console.WriteLine(message);
-            throw new Exception(message);
-        }
-
-        public string GetFriendlyWelcomeMessage()
-        {
-            var message =
-                @"Welcome to ApprovalTests.
+    public string GetFriendlyWelcomeMessage()
+    {
+        var message =
+            @"Welcome to ApprovalTests.
 ====
 
 Please add:
@@ -51,7 +51,6 @@ using ApprovalTests.Reporters;
 ```
 
 ";
-            return message;
-        }
+        return message;
     }
 }
