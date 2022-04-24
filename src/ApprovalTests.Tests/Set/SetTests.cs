@@ -33,9 +33,9 @@ public class SetTests
     {
         var list = new List<Foo>
         {
-            new Foo { Bar = "carrot" },
-            new Foo { Bar = "apple" },
-            new Foo { Bar = "banana" },
+            new() { Bar = "carrot" },
+            new() { Bar = "apple" },
+            new() { Bar = "banana" },
         };
         SetApprovals.VerifySet(list, string.Empty, f => f.Bar);
     }

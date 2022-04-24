@@ -20,7 +20,7 @@ namespace ApprovalTests;
 
 public class Approvals
 {
-    private static readonly ThreadLocal<Caller> currentCaller = new ThreadLocal<Caller>();
+    private static readonly ThreadLocal<Caller> currentCaller = new();
     private static Func<IApprovalNamer> defaultNamerCreator = () => new UnitTestFrameworkNamer();
     private static Func<IApprovalWriter, IApprovalNamer, bool, IApprovalApprover> defaultApproverCreator = (writer, namer, shouldIgnoreLineEndings) => new FileApprover(writer, namer, shouldIgnoreLineEndings);
 

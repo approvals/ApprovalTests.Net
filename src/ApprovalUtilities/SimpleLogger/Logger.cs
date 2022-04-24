@@ -6,7 +6,7 @@ namespace ApprovalUtilities.SimpleLogger;
 
 public static class Logger
 {
-    private static LoggerInstance log = new LoggerInstance();
+    private static LoggerInstance log = new();
 
     public static IAppendable Writer
     {

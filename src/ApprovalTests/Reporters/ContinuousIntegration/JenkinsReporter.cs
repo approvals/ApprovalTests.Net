@@ -5,7 +5,7 @@ namespace ApprovalTests.Reporters.ContinuousIntegration;
 
 public class JenkinsReporter : IEnvironmentAwareReporter
 {
-    public static readonly JenkinsReporter INSTANCE = new JenkinsReporter();
+    public static readonly JenkinsReporter INSTANCE = new();
 
     public void Report(string approved, string received)
     {

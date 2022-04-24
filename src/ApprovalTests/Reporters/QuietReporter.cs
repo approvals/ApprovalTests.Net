@@ -7,7 +7,7 @@ namespace ApprovalTests.Reporters;
 
 public class QuietReporter : IEnvironmentAwareReporter
 {
-    public static readonly QuietReporter INSTANCE = new QuietReporter();
+    public static readonly QuietReporter INSTANCE = new();
 
     public void Report(string approved, string received)
     {

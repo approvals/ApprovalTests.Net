@@ -5,7 +5,7 @@ namespace ApprovalTests.Reporters.ContinuousIntegration;
 
 public class MyGetReporter : IEnvironmentAwareReporter
 {
-    public static readonly MyGetReporter INSTANCE = new MyGetReporter();
+    public static readonly MyGetReporter INSTANCE = new();
 
     public void Report(string approved, string received)
     {

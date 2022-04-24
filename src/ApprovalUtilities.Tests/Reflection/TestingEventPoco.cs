@@ -5,7 +5,7 @@ namespace ApprovalTests.Tests.Events;
 
 public class TestingEventPoco
 {
-    private readonly object NonEventField = new object();
+    private readonly object NonEventField = new();
 
     private Func<bool> Truth = () => true;
 

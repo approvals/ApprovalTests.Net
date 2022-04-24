@@ -5,7 +5,7 @@ namespace ApprovalTests.Reporters;
 
 public class PowerShellClipboardReporter : IApprovalFailureReporter
 {
-    public static readonly PowerShellClipboardReporter INSTANCE = new PowerShellClipboardReporter();
+    public static readonly PowerShellClipboardReporter INSTANCE = new();
 
     public void Report(string approved, string received)
     {

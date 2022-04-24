@@ -7,7 +7,7 @@ namespace ApprovalTests.Reporters;
 
 public class DiffReporter : IEnvironmentAwareReporter
 {
-    public static readonly DiffReporter INSTANCE = new DiffReporter();
+    public static readonly DiffReporter INSTANCE = new();
 
     public void Report(string approved, string received)
     {

@@ -35,7 +35,7 @@ public class ApprovalsFilename
         return info;
     }
 
-    public List<string> AdditionalInformation = new List<string>();
+    public List<string> AdditionalInformation = new();
 
     public string Extension { get; set; }
 

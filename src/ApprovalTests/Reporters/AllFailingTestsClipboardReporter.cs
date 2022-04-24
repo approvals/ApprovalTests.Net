@@ -6,8 +6,8 @@ namespace ApprovalTests.Reporters;
 
 public class AllFailingTestsClipboardReporter : IApprovalFailureReporter
 {
-    static StringBuilder builder = new StringBuilder();
-    public static readonly AllFailingTestsClipboardReporter INSTANCE = new AllFailingTestsClipboardReporter();
+    static StringBuilder builder = new();
+    public static readonly AllFailingTestsClipboardReporter INSTANCE = new();
 
     public void Report(string approved, string received)
     {

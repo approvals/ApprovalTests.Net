@@ -5,7 +5,7 @@ namespace ApprovalTests.Namers;
 
 public static class NamerFactory
 {
-    static AsyncLocal<string> additionalInformation = new AsyncLocal<string>();
+    static AsyncLocal<string> additionalInformation = new();
 
     public static string AdditionalInformation
     {

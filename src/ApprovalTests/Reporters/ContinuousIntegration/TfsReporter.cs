@@ -5,7 +5,7 @@ namespace ApprovalTests.Reporters.ContinuousIntegration;
 
 public class TfsReporter : IEnvironmentAwareReporter
 {
-    public static readonly TfsReporter INSTANCE = new TfsReporter();
+    public static readonly TfsReporter INSTANCE = new();
 
     public bool IsWorkingInThisEnvironment(string forFile)
     {

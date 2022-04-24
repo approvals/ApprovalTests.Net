@@ -5,7 +5,7 @@ namespace ApprovalTests.Reporters.ContinuousIntegration;
 
 public class TfsVnextReporter : IEnvironmentAwareReporter
 {
-    public static readonly TfsVnextReporter INSTANCE = new TfsVnextReporter();
+    public static readonly TfsVnextReporter INSTANCE = new();
 
     public void Report(string approved, string received)
     {

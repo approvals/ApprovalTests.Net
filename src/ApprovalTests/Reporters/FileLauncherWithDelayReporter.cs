@@ -4,7 +4,7 @@ using ApprovalTests.Reporters;
 
 public class FileLauncherWithDelayReporter : IApprovalFailureReporter
 {
-    public static readonly FileLauncherWithDelayReporter INSTANCE = new FileLauncherWithDelayReporter();
+    public static readonly FileLauncherWithDelayReporter INSTANCE = new();
 
     private readonly int seconds;
 

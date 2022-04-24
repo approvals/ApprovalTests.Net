@@ -5,7 +5,7 @@ namespace ApprovalTests.Reporters.ContinuousIntegration;
 
 public class AppVeyorReporter : IEnvironmentAwareReporter
 {
-    public static readonly AppVeyorReporter INSTANCE = new AppVeyorReporter();
+    public static readonly AppVeyorReporter INSTANCE = new();
 
     public void Report(string approved, string received)
     {

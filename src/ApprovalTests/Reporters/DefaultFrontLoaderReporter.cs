@@ -4,7 +4,7 @@ namespace ApprovalTests.Reporters;
 
 public class DefaultFrontLoaderReporter : FirstWorkingReporter
 {
-    public static readonly DefaultFrontLoaderReporter INSTANCE = new DefaultFrontLoaderReporter();
+    public static readonly DefaultFrontLoaderReporter INSTANCE = new();
 
     public DefaultFrontLoaderReporter()
         : base(

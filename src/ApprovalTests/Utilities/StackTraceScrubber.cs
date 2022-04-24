@@ -18,8 +18,8 @@ public static class StackTraceScrubber
         return regex.Replace(source, string.Empty);
     }
 
-    static Regex windowsPathRegex = new Regex(@"\b\w:[\\\w.\s-]+\\");
-    static Regex unixPathRegex = new Regex(@"\/[\/\w.\s-]+\/");
+    static Regex windowsPathRegex = new(@"\b\w:[\\\w.\s-]+\\");
+    static Regex unixPathRegex = new(@"\/[\/\w.\s-]+\/");
 
     public static string ScrubPaths(string source)
     {

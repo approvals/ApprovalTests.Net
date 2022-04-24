@@ -7,7 +7,7 @@ namespace ApprovalTests.Reporters.ContinuousIntegration;
 
 public class MightyMooseAutoTestReporter : IEnvironmentAwareReporter
 {
-    public static readonly MightyMooseAutoTestReporter INSTANCE = new MightyMooseAutoTestReporter();
+    public static readonly MightyMooseAutoTestReporter INSTANCE = new();
 
     public static bool? IsRunning;
 

@@ -5,7 +5,7 @@ namespace ApprovalUtilities.SimpleLogger.Writers;
 
 public class StringBuilderLogger : IAppendable
 {
-    private StringBuilder sb = new StringBuilder();
+    private StringBuilder sb = new();
 
     public void AppendLine(string text)
     {

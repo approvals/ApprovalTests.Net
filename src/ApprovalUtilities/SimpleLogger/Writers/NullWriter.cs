@@ -2,7 +2,7 @@
 
 public class NullWriter : IAppendable
 {
-    public static readonly NullWriter Instance = new NullWriter();
+    public static readonly NullWriter Instance = new();
     public void AppendLine(string text)
     {
     }

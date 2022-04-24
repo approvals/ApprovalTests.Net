@@ -5,7 +5,7 @@ namespace ApprovalTests.Reporters.ContinuousIntegration;
 
 public class BambooReporter : IEnvironmentAwareReporter
 {
-    public static readonly BambooReporter INSTANCE = new BambooReporter();
+    public static readonly BambooReporter INSTANCE = new();
 
     public void Report(string approved, string received)
     {

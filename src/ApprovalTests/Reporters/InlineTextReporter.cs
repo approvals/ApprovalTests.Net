@@ -8,7 +8,7 @@ namespace ApprovalTests.Reporters;
 
 public class InlineTextReporter : IApprovalFailureReporter
 {
-    public static readonly InlineTextReporter INSTANCE = new InlineTextReporter();
+    public static readonly InlineTextReporter INSTANCE = new();
 
     public void Report(string approved, string received)
     {

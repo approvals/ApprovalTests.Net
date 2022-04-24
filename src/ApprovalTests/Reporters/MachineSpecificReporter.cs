@@ -8,7 +8,7 @@ namespace ApprovalTests.Reporters;
 
 public class MachineSpecificReporter : IEnvironmentAwareReporter
 {
-    public static readonly MachineSpecificReporter INSTANCE = new MachineSpecificReporter();
+    public static readonly MachineSpecificReporter INSTANCE = new();
     public bool IsWorkingInThisEnvironment(string forFile)
     {
         var info = ApprovalsFilename.Parse(forFile);

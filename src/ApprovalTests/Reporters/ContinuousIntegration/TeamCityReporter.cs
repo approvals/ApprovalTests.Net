@@ -5,7 +5,7 @@ namespace ApprovalTests.Reporters.ContinuousIntegration;
 
 public class TeamCityReporter : IEnvironmentAwareReporter
 {
-    public static readonly TeamCityReporter INSTANCE = new TeamCityReporter();
+    public static readonly TeamCityReporter INSTANCE = new();
 
     public void Report(string approved, string received)
     {

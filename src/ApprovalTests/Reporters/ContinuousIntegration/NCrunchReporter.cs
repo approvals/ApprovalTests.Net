@@ -6,7 +6,7 @@ namespace ApprovalTests.Reporters.ContinuousIntegration;
 public class NCrunchReporter : IEnvironmentAwareReporter
 {
     public const string EnvironmentVariable = "NCrunch";
-    public static readonly NCrunchReporter INSTANCE = new NCrunchReporter();
+    public static readonly NCrunchReporter INSTANCE = new();
 
     public void Report(string approved, string received)
     {

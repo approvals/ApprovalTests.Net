@@ -6,7 +6,7 @@ namespace ApprovalTests.Reporters;
 
 public class IntroductionReporter : IApprovalFailureReporter
 {
-    public static readonly IntroductionReporter INSTANCE = new IntroductionReporter();
+    public static readonly IntroductionReporter INSTANCE = new();
 
     public void Report(string approved, string received)
     {
