@@ -3,7 +3,7 @@
   <PropertyGroup>
     <LangVersion>10.0</LangVersion>
     <NoWarn>CS1591</NoWarn>
-    <Version>5.7.2</Version>
+    <Version>5.7.3</Version>
     <AssemblyVersion>3.0</AssemblyVersion>
     <AssemblyOriginatorKeyFile>$(ProjectDir)..\ApprovalsKeyPair.snk</AssemblyOriginatorKeyFile>
     <SignAssembly>true</SignAssembly>
