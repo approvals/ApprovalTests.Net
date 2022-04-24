@@ -41,14 +41,14 @@ public static class EmailApprovals
         return emailText;
     }
 
-    private static string ScrubBoundaries(string emailText)
+    static string ScrubBoundaries(string emailText)
     {
         var boundaries = FindBoundaries(emailText);
         emailText = ScrubBoundaries(emailText, boundaries);
         return emailText;
     }
 
-    private static string ScrubBoundaries(string emailText, string[] boundaries)
+    static string ScrubBoundaries(string emailText, string[] boundaries)
     {
         var count = 0;
         var guid = "--boundary_{0}_00000000-0000-0000-0000-00000000000{0}";

@@ -5,7 +5,7 @@ namespace ApprovalTests.Tests.Persistence;
 
 public class FileSaver : ISaver<string>
 {
-    private readonly FileInfo file;
+    readonly FileInfo file;
 
     public FileSaver(FileInfo file)
     {

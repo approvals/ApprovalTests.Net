@@ -42,9 +42,9 @@ public class ReflectionUtilitiesTest
         public static string PublicStaticField;
         string PrivateStaticField;
         public string PublicInstanceProperty{ get; set; }
-        private string PrivateInstanceProperty{ get; set; }
+        string PrivateInstanceProperty{ get; set; }
         public static string PublicStaticProperty{ get; set; }
-        private string PrivateStaticProperty { get; set; }
+        string PrivateStaticProperty { get; set; }
     }
     public class TargetPocoBase
     {
@@ -53,9 +53,9 @@ public class ReflectionUtilitiesTest
         public static string BasePublicStaticField;
         string BasePrivateStaticField;
         public string BasePublicInstanceProperty{ get; set; }
-        private string BasePrivateInstanceProperty{ get; set; }
+        string BasePrivateInstanceProperty{ get; set; }
         public static string BasePublicStaticProperty{ get; set; }
-        private string BasePrivateStaticProperty{ get; set; }
+        string BasePrivateStaticProperty{ get; set; }
     }
     [Fact]
     public void GetControlNonPublicStaticFields()
@@ -164,10 +164,10 @@ public class ReflectionUtilitiesTest
         Assert.Equal("D", ReflectionUtilities.GetFieldForChild(value, "c").Name);
     }
 
-    private class C
+    class C
     {
-        private string A;
-        private string B;
+        string A;
+        string B;
         public string D;
 
         public C(string a, string b, string c)
@@ -180,14 +180,14 @@ public class ReflectionUtilitiesTest
 
     public class A
     {
-        private string Booya = null;
+        string Booya = null;
         public string GetBooya()
         {
             return Booya;
         }
     }
 
-    private class B : A
+    class B : A
     {
     }
 }

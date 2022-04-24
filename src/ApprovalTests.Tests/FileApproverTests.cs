@@ -52,7 +52,7 @@ public class FileApproverTests
         Assert.IsInstanceOf<ApprovalMismatchException>(fileApprover);
     }
 
-    private static void AssertApprover(string receivedFile, string approvedFile, bool expected)
+    static void AssertApprover(string receivedFile, string approvedFile, bool expected)
     {
         var basePath = PathUtilities.GetDirectoryForCaller();
         var fileApprover = new FileApprover(null, null).Approve(basePath + approvedFile, basePath + receivedFile);

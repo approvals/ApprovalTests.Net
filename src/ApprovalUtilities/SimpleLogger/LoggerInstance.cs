@@ -10,16 +10,16 @@ namespace ApprovalUtilities.SimpleLogger;
 public class LoggerInstance
 {
     public IAppendable Writer = new MultiWriter(new ConsoleWriter(), new DebuggerWriter());
-    private int indent;
+    int indent;
     public int TabSize = 4;
-    private bool showMarkerIn = true;
-    private bool showVariables = true;
-    private bool showEvents = true;
-    private bool showSql = true;
-    private bool showTimestamp = true;
-    private bool showTimeDifference = true;
-    private ILoader<DateTime> clock = new Clock();
-    private DateTime lastTime = DateTime.Now;
+    bool showMarkerIn = true;
+    bool showVariables = true;
+    bool showEvents = true;
+    bool showSql = true;
+    bool showTimestamp = true;
+    bool showTimeDifference = true;
+    ILoader<DateTime> clock = new Clock();
+    DateTime lastTime = DateTime.Now;
 
     public StringBuilderLogger LogToStringBuilder()
     {
@@ -39,7 +39,7 @@ public class LoggerInstance
         drawMarker("<= ", false);
     }
 
-    private void drawMarker(string arrow, bool stepIn)
+    void drawMarker(string arrow, bool stepIn)
     {
         if (!showMarkerIn)
         {
@@ -59,7 +59,7 @@ public class LoggerInstance
         return outsideCallingMethod.ToStandardString();
     }
 
-    private void Write(string text)
+    void Write(string text)
     {
         var time = showTimestamp ? clock.Load() + " " : "";
         var difference = "";
@@ -75,7 +75,7 @@ public class LoggerInstance
         Writer.AppendLine(time + difference + GetIndentation() + message);
     }
 
-    private string GetIndentation()
+    string GetIndentation()
     {
         return "".PadLeft(indent, ' ');
         //.Substring(0, indent);
@@ -133,7 +133,7 @@ public class LoggerInstance
         return string.Format(format, new[] {data});
     }
 
-    private void PrintWarning(params string[] lines)
+    void PrintWarning(params string[] lines)
     {
         Writer.AppendLine(ExceptionUtilities.FormatAsError(lines));
     }

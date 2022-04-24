@@ -5,7 +5,7 @@ namespace ApprovalTests.Reporters;
 
 public class InvalidReporterConfiguration : IEnvironmentAwareReporter
 {
-    private readonly Type reporter;
+    readonly Type reporter;
 
     public InvalidReporterConfiguration(Type reporter)
     {
@@ -22,7 +22,7 @@ public class InvalidReporterConfiguration : IEnvironmentAwareReporter
         throw BuildException();
     }
 
-    private Exception BuildException()
+    Exception BuildException()
     {
         throw new Exception($@"Invalid configuration of reporter. Reporters must extend {nameof(IApprovalFailureReporter)}.
 Invalid reporter type: {reporter.FullName}

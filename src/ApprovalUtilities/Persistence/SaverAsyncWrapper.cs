@@ -4,7 +4,7 @@ namespace ApprovalUtilities.Persistence;
 
 public class SaverAsyncWrapper<T> : ISaverAsync<T>
 {
-    private readonly ISaver<T> saver;
+    readonly ISaver<T> saver;
 
     public SaverAsyncWrapper(ISaver<T> saver)
     {

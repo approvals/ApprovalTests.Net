@@ -7,7 +7,7 @@ namespace ApprovalTests.Combinations;
 
 public static class CombinationApprovals
 {
-    private static readonly object[] EMPTY = {null};
+    static readonly object[] EMPTY = {null};
 
     public static void VerifyAllCombinations<A>(Func<A, object> processCall, IEnumerable<A> aList)
     {
@@ -99,12 +99,12 @@ public static class CombinationApprovals
         VerifyAllCombinations(processCall, "[{0},{1},{2},{3},{4},{5},{6},{7},{8}]", resultFormatter, aList, bList, cList, dList, eList, fList, gList, hList, iList);
     }
 
-    private static void VerifyAllCombinations<A, B, C, D, E, F, G, H, I>(Func<A, B, C, D, E, F, G, H, I, object> processCall, string format, IEnumerable<A> aList, IEnumerable<B> bList, IEnumerable<C> cList, IEnumerable<D> dList, IEnumerable<E> eList, IEnumerable<F> fList, IEnumerable<G> gList, IEnumerable<H> hList, IEnumerable<I> iList)
+    static void VerifyAllCombinations<A, B, C, D, E, F, G, H, I>(Func<A, B, C, D, E, F, G, H, I, object> processCall, string format, IEnumerable<A> aList, IEnumerable<B> bList, IEnumerable<C> cList, IEnumerable<D> dList, IEnumerable<E> eList, IEnumerable<F> fList, IEnumerable<G> gList, IEnumerable<H> hList, IEnumerable<I> iList)
     {
         VerifyAllCombinations(processCall, format, result => result + string.Empty, aList, bList, cList, dList, eList, fList, gList, hList, iList);
     }
 
-    private static void VerifyAllCombinations<A, B, C, D, E, F, G, H, I>(Func<A, B, C, D, E, F, G, H, I, object> processCall, string format, Func<object, string> resultFormatter, IEnumerable<A> aList, IEnumerable<B> bList, IEnumerable<C> cList, IEnumerable<D> dList, IEnumerable<E> eList, IEnumerable<F> fList, IEnumerable<G> gList, IEnumerable<H> hList, IEnumerable<I> iList)
+    static void VerifyAllCombinations<A, B, C, D, E, F, G, H, I>(Func<A, B, C, D, E, F, G, H, I, object> processCall, string format, Func<object, string> resultFormatter, IEnumerable<A> aList, IEnumerable<B> bList, IEnumerable<C> cList, IEnumerable<D> dList, IEnumerable<E> eList, IEnumerable<F> fList, IEnumerable<G> gList, IEnumerable<H> hList, IEnumerable<I> iList)
     {
         Approvals.Verify(GetApprovalString(processCall, format, resultFormatter, aList, bList, cList, dList, eList, fList, gList, hList, iList));
     }
@@ -258,7 +258,7 @@ public static class CombinationApprovals
     }
 
 
-    private static void AllCombinations<A, B, C, D, E, F, G, H, I>(Action<A, B, C, D, E, F, G, H, I> processCall, IEnumerable<A> aList, IEnumerable<B> bList, IEnumerable<C> cList, IEnumerable<D> dList, IEnumerable<E> eList, IEnumerable<F> fList, IEnumerable<G> gList, IEnumerable<H> hList, IEnumerable<I> iList)
+    static void AllCombinations<A, B, C, D, E, F, G, H, I>(Action<A, B, C, D, E, F, G, H, I> processCall, IEnumerable<A> aList, IEnumerable<B> bList, IEnumerable<C> cList, IEnumerable<D> dList, IEnumerable<E> eList, IEnumerable<F> fList, IEnumerable<G> gList, IEnumerable<H> hList, IEnumerable<I> iList)
     {
         foreach (var a in aList)
         foreach (var b in bList)

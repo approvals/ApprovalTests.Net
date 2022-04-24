@@ -8,14 +8,14 @@ using Utilities;
 
 public class HandlerListEntry
 {
-    private const string HandlerFieldName = "handler";
-    private const string KeyFieldName = "key";
-    private const string NextFieldName = "next";
-    private readonly object listEntry;
-    private static Type listEntryType;
-    private Delegate handler;
-    private object key;
-    private HandlerListEntry next;
+    const string HandlerFieldName = "handler";
+    const string KeyFieldName = "key";
+    const string NextFieldName = "next";
+    readonly object listEntry;
+    static Type listEntryType;
+    Delegate handler;
+    object key;
+    HandlerListEntry next;
 
     public HandlerListEntry(object listEntry)
     {
@@ -68,7 +68,7 @@ public class HandlerListEntry
         }
     }
 
-    private static Type ListEntryType
+    static Type ListEntryType
     {
         get
         {
@@ -86,7 +86,7 @@ public class HandlerListEntry
         return this.WritePropertiesToString();
     }
 
-    private T GetField<T>(string name)
+    T GetField<T>(string name)
     {
         return listEntry.GetInstanceFields(fi => string.Compare(fi.Name, name, false) == 0)
             .Single().GetValue<T>(listEntry);

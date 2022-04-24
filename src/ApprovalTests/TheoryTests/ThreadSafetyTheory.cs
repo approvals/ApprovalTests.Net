@@ -49,7 +49,7 @@ public static class ThreadSafetyTheory
         }
     }
 
-    private static string ToText<T>(T[] n2, string label2)
+    static string ToText<T>(T[] n2, string label2)
     {
         return label2 + "\n" + n2.JoinWith("\n");
     }

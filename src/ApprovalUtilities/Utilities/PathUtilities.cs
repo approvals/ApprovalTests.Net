@@ -55,9 +55,9 @@ public static class PathUtilities
         return results.Distinct();
     }
 
-    private static IList<string> EnvironmentPaths;
+    static IList<string> EnvironmentPaths;
 
-    private static IEnumerable<string> FindProgramOnPath(string programName)
+    static IEnumerable<string> FindProgramOnPath(string programName)
     {
         if (EnvironmentPaths == null)
         {

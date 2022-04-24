@@ -20,8 +20,8 @@ public class FileWriter : IAppendable
         }
     }
 
-    private string logFilePath;
-    private Func<string> getLogFile;
+    string logFilePath;
+    Func<string> getLogFile;
 
     public Func<string> GetLogFile
     {
@@ -40,7 +40,7 @@ public class FileWriter : IAppendable
         set => GetLogFile = () => value;
     }
 
-    private void InitialWrite()
+    void InitialWrite()
     {
         if (logFilePath != null)
         {

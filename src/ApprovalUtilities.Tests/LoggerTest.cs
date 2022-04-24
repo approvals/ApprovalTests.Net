@@ -94,7 +94,7 @@ public class LoggerTest
 
 public class MockTimer : ILoader<DateTime>
 {
-    private int ticks;
+    int ticks;
 
     public DateTime Load()
     {

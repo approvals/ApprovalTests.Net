@@ -10,8 +10,8 @@ namespace ApprovalTests.Reporters.TestFrameworks;
 public class AssertReporter : IEnvironmentAwareReporter
 {
     protected readonly string areEqual;
-    private readonly string assertClass;
-    private readonly string frameworkAttribute;
+    readonly string assertClass;
+    readonly string frameworkAttribute;
 
     public AssertReporter(string assertClass, string areEqual, string frameworkAttribute)
     {

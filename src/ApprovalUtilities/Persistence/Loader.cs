@@ -4,7 +4,7 @@ namespace ApprovalUtilities.Persistence;
 
 public class Loader<T> : ILoader<T>
 {
-    private readonly Func<T> load;
+    readonly Func<T> load;
 
     public Loader(T item) : this(() => item)
     {

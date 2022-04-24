@@ -32,7 +32,7 @@ public class ReporterTest
         VerifyReporterAttribute(attribute);
     }
 
-    private static void VerifyReporterAttribute(UseReporterAttribute attribute)
+    static void VerifyReporterAttribute(UseReporterAttribute attribute)
     {
         var reporter = (IEnvironmentAwareReporter) attribute.Reporter;
         var reportException = Assert.Throws<Exception>(() => reporter.Report("a.txt", "a.txt"));

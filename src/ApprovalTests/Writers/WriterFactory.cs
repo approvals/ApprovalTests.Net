@@ -5,7 +5,7 @@ namespace ApprovalTests.Writers;
 
 public static class WriterFactory
 {
-    private static Func<string, IApprovalWriter> TextWriterCreator = s => new ApprovalTextWriter(s);
+    static Func<string, IApprovalWriter> TextWriterCreator = s => new ApprovalTextWriter(s);
 
     public static void SetTextWriterCreator(Func<string, IApprovalWriter> textWriterCreator)
     {
@@ -17,7 +17,7 @@ public static class WriterFactory
         return TextWriterCreator(data);
     }
 
-    private static Func<string, string, IApprovalWriter> TextWriterWithExtensionCreator = (s, e) => new ApprovalTextWriter(s, e);
+    static Func<string, string, IApprovalWriter> TextWriterWithExtensionCreator = (s, e) => new ApprovalTextWriter(s, e);
 
     public static void SetTextWriterCreator(Func<string, string, IApprovalWriter> textWriterWithExtensionCreator)
     {

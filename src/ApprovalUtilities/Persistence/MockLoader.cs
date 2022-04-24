@@ -2,7 +2,7 @@ namespace ApprovalUtilities.Persistence;
 
 public class MockLoader<T> : ILoader<T>
 {
-    private T t;
+    T t;
 
     public MockLoader(T t)
     {

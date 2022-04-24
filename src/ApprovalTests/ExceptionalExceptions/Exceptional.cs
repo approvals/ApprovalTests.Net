@@ -38,7 +38,7 @@ public class Exceptional : Exception
     }
 
     // ReSharper disable once UnusedParameter.Local
-    private static string GetTlDr(ExceptionalId uid)
+    static string GetTlDr(ExceptionalId uid)
     {
         return "";
     }

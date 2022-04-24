@@ -4,9 +4,9 @@ namespace ApprovalUtilities.Utilities;
 
 public class Disposables : IDisposable
 {
-    private readonly Action _onDispose;
+    readonly Action _onDispose;
 
-    private Disposables(Action onDispose)
+    Disposables(Action onDispose)
     {
         _onDispose = onDispose;
     }

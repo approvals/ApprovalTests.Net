@@ -103,7 +103,7 @@ public static class StringUtils
         return WriteObjectToString(value, WriteProperties);
     }
 
-    private static void WriteProperties<T>(T value, StringBuilder sb, Type t)
+    static void WriteProperties<T>(T value, StringBuilder sb, Type t)
     {
         foreach (var p in t.GetProperties())
         {
@@ -120,7 +120,7 @@ public static class StringUtils
         return WriteObjectToString(value, WriteFields);
     }
 
-    private static void WriteFields<T>(T value, StringBuilder sb, Type t)
+    static void WriteFields<T>(T value, StringBuilder sb, Type t)
     {
         foreach (var f in t.GetFields())
         {
@@ -132,7 +132,7 @@ public static class StringUtils
         }
     }
 
-    private static string WriteObjectToString<T>(T value, Action<T, StringBuilder, Type> writer)
+    static string WriteObjectToString<T>(T value, Action<T, StringBuilder, Type> writer)
     {
         if (value == null)
         {
@@ -167,12 +167,12 @@ public static class StringUtils
         return combined;
     }
 
-    private static string RemoveSpaces(int space, string s)
+    static string RemoveSpaces(int space, string s)
     {
         return space < s.Length ?  s.Substring(space) : "";
     }
 
-    private static int FindSpaces(IEnumerable<string> lines)
+    static int FindSpaces(IEnumerable<string> lines)
     {
         return lines.Where(l => !string.IsNullOrWhiteSpace(l)).Min(l => l.Length - l.TrimStart().Length);
     }

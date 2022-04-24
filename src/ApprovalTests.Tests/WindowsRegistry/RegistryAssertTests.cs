@@ -7,7 +7,7 @@ namespace ApprovalTests.Tests.WindowsRegistry;
 [TestFixture]
 public class RegistryAssertTests
 {
-    private const string KeyName = @"Software\TestDummy";
+    const string KeyName = @"Software\TestDummy";
 
     [Test]
     public void Success()

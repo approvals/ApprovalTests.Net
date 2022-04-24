@@ -7,9 +7,9 @@ namespace ApprovalTests.Reporters.TestFrameworks;
 public class XUnit2Reporter : AssertReporter
 {
     public readonly static XUnit2Reporter INSTANCE = new();
-    private static readonly Lazy<bool> isXunit2 = new(IsXunit2);
+    static readonly Lazy<bool> isXunit2 = new(IsXunit2);
 
-    private static bool IsXunit2()
+    static bool IsXunit2()
     {
         return AppDomain
             .CurrentDomain

@@ -32,7 +32,7 @@ public class CustomNamerShouldBeSubstitutableTest
         // just here to prevent false detection as abandoned file via Maintenance test
     }
 
-    private class CustomNamer : IApprovalNamer
+    class CustomNamer : IApprovalNamer
     {
         public string Name => "CustomNamerShouldBeSubstitutableTest.CustomNamerShouldBeSubstitutable";
 

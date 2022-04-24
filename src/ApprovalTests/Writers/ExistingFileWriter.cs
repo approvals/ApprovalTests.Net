@@ -6,7 +6,7 @@ namespace ApprovalTests.Writers;
 
 public class ExistingFileWriter : IApprovalWriter
 {
-    private string file;
+    string file;
 
     public ExistingFileWriter(string file)
     {

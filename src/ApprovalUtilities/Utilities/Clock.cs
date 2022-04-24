@@ -13,8 +13,8 @@ public class Clock : ILoader<DateTime>
 
 public class MockClock : Clock
 {
-    private readonly DateTime mockTime;
-    private int ticks;
+    readonly DateTime mockTime;
+    int ticks;
 
     public MockClock() : this(new DateTime(2011, 5, 6, 10, 30, 0, 0))
     {

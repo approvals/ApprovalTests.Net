@@ -15,7 +15,7 @@ public class CallerTest
         Assert.Equal("CallerTest", caller.Class.Name);
     }
 
-    private Caller GetCaller()
+    Caller GetCaller()
     {
         return new Caller();
     }
@@ -36,32 +36,32 @@ public class CallerTest
         Approvals.VerifyAll(methods, m => m.ToStandardString());
     }
 
-    private Caller GetDeepCaller()
+    Caller GetDeepCaller()
     {
         return A();
     }
 
-    private Caller A()
+    Caller A()
     {
         return B();
     }
 
-    private Caller B()
+    Caller B()
     {
         return C();
     }
 
-    private Caller C()
+    Caller C()
     {
         return D();
     }
 
-    private Caller D()
+    Caller D()
     {
         return E();
     }
 
-    private Caller E()
+    Caller E()
     {
         return GetCaller();
     }

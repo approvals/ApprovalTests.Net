@@ -66,7 +66,7 @@ public class TestCounter
     }
 
 
-    private static void LaunchProgram(string program, string arguments)
+    static void LaunchProgram(string program, string arguments)
     {
         try
         {

@@ -22,7 +22,7 @@ public class HandlerListUtilitiesTest
         Approvals.Verify(GetEventHandlerList().GetHead());
     }
 
-    private static EventHandlerList GetEventHandlerList()
+    static EventHandlerList GetEventHandlerList()
     {
         var button = new Button();
         button.Click += TestingListener.AnotherStandardCallback;

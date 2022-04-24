@@ -8,7 +8,7 @@ namespace ApprovalTests.Tests;
 [TestFixture]
 public class ApprovalsTest
 {
-    private static readonly string[] text = {"abc", "123", "!@#"};
+    static readonly string[] text = {"abc", "123", "!@#"};
 
     // begin-snippet: simple_verify
     [Test]
@@ -105,7 +105,7 @@ public class ApprovalsTest
         Approvals.VerifyAll(FireFlyMap(), (k, v) => $"\"{k}\" => {v}");
     }
 
-    private static Dictionary<string, string> FireFlyMap()
+    static Dictionary<string, string> FireFlyMap()
     {
         return new Dictionary<string, string>
         {

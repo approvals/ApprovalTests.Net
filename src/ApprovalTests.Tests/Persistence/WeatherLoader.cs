@@ -5,7 +5,7 @@ namespace ApprovalTests.Tests.Persistence;
 
 internal class WeatherLoader : IExecutableQuery
 {
-    private readonly string weatherStationId;
+    readonly string weatherStationId;
 
     public WeatherLoader(string weatherStationId)
     {

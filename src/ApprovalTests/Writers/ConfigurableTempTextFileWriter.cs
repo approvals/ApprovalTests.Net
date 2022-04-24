@@ -4,8 +4,8 @@ namespace ApprovalTests.Writers;
 
 public class ConfigurableTempTextFileWriter : ApprovalTextWriter
 {
-    private string receivedFilePath;
-    private string approvedFilePath;
+    string receivedFilePath;
+    string approvedFilePath;
 
     public ConfigurableTempTextFileWriter(string approvedFilePath, string data)
         : base(data, Path.GetExtension(approvedFilePath))

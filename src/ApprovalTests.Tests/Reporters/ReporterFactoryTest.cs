@@ -12,7 +12,7 @@ namespace ApprovalTests.Tests.Reporters;
 [UseReporter(typeof(ClassLevelReporter))]
 public class ReporterFactoryTest
 {
-    private static IEnumerable<Type> GetSingletonReporterTypes()
+    static IEnumerable<Type> GetSingletonReporterTypes()
     {
         var types = typeof(UseReporterAttribute).Assembly.GetTypes();
         var reporters = types.Where(r => r.GetInterfaces().Contains(typeof(IApprovalFailureReporter)));
@@ -20,7 +20,7 @@ public class ReporterFactoryTest
         return singletons;
     }
 
-    private void SubMethod()
+    void SubMethod()
     {
         Assert.AreEqual(typeof(MethodLevelReporter), Approvals.GetReporter().GetType());
     }

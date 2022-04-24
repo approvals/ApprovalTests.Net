@@ -9,7 +9,7 @@ namespace ApprovalUtilities.CallStack;
 
 public class Caller
 {
-    private int currentFrame;
+    int currentFrame;
 
     public Caller()
         : this(new StackTrace(true), 2)

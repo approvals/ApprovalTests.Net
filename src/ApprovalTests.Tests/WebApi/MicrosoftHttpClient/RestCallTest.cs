@@ -16,7 +16,7 @@ public class RestCallTest
 
 public class GoogleQuery : RestQuery<GoogleQueryResults>
 {
-    private readonly string searchTerm;
+    readonly string searchTerm;
 
     public GoogleQuery(string searchTerm)
     {

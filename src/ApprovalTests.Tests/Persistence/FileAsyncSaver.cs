@@ -6,7 +6,7 @@ namespace ApprovalTests.Tests.Persistence;
 
 public class FileAsyncSaver : ISaverAsync<string>
 {
-    private readonly FileInfo file;
+    readonly FileInfo file;
 
     public FileAsyncSaver(FileInfo file)
     {

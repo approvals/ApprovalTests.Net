@@ -8,7 +8,7 @@ using System.Reflection;
 
 public static class HandlerListHelper
 {
-    private const string HeadFieldName = "head";
+    const string HeadFieldName = "head";
 
     public static IEnumerable<HandlerListEntry> AsEnumerable(this EventHandlerList list)
     {

@@ -5,7 +5,7 @@ namespace ApprovalUtilities.Persistence;
 
 public class MockSaver<T> : ISaver<T>
 {
-    private List<T> all = new();
+    List<T> all = new();
 
     public T[] Saved => all.ToArray();
 

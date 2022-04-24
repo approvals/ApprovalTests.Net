@@ -76,7 +76,7 @@ public abstract class AttributeStackTraceParser : IStackTraceParser
         });
     }
 
-    private static bool ContainsAttribute(object[] attributes, string attributeName)
+    static bool ContainsAttribute(object[] attributes, string attributeName)
     {
         return attributes.Any(attribute =>
         {

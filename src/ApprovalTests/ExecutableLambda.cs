@@ -5,8 +5,8 @@ namespace ApprovalTests;
 
 public class ExecutableLambda : IExecutableQuery
 {
-    private readonly string text;
-    private readonly Func<string, string> executeOnFailure;
+    readonly string text;
+    readonly Func<string, string> executeOnFailure;
 
     public ExecutableLambda(string text, Action<string> executeOnFailure)
         : this(text, s =>

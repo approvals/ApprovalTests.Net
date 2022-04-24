@@ -5,7 +5,7 @@ using System.ComponentModel;
 
 public class TestingEventPoco : INotifyPropertyChanged
 {
-    private readonly object NonEventField = new();
+    readonly object NonEventField = new();
 
     public event EventHandler MyEvent;
 

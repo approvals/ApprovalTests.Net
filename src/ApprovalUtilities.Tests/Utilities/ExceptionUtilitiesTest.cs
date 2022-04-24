@@ -12,7 +12,7 @@ public class ExceptionUtilitiesTest
         AssertException<NotFiniteNumberException>(() => throw new NotFiniteNumberException());
     }
 
-    private static void AssertException<T>(Action action) where T : Exception
+    static void AssertException<T>(Action action) where T : Exception
     {
         Assert.IsType<T>(ExceptionUtilities.GetException(action));
     }

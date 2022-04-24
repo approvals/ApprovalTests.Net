@@ -34,7 +34,7 @@ public static class ApprovalMaintenance
         return FindAbandonedFiles(path, assembly);
     }
 
-    private static List<FileInfo> FindAbandonedFiles(string path, Assembly assembly)
+    static List<FileInfo> FindAbandonedFiles(string path, Assembly assembly)
     {
         var searchPattern = "*.approved.*";
         var approvedFile = Directory.EnumerateFiles(path, searchPattern, SearchOption.AllDirectories);
@@ -43,7 +43,7 @@ public static class ApprovalMaintenance
             .ToList();
     }
 
-    private static bool IsAbandoned(FileInfo approvedFile, Assembly assembly)
+    static bool IsAbandoned(FileInfo approvedFile, Assembly assembly)
     {
         var rootTypes = assembly.GetTypes();
         var parts = approvedFile.Name.Split('.');

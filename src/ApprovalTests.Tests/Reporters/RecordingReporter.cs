@@ -4,7 +4,7 @@ namespace ApprovalTests.Tests.Reporters;
 
 public class RecordingReporter : IEnvironmentAwareReporter
 {
-    private readonly bool working;
+    readonly bool working;
 
     public RecordingReporter()
     {

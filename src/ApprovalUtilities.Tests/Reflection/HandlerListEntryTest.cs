@@ -28,7 +28,7 @@ public class HandlerListEntryTest
         Approvals.Verify(new HandlerListEntry(GetListEntry()));
     }
 
-    private static object GetListEntry()
+    static object GetListEntry()
     {
         var button = new Button();
         button.Click += TestingListener.AnotherStandardCallback;

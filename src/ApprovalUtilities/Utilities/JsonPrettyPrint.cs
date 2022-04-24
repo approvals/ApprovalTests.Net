@@ -5,7 +5,7 @@ namespace ApprovalUtilities.Utilities;
 
 public static class JsonPrettyPrint
 {
-    private const string INDENT_STRING = "    ";
+    const string INDENT_STRING = "    ";
 
     public static string FormatJson(this string str)
     {

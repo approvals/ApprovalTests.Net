@@ -65,12 +65,12 @@ namespace ApprovalTests.Xunit2.Namer
             Approvals.Verify(exception.Message);
         }
 
-        private static Task AnAsyncMethod()
+        static Task AnAsyncMethod()
         {
             return Task.FromResult(default(object));
         }
 
-        private void AssertEquals<T>(string typeName)
+        void AssertEquals<T>(string typeName)
         {
             var instance = Type.GetType(typeName, false);
             Assert.Equal(typeof(T), instance);

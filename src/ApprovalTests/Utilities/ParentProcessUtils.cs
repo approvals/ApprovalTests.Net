@@ -50,7 +50,7 @@ public static class ParentProcessUtils
     }
 
 
-    private static Process ParentProcess(this Process process)
+    static Process ParentProcess(this Process process)
     {
         if (OsUtils.IsUnixOs())
         {
@@ -102,17 +102,17 @@ public static class ParentProcessUtils
     }
 
     [DllImport("kernel32.dll", SetLastError = true)]
-    private static extern IntPtr CreateToolhelp32Snapshot(uint dwFlags, uint th32ProcessId);
+    static extern IntPtr CreateToolhelp32Snapshot(uint dwFlags, uint th32ProcessId);
 
     [DllImport("kernel32.dll")]
-    private static extern bool Process32First(IntPtr hSnapshot, ref PROCESSENTRY32 lppe);
+    static extern bool Process32First(IntPtr hSnapshot, ref PROCESSENTRY32 lppe);
 
 
     [DllImport("kernel32.dll")]
-    private static extern bool Process32Next(IntPtr hSnapshot, ref PROCESSENTRY32 lppe);
+    static extern bool Process32Next(IntPtr hSnapshot, ref PROCESSENTRY32 lppe);
 
     [StructLayout(LayoutKind.Sequential)]
-    private struct PROCESSENTRY32
+    struct PROCESSENTRY32
     {
         public uint dwSize;
         public uint cntUsage;

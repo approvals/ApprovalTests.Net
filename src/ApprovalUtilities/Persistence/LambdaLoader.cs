@@ -4,7 +4,7 @@ namespace ApprovalUtilities.Persistence;
 
 public class LambdaLoader<T> : ILoader<T>
 {
-    private readonly Func<T> func;
+    readonly Func<T> func;
 
     public LambdaLoader(Func<T> func)
     {

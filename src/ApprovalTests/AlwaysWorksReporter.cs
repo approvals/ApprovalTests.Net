@@ -4,7 +4,7 @@ namespace ApprovalTests;
 
 internal class AlwaysWorksReporter : IEnvironmentAwareReporter
 {
-    private readonly IApprovalFailureReporter reporter;
+    readonly IApprovalFailureReporter reporter;
 
     public AlwaysWorksReporter(IApprovalFailureReporter reporter)
     {

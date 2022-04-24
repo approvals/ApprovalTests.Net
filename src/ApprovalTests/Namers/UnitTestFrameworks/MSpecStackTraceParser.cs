@@ -47,7 +47,7 @@ public class MSpecStackTraceParser : AttributeStackTraceParser
     public override string ForTestingFramework => "Machine.Specifications (MSpec)";
 
 
-    private Caller FindApprovalFrame(Caller caller)
+    Caller FindApprovalFrame(Caller caller)
     {
         var mspecInvocationFrame = caller.Callers.NonLambda().FirstOrDefault(
             c => c.Class.FullName == "Machine.Specifications.Model.Specification"

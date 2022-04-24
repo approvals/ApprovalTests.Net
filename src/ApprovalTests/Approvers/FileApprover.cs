@@ -72,7 +72,7 @@ public class FileApprover : IApprovalApprover
         withCleanUp?.CleanUp(approved, received);
     }
 
-    private static bool Compare(ICollection<char> chars1, ICollection<char> chars2)
+    static bool Compare(ICollection<char> chars1, ICollection<char> chars2)
     {
         if (chars1.Count != chars2.Count)
         {
@@ -93,7 +93,7 @@ public class FileApprover : IApprovalApprover
         return true;
     }
 
-    private static bool Compare(ICollection<byte> bytes1, ICollection<byte> bytes2)
+    static bool Compare(ICollection<byte> bytes1, ICollection<byte> bytes2)
     {
         if (bytes1.Count != bytes2.Count)
         {

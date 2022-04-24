@@ -20,9 +20,9 @@ namespace ApprovalTests;
 
 public class Approvals
 {
-    private static readonly ThreadLocal<Caller> currentCaller = new();
-    private static Func<IApprovalNamer> defaultNamerCreator = () => new UnitTestFrameworkNamer();
-    private static Func<IApprovalWriter, IApprovalNamer, bool, IApprovalApprover> defaultApproverCreator = (writer, namer, shouldIgnoreLineEndings) => new FileApprover(writer, namer, shouldIgnoreLineEndings);
+    static readonly ThreadLocal<Caller> currentCaller = new();
+    static Func<IApprovalNamer> defaultNamerCreator = () => new UnitTestFrameworkNamer();
+    static Func<IApprovalWriter, IApprovalNamer, bool, IApprovalApprover> defaultApproverCreator = (writer, namer, shouldIgnoreLineEndings) => new FileApprover(writer, namer, shouldIgnoreLineEndings);
 
     public static Caller CurrentCaller
     {
@@ -57,7 +57,7 @@ public class Approvals
         defaultApproverCreator =  creator;
     }
 
-    private static IApprovalApprover GetDefaultApprover(IApprovalWriter writer, IApprovalNamer namer, bool shouldIgnoreLineEndings)
+    static IApprovalApprover GetDefaultApprover(IApprovalWriter writer, IApprovalNamer namer, bool shouldIgnoreLineEndings)
     {
         return defaultApproverCreator(writer, namer, shouldIgnoreLineEndings);
     }
@@ -82,13 +82,13 @@ public class Approvals
         return GetFrontLoadedReporter(defaultIfNotFound, GetFrontLoadedReporterFromAttribute());
     }
 
-    private static IEnvironmentAwareReporter GetFrontLoadedReporterFromAttribute()
+    static IEnvironmentAwareReporter GetFrontLoadedReporterFromAttribute()
     {
         var frontLoaded = CurrentCaller.GetFirstFrameForAttribute<FrontLoadedReporterAttribute>();
         return frontLoaded != null ? frontLoaded.Reporter : FrontLoadedReporterDisposer.Default;
     }
 
-    private static IApprovalFailureReporter GetFrontLoadedReporter(IApprovalFailureReporter defaultIfNotFound,
+    static IApprovalFailureReporter GetFrontLoadedReporter(IApprovalFailureReporter defaultIfNotFound,
         IEnvironmentAwareReporter frontLoad)
     {
         return frontLoad.IsWorkingInThisEnvironment("default.txt")
@@ -96,7 +96,7 @@ public class Approvals
             : GetReporterFromAttribute() ?? defaultIfNotFound;
     }
 
-    private static IEnvironmentAwareReporter WrapAsEnvironmentAwareReporter(IApprovalFailureReporter mainReporter)
+    static IEnvironmentAwareReporter WrapAsEnvironmentAwareReporter(IApprovalFailureReporter mainReporter)
     {
         if (mainReporter is IEnvironmentAwareReporter reporter)
         {
@@ -105,7 +105,7 @@ public class Approvals
         return new AlwaysWorksReporter(mainReporter);
     }
 
-    private static IApprovalFailureReporter GetReporterFromAttribute()
+    static IApprovalFailureReporter GetReporterFromAttribute()
     {
         var useReporter = CurrentCaller.GetFirstFrameForAttribute<UseReporterAttribute>();
         return useReporter != null ? useReporter.Reporter : null;

@@ -5,7 +5,7 @@ namespace ApprovalUtilities.Utilities;
 
 public class TempFile : IDisposable
 {
-    private readonly FileInfo backingFile;
+    readonly FileInfo backingFile;
 
     public TempFile(string name)
     {

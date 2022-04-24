@@ -6,10 +6,10 @@ namespace ApprovalTests.Reporters;
 
 public class ExecutableQueryFailure : IApprovalFailureReporter, IApprovalReporterWithCleanUp
 {
-    private const string FileNameSuffix = ".queryresults.txt";
-    private const string Header = "\t\tDo NOT approve\n\t\tThis File will be Deleted\n\t\tit is for feedback purposes only.\n\t\tAn additional file has been opened with only the query which you can approve.\n";
-    private readonly IExecutableQuery query;
-    private readonly IApprovalFailureReporter reporter;
+    const string FileNameSuffix = ".queryresults.txt";
+    const string Header = "\t\tDo NOT approve\n\t\tThis File will be Deleted\n\t\tit is for feedback purposes only.\n\t\tAn additional file has been opened with only the query which you can approve.\n";
+    readonly IExecutableQuery query;
+    readonly IApprovalFailureReporter reporter;
 
     public ExecutableQueryFailure(IExecutableQuery query, IApprovalFailureReporter reporter)
     {
@@ -40,14 +40,14 @@ public class ExecutableQueryFailure : IApprovalFailureReporter, IApprovalReporte
         reporter.Report(a, r);
     }
 
-    private static string RunQueryAndGetPath(string fileName, QueryResult result)
+    static string RunQueryAndGetPath(string fileName, QueryResult result)
     {
         var newFileName = fileName + FileNameSuffix;
         File.WriteAllText(newFileName, $"{Header}query:\n\n{result.Query}\n\nresult:\n\n{result.Result}");
         return newFileName;
     }
 
-    private QueryResult ExecuteQuery(string fileName)
+    QueryResult ExecuteQuery(string fileName)
     {
         if (!File.Exists(fileName))
         {

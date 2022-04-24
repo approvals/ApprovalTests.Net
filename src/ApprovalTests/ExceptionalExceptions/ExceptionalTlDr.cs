@@ -5,7 +5,7 @@ namespace ApprovalTests.ExceptionalExceptions;
 
 public class ExceptionalTlDr : RestQuery<string>
 {
-    private readonly ExceptionalId uid;
+    readonly ExceptionalId uid;
 
     public ExceptionalTlDr(ExceptionalId uid)
     {

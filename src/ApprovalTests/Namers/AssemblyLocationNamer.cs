@@ -5,7 +5,7 @@ namespace ApprovalTests.Namers;
 
 public class AssemblyLocationNamer : UnitTestFrameworkNamer
 {
-    private string AssemblyDirectory
+    string AssemblyDirectory
     {
         get
         {

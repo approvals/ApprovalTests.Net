@@ -92,7 +92,7 @@ public class StringUtilitiesTest
     public class TestingObject
     {
         public string ThisShouldHaveBeenAProperty;
-        private string _WriteOnlyString;
+        string _WriteOnlyString;
 
         public string WriteOnlyString
         {

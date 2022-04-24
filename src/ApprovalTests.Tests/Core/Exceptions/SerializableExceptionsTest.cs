@@ -17,7 +17,7 @@ public class SerializableExceptionsTest
         Verify(new ApprovalException(r, a));
     }
 
-    private void Verify(object o)
+    void Verify(object o)
     {
         SerializableTheory.Verify(o, Assert.AreEqual);
     }

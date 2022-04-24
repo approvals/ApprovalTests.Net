@@ -10,8 +10,8 @@ namespace ApprovalTests.Namers.StackTraceParsers;
 
 public class StackTraceParser : IStackTraceParser
 {
-    private static IList<IStackTraceParser> parsers = (IList<IStackTraceParser>) GetParsers();
-    private IStackTraceParser parser;
+    static IList<IStackTraceParser> parsers = (IList<IStackTraceParser>) GetParsers();
+    IStackTraceParser parser;
 
     public string ForTestingFramework => GetParsers().Select(x => x.ForTestingFramework).ToReadableString();
 
@@ -81,7 +81,7 @@ b) OR Build->Advanced->DebugInfo to Full";
         }
     }
 
-    private static void LoadIfApplicable(IList<IStackTraceParser> found, AttributeStackTraceParser p)
+    static void LoadIfApplicable(IList<IStackTraceParser> found, AttributeStackTraceParser p)
     {
         if (p.IsApplicable())
         {

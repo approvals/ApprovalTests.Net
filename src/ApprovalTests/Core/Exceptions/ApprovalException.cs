@@ -6,8 +6,8 @@ namespace ApprovalTests.Core.Exceptions;
 [Serializable]
 public class ApprovalException : Exception
 {
-    private readonly string approved;
-    private readonly string received;
+    readonly string approved;
+    readonly string received;
 
     public ApprovalException(SerializationInfo info, StreamingContext context) : base(info, context)
     {

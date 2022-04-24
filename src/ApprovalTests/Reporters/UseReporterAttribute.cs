@@ -17,7 +17,7 @@ public class UseReporterAttribute : Attribute
         Reporter = new MultiReporter(reporters.Select(LoadReporter));
     }
 
-    private static IApprovalFailureReporter LoadReporter(Type reporter)
+    static IApprovalFailureReporter LoadReporter(Type reporter)
     {
         if (!typeof(IApprovalFailureReporter).IsAssignableFrom(reporter))
         {

@@ -5,7 +5,7 @@ namespace ApprovalTests.Persistence;
 
 public class ExecutableSqlQuery : IExecutableQuery
 {
-    private readonly IDatabaseToExecutableQueryAdapter adapter;
+    readonly IDatabaseToExecutableQueryAdapter adapter;
 
     public ExecutableSqlQuery(IDatabaseToExecutableQueryAdapter adapter)
     {

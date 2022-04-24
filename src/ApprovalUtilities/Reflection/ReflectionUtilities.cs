@@ -10,7 +10,7 @@ using System.Reflection;
 
 public static class ReflectionUtilities
 {
-    private const BindingFlags NonPublicInstance = BindingFlags.NonPublic | BindingFlags.Instance;
+    const BindingFlags NonPublicInstance = BindingFlags.NonPublic | BindingFlags.Instance;
 
     public static MethodBase GetRealMethod(MethodBase method)
     {
@@ -121,7 +121,7 @@ public static class ReflectionUtilities
         return GetType(value).GetProperties(NonPublicInstance).Where(selector);
     }
 
-    private static Type GetType(object value)
+    static Type GetType(object value)
     {
         return value == null ? typeof(void) : value.GetType();
     }

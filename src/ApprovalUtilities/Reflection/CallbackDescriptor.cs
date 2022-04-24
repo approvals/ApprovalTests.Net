@@ -6,7 +6,7 @@ using System.Text;
 
 public class CallbackDescriptor
 {
-    private List<MethodInfo> Methods = new();
+    List<MethodInfo> Methods = new();
 
     public void AddMethods(IEnumerable<MethodInfo> methods)
     {

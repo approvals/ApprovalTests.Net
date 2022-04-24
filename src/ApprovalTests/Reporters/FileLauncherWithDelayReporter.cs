@@ -6,7 +6,7 @@ public class FileLauncherWithDelayReporter : IApprovalFailureReporter
 {
     public static readonly FileLauncherWithDelayReporter INSTANCE = new();
 
-    private readonly int seconds;
+    readonly int seconds;
 
     public FileLauncherWithDelayReporter(int seconds = 2)
     {

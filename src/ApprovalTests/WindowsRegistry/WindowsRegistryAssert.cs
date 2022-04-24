@@ -10,7 +10,7 @@ public static class WindowsRegistryAssert
         HasDword(Registry.CurrentUser, keyName, valueName, expectedValue, failureMessage);
     }
 
-    private static void HasDword(RegistryKey registryKey, string keyName, string valueName, int expectedValue, string failureMessage)
+    static void HasDword(RegistryKey registryKey, string keyName, string valueName, int expectedValue, string failureMessage)
     {
         var actualValue = ReadIntKeyValue(registryKey, keyName, valueName);
 
@@ -21,7 +21,7 @@ public static class WindowsRegistryAssert
         }
     }
 
-    private static int ReadIntKeyValue(RegistryKey registryKey, string keyName, string valueName)
+    static int ReadIntKeyValue(RegistryKey registryKey, string keyName, string valueName)
     {
         using var key = registryKey.OpenSubKey(keyName);
         return key == null ? 0 : (int) key.GetValue(valueName, 0);

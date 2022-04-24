@@ -3,7 +3,7 @@ namespace ApprovalUtilities.SimpleLogger.Writers;
 
 public class MultiWriter : IAppendable
 {
-    private readonly IAppendable[] writers;
+    readonly IAppendable[] writers;
 
     public MultiWriter(params IAppendable[] writers)
     {

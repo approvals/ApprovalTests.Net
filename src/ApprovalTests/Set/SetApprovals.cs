@@ -7,7 +7,7 @@ namespace ApprovalTests.Set;
 
 public static class SetApprovals
 {
-    private static IEnumerable<T> GetSorted<T>(IEnumerable<T> enumerable) where T:IComparable<T>
+    static IEnumerable<T> GetSorted<T>(IEnumerable<T> enumerable) where T:IComparable<T>
     {
         return enumerable.OrderBy(e => e);
     }
