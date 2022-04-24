@@ -21,6 +21,7 @@
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
   </PropertyGroup>
   <ItemGroup>
+    <Using Include="ApprovalTests" />
     <None Include="..\..\docs\images\approvaltests_icon.png">
      <Pack>True</Pack>
      <PackagePath />
