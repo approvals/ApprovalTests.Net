@@ -81,7 +81,7 @@ public static class StringUtils
 
     public static string Write<T>(this IEnumerable<T> enumerable, Func<T, string> formatter)
     {
-        return enumerable.Write((i, s) => formatter(s) + Environment.NewLine, "Empty");
+        return enumerable.Write((_, s) => formatter(s) + Environment.NewLine, "Empty");
     }
 
     public static string Write<T>(this IEnumerable<T> enumerable, Func<int, T, string> formatterWithIndex, string emptyMessage)

@@ -29,7 +29,7 @@ public abstract class RestQuery<T> : IExecutableQuery, ILoader<T>
                 Encoding = Encoding.UTF8
             };
             var task = new TaskCompletionSource<DownloadStringCompletedEventArgs>();
-            client.DownloadStringCompleted += (sender, args) => { task.SetResult(args); };
+            client.DownloadStringCompleted += (_, args) => { task.SetResult(args); };
             client.DownloadStringAsync(uri);
             return task.Task;
         }

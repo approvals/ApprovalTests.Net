@@ -24,7 +24,7 @@ public static class JsonPrettyPrint
                         if (str[i + 1] != '}')
                         {
                             sb.AppendLine();
-                            Enumerable.Range(0, ++indent).ForEach(item => sb.Append(INDENT_STRING));
+                            Enumerable.Range(0, ++indent).ForEach(_ => sb.Append(INDENT_STRING));
                         }
                     }
 
@@ -36,7 +36,7 @@ public static class JsonPrettyPrint
                         if (str[i + 1] != ']')
                         {
                             sb.AppendLine();
-                            Enumerable.Range(0, ++indent).ForEach(item => sb.Append(INDENT_STRING));
+                            Enumerable.Range(0, ++indent).ForEach(_ => sb.Append(INDENT_STRING));
                         }
                     }
 
@@ -47,7 +47,7 @@ public static class JsonPrettyPrint
                         if (str[i - 1] != '{')
                         {
                             sb.AppendLine();
-                            Enumerable.Range(0, --indent).ForEach(item => sb.Append(INDENT_STRING));
+                            Enumerable.Range(0, --indent).ForEach(_ => sb.Append(INDENT_STRING));
                         }
                     }
 
@@ -59,7 +59,7 @@ public static class JsonPrettyPrint
                         if (str[i - 1] != '[')
                         {
                             sb.AppendLine();
-                            Enumerable.Range(0, --indent).ForEach(item => sb.Append(INDENT_STRING));
+                            Enumerable.Range(0, --indent).ForEach(_ => sb.Append(INDENT_STRING));
                         }
                     }
 
@@ -85,7 +85,7 @@ public static class JsonPrettyPrint
                     if (!quoted)
                     {
                         sb.AppendLine();
-                        Enumerable.Range(0, indent).ForEach(item => sb.Append(INDENT_STRING));
+                        Enumerable.Range(0, indent).ForEach(_ => sb.Append(INDENT_STRING));
                     }
 
                     break;

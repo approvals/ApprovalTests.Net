@@ -15,7 +15,7 @@ public static class ThreadSafetyTheory
         Enumerable.Range(0, times)
             .AsParallel()
             .WithDegreeOfParallelism(16)
-            .Select(i =>
+            .Select(_ =>
             {
                 var inputs = caseGenerator();
                 var text = caseString(inputs);

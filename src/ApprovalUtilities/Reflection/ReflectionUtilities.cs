@@ -102,7 +102,7 @@ public static class ReflectionUtilities
 
     public static IEnumerable<FieldInfo> GetInstanceFields(this object value)
     {
-        return value.GetInstanceFields(fi => true);
+        return value.GetInstanceFields(_ => true);
     }
 
     public static IEnumerable<FieldInfo> GetAllFields(Type forType)
@@ -128,7 +128,7 @@ public static class ReflectionUtilities
 
     public static IEnumerable<PropertyInfo> NonPublicInstanceProperties(this object value)
     {
-        return value.NonPublicInstanceProperties(pi => true);
+        return value.NonPublicInstanceProperties(_ => true);
     }
 
     public static IEnumerable<FieldInfo> NonPublicStaticFields(this object value, bool includeInherited)

@@ -6,7 +6,7 @@ public static class ModuleInitializer
     [ModuleInitializer]
     public static void Initialize()
     {
-        AttributeStackTraceParser.FileInfoIsValidFilter = caller => true;
+        AttributeStackTraceParser.FileInfoIsValidFilter = _ => true;
     }
 }
 #if(NET48)
