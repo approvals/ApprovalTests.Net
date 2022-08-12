@@ -1,3 +1,3 @@
 ﻿System.Exception: https:.../242
    at ApprovalTests.Tests.ExceptionTests.<>c.<VerifyExceptionWithStacktrace>() in ...\ExceptionTests.cs
-   at ApprovalUtilities.Utilities.ExceptionUtilities.GetException(Action action)
+   at ApprovalUtilities.Utilities.ExceptionUtilities.GetException(Action action) in ...\ExceptionUtilities.cs
