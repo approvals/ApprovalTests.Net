@@ -30,7 +30,7 @@ public class PathUtilitiesTest
     [Fact]
     public void TestFindsMultipleFiles()
     {
-        Approvals.VerifyAll(PathUtilities.LocateFileFromEnvironmentPath("notepad.exe").Select(f => f.ToLowerInvariant()), "Found");
+        Approvals.VerifyAll(PathUtilities.LocateFileFromEnvironmentPath("notepad.exe").Where(x=>!x.Contains("appdata")).Select(f => f.ToLowerInvariant()), "Found");
     }
 
     [Fact]
