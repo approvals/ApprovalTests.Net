@@ -14,6 +14,6 @@ public class TeamCityReporter : IEnvironmentAwareReporter
 
     public bool IsWorkingInThisEnvironment(string forFile)
     {
-        return Environment.GetEnvironmentVariable("TEAMCITY_PROJECT_NAME") != null;
+        return Environment.GetEnvironmentVariable("TEAMCITY_VERSION") != null;
     }
 }
