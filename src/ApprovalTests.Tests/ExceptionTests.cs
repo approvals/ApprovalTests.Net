@@ -9,6 +9,9 @@ namespace ApprovalTests.Tests;
 [UseReporter(typeof(MachineSpecificReporter))]
 public class ExceptionTests
 {
+
+#if NET6_0_OR_GREATER
+
     [Test]
     public void VerifyExceptionWithStacktrace()
     {
@@ -19,6 +22,8 @@ public class ExceptionTests
             Approvals.VerifyExceptionWithStacktrace(e);
         }
     }
+
+#endif
 
     [Test]
     public void VerifyException()
