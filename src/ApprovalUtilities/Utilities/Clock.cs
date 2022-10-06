@@ -1,5 +1,3 @@
-using ApprovalUtilities.Persistence;
-
 namespace ApprovalUtilities.Utilities;
 
 public class Clock : ILoader<DateTime>

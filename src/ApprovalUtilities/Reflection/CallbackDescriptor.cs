@@ -1,7 +1,5 @@
 namespace ApprovalUtilities.Reflection;
 
-using System.Text;
-
 public class CallbackDescriptor
 {
     List<MethodInfo> Methods = new();

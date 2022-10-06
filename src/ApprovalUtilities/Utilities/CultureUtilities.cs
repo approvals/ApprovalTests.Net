@@ -1,6 +1,4 @@
-﻿using System.Threading;
-
-namespace ApprovalUtilities.Utilities;
+﻿namespace ApprovalUtilities.Utilities;
 
 public static class CultureUtilities
 {

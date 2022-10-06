@@ -1,6 +1,4 @@
-﻿using System.Text;
-
-namespace ApprovalUtilities.Utilities;
+﻿namespace ApprovalUtilities.Utilities;
 
 public static class JsonPrettyPrint
 {

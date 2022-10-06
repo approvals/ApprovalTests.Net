@@ -1,6 +1,3 @@
-using ApprovalUtilities.Persistence;
-using ApprovalUtilities.SimpleLogger.Writers;
-
 namespace ApprovalUtilities.SimpleLogger;
 
 public static class Logger

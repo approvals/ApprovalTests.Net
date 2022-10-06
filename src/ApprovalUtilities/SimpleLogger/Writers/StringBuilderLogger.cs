@@ -1,7 +1,4 @@
-﻿using System.Text;
-using ApprovalUtilities.Utilities;
-
-namespace ApprovalUtilities.SimpleLogger.Writers;
+﻿namespace ApprovalUtilities.SimpleLogger.Writers;
 
 public class StringBuilderLogger : IAppendable
 {

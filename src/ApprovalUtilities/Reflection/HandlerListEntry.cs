@@ -1,7 +1,6 @@
 namespace ApprovalUtilities.Reflection;
 
 using System.ComponentModel;
-using Utilities;
 
 public class HandlerListEntry
 {

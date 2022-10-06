@@ -1,7 +1,4 @@
 using ApprovalUtilities.CallStack;
-using ApprovalUtilities.Persistence;
-using ApprovalUtilities.SimpleLogger.Writers;
-using ApprovalUtilities.Utilities;
 
 namespace ApprovalUtilities.SimpleLogger;
 
