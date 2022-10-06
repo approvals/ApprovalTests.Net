@@ -12,7 +12,7 @@ public class Caller
     int currentFrame;
 
     public Caller()
-        : this(new StackTrace(true), 2)
+        : this(new(true), 2)
     {
     }
 
@@ -28,7 +28,7 @@ public class Caller
         {
             for (var i = currentFrame; i < StackTrace.FrameCount; i++)
             {
-                yield return new Caller(StackTrace, i);
+                yield return new(StackTrace, i);
             }
         }
     }
@@ -56,7 +56,7 @@ public class Caller
         {
             for (var i = currentFrame; 0 <= i; i--)
             {
-                yield return new Caller(StackTrace, i);
+                yield return new(StackTrace, i);
             }
         }
     }

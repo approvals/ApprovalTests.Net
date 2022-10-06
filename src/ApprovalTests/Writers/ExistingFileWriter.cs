@@ -9,7 +9,7 @@ public class ExistingFileWriter : IApprovalWriter
         this.file = file;
         if (!File.Exists(file))
         {
-            throw new Exception("Existing File is required: '" + file + "'");
+            throw new("Existing File is required: '" + file + "'");
         }
     }
 

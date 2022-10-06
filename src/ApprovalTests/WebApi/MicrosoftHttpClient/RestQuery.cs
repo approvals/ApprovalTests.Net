@@ -18,7 +18,7 @@ public abstract class RestQuery<T> : IExecutableQuery, ILoader<T>
 
     public Task<DownloadStringCompletedEventArgs> ExecuteAsync(string requestUri)
     {
-        var uri = new Uri(new Uri(GetBaseAddress()), requestUri);
+        var uri = new Uri(new(GetBaseAddress()), requestUri);
         try
         {
             using var client = new WebClient
@@ -32,7 +32,7 @@ public abstract class RestQuery<T> : IExecutableQuery, ILoader<T>
         }
         catch (Exception e)
         {
-            throw new Exception($"The following error occured while connecting to:\n{uri}\nError:\n{e.Message}", e);
+            throw new($"The following error occured while connecting to:\n{uri}\nError:\n{e.Message}", e);
         }
     }
 

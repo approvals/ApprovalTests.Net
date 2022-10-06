@@ -18,7 +18,7 @@ public static class StringReporting
             File.WriteAllText(actualFile, actual);
 
             reporter.Report(expectedFile, actualFile);
-            throw new Exception($"<{expected}> != <{actual}>");
+            throw new($"<{expected}> != <{actual}>");
         }
     }
 

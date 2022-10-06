@@ -56,7 +56,7 @@ public abstract class AttributeStackTraceParser : IStackTraceParser
 
     public virtual bool Parse(StackTrace trace)
     {
-        caller = new Caller(trace, 0);
+        caller = new(trace, 0);
         approvalFrame = FindApprovalFrame();
         return approvalFrame != null;
     }

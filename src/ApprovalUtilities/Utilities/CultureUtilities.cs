@@ -7,6 +7,6 @@ public static class CultureUtilities
 {
     public static void ForceCulture(string culture="en-US")
     {
-        Thread.CurrentThread.CurrentCulture = new CultureInfo(culture);
+        Thread.CurrentThread.CurrentCulture = new(culture);
     }
 }

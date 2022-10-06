@@ -16,7 +16,7 @@ public static class WindowsRegistryAssert
         if (actualValue != expectedValue)
         {
             var message = $"{failureMessage}\nMust set DWORD {registryKey.Name}\\{keyName} : {valueName} = {expectedValue}.";
-            throw new Exception(message);
+            throw new(message);
         }
     }
 

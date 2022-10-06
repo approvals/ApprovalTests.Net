@@ -128,6 +128,6 @@ https://github.com/approvals/ApprovalTests.Net/issues/new?title=Unknown%3A+%27Ru
     {
         var invalid = Path.GetInvalidFileNameChars().ToArray();
         var chars = data.Select(c => invalid.Contains(c) ? '_' : c).ToArray();
-        return new string(chars);
+        return new(chars);
     }
 }

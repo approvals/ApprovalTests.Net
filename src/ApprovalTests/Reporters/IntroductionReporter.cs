@@ -9,7 +9,7 @@ public class IntroductionReporter : IApprovalFailureReporter
         var message = GetFriendlyWelcomeMessage();
         Debug.WriteLine(message);
         Console.WriteLine(message);
-        throw new Exception(message);
+        throw new(message);
     }
 
     public string GetFriendlyWelcomeMessage()

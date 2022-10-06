@@ -4,7 +4,7 @@ public class MSpecStackTraceParser : AttributeStackTraceParser
 {
     public override bool Parse(StackTrace stackTrace)
     {
-        caller = new Caller(stackTrace, 0);
+        caller = new(stackTrace, 0);
         approvalFrame = FindApprovalFrame(caller);
         if (approvalFrame == null)
         {
@@ -30,7 +30,7 @@ public class MSpecStackTraceParser : AttributeStackTraceParser
         var approvalField = delegates.FirstOrDefault(f => f.GetValue(instance) is Delegate theDelegate && theDelegate.Method == approvalFrame.Method);
         if (approvalField == null)
         {
-            throw new Exception("Could not find the Field for this MSpec Test \n (Please log this if found at: https://github.com/approvals/ApprovalTests.Net/issues");
+            throw new("Could not find the Field for this MSpec Test \n (Please log this if found at: https://github.com/approvals/ApprovalTests.Net/issues");
         }
 
         return approvalField.Name;

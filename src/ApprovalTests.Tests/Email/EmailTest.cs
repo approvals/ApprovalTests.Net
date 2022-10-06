@@ -12,7 +12,7 @@ public class EmailTest
             var message = new MailMessage();
             message.To.Add("approvals@approvaltests.com");
             message.Subject = "this project rocks";
-            message.From = new MailAddress("everybody@acomputer.com");
+            message.From = new("everybody@acomputer.com");
             message.Body = @"Wow, this is so cool.
 I should send more emails.
 thanks,
@@ -30,9 +30,9 @@ your biggest fan";
             var message = new MailMessage();
             message.To.Add("approvals@approvaltests.com");
             message.Subject = "this project rocks";
-            message.From = new MailAddress("everybody@acomputer.com");
+            message.From = new("everybody@acomputer.com");
             message.Body = "Pictures Attached";
-            message.Attachments.Add(new Attachment(PathUtilities.GetAdjacentFile("tower.png")));
+            message.Attachments.Add(new(PathUtilities.GetAdjacentFile("tower.png")));
             message.AlternateViews.Add(AlternateView.CreateAlternateViewFromString("This be alternate."));
             EmailApprovals.Verify(message);
         }

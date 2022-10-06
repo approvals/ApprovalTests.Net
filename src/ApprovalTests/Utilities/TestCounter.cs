@@ -70,7 +70,7 @@ public class TestCounter
         }
         catch (Win32Exception e)
         {
-            throw new Exception(
+            throw new(
                 $"Unable to launch: {program} with arguments {arguments}\nError Message: {e.Message}",
                 e);
         }

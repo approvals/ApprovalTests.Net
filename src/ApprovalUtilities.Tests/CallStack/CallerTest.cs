@@ -15,7 +15,7 @@ public class CallerTest
 
     static Caller GetCaller()
     {
-        return new Caller();
+        return new();
     }
 
     [Fact]

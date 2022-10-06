@@ -11,7 +11,7 @@ public class ExceptionExceptionsTest
     //[Test]
     public void TestTlDr()
     {
-        Approvals.Verify(new ExceptionalTlDr(new ExceptionalId
+        Approvals.Verify(new ExceptionalTlDr(new()
         {
             Assembly = "Assembly",
             Class = "Class",

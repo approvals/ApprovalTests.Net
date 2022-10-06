@@ -47,7 +47,7 @@ public class XunitStackTraceNamerTest
     public void TestApprovalNamerFailureMessage()
     {
         var parser = new StackTraceParser();
-        var exception = ExceptionUtilities.GetException(() => parser.Parse(new StackTrace(6)));
+        var exception = ExceptionUtilities.GetException(() => parser.Parse(new(6)));
 
         Approvals.Verify(exception.Message);
     }

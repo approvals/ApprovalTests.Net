@@ -16,7 +16,7 @@ public class MockClock : Clock
     readonly DateTime mockTime;
     int ticks;
 
-    public MockClock() : this(new DateTime(2011, 5, 6, 10, 30, 0, 0))
+    public MockClock() : this(new(2011, 5, 6, 10, 30, 0, 0))
     {
     }
 
@@ -28,6 +28,6 @@ public class MockClock : Clock
     public override DateTime Load()
     {
         ticks += 10;
-        return new DateTime(mockTime.Year, mockTime.Month, mockTime.Day, mockTime.Hour, mockTime.Minute, 0, ticks);
+        return new(mockTime.Year, mockTime.Month, mockTime.Day, mockTime.Hour, mockTime.Minute, 0, ticks);
     }
 }

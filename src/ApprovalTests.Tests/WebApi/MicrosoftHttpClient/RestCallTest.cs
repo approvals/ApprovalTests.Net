@@ -29,7 +29,7 @@ public class GoogleQuery : RestQuery<GoogleQueryResults>
 
     public override GoogleQueryResults Load()
     {
-        return new GoogleQueryResults(GetResponse().Result);
+        return new(GetResponse().Result);
     }
 }
 

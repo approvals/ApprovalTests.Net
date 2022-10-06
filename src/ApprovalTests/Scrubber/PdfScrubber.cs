@@ -87,7 +87,7 @@ static class PdfScrubber
     static IEnumerable<Replacement> GetIdReplacements(string input, long positionOffset)
     {
         return FindIds(input)
-            .Select(pos => new Replacement {start = positionOffset + pos.start, text = new string('0', pos.length)});
+            .Select(pos => new Replacement {start = positionOffset + pos.start, text = new('0', pos.length)});
     }
 
     static IEnumerable<Replacement> GetITextVersionReplacements(string input, long positionOffset)

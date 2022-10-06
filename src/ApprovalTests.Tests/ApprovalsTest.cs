@@ -100,7 +100,7 @@ public class ApprovalsTest
 
     static Dictionary<string, string> FireFlyMap()
     {
-        return new Dictionary<string, string>
+        return new()
         {
             {"Caption", "Mal"},
             {"2nd In Command", "Zoey"},

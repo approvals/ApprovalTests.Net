@@ -29,7 +29,7 @@ public class Approvals
 
     public static void SetCaller()
     {
-        currentCaller.Value = new Caller();
+        currentCaller.Value = new();
     }
 
     //begin-snippet: complete_verify_call

@@ -42,7 +42,7 @@ public static class ThreadSafetyTheory
             var method2 = ToText(n2, label2);
             var method1 = ToText(n1, label1);
             method2.DiffWith(method1);
-            throw new Exception("Race condition detected");
+            throw new("Race condition detected");
         }
     }
 

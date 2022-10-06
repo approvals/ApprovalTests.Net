@@ -21,7 +21,7 @@ public class InvalidReporterConfiguration : IEnvironmentAwareReporter
 
     Exception BuildException()
     {
-        throw new Exception($@"Invalid configuration of reporter. Reporters must extend {nameof(IApprovalFailureReporter)}.
+        throw new($@"Invalid configuration of reporter. Reporters must extend {nameof(IApprovalFailureReporter)}.
 Invalid reporter type: {reporter.FullName}
 
 Note: The stack here is not helpful.");

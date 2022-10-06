@@ -60,7 +60,7 @@ public class HandlerListEntry
                 var nextValue = GetField<object>(NextFieldName);
                 if (nextValue != null)
                 {
-                    next = new HandlerListEntry(nextValue);
+                    next = new(nextValue);
                 }
             }
 

@@ -51,7 +51,7 @@ public class ApprovalsFilename
             return this;
         }
 
-        return new ApprovalsFilename
+        return new()
         {
             AdditionalInformation = AdditionalInformation,
             ApprovedStatus = "approved",

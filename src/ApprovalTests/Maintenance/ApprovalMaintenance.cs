@@ -75,7 +75,7 @@ public static class ApprovalMaintenance
             .ToArray();
         if (files.Any())
         {
-            throw new Exception("The following files have been abandoned:\n" + files.ToReadableString().Replace(",", "\n"));
+            throw new("The following files have been abandoned:\n" + files.ToReadableString().Replace(",", "\n"));
         }
     }
 }

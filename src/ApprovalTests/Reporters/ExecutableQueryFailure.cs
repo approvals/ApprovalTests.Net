@@ -49,11 +49,11 @@ public class ExecutableQueryFailure : IApprovalFailureReporter, IApprovalReporte
     {
         if (!File.Exists(fileName))
         {
-            return new QueryResult();
+            return new();
         }
 
         var newQuery = File.ReadAllText(fileName).Trim();
         var newResult = query.ExecuteQuery(newQuery);
-        return new QueryResult { Query = newQuery, Result = newResult };
+        return new() { Query = newQuery, Result = newResult };
     }
 }

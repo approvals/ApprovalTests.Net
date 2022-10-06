@@ -9,7 +9,7 @@ public class TempFile : IDisposable
 
     public TempFile(string name)
     {
-        backingFile = new FileInfo(name);
+        backingFile = new(name);
         backingFile.Create().Close();
     }
 
