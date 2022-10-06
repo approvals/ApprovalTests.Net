@@ -32,11 +32,9 @@ ApprovalTests suggest you make a assembly level configuration file for approvalt
 <!-- snippet: config_file -->
 <a id='snippet-config_file'></a>
 ```cs
-using ApprovalTests.Reporters;
-
 [assembly: UseReporter(typeof(DiffReporter))]
 ```
-<sup><a href='/src/ApprovalTests.Tests/ApprovalTestsConfig.cs#L1-L5' title='Snippet source file'>snippet source</a> | <a href='#snippet-config_file' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests.Tests/ApprovalTestsConfig.cs#L1-L4' title='Snippet source file'>snippet source</a> | <a href='#snippet-config_file' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -49,7 +47,7 @@ If you wanted to have multiple reporters launch on failure, you can also combine
 ```cs
 [UseReporter(typeof(DiffReporter), typeof(FileLauncherReporter))]
 ```
-<sup><a href='/src/ApprovalTests.Tests/Html/HtmlTest.cs#L7-L9' title='Snippet source file'>snippet source</a> | <a href='#snippet-multiple_reporters' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests.Tests/Html/HtmlTest.cs#L2-L4' title='Snippet source file'>snippet source</a> | <a href='#snippet-multiple_reporters' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 

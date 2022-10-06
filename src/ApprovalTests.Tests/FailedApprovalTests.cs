@@ -1,15 +1,8 @@
-﻿using System;
-using ApprovalTests.Core.Exceptions;
-using ApprovalTests.Reporters;
-using NUnit.Framework;
-
-namespace ApprovalTests.Tests;
-
-[TestFixture]
+﻿[TestFixture]
 [UseReporter(typeof(CleanupReporter))]
 public class FailedApprovalTests
 {
-    void AssertThrows<T>(TestDelegate code) where T : Exception
+    static void AssertThrows<T>(TestDelegate code) where T : Exception
     {
         using (Approvals.SetFrontLoadedReporter(ReportWithoutFrontLoading.INSTANCE))
         {

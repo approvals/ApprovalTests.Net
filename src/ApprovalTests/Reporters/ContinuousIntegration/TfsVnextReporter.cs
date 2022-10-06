@@ -1,6 +1,3 @@
-using System;
-using ApprovalTests.Core;
-
 namespace ApprovalTests.Reporters.ContinuousIntegration;
 
 public class TfsVnextReporter : IEnvironmentAwareReporter

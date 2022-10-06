@@ -1,11 +1,4 @@
 ﻿using System.Net.Mail;
-using ApprovalTests.Email;
-using ApprovalTests.Namers;
-using ApprovalTests.Reporters;
-using ApprovalUtilities.Utilities;
-using NUnit.Framework;
-
-namespace ApprovalTests.Tests.Email;
 
 [TestFixture]
 [UseReporter(typeof(MachineSpecificReporter))]
@@ -29,21 +22,21 @@ your biggest fan";
     }
 
 #if(NET48)
-        [Test]
-        public void TestAttachment()
+    [Test]
+    public void TestAttachment()
+    {
+        using (ApprovalResults.UniqueForOs())
         {
-            using (ApprovalResults.UniqueForOs())
-            {
-                var message = new MailMessage();
-                message.To.Add("approvals@approvaltests.com");
-                message.Subject = "this project rocks";
-                message.From = new MailAddress("everybody@acomputer.com");
-                message.Body = "Pictures Attached";
-                message.Attachments.Add(new Attachment(PathUtilities.GetAdjacentFile("tower.png")));
-                message.AlternateViews.Add(AlternateView.CreateAlternateViewFromString("This be alternate."));
-                EmailApprovals.Verify(message);
-            }
+            var message = new MailMessage();
+            message.To.Add("approvals@approvaltests.com");
+            message.Subject = "this project rocks";
+            message.From = new MailAddress("everybody@acomputer.com");
+            message.Body = "Pictures Attached";
+            message.Attachments.Add(new Attachment(PathUtilities.GetAdjacentFile("tower.png")));
+            message.AlternateViews.Add(AlternateView.CreateAlternateViewFromString("This be alternate."));
+            EmailApprovals.Verify(message);
         }
+    }
 #endif
 
     [Test]

@@ -1,11 +1,3 @@
-using System;
-using System.Globalization;
-using System.Linq;
-using ApprovalTests.Combinations;
-using NUnit.Framework;
-
-namespace ApprovalTests.Tests;
-
 public class CombinationApprovalsTests
 {
     [Test]

@@ -1,12 +1,4 @@
-﻿using System;
-using System.Linq;
-using ApprovalTests.Namers;
-using ApprovalTests.Reporters;
-using NUnit.Framework;
-
-namespace ApprovalTests.Tests.Namer;
-
-[TestFixture]
+﻿[TestFixture]
 // begin-snippet: use_MachineSpecificReporter
 [UseReporter(typeof(MachineSpecificReporter))]
 // end-snippet

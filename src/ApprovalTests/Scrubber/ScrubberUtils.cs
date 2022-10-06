@@ -1,7 +1,3 @@
-using System;
-using System.Linq;
-using ApprovalUtilities.Utilities;
-
 namespace ApprovalTests.Scrubber;
 
 public static class ScrubberUtils

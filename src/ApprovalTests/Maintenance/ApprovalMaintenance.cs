@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using ApprovalUtilities.CallStack;
-using ApprovalUtilities.Utilities;
-
-namespace ApprovalTests.Maintenance;
+﻿namespace ApprovalTests.Maintenance;
 
 public static class ApprovalMaintenance
 {

@@ -1,7 +1,4 @@
-﻿using System;
-using ApprovalTests.Scrubber;
-using ApprovalTests.Writers;
-using ApprovalUtilities.Xml;
+﻿using ApprovalUtilities.Xml;
 
 namespace ApprovalTests.Xml;
 

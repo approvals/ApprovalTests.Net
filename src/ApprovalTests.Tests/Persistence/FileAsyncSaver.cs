@@ -1,10 +1,4 @@
-﻿using System.IO;
-using System.Threading.Tasks;
-using ApprovalUtilities.Persistence;
-
-namespace ApprovalTests.Tests.Persistence;
-
-public class FileAsyncSaver : ISaverAsync<string>
+﻿public class FileAsyncSaver : ISaverAsync<string>
 {
     readonly FileInfo file;
 
@@ -12,7 +6,6 @@ public class FileAsyncSaver : ISaverAsync<string>
     {
         this.file = file;
     }
-
 
     public async Task<string> Save(string objectToBeSaved)
     {

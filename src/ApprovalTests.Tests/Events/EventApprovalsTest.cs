@@ -1,9 +1,4 @@
-﻿namespace ApprovalTests.Tests.Events;
-
-using ApprovalTests.Events;
-using NUnit.Framework;
-
-[TestFixture]
+﻿[TestFixture]
 public class EventApprovalsTest
 {
     [Test]

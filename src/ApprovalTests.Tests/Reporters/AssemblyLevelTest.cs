@@ -1,8 +1,3 @@
-using ApprovalTests.Reporters;
-using NUnit.Framework;
-
-namespace ApprovalTests.Tests.Reporters;
-
 [TestFixture]
 public class AssemblyLevelTest
 {
@@ -14,6 +9,4 @@ public class AssemblyLevelTest
             Assert.AreEqual(typeof(DiffReporter), Approvals.GetReporter().GetType());
         }
     }
-
-
 }

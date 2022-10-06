@@ -1,9 +1,4 @@
-﻿using System.IO;
-using ApprovalUtilities.Persistence;
-
-namespace ApprovalTests.Tests.Persistence;
-
-public class FileSaver : ISaver<string>
+﻿public class FileSaver : ISaver<string>
 {
     readonly FileInfo file;
 

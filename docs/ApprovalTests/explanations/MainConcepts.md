@@ -65,7 +65,7 @@ public void Text()
     Approvals.Verify("should be approved");
 }
 ```
-<sup><a href='/src/ApprovalTests.Tests/ApprovalsTest.cs#L13-L19' title='Snippet source file'>snippet source</a> | <a href='#snippet-simple_verify' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests.Tests/ApprovalsTest.cs#L6-L12' title='Snippet source file'>snippet source</a> | <a href='#snippet-simple_verify' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 This call brings together 3 things + default Approver to produce a `.received.` file which is compared to an `.approved.` file.
@@ -123,7 +123,7 @@ Eventually, all Verify methods call:
 ```cs
 public static void Verify(IApprovalWriter writer, IApprovalNamer namer, IApprovalFailureReporter reporter)
 ```
-<sup><a href='/src/ApprovalTests/Approvals.cs#L45-L47' title='Snippet source file'>snippet source</a> | <a href='#snippet-complete_verify_call' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests/Approvals.cs#L42-L44' title='Snippet source file'>snippet source</a> | <a href='#snippet-complete_verify_call' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Most of the time this is hidden in an underlying a Verify call.
@@ -145,7 +145,7 @@ If you simply wanted to format text this is usually done in a separate step befo
 ```cs
 public static void VerifyWithExtension(string text, string fileExtensionWithDot, Func<string, string> scrubber = null)
 ```
-<sup><a href='/src/ApprovalTests/Approvals.cs#L179-L181' title='Snippet source file'>snippet source</a> | <a href='#snippet-verify_with_extension' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests/Approvals.cs#L176-L178' title='Snippet source file'>snippet source</a> | <a href='#snippet-verify_with_extension' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 

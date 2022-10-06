@@ -1,7 +1,4 @@
-﻿using System;
-using ApprovalTests.Core;
-
-namespace ApprovalTests.Reporters.ContinuousIntegration;
+﻿namespace ApprovalTests.Reporters.ContinuousIntegration;
 
 public class MyGetReporter : IEnvironmentAwareReporter
 {

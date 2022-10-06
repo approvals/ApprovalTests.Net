@@ -1,6 +1,3 @@
-using System;
-using ApprovalTests.Core;
-
 namespace ApprovalTests.Reporters;
 
 public class InvalidReporterConfiguration : IEnvironmentAwareReporter

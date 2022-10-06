@@ -1,7 +1,4 @@
-﻿using System;
-using ApprovalTests.Core;
-
-namespace ApprovalTests.Writers;
+﻿namespace ApprovalTests.Writers;
 
 public static class WriterFactory
 {

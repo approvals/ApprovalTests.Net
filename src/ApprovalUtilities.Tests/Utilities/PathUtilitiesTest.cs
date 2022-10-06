@@ -3,8 +3,6 @@ using ApprovalTests;
 using ApprovalUtilities.Utilities;
 using Xunit;
 
-namespace ApprovalUtilities.Tests.Utilities;
-
 public class PathUtilitiesTest
 {
     [Fact]
@@ -22,7 +20,7 @@ public class PathUtilitiesTest
         AssertEqualIgnoreCase(@"C:\Windows\System32\ipconfig.exe", found);
     }
 
-    void AssertEqualIgnoreCase(string expected, string actual)
+    static void AssertEqualIgnoreCase(string expected, string actual)
     {
         Assert.Equal(expected.ToLowerInvariant(), actual.ToLowerInvariant());
     }

@@ -1,11 +1,4 @@
-﻿using ApprovalTests.Reporters;
-using ApprovalTests.Reporters.TestFrameworks;
-using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace ApprovalTests.MSTest;
-
-[TestClass]
+﻿[TestClass]
 public class MSTestReporterTest
 {
     [TestMethod]

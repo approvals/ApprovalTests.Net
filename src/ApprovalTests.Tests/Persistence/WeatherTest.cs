@@ -1,7 +1,3 @@
-using NUnit.Framework;
-
-namespace ApprovalTests.Tests.Persistence;
-
 [TestFixture]
 public class WeatherTest
 {

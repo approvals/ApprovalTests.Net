@@ -1,4 +1,3 @@
-using System;
 using ApprovalTests.WebApi.MicrosoftHttpClient;
 
 namespace ApprovalTests.ExceptionalExceptions;

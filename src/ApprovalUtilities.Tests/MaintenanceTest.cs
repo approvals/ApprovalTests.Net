@@ -1,8 +1,6 @@
 ﻿using ApprovalTests.Maintenance;
 using Xunit;
 
-namespace ApprovalUtilities.Tests;
-
 public class MaintenanceTest
 {
     [Fact]

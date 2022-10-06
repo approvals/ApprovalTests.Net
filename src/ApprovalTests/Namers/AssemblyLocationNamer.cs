@@ -1,11 +1,8 @@
-﻿using System.IO;
-using System.Linq;
-
-namespace ApprovalTests.Namers;
+﻿namespace ApprovalTests.Namers;
 
 public class AssemblyLocationNamer : UnitTestFrameworkNamer
 {
-    string AssemblyDirectory
+    static string AssemblyDirectory
     {
         get
         {

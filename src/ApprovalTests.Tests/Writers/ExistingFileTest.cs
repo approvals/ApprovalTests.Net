@@ -1,12 +1,4 @@
-﻿using System.IO;
-using ApprovalTests.Reporters;
-using ApprovalTests.Writers;
-using ApprovalUtilities.Utilities;
-using NUnit.Framework;
-
-namespace ApprovalTests.Tests.Writers;
-
-[TestFixture]
+﻿[TestFixture]
 [UseReporter(typeof(DiffReporter))]
 public class ExistingFileTest
 {

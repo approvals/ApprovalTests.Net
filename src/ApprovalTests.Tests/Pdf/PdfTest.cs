@@ -1,16 +1,4 @@
-﻿using System.IO;
-using System.Linq;
-using ApprovalTests.Reporters;
-using ApprovalTests.Scrubber;
-using ApprovalUtilities.Utilities;
-using iText.Kernel.Pdf;
-using iText.Layout;
-using iText.Layout.Element;
-using NUnit.Framework;
-
-namespace ApprovalTests.Tests.Pdf;
-
-[TestFixture]
+﻿[TestFixture]
 public class PdfTest
 {
     [TestCase(@"

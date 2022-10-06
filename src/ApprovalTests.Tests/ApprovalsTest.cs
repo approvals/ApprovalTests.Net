@@ -1,11 +1,4 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using ApprovalUtilities.Utilities;
-using NUnit.Framework;
-
-namespace ApprovalTests.Tests;
-
-[TestFixture]
+﻿[TestFixture]
 public class ApprovalsTest
 {
     static readonly string[] text = {"abc", "123", "!@#"};

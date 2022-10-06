@@ -7,8 +7,6 @@ using ApprovalUtilities.SimpleLogger;
 using ApprovalUtilities.Utilities;
 using Xunit;
 
-namespace ApprovalUtilities.Tests;
-
 [UseReporter(typeof(DiffReporter))]
 public class LoggerTest
 {
@@ -99,7 +97,7 @@ public class MockTimer : ILoader<DateTime>
     public DateTime Load()
     {
         ticks += 10;
-        ticks = ticks % 999;
+        ticks %= 999;
         return new DateTime(2011, 5, 6, 10, 30, 0, ticks);
     }
 }

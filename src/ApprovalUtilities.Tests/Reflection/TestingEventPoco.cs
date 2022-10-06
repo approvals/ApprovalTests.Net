@@ -1,8 +1,6 @@
 using System;
 using System.ComponentModel;
 
-namespace ApprovalTests.Tests.Events;
-
 public class TestingEventPoco
 {
     readonly object NonEventField = new();

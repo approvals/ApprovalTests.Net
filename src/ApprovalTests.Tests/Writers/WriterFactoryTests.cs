@@ -1,9 +1,4 @@
-﻿using ApprovalTests.Writers;
-using NUnit.Framework;
-
-namespace ApprovalTests.Tests.Writers;
-
-[TestFixture]
+﻿[TestFixture]
 public class WriterFactoryTests
 {
     [Test]

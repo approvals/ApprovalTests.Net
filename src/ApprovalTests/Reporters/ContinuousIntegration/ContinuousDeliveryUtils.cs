@@ -11,9 +11,5 @@ public static class ContinuousDeliveryUtils
         {
             reporter.Report(approved, received);
         }
-        else
-        {
-            // do nothing
-        }
     }
 }

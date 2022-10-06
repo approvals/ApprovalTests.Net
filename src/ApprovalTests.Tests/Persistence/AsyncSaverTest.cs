@@ -1,10 +1,4 @@
-﻿using ApprovalUtilities.Persistence;
-using ApprovalUtilities.Utilities;
-using NUnit.Framework;
-
-namespace ApprovalTests.Tests.Persistence;
-
-[TestFixture]
+﻿[TestFixture]
 public class AsyncSaverTest
 {
     [Test]

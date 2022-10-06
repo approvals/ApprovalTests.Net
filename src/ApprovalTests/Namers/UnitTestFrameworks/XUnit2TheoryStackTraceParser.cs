@@ -1,7 +1,5 @@
 namespace ApprovalTests.Namers.UnitTestFrameworks;
 
-using StackTraceParsers;
-
 public class XUnit2TheoryStackTraceParser : AttributeStackTraceParser
 {
     public const string TheoryAttribute = "Xunit.TheoryAttribute";

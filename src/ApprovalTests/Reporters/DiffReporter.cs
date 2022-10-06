@@ -1,7 +1,4 @@
-﻿using System;
-using System.IO;
-using ApprovalTests.Core;
-using DiffEngine;
+﻿using DiffEngine;
 
 namespace ApprovalTests.Reporters;
 

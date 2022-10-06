@@ -1,9 +1,4 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using ApprovalUtilities.Utilities;
-
-namespace ApprovalTests.Namers;
+﻿namespace ApprovalTests.Namers;
 
 public class ApprovalsFilename
 {

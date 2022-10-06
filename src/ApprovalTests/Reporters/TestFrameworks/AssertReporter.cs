@@ -1,11 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Reflection;
-using ApprovalTests.Core;
-using ApprovalTests.Namers.StackTraceParsers;
-using EmptyFiles;
-
-namespace ApprovalTests.Reporters.TestFrameworks;
+﻿namespace ApprovalTests.Reporters.TestFrameworks;
 
 public class AssertReporter : IEnvironmentAwareReporter
 {

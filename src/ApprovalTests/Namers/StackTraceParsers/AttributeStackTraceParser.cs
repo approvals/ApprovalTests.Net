@@ -1,9 +1,3 @@
-using System;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using ApprovalUtilities.CallStack;
-
 namespace ApprovalTests.Namers.StackTraceParsers;
 
 public abstract class AttributeStackTraceParser : IStackTraceParser
@@ -50,7 +44,7 @@ public abstract class AttributeStackTraceParser : IStackTraceParser
                  classNamespace.StartsWith("ApprovalUtilities"));
     }
 
-    string GetFileNameForStack(Caller frame)
+    static string GetFileNameForStack(Caller frame)
     {
         return frame.Parents
             .Where(FileInfoIsValidFilter)

@@ -1,9 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using ApprovalUtilities.Utilities;
-
 namespace ApprovalTests.Namers;
 
 public static class ApprovalResults

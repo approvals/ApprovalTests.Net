@@ -1,8 +1,3 @@
-using ApprovalTests.Xml;
-using NUnit.Framework;
-
-namespace ApprovalTests.Tests.Xml;
-
 [TestFixture]
 public class XmlTest
 {

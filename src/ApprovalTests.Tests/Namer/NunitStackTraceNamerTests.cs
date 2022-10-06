@@ -1,9 +1,3 @@
-using System.IO;
-using ApprovalTests.Namers;
-using NUnit.Framework;
-
-namespace ApprovalTests.Tests.Namer;
-
 [TestFixture]
 public class NunitStackTraceNamerTests
 {

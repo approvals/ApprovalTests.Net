@@ -1,10 +1,4 @@
-﻿using ApprovalTests.Core.Exceptions;
-using ApprovalTests.TheoryTests;
-using NUnit.Framework;
-
-namespace ApprovalTests.Tests.Core.Exceptions;
-
-[TestFixture]
+﻿[TestFixture]
 public class SerializableExceptionsTest
 {
     [Test]
@@ -17,7 +11,7 @@ public class SerializableExceptionsTest
         Verify(new ApprovalException(r, a));
     }
 
-    void Verify(object o)
+    static void Verify(object o)
     {
         SerializableTheory.Verify(o, Assert.AreEqual);
     }

@@ -2,8 +2,6 @@
 using ApprovalUtilities.Utilities;
 using Xunit;
 
-namespace ApprovalUtilities.Tests.Utilities;
-
 public class StringUtilitiesTest
 {
     [Fact]

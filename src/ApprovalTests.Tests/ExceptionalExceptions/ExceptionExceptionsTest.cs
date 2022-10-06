@@ -1,10 +1,4 @@
-﻿using System;
-using ApprovalTests.ExceptionalExceptions;
-using NUnit.Framework;
-
-namespace ApprovalTests.Tests.ExceptionalExceptions;
-
-[TestFixture]
+﻿[TestFixture]
 public class ExceptionExceptionsTest
 {
     [Test]
@@ -13,7 +7,6 @@ public class ExceptionExceptionsTest
         var exceptionalId = Exceptional.GenerateUniqueId<Exception>();
         Approvals.Verify(exceptionalId);
     }
-
 
     //[Test]
     public void TestTlDr()

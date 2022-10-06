@@ -1,8 +1,4 @@
-﻿using ApprovalTests.Core;
-
-namespace ApprovalTests.Tests.Reporters;
-
-public class RecordingReporter : IEnvironmentAwareReporter
+﻿public class RecordingReporter : IEnvironmentAwareReporter
 {
     readonly bool working;
 

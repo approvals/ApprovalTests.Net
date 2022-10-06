@@ -1,5 +1,3 @@
-using System;
-
 namespace ApprovalTests.Namers;
 
 public class EnvironmentSpecificCleanUp : IDisposable

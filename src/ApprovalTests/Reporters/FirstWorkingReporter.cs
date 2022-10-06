@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using ApprovalTests.Core;
-using System.Linq;
-
 namespace ApprovalTests.Reporters;
 
 public class FirstWorkingReporter : IEnvironmentAwareReporter, IApprovalReporterWithCleanUp

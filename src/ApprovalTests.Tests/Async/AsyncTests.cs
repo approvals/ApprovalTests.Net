@@ -1,10 +1,4 @@
-﻿using System.Threading.Tasks;
-using ApprovalTests.Reporters;
-using NUnit.Framework;
-
-namespace ApprovalTests.Tests.Async;
-
-[TestFixture]
+﻿[TestFixture]
 [UseReporter(typeof(MachineSpecificReporter))]
 public class AsyncTests
 {

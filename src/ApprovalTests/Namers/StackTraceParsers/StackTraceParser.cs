@@ -1,11 +1,3 @@
-using ApprovalTests.StackTraceParsers;
-using ApprovalUtilities.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using ApprovalTests.Namers.UnitTestFrameworks;
-
 namespace ApprovalTests.Namers.StackTraceParsers;
 
 public class StackTraceParser : IStackTraceParser

@@ -1,9 +1,4 @@
-﻿using ApprovalTests.Utilities;
-using NUnit.Framework;
-
-namespace ApprovalTests.Tests;
-
-[TestFixture]
+﻿[TestFixture]
 public class StackTraceScrubberTest
 {
     [Test]

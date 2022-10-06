@@ -1,10 +1,4 @@
-﻿using ApprovalTests.WindowsRegistry;
-using ApprovalUtilities.Utilities;
-using NUnit.Framework;
-
-namespace ApprovalTests.Tests.WindowsRegistry;
-
-[TestFixture]
+﻿[TestFixture]
 public class RegistryAssertTests
 {
     const string KeyName = @"Software\TestDummy";

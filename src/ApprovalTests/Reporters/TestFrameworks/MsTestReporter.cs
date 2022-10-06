@@ -1,6 +1,4 @@
 ﻿
-using ApprovalTests.StackTraceParsers;
-
 namespace ApprovalTests.Reporters.TestFrameworks;
 
 public class MsTestReporter : AssertReporter

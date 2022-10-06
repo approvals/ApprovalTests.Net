@@ -1,13 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using ApprovalTests.Core;
-using ApprovalTests.Reporters;
-using NUnit.Framework;
-
-namespace ApprovalTests.Tests.Reporters;
-
 [TestFixture]
 [UseReporter(typeof(ClassLevelReporter))]
 public class ReporterFactoryTest
@@ -20,7 +10,7 @@ public class ReporterFactoryTest
         return singletons;
     }
 
-    void SubMethod()
+    static void SubMethod()
     {
         Assert.AreEqual(typeof(MethodLevelReporter), Approvals.GetReporter().GetType());
     }

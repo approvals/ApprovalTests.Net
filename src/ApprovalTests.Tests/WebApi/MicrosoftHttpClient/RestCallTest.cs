@@ -1,10 +1,4 @@
-﻿using System.Net;
-using ApprovalTests.WebApi.MicrosoftHttpClient;
-using NUnit.Framework;
-
-namespace ApprovalTests.Tests.WebApi.MicrosoftHttpClient;
-
-[TestFixture]
+﻿[TestFixture]
 public class RestCallTest
 {
     [Test]

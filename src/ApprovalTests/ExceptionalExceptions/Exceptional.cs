@@ -1,7 +1,3 @@
-using System;
-using System.Linq;
-using ApprovalUtilities.CallStack;
-
 namespace ApprovalTests.ExceptionalExceptions;
 
 public class Exceptional : Exception

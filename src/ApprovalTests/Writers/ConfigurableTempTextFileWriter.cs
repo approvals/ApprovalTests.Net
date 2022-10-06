@@ -1,6 +1,4 @@
-﻿using System.IO;
-
-namespace ApprovalTests.Writers;
+﻿namespace ApprovalTests.Writers;
 
 public class ConfigurableTempTextFileWriter : ApprovalTextWriter
 {

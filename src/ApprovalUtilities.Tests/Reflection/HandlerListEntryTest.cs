@@ -2,7 +2,6 @@ using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
 using ApprovalTests;
-using ApprovalTests.Tests.Events;
 using Xunit;
 using ApprovalUtilities.Reflection;
 

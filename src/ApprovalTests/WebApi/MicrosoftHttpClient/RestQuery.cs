@@ -1,9 +1,6 @@
-﻿using System;
-using System.Net;
-using System.Text;
+﻿using System.Net;
 using System.Threading.Tasks;
 using ApprovalUtilities.Persistence;
-using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.WebApi.MicrosoftHttpClient;
 

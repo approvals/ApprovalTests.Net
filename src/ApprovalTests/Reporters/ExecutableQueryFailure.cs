@@ -1,5 +1,3 @@
-using System.IO;
-using ApprovalTests.Core;
 using ApprovalUtilities.Persistence;
 
 namespace ApprovalTests.Reporters;

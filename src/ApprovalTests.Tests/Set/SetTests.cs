@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using NUnit.Framework;
-using ApprovalTests.Set;
-using ApprovalUtilities.Utilities;
-using System.Text.RegularExpressions;
-
-namespace ApprovalTests.Tests.Set;
-
-[TestFixture]
+﻿[TestFixture]
 public class SetTests
 {
     [Test]

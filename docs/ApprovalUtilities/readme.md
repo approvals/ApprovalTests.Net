@@ -33,7 +33,7 @@ using (Disposables.Create(() => callCount++))
     //code
 }
 ```
-<sup><a href='/src/ApprovalUtilities.Tests/Utilities/DisposablesTest.cs#L12-L17' title='Snippet source file'>snippet source</a> | <a href='#snippet-disposables' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/ApprovalUtilities.Tests/Utilities/DisposablesTest.cs#L10-L15' title='Snippet source file'>snippet source</a> | <a href='#snippet-disposables' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ---

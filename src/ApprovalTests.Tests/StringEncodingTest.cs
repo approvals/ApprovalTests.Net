@@ -1,9 +1,4 @@
-﻿using ApprovalTests.Reporters;
-using NUnit.Framework;
-
-namespace ApprovalTests.Tests;
-
-[TestFixture]
+﻿[TestFixture]
 [UseReporter(typeof(ClipboardReporter))]
 public class StringEncodingTest
 {

@@ -1,7 +1,3 @@
-using System.IO;
-using ApprovalTests.Core;
-using ApprovalTests.Namers.StackTraceParsers;
-
 namespace ApprovalTests.Namers;
 
 public class UnitTestFrameworkNamer : IApprovalNamer

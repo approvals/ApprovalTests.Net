@@ -10,8 +10,6 @@ using ApprovalUtilities.Reflection;
 using Xunit;
 using ApprovalTests.Reporters;
 
-namespace ApprovalUtilities.Tests.Reflection;
-
 [UseReporter(typeof(DiffReporter))]
 public class ReflectionUtilitiesTest
 {

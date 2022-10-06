@@ -1,5 +1,3 @@
-using ApprovalUtilities.Utilities;
-
 namespace ApprovalTests.ExceptionalExceptions;
 
 public class ExceptionalId

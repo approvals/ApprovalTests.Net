@@ -1,9 +1,3 @@
-using System.Collections.Generic;
-using System.IO;
-using ApprovalTests.Core;
-using ApprovalTests.Core.Exceptions;
-using EmptyFiles;
-
 namespace ApprovalTests.Approvers;
 
 public class FileApprover : IApprovalApprover

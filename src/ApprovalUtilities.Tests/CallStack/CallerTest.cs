@@ -3,8 +3,6 @@ using ApprovalTests;
 using ApprovalUtilities.CallStack;
 using Xunit;
 
-namespace ApprovalUtilities.Tests.CallStack;
-
 public class CallerTest
 {
     [Fact]
@@ -15,7 +13,7 @@ public class CallerTest
         Assert.Equal("CallerTest", caller.Class.Name);
     }
 
-    Caller GetCaller()
+    static Caller GetCaller()
     {
         return new Caller();
     }
@@ -36,32 +34,32 @@ public class CallerTest
         Approvals.VerifyAll(methods, m => m.ToStandardString());
     }
 
-    Caller GetDeepCaller()
+    static Caller GetDeepCaller()
     {
         return A();
     }
 
-    Caller A()
+    static Caller A()
     {
         return B();
     }
 
-    Caller B()
+    static Caller B()
     {
         return C();
     }
 
-    Caller C()
+    static Caller C()
     {
         return D();
     }
 
-    Caller D()
+    static Caller D()
     {
         return E();
     }
 
-    Caller E()
+    static Caller E()
     {
         return GetCaller();
     }

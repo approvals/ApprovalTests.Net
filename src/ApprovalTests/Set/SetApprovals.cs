@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-
-namespace ApprovalTests.Set;
+﻿namespace ApprovalTests.Set;
 
 public static class SetApprovals
 {
