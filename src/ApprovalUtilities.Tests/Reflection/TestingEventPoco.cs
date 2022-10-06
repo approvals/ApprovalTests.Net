@@ -1,6 +1,3 @@
-using System;
-using System.ComponentModel;
-
 public class TestingEventPoco
 {
     readonly object NonEventField = new();

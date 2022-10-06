@@ -1,5 +1,3 @@
-using System.Runtime.InteropServices;
-
 namespace ApprovalTests.Reporters;
 
 public class QuietReporter : IEnvironmentAwareReporter

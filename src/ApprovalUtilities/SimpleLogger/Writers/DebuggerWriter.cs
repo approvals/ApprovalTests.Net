@@ -1,5 +1,3 @@
-using System.Diagnostics;
-
 namespace ApprovalUtilities.SimpleLogger.Writers;
 
 public class DebuggerWriter : IAppendable

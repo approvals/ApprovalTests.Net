@@ -1,6 +1,4 @@
-﻿using ApprovalTests.Reporters;
-
-public class FileLauncherWithDelayReporter : IApprovalFailureReporter
+﻿public class FileLauncherWithDelayReporter : IApprovalFailureReporter
 {
     public static readonly FileLauncherWithDelayReporter INSTANCE = new();
 

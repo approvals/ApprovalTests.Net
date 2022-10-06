@@ -1,4 +1,3 @@
-using System;
 using ApprovalUtilities.Persistence;
 
 namespace ApprovalUtilities.Utilities;

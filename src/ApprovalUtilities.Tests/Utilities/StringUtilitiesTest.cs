@@ -1,8 +1,4 @@
-﻿using ApprovalTests;
-using ApprovalUtilities.Utilities;
-using Xunit;
-
-public class StringUtilitiesTest
+﻿public class StringUtilitiesTest
 {
     [Fact]
     public void TestToReadableString()

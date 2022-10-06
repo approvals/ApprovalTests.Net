@@ -1,11 +1,3 @@
-using ApprovalTests.Approvers;
-using ApprovalTests.Html;
-using ApprovalTests.Namers;
-using ApprovalTests.Reporters;
-using ApprovalTests.Utilities;
-using ApprovalTests.Xml;
-using ApprovalUtilities.Persistence;
-
 namespace ApprovalTests;
 
 public class Approvals

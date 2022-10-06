@@ -1,8 +1,4 @@
 ﻿#if NET48
-using System.Collections.Generic;
-using ApprovalUtilities.Utilities;
-using Xunit;
-
 public class CollectionUtilsTest
 {
     [Fact]

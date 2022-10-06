@@ -1,7 +1,4 @@
-﻿using System.Linq;
-using ApprovalTests;
-using ApprovalUtilities.CallStack;
-using Xunit;
+﻿using ApprovalUtilities.CallStack;
 
 public class CallerTest
 {

@@ -1,6 +1,4 @@
-﻿using ApprovalTests.Namers;
-
-namespace ApprovalTests.Reporters;
+﻿namespace ApprovalTests.Reporters;
 
 public class MachineSpecificReporter : IEnvironmentAwareReporter
 {

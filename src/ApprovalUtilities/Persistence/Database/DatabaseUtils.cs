@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Common;
-using System.Data.SqlClient;
-
-namespace ApprovalUtilities.Persistence.Database;
+﻿namespace ApprovalUtilities.Persistence.Database;
 
 public static class DatabaseUtils
 {

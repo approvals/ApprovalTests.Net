@@ -1,7 +1,4 @@
-﻿using System.ComponentModel;
-using System.Threading.Tasks;
-
-namespace ApprovalTests.Utilities;
+﻿namespace ApprovalTests.Utilities;
 
 public class TestCounter
 {

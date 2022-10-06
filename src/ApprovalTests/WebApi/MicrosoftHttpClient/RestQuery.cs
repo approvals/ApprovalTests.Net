@@ -1,8 +1,4 @@
-﻿using System.Net;
-using System.Threading.Tasks;
-using ApprovalUtilities.Persistence;
-
-namespace ApprovalTests.WebApi.MicrosoftHttpClient;
+﻿namespace ApprovalTests.WebApi.MicrosoftHttpClient;
 
 public abstract class RestQuery<T> : IExecutableQuery, ILoader<T>
 {

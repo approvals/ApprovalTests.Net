@@ -1,7 +1,3 @@
-using System;
-using ApprovalUtilities.Utilities;
-using Xunit;
-
 public class ExceptionUtilitiesTest
 {
     [Fact]

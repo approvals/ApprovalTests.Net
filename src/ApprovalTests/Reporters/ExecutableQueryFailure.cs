@@ -1,5 +1,3 @@
-using ApprovalUtilities.Persistence;
-
 namespace ApprovalTests.Reporters;
 
 public class ExecutableQueryFailure : IApprovalFailureReporter, IApprovalReporterWithCleanUp

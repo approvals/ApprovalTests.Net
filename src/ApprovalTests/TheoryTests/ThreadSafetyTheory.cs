@@ -1,7 +1,4 @@
-﻿using System.Collections.Concurrent;
-using ApprovalTests.Utilities;
-
-namespace ApprovalTests.TheoryTests;
+﻿namespace ApprovalTests.TheoryTests;
 
 public static class ThreadSafetyTheory
 {

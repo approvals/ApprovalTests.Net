@@ -1,7 +1,4 @@
-﻿using System;
-using System.IO;
-
-namespace ApprovalUtilities.Utilities;
+﻿namespace ApprovalUtilities.Utilities;
 
 public class TempFile : IDisposable
 {

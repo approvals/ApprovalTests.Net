@@ -1,7 +1,4 @@
-﻿using ApprovalUtilities.Utilities;
-using Xunit;
-
-public class DisposablesTest
+﻿public class DisposablesTest
 {
     [Fact]
     public void TestDisposable()

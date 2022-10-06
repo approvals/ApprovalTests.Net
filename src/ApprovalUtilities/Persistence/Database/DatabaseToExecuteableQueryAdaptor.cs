@@ -1,6 +1,4 @@
-﻿using System.Data.Common;
-
-namespace ApprovalUtilities.Persistence.Database;
+﻿namespace ApprovalUtilities.Persistence.Database;
 
 public interface IDatabaseToExecutableQueryAdapter
 {

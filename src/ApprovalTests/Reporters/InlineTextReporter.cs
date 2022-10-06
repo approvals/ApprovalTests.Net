@@ -1,5 +1,3 @@
-using TextCopy;
-
 namespace ApprovalTests.Reporters;
 
 public class InlineTextReporter : IApprovalFailureReporter

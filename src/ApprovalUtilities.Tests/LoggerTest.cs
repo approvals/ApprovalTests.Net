@@ -1,13 +1,4 @@
-﻿using System;
-using ApprovalTests;
-using ApprovalTests.Reporters;
-using ApprovalTests.Utilities;
-using ApprovalUtilities.Persistence;
-using ApprovalUtilities.SimpleLogger;
-using ApprovalUtilities.Utilities;
-using Xunit;
-
-[UseReporter(typeof(DiffReporter))]
+﻿[UseReporter(typeof(DiffReporter))]
 public class LoggerTest
 {
     [Fact]

@@ -1,6 +1,4 @@
-﻿using ApprovalTests.Utilities;
-
-namespace ApprovalTests.Reporters.ContinuousIntegration;
+﻿namespace ApprovalTests.Reporters.ContinuousIntegration;
 
 public class TfsReporter : IEnvironmentAwareReporter
 {

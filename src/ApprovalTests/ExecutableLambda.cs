@@ -1,6 +1,4 @@
-﻿using ApprovalUtilities.Persistence;
-
-namespace ApprovalTests;
+﻿namespace ApprovalTests;
 
 public class ExecutableLambda : IExecutableQuery
 {

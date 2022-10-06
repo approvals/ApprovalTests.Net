@@ -1,6 +1,4 @@
-﻿using System.Runtime.Serialization.Formatters.Binary;
-
-namespace ApprovalTests.TheoryTests;
+﻿namespace ApprovalTests.TheoryTests;
 
 public static class SerializableTheory
 {

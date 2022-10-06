@@ -1,6 +1,3 @@
-using System;
-using System.Data.Common;
-
 namespace ApprovalUtilities.Persistence.Database;
 
 public abstract class SqlLoader<T> : ILoader<T>, IExecutableQuery

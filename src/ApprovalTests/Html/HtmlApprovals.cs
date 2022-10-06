@@ -1,6 +1,4 @@
-﻿using ApprovalTests.Xml;
-
-namespace ApprovalTests.Html;
+﻿namespace ApprovalTests.Html;
 
 public static class HtmlApprovals
 {

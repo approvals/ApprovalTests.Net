@@ -1,5 +1,3 @@
-using ApprovalTests.WebApi.MicrosoftHttpClient;
-
 namespace ApprovalTests.ExceptionalExceptions;
 
 public class ExceptionalTlDr : RestQuery<string>

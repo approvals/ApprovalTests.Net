@@ -1,7 +1,4 @@
-﻿using ApprovalUtilities.Persistence;
-using ApprovalUtilities.Persistence.Database;
-
-namespace ApprovalTests.Persistence;
+﻿namespace ApprovalTests.Persistence;
 
 public class ExecutableSqlQuery : IExecutableQuery
 {
