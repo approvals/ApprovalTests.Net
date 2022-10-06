@@ -85,3 +85,4 @@ RealTests.playlist
 ApprovalTests.Tests/UnixLineEndings.txt
 ApprovalTests.Tests/WindowsLineEndings.txt
 ApprovalTests.Tests/Pdf/sample_temp.pdf
+src/ApprovalTests.Tests/UnixLineEndings.txt
