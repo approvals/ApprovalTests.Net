@@ -1,6 +1,4 @@
-﻿namespace ApprovalTests.Tests.Namer.StackTraceParsers;
-
-[TestFixture]
+﻿[TestFixture]
 public class StackTraceParserTests
 {
     [Test]

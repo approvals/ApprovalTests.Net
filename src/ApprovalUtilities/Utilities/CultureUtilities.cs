@@ -1,5 +1,4 @@
-﻿using System.Globalization;
-using System.Threading;
+﻿using System.Threading;
 
 namespace ApprovalUtilities.Utilities;
 
