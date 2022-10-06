@@ -1,6 +1,6 @@
 ﻿Namespace is part of Approvals
 
-ApprovalTests.Tests.Namer.StackTraceParsers = True
+ = False
  = False
  = False
 System = False

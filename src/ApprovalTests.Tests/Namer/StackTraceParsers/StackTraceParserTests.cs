@@ -36,8 +36,7 @@ public class StackTraceParserTests
                 // it's normal that we receive an exception here so let's ignore it.
                 catch (Exception e)
                 {
-                    if (
-                        !e.Message.Contains("Approvals is not set up to use your test framework"))
+                    if (!e.Message.Contains("Approvals is not set up to use your test framework"))
                     {
                         throw;
                     }

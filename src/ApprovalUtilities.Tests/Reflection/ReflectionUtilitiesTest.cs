@@ -1,5 +1,4 @@
 using System.Windows.Forms;
-using ApprovalTests.Tests.Events;
 
 #pragma warning disable CS0169
 
