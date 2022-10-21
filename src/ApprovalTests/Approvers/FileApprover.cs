@@ -40,7 +40,7 @@ public class FileApprover : IApprovalApprover
             return new ApprovalMissingException(receivedPath, approvedPath);
         }
 
-        if (normalizeLineEndingsForTextFiles && Extensions.IsText(approvedPath))
+        if (normalizeLineEndingsForTextFiles && FileExtensions.IsText(approvedPath))
         {
             var receivedText = File.ReadAllText(receivedPath).Replace("\r\n", "\n");
             var approvedText = File.ReadAllText(approvedPath).Replace("\r\n", "\n");

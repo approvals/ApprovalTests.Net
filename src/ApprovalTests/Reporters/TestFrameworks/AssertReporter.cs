@@ -27,7 +27,7 @@ public class AssertReporter : IEnvironmentAwareReporter
 
     public virtual bool IsWorkingInThisEnvironment(string forFile)
     {
-        return Extensions.IsText(forFile) && IsFrameworkUsed();
+        return FileExtensions.IsText(forFile) && IsFrameworkUsed();
     }
 
     public bool IsFrameworkUsed()
