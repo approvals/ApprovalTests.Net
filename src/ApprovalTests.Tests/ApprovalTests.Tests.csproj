@@ -8,7 +8,7 @@
     <PackageReference Include="MarkdownSnippets.MsBuild" Version="24.5.0" PrivateAssets="all" />
     <PackageReference Include="itext7" Version="7.2.3" />
     <PackageReference Include="NUnit" Version="3.13.3" />
-    <PackageReference Include="NUnit3TestAdapter" Version="4.3.0-alpha-net7.4" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.3.0-rc.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.2" />
     <PackageReference Include="System.Management" Version="6.0.0" />
     <ProjectReference Include="..\ApprovalTests\ApprovalTests.csproj" />
