@@ -10,13 +10,13 @@
   <ItemGroup>
     <Compile Include="..\ApprovalUtilities\InternalsVisibleTo.cs" Link="InternalsVisibleTo.cs" />
     <PackageReference Include="DiffEngine" Version="10.4.5" />
-    <PackageReference Include="EmptyFiles" Version="3.0.0" PrivateAssets="None" />
+    <PackageReference Include="EmptyFiles" Version="4.0.0" PrivateAssets="None" />
     <PackageReference Include="Fody" Version="6.6.4" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Win32.Registry" Version="5.0.0" />
     <PackageReference Include="Obsolete.Fody" Version="5.3.0" PrivateAssets="all" />
     <PackageReference Include="Publicize.Fody" Version="1.8.0" PrivateAssets="All" />
     <PackageReference Include="Virtuosity.Fody" Version="3.1.1" PrivateAssets="All" />
-    <PackageReference Include="TextCopy" Version="6.1.0" />
+    <PackageReference Include="TextCopy" Version="6.2.0" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
     <ProjectReference Include="..\ApprovalUtilities\ApprovalUtilities.csproj" />
     <Content Include="build\ApprovalTests.props" PackagePath="build\ApprovalTests.props" />
