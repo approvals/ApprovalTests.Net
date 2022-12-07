@@ -1,7 +1,4 @@
-﻿using System;
-using System.IO;
-
-namespace ApprovalUtilities.Utilities;
+﻿namespace ApprovalUtilities.Utilities;
 
 public class TempFile : IDisposable
 {
@@ -9,7 +6,7 @@ public class TempFile : IDisposable
 
     public TempFile(string name)
     {
-        backingFile = new FileInfo(name);
+        backingFile = new(name);
         backingFile.Create().Close();
     }
 

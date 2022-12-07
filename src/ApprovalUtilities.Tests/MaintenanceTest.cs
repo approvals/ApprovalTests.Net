@@ -1,5 +1,4 @@
 ﻿using ApprovalTests.Maintenance;
-using Xunit;
 
 namespace ApprovalUtilities.Tests;
 

@@ -1,4 +1,3 @@
-using System;
 using System.Data.Common;
 
 namespace ApprovalUtilities.Persistence.Database;

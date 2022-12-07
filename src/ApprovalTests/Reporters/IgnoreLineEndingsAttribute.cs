@@ -1,5 +1,3 @@
-using System;
-
 namespace ApprovalTests.Reporters;
 
 public class IgnoreLineEndingsAttribute : Attribute

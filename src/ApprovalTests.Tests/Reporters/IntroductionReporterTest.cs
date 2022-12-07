@@ -1,7 +1,4 @@
-﻿using ApprovalTests.Reporters;
-using NUnit.Framework;
-
-namespace ApprovalTests.Tests.Reporters;
+﻿namespace ApprovalTests.Tests.Reporters;
 
 [TestFixture]
 public class IntroductionReporterTest

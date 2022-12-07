@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-namespace ApprovalUtilities.Persistence;
+﻿namespace ApprovalUtilities.Persistence;
 
 public class MockSaver<T> : ISaver<T>
 {

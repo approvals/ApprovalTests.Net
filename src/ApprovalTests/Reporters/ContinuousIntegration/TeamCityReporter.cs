@@ -1,5 +1,4 @@
-﻿using System;
-using ApprovalTests.Core;
+﻿using ApprovalTests.Core;
 
 namespace ApprovalTests.Reporters.ContinuousIntegration;
 

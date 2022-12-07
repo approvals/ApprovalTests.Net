@@ -1,7 +1,4 @@
-﻿using ApprovalTests.Reporters;
-using NUnit.Framework;
-
-namespace ApprovalTests.Tests;
+﻿namespace ApprovalTests.Tests;
 
 [TestFixture]
 [UseReporter(typeof(ClipboardReporter))]

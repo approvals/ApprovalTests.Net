@@ -1,7 +1,4 @@
-﻿using System;
-using ApprovalTests.Core.Exceptions;
-using ApprovalTests.Reporters;
-using NUnit.Framework;
+﻿using ApprovalTests.Core.Exceptions;
 
 namespace ApprovalTests.Tests;
 

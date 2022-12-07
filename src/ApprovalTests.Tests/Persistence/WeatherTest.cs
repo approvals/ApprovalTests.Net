@@ -1,5 +1,3 @@
-using NUnit.Framework;
-
 namespace ApprovalTests.Tests.Persistence;
 
 [TestFixture]

@@ -1,5 +1,3 @@
-using System;
-using System.Linq;
 using ApprovalTests.Core;
 
 namespace ApprovalTests.Reporters;

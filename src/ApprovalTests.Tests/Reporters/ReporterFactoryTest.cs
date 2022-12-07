@@ -1,10 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using ApprovalTests.Core;
-using ApprovalTests.Reporters;
-using NUnit.Framework;
 
 namespace ApprovalTests.Tests.Reporters;
 

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ApprovalUtilities.SimpleLogger.Writers;
+﻿namespace ApprovalUtilities.SimpleLogger.Writers;
 
 public class ConsoleWriter : IAppendable
 {

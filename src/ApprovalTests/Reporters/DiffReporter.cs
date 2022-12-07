@@ -1,6 +1,4 @@
-﻿using System;
-using System.IO;
-using ApprovalTests.Core;
+﻿using ApprovalTests.Core;
 using DiffEngine;
 
 namespace ApprovalTests.Reporters;
@@ -14,7 +12,7 @@ public class DiffReporter : IEnvironmentAwareReporter
         var launch = DiffRunner.Launch(received, approved);
         if (launch == LaunchResult.NoDiffToolFound)
         {
-            throw new Exception($"Could not find a diff tool for extension: {Path.GetExtension(received)}");
+            throw new($"Could not find a diff tool for extension: {Path.GetExtension(received)}");
         }
     }
 

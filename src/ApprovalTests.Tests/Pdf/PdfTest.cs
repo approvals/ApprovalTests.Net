@@ -1,12 +1,7 @@
-﻿using System.IO;
-using System.Linq;
-using ApprovalTests.Reporters;
-using ApprovalTests.Scrubber;
-using ApprovalUtilities.Utilities;
+﻿using ApprovalTests.Scrubber;
 using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
-using NUnit.Framework;
 
 namespace ApprovalTests.Tests.Pdf;
 

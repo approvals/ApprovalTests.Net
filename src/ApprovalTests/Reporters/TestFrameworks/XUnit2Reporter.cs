@@ -1,5 +1,3 @@
-using System;
-using System.Linq;
 using ApprovalTests.StackTraceParsers;
 
 namespace ApprovalTests.Reporters.TestFrameworks;

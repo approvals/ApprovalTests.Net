@@ -1,5 +1,3 @@
-using System;
-using System.Linq;
 using ApprovalUtilities.CallStack;
 
 namespace ApprovalTests.ExceptionalExceptions;
@@ -46,7 +44,7 @@ public class Exceptional : Exception
     public static ExceptionalId GenerateUniqueId<T>()
     {
         var callingMethod = new Caller().Methods.First(m => m.DeclaringType.Namespace != typeof(Exceptional).Namespace);
-        return new ExceptionalId
+        return new()
         {
             Assembly = callingMethod.DeclaringType.Assembly.FullName,
             Class = callingMethod.DeclaringType.FullName,

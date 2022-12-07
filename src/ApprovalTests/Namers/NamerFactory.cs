@@ -1,6 +1,3 @@
-using System;
-using System.Threading;
-
 namespace ApprovalTests.Namers;
 
 public static class NamerFactory

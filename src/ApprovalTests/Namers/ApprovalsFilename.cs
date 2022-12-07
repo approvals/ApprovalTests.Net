@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using ApprovalUtilities.Utilities;
+﻿using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.Namers;
 
@@ -56,7 +53,7 @@ public class ApprovalsFilename
             return this;
         }
 
-        return new ApprovalsFilename
+        return new()
         {
             AdditionalInformation = AdditionalInformation,
             ApprovedStatus = "approved",

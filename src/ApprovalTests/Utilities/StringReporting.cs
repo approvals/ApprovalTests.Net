@@ -1,6 +1,4 @@
-﻿using System;
-using System.IO;
-using ApprovalTests.Core;
+﻿using ApprovalTests.Core;
 
 namespace ApprovalTests.Utilities;
 
@@ -22,7 +20,7 @@ public static class StringReporting
             File.WriteAllText(actualFile, actual);
 
             reporter.Report(expectedFile, actualFile);
-            throw new Exception($"<{expected}> != <{actual}>");
+            throw new($"<{expected}> != <{actual}>");
         }
     }
 

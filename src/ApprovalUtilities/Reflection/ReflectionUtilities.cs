@@ -109,7 +109,7 @@ public static class ReflectionUtilities
     {
         if (forType == null)
         {
-            return new FieldInfo[0];
+            return Array.Empty<FieldInfo>();
         }
 
         var fields = forType.GetFields(NonPublicInstance | BindingFlags.Public);

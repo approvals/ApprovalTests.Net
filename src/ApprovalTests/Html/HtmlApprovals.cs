@@ -1,5 +1,4 @@
-﻿using System;
-using ApprovalTests.Xml;
+﻿using ApprovalTests.Xml;
 
 namespace ApprovalTests.Html;
 

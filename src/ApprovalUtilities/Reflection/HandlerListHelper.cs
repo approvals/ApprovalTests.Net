@@ -24,6 +24,6 @@ public static class HandlerListHelper
     {
         Func<FieldInfo, bool> selector = fi => string.Compare(fi.Name, HeadFieldName, false) == 0;
         var headInfo = list.GetInstanceFields(selector).Single();
-        return new HandlerListEntry(headInfo.GetValue(list));
+        return new(headInfo.GetValue(list));
     }
 }

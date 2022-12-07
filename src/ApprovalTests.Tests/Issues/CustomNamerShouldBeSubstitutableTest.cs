@@ -3,7 +3,6 @@ using ApprovalTests.Namers.StackTraceParsers;
 using ApprovalTests.Tests.Reporters;
 using ApprovalTests.Writers;
 using ApprovalUtilities.CallStack;
-using NUnit.Framework;
 
 namespace ApprovalTests.Tests.CustomImplementation;
 

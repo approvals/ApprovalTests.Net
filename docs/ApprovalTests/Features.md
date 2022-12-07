@@ -34,7 +34,7 @@ var actual = header.MakeHeading("I am ten chars");
 var expected = "";
 Approvals.AssertText(expected, actual);
 ```
-<sup><a href='/src/ApprovalTests.Tests/Reporters/InlineTextReporterTest.cs#L51-L56' title='Snippet source file'>snippet source</a> | <a href='#snippet-assert_text_before' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests.Tests/Reporters/InlineTextReporterTest.cs#L47-L52' title='Snippet source file'>snippet source</a> | <a href='#snippet-assert_text_before' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 When you do this, it will copy the c# for the `.received.` to your clipboard, so you can paste it in-line.
@@ -53,7 +53,7 @@ var expected = new[]{
 };
 Approvals.AssertText(expected, actual);
 ```
-<sup><a href='/src/ApprovalTests.Tests/Reporters/InlineTextReporterTest.cs#L36-L46' title='Snippet source file'>snippet source</a> | <a href='#snippet-assert_text' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests.Tests/Reporters/InlineTextReporterTest.cs#L32-L42' title='Snippet source file'>snippet source</a> | <a href='#snippet-assert_text' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -74,7 +74,7 @@ Sometimes you want to parse an approvals filename to get the parts.
 ```cs
 var approvalsFilename = ApprovalsFilename.Parse(@"..\Email\EmailTest.Testname.Microsoft_Windows_10_Education.approved.eml");
 ```
-<sup><a href='/src/ApprovalTests.Tests/Namer/ApprovalsFilenameTest.cs#L12-L14' title='Snippet source file'>snippet source</a> | <a href='#snippet-approvals_filename' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests.Tests/Namer/ApprovalsFilenameTest.cs#L8-L10' title='Snippet source file'>snippet source</a> | <a href='#snippet-approvals_filename' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Will produce

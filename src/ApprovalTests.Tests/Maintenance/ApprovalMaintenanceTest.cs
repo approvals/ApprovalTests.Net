@@ -1,6 +1,4 @@
 ﻿using ApprovalTests.Maintenance;
-using ApprovalUtilities.Utilities;
-using NUnit.Framework;
 
 namespace ApprovalTests.Tests.Maintenance;
 

@@ -1,5 +1,4 @@
-﻿using System.IO;
-using ApprovalUtilities.Persistence;
+﻿using ApprovalUtilities.Persistence;
 
 namespace ApprovalTests.Tests.Persistence;
 

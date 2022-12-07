@@ -1,6 +1,5 @@
 ﻿using ApprovalTests.Core.Exceptions;
 using ApprovalTests.TheoryTests;
-using NUnit.Framework;
 
 namespace ApprovalTests.Tests.Core.Exceptions;
 

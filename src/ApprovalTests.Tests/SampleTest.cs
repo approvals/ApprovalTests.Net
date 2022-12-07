@@ -1,8 +1,4 @@
-﻿using System;
-using ApprovalTests.Reporters;
-using NUnit.Framework;
-
-namespace ApprovalTests.Tests;
+﻿namespace ApprovalTests.Tests;
 
 // begin-snippet: sample_test
 [UseReporter(typeof(VisualStudioReporter))]

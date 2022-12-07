@@ -1,9 +1,4 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using ApprovalUtilities.Utilities;
-using NUnit.Framework;
-
-namespace ApprovalTests.Tests;
+﻿namespace ApprovalTests.Tests;
 
 [TestFixture]
 public class ApprovalsTest
@@ -107,7 +102,7 @@ public class ApprovalsTest
 
     static Dictionary<string, string> FireFlyMap()
     {
-        return new Dictionary<string, string>
+        return new()
         {
             {"Caption", "Mal"},
             {"2nd In Command", "Zoey"},

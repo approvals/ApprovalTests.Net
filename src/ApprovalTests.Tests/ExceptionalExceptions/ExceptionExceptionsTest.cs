@@ -1,6 +1,4 @@
-﻿using System;
-using ApprovalTests.ExceptionalExceptions;
-using NUnit.Framework;
+﻿using ApprovalTests.ExceptionalExceptions;
 
 namespace ApprovalTests.Tests.ExceptionalExceptions;
 
@@ -18,7 +16,7 @@ public class ExceptionExceptionsTest
     //[Test]
     public void TestTlDr()
     {
-        Approvals.Verify(new ExceptionalTlDr(new ExceptionalId
+        Approvals.Verify(new ExceptionalTlDr(new()
         {
             Assembly = "Assembly",
             Class = "Class",

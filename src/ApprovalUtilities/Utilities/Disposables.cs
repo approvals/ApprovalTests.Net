@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ApprovalUtilities.Utilities;
+﻿namespace ApprovalUtilities.Utilities;
 
 public class Disposables : IDisposable
 {

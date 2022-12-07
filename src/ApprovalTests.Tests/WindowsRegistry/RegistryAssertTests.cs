@@ -1,6 +1,4 @@
 ﻿using ApprovalTests.WindowsRegistry;
-using ApprovalUtilities.Utilities;
-using NUnit.Framework;
 
 namespace ApprovalTests.Tests.WindowsRegistry;
 

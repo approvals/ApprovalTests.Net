@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using NUnit.Framework;
-using ApprovalTests.Set;
-using ApprovalUtilities.Utilities;
+﻿using ApprovalTests.Set;
 using System.Text.RegularExpressions;
 
 namespace ApprovalTests.Tests.Set;

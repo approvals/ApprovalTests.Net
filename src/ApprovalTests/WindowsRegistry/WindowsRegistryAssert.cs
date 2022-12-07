@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.Win32;
+﻿using Microsoft.Win32;
 
 namespace ApprovalTests.WindowsRegistry;
 
@@ -17,7 +16,7 @@ public static class WindowsRegistryAssert
         if (actualValue != expectedValue)
         {
             var message = $"{failureMessage}\nMust set DWORD {registryKey.Name}\\{keyName} : {valueName} = {expectedValue}.";
-            throw new Exception(message);
+            throw new(message);
         }
     }
 

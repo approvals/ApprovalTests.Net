@@ -1,8 +1,4 @@
-﻿using ApprovalTests.Namers;
-using ApprovalUtilities.Utilities;
-using NUnit.Framework;
-
-namespace ApprovalTests.Tests.Namer;
+﻿namespace ApprovalTests.Tests.Namer;
 
 public class ApprovalsFilenameTest
 {

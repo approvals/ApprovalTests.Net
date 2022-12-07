@@ -1,9 +1,4 @@
-﻿using ApprovalUtilities.Utilities;
-using Xunit;
-
-namespace ApprovalUtilities.Tests.Utilities;
-
-public class DisposablesTest
+﻿public class DisposablesTest
 {
     [Fact]
     public void TestDisposable()
@@ -17,7 +12,5 @@ public class DisposablesTest
         // end-snippet
 
         Assert.Equal(2, callCount);
-
     }
-
 }

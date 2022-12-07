@@ -1,7 +1,3 @@
-using System;
-using ApprovalUtilities.Utilities;
-using Xunit;
-
 namespace ApprovalUtilities.Tests.Utilities;
 
 public class ExceptionUtilitiesTest

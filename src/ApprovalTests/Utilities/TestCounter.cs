@@ -1,9 +1,5 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.Utilities;
@@ -75,7 +71,7 @@ public class TestCounter
         }
         catch (Win32Exception e)
         {
-            throw new Exception(
+            throw new(
                 $"Unable to launch: {program} with arguments {arguments}\nError Message: {e.Message}",
                 e);
         }

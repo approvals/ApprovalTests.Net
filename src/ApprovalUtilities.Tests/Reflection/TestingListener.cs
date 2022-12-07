@@ -1,5 +1,3 @@
-using System;
-
 namespace ApprovalTests.Tests.Events;
 
 public static class TestingListener

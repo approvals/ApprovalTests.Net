@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
 using ApprovalTests.Core;
-using System.Linq;
 
 namespace ApprovalTests.Reporters;
 
@@ -25,7 +22,7 @@ public class FirstWorkingReporter : IEnvironmentAwareReporter, IApprovalReporter
         var r = Reporters.FirstOrDefault(x => x.IsWorkingInThisEnvironment(received));
         if (r == null)
         {
-            throw new Exception($"{GetType().Name} Could not find a Reporter for file {received}");
+            throw new($"{GetType().Name} Could not find a Reporter for file {received}");
         }
 
         r.Report(approved, received);

@@ -1,8 +1,4 @@
-﻿using ApprovalTests.Reporters;
-using ApprovalUtilities.Utilities;
-using NUnit.Framework;
-
-namespace ApprovalTests.Tests.Reporters;
+﻿namespace ApprovalTests.Tests.Reporters;
 
 [TestFixture]
 public class InlineTextReporterTest

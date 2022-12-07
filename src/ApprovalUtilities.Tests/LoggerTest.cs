@@ -1,11 +1,7 @@
-﻿using System;
-using ApprovalTests;
-using ApprovalTests.Reporters;
+﻿using ApprovalTests.Reporters;
 using ApprovalTests.Utilities;
 using ApprovalUtilities.Persistence;
 using ApprovalUtilities.SimpleLogger;
-using ApprovalUtilities.Utilities;
-using Xunit;
 
 namespace ApprovalUtilities.Tests;
 
@@ -25,7 +21,7 @@ public class LoggerTest
             Logger.Sql("Select * From table_name");
             try
             {
-                throw new Exception(" Problem");
+                throw new(" Problem");
             }
             catch (Exception e)
             {
@@ -100,6 +96,6 @@ public class MockTimer : ILoader<DateTime>
     {
         ticks += 10;
         ticks %= 999;
-        return new DateTime(2011, 5, 6, 10, 30, 0, ticks);
+        return new(2011, 5, 6, 10, 30, 0, ticks);
     }
 }

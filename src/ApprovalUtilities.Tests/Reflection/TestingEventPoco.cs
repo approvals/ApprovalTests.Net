@@ -1,4 +1,3 @@
-using System;
 using System.ComponentModel;
 
 namespace ApprovalTests.Tests.Events;

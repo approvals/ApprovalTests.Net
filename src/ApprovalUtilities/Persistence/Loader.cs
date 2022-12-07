@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ApprovalUtilities.Persistence;
+﻿namespace ApprovalUtilities.Persistence;
 
 public class Loader<T> : ILoader<T>
 {

@@ -1,6 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Reflection;
+﻿using System.Reflection;
 using ApprovalTests.Core;
 using ApprovalTests.Namers.StackTraceParsers;
 using EmptyFiles;

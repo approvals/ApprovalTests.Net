@@ -1,4 +1,3 @@
-using System.IO;
 using ApprovalTests.Core;
 using ApprovalTests.Namers.StackTraceParsers;
 
@@ -12,7 +11,7 @@ public class UnitTestFrameworkNamer : IApprovalNamer
     public UnitTestFrameworkNamer()
     {
         Approvals.SetCaller();
-        stackTraceParser = new StackTraceParser();
+        stackTraceParser = new();
         stackTraceParser.Parse(Approvals.CurrentCaller.StackTrace);
         Subdirectory = GetSubdirectoryFromAttribute();
     }

@@ -1,5 +1,4 @@
 ﻿using ApprovalTests.Writers;
-using NUnit.Framework;
 
 namespace ApprovalTests.Tests.Writers;
 

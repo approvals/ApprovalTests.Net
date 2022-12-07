@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections;
 using System.Text;
 
 namespace ApprovalUtilities.Utilities;
@@ -109,7 +106,7 @@ public static class StringUtils
         {
             if (p.CanRead)
             {
-                var propertyValue = p.GetValue(value, new object[0]) ?? "NULL";
+                var propertyValue = p.GetValue(value, Array.Empty<object>()) ?? "NULL";
                 sb.AppendFormat("\t{0}: {1}", p.Name, propertyValue).AppendLine();
             }
         }

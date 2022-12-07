@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-
-namespace ApprovalUtilities.Persistence;
+﻿namespace ApprovalUtilities.Persistence;
 
 public class SaverAsyncWrapper<T> : ISaverAsync<T>
 {

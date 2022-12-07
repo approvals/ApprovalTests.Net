@@ -1,9 +1,3 @@
-using System;
-using System.Collections.Generic;
-using ApprovalTests.Namers;
-using ApprovalTests.Reporters;
-using NUnit.Framework;
-
 namespace ApprovalTests.Tests.Executable;
 
 [TestFixture]

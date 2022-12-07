@@ -1,8 +1,6 @@
 using ApprovalTests.Core;
 
-namespace ApprovalTests;
-
-internal class AlwaysWorksReporter : IEnvironmentAwareReporter
+class AlwaysWorksReporter : IEnvironmentAwareReporter
 {
     readonly IApprovalFailureReporter reporter;
 
@@ -21,5 +19,4 @@ internal class AlwaysWorksReporter : IEnvironmentAwareReporter
     {
         return true;
     }
-
 }

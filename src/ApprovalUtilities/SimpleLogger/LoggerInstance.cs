@@ -1,5 +1,3 @@
-using System;
-using System.Linq;
 using ApprovalUtilities.CallStack;
 using ApprovalUtilities.Persistence;
 using ApprovalUtilities.SimpleLogger.Writers;

@@ -1,6 +1,4 @@
-﻿using System.IO;
-using System.Threading.Tasks;
-using ApprovalUtilities.Persistence;
+﻿using ApprovalUtilities.Persistence;
 
 namespace ApprovalTests.Tests.Persistence;
 

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Reflection;
+﻿using System.Reflection;
 using ApprovalUtilities.CallStack;
 using ApprovalUtilities.Utilities;
 
@@ -83,7 +79,7 @@ public static class ApprovalMaintenance
             .ToArray();
         if (files.Any())
         {
-            throw new Exception("The following files have been abandoned:\n" + files.ToReadableString().Replace(",", "\n"));
+            throw new("The following files have been abandoned:\n" + files.ToReadableString().Replace(",", "\n"));
         }
     }
 }

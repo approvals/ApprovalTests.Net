@@ -1,9 +1,6 @@
 using ApprovalTests.StackTraceParsers;
 using ApprovalUtilities.Utilities;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using ApprovalTests.Namers.UnitTestFrameworks;
 
 namespace ApprovalTests.Namers.StackTraceParsers;
@@ -28,7 +25,7 @@ public class StackTraceParser : IStackTraceParser
         }
 
         var helpLink = "http://blog.approvaltests.com/2012/01/creating-namers.html";
-        throw new Exception(
+        throw new(
             $@"
 Could Not Detect Test Framework
 
@@ -75,7 +72,7 @@ element.
 Solution:
 a) Add <DebugType>full</DebugType> to your .csproj file.
 b) OR Build->Advanced->DebugInfo to Full";
-                throw new Exception(helpMessage);
+                throw new(helpMessage);
             }
             return path;
         }

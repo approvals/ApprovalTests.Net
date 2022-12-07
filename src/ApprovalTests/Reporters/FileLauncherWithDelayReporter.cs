@@ -1,5 +1,4 @@
-﻿using System.Threading;
-using ApprovalTests.Core;
+﻿using ApprovalTests.Core;
 using ApprovalTests.Reporters;
 
 public class FileLauncherWithDelayReporter : IApprovalFailureReporter

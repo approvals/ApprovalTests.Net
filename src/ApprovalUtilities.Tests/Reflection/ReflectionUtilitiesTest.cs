@@ -1,13 +1,9 @@
 #pragma warning disable CS0169
 
-using System;
-using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
-using ApprovalTests;
 using ApprovalTests.Tests.Events;
 using ApprovalUtilities.Reflection;
-using Xunit;
 using ApprovalTests.Reporters;
 
 namespace ApprovalUtilities.Tests.Reflection;

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using ApprovalTests.Core;
 
 namespace ApprovalTests.Reporters;
@@ -13,7 +12,7 @@ public class IntroductionReporter : IApprovalFailureReporter
         var message = GetFriendlyWelcomeMessage();
         Debug.WriteLine(message);
         Console.WriteLine(message);
-        throw new Exception(message);
+        throw new(message);
     }
 
     public string GetFriendlyWelcomeMessage()

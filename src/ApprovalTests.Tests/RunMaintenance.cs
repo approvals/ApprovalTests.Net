@@ -1,6 +1,5 @@
 ﻿#if(NET48)
 using ApprovalTests.Maintenance;
-using NUnit.Framework;
 
 namespace ApprovalTests.Tests;
 [TestFixture]

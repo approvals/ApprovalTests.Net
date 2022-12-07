@@ -1,15 +1,9 @@
-﻿using ApprovalTests;
-using ApprovalUtilities.Utilities;
-using Xunit;
-
-namespace ApprovalUtilities.Tests.Utilities;
-
-public class StringUtilitiesTest
+﻿public class StringUtilitiesTest
 {
     [Fact]
     public void TestToReadableString()
     {
-        Assert.Equal("[]", new int[0].ToReadableString());
+        Assert.Equal("[]", Array.Empty<int>().ToReadableString());
         Assert.Equal("[1, 2, 3]", new[] {1, 2, 3}.ToReadableString());
         int[] empty = null;
         Assert.Equal("[]", empty.ToReadableString());
@@ -50,7 +44,6 @@ public class StringUtilitiesTest
 
         Assert.Equal("#1 list\n#2 list", text);
     }
-
 
     [Fact]
     public void WritePropertiesToStringTest()

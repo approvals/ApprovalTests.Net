@@ -6,7 +6,6 @@ namespace ApprovalTests.Xunit2.Namer
     using Namers;
     using Namers.StackTraceParsers;
     using System;
-    using System.Diagnostics;
     using System.IO;
     using System.Threading.Tasks;
     using Xunit;
@@ -60,7 +59,7 @@ namespace ApprovalTests.Xunit2.Namer
         public void TestApprovalNamerFailureMessage()
         {
             var parser = new StackTraceParser();
-            var exception = ExceptionUtilities.GetException(() => parser.Parse(new StackTrace(6)));
+            var exception = ExceptionUtilities.GetException(() => parser.Parse(new(6)));
 
             Approvals.Verify(exception.Message);
         }

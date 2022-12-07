@@ -1,11 +1,4 @@
-﻿using System.Linq;
-using ApprovalTests;
-using ApprovalUtilities.Utilities;
-using Xunit;
-
-namespace ApprovalUtilities.Tests.Utilities;
-
-public class PathUtilitiesTest
+﻿public class PathUtilitiesTest
 {
     [Fact]
     public void ScrubPathTest()

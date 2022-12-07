@@ -1,4 +1,3 @@
-using System.IO;
 using ApprovalTests.Reporters.TestFrameworks;
 
 namespace ApprovalTests.Tests.Reporters;

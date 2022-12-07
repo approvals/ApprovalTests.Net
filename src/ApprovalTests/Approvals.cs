@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading;
 using ApprovalTests.Approvers;
 using ApprovalTests.Core;
 using ApprovalTests.Html;
@@ -39,7 +34,7 @@ public class Approvals
 
     public static void SetCaller()
     {
-        currentCaller.Value = new Caller();
+        currentCaller.Value = new();
     }
 
     //begin-snippet: complete_verify_call

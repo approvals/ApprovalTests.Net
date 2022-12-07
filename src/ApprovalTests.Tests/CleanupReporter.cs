@@ -1,5 +1,4 @@
-﻿using System.IO;
-using ApprovalTests.Core;
+﻿using ApprovalTests.Core;
 
 namespace ApprovalTests.Tests;
 

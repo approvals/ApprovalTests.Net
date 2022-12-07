@@ -1,5 +1,3 @@
-using System;
-using System.Linq;
 using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.Scrubber;

@@ -1,8 +1,4 @@
-using System.IO;
 using ApprovalTests.Core;
-using ApprovalTests.Reporters;
-using ApprovalUtilities.Utilities;
-using NUnit.Framework;
 
 namespace ApprovalTests.Tests.Reporters;
 

@@ -1,4 +1,3 @@
-using System.IO;
 using ApprovalTests.Namers;
 using ApprovalTests.StackTraceParsers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

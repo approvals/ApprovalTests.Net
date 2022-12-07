@@ -1,8 +1,4 @@
-﻿using System.Threading.Tasks;
-using ApprovalTests.Namers;
-using NUnit.Framework;
-
-namespace ApprovalTests.Tests.Namer;
+﻿namespace ApprovalTests.Tests.Namer;
 
 [TestFixture]
 public class AdditionalInformationTests

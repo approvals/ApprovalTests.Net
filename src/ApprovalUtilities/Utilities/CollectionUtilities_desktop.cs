@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace ApprovalUtilities.Utilities;
 
 public static partial class CollectionUtilities

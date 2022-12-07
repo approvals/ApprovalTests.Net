@@ -1,8 +1,5 @@
-﻿using System.IO;
-using ApprovalTests.Approvers;
+﻿using ApprovalTests.Approvers;
 using ApprovalTests.Core.Exceptions;
-using ApprovalUtilities.Utilities;
-using NUnit.Framework;
 
 namespace ApprovalTests.Tests;
 

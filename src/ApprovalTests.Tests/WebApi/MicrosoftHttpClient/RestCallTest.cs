@@ -1,6 +1,5 @@
 ﻿using System.Net;
 using ApprovalTests.WebApi.MicrosoftHttpClient;
-using NUnit.Framework;
 
 namespace ApprovalTests.Tests.WebApi.MicrosoftHttpClient;
 
@@ -35,7 +34,7 @@ public class GoogleQuery : RestQuery<GoogleQueryResults>
 
     public override GoogleQueryResults Load()
     {
-        return new GoogleQueryResults(GetResponse().Result);
+        return new(GetResponse().Result);
     }
 }
 

@@ -1,10 +1,6 @@
-﻿using System;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using ApprovalTests.Namers.StackTraceParsers;
 using ApprovalUtilities.SimpleLogger;
-using NUnit.Framework;
 
 namespace ApprovalTests.Tests.Namer.StackTraceParsers;
 

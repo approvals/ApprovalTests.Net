@@ -1,8 +1,4 @@
-﻿using System.IO;
-using ApprovalTests.Reporters;
-using ApprovalTests.Writers;
-using ApprovalUtilities.Utilities;
-using NUnit.Framework;
+﻿using ApprovalTests.Writers;
 
 namespace ApprovalTests.Tests.Writers;
 
