@@ -1,6 +1,4 @@
-﻿using ApprovalTests;
-
-[TestFixture]
+﻿[TestFixture]
 [UseReporter(typeof(MachineSpecificReporter))]
 public class ExceptionTests
 {

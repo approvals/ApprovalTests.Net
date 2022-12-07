@@ -1,6 +1,4 @@
-﻿using ApprovalTests;
-
-[TestFixture]
+﻿[TestFixture]
 public class ApprovalsTest
 {
     static readonly string[] text = {"abc", "123", "!@#"};

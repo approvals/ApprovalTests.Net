@@ -86,8 +86,6 @@ If you prefer auditory learning, you might enjoy the following podcast
 <!-- snippet: sample_test -->
 <a id='snippet-sample_test'></a>
 ```cs
-using ApprovalTests;
-
 [UseReporter(typeof(VisualStudioReporter))]
 [TestFixture]
 public class SampleTest
@@ -101,7 +99,7 @@ public class SampleTest
     }
 }
 ```
-<sup><a href='/src/ApprovalTests.Tests/SampleTest.cs#L1-L18' title='Snippet source file'>snippet source</a> | <a href='#snippet-sample_test' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests.Tests/SampleTest.cs#L1-L16' title='Snippet source file'>snippet source</a> | <a href='#snippet-sample_test' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Will Produce a File

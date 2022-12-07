@@ -1,8 +1,4 @@
-﻿namespace ApprovalTests.Tests.Events;
-
-using ApprovalTests.Events;
-
-[TestFixture]
+﻿[TestFixture]
 public class EventApprovalsTest
 {
     [Test]
