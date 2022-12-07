@@ -22,7 +22,7 @@ public class PathUtilitiesTest
         AssertEqualIgnoreCase(@"C:\Windows\System32\ipconfig.exe", found);
     }
 
-    void AssertEqualIgnoreCase(string expected, string actual)
+    static void AssertEqualIgnoreCase(string expected, string actual)
     {
         Assert.Equal(expected.ToLowerInvariant(), actual.ToLowerInvariant());
     }

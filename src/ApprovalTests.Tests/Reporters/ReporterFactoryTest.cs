@@ -16,11 +16,11 @@ public class ReporterFactoryTest
     {
         var types = typeof(UseReporterAttribute).Assembly.GetTypes();
         var reporters = types.Where(r => r.GetInterfaces().Contains(typeof(IApprovalFailureReporter)));
-        var singletons = reporters.Where(r => r.GetConstructor(new Type[0]) != null);
+        var singletons = reporters.Where(r => r.GetConstructor(Type.EmptyTypes) != null);
         return singletons;
     }
 
-    void SubMethod()
+    static void SubMethod()
     {
         Assert.AreEqual(typeof(MethodLevelReporter), Approvals.GetReporter().GetType());
     }

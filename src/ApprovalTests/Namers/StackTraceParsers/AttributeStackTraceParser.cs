@@ -50,7 +50,7 @@ public abstract class AttributeStackTraceParser : IStackTraceParser
                  classNamespace.StartsWith("ApprovalUtilities"));
     }
 
-    string GetFileNameForStack(Caller frame)
+    static string GetFileNameForStack(Caller frame)
     {
         return frame.Parents
             .Where(FileInfoIsValidFilter)

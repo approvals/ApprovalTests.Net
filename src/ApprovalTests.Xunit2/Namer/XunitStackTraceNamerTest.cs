@@ -49,7 +49,7 @@ namespace ApprovalTests.Xunit2.Namer
             Assert.Equal("XunitStackTraceNamerTest.TestApprovalName", name);
         }
 
-        [InheritedFactAttribute]
+        [InheritedFact]
         public void TestApprovalName_InheritedFact()
         {
             var name = new UnitTestFrameworkNamer().Name;

@@ -23,7 +23,7 @@ public class ApprovalResultsTest
         }
 
         ApprovalResults.UniqueForMachineName();
-        var methods = new Func<string>[]
+        var methods = new[]
         {
             //ApprovalResults.GetDotNetVersion,
             ApprovalResults.GetOsName,

@@ -17,7 +17,7 @@ public class OsUtils
     public static ApprovalsPlatform GetPlatformId()
     {
         var platformID = Environment.OSVersion.Platform;
-        if (platformID == PlatformID.MacOSX || platformID == PlatformID.Unix)
+        if (platformID is PlatformID.MacOSX or PlatformID.Unix)
         {
             if (Directory.Exists("/Applications") &&
                 Directory.Exists("/Users") &&
@@ -26,10 +26,8 @@ public class OsUtils
             {
                 return ApprovalsPlatform.Mac;
             }
-            else
-            {
-                return ApprovalsPlatform.Linux;
-            }
+
+            return ApprovalsPlatform.Linux;
         }
         return ApprovalsPlatform.Windows;
     }
@@ -47,10 +45,8 @@ public class OsUtils
             var name = caption == null ? Environment.OSVersion.ToString() : caption.ToString();
             return name;
         }
-        else
-        {
-            return platformId.ToString();
-        }
+
+        return platformId.ToString();
     }
     public static bool IsWindowsOs()
     {

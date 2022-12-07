@@ -23,7 +23,7 @@ public class ApprovalBinaryWriter : IApprovalWriter
         ExtensionWithDot = EnsureDoc(extensionWithoutDot);
     }
 
-    string EnsureDoc(string extension)
+    static string EnsureDoc(string extension)
     {
         var extensionWithDot = $".{extension}";
         return extension.StartsWith(".") ? extension : extensionWithDot;

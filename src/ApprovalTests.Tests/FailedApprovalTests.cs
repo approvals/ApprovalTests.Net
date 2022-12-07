@@ -9,7 +9,7 @@ namespace ApprovalTests.Tests;
 [UseReporter(typeof(CleanupReporter))]
 public class FailedApprovalTests
 {
-    void AssertThrows<T>(TestDelegate code) where T : Exception
+    static void AssertThrows<T>(TestDelegate code) where T : Exception
     {
         using (Approvals.SetFrontLoadedReporter(ReportWithoutFrontLoading.INSTANCE))
         {

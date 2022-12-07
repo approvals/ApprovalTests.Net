@@ -15,7 +15,7 @@ public class CallerTest
         Assert.Equal("CallerTest", caller.Class.Name);
     }
 
-    Caller GetCaller()
+    static Caller GetCaller()
     {
         return new Caller();
     }
