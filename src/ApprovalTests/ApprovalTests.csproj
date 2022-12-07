@@ -8,6 +8,7 @@
     <Description>A picture's worth a 1000 tests. Unit testing asserts can be difficult to use. Approval tests simplify this by taking a snapshot of the results, and confirming that they have not changed.</Description>
   </PropertyGroup>
   <ItemGroup>
+    <Using Remove="System.Net.Http" />
     <Compile Include="..\ApprovalUtilities\InternalsVisibleTo.cs" Link="InternalsVisibleTo.cs" />
     <PackageReference Include="DiffEngine" Version="11.0.0" />
     <PackageReference Include="EmptyFiles" Version="4.1.0" PrivateAssets="None" />
