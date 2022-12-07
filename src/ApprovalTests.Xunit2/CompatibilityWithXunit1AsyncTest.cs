@@ -1,8 +1,3 @@
-using ApprovalTests.Reporters;
-using Xunit;
-
-namespace ApprovalTests.Xunit2;
-
 [UseReporter(typeof(DiffReporter))]
 public class CompatibilityWithXunit1AsyncTest
 {
