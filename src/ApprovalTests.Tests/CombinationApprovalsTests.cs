@@ -1,6 +1,8 @@
 using System.Globalization;
 using ApprovalTests.Combinations;
 
+namespace ApprovalTests.Tests;
+
 public class CombinationApprovalsTests
 {
     [Test]

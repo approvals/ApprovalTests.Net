@@ -1,15 +1,16 @@
-﻿using ApprovalTests;
+﻿namespace ApprovalTests.Tests;
 
 [TestFixture]
 [UseReporter(typeof(MachineSpecificReporter))]
 public class ExceptionTests
 {
+
 #if NET6_0_OR_GREATER
 
     [Test]
     public void VerifyExceptionWithStacktrace()
     {
-        using (ApprovalResults.UniqueForOs())
+        using (Namers.ApprovalResults.UniqueForOs())
         {
             Action wrapper = () => throw new("https://github.com/approvals/ApprovalTests.Net/issues/242");
             var e = ExceptionUtilities.GetException(wrapper);

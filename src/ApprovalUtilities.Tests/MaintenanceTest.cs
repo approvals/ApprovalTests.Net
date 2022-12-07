@@ -1,5 +1,7 @@
 ﻿using ApprovalTests.Maintenance;
 
+namespace ApprovalUtilities.Tests;
+
 public class MaintenanceTest
 {
     [Fact]

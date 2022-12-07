@@ -1,7 +1,6 @@
-﻿// begin-snippet: sample_test
+﻿namespace ApprovalTests.Tests;
 
-using ApprovalTests;
-
+// begin-snippet: sample_test
 [UseReporter(typeof(VisualStudioReporter))]
 [TestFixture]
 public class SampleTest

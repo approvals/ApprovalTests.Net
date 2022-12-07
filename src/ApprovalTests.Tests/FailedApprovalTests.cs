@@ -1,5 +1,6 @@
-﻿using ApprovalTests;
-using ApprovalTests.Core.Exceptions;
+﻿using ApprovalTests.Core.Exceptions;
+
+namespace ApprovalTests.Tests;
 
 [TestFixture]
 [UseReporter(typeof(CleanupReporter))]

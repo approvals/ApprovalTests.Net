@@ -1,8 +1,9 @@
-using ApprovalTests;
 using ApprovalTests.Reporters;
 using ApprovalTests.Reporters.TestFrameworks;
 using Xunit;
 using Xunit.Sdk;
+
+namespace ApprovalTests.Xunit2;
 
 public class CompatibilityWithXunit1Test
 {

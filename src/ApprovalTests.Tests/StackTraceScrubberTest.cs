@@ -1,5 +1,7 @@
 ﻿using ApprovalTests.Utilities;
 
+namespace ApprovalTests.Tests;
+
 [TestFixture]
 public class StackTraceScrubberTest
 {

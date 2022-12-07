@@ -1,3 +1,5 @@
+namespace ApprovalUtilities.Tests.Utilities;
+
 public class ExceptionUtilitiesTest
 {
     [Fact]
