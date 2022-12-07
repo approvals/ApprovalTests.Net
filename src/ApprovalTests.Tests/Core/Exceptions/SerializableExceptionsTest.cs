@@ -1,4 +1,9 @@
-﻿[TestFixture]
+﻿using ApprovalTests.Core.Exceptions;
+using ApprovalTests.TheoryTests;
+
+namespace ApprovalTests.Tests.Core.Exceptions;
+
+[TestFixture]
 public class SerializableExceptionsTest
 {
     [Test]

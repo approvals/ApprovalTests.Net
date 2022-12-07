@@ -1,5 +1,7 @@
 ﻿// begin-snippet: sample_test
 
+using ApprovalTests;
+
 [UseReporter(typeof(VisualStudioReporter))]
 [TestFixture]
 public class SampleTest

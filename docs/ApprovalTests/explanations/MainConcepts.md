@@ -65,7 +65,7 @@ public void Text()
     Approvals.Verify("should be approved");
 }
 ```
-<sup><a href='/src/ApprovalTests.Tests/ApprovalsTest.cs#L6-L12' title='Snippet source file'>snippet source</a> | <a href='#snippet-simple_verify' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests.Tests/ApprovalsTest.cs#L8-L14' title='Snippet source file'>snippet source</a> | <a href='#snippet-simple_verify' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 This call brings together 3 things + default Approver to produce a `.received.` file which is compared to an `.approved.` file.

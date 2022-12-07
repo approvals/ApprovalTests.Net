@@ -1,4 +1,6 @@
-﻿[TestFixture]
+﻿namespace ApprovalTests.Tests.Async;
+
+[TestFixture]
 [UseReporter(typeof(MachineSpecificReporter))]
 public class AsyncTests
 {

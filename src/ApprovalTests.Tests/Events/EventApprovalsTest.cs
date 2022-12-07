@@ -1,4 +1,8 @@
-﻿[TestFixture]
+﻿namespace ApprovalTests.Tests.Events;
+
+using ApprovalTests.Events;
+
+[TestFixture]
 public class EventApprovalsTest
 {
     [Test]

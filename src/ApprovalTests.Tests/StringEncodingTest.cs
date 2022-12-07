@@ -1,4 +1,6 @@
-﻿[TestFixture]
+﻿using ApprovalTests;
+
+[TestFixture]
 [UseReporter(typeof(ClipboardReporter))]
 public class StringEncodingTest
 {
