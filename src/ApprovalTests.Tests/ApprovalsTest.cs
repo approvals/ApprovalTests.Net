@@ -1,4 +1,4 @@
-﻿namespace ApprovalTests.Tests;
+﻿using ApprovalTests;
 
 [TestFixture]
 public class ApprovalsTest

@@ -1,4 +1,4 @@
-﻿namespace ApprovalTests.Tests;
+﻿using ApprovalTests;
 
 [TestFixture]
 [UseReporter(typeof(ClipboardReporter))]

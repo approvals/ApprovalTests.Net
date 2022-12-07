@@ -3,8 +3,6 @@ using ApprovalTests.Utilities;
 using ApprovalUtilities.Persistence;
 using ApprovalUtilities.SimpleLogger;
 
-namespace ApprovalUtilities.Tests;
-
 [UseReporter(typeof(DiffReporter))]
 public class LoggerTest
 {

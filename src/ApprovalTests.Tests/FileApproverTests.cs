@@ -1,15 +1,12 @@
 ﻿using ApprovalTests.Approvers;
 using ApprovalTests.Core.Exceptions;
 
-namespace ApprovalTests.Tests;
-
 [TestFixture]
 public class FileApproverTests
 {
     [Test]
     public void TestFailureDueToMissingApproval()
     {
-
         AssertApprover("a.txt", "non_existing_file.txt", false);
     }
 

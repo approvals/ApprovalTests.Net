@@ -1,7 +1,5 @@
 ﻿using ApprovalTests.Combinations;
 
-namespace ApprovalTests.Tests;
-
 [TestFixture]
 [UseReporter(typeof(DiffReporter))]
 public class LockDownTests
@@ -36,7 +34,7 @@ public class LockDownTests
     [UseReporter(typeof(MachineSpecificReporter))]
     public void TestExceptions()
     {
-        using (Namers.ApprovalResults.UniqueForOs())
+        using (ApprovalResults.UniqueForOs())
         {
             int[] n = {0, 2};
             CombinationApprovals.VerifyAllCombinations((a, b) => a / b, n, n);
