@@ -1,9 +1,3 @@
-using ApprovalTests.Namers;
-using ApprovalTests.StackTraceParsers;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace ApprovalTests.Tests.Namer;
-
 [TestClass]
 public class VsTestStackTraceNamerTests
 {
