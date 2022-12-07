@@ -1,4 +1,10 @@
-﻿[TestClass]
+﻿using ApprovalTests.Namers;
+using ApprovalTests.Reporters;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+namespace ApprovalTests.MsTestV2;
+
+[TestClass]
 [UseReporter(typeof(DiffReporter))]
 public class NamerTest
 {
