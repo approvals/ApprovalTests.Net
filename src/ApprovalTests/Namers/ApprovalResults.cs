@@ -18,7 +18,7 @@ public static class ApprovalResults
         return "Net_v" + Environment.Version;
     }
 
-#if (!NET461)
+#if (!NET462)
         public static IDisposable UniqueForRuntime(bool throwOnError = true)
         {
             return NamerFactory.AsEnvironmentSpecificTest(GetDotNetRuntime(throwOnError));
