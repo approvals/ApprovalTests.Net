@@ -1,6 +1,4 @@
-﻿namespace ApprovalTests.Tests;
-
-[TestFixture]
+﻿[TestFixture]
 [UseReporter(typeof(ClipboardReporter))]
 public class StringEncodingTest
 {

@@ -99,7 +99,7 @@ public class SampleTest
     }
 }
 ```
-<sup><a href='/src/ApprovalTests.Tests/SampleTest.cs#L3-L17' title='Snippet source file'>snippet source</a> | <a href='#snippet-sample_test' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests.Tests/SampleTest.cs#L1-L15' title='Snippet source file'>snippet source</a> | <a href='#snippet-sample_test' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Will Produce a File

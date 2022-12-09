@@ -1,8 +1,6 @@
 ﻿using ApprovalTests.Approvers;
 using ApprovalTests.Core.Exceptions;
 
-namespace ApprovalTests.Tests;
-
 [TestFixture]
 public class FileApproverTests
 {
