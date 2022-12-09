@@ -6,22 +6,24 @@ using iText.Layout.Element;
 [TestFixture]
 public class PdfTest
 {
-    [TestCase(@"
-arbitrary content
-trailer
-<</ID [<c9e0f709eee32d7280bf971d9a36032a><c9e0f709eee32d7280bf971d9a36032a>]/Info 3 0 R/Root 1 0 R/Size 13>>
-%iText-7.1.7 for .NET
-startxref
-1110
-%%EOF")]
-    [TestCase(@"
-arbitrary content
-trailer
-<< /Size 63 /Root 28 0 R /Info 1 0 R /ID [ <4653becaf7588b39b76ee669e3e88e21>
-<4653becaf7588b39b76ee669e3e88e21> ] >>
-startxref
-69143
-%%EOF")]
+    [TestCase("""
+        arbitrary content
+        trailer
+        <</ID [<c9e0f709eee32d7280bf971d9a36032a><c9e0f709eee32d7280bf971d9a36032a>]/Info 3 0 R/Root 1 0 R/Size 13>>
+        %iText-7.1.7 for .NET
+        startxref
+        1110
+        %%EOF
+        """)]
+    [TestCase("""
+        arbitrary content
+        trailer
+        << /Size 63 /Root 28 0 R /Info 1 0 R /ID [ <4653becaf7588b39b76ee669e3e88e21>
+        <4653becaf7588b39b76ee669e3e88e21> ] >>
+        startxref
+        69143
+        %%EOF
+        """)]
     public void TestPdf_ScrubberIdsMatch(string input)
     {
         var matchPositions = PdfScrubber.FindIds(input).ToList();
@@ -30,20 +32,22 @@ startxref
         Assert.IsTrue(matchPositions.All(pos => input[pos.start - 1] == '<' && input[pos.start + pos.length] == '>'));
     }
 
-    [TestCase(@"
-NO TRAILER DECLARED
-<</ID [<c9e0f709eee32d7280bf971d9a36032a><c9e0f709eee32d7280bf971d9a36032a>]/Info 3 0 R/Root 1 0 R/Size 13>>
-%iText-7.1.7 for .NET
-startxref
-1110
-%%EOF")]
-    [TestCase(@"
-NO IDS DECLARED
-trailer
-<< /Size 63 /Root 28 0 R /Info 1 0 R >>
-startxref
-69143
-%%EOF")]
+    [TestCase("""
+        NO TRAILER DECLARED
+        <</ID [<c9e0f709eee32d7280bf971d9a36032a><c9e0f709eee32d7280bf971d9a36032a>]/Info 3 0 R/Root 1 0 R/Size 13>>
+        %iText-7.1.7 for .NET
+        startxref
+        1110
+        %%EOF
+        """)]
+    [TestCase("""
+        NO IDS DECLARED
+        trailer
+        << /Size 63 /Root 28 0 R /Info 1 0 R >>
+        startxref
+        69143
+        %%EOF
+        """)]
     public void TestPdf_ScrubberIdsNotMatch(string input)
     {
         var matchPositions = PdfScrubber.FindIds(input).ToList();
