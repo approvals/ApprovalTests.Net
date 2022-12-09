@@ -1,8 +1,6 @@
 ﻿using System.Net;
 using ApprovalTests.WebApi.MicrosoftHttpClient;
 
-namespace ApprovalTests.Tests.WebApi.MicrosoftHttpClient;
-
 [TestFixture]
 public class RestCallTest
 {

@@ -1,7 +1,5 @@
 using ApprovalTests.Xml;
 
-namespace ApprovalTests.Tests.Xml;
-
 [TestFixture]
 public class XmlTest
 {

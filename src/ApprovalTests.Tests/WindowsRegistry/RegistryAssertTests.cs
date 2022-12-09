@@ -1,7 +1,5 @@
 ﻿using ApprovalTests.WindowsRegistry;
 
-namespace ApprovalTests.Tests.WindowsRegistry;
-
 [TestFixture]
 public class RegistryAssertTests
 {

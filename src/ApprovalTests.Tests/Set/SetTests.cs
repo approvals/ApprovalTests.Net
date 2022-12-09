@@ -1,8 +1,6 @@
 ﻿using ApprovalTests.Set;
 using System.Text.RegularExpressions;
 
-namespace ApprovalTests.Tests.Set;
-
 [TestFixture]
 public class SetTests
 {

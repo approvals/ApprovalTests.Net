@@ -1,7 +1,5 @@
 ﻿using ApprovalTests.Writers;
 
-namespace ApprovalTests.Tests.Writers;
-
 [TestFixture]
 public class WriterFactoryTests
 {
