@@ -34,7 +34,7 @@ var actual = header.MakeHeading("I am ten chars");
 var expected = "";
 Approvals.AssertText(expected, actual);
 ```
-<sup><a href='/src/ApprovalTests.Tests/Reporters/InlineTextReporterTest.cs#L47-L52' title='Snippet source file'>snippet source</a> | <a href='#snippet-assert_text_before' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests.Tests/Reporters/InlineTextReporterTest.cs#L45-L50' title='Snippet source file'>snippet source</a> | <a href='#snippet-assert_text_before' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 When you do this, it will copy the c# for the `.received.` to your clipboard, so you can paste it in-line.
@@ -53,7 +53,7 @@ var expected = new[]{
 };
 Approvals.AssertText(expected, actual);
 ```
-<sup><a href='/src/ApprovalTests.Tests/Reporters/InlineTextReporterTest.cs#L32-L42' title='Snippet source file'>snippet source</a> | <a href='#snippet-assert_text' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests.Tests/Reporters/InlineTextReporterTest.cs#L30-L40' title='Snippet source file'>snippet source</a> | <a href='#snippet-assert_text' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 

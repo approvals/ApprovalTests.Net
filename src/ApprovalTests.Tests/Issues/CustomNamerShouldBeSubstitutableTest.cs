@@ -1,6 +1,5 @@
 ﻿using ApprovalTests.Core;
 using ApprovalTests.Namers.StackTraceParsers;
-using ApprovalTests.Tests.Reporters;
 using ApprovalTests.Writers;
 using ApprovalUtilities.CallStack;
 

@@ -1,7 +1,5 @@
 using ApprovalTests.Core;
 
-namespace ApprovalTests.Tests.Reporters;
-
 [TestFixture]
 public class FirstWorkingReporterTest
 {

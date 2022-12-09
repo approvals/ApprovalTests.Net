@@ -1,5 +1,3 @@
-namespace ApprovalTests.Tests.Reporters;
-
 [TestFixture]
 public class TortoiseImageDiffTest
 {

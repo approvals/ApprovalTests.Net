@@ -1,6 +1,4 @@
-﻿namespace ApprovalTests.Tests.Reporters;
-
-[TestFixture]
+﻿[TestFixture]
 public class PowerShellClipboardReporterTest
 {
     [Test]

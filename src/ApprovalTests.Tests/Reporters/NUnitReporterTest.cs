@@ -1,8 +1,6 @@
 using ApprovalTests.Reporters.TestFrameworks;
 using NUnit.Framework.Internal;
 
-namespace ApprovalTests.Tests.Reporters;
-
 [TestFixture]
 public class NUnitReporterTest
 {

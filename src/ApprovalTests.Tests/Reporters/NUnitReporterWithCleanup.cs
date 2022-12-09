@@ -1,7 +1,5 @@
 using ApprovalTests.Reporters.TestFrameworks;
 
-namespace ApprovalTests.Tests.Reporters;
-
 public class NUnitReporterWithCleanup : NUnitReporter
 {
     public override void Report(string approved, string received)

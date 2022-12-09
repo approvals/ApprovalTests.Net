@@ -1,7 +1,5 @@
 using ApprovalTests.Reporters.TestFrameworks;
 
-namespace ApprovalTests.Tests.Reporters;
-
 [TestFixture]
 public class MultiReporterTest
 {
