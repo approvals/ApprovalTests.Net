@@ -1,5 +1,3 @@
-namespace ApprovalTests.Tests.Persistence;
-
 [TestFixture]
 public class WeatherTest
 {

@@ -1,8 +1,6 @@
 using System.Net;
 using ApprovalUtilities.Persistence;
 
-namespace ApprovalTests.Tests.Persistence;
-
 class WeatherLoader : IExecutableQuery
 {
     readonly string weatherStationId;
