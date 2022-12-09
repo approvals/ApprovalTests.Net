@@ -1,6 +1,4 @@
-﻿
-using System.Diagnostics;
-using System.Reflection;
+﻿using System.Reflection;
 using ApprovalTests.StackTraceParsers;
 
 namespace ApprovalTests.Reporters.TestFrameworks;
