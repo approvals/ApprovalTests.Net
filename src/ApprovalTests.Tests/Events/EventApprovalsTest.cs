@@ -1,7 +1,5 @@
 ﻿using ApprovalTests.Events;
 
-namespace ApprovalTests.Tests.Events;
-
 [TestFixture]
 public class EventApprovalsTest
 {

@@ -1,6 +1,4 @@
-﻿namespace ApprovalTests.Tests.Namer;
-
-[TestFixture]
+﻿[TestFixture]
 // begin-snippet: use_MachineSpecificReporter
 [UseReporter(typeof(MachineSpecificReporter))]
 // end-snippet

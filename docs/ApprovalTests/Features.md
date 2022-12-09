@@ -74,7 +74,7 @@ Sometimes you want to parse an approvals filename to get the parts.
 ```cs
 var approvalsFilename = ApprovalsFilename.Parse(@"..\Email\EmailTest.Testname.Microsoft_Windows_10_Education.approved.eml");
 ```
-<sup><a href='/src/ApprovalTests.Tests/Namer/ApprovalsFilenameTest.cs#L8-L10' title='Snippet source file'>snippet source</a> | <a href='#snippet-approvals_filename' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests.Tests/Namer/ApprovalsFilenameTest.cs#L6-L8' title='Snippet source file'>snippet source</a> | <a href='#snippet-approvals_filename' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Will produce

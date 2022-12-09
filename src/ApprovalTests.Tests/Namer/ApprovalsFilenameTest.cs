@@ -1,6 +1,4 @@
-﻿namespace ApprovalTests.Tests.Namer;
-
-public class ApprovalsFilenameTest
+﻿public class ApprovalsFilenameTest
 {
     [Test]
     public void TestMachineSpecificName()
