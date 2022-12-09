@@ -1,5 +1,3 @@
-namespace ApprovalTests.Tests.Namer;
-
 [TestFixture]
 public class SubdirectoryNamerTests
 {
