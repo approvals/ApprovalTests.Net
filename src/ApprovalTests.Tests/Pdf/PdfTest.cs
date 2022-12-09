@@ -3,8 +3,6 @@ using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
 
-namespace ApprovalTests.Tests.Pdf;
-
 [TestFixture]
 public class PdfTest
 {

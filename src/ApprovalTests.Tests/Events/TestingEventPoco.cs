@@ -1,6 +1,3 @@
-namespace ApprovalTests.Tests.Events;
-
-using System;
 using System.ComponentModel;
 
 public class TestingEventPoco : INotifyPropertyChanged

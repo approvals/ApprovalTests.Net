@@ -1,7 +1,5 @@
 ﻿using System.Net.Mail;
 
-namespace ApprovalTests.Tests.Email;
-
 [TestFixture]
 [UseReporter(typeof(MachineSpecificReporter))]
 public class EmailTest

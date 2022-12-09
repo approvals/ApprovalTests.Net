@@ -47,7 +47,7 @@ If you wanted to have multiple reporters launch on failure, you can also combine
 ```cs
 [UseReporter(typeof(DiffReporter), typeof(FileLauncherReporter))]
 ```
-<sup><a href='/src/ApprovalTests.Tests/Html/HtmlTest.cs#L4-L6' title='Snippet source file'>snippet source</a> | <a href='#snippet-multiple_reporters' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests.Tests/Html/HtmlTest.cs#L2-L4' title='Snippet source file'>snippet source</a> | <a href='#snippet-multiple_reporters' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 

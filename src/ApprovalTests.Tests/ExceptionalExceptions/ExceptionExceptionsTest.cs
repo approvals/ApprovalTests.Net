@@ -1,7 +1,5 @@
 ﻿using ApprovalTests.ExceptionalExceptions;
 
-namespace ApprovalTests.Tests.ExceptionalExceptions;
-
 [TestFixture]
 public class ExceptionExceptionsTest
 {
@@ -11,7 +9,6 @@ public class ExceptionExceptionsTest
         var exceptionalId = Exceptional.GenerateUniqueId<Exception>();
         Approvals.Verify(exceptionalId);
     }
-
 
     //[Test]
     public void TestTlDr()

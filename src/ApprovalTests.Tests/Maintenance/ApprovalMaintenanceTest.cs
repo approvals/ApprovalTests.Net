@@ -1,7 +1,5 @@
 ﻿using ApprovalTests.Maintenance;
 
-namespace ApprovalTests.Tests.Maintenance;
-
 [TestFixture]
 public class ApprovalMaintenanceTest
 {

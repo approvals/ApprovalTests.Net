@@ -4,8 +4,6 @@ using ApprovalTests.Tests.Reporters;
 using ApprovalTests.Writers;
 using ApprovalUtilities.CallStack;
 
-namespace ApprovalTests.Tests.CustomImplementation;
-
 [TestFixture]
 public class CustomNamerShouldBeSubstitutableTest
 {

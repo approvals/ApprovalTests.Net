@@ -1,6 +1,6 @@
-﻿namespace ApprovalTests.Tests.Events;
+﻿using ApprovalTests.Events;
 
-using ApprovalTests.Events;
+namespace ApprovalTests.Tests.Events;
 
 [TestFixture]
 public class EventApprovalsTest

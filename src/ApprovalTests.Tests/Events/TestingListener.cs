@@ -1,7 +1,3 @@
-namespace ApprovalTests.Tests.Events;
-
-using System;
-
 public static class TestingListener
 {
     public static void AnotherStandardCallback(object sender, EventArgs e)

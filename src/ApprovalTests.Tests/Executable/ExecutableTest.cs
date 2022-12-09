@@ -1,5 +1,3 @@
-namespace ApprovalTests.Tests.Executable;
-
 [TestFixture]
 [UseReporter(typeof(QuietReporter))]
 public class ExecutableTest
