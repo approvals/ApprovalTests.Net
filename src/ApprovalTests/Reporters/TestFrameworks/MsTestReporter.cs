@@ -1,4 +1,5 @@
 ﻿
+using System.Diagnostics;
 using System.Reflection;
 using ApprovalTests.StackTraceParsers;
 
@@ -19,7 +20,10 @@ public class MsTestReporter : AssertReporter
     protected override void InvokeEqualsMethod(Type type, string[] parameters)
     {
         var bindingFlags = BindingFlags.InvokeMethod | BindingFlags.Public | BindingFlags.Static;
-        var method = type.GetMethod("AreEqual", bindingFlags)!.MakeGenericMethod(typeof(string));
+        var areEquals = type
+            .GetMethods(bindingFlags)
+            .Single(_ => _.Name=="AreEqual" && _.ContainsGenericParameters && _.GetParameters().Length == 2);
+        var method = areEquals.MakeGenericMethod(typeof(string));
         method.Invoke(null, parameters);
     }
 }
