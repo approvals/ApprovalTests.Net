@@ -2,11 +2,8 @@
 
 using System.Reflection;
 using System.Windows.Forms;
-using ApprovalTests.Tests.Events;
 using ApprovalUtilities.Reflection;
 using ApprovalTests.Reporters;
-
-namespace ApprovalUtilities.Tests.Reflection;
 
 [UseReporter(typeof(DiffReporter))]
 public class ReflectionUtilitiesTest

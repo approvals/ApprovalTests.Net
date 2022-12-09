@@ -1,9 +1,6 @@
 using System.ComponentModel;
 using System.Windows.Forms;
-using ApprovalTests.Tests.Events;
 using ApprovalUtilities.Reflection;
-
-namespace ApprovalUtilities.Tests.Reflection;
 
 public class HandlerListUtilitiesTest
 {
