@@ -1,5 +1,3 @@
-namespace ApprovalTests.Tests.Namer;
-
 [TestFixture]
 public class NunitStackTraceNamerTests
 {
@@ -23,7 +21,7 @@ public class NunitStackTraceNamerTests
     [Description("The approval file should be based on the scenario name with outline")]
     [TestCase("Fred")]
     [TestCase("John")]
-    public virtual void TestCaseAttributes(string caseName)
+    public void TestCaseAttributes(string caseName)
     {
         NamerFactory.AdditionalInformation = caseName;
         var name = new UnitTestFrameworkNamer().Name;
