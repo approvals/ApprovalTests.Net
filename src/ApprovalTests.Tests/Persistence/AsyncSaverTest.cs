@@ -1,6 +1,4 @@
-﻿using ApprovalUtilities.Persistence;
-
-[TestFixture]
+﻿[TestFixture]
 public class AsyncSaverTest
 {
     [Test]

@@ -1,5 +1,4 @@
 using System.Net;
-using ApprovalUtilities.Persistence;
 
 class WeatherLoader : IExecutableQuery
 {

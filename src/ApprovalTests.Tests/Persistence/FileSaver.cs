@@ -1,6 +1,4 @@
-﻿using ApprovalUtilities.Persistence;
-
-public class FileSaver : ISaver<string>
+﻿public class FileSaver : ISaver<string>
 {
     readonly FileInfo file;
 

@@ -1,6 +1,4 @@
-﻿using ApprovalUtilities.Persistence;
-
-public class FileAsyncSaver : ISaverAsync<string>
+﻿public class FileAsyncSaver : ISaverAsync<string>
 {
     readonly FileInfo file;
 
