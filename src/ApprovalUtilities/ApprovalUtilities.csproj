@@ -11,7 +11,6 @@
     <Using Remove="System.Net.Http" />
     <PackageReference Include="Fody" Version="6.6.4" PrivateAssets="all" />
     <PackageReference Include="Publicize.Fody" Version="1.8.0" PrivateAssets="All" />
-    <PackageReference Include="Obsolete.Fody" Version="5.3.0" PrivateAssets="all" />
     <PackageReference Include="System.Management" Version="7.0.0" />
     <PackageReference Include="Virtuosity.Fody" Version="3.1.1" PrivateAssets="All" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
