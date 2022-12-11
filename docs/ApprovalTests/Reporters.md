@@ -97,12 +97,11 @@ TeamCityReporter.INSTANCE,
 JenkinsReporter.INSTANCE,
 BambooReporter.INSTANCE,
 NCrunchReporter.INSTANCE,
-MightyMooseAutoTestReporter.INSTANCE,
 MyGetReporter.INSTANCE,
 GoContinuousDeliveryReporter.INSTANCE,
 AppVeyorReporter.INSTANCE
 ```
-<sup><a href='/src/ApprovalTests/Reporters/DefaultFrontLoaderReporter.cs#L11-L22' title='Snippet source file'>snippet source</a> | <a href='#snippet-continuous_integration' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests/Reporters/DefaultFrontLoaderReporter.cs#L11-L21' title='Snippet source file'>snippet source</a> | <a href='#snippet-continuous_integration' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 You can add to this by configuring the FrontLoadedReporter Annotation.

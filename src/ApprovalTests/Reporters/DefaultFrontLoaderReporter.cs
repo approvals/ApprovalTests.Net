@@ -15,7 +15,6 @@ public class DefaultFrontLoaderReporter : FirstWorkingReporter
             JenkinsReporter.INSTANCE,
             BambooReporter.INSTANCE,
             NCrunchReporter.INSTANCE,
-            MightyMooseAutoTestReporter.INSTANCE,
             MyGetReporter.INSTANCE,
             GoContinuousDeliveryReporter.INSTANCE,
             AppVeyorReporter.INSTANCE
