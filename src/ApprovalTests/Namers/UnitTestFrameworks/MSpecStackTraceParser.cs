@@ -7,7 +7,6 @@ namespace ApprovalTests.StackTraceParsers;
 
 public class MSpecStackTraceParser : AttributeStackTraceParser
 {
-
     public override bool Parse(StackTrace stackTrace)
     {
         caller = new(stackTrace, 0);
@@ -20,10 +19,7 @@ public class MSpecStackTraceParser : AttributeStackTraceParser
         return true;
     }
 
-    protected override string GetAttributeType()
-    {
-        return "MSpec";
-    }
+    protected override string GetAttributeType() => "MSpec";
 
     public override string TypeName => GetRecursiveTypeName(approvalFrame.Class.DeclaringType);
 
@@ -43,7 +39,6 @@ public class MSpecStackTraceParser : AttributeStackTraceParser
     }
 
     public override string ForTestingFramework => "Machine.Specifications (MSpec)";
-
 
     static Caller FindApprovalFrame(Caller caller)
     {

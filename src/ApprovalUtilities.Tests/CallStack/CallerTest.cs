@@ -10,10 +10,7 @@ public class CallerTest
         Assert.Equal("CallerTest", caller.Class.Name);
     }
 
-    static Caller GetCaller()
-    {
-        return new();
-    }
+    static Caller GetCaller() => new();
 
     [Fact]
     public void TestCallStack()
@@ -31,33 +28,15 @@ public class CallerTest
         Approvals.VerifyAll(methods, m => m.ToStandardString());
     }
 
-    static Caller GetDeepCaller()
-    {
-        return A();
-    }
+    static Caller GetDeepCaller() => A();
 
-    static Caller A()
-    {
-        return B();
-    }
+    static Caller A() => B();
 
-    static Caller B()
-    {
-        return C();
-    }
+    static Caller B() => C();
 
-    static Caller C()
-    {
-        return D();
-    }
+    static Caller C() => D();
 
-    static Caller D()
-    {
-        return E();
-    }
+    static Caller D() => E();
 
-    static Caller E()
-    {
-        return GetCaller();
-    }
+    static Caller E() => GetCaller();
 }

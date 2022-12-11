@@ -2,10 +2,8 @@
 {
     readonly FileInfo file;
 
-    public FileAsyncSaver(FileInfo file)
-    {
+    public FileAsyncSaver(FileInfo file) =>
         this.file = file;
-    }
 
     public async Task<string> Save(string objectToBeSaved)
     {

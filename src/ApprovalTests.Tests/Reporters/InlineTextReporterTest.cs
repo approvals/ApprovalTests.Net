@@ -53,14 +53,12 @@ public class InlineTextReporterTest
 
 public class Header
 {
-    public string MakeHeading(string iAmTenChars)
-    {
-        return new[]
+    public string MakeHeading(string iAmTenChars) =>
+        new[]
         {
             "**************",
 
             "I am ten chars",
             "**************",
         }.JoinWith("\n");
-    }
 }

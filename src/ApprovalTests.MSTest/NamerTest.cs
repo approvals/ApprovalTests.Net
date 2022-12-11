@@ -3,10 +3,8 @@
 public class NamerTest
 {
     [TestMethod]
-    public void MsTestV2()
-    {
+    public void MsTestV2() =>
         Approvals.Verify("MsTestV2");
-    }
 
     [DataTestMethod]
     [DataRow("MsDataTest")]

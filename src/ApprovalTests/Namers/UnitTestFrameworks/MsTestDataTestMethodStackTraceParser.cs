@@ -8,8 +8,5 @@ public class MsTestDataTestMethodStackTraceParser : AttributeStackTraceParser
 
     public override string ForTestingFramework => "MsTest-DataTest";
 
-    protected override string GetAttributeType()
-    {
-        return Attribute;
-    }
+    protected override string GetAttributeType() => Attribute;
 }

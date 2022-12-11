@@ -6,10 +6,8 @@ public class RegistryAssertTests
     const string KeyName = @"Software\TestDummy";
 
     [Test]
-    public void Success()
-    {
+    public void Success() =>
         WindowsRegistryAssert.HasDword("Console", "TrimLeadingZeros", 0, "You should probably Have This");
-    }
 
     [Test]
     public void BadValue()

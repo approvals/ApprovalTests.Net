@@ -81,14 +81,10 @@ public class HandlerListEntry
         }
     }
 
-    public override string ToString()
-    {
-        return this.WritePropertiesToString();
-    }
+    public override string ToString() =>
+        this.WritePropertiesToString();
 
-    T GetField<T>(string name)
-    {
-        return listEntry.GetInstanceFields(fi => string.Compare(fi.Name, name, false) == 0)
+    T GetField<T>(string name) =>
+        listEntry.GetInstanceFields(fi => string.Compare(fi.Name, name, false) == 0)
             .Single().GetValue<T>(listEntry);
-    }
 }

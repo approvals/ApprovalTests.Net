@@ -27,10 +27,8 @@ public abstract class AttributeStackTraceParser : IStackTraceParser
 
     public string ApprovalName => $"{TypeName}.{GetMethodName()}{AdditionalInfo}";
 
-    protected virtual string GetMethodName()
-    {
-        return ApprovalUtilities.Reflection.ReflectionUtilities.GetRealMethod(approvalFrame.Method).Name;
-    }
+    protected virtual string GetMethodName() =>
+        ApprovalUtilities.Reflection.ReflectionUtilities.GetRealMethod(approvalFrame.Method).Name;
 
     public string SourcePath => Path.GetDirectoryName(GetFileNameForStack(approvalFrame));
 
@@ -40,20 +38,16 @@ public abstract class AttributeStackTraceParser : IStackTraceParser
         return !IsNamespaceApprovals(classNamespace);
     };
 
-    public static bool IsNamespaceApprovals(string classNamespace)
-    {
-        return classNamespace != null &&
-               ( classNamespace.StartsWith("ApprovalTests") ||
-                 classNamespace.StartsWith("ApprovalUtilities"));
-    }
+    public static bool IsNamespaceApprovals(string classNamespace) =>
+        classNamespace != null &&
+        ( classNamespace.StartsWith("ApprovalTests") ||
+          classNamespace.StartsWith("ApprovalUtilities"));
 
-    static string GetFileNameForStack(Caller frame)
-    {
-        return frame.Parents
+    static string GetFileNameForStack(Caller frame) =>
+        frame.Parents
             .Where(FileInfoIsValidFilter)
             .Select(c => c.StackFrame.GetFileName())
             .FirstOrDefault(f => f != null);
-    }
 
     public abstract string ForTestingFramework { get; }
 
@@ -64,18 +58,15 @@ public abstract class AttributeStackTraceParser : IStackTraceParser
         return approvalFrame != null;
     }
 
-    public static Caller GetFirstFrameForAttribute(Caller caller, string attributeName)
-    {
-        return caller.Callers.FirstOrDefault(c =>
+    public static Caller GetFirstFrameForAttribute(Caller caller, string attributeName) =>
+        caller.Callers.FirstOrDefault(c =>
         {
             var attributes = ApprovalUtilities.Reflection.ReflectionUtilities.GetRealMethod(c.Method).GetCustomAttributes(false);
             return ContainsAttribute(attributes, attributeName);
         });
-    }
 
-    static bool ContainsAttribute(object[] attributes, string attributeName)
-    {
-        return attributes.Any(attribute =>
+    static bool ContainsAttribute(object[] attributes, string attributeName) =>
+        attributes.Any(attribute =>
         {
             var type = attribute.GetType();
             do
@@ -90,17 +81,12 @@ public abstract class AttributeStackTraceParser : IStackTraceParser
 
             return false;
         });
-    }
 
-    protected virtual Caller FindApprovalFrame()
-    {
-        return GetFirstFrameForAttribute(caller, GetAttributeType());
-    }
+    protected virtual Caller FindApprovalFrame() =>
+        GetFirstFrameForAttribute(caller, GetAttributeType());
 
-    public bool IsApplicable()
-    {
-        return GetAttributeType() != null;
-    }
+    public bool IsApplicable() =>
+        GetAttributeType() != null;
 
     protected abstract string GetAttributeType();
 

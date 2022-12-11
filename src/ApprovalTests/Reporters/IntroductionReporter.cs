@@ -15,10 +15,8 @@ public class IntroductionReporter : IApprovalFailureReporter
         throw new(message);
     }
 
-    public string GetFriendlyWelcomeMessage()
-    {
-        var message =
-            @"Welcome to ApprovalTests.
+    public string GetFriendlyWelcomeMessage() =>
+        @"Welcome to ApprovalTests.
 ====
 
 Please add:
@@ -50,6 +48,4 @@ using ApprovalTests.Reporters;
 ```
 
 ";
-        return message;
-    }
 }

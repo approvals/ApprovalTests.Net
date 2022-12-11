@@ -50,7 +50,7 @@ using (ApprovalResults.UniqueForOs())
     Approvals.Verify("Data");
 }
 ```
-<sup><a href='/src/ApprovalTests.Tests/Namer/ApprovalResultsTest.cs#L37-L42' title='Snippet source file'>snippet source</a> | <a href='#snippet-unique_for_os' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests.Tests/Namer/ApprovalResultsTest.cs#L35-L40' title='Snippet source file'>snippet source</a> | <a href='#snippet-unique_for_os' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 This can produce files such as:

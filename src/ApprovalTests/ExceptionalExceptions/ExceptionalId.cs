@@ -9,8 +9,5 @@ public class ExceptionalId
     public string Method { get; set; }
     public string Exception { get; set; }
 
-    public override string ToString()
-    {
-        return this.WritePropertiesToString();
-    }
+    public override string ToString() => this.WritePropertiesToString();
 }

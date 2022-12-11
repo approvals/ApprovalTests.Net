@@ -4,10 +4,8 @@ namespace ApprovalTests.Utilities;
 
 public static class StringReporting
 {
-    public static void DiffWith(this string expected, string actual)
-    {
+    public static void DiffWith(this string expected, string actual) =>
         AssertEqual(expected, actual, Approvals.GetReporter());
-    }
 
     public static void AssertEqual(string expected, string actual, IApprovalFailureReporter reporter)
     {
@@ -24,5 +22,6 @@ public static class StringReporting
         }
     }
 
-    public static string TempApprovalFile => Path.GetTempPath() + "Actual.Approvals.Temp.txt";
+    public static string TempApprovalFile =>
+        Path.GetTempPath() + "Actual.Approvals.Temp.txt";
 }

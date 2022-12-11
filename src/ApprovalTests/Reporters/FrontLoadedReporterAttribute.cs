@@ -10,5 +10,6 @@ public class FrontLoadedReporterAttribute : Attribute
         var instance = UseReporterAttribute.GetSingleton(reporter) ?? UseReporterAttribute.CreateInstance(reporter);
         Reporter = instance as IEnvironmentAwareReporter;
     }
+
     public IEnvironmentAwareReporter Reporter { get; set; }
 }

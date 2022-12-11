@@ -4,21 +4,14 @@ namespace ApprovalTests.Namers;
 
 public static class ApprovalResults
 {
-    public static IDisposable UniqueForDotNetVersion()
-    {
-        return NamerFactory.AsEnvironmentSpecificTest(GetDotNetVersion());
-    }
+    public static IDisposable UniqueForDotNetVersion() =>
+        NamerFactory.AsEnvironmentSpecificTest(GetDotNetVersion());
 
-    public static string GetDotNetVersion()
-    {
-        return "Net_v" + Environment.Version;
-    }
+    public static string GetDotNetVersion() => "Net_v" + Environment.Version;
 
 #if (!NET462)
-        public static IDisposable UniqueForRuntime(bool throwOnError = true)
-        {
-            return NamerFactory.AsEnvironmentSpecificTest(GetDotNetRuntime(throwOnError));
-        }
+        public static IDisposable UniqueForRuntime(bool throwOnError = true) =>
+            NamerFactory.AsEnvironmentSpecificTest(GetDotNetRuntime(throwOnError));
 
         public static string GetDotNetRuntime(bool throwOnError)
         {
@@ -66,15 +59,11 @@ https://github.com/approvals/ApprovalTests.Net/issues/new?title=Unknown%3A+%27Ru
         return frameworkDescription;
     }
 
-    public static IDisposable UniqueForMachineName()
-    {
-        return NamerFactory.AsEnvironmentSpecificTest(GetMachineName());
-    }
+    public static IDisposable UniqueForMachineName() =>
+        NamerFactory.AsEnvironmentSpecificTest(GetMachineName());
 
-    public static string GetMachineName()
-    {
-        return "ForMachine." + Environment.MachineName;
-    }
+    public static string GetMachineName() =>
+        "ForMachine." + Environment.MachineName;
 
     public static string GetOsName()
     {
@@ -100,20 +89,14 @@ https://github.com/approvals/ApprovalTests.Net/issues/new?title=Unknown%3A+%27Ru
         return captionName;
     }
 
-    public static IDisposable UniqueForOs()
-    {
-        return NamerFactory.AsEnvironmentSpecificTest(GetOsName());
-    }
+    public static IDisposable UniqueForOs() =>
+        NamerFactory.AsEnvironmentSpecificTest(GetOsName());
 
-    public static string GetUserName()
-    {
-        return "ForUser." + Environment.UserName;
-    }
+    public static string GetUserName() =>
+        "ForUser." + Environment.UserName;
 
-    public static IDisposable UniqueForUserName()
-    {
-        return NamerFactory.AsEnvironmentSpecificTest(GetUserName());
-    }
+    public static IDisposable UniqueForUserName() =>
+        NamerFactory.AsEnvironmentSpecificTest(GetUserName());
 
     public static IDisposable ForScenario(string data)
     {
@@ -121,10 +104,8 @@ https://github.com/approvals/ApprovalTests.Net/issues/new?title=Unknown%3A+%27Ru
         return NamerFactory.AsEnvironmentSpecificTest(name);
     }
 
-    public static IDisposable ForScenario(params object[] dataPoints)
-    {
-        return ForScenario(dataPoints.JoinWith("."));
-    }
+    public static IDisposable ForScenario(params object[] dataPoints) =>
+        ForScenario(dataPoints.JoinWith("."));
 
     public static string Scrub(string data)
     {

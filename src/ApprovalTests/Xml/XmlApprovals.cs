@@ -6,13 +6,11 @@ namespace ApprovalTests.Xml;
 
 public static class XmlApprovals
 {
-    public static void VerifyXml(string xml, Func<string, string> scrubber = null)
-    {
+    public static void VerifyXml(string xml, Func<string, string> scrubber = null) =>
         VerifyText(xml, "xml", true, scrubber);
-    }
 
     /// <summary>
-    /// 	Throws exception if Xml is incorrectly formatted
+    /// Throws exception if Xml is incorrectly formatted
     /// </summary>
     public static void VerifyText(string text, string fileExtensionWithoutDot = "xml", bool safely = false, Func<string, string> scrubber = null)
     {

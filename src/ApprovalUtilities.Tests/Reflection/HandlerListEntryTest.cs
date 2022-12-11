@@ -5,22 +5,16 @@ using ApprovalUtilities.Reflection;
 public class HandlerListEntryTest
 {
     [Fact]
-    public void BecomeNullObjectWhenItemIsWrongType()
-    {
+    public void BecomeNullObjectWhenItemIsWrongType() =>
         Approvals.Verify(new HandlerListEntry(new Button()));
-    }
 
     [Fact]
-    public void GetListEntryTest()
-    {
+    public void GetListEntryTest() =>
         Assert.Equal("ListEntry", GetListEntry().GetType().Name);
-    }
 
     [Fact]
-    public void ProxyNonPublicMembers()
-    {
+    public void ProxyNonPublicMembers() =>
         Approvals.Verify(new HandlerListEntry(GetListEntry()));
-    }
 
     static object GetListEntry()
     {

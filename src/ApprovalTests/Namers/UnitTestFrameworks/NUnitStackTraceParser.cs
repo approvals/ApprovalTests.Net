@@ -8,8 +8,5 @@ public class NUnitStackTraceParser : AttributeStackTraceParser
 
     public override string ForTestingFramework => "NUnit";
 
-    protected override string GetAttributeType()
-    {
-        return Attribute;
-    }
+    protected override string GetAttributeType() => Attribute;
 }

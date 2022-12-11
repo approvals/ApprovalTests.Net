@@ -6,13 +6,9 @@ public class TeamCityReporter : IEnvironmentAwareReporter
 {
     public static readonly TeamCityReporter INSTANCE = new();
 
-    public void Report(string approved, string received)
-    {
+    public void Report(string approved, string received) =>
         ContinuousDeliveryUtils.ReportOnServer(approved, received);
-    }
 
-    public bool IsWorkingInThisEnvironment(string forFile)
-    {
-        return Environment.GetEnvironmentVariable("TEAMCITY_VERSION") != null;
-    }
+    public bool IsWorkingInThisEnvironment(string forFile) =>
+        Environment.GetEnvironmentVariable("TEAMCITY_VERSION") != null;
 }

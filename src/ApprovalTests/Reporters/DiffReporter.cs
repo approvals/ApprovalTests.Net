@@ -16,8 +16,5 @@ public class DiffReporter : IEnvironmentAwareReporter
         }
     }
 
-    public bool IsWorkingInThisEnvironment(string forFile)
-    {
-        return true;
-    }
+    public bool IsWorkingInThisEnvironment(string forFile) => true;
 }

@@ -2,10 +2,8 @@ namespace ApprovalUtilities.Utilities;
 
 public class ClassUtilities
 {
-    public static bool IsClassAvailable(string typeName)
-    {
-        return ExceptionUtilities.GetException(() => Type.GetType(typeName)) == null;
-    }
+    public static bool IsClassAvailable(string typeName) =>
+        ExceptionUtilities.GetException(() => Type.GetType(typeName)) == null;
 
     public static bool IsAssemblyLoaded(string assembly)
     {

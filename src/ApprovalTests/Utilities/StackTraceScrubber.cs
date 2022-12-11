@@ -27,13 +27,9 @@ public static class StackTraceScrubber
         return result;
     }
 
-    public static string ScrubStackTrace(this string text)
-    {
-        return ScrubberUtils.Combine(ScrubAnonymousIds, ScrubPaths, ScrubLineNumbers)(text);
-    }
+    public static string ScrubStackTrace(this string text) =>
+        ScrubberUtils.Combine(ScrubAnonymousIds, ScrubPaths, ScrubLineNumbers)(text);
 
-    public static string Scrub(this Exception exception)
-    {
-        return ("" + exception).ScrubStackTrace();
-    }
+    public static string Scrub(this Exception exception) =>
+        ("" + exception).ScrubStackTrace();
 }

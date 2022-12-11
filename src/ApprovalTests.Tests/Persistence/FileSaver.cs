@@ -2,10 +2,8 @@
 {
     readonly FileInfo file;
 
-    public FileSaver(FileInfo file)
-    {
+    public FileSaver(FileInfo file) =>
         this.file = file;
-    }
 
     public string Save(string objectToBeSaved)
     {

@@ -11,10 +11,8 @@
     }
 
     [Test]
-    public void TestNonMachineSpecificName()
-    {
+    public void TestNonMachineSpecificName() =>
         Approvals.Verify(ApprovalsFilename.Parse(@"..\Email\EmailTest.Testname.approved.eml"));
-    }
 
     [Test]
     public void TestSimilarFiles()

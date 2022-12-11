@@ -7,10 +7,8 @@ public class FileLauncherWithDelayReporter : IApprovalFailureReporter
 
     readonly int seconds;
 
-    public FileLauncherWithDelayReporter(int seconds = 2)
-    {
+    public FileLauncherWithDelayReporter(int seconds = 2) =>
         this.seconds = seconds;
-    }
 
     public void Report(string approved, string received)
     {

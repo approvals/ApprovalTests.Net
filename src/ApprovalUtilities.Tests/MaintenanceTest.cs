@@ -3,8 +3,6 @@
 public class MaintenanceTest
 {
     [Fact]
-    public void EnsureNoAbandonedFiles()
-    {
+    public void EnsureNoAbandonedFiles() =>
         ApprovalMaintenance.VerifyNoAbandonedFiles("Reflection");
-    }
 }

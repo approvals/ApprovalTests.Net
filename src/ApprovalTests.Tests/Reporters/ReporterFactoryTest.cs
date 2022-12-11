@@ -12,10 +12,8 @@ public class ReporterFactoryTest
         return singletons;
     }
 
-    static void SubMethod()
-    {
+    static void SubMethod() =>
         Assert.AreEqual(typeof(MethodLevelReporter), Approvals.GetReporter().GetType());
-    }
 
     [Test]
     public void TestClassLevel()

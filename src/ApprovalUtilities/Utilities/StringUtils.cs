@@ -51,35 +51,29 @@ public static class StringUtils
 
     public static string FormatFrame(char frameMarker, params string[] lines)
     {
-        var sb = new StringBuilder();
+        var builder = new StringBuilder();
         const int totalWidth = 86;
         var lineBreakOut = "".PadLeft(totalWidth, frameMarker);
         var lineBreakIn = string.Format("{0}{1}{0}", frameMarker, "".PadLeft(totalWidth - 2, ' '));
-        sb.AppendLine(lineBreakOut);
-        sb.AppendLine(lineBreakIn);
+        builder.AppendLine(lineBreakOut);
+        builder.AppendLine(lineBreakIn);
         foreach (var line in lines)
         {
-            sb.AppendLine(string.Format("{1} {0}",line.Replace(Environment.NewLine, $"{Environment.NewLine}{frameMarker} "), frameMarker));
+            builder.AppendLine(string.Format("{1} {0}",line.Replace(Environment.NewLine, $"{Environment.NewLine}{frameMarker} "), frameMarker));
         }
-        sb.AppendLine(lineBreakIn);
-        sb.AppendLine(lineBreakOut);
-        return sb.ToString().Trim();
+        builder.AppendLine(lineBreakIn);
+        builder.AppendLine(lineBreakOut);
+        return builder.ToString().Trim();
     }
 
-    public static string Write<T>(this IEnumerable<T> enumerable, string label)
-    {
-        return Write(enumerable, label, s => "" + s);
-    }
+    public static string Write<T>(this IEnumerable<T> enumerable, string label) =>
+        Write(enumerable, label, s => "" + s);
 
-    public static string Write<T>(this IEnumerable<T> enumerable, string label, Func<T, string> formatter)
-    {
-        return enumerable.Write((i, s) => $"{label}[{i}] = {formatter(s)}\n", $"{label} is empty");
-    }
+    public static string Write<T>(this IEnumerable<T> enumerable, string label, Func<T, string> formatter) =>
+        enumerable.Write((i, s) => $"{label}[{i}] = {formatter(s)}\n", $"{label} is empty");
 
-    public static string Write<T>(this IEnumerable<T> enumerable, Func<T, string> formatter)
-    {
-        return enumerable.Write((_, s) => formatter(s) + Environment.NewLine, "Empty");
-    }
+    public static string Write<T>(this IEnumerable<T> enumerable, Func<T, string> formatter) =>
+        enumerable.Write((_, s) => formatter(s) + Environment.NewLine, "Empty");
 
     public static string Write<T>(this IEnumerable<T> enumerable, Func<int, T, string> formatterWithIndex, string emptyMessage)
     {
@@ -95,10 +89,8 @@ public static class StringUtils
         return sb.ToString();
     }
 
-    public static string WritePropertiesToString<T>(this T value)
-    {
-        return WriteObjectToString(value, WriteProperties);
-    }
+    public static string WritePropertiesToString<T>(this T value) =>
+        WriteObjectToString(value, WriteProperties);
 
     static void WriteProperties<T>(T value, StringBuilder sb, Type t)
     {
@@ -112,10 +104,8 @@ public static class StringUtils
         }
     }
 
-    public static string WriteFieldsToString<T>(this T value)
-    {
-        return WriteObjectToString(value, WriteFields);
-    }
+    public static string WriteFieldsToString<T>(this T value) =>
+        WriteObjectToString(value, WriteFields);
 
     static void WriteFields<T>(T value, StringBuilder sb, Type t)
     {
@@ -147,14 +137,11 @@ public static class StringUtils
         return sb.ToString();
     }
 
-    public static string JoinWith<T>(this IEnumerable<T> elements, string separator)
-    {
-        return string.Join(separator, elements);
-    }
+    public static string JoinWith<T>(this IEnumerable<T> elements, string separator) =>
+        string.Join(separator, elements);
 
     public static string RemoveIndentation(this string indentedText)
     {
-
         var firstRemoved = indentedText.Replace("\r\n","\n").Split('\n').Skip(1).ToArray();
         var lastRemoved = firstRemoved.Take(firstRemoved.Length - 1);
         var space = FindSpaces(lastRemoved);
@@ -164,13 +151,9 @@ public static class StringUtils
         return combined;
     }
 
-    static string RemoveSpaces(int space, string s)
-    {
-        return space < s.Length ?  s.Substring(space) : "";
-    }
+    static string RemoveSpaces(int space, string s) =>
+        space < s.Length ?  s.Substring(space) : "";
 
-    static int FindSpaces(IEnumerable<string> lines)
-    {
-        return lines.Where(l => !string.IsNullOrWhiteSpace(l)).Min(l => l.Length - l.TrimStart().Length);
-    }
+    static int FindSpaces(IEnumerable<string> lines) =>
+        lines.Where(l => !string.IsNullOrWhiteSpace(l)).Min(l => l.Length - l.TrimStart().Length);
 }

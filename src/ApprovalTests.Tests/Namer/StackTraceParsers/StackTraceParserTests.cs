@@ -14,8 +14,6 @@ public class StackTraceParserTests
         Approvals.VerifyAll("Namespace is part of Approvals", namespaces, n => $"{n} = {AttributeStackTraceParser.IsNamespaceApprovals(n)}");
     }
 
-
-
     [Test]
     public void Parse_UsingStaticInitialize_DontThrowInvalidOperationException()
     {

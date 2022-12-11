@@ -6,10 +6,8 @@ public class AppVeyorReporter : IEnvironmentAwareReporter
 {
     public static readonly AppVeyorReporter INSTANCE = new();
 
-    public void Report(string approved, string received)
-    {
+    public void Report(string approved, string received) =>
         ContinuousDeliveryUtils.ReportOnServer(approved,received);
-    }
 
     public bool IsWorkingInThisEnvironment(string forFile)
     {

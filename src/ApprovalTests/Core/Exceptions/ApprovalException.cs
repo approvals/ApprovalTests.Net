@@ -5,29 +5,23 @@ namespace ApprovalTests.Core.Exceptions;
 [Serializable]
 public class ApprovalException : Exception
 {
-    readonly string approved;
-    readonly string received;
-
     public ApprovalException(SerializationInfo info, StreamingContext context) : base(info, context)
     {
-        approved = info.GetString("Approved");
-        received = info.GetString("Received");
+        Approved = info.GetString("Approved");
+        Received = info.GetString("Received");
     }
 
     public ApprovalException(string received, string approved)
     {
-        this.received = received;
-        this.approved = approved;
+        Received = received;
+        Approved = approved;
     }
 
-    public string Received => received;
+    public string Received { get; }
 
-    public string Approved => approved;
+    public string Approved { get; }
 
-    protected bool Equals(ApprovalException other)
-    {
-        return string.Equals(approved, other.approved) && string.Equals(received, other.received);
-    }
+    protected bool Equals(ApprovalException other) => string.Equals(Approved, other.Approved) && string.Equals(Received, other.Received);
 
     public override bool Equals(object obj)
     {
@@ -41,19 +35,13 @@ public class ApprovalException : Exception
     {
         unchecked
         {
-            return ((approved != null ? approved.GetHashCode() : 0) * 397) ^ (received != null ? received.GetHashCode() : 0);
+            return ((Approved != null ? Approved.GetHashCode() : 0) * 397) ^ (Received != null ? Received.GetHashCode() : 0);
         }
     }
 
-    public static bool operator ==(ApprovalException left, ApprovalException right)
-    {
-        return Equals(left, right);
-    }
+    public static bool operator ==(ApprovalException left, ApprovalException right) => Equals(left, right);
 
-    public static bool operator !=(ApprovalException left, ApprovalException right)
-    {
-        return !Equals(left, right);
-    }
+    public static bool operator !=(ApprovalException left, ApprovalException right) => !Equals(left, right);
 
     public override void GetObjectData(SerializationInfo info, StreamingContext context)
     {

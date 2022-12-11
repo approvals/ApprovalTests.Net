@@ -15,6 +15,7 @@
         var grid = StringUtils.DisplayGrid(4, 4, (x, y) => x == y ? "x" : "_");
         Approvals.Verify(grid);
     }
+
     [Fact]
     public void TestRemoveIndentation()
     {
@@ -34,6 +35,7 @@
         //  Assert.True( text.EndsWith("VV\n"),text.Replace("\n","\\n"));
         Approvals.Verify(text);
     }
+
     [Fact]
     public void TestRemoveIndentationEnding()
     {

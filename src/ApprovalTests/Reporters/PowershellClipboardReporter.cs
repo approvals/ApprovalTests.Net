@@ -13,8 +13,6 @@ public class PowerShellClipboardReporter : IApprovalFailureReporter
         ClipboardService.SetText(text);
     }
 
-    public static string GetCommandLineForApproval(string approved, string received)
-    {
-        return $"Move-Item \"{received}\" \"{approved}\" -Force";
-    }
+    public static string GetCommandLineForApproval(string approved, string received) =>
+        $"Move-Item \"{received}\" \"{approved}\" -Force";
 }

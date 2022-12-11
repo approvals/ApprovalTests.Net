@@ -5,7 +5,7 @@ namespace ApprovalTests.Reporters;
 public class FrontLoadedReporterDisposer : IDisposable
 {
     public static IEnvironmentAwareReporter Default = DefaultFrontLoaderReporter.INSTANCE;
-    readonly IEnvironmentAwareReporter previous;
+    IEnvironmentAwareReporter previous;
 
     public FrontLoadedReporterDisposer(IEnvironmentAwareReporter reporter)
     {
@@ -13,8 +13,5 @@ public class FrontLoadedReporterDisposer : IDisposable
         Default = reporter;
     }
 
-    public void Dispose()
-    {
-        Default = previous;
-    }
+    public void Dispose() => Default = previous;
 }

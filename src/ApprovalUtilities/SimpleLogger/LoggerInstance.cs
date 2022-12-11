@@ -27,15 +27,11 @@ public class LoggerInstance
         return log;
     }
 
-    public void MarkerIn()
-    {
+    public void MarkerIn() =>
         drawMarker("=> ", true);
-    }
 
-    public void MarkerOut()
-    {
+    public void MarkerOut() =>
         drawMarker("<= ", false);
-    }
 
     void drawMarker(string arrow, bool stepIn)
     {
@@ -73,11 +69,8 @@ public class LoggerInstance
         Writer.AppendLine(time + difference + GetIndentation() + message);
     }
 
-    string GetIndentation()
-    {
-        return "".PadLeft(indent, ' ');
-        //.Substring(0, indent);
-    }
+    string GetIndentation() =>
+        "".PadLeft(indent, ' ');
 
     public string Event(string message, params object[] items)
     {
@@ -120,10 +113,8 @@ public class LoggerInstance
         return message;
     }
 
-    public void Warning(Exception except, params string[] additional)
-    {
+    public void Warning(Exception except, params string[] additional) =>
         Writer.AppendLine(except.FormatError(additional));
-    }
 
     public string Warning(string format, params object[] data)
     {
@@ -131,10 +122,8 @@ public class LoggerInstance
         return string.Format(format, new[] {data});
     }
 
-    void PrintWarning(params string[] lines)
-    {
+    void PrintWarning(params string[] lines) =>
         Writer.AppendLine(ExceptionUtilities.FormatAsError(lines));
-    }
 
     public void Show(bool markerIn = true, bool variables = true, bool events = true, bool sql = true,
         bool timestamp = true, bool timeDifference = true)

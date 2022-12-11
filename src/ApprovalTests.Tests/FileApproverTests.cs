@@ -5,23 +5,16 @@ using ApprovalTests.Core.Exceptions;
 public class FileApproverTests
 {
     [Test]
-    public void TestFailureDueToMissingApproval()
-    {
-
+    public void TestFailureDueToMissingApproval() =>
         AssertApprover("a.txt", "non_existing_file.txt", false);
-    }
 
     [Test]
-    public void TestFailureDueToMismatch()
-    {
+    public void TestFailureDueToMismatch() =>
         AssertApprover("a.txt", "b.txt", false);
-    }
 
     [Test]
-    public void TestSuccess()
-    {
+    public void TestSuccess() =>
         AssertApprover("a.txt", "a.txt", true);
-    }
 
     [Test]
     public void LineEndingsAreIgnored()

@@ -10,10 +10,7 @@ public class TempFile : IDisposable
         backingFile.Create().Close();
     }
 
-    ~TempFile()
-    {
-        Dispose();
-    }
+    ~TempFile() => Dispose();
 
     public FileInfo File => backingFile;
 
@@ -26,8 +23,6 @@ public class TempFile : IDisposable
         }
     }
 
-    public void WriteAllText(string text)
-    {
+    public void WriteAllText(string text) =>
         System.IO.File.WriteAllText(File.FullName, text);
-    }
 }

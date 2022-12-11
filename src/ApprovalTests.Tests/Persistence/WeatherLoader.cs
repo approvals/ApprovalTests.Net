@@ -4,15 +4,11 @@ class WeatherLoader : IExecutableQuery
 {
     readonly string weatherStationId;
 
-    public WeatherLoader(string weatherStationId)
-    {
+    public WeatherLoader(string weatherStationId) =>
         this.weatherStationId = weatherStationId;
-    }
 
-    public string GetQuery()
-    {
-        return "ID=" + weatherStationId;
-    }
+    public string GetQuery() =>
+        "ID=" + weatherStationId;
 
     public string ExecuteQuery(string query)
     {

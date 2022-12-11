@@ -15,16 +15,12 @@
         AssertEqualIgnoreCase(@"C:\Windows\System32\ipconfig.exe", found);
     }
 
-    static void AssertEqualIgnoreCase(string expected, string actual)
-    {
+    static void AssertEqualIgnoreCase(string expected, string actual) =>
         Assert.Equal(expected.ToLowerInvariant(), actual.ToLowerInvariant());
-    }
 
     [Fact]
-    public void TestFindsMultipleFiles()
-    {
+    public void TestFindsMultipleFiles() =>
         Approvals.VerifyAll(PathUtilities.LocateFileFromEnvironmentPath("notepad.exe").Where(x=>!x.Contains("AppData")).Select(f => f.ToLowerInvariant()), "Found");
-    }
 
     [Fact]
     public void TestDoesNotFindFile()

@@ -8,10 +8,8 @@ public class QuietReporter : IEnvironmentAwareReporter
 {
     public static readonly QuietReporter INSTANCE = new();
 
-    public void Report(string approved, string received)
-    {
+    public void Report(string approved, string received) =>
         DisplayCommandLineApproval(approved, received);
-    }
 
     public static void DisplayCommandLineApproval(string approved, string received)
     {
@@ -30,8 +28,5 @@ public class QuietReporter : IEnvironmentAwareReporter
         return $"mv -f \"{received}\" \"{approved}\"";
     }
 
-    public bool IsWorkingInThisEnvironment(string forFile)
-    {
-        return true;
-    }
+    public bool IsWorkingInThisEnvironment(string forFile) => true;
 }

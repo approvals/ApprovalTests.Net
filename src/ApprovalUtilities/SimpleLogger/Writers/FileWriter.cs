@@ -4,10 +4,8 @@ namespace ApprovalUtilities.SimpleLogger.Writers;
 
 public class FileWriter : IAppendable
 {
-    public FileWriter()
-    {
+    public FileWriter() =>
         LogFile = Path.GetTempPath() + "Logger.txt";
-    }
 
     public void AppendLine(string text)
     {

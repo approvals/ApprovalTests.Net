@@ -9,15 +9,11 @@ public class TestCounter
     public const string passFile = "fakeit.counter.pass.txt";
     public const string failFile = "fakeit.counter.fail.txt";
 
-    public static void IncrementSuccess()
-    {
+    public static void IncrementSuccess() =>
         Increment(passFile);
-    }
 
-    public static void IncrementFailure()
-    {
+    public static void IncrementFailure() =>
         Increment(failFile);
-    }
 
     public static void Increment(string file)
     {
@@ -54,12 +50,10 @@ public class TestCounter
         Launch(javaPath, counterDisplayJar);
     }
 
-    public static void Launch(string java, string jar)
-    {
+    public static void Launch(string java, string jar) =>
         Task.Factory.StartNew(
             () => LaunchProgram(java,
                 $"-jar {jar} {Path.GetFullPath(passFile)} {Path.GetFullPath(failFile)}"));
-    }
 
 
     static void LaunchProgram(string program, string arguments)

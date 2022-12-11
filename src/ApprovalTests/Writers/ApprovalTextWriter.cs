@@ -20,15 +20,11 @@ public class ApprovalTextWriter : IApprovalWriter
     public string Data { get; set; }
     public string ExtensionWithDot { get; set; }
 
-    public virtual string GetApprovalFilename(string basename)
-    {
-        return $"{basename}.approved{ExtensionWithDot}";
-    }
+    public virtual string GetApprovalFilename(string basename) =>
+        $"{basename}.approved{ExtensionWithDot}";
 
-    public virtual string GetReceivedFilename(string basename)
-    {
-        return $"{basename}.received{ExtensionWithDot}";
-    }
+    public virtual string GetReceivedFilename(string basename) =>
+        $"{basename}.received{ExtensionWithDot}";
 
     public string WriteReceivedFile(string received)
     {

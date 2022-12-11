@@ -15,25 +15,17 @@ public class GoogleQuery : RestQuery<GoogleQueryResults>
 {
     readonly string searchTerm;
 
-    public GoogleQuery(string searchTerm)
-    {
+    public GoogleQuery(string searchTerm) =>
         this.searchTerm = searchTerm;
-    }
 
-    public override string GetQuery()
-    {
-        return $"?v=1.0&q={searchTerm}";
-    }
+    public override string GetQuery() =>
+        $"?v=1.0&q={searchTerm}";
 
-    public override string GetBaseAddress()
-    {
-        return "http://ajax.googleapis.com/ajax/services/search/web";
-    }
+    public override string GetBaseAddress() =>
+        "http://ajax.googleapis.com/ajax/services/search/web";
 
-    public override GoogleQueryResults Load()
-    {
-        return new(GetResponse().Result);
-    }
+    public override GoogleQueryResults Load() =>
+        new(GetResponse().Result);
 }
 
 public class GoogleQueryResults

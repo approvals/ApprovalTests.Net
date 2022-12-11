@@ -12,10 +12,8 @@ public class FirstWorkingReporter : IEnvironmentAwareReporter, IApprovalReporter
 
     }
 
-    public FirstWorkingReporter(IEnumerable<IEnvironmentAwareReporter> reporters)
-    {
+    public FirstWorkingReporter(IEnumerable<IEnvironmentAwareReporter> reporters) =>
         Reporters = reporters;
-    }
 
     public void Report(string approved, string received)
     {

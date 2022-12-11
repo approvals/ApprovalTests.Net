@@ -4,10 +4,8 @@ namespace ApprovalTests.Reporters;
 
 public class MultiReporter : IEnvironmentAwareReporter, IApprovalReporterWithCleanUp
 {
-    public bool IsWorkingInThisEnvironment(string forFile)
-    {
-        return Reporters.OfType<IEnvironmentAwareReporter>().Any(r => r.IsWorkingInThisEnvironment(forFile));
-    }
+    public bool IsWorkingInThisEnvironment(string forFile) =>
+        Reporters.OfType<IEnvironmentAwareReporter>().Any(r => r.IsWorkingInThisEnvironment(forFile));
 
     public void CleanUp(string approved, string received)
     {
@@ -19,15 +17,11 @@ public class MultiReporter : IEnvironmentAwareReporter, IApprovalReporterWithCle
 
     public IEnumerable<IApprovalFailureReporter> Reporters { get; }
 
-    public MultiReporter(params IApprovalFailureReporter[] reporters)
-    {
+    public MultiReporter(params IApprovalFailureReporter[] reporters) =>
         Reporters = reporters;
-    }
 
-    public MultiReporter(IEnumerable<IApprovalFailureReporter> reporters)
-    {
+    public MultiReporter(IEnumerable<IApprovalFailureReporter> reporters) =>
         Reporters = reporters;
-    }
 
     public virtual void Report(string approved, string received)
     {
@@ -44,6 +38,7 @@ public class MultiReporter : IEnvironmentAwareReporter, IApprovalReporterWithCle
                 lastThrown = e;
             }
         }
+
         if (lastThrown != null)
         {
             throw lastThrown;

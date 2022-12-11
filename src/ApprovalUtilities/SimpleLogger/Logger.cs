@@ -13,61 +13,39 @@ public static class Logger
         set => log.Writer = value;
     }
 
-    public static StringBuilderLogger LogToStringBuilder()
-    {
-        return log.LogToStringBuilder();
-    }
+    public static StringBuilderLogger LogToStringBuilder() =>
+        log.LogToStringBuilder();
 
-    public static IDisposable MarkEntryPoints()
-    {
-        return new Marker(log);
-    }
+    public static IDisposable MarkEntryPoints() =>
+        new Marker(log);
 
-    public static string Event(string message, params object[] items)
-    {
-        return log.Event(message, items);
-    }
+    public static string Event(string message, params object[] items) =>
+        log.Event(message, items);
 
-    public static string Message(string message)
-    {
-        return log.Message(message);
-    }
+    public static string Message(string message) =>
+        log.Message(message);
 
-    public static void Variable(string name, object value)
-    {
+    public static void Variable(string name, object value) =>
         log.Variable(name, value);
-    }
 
-    public static string Sql(string sql)
-    {
-        return log.Sql(sql);
-    }
+    public static string Sql(string sql) =>
+        log.Sql(sql);
 
-    public static string Miscellaneous(string label, string message)
-    {
-        return log.Miscellaneous(label, message);
-    }
+    public static string Miscellaneous(string label, string message) =>
+        log.Miscellaneous(label, message);
 
-    public static void Warning(Exception exception, params string[] additional)
-    {
+    public static void Warning(Exception exception, params string[] additional) =>
         log.Warning(exception, additional);
-    }
 
-    public static string Warning(string format, params object[] data)
-    {
-        return log.Warning(format, data);
-    }
+    public static string Warning(string format, params object[] data) =>
+        log.Warning(format, data);
 
-    public static void Show(bool markerIn = true, bool variables = true, bool events = true, bool sql = true,
-        bool timestamp = true, bool timeDifference = true)
-    {
+    public static void Show(bool markerIn = true, bool variables = true, bool events = true, bool sql = true, bool timestamp = true, bool timeDifference = true) =>
         log.Show(markerIn, variables, events, sql, timestamp, timeDifference);
-    }
 
-    public static void UseTimer(ILoader<DateTime> timeLoader)
-    {
+    public static void UseTimer(ILoader<DateTime> timeLoader) =>
         log.UseTimer(timeLoader);
-    }
+
     public static T Log<T>(this T t, string label, Func<T, string> log)
     {
         Variable(label, log(t));

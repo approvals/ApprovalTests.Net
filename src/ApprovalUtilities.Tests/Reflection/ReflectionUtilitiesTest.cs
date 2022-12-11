@@ -34,45 +34,41 @@ public class ReflectionUtilitiesTest
         string PrivateInstanceField;
         public static string PublicStaticField;
         string PrivateStaticField;
-        public string PublicInstanceProperty{ get; set; }
-        string PrivateInstanceProperty{ get; set; }
-        public static string PublicStaticProperty{ get; set; }
+        public string PublicInstanceProperty { get; set; }
+        string PrivateInstanceProperty { get; set; }
+        public static string PublicStaticProperty { get; set; }
         string PrivateStaticProperty { get; set; }
     }
+
     public class TargetPocoBase
     {
         public string BasePublicInstanceField;
         string BasePrivateInstanceField;
         public static string BasePublicStaticField;
         string BasePrivateStaticField;
-        public string BasePublicInstanceProperty{ get; set; }
-        string BasePrivateInstanceProperty{ get; set; }
-        public static string BasePublicStaticProperty{ get; set; }
-        string BasePrivateStaticProperty{ get; set; }
+        public string BasePublicInstanceProperty { get; set; }
+        string BasePrivateInstanceProperty { get; set; }
+        public static string BasePublicStaticProperty { get; set; }
+        string BasePrivateStaticProperty { get; set; }
     }
+
     [Fact]
-    public void GetControlNonPublicStaticFields()
-    {
+    public void GetControlNonPublicStaticFields() =>
         Approvals.VerifyAll(
-            new TargetPoco().NonPublicStaticFields(false).OrderBy(x=>x.Name),
+            new TargetPoco().NonPublicStaticFields(false).OrderBy(x => x.Name),
             string.Empty);
-    }
 
     [Fact]
     [UseReporter(typeof(DiffReporter))]
-    public void GetInheritedNonPublicStaticFields()
-    {
+    public void GetInheritedNonPublicStaticFields() =>
         Approvals.VerifyAll(new TargetPoco().NonPublicStaticFields(true),
             string.Empty);
-    }
 
     [Fact]
-    public void GetNonPublicInstanceFields()
-    {
+    public void GetNonPublicInstanceFields() =>
         Approvals.VerifyAll(
             new TestingEventPoco().GetInstanceFields(),
             string.Empty);
-    }
 
     [Fact]
     public void GetNonPublicInstanceFieldsAssignableTo()
@@ -95,12 +91,10 @@ public class ReflectionUtilitiesTest
     }
 
     [Fact]
-    public void GetNonPublicInstanceProperties()
-    {
+    public void GetNonPublicInstanceProperties() =>
         Approvals.VerifyAll(
             new TargetPoco().NonPublicInstanceProperties(),
             string.Empty);
-    }
 
     [Fact]
     public void GetNonPublicInstancePropertiesNamed()
@@ -143,10 +137,7 @@ public class ReflectionUtilitiesTest
     }
 
     [Fact]
-    public void GetPrivateBaseClassFields()
-    {
-        Approvals.VerifyAll("Private methods for Class B", ReflectionUtilities.GetAllFields(typeof(B)), "");
-    }
+    public void GetPrivateBaseClassFields() => Approvals.VerifyAll("Private methods for Class B", ReflectionUtilities.GetAllFields(typeof(B)), "");
 
     [Fact]
     public void GetLabelForChild()
@@ -174,6 +165,7 @@ public class ReflectionUtilitiesTest
     public class A
     {
         string Booya = null;
+
         public string GetBooya()
         {
             return Booya;

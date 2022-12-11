@@ -23,10 +23,7 @@ public class ExecutableLambda : IExecutableQuery
         this.executeOnFailure = executeOnFailure;
     }
 
-    public string GetQuery()
-    {
-        return text;
-    }
+    public string GetQuery() => text;
 
     public string ExecuteQuery(string query)
     {

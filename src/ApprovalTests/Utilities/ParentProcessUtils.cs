@@ -17,15 +17,11 @@ public static class ParentProcessUtils
         ParentProcessName = parentProcess == null ? string.Empty : parentProcess.ProcessName;
     }
 
-    public static Process GetParentProcess(Process currentProcess)
-    {
-        return currentProcess.ParentProcess();
-    }
+    public static Process GetParentProcess(Process currentProcess) =>
+        currentProcess.ParentProcess();
 
-    public static IEnumerable<Process> CurrentProcessWithAncestors()
-    {
-        return GetSelfAndAncestors(Process.GetCurrentProcess());
-    }
+    public static IEnumerable<Process> CurrentProcessWithAncestors() =>
+        GetSelfAndAncestors(Process.GetCurrentProcess());
 
     public static IEnumerable<Process> GetSelfAndAncestors(Process self)
     {

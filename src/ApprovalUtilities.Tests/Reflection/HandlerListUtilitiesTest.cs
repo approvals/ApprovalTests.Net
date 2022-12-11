@@ -5,16 +5,12 @@ using ApprovalUtilities.Reflection;
 public class HandlerListUtilitiesTest
 {
     [Fact]
-    public void EnumerateList()
-    {
+    public void EnumerateList() =>
         Approvals.VerifyAll(GetEventHandlerList().AsEnumerable(), string.Empty);
-    }
 
     [Fact]
-    public void GetListHead()
-    {
+    public void GetListHead() =>
         Approvals.Verify(GetEventHandlerList().GetHead());
-    }
 
     static EventHandlerList GetEventHandlerList()
     {

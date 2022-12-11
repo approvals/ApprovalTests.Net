@@ -4,10 +4,8 @@ namespace ApprovalTests.Writers;
 
 public class ApprovalBinaryWriter : IApprovalWriter
 {
-    public ApprovalBinaryWriter(byte[] data)
-    {
+    public ApprovalBinaryWriter(byte[] data) =>
         Data = data;
-    }
 
     public ApprovalBinaryWriter(Stream content, string extensionWithoutDot)
     {
@@ -32,15 +30,11 @@ public class ApprovalBinaryWriter : IApprovalWriter
     public string ExtensionWithDot { get; set; }
 
 
-    public virtual string GetApprovalFilename(string basename)
-    {
-        return $"{basename}{WriterUtils.Approved}{ExtensionWithDot}";
-    }
+    public virtual string GetApprovalFilename(string basename) =>
+        $"{basename}{WriterUtils.Approved}{ExtensionWithDot}";
 
-    public virtual string GetReceivedFilename(string basename)
-    {
-        return $"{basename}{WriterUtils.Received}{ExtensionWithDot}";
-    }
+    public virtual string GetReceivedFilename(string basename) =>
+        $"{basename}{WriterUtils.Received}{ExtensionWithDot}";
 
     public string WriteReceivedFile(string received)
     {

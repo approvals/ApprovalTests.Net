@@ -13,30 +13,22 @@ public class FailedApprovalTests
     }
 
     [Test]
-    public void EnumerableDoesNotMatchApproval()
-    {
+    public void EnumerableDoesNotMatchApproval() =>
         AssertThrows<ApprovalMismatchException>(() =>
             Approvals.VerifyAll(new[] {"Does not match"}, "collection"));
-    }
 
     [Test]
-    public void EnumerableNotApprovedYet()
-    {
+    public void EnumerableNotApprovedYet() =>
         AssertThrows<ApprovalMissingException>(() =>
             Approvals.VerifyAll(new[] {"Not approved"}, "collection"));
-    }
 
     [Test]
-    public void TextDoesNotMatchApproval()
-    {
+    public void TextDoesNotMatchApproval() =>
         AssertThrows<ApprovalMismatchException>(() =>
             Approvals.Verify("should fail with mismatch"));
-    }
 
     [Test]
-    public void TextNotApprovedYet()
-    {
+    public void TextNotApprovedYet() =>
         AssertThrows<ApprovalMissingException>(() =>
             Approvals.Verify("should fail with a missing exception"));
-    }
 }

@@ -98,8 +98,6 @@ public class Caller
         return null;
     }
 
-    public override string ToString()
-    {
-        return Class.Assembly.GetName().Name + "." + Method.ToStandardString();
-    }
+    public override string ToString() =>
+        $"{Class.Assembly.GetName().Name}.{Method.ToStandardString()}";
 }

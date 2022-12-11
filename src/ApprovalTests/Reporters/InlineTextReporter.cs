@@ -28,8 +28,6 @@ public class InlineTextReporter : IApprovalFailureReporter
             "\n                };";
     }
 
-    static string HandleEscapeChars(string text)
-    {
-        return text.Replace("\"", "\\\"");
-    }
+    static string HandleEscapeChars(string text) =>
+        text.Replace("\"", "\\\"");
 }

@@ -10,32 +10,32 @@ public static class JsonPrettyPrint
     {
         var indent = 0;
         var quoted = false;
-        var sb = new StringBuilder();
+        var builder = new StringBuilder();
         for (var i = 0; i < str.Length; i++)
         {
             var ch = str[i];
             switch (ch)
             {
                 case '{':
-                    sb.Append(ch);
+                    builder.Append(ch);
                     if (!quoted)
                     {
                         if (str[i + 1] != '}')
                         {
-                            sb.AppendLine();
-                            Enumerable.Range(0, ++indent).ForEach(_ => sb.Append(INDENT_STRING));
+                            builder.AppendLine();
+                            Enumerable.Range(0, ++indent).ForEach(_ => builder.Append(INDENT_STRING));
                         }
                     }
 
                     break;
                 case '[':
-                    sb.Append(ch);
+                    builder.Append(ch);
                     if (!quoted)
                     {
                         if (str[i + 1] != ']')
                         {
-                            sb.AppendLine();
-                            Enumerable.Range(0, ++indent).ForEach(_ => sb.Append(INDENT_STRING));
+                            builder.AppendLine();
+                            Enumerable.Range(0, ++indent).ForEach(_ => builder.Append(INDENT_STRING));
                         }
                     }
 
@@ -45,27 +45,27 @@ public static class JsonPrettyPrint
                     {
                         if (str[i - 1] != '{')
                         {
-                            sb.AppendLine();
-                            Enumerable.Range(0, --indent).ForEach(_ => sb.Append(INDENT_STRING));
+                            builder.AppendLine();
+                            Enumerable.Range(0, --indent).ForEach(_ => builder.Append(INDENT_STRING));
                         }
                     }
 
-                    sb.Append(ch);
+                    builder.Append(ch);
                     break;
                 case ']':
                     if (!quoted)
                     {
                         if (str[i - 1] != '[')
                         {
-                            sb.AppendLine();
-                            Enumerable.Range(0, --indent).ForEach(_ => sb.Append(INDENT_STRING));
+                            builder.AppendLine();
+                            Enumerable.Range(0, --indent).ForEach(_ => builder.Append(INDENT_STRING));
                         }
                     }
 
-                    sb.Append(ch);
+                    builder.Append(ch);
                     break;
                 case '"':
-                    sb.Append(ch);
+                    builder.Append(ch);
                     var escaped = false;
                     var index = i;
                     while (index > 0 && str[--index] == '\\')
@@ -80,28 +80,28 @@ public static class JsonPrettyPrint
 
                     break;
                 case ',':
-                    sb.Append(ch);
+                    builder.Append(ch);
                     if (!quoted)
                     {
-                        sb.AppendLine();
-                        Enumerable.Range(0, indent).ForEach(_ => sb.Append(INDENT_STRING));
+                        builder.AppendLine();
+                        Enumerable.Range(0, indent).ForEach(_ => builder.Append(INDENT_STRING));
                     }
 
                     break;
                 case ':':
-                    sb.Append(ch);
+                    builder.Append(ch);
                     if (!quoted)
                     {
-                        sb.Append(" ");
+                        builder.Append(" ");
                     }
 
                     break;
                 default:
-                    sb.Append(ch);
+                    builder.Append(ch);
                     break;
             }
         }
 
-        return sb.ToString();
+        return builder.ToString();
     }
 }

@@ -6,20 +6,14 @@ public class InvalidReporterConfiguration : IEnvironmentAwareReporter
 {
     readonly Type reporter;
 
-    public InvalidReporterConfiguration(Type reporter)
-    {
+    public InvalidReporterConfiguration(Type reporter) =>
         this.reporter = reporter;
-    }
 
-    public void Report(string approved, string received)
-    {
+    public void Report(string approved, string received) =>
         throw BuildException();
-    }
 
-    public bool IsWorkingInThisEnvironment(string forFile)
-    {
+    public bool IsWorkingInThisEnvironment(string forFile) =>
         throw BuildException();
-    }
 
     Exception BuildException()
     {

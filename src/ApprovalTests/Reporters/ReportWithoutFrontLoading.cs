@@ -10,8 +10,5 @@ public class ReportWithoutFrontLoading : IEnvironmentAwareReporter
         // do nothing
     }
 
-    public bool IsWorkingInThisEnvironment(string forFile)
-    {
-        return false;
-    }
+    public bool IsWorkingInThisEnvironment(string forFile) => false;
 }

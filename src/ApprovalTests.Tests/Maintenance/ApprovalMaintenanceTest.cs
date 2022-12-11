@@ -17,9 +17,7 @@ public class ApprovalMaintenanceTest
     public class Nested
     {
         [Test]
-        public void MethodName()
-        {
+        public void MethodName() =>
             Approvals.Verify("aaa");
-        }
     }
 }

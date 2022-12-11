@@ -43,8 +43,8 @@ public class ApprovalsFilename
     public string ClassName { get; set; }
 
     public string Directory { get; set; }
-    public bool IsMachineSpecific => 0 < AdditionalInformation.Count;
 
+    public bool IsMachineSpecific => 0 < AdditionalInformation.Count;
 
     public ApprovalsFilename ForApproved()
     {
@@ -64,10 +64,9 @@ public class ApprovalsFilename
         };
     }
 
-    public bool IsEmptyFile()
-    {
-        return !File.Exists(GetFullPath) || new FileInfo(GetFullPath).Length < 10;
-    }
+    public bool IsEmptyFile() =>
+        !File.Exists(GetFullPath) ||
+        new FileInfo(GetFullPath).Length < 10;
 
     public string GetFullPath
     {
@@ -78,7 +77,6 @@ public class ApprovalsFilename
         }
     }
 
-
     public List<FileInfo> GetOtherMachineSpecificFiles()
     {
         var search = $"{ClassName}.{MethodName}.*.approved.{Extension}";
@@ -86,14 +84,12 @@ public class ApprovalsFilename
         return System.IO.Directory.GetFiles(Directory, search).Where(f => f != GetFullPath).Select(f => new FileInfo(f)).ToList();
     }
 
-    public override string ToString()
-    {
-        return $@"{nameof(GetFullPath)}: {GetFullPath}
+    public override string ToString() =>
+        $@"{nameof(GetFullPath)}: {GetFullPath}
 {nameof(Directory)}: {Directory}
 {nameof(ClassName)}: {ClassName}
 {nameof(MethodName)}: {MethodName}
 {nameof(AdditionalInformation)}: {AdditionalInformation.ToReadableString()}
 {nameof(ApprovedStatus)}: {ApprovedStatus}
 { nameof(Extension)}: { Extension}";
-    }
 }

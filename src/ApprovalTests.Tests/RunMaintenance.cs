@@ -5,14 +5,12 @@ using ApprovalTests.Maintenance;
 public class RunMaintenance
 {
     [Test]
-    public void EnsureNoAbandonedFiles()
-    {
+    public void EnsureNoAbandonedFiles() =>
         ApprovalMaintenance.VerifyNoAbandonedFiles(
-                "CustomNamerShouldBeSubstitutable.approved.txt",
-                "StringEncodingTest.TestUnicode.approved.txt",
-                "AsyncTests.TestAsyncExceptionFromVoid",
-                "VerifyExceptionWithStacktrace"
-            );
-    }
+            "CustomNamerShouldBeSubstitutable.approved.txt",
+            "StringEncodingTest.TestUnicode.approved.txt",
+            "AsyncTests.TestAsyncExceptionFromVoid",
+            "VerifyExceptionWithStacktrace"
+        );
 }
 #endif

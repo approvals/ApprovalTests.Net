@@ -37,10 +37,8 @@ public abstract class RestQuery<T> : IExecutableQuery, ILoader<T>
         }
     }
 
-    public Task<DownloadStringCompletedEventArgs> GetResponse()
-    {
-        return ExecuteAsync(GetQuery());
-    }
+    public Task<DownloadStringCompletedEventArgs> GetResponse() =>
+        ExecuteAsync(GetQuery());
 
     public abstract T Load();
 }

@@ -8,13 +8,7 @@ public class Loader<T> : ILoader<T>
     {
     }
 
-    public Loader(Func<T> load)
-    {
-        this.load = load;
-    }
+    public Loader(Func<T> load) => this.load = load;
 
-    public T Load()
-    {
-        return load();
-    }
+    public T Load() => load();
 }

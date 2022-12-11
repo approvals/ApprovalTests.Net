@@ -7,18 +7,12 @@ public class ExecutableSqlQuery : IExecutableQuery
 {
     readonly IDatabaseToExecutableQueryAdapter adapter;
 
-    public ExecutableSqlQuery(IDatabaseToExecutableQueryAdapter adapter)
-    {
+    public ExecutableSqlQuery(IDatabaseToExecutableQueryAdapter adapter) =>
         this.adapter = adapter;
-    }
 
-    public string GetQuery()
-    {
-        return adapter.GetQuery();
-    }
+    public string GetQuery() =>
+        adapter.GetQuery();
 
-    public string ExecuteQuery(string query)
-    {
-        return SqlLoaderUtils.ExecuteQueryToDisplayString(query, adapter.GetConnection());
-    }
+    public string ExecuteQuery(string query) =>
+        SqlLoaderUtils.ExecuteQueryToDisplayString(query, adapter.GetConnection());
 }

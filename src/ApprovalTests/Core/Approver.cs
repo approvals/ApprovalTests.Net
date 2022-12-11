@@ -7,19 +7,18 @@ public static class Approver
         if (approver.Approve())
         {
             approver.CleanUpAfterSuccess(reporter);
+            return;
+        }
+
+        approver.ReportFailure(reporter);
+
+        if (reporter is IReporterWithApprovalPower power && power.ApprovedWhenReported())
+        {
+            approver.CleanUpAfterSuccess(power);
         }
         else
         {
-            approver.ReportFailure(reporter);
-
-            if (reporter is IReporterWithApprovalPower power && power.ApprovedWhenReported())
-            {
-                approver.CleanUpAfterSuccess(power);
-            }
-            else
-            {
-                approver.Fail();
-            }
+            approver.Fail();
         }
     }
 }

@@ -4,10 +4,8 @@ namespace ApprovalTests.WindowsRegistry;
 
 public static class WindowsRegistryAssert
 {
-    public static void HasDword(string keyName, string valueName, int expectedValue, string failureMessage)
-    {
+    public static void HasDword(string keyName, string valueName, int expectedValue, string failureMessage) =>
         HasDword(Registry.CurrentUser, keyName, valueName, expectedValue, failureMessage);
-    }
 
     static void HasDword(RegistryKey registryKey, string keyName, string valueName, int expectedValue, string failureMessage)
     {

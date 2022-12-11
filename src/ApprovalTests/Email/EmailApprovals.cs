@@ -6,10 +6,9 @@ namespace ApprovalTests.Email;
 
 public static class EmailApprovals
 {
-    public static void Verify(MailMessage email)
-    {
+    public static void Verify(MailMessage email) =>
         VerifyScrubbed(email, ScrubBoundaries);
-    }
+
     public static void VerifyScrubbed(MailMessage email, Func<string, string> scrubber)
     {
         var emailText = CreateEmail(email);
@@ -17,10 +16,9 @@ public static class EmailApprovals
 
         Approvals.Verify(WriterFactory.CreateTextWriter(emailText, "eml"));
     }
-    public static void VerifyScrubbed(MailMessage email, params Func<string, string>[] scrubbers)
-    {
+
+    public static void VerifyScrubbed(MailMessage email, params Func<string, string>[] scrubbers) =>
         VerifyScrubbed(email, ScrubberUtils.Combine(scrubbers));
-    }
 
     public static string CreateEmail(MailMessage email)
     {
@@ -74,16 +72,13 @@ public static class EmailApprovals
     public static string ReadFileWhereLines(string latestFile, Func<string, bool> predicate)
     {
         var latestFileLines = File.ReadAllLines(latestFile).Where(predicate).ToArray();
-        var newText = string.Join(Environment.NewLine, latestFileLines);
-        return newText;
+        return string.Join(Environment.NewLine, latestFileLines);
     }
 
-    public static string GetLatestFile(string dir)
-    {
-        return new DirectoryInfo(dir)
+    public static string GetLatestFile(string dir) =>
+        new DirectoryInfo(dir)
             .GetFiles("*.eml")
             .OrderBy(f => f.CreationTime)
             .Last()
             .FullName;
-    }
 }

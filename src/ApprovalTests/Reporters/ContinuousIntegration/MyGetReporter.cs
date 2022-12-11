@@ -11,8 +11,6 @@ public class MyGetReporter : IEnvironmentAwareReporter
         // does nothing
     }
 
-    public bool IsWorkingInThisEnvironment(string forFile)
-    {
-        return "MyGet".Equals(Environment.GetEnvironmentVariable("BuildRunner"));
-    }
+    public bool IsWorkingInThisEnvironment(string forFile) =>
+        "MyGet".Equals(Environment.GetEnvironmentVariable("BuildRunner"));
 }

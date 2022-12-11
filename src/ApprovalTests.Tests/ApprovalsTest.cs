@@ -5,23 +5,17 @@ public class ApprovalsTest
 
     // begin-snippet: simple_verify
     [Test]
-    public void Text()
-    {
+    public void Text() =>
         Approvals.Verify("should be approved");
-    }
     // end-snippet
 
     [Test]
-    public void VerifyWithExtension()
-    {
+    public void VerifyWithExtension() =>
         Approvals.VerifyWithExtension("should,be,approved", ".csv");
-    }
 
     [Test]
-    public void EnumerableWithLabel()
-    {
+    public void EnumerableWithLabel() =>
         Approvals.VerifyAll(text, "collection");
-    }
 
     [Test]
     public void TestExistingFile()
@@ -39,12 +33,9 @@ public class ApprovalsTest
         Approvals.VerifyBinaryFile(File.ReadAllBytes(path + "a.png"), "png");
     }
 
-
     [Test]
-    public void EnumerableWithLabelAndFormatter()
-    {
+    public void EnumerableWithLabelAndFormatter() =>
         Approvals.VerifyAll(text, "collection", t => "" + t.Length);
-    }
 
     [Test]
     public void EnumerableWithHeaderAndFormatter()
@@ -75,32 +66,23 @@ public class ApprovalsTest
     }
 
     [Test]
-    public void DictionarySimple()
-    {
+    public void DictionarySimple() =>
         Approvals.VerifyAll(FireFlyMap());
-    }
 
     [Test]
-    public void Dictionary()
-    {
+    public void Dictionary() =>
         Approvals.VerifyAll("Firefly", FireFlyMap());
-    }
 
     [Test]
-    public void DictionaryCustom()
-    {
+    public void DictionaryCustom() =>
         Approvals.VerifyAll("Firefly", FireFlyMap(), (k, v) => $"\"{k}\" => {v}");
-    }
 
     [Test]
-    public void DictionaryCustomNoHeader()
-    {
+    public void DictionaryCustomNoHeader() =>
         Approvals.VerifyAll(FireFlyMap(), (k, v) => $"\"{k}\" => {v}");
-    }
 
-    static Dictionary<string, string> FireFlyMap()
-    {
-        return new()
+    static Dictionary<string, string> FireFlyMap() =>
+        new()
         {
             {"Caption", "Mal"},
             {"2nd In Command", "Zoey"},
@@ -112,13 +94,10 @@ public class ApprovalsTest
             {"Pastor", "Book"},
             {"Stowaway", "River"}
         };
-    }
 
     [Test]
-    public void EnumerableWithFormatter()
-    {
+    public void EnumerableWithFormatter() =>
         Approvals.VerifyAll(text, t => "" + t.Length);
-    }
 
     [Test]
     public void JsonText()

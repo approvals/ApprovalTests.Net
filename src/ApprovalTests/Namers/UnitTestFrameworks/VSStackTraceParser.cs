@@ -8,8 +8,5 @@ public class VSStackTraceParser : AttributeStackTraceParser
 
     public override string ForTestingFramework => "MsTest";
 
-    protected override string GetAttributeType()
-    {
-        return Attribute;
-    }
+    protected override string GetAttributeType() => Attribute;
 }

@@ -4,11 +4,8 @@ namespace ApprovalUtilities.Utilities;
 
 public static class PathUtilities
 {
-    public static string GetDirectoryForCaller()
-    {
-        return GetDirectoryForCaller(1);
-    }
-
+    public static string GetDirectoryForCaller() =>
+        GetDirectoryForCaller(1);
 
     public static string GetDirectoryForCaller(int callerStackDepth)
     {
@@ -16,20 +13,14 @@ public static class PathUtilities
         return GetDirectoryForStackFrame(stackFrame);
     }
 
-    public static string GetDirectoryForStackFrame(StackFrame stackFrame)
-    {
-        return new FileInfo(stackFrame.GetFileName()).Directory.FullName + Path.DirectorySeparatorChar;
-    }
+    public static string GetDirectoryForStackFrame(StackFrame stackFrame) =>
+        new FileInfo(stackFrame.GetFileName()).Directory.FullName + Path.DirectorySeparatorChar;
 
-    public static string ScrubPath(this string text, string path)
-    {
-        return text == null ? null : text.Replace(path, "..." + Path.DirectorySeparatorChar);
-    }
+    public static string ScrubPath(this string text, string path) =>
+        text == null ? null : text.Replace(path, "..." + Path.DirectorySeparatorChar);
 
-    public static string GetAdjacentFile(string relativePath)
-    {
-        return GetDirectoryForCaller(1) + relativePath;
-    }
+    public static string GetAdjacentFile(string relativePath) =>
+        GetDirectoryForCaller(1) + relativePath;
 
     public static IEnumerable<string> LocateFileFromEnvironmentPath(string toFind)
     {

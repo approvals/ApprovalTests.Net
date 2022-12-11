@@ -86,10 +86,7 @@ b) OR Build->Advanced->DebugInfo to Full";
         }
     }
 
-    public static void AddParser(IStackTraceParser parser)
-    {
-        parsers.Add(parser);
-    }
+    public static void AddParser(IStackTraceParser parser) => parsers.Add(parser);
 
     public static IEnumerable<IStackTraceParser> GetParsers()
     {

@@ -5,15 +5,11 @@ namespace ApprovalTests.Reporters;
 [AttributeUsage(AttributeTargets.All)]
 public class UseReporterAttribute : Attribute
 {
-    public UseReporterAttribute(Type reporter)
-    {
+    public UseReporterAttribute(Type reporter) =>
         Reporter = LoadReporter(reporter);
-    }
 
-    public UseReporterAttribute(params Type[] reporters)
-    {
+    public UseReporterAttribute(params Type[] reporters) =>
         Reporter = new MultiReporter(reporters.Select(LoadReporter));
-    }
 
     static IApprovalFailureReporter LoadReporter(Type reporter)
     {
@@ -35,10 +31,8 @@ public class UseReporterAttribute : Attribute
         return null;
     }
 
-    public static IApprovalFailureReporter CreateInstance(Type reporter)
-    {
-        return (IApprovalFailureReporter) Activator.CreateInstance(reporter);
-    }
+    public static IApprovalFailureReporter CreateInstance(Type reporter) =>
+        (IApprovalFailureReporter) Activator.CreateInstance(reporter);
 
     public IApprovalFailureReporter Reporter { get; set; }
 }

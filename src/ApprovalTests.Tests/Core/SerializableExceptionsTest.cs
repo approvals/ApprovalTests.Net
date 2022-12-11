@@ -14,8 +14,6 @@ public class SerializableExceptionsTest
         Verify(new ApprovalException(r, a));
     }
 
-    static void Verify(object o)
-    {
+    static void Verify(object o) =>
         SerializableTheory.Verify(o, Assert.AreEqual);
-    }
 }

@@ -24,10 +24,8 @@ public class XUnit2Reporter : AssertReporter
     {
     }
 
-    public override bool IsWorkingInThisEnvironment(string forFile)
-    {
-        return base.IsWorkingInThisEnvironment(forFile) && isXunit2.Value;
-    }
+    public override bool IsWorkingInThisEnvironment(string forFile) =>
+        base.IsWorkingInThisEnvironment(forFile) && isXunit2.Value;
 
     protected override void InvokeEqualsMethod(Type type, string[] parameters)
     {

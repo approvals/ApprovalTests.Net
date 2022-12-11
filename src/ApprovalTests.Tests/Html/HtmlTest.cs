@@ -5,8 +5,6 @@
 public class HtmlTest
 {
     [Test]
-    public static void TestHtml()
-    {
+    public static void TestHtml() =>
         Approvals.VerifyHtml("<html><body><div style='font-family:Broadway;font-size:18px'> Web Page from ApprovalTests</div></body></html>");
-    }
 }

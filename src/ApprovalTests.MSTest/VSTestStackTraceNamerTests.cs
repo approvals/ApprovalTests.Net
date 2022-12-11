@@ -17,8 +17,6 @@ public class VsTestStackTraceNamerTests
     }
 
     [TestMethod]
-    public void TestMSTestAware()
-    {
+    public void TestMSTestAware() =>
         Assert.IsTrue(new VSStackTraceParser().IsApplicable());
-    }
 }

@@ -15,18 +15,10 @@ public class ExistingFileWriter : IApprovalWriter
         }
     }
 
-    public string GetApprovalFilename(string basename)
-    {
-        return basename + WriterUtils.Approved + new FileInfo(file).Extension;
-    }
+    public string GetApprovalFilename(string basename) =>
+        basename + WriterUtils.Approved + new FileInfo(file).Extension;
 
-    public string GetReceivedFilename(string basename)
-    {
-        return file;
-    }
+    public string GetReceivedFilename(string basename) => file;
 
-    public string WriteReceivedFile(string received)
-    {
-        return file;
-    }
+    public string WriteReceivedFile(string received) => file;
 }

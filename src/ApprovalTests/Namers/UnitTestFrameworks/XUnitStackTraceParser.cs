@@ -8,8 +8,5 @@ public class XUnitStackTraceParser : AttributeStackTraceParser
 
     public override string ForTestingFramework => "xUnit.net";
 
-    protected override string GetAttributeType()
-    {
-        return Attribute;
-    }
+    protected override string GetAttributeType() => Attribute;
 }

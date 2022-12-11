@@ -4,10 +4,8 @@
 [UseReporter(typeof(DiffReporter))]
 public class LockDownTests
 {
-    public string Echo(params int[] i)
-    {
-        return i.ToReadableString();
-    }
+    public string Echo(params int[] i) =>
+        i.ToReadableString();
 
     [Test]
     public void TestLockDown()

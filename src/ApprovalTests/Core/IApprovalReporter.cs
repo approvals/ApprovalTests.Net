@@ -1,4 +1,3 @@
-
 namespace ApprovalTests.Core;
 
 public interface IApprovalFailureReporter

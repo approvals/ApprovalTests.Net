@@ -18,21 +18,15 @@ public class AssertReporter : IEnvironmentAwareReporter
         this.frameworkAttribute = frameworkAttribute;
     }
 
-    public virtual void Report(string approved, string received)
-    {
+    public virtual void Report(string approved, string received) =>
         AssertFileContents(approved, received);
-    }
 
-    public virtual bool IsWorkingInThisEnvironment(string forFile)
-    {
-        return FileExtensions.IsText(forFile) && IsFrameworkUsed();
-    }
+    public virtual bool IsWorkingInThisEnvironment(string forFile) =>
+        FileExtensions.IsText(forFile) && IsFrameworkUsed();
 
-    public bool IsFrameworkUsed()
-    {
-        return AttributeStackTraceParser.GetFirstFrameForAttribute(Approvals.CurrentCaller, frameworkAttribute) !=
-               null;
-    }
+    public bool IsFrameworkUsed() =>
+        AttributeStackTraceParser.GetFirstFrameForAttribute(Approvals.CurrentCaller, frameworkAttribute) !=
+        null;
 
     public void AssertFileContents(string approved, string received)
     {

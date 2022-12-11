@@ -61,14 +61,11 @@ public static class ReflectionUtilities
         }).ToArray();
     }
 
-    public static FieldInfo GetFieldForChild(object parent, object child)
-    {
-        return GetInstanceFields(parent, f => f.GetValue(parent) == child).FirstOrDefault();
-    }
+    public static FieldInfo GetFieldForChild(object parent, object child) =>
+        GetInstanceFields(parent, f => f.GetValue(parent) == child).FirstOrDefault();
 
-    public static IEnumerable<CallbackDescriptor> GetPocoEventsForTypes(object value, params Type[] types)
-    {
-        return value.GetInstanceFields()
+    public static IEnumerable<CallbackDescriptor> GetPocoEventsForTypes(object value, params Type[] types) =>
+        value.GetInstanceFields()
             .Where(fi => types.Any(t => t.IsAssignableFrom(fi.FieldType)) && fi.GetValue<Delegate>(value) != null)
             .Select(e =>
             {
@@ -77,7 +74,6 @@ public static class ReflectionUtilities
                 callbackDescriptor.AddMethods(eventDelegate.GetInvocationList().Select(del => del.Method));
                 return callbackDescriptor;
             }).ToArray();
-    }
 
     public static IEnumerable<CallbackDescriptor> GetPocoEvents(this object value)
     {
@@ -85,25 +81,17 @@ public static class ReflectionUtilities
         return GetPocoEventsForTypes(value, c);
     }
 
-    public static T GetValue<T>(this FieldInfo info, object value)
-    {
-        return (T) info.GetValue(value);
-    }
+    public static T GetValue<T>(this FieldInfo info, object value) =>
+        (T) info.GetValue(value);
 
-    public static T GetValue<T>(this PropertyInfo info, object value, object[] index)
-    {
-        return (T) info.GetValue(value, index);
-    }
+    public static T GetValue<T>(this PropertyInfo info, object value, object[] index) =>
+        (T) info.GetValue(value, index);
 
-    public static IEnumerable<FieldInfo> GetInstanceFields(this object value, Func<FieldInfo, bool> selector)
-    {
-        return GetAllFields(GetType(value)).Where(selector);
-    }
+    public static IEnumerable<FieldInfo> GetInstanceFields(this object value, Func<FieldInfo, bool> selector) =>
+        GetAllFields(GetType(value)).Where(selector);
 
-    public static IEnumerable<FieldInfo> GetInstanceFields(this object value)
-    {
-        return value.GetInstanceFields(_ => true);
-    }
+    public static IEnumerable<FieldInfo> GetInstanceFields(this object value) =>
+        value.GetInstanceFields(_ => true);
 
     public static IEnumerable<FieldInfo> GetAllFields(Type forType)
     {
@@ -116,20 +104,14 @@ public static class ReflectionUtilities
         return fields.Concat(GetAllFields(forType.BaseType));
     }
 
-    public static IEnumerable<PropertyInfo> NonPublicInstanceProperties(this object value, Func<PropertyInfo, bool> selector)
-    {
-        return GetType(value).GetProperties(NonPublicInstance).Where(selector);
-    }
+    public static IEnumerable<PropertyInfo> NonPublicInstanceProperties(this object value, Func<PropertyInfo, bool> selector) =>
+        GetType(value).GetProperties(NonPublicInstance).Where(selector);
 
-    static Type GetType(object value)
-    {
-        return value == null ? typeof(void) : value.GetType();
-    }
+    static Type GetType(object value) =>
+        value == null ? typeof(void) : value.GetType();
 
-    public static IEnumerable<PropertyInfo> NonPublicInstanceProperties(this object value)
-    {
-        return value.NonPublicInstanceProperties(_ => true);
-    }
+    public static IEnumerable<PropertyInfo> NonPublicInstanceProperties(this object value) =>
+        value.NonPublicInstanceProperties(_ => true);
 
     public static IEnumerable<FieldInfo> NonPublicStaticFields(this object value, bool includeInherited)
     {

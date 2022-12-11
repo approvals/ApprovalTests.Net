@@ -24,8 +24,5 @@ public static class NamerFactory
         return new EnvironmentSpecificCleanUp();
     }
 
-    public static void Clear()
-    {
-        AdditionalInformation = null;
-    }
+    public static void Clear() => AdditionalInformation = null;
 }

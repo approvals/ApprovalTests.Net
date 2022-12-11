@@ -5,10 +5,8 @@ namespace ApprovalTests.ExceptionalExceptions;
 public class Exceptional : Exception
 {
     public static T Create<T>(string formattableMessage, params object[] messageParameters)
-        where T : Exception
-    {
-        return Create<T>(null, formattableMessage, messageParameters);
-    }
+        where T : Exception =>
+        Create<T>(null, formattableMessage, messageParameters);
 
     public static T Create<T>(Exception causedBy, string formattableMessage, params object[] messageParameters)
         where T : Exception
@@ -31,15 +29,11 @@ public class Exceptional : Exception
         var uid = GenerateUniqueId<T>();
         var tldr = GetTlDr(uid);
         var completeMessage = message + tldr;
-        var exception = constructor(completeMessage, causedBy);
-        return exception;
+        return constructor(completeMessage, causedBy);
     }
 
     // ReSharper disable once UnusedParameter.Local
-    static string GetTlDr(ExceptionalId uid)
-    {
-        return "";
-    }
+    static string GetTlDr(ExceptionalId uid) => "";
 
     public static ExceptionalId GenerateUniqueId<T>()
     {

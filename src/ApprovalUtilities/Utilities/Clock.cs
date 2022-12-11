@@ -4,10 +4,8 @@ namespace ApprovalUtilities.Utilities;
 
 public class Clock : ILoader<DateTime>
 {
-    public virtual DateTime Load()
-    {
-        return DateTime.Now;
-    }
+    public virtual DateTime Load() =>
+        DateTime.Now;
 }
 
 public class MockClock : Clock
@@ -19,10 +17,8 @@ public class MockClock : Clock
     {
     }
 
-    public MockClock(DateTime mockTime)
-    {
+    public MockClock(DateTime mockTime) =>
         this.mockTime = mockTime;
-    }
 
     public override DateTime Load()
     {
