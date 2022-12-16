@@ -16,7 +16,7 @@
     <PackageReference Include="Microsoft.Win32.Registry" Version="5.0.0" />
     <PackageReference Include="Publicize.Fody" Version="1.8.0" PrivateAssets="All" />
     <PackageReference Include="Virtuosity.Fody" Version="3.1.1" PrivateAssets="All" />
-    <PackageReference Include="TextCopy" Version="6.2.0" />
+    <PackageReference Include="TextCopy" Version="6.2.1" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
     <ProjectReference Include="..\ApprovalUtilities\ApprovalUtilities.csproj" />
     <Content Include="build\ApprovalTests.props" PackagePath="build\ApprovalTests.props" />
