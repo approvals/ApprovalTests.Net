@@ -7,7 +7,7 @@
   <ItemGroup>
     <Using Remove="System.Net.Http" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.4.1" />
-    <PackageReference Include="MSTest.TestFramework" Version="3.0.0" />
+    <PackageReference Include="MSTest.TestFramework" Version="3.0.1" />
     <PackageReference Include="MSTest.TestAdapter" Version="3.0.0" />
     <ProjectReference Include="..\ApprovalUtilities\ApprovalUtilities.csproj" />
     <ProjectReference Include="..\ApprovalTests\ApprovalTests.csproj" />
