@@ -7,7 +7,7 @@
   <ItemGroup>
     <Using Remove="System.Net.Http" />
     <PackageReference Include="MarkdownSnippets.MsBuild" Version="24.5.1" Condition="$(TargetFramework) == 'net7.0'" />
-    <PackageReference Include="itext7" Version="7.2.3" />
+    <PackageReference Include="itext7" Version="7.2.5" />
     <PackageReference Include="NUnit" Version="3.13.3" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.4.2" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
