@@ -13,6 +13,8 @@ class WeatherLoader : IExecutableQuery
     public string ExecuteQuery(string query)
     {
         var Url = "http://api.wunderground.com/weatherstation/WXCurrentObXML.asp";
+#pragma warning disable SYSLIB0014
         return new WebClient().DownloadString(Url + "?" + query);
+#pragma warning restore SYSLIB0014
     }
 }
