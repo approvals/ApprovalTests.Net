@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>net48;net7.0</TargetFrameworks>
@@ -11,7 +11,7 @@
     <PackageReference Include="NUnit" Version="3.13.3" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.4.2" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
-    <PackageReference Include="System.Management" Version="7.0.0" />
+    <PackageReference Include="System.Management" Version="7.0.1" />
     <ProjectReference Include="..\ApprovalTests\ApprovalTests.csproj" />
     <ProjectReference Include="..\ApprovalUtilities\ApprovalUtilities.csproj" />
 
