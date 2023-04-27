@@ -17,7 +17,7 @@ public static class PathUtilities
         new FileInfo(stackFrame.GetFileName()).Directory.FullName + Path.DirectorySeparatorChar;
 
     public static string ScrubPath(this string text, string path) =>
-        text == null ? null : text.Replace(path, "..." + Path.DirectorySeparatorChar);
+        text?.Replace(path, "..." + Path.DirectorySeparatorChar);
 
     public static string GetAdjacentFile(string relativePath) =>
         GetDirectoryForCaller(1) + relativePath;

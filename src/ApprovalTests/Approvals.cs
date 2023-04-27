@@ -91,7 +91,7 @@ public class Approvals
     static IApprovalFailureReporter GetReporterFromAttribute()
     {
         var useReporter = CurrentCaller.GetFirstFrameForAttribute<UseReporterAttribute>();
-        return useReporter != null ? useReporter.Reporter : null;
+        return useReporter?.Reporter;
     }
 
     public static void Verify(IExecutableQuery query) =>
