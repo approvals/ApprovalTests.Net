@@ -14,7 +14,7 @@ public static class PathUtilities
     }
 
     public static string GetDirectoryForStackFrame(StackFrame stackFrame) =>
-        new FileInfo(stackFrame.GetFileName()).Directory.FullName + Path.DirectorySeparatorChar;
+        new FileInfo(stackFrame.GetFileName()!).Directory!.FullName + Path.DirectorySeparatorChar;
 
     public static string ScrubPath(this string text, string path) =>
         text?.Replace(path, "..." + Path.DirectorySeparatorChar);
@@ -29,6 +29,7 @@ public static class PathUtilities
         {
             results.Add(Path.GetFullPath(toFind));
         }
+
         if (OsUtils.IsUnixOs())
         {
             if (0 <= toFind.IndexOf(".exe"))
@@ -56,6 +57,7 @@ public static class PathUtilities
                 EnvironmentPaths.Add("/usr/local/bin");
             }
         }
+
         return EnvironmentPaths.Select(path => Path.Combine(path, programName)).Where(File.Exists);
     }
 }
