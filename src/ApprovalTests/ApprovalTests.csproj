@@ -9,7 +9,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Using Remove="System.Net.Http" />
-    <PackageReference Include="Polyfill" Version="1.20.0" PrivateAssets="all" />
+    <PackageReference Include="Polyfill" Version="1.21.0" PrivateAssets="all" />
     <Compile Include="..\ApprovalUtilities\InternalsVisibleTo.cs" Link="InternalsVisibleTo.cs" />
     <PackageReference Include="DiffEngine" Version="11.3.0" />
     <PackageReference Include="EmptyFiles" Version="4.4.0" PrivateAssets="None" />
