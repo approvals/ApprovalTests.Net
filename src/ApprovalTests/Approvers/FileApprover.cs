@@ -77,8 +77,8 @@ public class FileApprover : IApprovalApprover
             return false;
         }
 
-        var e1 = chars1.GetEnumerator();
-        var e2 = chars2.GetEnumerator();
+        using var e1 = chars1.GetEnumerator();
+        using var e2 = chars2.GetEnumerator();
 
         while (e1.MoveNext() && e2.MoveNext())
         {
@@ -98,8 +98,8 @@ public class FileApprover : IApprovalApprover
             return false;
         }
 
-        var e1 = bytes1.GetEnumerator();
-        var e2 = bytes2.GetEnumerator();
+        using var e1 = bytes1.GetEnumerator();
+        using var e2 = bytes2.GetEnumerator();
 
         while (e1.MoveNext() && e2.MoveNext())
         {
