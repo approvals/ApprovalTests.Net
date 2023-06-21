@@ -10,7 +10,7 @@ public class StackTraceParser : IStackTraceParser
     static IList<IStackTraceParser> parsers = (IList<IStackTraceParser>) GetParsers();
     IStackTraceParser parser;
 
-    public string ForTestingFramework => GetParsers().Select(x => x.ForTestingFramework).ToReadableString();
+    public string ForTestingFramework => GetParsers().Select(_ => _.ForTestingFramework).ToReadableString();
 
     public bool Parse(StackTrace stackTrace)
     {

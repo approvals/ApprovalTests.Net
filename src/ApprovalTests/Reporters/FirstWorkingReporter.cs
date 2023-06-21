@@ -17,7 +17,7 @@ public class FirstWorkingReporter : IEnvironmentAwareReporter, IApprovalReporter
 
     public void Report(string approved, string received)
     {
-        var r = Reporters.FirstOrDefault(x => x.IsWorkingInThisEnvironment(received));
+        var r = Reporters.FirstOrDefault(_ => _.IsWorkingInThisEnvironment(received));
         if (r == null)
         {
             throw new($"{GetType().Name} Could not find a Reporter for file {received}");
@@ -28,7 +28,7 @@ public class FirstWorkingReporter : IEnvironmentAwareReporter, IApprovalReporter
 
     public virtual bool IsWorkingInThisEnvironment(string forFile)
     {
-        return Reporters.Any(x => x.IsWorkingInThisEnvironment(forFile));
+        return Reporters.Any(_ => _.IsWorkingInThisEnvironment(forFile));
     }
 
     public void CleanUp(string approved, string received)

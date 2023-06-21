@@ -64,8 +64,8 @@ static class PdfScrubber
 
         // De-dupe because some matches might occur in both the left and right sides of the buffer
         return replacements
-            .GroupBy(x => x.start)
-            .Select(x => x.First());
+            .GroupBy(_ => _.start)
+            .Select(_ => _.First());
     }
 
     static IEnumerable<Replacement> GetDateReplacements(string input, long positionOffset)

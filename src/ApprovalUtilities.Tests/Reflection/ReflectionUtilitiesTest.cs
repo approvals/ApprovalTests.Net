@@ -55,7 +55,7 @@ public class ReflectionUtilitiesTest
     [Fact]
     public void GetControlNonPublicStaticFields() =>
         Approvals.VerifyAll(
-            new TargetPoco().NonPublicStaticFields(false).OrderBy(x => x.Name),
+            new TargetPoco().NonPublicStaticFields(false).OrderBy(_ => _.Name),
             string.Empty);
 
     [Fact]

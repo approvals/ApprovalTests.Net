@@ -58,7 +58,7 @@ public static class ApprovalMaintenance
         var nestedMethodName = parts[2];
         var nestedTypes = rootTypes
             .Where(t => t.Name == className)
-            .SelectMany(x => x.GetNestedTypes())
+            .SelectMany(_ => _.GetNestedTypes())
             .Where(t => t.Name == nestedClassName);
         methods = nestedTypes.SelectMany(t => t.GetMethods())
             .Where(m => m.Name == nestedMethodName);
