@@ -6,7 +6,6 @@ public class CustomDiffReporter :
     public CustomDiffReporter()
         : base(
             //TODO: re-order or remove as required
-            CodeCompareReporter.INSTANCE,
             BeyondCompareReporter.INSTANCE,
             TortoiseDiffReporter.INSTANCE,
             AraxisMergeReporter.INSTANCE,
