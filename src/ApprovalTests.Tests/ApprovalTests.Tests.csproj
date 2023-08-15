@@ -6,7 +6,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Using Remove="System.Net.Http" />
-    <PackageReference Include="itext7.bouncy-castle-adapter" Version="8.0.0" />
+    <PackageReference Include="itext7.bouncy-castle-adapter" Version="8.0.1" />
     <PackageReference Include="MarkdownSnippets.MsBuild" Version="25.1.0" Condition="$(TargetFramework) == 'net7.0'" />
     <PackageReference Include="itext7" Version="8.0.0" />
     <PackageReference Include="NUnit" Version="3.13.3" />
