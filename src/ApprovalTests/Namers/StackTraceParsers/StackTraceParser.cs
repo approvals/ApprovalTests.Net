@@ -26,24 +26,26 @@ public class StackTraceParser : IStackTraceParser
 
         var helpLink = "http://blog.approvaltests.com/2012/01/creating-namers.html";
         throw new(
-            $@"
-Could Not Detect Test Framework
+            $"""
 
-Either:
-1) Optimizer Inlined Test Methods
+             Could Not Detect Test Framework
 
-Solutions:
-a) Add [MethodImpl(MethodImplOptions.NoInlining)]
-b) Set Build->Optimize Code to False
-   & Build->Advanced->DebugInfo to Full
+             Either:
+             1) Optimizer Inlined Test Methods
 
-or
-2) Approvals is not set up to use your test framework.
-It currently supports {ForTestingFramework}
+             Solutions:
+             a) Add [MethodImpl(MethodImplOptions.NoInlining)]
+             b) Set Build->Optimize Code to False
+                & Build->Advanced->DebugInfo to Full
 
-Solution:
-To add one use {GetType()}.AddParser() method to add implementation of {typeof(IStackTraceParser)} with support for your testing framework.
-To learn how to implement one see {helpLink}")
+             or
+             2) Approvals is not set up to use your test framework.
+             It currently supports {ForTestingFramework}
+
+             Solution:
+             To add one use {GetType()}.AddParser() method to add implementation of {typeof(IStackTraceParser)} with support for your testing framework.
+             To learn how to implement one see {helpLink}
+             """)
         {
             HelpLink = helpLink
         };
@@ -58,20 +60,22 @@ To learn how to implement one see {helpLink}")
             var path = parser.SourcePath;
             if (string.IsNullOrEmpty(path))
             {
-                var helpMessage = @"
-ApprovalTests is not detecting the proper source path
+                var helpMessage = """
 
-This is probably because you're missing the following
-line in your .csproj file:
-	  <DebugType>full</DebugType>
-in the
-<Project>
-  <PropertyGroup>
-element.
+                                  ApprovalTests is not detecting the proper source path
 
-Solution:
-a) Add <DebugType>full</DebugType> to your .csproj file.
-b) OR Build->Advanced->DebugInfo to Full";
+                                  This is probably because you're missing the following
+                                  line in your .csproj file:
+                                  	  <DebugType>full</DebugType>
+                                  in the
+                                  <Project>
+                                    <PropertyGroup>
+                                  element.
+
+                                  Solution:
+                                  a) Add <DebugType>full</DebugType> to your .csproj file.
+                                  b) OR Build->Advanced->DebugInfo to Full
+                                  """;
                 throw new(helpMessage);
             }
             return path;

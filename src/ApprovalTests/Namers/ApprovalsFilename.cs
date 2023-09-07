@@ -85,11 +85,13 @@ public class ApprovalsFilename
     }
 
     public override string ToString() =>
-        $@"{nameof(GetFullPath)}: {GetFullPath}
-{nameof(Directory)}: {Directory}
-{nameof(ClassName)}: {ClassName}
-{nameof(MethodName)}: {MethodName}
-{nameof(AdditionalInformation)}: {AdditionalInformation.ToReadableString()}
-{nameof(ApprovedStatus)}: {ApprovedStatus}
-{ nameof(Extension)}: { Extension}";
+        $"""
+         {nameof(GetFullPath)}: {GetFullPath}
+         {nameof(Directory)}: {Directory}
+         {nameof(ClassName)}: {ClassName}
+         {nameof(MethodName)}: {MethodName}
+         {nameof(AdditionalInformation)}: {AdditionalInformation.ToReadableString()}
+         {nameof(ApprovedStatus)}: {ApprovedStatus}
+         {nameof(Extension)}: {Extension}
+         """;
 }

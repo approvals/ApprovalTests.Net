@@ -102,7 +102,7 @@ public class ApprovalsTest
     [Test]
     public void JsonText()
     {
-        var json = @"{""GivenNames"":""John"",""FamilyName"":""Smith"",""Spouse"":""Jill"",""Address"":{""Street"":""1 Puddle Lane"",""Suburb"":null,""Country"":""USA""},""Children"":[""Sam"",""Mary""],""Title"":""Mr""}";
+        var json = """{"GivenNames":"John","FamilyName":"Smith","Spouse":"Jill","Address":{"Street":"1 Puddle Lane","Suburb":null,"Country":"USA"},"Children":["Sam","Mary"],"Title":"Mr"}""";
         Approvals.VerifyJson(json);
     }
 }

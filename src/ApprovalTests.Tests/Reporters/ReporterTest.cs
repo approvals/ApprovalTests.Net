@@ -33,8 +33,10 @@ public class ReporterTest
         var reportException = Assert.Throws<Exception>(() => reporter.Report("a.txt", "a.txt"));
         var isWorkingException = Assert.Throws<Exception>(() => reporter.IsWorkingInThisEnvironment("a.txt"));
 
-        Approvals.Verify($@"{reportException.Message}
+        Approvals.Verify($"""
+                          {reportException.Message}
 
-{isWorkingException.Message}");
+                          {isWorkingException.Message}
+                          """);
     }
 }

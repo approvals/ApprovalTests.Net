@@ -100,7 +100,8 @@ static class PdfScrubber
         // PDF Date format is at least (D:YYYY), but can be as long as (D:YYYYMMDDHHmmSSOHH'mm'), where O can be Z, + or -. Chars after the O denote offset.
         // "Closely follow that of the international standard ASN.1 (Abstract Syntax Notation One), defined in ISO/IEC 8824."
 
-        var regex = new Regex(@"
+        var regex = new Regex(
+            @"
                 \(D:                    # Start of date metadata
                 (?<value>(
                     # only year is required; every other value only match if previous value matches.
