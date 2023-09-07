@@ -45,15 +45,18 @@ public static class ApprovalResults
 
         if (throwOnError)
         {
-            throw new NotImplementedException($@"Your current framework is not properly handled by ApprovalTests
-Framework: {frameworkDescription}.
-To suppress this error and make the test pass using the full FrameworkDescription use:
-using (Namers.ApprovalResults.UniqueForRuntime(throwOnError: true)){{
-    //The code being tested
-}}
-To help ApprovalTest please submit a new issue using the following link:
-https://github.com/approvals/ApprovalTests.Net/issues/new?title=Unknown%3A+%27Runtime%27&body={frameworkDescription}
-");
+            throw new NotImplementedException(
+                $$"""
+                  Your current framework is not properly handled by ApprovalTests
+                  Framework: {{frameworkDescription}}.
+                  To suppress this error and make the test pass using the full FrameworkDescription use:
+                  using (Namers.ApprovalResults.UniqueForRuntime(throwOnError: true)){
+                      //The code being tested
+                  }
+                  To help ApprovalTest please submit a new issue using the following link:
+                  https://github.com/approvals/ApprovalTests.Net/issues/new?title=Unknown%3A+%27Runtime%27&body={{frameworkDescription}}
+
+                  """);
         }
 
         return frameworkDescription;

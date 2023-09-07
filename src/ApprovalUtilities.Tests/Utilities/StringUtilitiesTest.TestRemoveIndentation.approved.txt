@@ -1,4 +1,4 @@
-
+﻿
 ^^ Blank line above ^^
 
 Here is some text
@@ -7,4 +7,4 @@ Here is some text
     a. even more
   3. little less
 
-VV Blank line Below VV 
+VV Blank line Below VV

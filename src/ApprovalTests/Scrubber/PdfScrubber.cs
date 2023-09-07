@@ -101,7 +101,8 @@ static class PdfScrubber
         // "Closely follow that of the international standard ASN.1 (Abstract Syntax Notation One), defined in ISO/IEC 8824."
 
         var regex = new Regex(
-            @"
+            """
+            
                 \(D:                    # Start of date metadata
                 (?<value>(
                     # only year is required; every other value only match if previous value matches.
@@ -119,7 +120,8 @@ static class PdfScrubber
                     )?)?)?)?)?)?)?)?)?)?
                 ))
                 \)                      # End of date metadata
-            ", RegexOptions.IgnorePatternWhitespace | RegexOptions.ExplicitCapture);
+
+            """, RegexOptions.IgnorePatternWhitespace | RegexOptions.ExplicitCapture);
 
         return regex.Matches(input)
             .OfType<Match>()
@@ -150,7 +152,9 @@ static class PdfScrubber
         //
         // allowing for other entries and whitespace
 
-        var regex = new Regex(@"(?x)  # Allow comments and ignore whitespace
+        var regex = new Regex(
+            """
+            (?x)  # Allow comments and ignore whitespace
                 trailer     # Declare the trailer dictionary.
                 \s+         # Newline and optional spaces
                 <<          # Begin trailer dictionary entries
@@ -166,7 +170,8 @@ static class PdfScrubber
                 \]          # End array of ID values
                 .*          # Allow for other entries in the trailer dictionary that succeed the ID entry
                 >>          # End trailer dictionary entries
-            ");
+
+            """);
 
         var match = regex.Match(input);
         if (match.Groups.Count == 3)
@@ -181,11 +186,14 @@ static class PdfScrubber
 
     public static IEnumerable<Id> FindITextVersion(string input)
     {
-        var regex = new Regex(@"(?x)
+        var regex = new Regex(
+            """
+            (?x)
                 (iText-\d+\.\d+\.\d+)
                 |
                 (iText.. \d+\.\d+\.\d+ ..2000-20\d\d)
-            ");
+
+            """);
 
         var matches = regex.Matches(input);
 
