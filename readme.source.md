@@ -10,6 +10,8 @@
 
 Capturing Human Intelligence - ApprovalTests is an open source assertion/verification library to aid unit testing.
 
+**See [Milestones](../../milestones?state=closed) for release notes.**
+
 It is compatible with most .Net unit testing frameworks (Nunit, MsTest, xUnit, MBUnit)
 
 toc
