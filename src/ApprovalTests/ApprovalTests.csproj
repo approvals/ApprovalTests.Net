@@ -11,7 +11,7 @@
     <Using Remove="System.Net.Http" />
     <PackageReference Include="Polyfill" Version="1.28.0" PrivateAssets="all" />
     <Compile Include="..\ApprovalUtilities\InternalsVisibleTo.cs" Link="InternalsVisibleTo.cs" />
-    <PackageReference Include="DiffEngine" Version="12.2.1" />
+    <PackageReference Include="DiffEngine" Version="12.3.0" />
     <PackageReference Include="EmptyFiles" Version="4.5.1" PrivateAssets="None" />
     <PackageReference Include="Fody" Version="6.8.0" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Win32.Registry" Version="5.0.0" />
