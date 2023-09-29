@@ -1,6 +1,5 @@
 namespace ApprovalUtilities.Persistence;
 
-public interface IExecutableLoader<T> : IExecutableQuery, ILoader<T>
-{
-
-}
+public interface IExecutableLoader<T> :
+    IExecutableQuery,
+    ILoader<T>;

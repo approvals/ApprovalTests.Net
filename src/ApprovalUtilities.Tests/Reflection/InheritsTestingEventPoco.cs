@@ -1,3 +1,2 @@
-public class InheritsTestingEventPoco : TestingEventPoco
-{
-}
+public class InheritsTestingEventPoco :
+    TestingEventPoco;

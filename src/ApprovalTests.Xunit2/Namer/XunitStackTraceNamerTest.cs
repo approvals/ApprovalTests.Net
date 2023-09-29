@@ -64,7 +64,5 @@ public class XunitStackTraceNamerTest
     }
 }
 
-public class InheritedFactAttribute:FactAttribute
-{
-
-}
+public class InheritedFactAttribute :
+    FactAttribute;

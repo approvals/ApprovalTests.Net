@@ -172,8 +172,7 @@ public class ReflectionUtilitiesTest
         }
     }
 
-    class B : A
-    {
-    }
+    class B :
+        A;
 }
 #pragma warning restore CS0169

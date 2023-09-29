@@ -2,11 +2,10 @@ using ApprovalTests.WebApi.MicrosoftHttpClient;
 
 namespace ApprovalTests.ExceptionalExceptions;
 
-public class ExceptionalTlDr : RestQuery<string>
+public class ExceptionalTlDr(ExceptionalId uid) :
+    RestQuery<string>
 {
-    readonly ExceptionalId uid;
-
-    public ExceptionalTlDr(ExceptionalId uid) => this.uid = uid;
+    readonly ExceptionalId uid = uid;
 
     public override string GetQuery() => throw new NotImplementedException();
 
