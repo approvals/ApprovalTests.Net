@@ -1,5 +1,4 @@
-﻿Assert.Equal() Failure
-               ↓ (pos 5)
-Expected: Hello
-Actual:   Hello2
-               ↑ (pos 5)
+﻿Assert.Equal() Failure: Strings differ
+Expected: "Hello"
+Actual:   "Hello2"
+                ↑ (pos 5)
