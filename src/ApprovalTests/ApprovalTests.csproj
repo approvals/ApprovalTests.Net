@@ -12,7 +12,7 @@
     <PackageReference Include="Polyfill" Version="1.29.0" PrivateAssets="all" />
     <Compile Include="..\ApprovalUtilities\InternalsVisibleTo.cs" Link="InternalsVisibleTo.cs" />
     <PackageReference Include="DiffEngine" Version="12.3.0" />
-    <PackageReference Include="EmptyFiles" Version="4.5.1" PrivateAssets="None" />
+    <PackageReference Include="EmptyFiles" Version="4.5.2" PrivateAssets="None" />
     <PackageReference Include="Fody" Version="6.8.0" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Win32.Registry" Version="5.0.0" />
     <PackageReference Include="Publicize.Fody" Version="1.8.0" PrivateAssets="All" />
