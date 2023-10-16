@@ -20,6 +20,7 @@
     <DebugSymbols>true</DebugSymbols>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ResolveAssemblyReferencesSilent>true</ResolveAssemblyReferencesSilent>
   </PropertyGroup>
   <ItemGroup>
     <None Include="..\..\docs\images\approvaltests_icon.png">
