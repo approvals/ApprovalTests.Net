@@ -14,6 +14,6 @@
     <PackageReference Include="System.Management" Version="6.0.2" />
     <PackageReference Include="Virtuosity.Fody" Version="3.1.1" PrivateAssets="All" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
   </ItemGroup>
 </Project>
