@@ -29,7 +29,14 @@ public class XUnit2Reporter : AssertReporter
 
     protected override void InvokeEqualsMethod(Type type, string[] parameters)
     {
-        var method = type.GetMethods().First(m => m.Name == areEqual && m.GetParameters().Count() == 2);
+        var method = type.GetMethods()
+            .First(_ =>
+            {
+                var parameterInfos = _.GetParameters();
+                return _.Name == areEqual &&
+                       parameterInfos.Length == 2 &&
+                       parameterInfos.All(_ => _.ParameterType == typeof(string));
+            });
         method.Invoke(null, parameters);
     }
 }
