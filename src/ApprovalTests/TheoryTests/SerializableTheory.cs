@@ -2,6 +2,7 @@
 
 namespace ApprovalTests.TheoryTests;
 
+[Obsolete("https://github.com/dotnet/designs/blob/main/accepted/2020/better-obsoletion/binaryformatter-obsoletion.md")]
 public static class SerializableTheory
 {
     public static void Verify(object original, Action<object, object> assertEqual)
