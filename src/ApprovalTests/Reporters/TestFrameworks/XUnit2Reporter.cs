@@ -12,10 +12,11 @@ public class XUnit2Reporter : AssertReporter
         return AppDomain
             .CurrentDomain
             .GetAssemblies()
-            .Any(a =>
+            .Any(_ =>
             {
-                var name = a.FullName;
-                return name.Contains("xunit.core") || name.Contains("xunit.assert");
+                var name = _.FullName;
+                return name.Contains("xunit.core") ||
+                       name.Contains("xunit.assert");
             });
     }
 
