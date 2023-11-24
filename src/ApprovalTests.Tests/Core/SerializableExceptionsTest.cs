@@ -1,6 +1,7 @@
-﻿using ApprovalTests.Core.Exceptions;
-using ApprovalTests.TheoryTests;
+﻿#if NET48
 
+using ApprovalTests.Core.Exceptions;
+using ApprovalTests.TheoryTests;
 [TestFixture]
 public class SerializableExceptionsTest
 {
@@ -17,3 +18,4 @@ public class SerializableExceptionsTest
     static void Verify(object o) =>
         SerializableTheory.Verify(o, Assert.AreEqual);
 }
+#endif
