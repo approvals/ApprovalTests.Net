@@ -2,7 +2,11 @@ using ApprovalTests.StackTraceParsers;
 
 namespace ApprovalTests.Reporters.TestFrameworks;
 
-public class XUnit2Reporter : AssertReporter
+public class XUnit2Reporter() :
+    AssertReporter(
+        "Xunit.Assert, xunit.assert",
+        "Equal",
+        XUnitStackTraceParser.Attribute)
 {
     public readonly static XUnit2Reporter INSTANCE = new();
     static readonly Lazy<bool> isXunit2 = new(IsXunit2);
@@ -18,11 +22,6 @@ public class XUnit2Reporter : AssertReporter
                 return name.Contains("xunit.core") ||
                        name.Contains("xunit.assert");
             });
-    }
-
-    public XUnit2Reporter()
-        : base("Xunit.Assert, xunit.assert", "Equal", XUnitStackTraceParser.Attribute)
-    {
     }
 
     public override bool IsWorkingInThisEnvironment(string forFile) =>
