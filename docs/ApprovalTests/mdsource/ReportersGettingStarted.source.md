@@ -58,7 +58,6 @@ DiffTools can be a great way to approve most text files (just copy everything to
 The `ClipboardReporter` or `AllFailingTestsClipboardReporter` can be useful in these cases. Writing the command line text to move the files to your clipboard so you can paste them into your terminal to approve the test.
 
 
-
 ---
 
 [Back to User Guide](readme.md#top)
