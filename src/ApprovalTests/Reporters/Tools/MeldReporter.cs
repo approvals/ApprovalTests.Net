@@ -2,11 +2,8 @@
 
 namespace ApprovalTests.Reporters;
 
-public class MeldReporter : DiffToolReporter
+public class MeldReporter() :
+    DiffToolReporter(DiffTool.Meld)
 {
     public static readonly MeldReporter INSTANCE = new();
-
-    public MeldReporter() : base(DiffTool.Meld)
-    {
-    }
 }

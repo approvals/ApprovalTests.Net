@@ -2,12 +2,8 @@
 
 namespace ApprovalTests.Reporters;
 
-public class BeyondCompareReporter : DiffToolReporter
+public class BeyondCompareReporter() :
+    DiffToolReporter(DiffTool.BeyondCompare)
 {
     public static readonly BeyondCompareReporter INSTANCE = new();
-
-    public BeyondCompareReporter()
-        : base(DiffTool.BeyondCompare)
-    {
-    }
 }

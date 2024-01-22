@@ -1,9 +1,7 @@
 namespace ApprovalTests.Reporters;
 
-public class IgnoreLineEndingsAttribute : Attribute
+public class IgnoreLineEndingsAttribute(bool ignoreLineEndings) :
+    Attribute
 {
-    public IgnoreLineEndingsAttribute(bool ignoreLineEndings) =>
-        IgnoreLineEndings = ignoreLineEndings;
-
-    public bool IgnoreLineEndings { get; }
+    public bool IgnoreLineEndings { get; } = ignoreLineEndings;
 }

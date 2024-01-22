@@ -2,11 +2,8 @@
 
 namespace ApprovalTests.Reporters;
 
-public class TortoiseGitTextDiffReporter : DiffToolReporter
+public class TortoiseGitTextDiffReporter() :
+    DiffToolReporter(DiffTool.TortoiseGitMerge)
 {
     public static readonly TortoiseGitTextDiffReporter INSTANCE = new();
-
-    public TortoiseGitTextDiffReporter() : base(DiffTool.TortoiseGitMerge)
-    {
-    }
 }

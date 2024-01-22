@@ -2,13 +2,9 @@ using ApprovalTests.Core;
 
 namespace ApprovalTests.Reporters;
 
-public class InvalidReporterConfiguration : IEnvironmentAwareReporter
+public class InvalidReporterConfiguration(Type reporter) :
+    IEnvironmentAwareReporter
 {
-    readonly Type reporter;
-
-    public InvalidReporterConfiguration(Type reporter) =>
-        this.reporter = reporter;
-
     public void Report(string approved, string received) =>
         throw BuildException();
 

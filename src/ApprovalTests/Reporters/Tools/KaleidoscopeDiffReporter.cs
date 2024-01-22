@@ -2,11 +2,8 @@
 
 namespace ApprovalTests.Reporters;
 
-public class KaleidoscopeDiffReporter : DiffToolReporter
+public class KaleidoscopeDiffReporter() :
+    DiffToolReporter(DiffTool.Kaleidoscope)
 {
     public static readonly KaleidoscopeDiffReporter INSTANCE = new();
-
-    public KaleidoscopeDiffReporter() : base(DiffTool.Kaleidoscope)
-    {
-    }
 }

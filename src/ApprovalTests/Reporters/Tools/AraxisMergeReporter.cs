@@ -2,12 +2,8 @@
 
 namespace ApprovalTests.Reporters;
 
-public class AraxisMergeReporter : DiffToolReporter
+public class AraxisMergeReporter() :
+    DiffToolReporter(DiffTool.AraxisMerge)
 {
     public static readonly AraxisMergeReporter INSTANCE = new();
-
-    public AraxisMergeReporter()
-        : base(DiffTool.AraxisMerge)
-    {
-    }
 }

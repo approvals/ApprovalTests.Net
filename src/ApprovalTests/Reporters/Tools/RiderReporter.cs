@@ -2,11 +2,8 @@
 
 namespace ApprovalTests.Reporters;
 
-public class RiderReporter : DiffToolReporter
+public class RiderReporter() :
+    DiffToolReporter(DiffTool.Rider)
 {
     public static readonly RiderReporter INSTANCE = new();
-
-    public RiderReporter() : base(DiffTool.Rider)
-    {
-    }
 }

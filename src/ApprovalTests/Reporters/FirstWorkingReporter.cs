@@ -2,18 +2,16 @@ using ApprovalTests.Core;
 
 namespace ApprovalTests.Reporters;
 
-public class FirstWorkingReporter : IEnvironmentAwareReporter, IApprovalReporterWithCleanUp
+public class FirstWorkingReporter(IEnumerable<IEnvironmentAwareReporter> reporters) :
+    IEnvironmentAwareReporter, IApprovalReporterWithCleanUp
 {
-    public IEnumerable<IEnvironmentAwareReporter> Reporters { get; }
+    public IEnumerable<IEnvironmentAwareReporter> Reporters { get; } = reporters;
 
     public FirstWorkingReporter(params IEnvironmentAwareReporter[] reporters) :
         this((IEnumerable<IEnvironmentAwareReporter>) reporters)
     {
 
     }
-
-    public FirstWorkingReporter(IEnumerable<IEnvironmentAwareReporter> reporters) =>
-        Reporters = reporters;
 
     public void Report(string approved, string received)
     {

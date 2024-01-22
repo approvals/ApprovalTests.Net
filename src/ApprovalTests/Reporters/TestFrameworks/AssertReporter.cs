@@ -5,24 +5,16 @@ using EmptyFiles;
 
 namespace ApprovalTests.Reporters.TestFrameworks;
 
-public class AssertReporter : IEnvironmentAwareReporter
+public class AssertReporter(string assertClass, string areEqual, string frameworkAttribute)
+    : IEnvironmentAwareReporter
 {
-    protected readonly string areEqual;
-    readonly string assertClass;
-    readonly string frameworkAttribute;
-
-    public AssertReporter(string assertClass, string areEqual, string frameworkAttribute)
-    {
-        this.assertClass = assertClass;
-        this.areEqual = areEqual;
-        this.frameworkAttribute = frameworkAttribute;
-    }
+    protected readonly string areEqual = areEqual;
 
     public virtual void Report(string approved, string received) =>
         AssertFileContents(approved, received);
 
     public virtual bool IsWorkingInThisEnvironment(string forFile) =>
-        FileExtensions.IsText(forFile) && IsFrameworkUsed();
+        FileExtensions.IsTextFile(forFile) && IsFrameworkUsed();
 
     public bool IsFrameworkUsed() =>
         AttributeStackTraceParser.GetFirstFrameForAttribute(Approvals.CurrentCaller, frameworkAttribute) !=
