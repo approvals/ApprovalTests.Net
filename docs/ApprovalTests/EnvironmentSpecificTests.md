@@ -63,11 +63,12 @@ Like EmailTest.Testname.Microsoft_Windows_10_Education.approved.eml
 EmailTest.Testname.Microsoft_Windows_10_Enterprise.approved.eml
 EmailTest.Testname.Microsoft_Windows_10_Home_N.approved.eml
 EmailTest.Testname.Microsoft_Windows_10_Pro.approved.eml
+EmailTest.Testname.Microsoft_Windows_11_Enterprise.approved.eml
 EmailTest.Testname.Microsoft_Windows_11_Pro.approved.eml
 EmailTest.Testname.Microsoft_Windows_Server_2016_Datacenter.approved.eml
 EmailTest.Testname.Microsoft_Windows_Server_2019_Datacenter.approved.eml
 ```
-<sup><a href='/src/ApprovalTests.Tests/Namer/ApprovalsFilenameTest.TestSimilarFiles.approved.txt#L1-L8' title='Snippet source file'>snippet source</a> | <a href='#snippet-ApprovalsFilenameTest.TestSimilarFiles.approved.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests.Tests/Namer/ApprovalsFilenameTest.TestSimilarFiles.approved.txt#L1-L9' title='Snippet source file'>snippet source</a> | <a href='#snippet-ApprovalsFilenameTest.TestSimilarFiles.approved.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 If this is run on a new machine, it could produce a new approval file. This can be confusing as you might not remember what the old system used to produce.
