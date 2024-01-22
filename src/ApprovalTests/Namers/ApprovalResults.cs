@@ -9,7 +9,7 @@ public static class ApprovalResults
 
     public static string GetDotNetVersion() => "Net_v" + Environment.Version;
 
-#if (!NET462)
+#if !NETFRAMEWORK
         public static IDisposable UniqueForRuntime(bool throwOnError = true) =>
             NamerFactory.AsEnvironmentSpecificTest(GetDotNetRuntime(throwOnError));
 

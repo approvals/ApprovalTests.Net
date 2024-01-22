@@ -23,7 +23,7 @@ public class EmailTest
         }
     }
 
-#if(NET48)
+#if NET48
         [Test]
         public void TestAttachment()
         {
