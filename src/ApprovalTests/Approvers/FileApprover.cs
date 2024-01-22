@@ -4,21 +4,15 @@ using EmptyFiles;
 
 namespace ApprovalTests.Approvers;
 
-public class FileApprover : IApprovalApprover
+public class FileApprover(IApprovalWriter writer, IApprovalNamer namer, bool normalizeLineEndingsForTextFiles = false)
+    : IApprovalApprover
 {
-    public readonly IApprovalNamer namer;
-    public readonly bool normalizeLineEndingsForTextFiles;
-    public readonly IApprovalWriter writer;
+    public readonly IApprovalNamer namer = namer;
+    public readonly bool normalizeLineEndingsForTextFiles = normalizeLineEndingsForTextFiles;
+    public readonly IApprovalWriter writer = writer;
     public string approved;
     public ApprovalException failure;
     public string received;
-
-    public FileApprover(IApprovalWriter writer, IApprovalNamer namer, bool normalizeLineEndingsForTextFiles = false)
-    {
-        this.writer = writer;
-        this.namer = namer;
-        this.normalizeLineEndingsForTextFiles = normalizeLineEndingsForTextFiles;
-    }
 
     public virtual bool Approve()
     {
@@ -38,7 +32,7 @@ public class FileApprover : IApprovalApprover
             return new ApprovalMissingException(receivedPath, approvedPath);
         }
 
-        if (normalizeLineEndingsForTextFiles && FileExtensions.IsText(approvedPath))
+        if (normalizeLineEndingsForTextFiles && FileExtensions.IsTextFile(approvedPath))
         {
             var receivedText = File.ReadAllText(receivedPath).Replace("\r\n", "\n");
             var approvedText = File.ReadAllText(approvedPath).Replace("\r\n", "\n");

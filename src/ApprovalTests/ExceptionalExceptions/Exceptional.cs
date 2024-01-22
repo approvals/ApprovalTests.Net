@@ -14,8 +14,8 @@ public class Exceptional : Exception
         Func<string, Exception, T> reflectiveConstructor = (m, e) =>
         {
             var type = typeof(T);
-            var constructorInfo = type.GetConstructor(new[] {typeof(string), typeof(Exception)});
-            var instance = (T) constructorInfo.Invoke(new object[] {m, e});
+            var constructorInfo = type.GetConstructor([typeof(string), typeof(Exception)]);
+            var instance = (T) constructorInfo.Invoke([m, e]);
             return instance;
         };
         return Create(reflectiveConstructor, causedBy, formattableMessage, messageParameters);

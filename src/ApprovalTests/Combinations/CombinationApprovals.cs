@@ -5,7 +5,7 @@ namespace ApprovalTests.Combinations;
 
 public static class CombinationApprovals
 {
-    static readonly object[] EMPTY = {null};
+    static readonly object[] EMPTY = [null];
 
     public static void VerifyAllCombinations<A>(Func<A, object> processCall, IEnumerable<A> aList) =>
         VerifyAllCombinations((a, _, _, _, _, _, _, _, _) =>

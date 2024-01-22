@@ -1,7 +1,7 @@
 ﻿[TestFixture]
 public class ApprovalsTest
 {
-    static readonly string[] text = {"abc", "123", "!@#"};
+    static readonly string[] text = ["abc", "123", "!@#"];
 
     // begin-snippet: simple_verify
     [Test]

@@ -7,7 +7,13 @@ public class ExecutableQueryFailure(IExecutableQuery query, IApprovalFailureRepo
     IApprovalFailureReporter, IApprovalReporterWithCleanUp
 {
     const string FileNameSuffix = ".queryresults.txt";
-    const string Header = "\t\tDo NOT approve\n\t\tThis File will be Deleted\n\t\tit is for feedback purposes only.\n\t\tAn additional file has been opened with only the query which you can approve.\n";
+    const string Header = """
+                          		Do NOT approve
+                          		This File will be Deleted
+                          		it is for feedback purposes only.
+                          		An additional file has been opened with only the query which you can approve.
+
+                          """;
 
     public void CleanUp(string approved, string received)
     {
