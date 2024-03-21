@@ -7,7 +7,7 @@ public interface IApprovalApprover
     ///     Should save the received resource and compare.
     /// </summary>
     /// <remarks>
-    ///     Note: This is part 1 of a 2 part call : if (Approve()) {Fail()}
+    ///     Note: This is part 1 of a 2 part call : if (!Approve()) {Fail()}
     ///     To allow for the reporter to interject and approve in the interim
     /// </remarks>
     /// <returns>  true if Matching, false if not</returns>
@@ -19,7 +19,7 @@ public interface IApprovalApprover
     ///     Usually throws an some sort of Exception
     /// </summary>
     /// <remarks>
-    ///     Note: This is part 1 of a 2 part call : if (Approve()) {Fail()}
+    ///     Note: This is part 2 of a 2 part call : if (!Approve()) {Fail()}
     ///     To allow for the reporter to interject and approve in the interim
     /// </remarks>
     void Fail();
