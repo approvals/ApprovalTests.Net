@@ -74,11 +74,11 @@ EmailTest.Testname.Microsoft_Windows_Server_2019_Datacenter.approved.eml
 If this is run on a new machine, it could produce a new approval file. This can be confusing as you might not remember what the old system used to produce.
 
 <!-- snippet: use_MachineSpecificReporter -->
-<a id='snippet-use_machinespecificreporter'></a>
+<a id='snippet-use_MachineSpecificReporter'></a>
 ```cs
 [UseReporter(typeof(MachineSpecificReporter))]
 ```
-<sup><a href='/src/ApprovalTests.Tests/Namer/ApprovalResultsTest.cs#L2-L4' title='Snippet source file'>snippet source</a> | <a href='#snippet-use_machinespecificreporter' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests.Tests/Namer/ApprovalResultsTest.cs#L2-L4' title='Snippet source file'>snippet source</a> | <a href='#snippet-use_MachineSpecificReporter' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 If you use a MachineSpecificReporter and the existing approval file does not exist (or is empty), it will search or the last approved version from a different machine and copy it over as a starting point. This will always start with a line:
