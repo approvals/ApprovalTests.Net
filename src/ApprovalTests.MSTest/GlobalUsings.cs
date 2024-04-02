@@ -1,6 +1,4 @@
-﻿// Global using directives
-
-global using System.Runtime.CompilerServices;
+﻿global using System.Runtime.CompilerServices;
 global using ApprovalTests;
 global using ApprovalTests.Namers;
 global using ApprovalTests.Namers.StackTraceParsers;
