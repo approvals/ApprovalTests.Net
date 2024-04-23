@@ -73,7 +73,7 @@ public class ReflectionUtilitiesTest
     [Fact]
     public void GetNonPublicInstanceFieldsAssignableTo()
     {
-        Func<FieldInfo, bool> selector = fi => typeof(MulticastDelegate).IsAssignableFrom(fi.FieldType);
+        Func<FieldInfo, bool> selector = fi => fi.FieldType.IsAssignableTo<MulticastDelegate>();
 
         Approvals.VerifyAll(
             new TestingEventPoco().GetInstanceFields(selector),
