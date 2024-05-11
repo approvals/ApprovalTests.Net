@@ -1,5 +1,3 @@
-using ApprovalTests.Namers.StackTraceParsers;
-
 namespace ApprovalTests.StackTraceParsers;
 
 public class VSStackTraceParser : AttributeStackTraceParser

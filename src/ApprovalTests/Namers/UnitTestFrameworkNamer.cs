@@ -1,5 +1,3 @@
-using ApprovalTests.Namers.StackTraceParsers;
-
 namespace ApprovalTests.Namers;
 
 public class UnitTestFrameworkNamer : IApprovalNamer

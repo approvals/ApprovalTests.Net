@@ -1,6 +1,3 @@
-using ApprovalTests.Core.Exceptions;
-using EmptyFiles;
-
 namespace ApprovalTests.Approvers;
 
 public class FileApprover(IApprovalWriter writer, IApprovalNamer namer, bool normalizeLineEndingsForTextFiles = false)
@@ -46,10 +43,7 @@ public class FileApprover(IApprovalWriter writer, IApprovalNamer namer, bool nor
             null;
     }
 
-    public void Fail()
-    {
-        throw failure;
-    }
+    public void Fail() => throw failure;
 
     public void ReportFailure(IApprovalFailureReporter reporter)
     {

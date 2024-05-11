@@ -1,7 +1,4 @@
-﻿using ApprovalTests.Namers.StackTraceParsers;
-using EmptyFiles;
-
-namespace ApprovalTests.Reporters.TestFrameworks;
+﻿namespace ApprovalTests.Reporters.TestFrameworks;
 
 public class AssertReporter(string assertClass, string areEqual, string frameworkAttribute)
     : IEnvironmentAwareReporter
