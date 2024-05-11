@@ -1,6 +1,4 @@
-﻿using DiffEngine;
-
-namespace ApprovalTests.Reporters;
+﻿namespace ApprovalTests.Reporters;
 
 public class TortoiseTextDiffReporter() :
     DiffToolReporter(DiffTool.TortoiseMerge)

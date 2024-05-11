@@ -1,7 +1,4 @@
-﻿using ApprovalTests.Core;
-using DiffEngine;
-
-namespace ApprovalTests.Reporters;
+﻿namespace ApprovalTests.Reporters;
 
 public class DiffReporter : IEnvironmentAwareReporter
 {

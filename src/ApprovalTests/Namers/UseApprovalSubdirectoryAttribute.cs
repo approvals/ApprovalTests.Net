@@ -1,5 +1,3 @@
-using ApprovalUtilities.Utilities;
-
 namespace ApprovalTests.Namers;
 
 public class UseApprovalSubdirectoryAttribute : Attribute

@@ -1,10 +1,5 @@
 #pragma warning disable CS0169
 
-using System.Reflection;
-using System.Windows.Forms;
-using ApprovalUtilities.Reflection;
-using ApprovalTests.Reporters;
-
 [UseReporter(typeof(DiffReporter))]
 public class ReflectionUtilitiesTest
 {

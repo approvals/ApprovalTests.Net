@@ -1,5 +1,3 @@
-using ApprovalTests.Core;
-
 namespace ApprovalTests.Writers;
 
 public class ExistingFileWriter : IApprovalWriter

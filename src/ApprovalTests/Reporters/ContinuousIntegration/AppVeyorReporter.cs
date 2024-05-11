@@ -1,5 +1,3 @@
-using ApprovalTests.Core;
-
 namespace ApprovalTests.Reporters.ContinuousIntegration;
 
 public class AppVeyorReporter : IEnvironmentAwareReporter

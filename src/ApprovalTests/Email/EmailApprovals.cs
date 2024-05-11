@@ -1,6 +1,4 @@
 ﻿using System.Net.Mail;
-using ApprovalTests.Scrubber;
-using ApprovalTests.Writers;
 
 namespace ApprovalTests.Email;
 

@@ -1,5 +1,3 @@
-using ApprovalTests.Core;
-
 namespace ApprovalTests.Reporters;
 
 public class FirstWorkingReporter(IEnumerable<IEnvironmentAwareReporter> reporters) :

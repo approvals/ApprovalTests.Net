@@ -1,6 +1,4 @@
-using System.Diagnostics;
 using System.Runtime.InteropServices;
-using ApprovalTests.Core;
 
 namespace ApprovalTests.Reporters;
 

@@ -1,6 +1,4 @@
-﻿using ApprovalTests.Core;
-
-namespace ApprovalTests.Utilities;
+﻿namespace ApprovalTests.Utilities;
 
 public static class StringReporting
 {

@@ -1,9 +1,4 @@
-﻿using ApprovalTests.Reporters;
-using ApprovalTests.Utilities;
-using ApprovalUtilities.Persistence;
-using ApprovalUtilities.SimpleLogger;
-
-[UseReporter(typeof(DiffReporter))]
+﻿[UseReporter(typeof(DiffReporter))]
 public class LoggerTest
 {
     [Fact]

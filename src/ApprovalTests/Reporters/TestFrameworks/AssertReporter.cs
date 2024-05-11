@@ -1,5 +1,4 @@
 ﻿using System.Reflection;
-using ApprovalTests.Core;
 using ApprovalTests.Namers.StackTraceParsers;
 using EmptyFiles;
 

@@ -1,7 +1,3 @@
-using System.ComponentModel;
-using System.Windows.Forms;
-using ApprovalUtilities.Reflection;
-
 public class HandlerListEntryTest
 {
     [Fact]

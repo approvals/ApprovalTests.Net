@@ -1,7 +1,5 @@
 ﻿using System.Net;
-using System.Text;
 using ApprovalUtilities.Persistence;
-using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.WebApi.MicrosoftHttpClient;
 

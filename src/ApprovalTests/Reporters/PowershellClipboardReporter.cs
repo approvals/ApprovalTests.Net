@@ -1,6 +1,3 @@
-using ApprovalTests.Core;
-using TextCopy;
-
 namespace ApprovalTests.Reporters;
 
 public class PowerShellClipboardReporter : IApprovalFailureReporter

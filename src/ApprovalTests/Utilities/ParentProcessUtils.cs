@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-using System.Runtime.InteropServices;
-using ApprovalUtilities.Utilities;
+﻿using System.Runtime.InteropServices;
 
 namespace ApprovalTests.Utilities;
 

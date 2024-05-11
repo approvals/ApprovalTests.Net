@@ -1,8 +1,3 @@
-using System.Text;
-using System.Text.RegularExpressions;
-
-namespace ApprovalTests.Scrubber;
-
 static class PdfScrubber
 {
     public static void ScrubPdf(string pdfFilePath)

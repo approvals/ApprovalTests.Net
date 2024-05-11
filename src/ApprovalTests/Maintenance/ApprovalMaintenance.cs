@@ -1,6 +1,5 @@
 ﻿using System.Reflection;
 using ApprovalUtilities.CallStack;
-using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests.Maintenance;
 

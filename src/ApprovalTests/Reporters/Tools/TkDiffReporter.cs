@@ -1,6 +1,4 @@
-﻿using DiffEngine;
-
-namespace ApprovalTests.Reporters;
+﻿namespace ApprovalTests.Reporters;
 
 public class TkDiffReporter() :
     DiffToolReporter(DiffTool.TkDiff)

@@ -1,8 +1,4 @@
-﻿using ApprovalTests.Scrubber;
-using ApprovalTests.Writers;
-using ApprovalUtilities.Xml;
-
-namespace ApprovalTests.Xml;
+﻿namespace ApprovalTests.Xml;
 
 public static class XmlApprovals
 {

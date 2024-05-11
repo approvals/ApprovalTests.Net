@@ -1,7 +1,3 @@
-using ApprovalTests.Core;
-using ApprovalUtilities.Utilities;
-using TextCopy;
-
 namespace ApprovalTests.Reporters;
 
 public class InlineTextReporter : IApprovalFailureReporter

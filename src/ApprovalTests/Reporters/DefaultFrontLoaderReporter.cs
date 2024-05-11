@@ -1,6 +1,4 @@
-﻿using ApprovalTests.Reporters.ContinuousIntegration;
-
-namespace ApprovalTests.Reporters;
+﻿namespace ApprovalTests.Reporters;
 
 public class DefaultFrontLoaderReporter : FirstWorkingReporter
 {

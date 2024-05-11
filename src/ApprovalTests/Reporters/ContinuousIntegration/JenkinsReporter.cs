@@ -1,6 +1,4 @@
-﻿using ApprovalTests.Core;
-
-namespace ApprovalTests.Reporters.ContinuousIntegration;
+﻿namespace ApprovalTests.Reporters.ContinuousIntegration;
 
 public class JenkinsReporter : IEnvironmentAwareReporter
 {

@@ -1,8 +1,4 @@
-﻿using System.Text;
-using ApprovalTests.Core;
-using ApprovalTests.Namers;
-
-namespace ApprovalTests.Reporters;
+﻿namespace ApprovalTests.Reporters;
 
 public class MachineSpecificReporter : IEnvironmentAwareReporter
 {
