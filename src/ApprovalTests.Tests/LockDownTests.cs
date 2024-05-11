@@ -1,6 +1,4 @@
-﻿using ApprovalTests.Combinations;
-
-[TestFixture]
+﻿[TestFixture]
 [UseReporter(typeof(DiffReporter))]
 public class LockDownTests
 {

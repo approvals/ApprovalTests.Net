@@ -1,6 +1,4 @@
-﻿using ApprovalTests.Core.Exceptions;
-
-[TestFixture]
+﻿[TestFixture]
 [UseReporter(typeof(CleanupReporter))]
 public class FailedApprovalTests
 {

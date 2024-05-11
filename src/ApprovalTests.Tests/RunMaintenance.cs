@@ -1,6 +1,4 @@
 ﻿#if(NET48)
-using ApprovalTests.Maintenance;
-
 [TestFixture]
 public class RunMaintenance
 {

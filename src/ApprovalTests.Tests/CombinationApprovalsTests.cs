@@ -1,6 +1,3 @@
-using System.Globalization;
-using ApprovalTests.Combinations;
-
 public class CombinationApprovalsTests
 {
     [Test]

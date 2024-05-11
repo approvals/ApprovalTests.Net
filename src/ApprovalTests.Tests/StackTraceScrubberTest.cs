@@ -1,6 +1,4 @@
-﻿using ApprovalTests.Utilities;
-
-[TestFixture]
+﻿[TestFixture]
 public class StackTraceScrubberTest
 {
     [Test]

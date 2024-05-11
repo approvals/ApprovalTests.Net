@@ -17,11 +17,11 @@ public class StringEncodingTest
     }
 
 #if(NETFRAMEWORK)
-        [Test]
-        public void TestUnicode()
-        {
-            var text = System.Text.Encoding.Default.GetString([101, 235, 110, 116]);
-            Approvals.Verify(text);
-        }
+    [Test]
+    public void TestUnicode()
+    {
+        var text = System.Text.Encoding.Default.GetString([101, 235, 110, 116]);
+        Approvals.Verify(text);
+    }
 #endif
 }
