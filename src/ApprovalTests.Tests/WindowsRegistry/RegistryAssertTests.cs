@@ -1,6 +1,4 @@
-﻿using ApprovalTests.WindowsRegistry;
-
-[TestFixture]
+﻿[TestFixture]
 public class RegistryAssertTests
 {
     const string KeyName = @"Software\TestDummy";

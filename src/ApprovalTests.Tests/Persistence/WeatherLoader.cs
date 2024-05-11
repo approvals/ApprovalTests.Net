@@ -1,5 +1,3 @@
-using System.Net;
-
 class WeatherLoader : IExecutableQuery
 {
     readonly string weatherStationId;

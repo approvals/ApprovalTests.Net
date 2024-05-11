@@ -1,9 +1,4 @@
-﻿using ApprovalTests.Scrubber;
-using iText.Kernel.Pdf;
-using iText.Layout;
-using iText.Layout.Element;
-
-[TestFixture]
+﻿[TestFixture]
 public class PdfTest
 {
     [TestCase("""

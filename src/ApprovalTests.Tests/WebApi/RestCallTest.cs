@@ -1,5 +1,4 @@
-﻿using System.Net;
-using ApprovalTests.WebApi.MicrosoftHttpClient;
+﻿using ApprovalTests.WebApi.MicrosoftHttpClient;
 
 [TestFixture]
 public class RestCallTest
@@ -11,13 +10,9 @@ public class RestCallTest
     }
 }
 
-public class GoogleQuery : RestQuery<GoogleQueryResults>
+public class GoogleQuery(string searchTerm) :
+    RestQuery<GoogleQueryResults>
 {
-    readonly string searchTerm;
-
-    public GoogleQuery(string searchTerm) =>
-        this.searchTerm = searchTerm;
-
     public override string GetQuery() =>
         $"?v=1.0&q={searchTerm}";
 
