@@ -21,7 +21,7 @@ public class NUnitReporterTest
                 Approvals.Verify("Hello");
             }
         }
-        catch (Exception e)
+        catch (AssertionException e)
         {
             var expectedMessage = string.Format("  Assert.That(actual, Is.EqualTo(expected)){0}  String lengths are both 5. Strings differ at index 0.{0}  Expected: \"World\"{0}  But was:  \"Hello\"{0}  -----------^{0}", Environment.NewLine);
             ClassicAssert.AreEqual(expectedMessage, e.Message);
