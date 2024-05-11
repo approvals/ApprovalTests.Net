@@ -1,5 +1,3 @@
-using ApprovalTests.Core;
-
 [TestFixture]
 [UseReporter(typeof(ClassLevelReporter))]
 public class ReporterFactoryTest

@@ -1,6 +1,7 @@
 ﻿global using System.Diagnostics;
 global using System.Net;
 global using ApprovalTests;
+global using ApprovalTests.Core;
 global using ApprovalTests.Email;
 global using ApprovalTests.Events;
 global using ApprovalTests.ExceptionalExceptions;

@@ -1,5 +1,4 @@
-﻿using ApprovalTests.Core;
-using ApprovalTests.Reporters.ContinuousIntegration;
+﻿using ApprovalTests.Reporters.ContinuousIntegration;
 
 [TestFixture]
 public class ReporterTest

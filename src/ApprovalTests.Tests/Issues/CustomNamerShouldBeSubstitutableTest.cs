@@ -1,5 +1,4 @@
-﻿using ApprovalTests.Core;
-using ApprovalTests.Writers;
+﻿using ApprovalTests.Writers;
 using ApprovalUtilities.CallStack;
 
 [TestFixture]
