@@ -1,4 +1,3 @@
-using ApprovalTests.Core;
 using DiffEngine;
 
 namespace ApprovalTests.Reporters;

@@ -1,6 +1,4 @@
-﻿using ApprovalUtilities.Utilities;
-
-namespace ApprovalTests.Namers;
+﻿namespace ApprovalTests.Namers;
 
 public class ApprovalsFilename
 {

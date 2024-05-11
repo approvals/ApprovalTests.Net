@@ -1,6 +1,4 @@
-﻿using System.Text;
-using ApprovalTests.Core;
-using ApprovalTests.Namers;
+﻿using ApprovalTests.Namers;
 
 namespace ApprovalTests.Reporters;
 

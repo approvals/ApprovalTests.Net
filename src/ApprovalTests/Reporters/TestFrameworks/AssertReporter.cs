@@ -1,6 +1,4 @@
-﻿using System.Reflection;
-using ApprovalTests.Core;
-using ApprovalTests.Namers.StackTraceParsers;
+﻿using ApprovalTests.Namers.StackTraceParsers;
 using EmptyFiles;
 
 namespace ApprovalTests.Reporters.TestFrameworks;

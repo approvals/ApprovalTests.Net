@@ -1,5 +1,3 @@
-using System.Diagnostics;
-using System.Reflection;
 using ApprovalTests.Namers.StackTraceParsers;
 using ApprovalUtilities.CallStack;
 

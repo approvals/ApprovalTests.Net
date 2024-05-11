@@ -1,5 +1,3 @@
-using ApprovalTests.Core;
-
 class AlwaysWorksReporter : IEnvironmentAwareReporter
 {
     readonly IApprovalFailureReporter reporter;

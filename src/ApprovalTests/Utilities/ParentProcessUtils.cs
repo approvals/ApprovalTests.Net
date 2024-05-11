@@ -1,8 +1,4 @@
-﻿using System.Diagnostics;
-using System.Runtime.InteropServices;
-using ApprovalUtilities.Utilities;
-
-namespace ApprovalTests.Utilities;
+﻿namespace ApprovalTests.Utilities;
 
 public static class ParentProcessUtils
 {

@@ -1,6 +1,3 @@
-using ApprovalTests.StackTraceParsers;
-using ApprovalUtilities.Utilities;
-using System.Diagnostics;
 using ApprovalTests.Namers.UnitTestFrameworks;
 
 namespace ApprovalTests.Namers.StackTraceParsers;

@@ -1,5 +1,3 @@
-using ApprovalTests.StackTraceParsers;
-
 namespace ApprovalTests.Reporters.TestFrameworks;
 
 public class XUnit2Reporter() :

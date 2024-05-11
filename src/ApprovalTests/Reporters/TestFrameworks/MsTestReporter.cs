@@ -1,7 +1,4 @@
-﻿using System.Reflection;
-using ApprovalTests.StackTraceParsers;
-
-namespace ApprovalTests.Reporters.TestFrameworks;
+﻿namespace ApprovalTests.Reporters.TestFrameworks;
 
 public class MsTestReporter() :
     AssertReporter(

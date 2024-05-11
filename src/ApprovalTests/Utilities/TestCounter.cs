@@ -1,8 +1,4 @@
-﻿using System.ComponentModel;
-using System.Diagnostics;
-using ApprovalUtilities.Utilities;
-
-namespace ApprovalTests.Utilities;
+﻿namespace ApprovalTests.Utilities;
 
 public class TestCounter
 {

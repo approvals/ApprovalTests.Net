@@ -1,5 +1,3 @@
-using System.Text;
-using System.Text.RegularExpressions;
 // ReSharper disable RedundantEnumerableCastCall
 
 namespace ApprovalTests.Scrubber;

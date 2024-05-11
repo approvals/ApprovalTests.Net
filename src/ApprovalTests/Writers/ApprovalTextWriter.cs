@@ -1,6 +1,3 @@
-using System.Text;
-using ApprovalTests.Core;
-
 namespace ApprovalTests;
 
 public class ApprovalTextWriter : IApprovalWriter

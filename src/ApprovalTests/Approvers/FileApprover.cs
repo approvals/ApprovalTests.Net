@@ -1,4 +1,3 @@
-using ApprovalTests.Core;
 using ApprovalTests.Core.Exceptions;
 using EmptyFiles;
 

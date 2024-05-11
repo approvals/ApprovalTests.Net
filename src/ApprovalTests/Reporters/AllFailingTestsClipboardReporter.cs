@@ -1,6 +1,4 @@
-﻿using System.Text;
-using ApprovalTests.Core;
-using TextCopy;
+﻿using TextCopy;
 
 namespace ApprovalTests.Reporters;
 

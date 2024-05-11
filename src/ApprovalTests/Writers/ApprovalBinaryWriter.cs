@@ -1,6 +1,4 @@
-﻿using ApprovalTests.Core;
-
-namespace ApprovalTests.Writers;
+﻿namespace ApprovalTests.Writers;
 
 public class ApprovalBinaryWriter : IApprovalWriter
 {
