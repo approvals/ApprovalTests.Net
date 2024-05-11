@@ -2,7 +2,7 @@
 <Project>
   <PropertyGroup>
     <LangVersion>preview</LangVersion>
-    <NoWarn>CS1591</NoWarn>
+    <NoWarn>CS1591;CA1416</NoWarn>
     <Version>7.0.0-beta.1</Version>
     <AssemblyVersion>3.0</AssemblyVersion>
     <AssemblyOriginatorKeyFile>$(ProjectDir)..\ApprovalsKeyPair.snk</AssemblyOriginatorKeyFile>
