@@ -16,10 +16,14 @@
     <ProjectReference Include="..\ApprovalTests\ApprovalTests.csproj" />
     <ProjectReference Include="..\ApprovalUtilities\ApprovalUtilities.csproj" />
 
-    <Content Include="a.png" />
-    <Content Include="b.png" />
-
     <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="NUnitReporterTest.TestReporter.approved.txt">
+      <ParentExtension>.cs</ParentExtension>
+      <ParentFile>NUnitReporterTest</ParentFile>
+      <DependentUpon>NUnitReporterTest.cs</DependentUpon>
+    </None>
   </ItemGroup>
   <Import Project="$(ProjectDir)..\ApprovalTests\build\ApprovalTests.targets" />
   <Import Project="$(ProjectDir)..\ApprovalTests\build\ApprovalTests.props" />

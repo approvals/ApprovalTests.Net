@@ -1,4 +1,1 @@
-﻿// begin-snippet: config_file
-
-[assembly: UseReporter(typeof(DiffReporter))]
-// end-snippet
+﻿[assembly: UseReporter(typeof(DiffReporter))]
