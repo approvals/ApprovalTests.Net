@@ -1,3 +1,0 @@
-﻿|INFO|Approvals.Class1|A third line
-|INFO|Approvals.Class1|Another line
-|INFO|Approvals.Class1|Test message

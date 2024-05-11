@@ -1,8 +1,0 @@
-﻿Event Configuration for TestingEventPoco 
-
-MyEvent:
-	[0] Void StandardCallback(System.Object, System.EventArgs)
-
-PropertyChanged:
-	[0] Void PropertyChangedCallback(System.Object, System.ComponentModel.PropertyChangedEventArgs)
-

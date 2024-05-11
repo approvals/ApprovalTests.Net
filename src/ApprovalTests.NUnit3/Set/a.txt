@@ -1,3 +1,0 @@
-2017-01-13 20:30:02.5369|INFO|Approvals.Class1|Test message
-2017-01-13 20:30:02.5599|INFO|Approvals.Class1|Another line
-2017-01-13 20:30:02.5599|INFO|Approvals.Class1|A third line
