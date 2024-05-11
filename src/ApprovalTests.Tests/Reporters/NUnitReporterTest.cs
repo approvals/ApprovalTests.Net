@@ -1,4 +1,3 @@
-using ApprovalTests.Reporters.TestFrameworks;
 using NUnit.Framework.Internal;
 
 [TestFixture]
