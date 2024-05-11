@@ -7,8 +7,8 @@ public class FrameworkAssertReporter : FirstWorkingReporter
     public FrameworkAssertReporter()
         : base(
             MsTestReporter.INSTANCE,
-            NUnit3Reporter.INSTANCE,
             NUnit4Reporter.INSTANCE,
+            NUnit3Reporter.INSTANCE,
             XUnit2Reporter.INSTANCE)
     {
     }
