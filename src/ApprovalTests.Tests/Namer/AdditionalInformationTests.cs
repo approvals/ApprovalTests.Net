@@ -74,11 +74,13 @@ public class AdditionalInformationTests
     public void TestMultipleNames()
     {
         using (ApprovalResults.ForScenario("scenario"))
-        using (ApprovalResults.ForScenario("machineName"))
         {
-            var name = Approvals.GetDefaultNamer().Name;
-            Assert.AreEqual(name,
-                "AdditionalInformationTests.TestMultipleNames.ForScenario.scenario.ForScenario.machineName");
+            using (ApprovalResults.ForScenario("machineName"))
+            {
+                var name = Approvals.GetDefaultNamer().Name;
+                Assert.AreEqual(name,
+                    "AdditionalInformationTests.TestMultipleNames.ForScenario.scenario.ForScenario.machineName");
+            }
         }
     }
 
