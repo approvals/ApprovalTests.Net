@@ -1,3 +1,5 @@
+using ApprovalUtilities.Utilities;
+
 namespace ApprovalTests.Namers;
 
 public static class ApprovalResults

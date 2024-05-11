@@ -1,4 +1,8 @@
-﻿namespace ApprovalTests.Reporters;
+﻿using System.Text;
+using ApprovalTests.Core;
+using TextCopy;
+
+namespace ApprovalTests.Reporters;
 
 public class AllFailingTestsClipboardReporter : IApprovalFailureReporter
 {

@@ -1,4 +1,5 @@
-﻿using ApprovalUtilities.Reflection;
+﻿using System.Text;
+using ApprovalUtilities.Reflection;
 
 namespace ApprovalTests.Events;
 

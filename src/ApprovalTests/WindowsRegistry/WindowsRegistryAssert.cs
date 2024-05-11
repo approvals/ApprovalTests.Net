@@ -1,4 +1,6 @@
-﻿namespace ApprovalTests.WindowsRegistry;
+﻿using Microsoft.Win32;
+
+namespace ApprovalTests.WindowsRegistry;
 
 public static class WindowsRegistryAssert
 {

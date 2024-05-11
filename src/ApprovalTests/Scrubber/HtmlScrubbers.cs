@@ -1,4 +1,6 @@
-﻿namespace ApprovalTests.Scrubber;
+﻿using System.Text.RegularExpressions;
+
+namespace ApprovalTests.Scrubber;
 
 public static class HtmlScrubbers
 {

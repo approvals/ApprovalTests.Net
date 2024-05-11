@@ -1,3 +1,6 @@
+using System.Diagnostics;
+using ApprovalTests.Core;
+
 namespace ApprovalTests.Reporters;
 
 public class FileLauncherReporter : IApprovalFailureReporter

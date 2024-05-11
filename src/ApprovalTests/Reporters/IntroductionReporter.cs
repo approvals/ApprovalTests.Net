@@ -1,4 +1,7 @@
-﻿namespace ApprovalTests.Reporters;
+﻿using System.Diagnostics;
+using ApprovalTests.Core;
+
+namespace ApprovalTests.Reporters;
 
 public class IntroductionReporter : IApprovalFailureReporter
 {

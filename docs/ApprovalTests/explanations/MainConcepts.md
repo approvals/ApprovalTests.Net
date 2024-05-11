@@ -121,7 +121,7 @@ Eventually, all Verify methods call:
 ```cs
 public static void Verify(IApprovalWriter writer, IApprovalNamer namer, IApprovalFailureReporter reporter)
 ```
-<sup><a href='/src/ApprovalTests/Approvals.cs#L31-L33' title='Snippet source file'>snippet source</a> | <a href='#snippet-complete_verify_call' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests/Approvals.cs#L38-L40' title='Snippet source file'>snippet source</a> | <a href='#snippet-complete_verify_call' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Most of the time this is hidden in an underlying a Verify call.
@@ -143,7 +143,7 @@ If you simply wanted to format text this is usually done in a separate step befo
 ```cs
 public static void VerifyWithExtension(string text, string fileExtensionWithDot, Func<string, string> scrubber = null)
 ```
-<sup><a href='/src/ApprovalTests/Approvals.cs#L134-L136' title='Snippet source file'>snippet source</a> | <a href='#snippet-verify_with_extension' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests/Approvals.cs#L141-L143' title='Snippet source file'>snippet source</a> | <a href='#snippet-verify_with_extension' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 

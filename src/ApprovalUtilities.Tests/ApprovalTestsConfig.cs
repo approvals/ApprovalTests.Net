@@ -1,1 +1,3 @@
-﻿[assembly: UseReporter(typeof(DiffReporter))]
+﻿using ApprovalTests.Reporters;
+
+[assembly: UseReporter(typeof(DiffReporter))]

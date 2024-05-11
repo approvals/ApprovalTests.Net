@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using ApprovalUtilities.CallStack;
 
 namespace ApprovalTests.Namers.StackTraceParsers;

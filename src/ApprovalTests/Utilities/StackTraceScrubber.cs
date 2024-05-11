@@ -1,3 +1,6 @@
+using System.Text.RegularExpressions;
+using ApprovalTests.Scrubber;
+
 namespace ApprovalTests.Utilities;
 
 public static class StackTraceScrubber

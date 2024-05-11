@@ -1,4 +1,6 @@
-﻿namespace ApprovalTests.Reporters;
+﻿using DiffEngine;
+
+namespace ApprovalTests.Reporters;
 
 public class RiderReporter() :
     DiffToolReporter(DiffTool.Rider)

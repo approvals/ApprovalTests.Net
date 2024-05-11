@@ -1,4 +1,6 @@
-﻿namespace ApprovalTests.Reporters.ContinuousIntegration;
+﻿using ApprovalTests.Core;
+
+namespace ApprovalTests.Reporters.ContinuousIntegration;
 
 public class NCrunchReporter : IEnvironmentAwareReporter
 {

@@ -1,3 +1,6 @@
+using ApprovalTests.Core;
+using DiffEngine;
+
 namespace ApprovalTests.Reporters;
 
 public class DiffToolReporter(DiffTool diffTool) : IEnvironmentAwareReporter

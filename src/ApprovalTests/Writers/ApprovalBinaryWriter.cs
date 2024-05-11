@@ -1,4 +1,6 @@
-﻿namespace ApprovalTests.Writers;
+﻿using ApprovalTests.Core;
+
+namespace ApprovalTests.Writers;
 
 public class ApprovalBinaryWriter : IApprovalWriter
 {

@@ -1,3 +1,6 @@
+using ApprovalTests.Core;
+using TextCopy;
+
 namespace ApprovalTests.Reporters;
 
 public class ClipboardReporter : IApprovalFailureReporter

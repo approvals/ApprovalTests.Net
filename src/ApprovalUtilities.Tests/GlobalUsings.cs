@@ -1,13 +1,3 @@
-﻿global using System.ComponentModel;
-global using System.Reflection;
-global using System.Runtime.CompilerServices;
-global using System.Windows.Forms;
-global using ApprovalTests;
-global using ApprovalTests.Namers.StackTraceParsers;
-global using ApprovalTests.Reporters;
-global using ApprovalTests.Utilities;
-global using ApprovalUtilities.Persistence;
-global using ApprovalUtilities.Reflection;
-global using ApprovalUtilities.SimpleLogger;
+﻿global using ApprovalTests;
 global using ApprovalUtilities.Utilities;
 global using Xunit;

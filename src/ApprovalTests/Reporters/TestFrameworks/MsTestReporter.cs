@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using ApprovalTests.StackTraceParsers;
 
 namespace ApprovalTests.Reporters.TestFrameworks;
 

@@ -1,8 +1,15 @@
 using ApprovalTests.Approvers;
+using ApprovalTests.Core;
 using ApprovalTests.Html;
+using ApprovalTests.Namers;
+using ApprovalTests.Reporters;
+using ApprovalTests.Scrubber;
+using ApprovalTests.Utilities;
+using ApprovalTests.Writers;
 using ApprovalTests.Xml;
 using ApprovalUtilities.CallStack;
 using ApprovalUtilities.Persistence;
+using ApprovalUtilities.Utilities;
 
 namespace ApprovalTests;
 

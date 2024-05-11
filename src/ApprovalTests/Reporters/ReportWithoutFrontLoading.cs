@@ -1,4 +1,6 @@
-﻿namespace ApprovalTests.Reporters;
+﻿using ApprovalTests.Core;
+
+namespace ApprovalTests.Reporters;
 
 public class ReportWithoutFrontLoading : IEnvironmentAwareReporter
 {

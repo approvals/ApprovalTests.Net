@@ -1,4 +1,6 @@
-﻿namespace ApprovalTests.Utilities;
+﻿using ApprovalTests.Core;
+
+namespace ApprovalTests.Utilities;
 
 public static class StringReporting
 {

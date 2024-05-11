@@ -1,4 +1,6 @@
-﻿namespace ApprovalTests.Reporters;
+﻿using DiffEngine;
+
+namespace ApprovalTests.Reporters;
 
 public class KDiff3Reporter() :
     DiffToolReporter(DiffTool.KDiff3)

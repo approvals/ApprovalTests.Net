@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 namespace ApprovalTests.Namers.StackTraceParsers;
 
 public interface IStackTraceParser
