@@ -14,6 +14,7 @@ global using ApprovalTests.Maintenance;
 global using ApprovalTests.Namers;
 global using ApprovalTests.Namers.StackTraceParsers;
 global using ApprovalTests.Reporters;
+global using ApprovalTests.Reporters.TestFrameworks;
 global using ApprovalTests.Scrubber;
 global using ApprovalTests.Utilities;
 global using ApprovalTests.WindowsRegistry;

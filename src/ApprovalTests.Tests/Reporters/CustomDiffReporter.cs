@@ -1,6 +1,4 @@
-﻿using ApprovalTests.Reporters.TestFrameworks;
-
-public class CustomDiffReporter :
+﻿public class CustomDiffReporter :
     FirstWorkingReporter
 {
     public CustomDiffReporter()
