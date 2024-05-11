@@ -1,0 +1,9 @@
+﻿image.png  => True
+image.gif  => True
+image.jpg  => True
+image.jpeg  => True
+image.tif  => True
+image.tiff  => True
+movie.avi  => False
+text.txt  => False
+excel.xls  => False

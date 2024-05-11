@@ -63,7 +63,14 @@ Let's take the example:
 public void Text() =>
     Approvals.Verify("should be approved");
 ```
-<sup><a href='/src/ApprovalTests.Tests/ApprovalsTest.cs#L6-L10' title='Snippet source file'>snippet source</a> | <a href='#snippet-simple_verify' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests.NUnit3/ApprovalsTest.cs#L6-L10' title='Snippet source file'>snippet source</a> | <a href='#snippet-simple_verify' title='Start of snippet'>anchor</a></sup>
+<a id='snippet-simple_verify-1'></a>
+```cs
+[Test]
+public void Text() =>
+    Approvals.Verify("should be approved");
+```
+<sup><a href='/src/ApprovalTests.Tests/ApprovalsTest.cs#L6-L10' title='Snippet source file'>snippet source</a> | <a href='#snippet-simple_verify-1' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 This call brings together 3 things + default Approver to produce a `.received.` file which is compared to an `.approved.` file.

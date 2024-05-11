@@ -34,7 +34,12 @@ ApprovalTests suggest you make a assembly level configuration file for approvalt
 ```cs
 [assembly: UseReporter(typeof(DiffReporter))]
 ```
-<sup><a href='/src/ApprovalTests.Tests/ApprovalTestsConfig.cs#L1-L4' title='Snippet source file'>snippet source</a> | <a href='#snippet-config_file' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests.NUnit3/ApprovalTestsConfig.cs#L1-L4' title='Snippet source file'>snippet source</a> | <a href='#snippet-config_file' title='Start of snippet'>anchor</a></sup>
+<a id='snippet-config_file-1'></a>
+```cs
+[assembly: UseReporter(typeof(DiffReporter))]
+```
+<sup><a href='/src/ApprovalTests.Tests/ApprovalTestsConfig.cs#L1-L4' title='Snippet source file'>snippet source</a> | <a href='#snippet-config_file-1' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 

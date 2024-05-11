@@ -101,7 +101,23 @@ public class SampleTest
     }
 }
 ```
-<sup><a href='/src/ApprovalTests.Tests/SampleTest.cs#L1-L15' title='Snippet source file'>snippet source</a> | <a href='#snippet-sample_test' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests.NUnit3/SampleTest.cs#L1-L15' title='Snippet source file'>snippet source</a> | <a href='#snippet-sample_test' title='Start of snippet'>anchor</a></sup>
+<a id='snippet-sample_test-1'></a>
+```cs
+[UseReporter(typeof(VisualStudioReporter))]
+[TestFixture]
+public class SampleTest
+{
+    [Test]
+    public void TestList()
+    {
+        var names = new[] {"Llewellyn", "James", "Dan", "Jason", "Katrina"};
+        Array.Sort(names);
+        Approvals.VerifyAll(names, label: "");
+    }
+}
+```
+<sup><a href='/src/ApprovalTests.Tests/SampleTest.cs#L1-L15' title='Snippet source file'>snippet source</a> | <a href='#snippet-sample_test-1' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Will Produce a File
@@ -117,7 +133,16 @@ Will Produce a File
 [3] = Katrina
 [4] = Llewellyn
 ```
-<sup><a href='/src/ApprovalTests.Tests/SampleTest.TestList.approved.txt#L1-L5' title='Snippet source file'>snippet source</a> | <a href='#snippet-SampleTest.TestList.approved.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests.NUnit3/SampleTest.TestList.approved.txt#L1-L5' title='Snippet source file'>snippet source</a> | <a href='#snippet-SampleTest.TestList.approved.txt' title='Start of snippet'>anchor</a></sup>
+<a id='snippet-SampleTest.TestList.approved.txt-1'></a>
+```txt
+[0] = Dan
+[1] = James
+[2] = Jason
+[3] = Katrina
+[4] = Llewellyn
+```
+<sup><a href='/src/ApprovalTests.Tests/SampleTest.TestList.approved.txt#L1-L5' title='Snippet source file'>snippet source</a> | <a href='#snippet-SampleTest.TestList.approved.txt-1' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 It will also open these 2 files (`.received.` & `.approved.` ) in a diff editor. 

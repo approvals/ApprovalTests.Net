@@ -1,0 +1,3 @@
+﻿collection[0] = abc
+collection[1] = 123
+collection[2] = !@#

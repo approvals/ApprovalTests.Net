@@ -1,0 +1,3 @@
+﻿[0] = apple
+[1] = banana
+[2] = carrot
