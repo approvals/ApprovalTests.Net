@@ -1,6 +1,10 @@
 namespace ApprovalTests.Reporters.TestFrameworks;
 
-public class NUnit4Reporter : AssertReporter
+public class NUnit4Reporter() :
+    AssertReporter(
+        "NUnit.Framework.Legacy.ClassicAssert, nunit.framework.legacy",
+        "AreEqual",
+        NUnitStackTraceParser.Attribute)
 {
     public readonly static NUnit4Reporter INSTANCE = new();
     static readonly Lazy<bool> isNUnit4 = new(IsisNUnit4);
@@ -19,9 +23,4 @@ public class NUnit4Reporter : AssertReporter
 
     public override bool IsWorkingInThisEnvironment(string forFile) =>
         base.IsWorkingInThisEnvironment(forFile) && isNUnit4.Value;
-
-    public NUnit4Reporter()
-        : base("NUnit.Framework.Legacy.ClassicAssert, nunit.framework.legacy", "AreEqual", NUnitStackTraceParser.Attribute)
-    {
-    }
 }
