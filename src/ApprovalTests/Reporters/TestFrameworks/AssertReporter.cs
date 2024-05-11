@@ -31,7 +31,7 @@ public class AssertReporter(string assertClass, string areEqual, string framewor
     {
         try
         {
-            var type = Type.GetType(assertClass);
+            var type = Type.GetType(assertClass, true);
             var parameters = new[] { approvedContent, receivedContent };
             InvokeEqualsMethod(type, parameters);
         }

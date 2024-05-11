@@ -6,7 +6,7 @@ public class AssemblyLevelTest
     {
         using (Approvals.SetFrontLoadedReporter(ReportWithoutFrontLoading.INSTANCE))
         {
-            Assert.AreEqual(typeof(DiffReporter), Approvals.GetReporter().GetType());
+            ClassicAssert.AreEqual(typeof(DiffReporter), Approvals.GetReporter().GetType());
         }
     }
 }

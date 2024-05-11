@@ -9,11 +9,11 @@ public class FirstWorkingReporterTest
         var c = new RecordingReporter(true);
 
         var reporter = new FirstWorkingReporter(a, b, c);
-        Assert.IsTrue(reporter.IsWorkingInThisEnvironment("default.txt"));
+        ClassicAssert.IsTrue(reporter.IsWorkingInThisEnvironment("default.txt"));
         reporter.Report("a", "b");
-        Assert.IsNull(a.CalledWith);
-        Assert.AreEqual("a,b", b.CalledWith);
-        Assert.IsNull(c.CalledWith);
+        ClassicAssert.IsNull(a.CalledWith);
+        ClassicAssert.AreEqual("a,b", b.CalledWith);
+        ClassicAssert.IsNull(c.CalledWith);
     }
 
     [Test]
@@ -28,7 +28,7 @@ public class FirstWorkingReporterTest
         try
         {
             var ex = ExceptionUtilities.GetException(() => new DiffReporter().Report("received.notreal", "received.notreal"));
-            Assert.AreEqual("Could not find a diff tool for extension: .notreal", ex.Message);
+            ClassicAssert.AreEqual("Could not find a diff tool for extension: .notreal", ex.Message);
         }
         finally
         {
@@ -43,10 +43,10 @@ public class FirstWorkingReporterTest
         var cleanup2 = new MockCleanup();
         var r = new FirstWorkingReporter(cleanup1, new QuietReporter(), cleanup2);
         r.CleanUp("a", "r");
-        Assert.AreEqual("a", cleanup1.approved);
-        Assert.AreEqual("a", cleanup2.approved);
-        Assert.AreEqual("r", cleanup1.received);
-        Assert.AreEqual("r", cleanup2.received);
+        ClassicAssert.AreEqual("a", cleanup1.approved);
+        ClassicAssert.AreEqual("a", cleanup2.approved);
+        ClassicAssert.AreEqual("r", cleanup1.received);
+        ClassicAssert.AreEqual("r", cleanup2.received);
     }
 }
 

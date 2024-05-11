@@ -22,7 +22,7 @@ public class FileApproverTests
         File.WriteAllText(approvedFile, "Foo\nBar");
         File.WriteAllText(receivedFile, "Foo\r\nBar");
         var fileApprover = new FileApprover(null, null, true).Approve(approvedFile, receivedFile);
-        Assert.IsNull(fileApprover);
+        ClassicAssert.IsNull(fileApprover);
     }
 
     [Test]
@@ -34,13 +34,13 @@ public class FileApproverTests
         File.WriteAllText(approvedFile, "Foo\nBar");
         File.WriteAllText(receivedFile, "Foo\r\nBar");
         var fileApprover = new FileApprover(null, null).Approve(approvedFile, receivedFile);
-        Assert.IsInstanceOf<ApprovalMismatchException>(fileApprover);
+        ClassicAssert.IsInstanceOf<ApprovalMismatchException>(fileApprover);
     }
 
     static void AssertApprover(string receivedFile, string approvedFile, bool expected)
     {
         var basePath = PathUtilities.GetDirectoryForCaller();
         var fileApprover = new FileApprover(null, null).Approve(basePath + approvedFile, basePath + receivedFile);
-        Assert.AreEqual(expected, fileApprover == null);
+        ClassicAssert.AreEqual(expected, fileApprover == null);
     }
 }

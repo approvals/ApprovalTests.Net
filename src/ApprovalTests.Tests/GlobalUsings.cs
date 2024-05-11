@@ -25,3 +25,4 @@ global using iText.Kernel.Pdf;
 global using iText.Layout;
 global using iText.Layout.Element;
 global using NUnit.Framework;
+global using NUnit.Framework.Legacy;

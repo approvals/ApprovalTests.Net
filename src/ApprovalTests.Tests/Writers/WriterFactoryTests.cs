@@ -6,17 +6,17 @@ public class WriterFactoryTests
     [Test]
     public void TestTextWriter()
     {
-        Assert.IsInstanceOf<ApprovalTextWriter>(WriterFactory.CreateTextWriter("foo"));
+        ClassicAssert.IsInstanceOf<ApprovalTextWriter>(WriterFactory.CreateTextWriter("foo"));
         WriterFactory.SetTextWriterCreator(t => new MyTextWriter(t));
-        Assert.IsInstanceOf<MyTextWriter>(WriterFactory.CreateTextWriter("foo"));
+        ClassicAssert.IsInstanceOf<MyTextWriter>(WriterFactory.CreateTextWriter("foo"));
     }
 
     [Test]
     public void TestTextWriterWithExtension()
     {
-        Assert.IsInstanceOf<ApprovalTextWriter>(WriterFactory.CreateTextWriter("foo", ".txt"));
+        ClassicAssert.IsInstanceOf<ApprovalTextWriter>(WriterFactory.CreateTextWriter("foo", ".txt"));
         WriterFactory.SetTextWriterCreator((t, e) => new MyTextWriter(t, e));
-        Assert.IsInstanceOf<MyTextWriter>(WriterFactory.CreateTextWriter("foo", "txt"));
+        ClassicAssert.IsInstanceOf<MyTextWriter>(WriterFactory.CreateTextWriter("foo", "txt"));
     }
 }
 

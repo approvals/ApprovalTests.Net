@@ -28,7 +28,7 @@ public class ApprovalResultsTest
 
     [Test]
     public void TestEasyNames() =>
-        Assert.AreEqual("Windows 7", ApprovalResults.TransformEasyOsName("Microsoft Windows 7 Professional N"));
+        ClassicAssert.AreEqual("Windows 7", ApprovalResults.TransformEasyOsName("Microsoft Windows 7 Professional N"));
 
     public void SampleUniqueForOs()
     {

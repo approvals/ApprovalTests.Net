@@ -1,4 +1,4 @@
-public class NUnitReporterWithCleanup : NUnit4Reporter
+public class NUnitReporterWithCleanup : NUnit3Reporter
 {
     public override void Report(string approved, string received)
     {

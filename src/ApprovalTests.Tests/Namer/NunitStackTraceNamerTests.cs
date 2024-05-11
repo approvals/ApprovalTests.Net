@@ -5,16 +5,16 @@ public class NunitStackTraceNamerTests
     public void TestApprovalName()
     {
         var name = new UnitTestFrameworkNamer().Name;
-        Assert.AreEqual("NunitStackTraceNamerTests.TestApprovalName", name);
+        ClassicAssert.AreEqual("NunitStackTraceNamerTests.TestApprovalName", name);
     }
 
     [Test]
     public void TestSourcePath()
     {
         var path = Approvals.GetDefaultNamer().SourcePath;
-        Assert.IsNotEmpty(path);
+        ClassicAssert.IsNotEmpty(path);
         var fullPath = path.ToLower() + Path.DirectorySeparatorChar + GetType().Name + ".cs";
-        Assert.IsTrue(File.Exists(fullPath), fullPath + " does not exist");
+        ClassicAssert.IsTrue(File.Exists(fullPath), fullPath + " does not exist");
     }
 
     [Test]
@@ -25,6 +25,6 @@ public class NunitStackTraceNamerTests
     {
         NamerFactory.AdditionalInformation = caseName;
         var name = new UnitTestFrameworkNamer().Name;
-        Assert.AreEqual("NunitStackTraceNamerTests.TestCaseAttributes." + caseName, name);
+        ClassicAssert.AreEqual("NunitStackTraceNamerTests.TestCaseAttributes." + caseName, name);
     }
 }

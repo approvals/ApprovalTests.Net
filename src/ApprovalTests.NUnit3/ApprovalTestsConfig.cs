@@ -1,0 +1,1 @@
+﻿[assembly: UseReporter(typeof(DiffReporter))]

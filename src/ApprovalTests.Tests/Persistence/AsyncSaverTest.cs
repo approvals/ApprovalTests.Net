@@ -6,7 +6,7 @@ public class AsyncSaverTest
     {
         using var f = new TempFile("stuff");
         var s = new FileSaver(f.File);
-        Assert.AreEqual("hello", s.ToAsync().Save("hello").Result);
+        ClassicAssert.AreEqual("hello", s.ToAsync().Save("hello").Result);
     }
 
     [Test]
@@ -14,7 +14,7 @@ public class AsyncSaverTest
     {
         using var f = new TempFile("stuff");
         var s = new FileAsyncSaver(f.File);
-        Assert.AreEqual("hello", s.Save("hello").Result);
+        ClassicAssert.AreEqual("hello", s.Save("hello").Result);
     }
 
     [Test]
@@ -22,6 +22,6 @@ public class AsyncSaverTest
     {
         using var f = new TempFile("stuff");
         var s = new FileAsyncSaver(f.File);
-        Assert.AreEqual("hello", s.ToSynchronous().Save("hello"));
+        ClassicAssert.AreEqual("hello", s.ToSynchronous().Save("hello"));
     }
 }

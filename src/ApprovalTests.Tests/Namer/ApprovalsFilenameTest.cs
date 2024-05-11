@@ -7,7 +7,7 @@
         var approvalsFilename = ApprovalsFilename.Parse(@"..\Email\EmailTest.Testname.Microsoft_Windows_10_Education.approved.eml");
         // end-snippet
         Approvals.Verify(approvalsFilename);
-        Assert.True(approvalsFilename.IsMachineSpecific);
+        ClassicAssert.True(approvalsFilename.IsMachineSpecific);
     }
 
     [Test]
