@@ -6,24 +6,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Using Remove="System.Net.Http" />
-    <PackageReference Include="itext7.bouncy-castle-adapter" Version="8.0.4" />
-    <PackageReference Include="MarkdownSnippets.MsBuild" Version="27.0.2" PrivateAssets="all" />
-    <PackageReference Include="itext7" Version="8.0.4" />
     <PackageReference Include="NUnit" Version="3.14.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
-    <PackageReference Include="System.Management" Version="8.0.0" />
     <ProjectReference Include="..\ApprovalTests\ApprovalTests.csproj" />
     <ProjectReference Include="..\ApprovalUtilities\ApprovalUtilities.csproj" />
-
-    <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Update="NUnitReporterTest.TestReporter.approved.txt">
-      <ParentExtension>.cs</ParentExtension>
-      <ParentFile>NUnitReporterTest</ParentFile>
-      <DependentUpon>NUnitReporterTest.cs</DependentUpon>
-    </None>
   </ItemGroup>
   <Import Project="$(ProjectDir)..\ApprovalTests\build\ApprovalTests.targets" />
   <Import Project="$(ProjectDir)..\ApprovalTests\build\ApprovalTests.props" />
