@@ -77,7 +77,7 @@ public static class StringUtils
 
     public static string Write<T>(this IEnumerable<T> enumerable, Func<int, T, string> formatterWithIndex, string emptyMessage)
     {
-        var list = new List<T>(enumerable ?? Enumerable.Empty<T>());
+        var list = new List<T>(enumerable ?? []);
 
         if (list.Count == 0)
             return emptyMessage;
@@ -98,7 +98,7 @@ public static class StringUtils
         {
             if (p.CanRead)
             {
-                var propertyValue = p.GetValue(value, Array.Empty<object>()) ?? "NULL";
+                var propertyValue = p.GetValue(value, []) ?? "NULL";
                 sb.AppendFormat("\t{0}: {1}", p.Name, propertyValue).AppendLine();
             }
         }

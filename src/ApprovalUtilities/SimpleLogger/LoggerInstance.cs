@@ -119,7 +119,7 @@ public class LoggerInstance
     public string Warning(string format, params object[] data)
     {
         PrintWarning(string.Format(format, data));
-        return string.Format(format, new[] {data});
+        return string.Format(format, [data]);
     }
 
     void PrintWarning(params string[] lines) =>

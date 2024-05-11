@@ -40,7 +40,7 @@ public static class ReflectionUtilities
         var listInfo = value.NonPublicInstanceProperties(selector).SingleOrDefault();
         if (listInfo == null)
         {
-            return Enumerable.Empty<CallbackDescriptor>();
+            return [];
         }
 
         var events = from fi in value.NonPublicStaticFields(true)

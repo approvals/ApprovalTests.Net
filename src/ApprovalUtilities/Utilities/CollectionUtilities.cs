@@ -21,5 +21,5 @@ public static partial class CollectionUtilities
     }
 
     public static IEnumerable<T> OrEmpty<T>(this IEnumerable<T> source) =>
-        source ?? Enumerable.Empty<T>();
+        source ?? [];
 }
