@@ -26,13 +26,7 @@ public class StackTraceParserTests
                 }
                 catch (InvalidOperationException e)
                 {
-                    Assert.Fail(
-                        "InvalidOperationException when trying to parse stacktrace. " +
-                        "This is caused by the parser collection not being thread-safe. " +
-                        "Original exception message : {0} and stacktrace : {1}",
-                        e.Message,
-                        e.StackTrace
-                    );
+                    Assert.Fail($"InvalidOperationException when trying to parse stacktrace. This is caused by the parser collection not being thread-safe. Original exception message : {e.Message} and stacktrace : {e.StackTrace}");
                 }
                 // Because the current stacktrace passed to the parse method doesn't contains any trace of a compliant stacktrace parser
                 // it's normal that we receive an exception here so let's ignore it.
