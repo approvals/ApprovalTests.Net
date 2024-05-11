@@ -1,9 +1,0 @@
-﻿Invalid configuration of reporter. Reporters must extend IApprovalFailureReporter.
-Invalid reporter type: System.String
-
-Note: The stack here is not helpful.
-
-Invalid configuration of reporter. Reporters must extend IApprovalFailureReporter.
-Invalid reporter type: ReporterTest
-
-Note: The stack here is not helpful.

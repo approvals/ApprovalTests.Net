@@ -44,33 +44,7 @@ public class CustomDiffReporter :
     }
 }
 ```
-<sup><a href='/src/ApprovalTests.NUnit3/Reporters/CustomDiffReporter.cs#L1-L22' title='Snippet source file'>snippet source</a> | <a href='#snippet-CustomDiffReporter.cs' title='Start of snippet'>anchor</a></sup>
-<a id='snippet-CustomDiffReporter.cs-1'></a>
-```cs
-using ApprovalTests.Reporters.TestFrameworks;
-
-public class CustomDiffReporter :
-    FirstWorkingReporter
-{
-    public CustomDiffReporter()
-        : base(
-            //TODO: re-order or remove as required
-            BeyondCompareReporter.INSTANCE,
-            TortoiseDiffReporter.INSTANCE,
-            AraxisMergeReporter.INSTANCE,
-            P4MergeReporter.INSTANCE,
-            WinMergeReporter.INSTANCE,
-            KDiff3Reporter.INSTANCE,
-            VisualStudioReporter.INSTANCE,
-            RiderReporter.INSTANCE,
-            FrameworkAssertReporter.INSTANCE,
-            QuietReporter.INSTANCE
-        )
-    {
-    }
-}
-```
-<sup><a href='/src/ApprovalTests.Tests/Reporters/CustomDiffReporter.cs#L1-L22' title='Snippet source file'>snippet source</a> | <a href='#snippet-CustomDiffReporter.cs-1' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/ApprovalTests.Tests/Reporters/CustomDiffReporter.cs#L1-L22' title='Snippet source file'>snippet source</a> | <a href='#snippet-CustomDiffReporter.cs' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 You can also override the default order while using `DiffReporter` by defining `DiffEngine_ToolOrder` environment variable. The value of that variable should contain a delimiter (`,`, `|`, ` `) separated list of the diff tool names in the desired order. More details about that in [Diff Tool Order](https://github.com/VerifyTests/DiffEngine/blob/main/docs/diff-tool.order.md)
