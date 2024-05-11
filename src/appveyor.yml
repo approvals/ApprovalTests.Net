@@ -2,6 +2,10 @@ image:
 - Visual Studio 2022
 #- macOS
 #- Ubuntu
+environment:
+  DOTNET_NOLOGO: 1
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
 build_script:
 # https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-install-script
 - pwsh: |
