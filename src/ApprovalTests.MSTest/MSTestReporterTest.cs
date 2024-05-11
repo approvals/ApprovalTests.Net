@@ -12,9 +12,9 @@ public class MSTestReporterTest
             Approvals.Verify("Hello");
             Assert.Fail("Above verification should have thrown an AssertFailedException");
         }
-        catch (Exception e)
+        catch (Exception exception)
         {
-            Assert.AreEqual("Assert.AreEqual failed. Expected:<World>. Actual:<Hello>. ", e.Message);
+            Assert.AreEqual("Assert.AreEqual failed. Expected:<World>. Actual:<Hello>. ", exception.Message);
         }
     }
 }

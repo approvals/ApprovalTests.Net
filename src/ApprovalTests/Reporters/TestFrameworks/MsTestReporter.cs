@@ -13,9 +13,14 @@ public class MsTestReporter() :
         var bindingFlags = BindingFlags.InvokeMethod | BindingFlags.Public | BindingFlags.Static;
         var areEquals = type
             .GetMethods(bindingFlags)
-            .Single(_ => _.Name == "AreEqual" &&
-                         _.ContainsGenericParameters &&
-                         _.GetParameters().Length == 2);
+            .Single(_ =>
+            {
+                var infos = _.GetParameters();
+                return _.Name == "AreEqual" &&
+                       _.ContainsGenericParameters &&
+                       infos.Length == 2 &&
+                       infos.All(_ => !_.ParameterType.IsInterface);
+            });
         var method = areEquals.MakeGenericMethod(typeof(string));
         method.Invoke(null, parameters);
     }
