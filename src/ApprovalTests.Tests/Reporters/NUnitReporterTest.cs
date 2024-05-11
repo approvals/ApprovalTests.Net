@@ -7,7 +7,7 @@ public class NUnitReporterTest
     public void TestNunitIsWorking()
     {
         Approvals.SetCaller();
-        Assert.IsTrue(NUnitReporter.INSTANCE.IsWorkingInThisEnvironment("default.txt"));
+        ClassicAssert.IsTrue(NUnit4Reporter.INSTANCE.IsWorkingInThisEnvironment("default.txt"));
     }
 
     [Test]
@@ -23,10 +23,8 @@ public class NUnitReporterTest
         }
         catch (Exception e)
         {
-            var expectedMessage = string.Format("  String lengths are both 5. Strings differ at index 0.{0}  Expected: \"World\"{0}  But was:  \"Hello\"{0}  -----------^{0}", Environment.NewLine);
-            Assert.AreEqual(
-                expectedMessage,
-                e.Message);
+            var expectedMessage = string.Format("  Assert.That(actual, Is.EqualTo(expected)){0}  String lengths are both 5. Strings differ at index 0.{0}  Expected: \"World\"{0}  But was:  \"Hello\"{0}  -----------^{0}", Environment.NewLine);
+            ClassicAssert.AreEqual(expectedMessage, e.Message);
         }
     }
 }

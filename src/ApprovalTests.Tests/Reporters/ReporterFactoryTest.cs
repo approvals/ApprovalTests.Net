@@ -11,14 +11,14 @@ public class ReporterFactoryTest
     }
 
     static void SubMethod() =>
-        Assert.AreEqual(typeof(MethodLevelReporter), Approvals.GetReporter().GetType());
+        ClassicAssert.AreEqual(typeof(MethodLevelReporter), Approvals.GetReporter().GetType());
 
     [Test]
     public void TestClassLevel()
     {
         using (Approvals.SetFrontLoadedReporter(ReportWithoutFrontLoading.INSTANCE))
         {
-            Assert.AreEqual(typeof(ClassLevelReporter), Approvals.GetReporter().GetType());
+            ClassicAssert.AreEqual(typeof(ClassLevelReporter), Approvals.GetReporter().GetType());
         }
     }
 
@@ -28,7 +28,7 @@ public class ReporterFactoryTest
     {
         using (Approvals.SetFrontLoadedReporter(ReportWithoutFrontLoading.INSTANCE))
         {
-            Assert.AreEqual(typeof(MethodLevelReporter), Approvals.GetReporter().GetType());
+            ClassicAssert.AreEqual(typeof(MethodLevelReporter), Approvals.GetReporter().GetType());
         }
     }
 
@@ -39,7 +39,7 @@ public class ReporterFactoryTest
         await Task.Delay(1);
         using (Approvals.SetFrontLoadedReporter(ReportWithoutFrontLoading.INSTANCE))
         {
-            Assert.AreEqual(typeof(MethodLevelReporter), Approvals.GetReporter().GetType());
+            ClassicAssert.AreEqual(typeof(MethodLevelReporter), Approvals.GetReporter().GetType());
         }
     }
 
@@ -59,7 +59,7 @@ public class ReporterFactoryTest
     {
         using (Approvals.SetFrontLoadedReporter(ReportWithoutFrontLoading.INSTANCE))
         {
-            Assert.AreEqual(typeof(MultiReporter), Approvals.GetReporter().GetType());
+            ClassicAssert.AreEqual(typeof(MultiReporter), Approvals.GetReporter().GetType());
         }
     }
 
@@ -69,7 +69,10 @@ public class ReporterFactoryTest
         using (Approvals.SetFrontLoadedReporter(ReportWithoutFrontLoading.INSTANCE))
         {
             var reporters = GetSingletonReporterTypes();
-            foreach (var r in reporters) Assert.IsInstanceOf(r, UseReporterAttribute.GetSingleton(r), $"Please add\npublic static readonly {r.FullName} INSTANCE = new {r.FullName}();");
+            foreach (var r in reporters)
+            {
+                ClassicAssert.IsInstanceOf(r, UseReporterAttribute.GetSingleton(r), $"Please add\npublic static readonly {r.FullName} INSTANCE = new {r.FullName}();");
+            }
         }
     }
 }

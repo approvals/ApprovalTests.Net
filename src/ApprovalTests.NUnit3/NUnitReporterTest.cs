@@ -5,7 +5,7 @@ public class NUnitReporterTest
     public void TestNunitIsWorking()
     {
         Approvals.SetCaller();
-        Assert.IsTrue(NUnitReporter.INSTANCE.IsWorkingInThisEnvironment("default.txt"));
+        Assert.IsTrue(NUnit3Reporter.INSTANCE.IsWorkingInThisEnvironment("default.txt"));
     }
 
     [Test]

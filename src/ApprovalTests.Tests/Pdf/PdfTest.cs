@@ -22,9 +22,9 @@ public class PdfTest
     public void TestPdf_ScrubberIdsMatch(string input)
     {
         var matchPositions = PdfScrubber.FindIds(input).ToList();
-        Assert.AreEqual(2, matchPositions.Count);
+        ClassicAssert.AreEqual(2, matchPositions.Count);
 
-        Assert.IsTrue(matchPositions.All(pos => input[pos.start - 1] == '<' && input[pos.start + pos.length] == '>'));
+        ClassicAssert.IsTrue(matchPositions.All(pos => input[pos.start - 1] == '<' && input[pos.start + pos.length] == '>'));
     }
 
     [TestCase("""
@@ -46,7 +46,7 @@ public class PdfTest
     public void TestPdf_ScrubberIdsNotMatch(string input)
     {
         var matchPositions = PdfScrubber.FindIds(input).ToList();
-        Assert.AreEqual(0, matchPositions.Count);
+        ClassicAssert.AreEqual(0, matchPositions.Count);
     }
 
     [Test]
@@ -128,6 +128,6 @@ public class PdfTest
 
         using var fileStream = File.OpenRead(pdf);
         var matches = PdfScrubber.FindReplacements(fileStream);
-        Assert.AreEqual(3, matches.Count());
+        ClassicAssert.AreEqual(3, matches.Count());
     }
 }

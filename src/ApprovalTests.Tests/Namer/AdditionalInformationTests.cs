@@ -23,7 +23,7 @@ public class AdditionalInformationTests
     public void WithoutExtraInfo()
     {
         var name = Approvals.GetDefaultNamer().Name;
-        Assert.AreEqual("AdditionalInformationTests.WithoutExtraInfo", name);
+        ClassicAssert.AreEqual("AdditionalInformationTests.WithoutExtraInfo", name);
     }
 
     [Test]
@@ -32,7 +32,7 @@ public class AdditionalInformationTests
         using (ApprovalResults.ForScenario("ScenarioName"))
         {
             var name = Approvals.GetDefaultNamer().Name;
-            Assert.AreEqual("AdditionalInformationTests.WithScenarioData.ForScenario.ScenarioName", name);
+            ClassicAssert.AreEqual("AdditionalInformationTests.WithScenarioData.ForScenario.ScenarioName", name);
         }
     }
 
@@ -43,7 +43,7 @@ public class AdditionalInformationTests
         {
             await Task.Delay(10);
             var name = Approvals.GetDefaultNamer().Name;
-            Assert.AreEqual("AdditionalInformationTests.WithScenarioDataAsync.ForScenario.asyncScenario", name);
+            ClassicAssert.AreEqual("AdditionalInformationTests.WithScenarioDataAsync.ForScenario.asyncScenario", name);
         }
     }
 
@@ -54,7 +54,7 @@ public class AdditionalInformationTests
         using (ApprovalResults.ForScenario("invalid/chars"))
         {
             var name = Approvals.GetDefaultNamer().Name;
-            Assert.AreEqual(
+            ClassicAssert.AreEqual(
                 "AdditionalInformationTests.WithScenarioDataScrubsInvalidChars.ForScenario.invalid_chars", name);
         }
     }
@@ -66,7 +66,7 @@ public class AdditionalInformationTests
         using (ApprovalResults.ForScenario(a, b))
         {
             var name = Approvals.GetDefaultNamer().Name;
-            Assert.AreEqual("AdditionalInformationTests.WithMultiplePartScenarioData.ForScenario.foo.bar", name);
+            ClassicAssert.AreEqual("AdditionalInformationTests.WithMultiplePartScenarioData.ForScenario.foo.bar", name);
         }
     }
 
@@ -78,7 +78,7 @@ public class AdditionalInformationTests
             using (ApprovalResults.ForScenario("machineName"))
             {
                 var name = Approvals.GetDefaultNamer().Name;
-                Assert.AreEqual(name,
+                ClassicAssert.AreEqual(name,
                     "AdditionalInformationTests.TestMultipleNames.ForScenario.scenario.ForScenario.machineName");
             }
         }
@@ -91,7 +91,7 @@ public class AdditionalInformationTests
         public void WithNestedClass()
         {
             var name = Approvals.GetDefaultNamer().Name;
-            Assert.AreEqual("AdditionalInformationTests.NestedClassTests.WithNestedClass", name);
+            ClassicAssert.AreEqual("AdditionalInformationTests.NestedClassTests.WithNestedClass", name);
         }
     }
 }

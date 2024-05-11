@@ -1,10 +1,10 @@
 namespace ApprovalTests.Reporters.TestFrameworks;
 
-public class NUnitReporter : AssertReporter
+public class NUnit3Reporter : AssertReporter
 {
-    public readonly static NUnitReporter INSTANCE = new();
+    public readonly static NUnit3Reporter INSTANCE = new();
 
-    public NUnitReporter()
+    public NUnit3Reporter()
         : base("NUnit.Framework.Assert, nunit.framework", "AreEqual", NUnitStackTraceParser.Attribute)
     {
     }

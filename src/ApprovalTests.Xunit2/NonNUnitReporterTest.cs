@@ -4,7 +4,7 @@ public class NonNUnitReporterTest
     public void TestNunitIsNotWorkingFromXUnit()
     {
         Approvals.SetCaller();
-        Assert.False(NUnitReporter.INSTANCE.IsWorkingInThisEnvironment("default.txt"));
+        Assert.False(NUnit4Reporter.INSTANCE.IsWorkingInThisEnvironment("default.txt"));
     }
 
     [Fact]
