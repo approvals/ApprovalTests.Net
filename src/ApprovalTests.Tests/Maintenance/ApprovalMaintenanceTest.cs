@@ -1,6 +1,4 @@
-﻿using ApprovalTests.Maintenance;
-
-[TestFixture]
+﻿[TestFixture]
 public class ApprovalMaintenanceTest
 {
     [Test]

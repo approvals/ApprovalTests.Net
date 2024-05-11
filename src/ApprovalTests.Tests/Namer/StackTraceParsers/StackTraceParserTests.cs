@@ -1,8 +1,4 @@
-﻿using System.Diagnostics;
-using ApprovalTests.Namers.StackTraceParsers;
-using ApprovalUtilities.SimpleLogger;
-
-namespace ApprovalTests.Tests.Namer.StackTraceParsers;
+﻿namespace ApprovalTests.Tests.Namer.StackTraceParsers;
 
 [TestFixture]
 public class StackTraceParserTests

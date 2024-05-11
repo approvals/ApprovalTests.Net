@@ -1,7 +1,13 @@
-﻿global using ApprovalTests;
+﻿global using System.Diagnostics;
+global using ApprovalTests;
 global using ApprovalTests.Email;
+global using ApprovalTests.Events;
+global using ApprovalTests.ExceptionalExceptions;
+global using ApprovalTests.Maintenance;
 global using ApprovalTests.Namers;
+global using ApprovalTests.Namers.StackTraceParsers;
 global using ApprovalTests.Reporters;
 global using ApprovalUtilities.Persistence;
+global using ApprovalUtilities.SimpleLogger;
 global using ApprovalUtilities.Utilities;
 global using NUnit.Framework;

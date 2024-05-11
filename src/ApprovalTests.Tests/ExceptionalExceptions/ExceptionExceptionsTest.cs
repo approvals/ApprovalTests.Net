@@ -1,6 +1,4 @@
-﻿using ApprovalTests.ExceptionalExceptions;
-
-[TestFixture]
+﻿[TestFixture]
 public class ExceptionExceptionsTest
 {
     [Test]
