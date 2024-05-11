@@ -6,34 +6,29 @@ using System.Text;
 
 public class CallbackDescriptor
 {
-    List<MethodInfo> Methods = new();
+    List<MethodInfo> methods = new();
 
-    public void AddMethods(IEnumerable<MethodInfo> methods)
-    {
-        foreach (var m in methods)
-        {
-            AddMethod(m);
-        }
-    }
+    public void AddMethods(IEnumerable<MethodInfo> methods) =>
+        this.methods.AddRange(methods);
 
     public CallbackDescriptor(string name) =>
         EventName = name;
 
-    public string EventName { get; private set; }
+    public string EventName { get; }
 
     public void AddMethod(MethodInfo method) =>
-        Methods.Add(method);
+        methods.Add(method);
 
-    public List<MethodInfo> GetMethods() => Methods;
+    public List<MethodInfo> GetMethods() => methods;
 
     public override string ToString()
     {
         var builder = new StringBuilder();
         builder.AppendLine($"{EventName}:");
 
-        for (var i = 0; i < Methods.Count; i++)
+        for (var i = 0; i < methods.Count; i++)
         {
-            builder.AppendLine($"\t[{i}] {Methods[i]}");
+            builder.AppendLine($"\t[{i}] {methods[i]}");
         }
 
         return builder.ToString();
