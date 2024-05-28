@@ -1,4 +1,4 @@
-
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>net6</TargetFrameworks>
@@ -6,10 +6,10 @@
     <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="ApprovalTests" />
-    <PackageReference Include="NUnit" />
-    <PackageReference Include="NUnit3TestAdapter" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="ApprovalTests" Version="$(Version)" />
+    <PackageReference Include="NUnit" Version="3.13.2" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.17.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
     <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
     <None Update="ExistInNugetTests.ShouldResolveCorrectPath.approved.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

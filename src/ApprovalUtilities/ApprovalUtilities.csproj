@@ -1,4 +1,4 @@
-
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks Condition=" '$(OS)' == 'Windows_NT'">net472;net48</TargetFrameworks>
@@ -10,10 +10,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Using Remove="System.Net.Http" />
-    <PackageReference Include="Fody" PrivateAssets="all" />
-    <PackageReference Include="Publicize.Fody" PrivateAssets="All" />
-    <PackageReference Include="System.Management" />
-    <PackageReference Include="Virtuosity.Fody" PrivateAssets="All" />
-    <PackageReference Include="System.Data.SqlClient" />
+    <PackageReference Include="Fody" Version="6.8.0" PrivateAssets="all" />
+    <PackageReference Include="Publicize.Fody" Version="1.8.0" PrivateAssets="All" />
+    <PackageReference Include="System.Management" Version="8.0.0" />
+    <PackageReference Include="Virtuosity.Fody" Version="3.1.1" PrivateAssets="All" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
   </ItemGroup>
 </Project>
