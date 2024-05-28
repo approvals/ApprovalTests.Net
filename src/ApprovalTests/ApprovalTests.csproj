@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks Condition=" '$(OS)' == 'Windows_NT'">net472;net48</TargetFrameworks>
@@ -10,14 +10,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Using Remove="System.Net.Http" />
-    <PackageReference Include="Polyfill" Version="5.2.2" PrivateAssets="all" />
+    <PackageReference Include="Polyfill" PrivateAssets="all" />
     <Compile Include="..\ApprovalUtilities\InternalsVisibleTo.cs" Link="InternalsVisibleTo.cs" />
-    <PackageReference Include="DiffEngine" Version="15.4.0" />
-    <PackageReference Include="EmptyFiles" Version="8.2.0" PrivateAssets="None" />
-    <PackageReference Include="Fody" Version="6.8.0" PrivateAssets="all" />
-    <PackageReference Include="Publicize.Fody" Version="1.8.0" PrivateAssets="All" />
-    <PackageReference Include="Virtuosity.Fody" Version="3.1.1" PrivateAssets="All" />
-    <PackageReference Include="TextCopy" Version="6.2.1" />
+    <PackageReference Include="DiffEngine" />
+    <PackageReference Include="EmptyFiles" PrivateAssets="None" />
+    <PackageReference Include="Fody" PrivateAssets="all" />
+    <PackageReference Include="Publicize.Fody" PrivateAssets="All" />
+    <PackageReference Include="Virtuosity.Fody" PrivateAssets="All" />
+    <PackageReference Include="TextCopy" />
     <ProjectReference Include="..\ApprovalUtilities\ApprovalUtilities.csproj" />
     <Content Include="build\ApprovalTests.props" PackagePath="build\ApprovalTests.props" />
     <Content Include="buildMultiTargeting\ApprovalTests.props" PackagePath="buildMultiTargeting\ApprovalTests.props" />
