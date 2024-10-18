@@ -178,8 +178,7 @@ public static class CombinationApprovals
             sb.Append($"{input} => {resultFormatter(result)}\n");
         }, aList, bList, cList, dList, eList, fList, gList, hList, iList);
 
-        var combinations = sb.ToString();
-        return combinations;
+        return sb.ToString();
     }
 
     static void AllCombinations<A, B, C, D, E, F, G, H, I>(Action<A, B, C, D, E, F, G, H, I> processCall, IEnumerable<A> aList, IEnumerable<B> bList, IEnumerable<C> cList, IEnumerable<D> dList, IEnumerable<E> eList, IEnumerable<F> fList, IEnumerable<G> gList, IEnumerable<H> hList, IEnumerable<I> iList)
