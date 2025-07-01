@@ -14,6 +14,6 @@
     <PackageReference Include="Publicize.Fody" Version="1.8.0" PrivateAssets="All" />
     <PackageReference Include="System.Management" Version="8.0.0" />
     <PackageReference Include="Virtuosity.Fody" Version="3.1.1" PrivateAssets="All" />
-    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
   </ItemGroup>
 </Project>
