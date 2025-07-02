@@ -3,5 +3,4 @@
 	Handler: NULL
 	Key: NULL
 	Next: NULL
-	ListEntryType: System.ComponentModel.EventHandlerList+ListEntry
 }
