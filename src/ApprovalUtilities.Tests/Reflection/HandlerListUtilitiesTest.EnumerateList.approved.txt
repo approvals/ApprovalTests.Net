@@ -7,10 +7,8 @@
 	Handler: System.EventHandler
 	Key: System.Object
 	Next: NULL
-	ListEntryType: System.ComponentModel.EventHandlerList+ListEntry
 }
 
-	ListEntryType: System.ComponentModel.EventHandlerList+ListEntry
 }
 
 [1] = HandlerListEntry
@@ -18,6 +16,5 @@
 	Handler: System.EventHandler
 	Key: System.Object
 	Next: NULL
-	ListEntryType: System.ComponentModel.EventHandlerList+ListEntry
 }
 
