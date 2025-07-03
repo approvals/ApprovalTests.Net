@@ -15,7 +15,7 @@
     <PackageReference Include="DiffEngine" Version="16.2.3" />
     <PackageReference Include="EmptyFiles" Version="8.10.1" PrivateAssets="None" />
     <PackageReference Include="Fody" Version="6.9.2" PrivateAssets="all" />
-    <PackageReference Include="Virtuosity.Fody" Version="3.1.1" PrivateAssets="All" />
+    <PackageReference Include="Virtuosity.Fody" Version="3.1.2" PrivateAssets="All" />
     <PackageReference Include="TextCopy" Version="6.2.1" />
     <ProjectReference Include="..\ApprovalUtilities\ApprovalUtilities.csproj" />
     <Content Include="build\ApprovalTests.props" PackagePath="build\ApprovalTests.props" />
