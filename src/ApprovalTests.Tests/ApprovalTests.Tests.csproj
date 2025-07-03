@@ -9,8 +9,8 @@
     <PackageReference Include="itext7.bouncy-castle-adapter" Version="8.0.4" />
     <PackageReference Include="MarkdownSnippets.MsBuild" Version="27.0.2" PrivateAssets="all" />
     <PackageReference Include="itext7" Version="8.0.4" />
-    <PackageReference Include="NUnit" Version="4.1.0" />
-    <PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
+    <PackageReference Include="NUnit" Version="4.3.2" />
+    <PackageReference Include="NUnit3TestAdapter" Version="5.0.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
     <PackageReference Include="System.Management" Version="8.0.0" />
     <ProjectReference Include="..\ApprovalTests\ApprovalTests.csproj" />
