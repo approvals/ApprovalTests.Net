@@ -4,6 +4,7 @@ using System.Reflection;
 using System.Windows.Forms;
 using ApprovalUtilities.Reflection;
 using ApprovalTests.Reporters;
+using Polyfills;
 
 [UseReporter(typeof(DiffReporter))]
 public class ReflectionUtilitiesTest
