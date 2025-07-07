@@ -5,6 +5,7 @@
     <DebugType>full</DebugType>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="JunitXml.TestLogger" Version="6.1.0" />
     <Using Remove="System.Net.Http" />
     <PackageReference Include="itext7.bouncy-castle-adapter" Version="8.0.4" />
     <PackageReference Include="MarkdownSnippets.MsBuild" Version="27.0.2" PrivateAssets="all" />

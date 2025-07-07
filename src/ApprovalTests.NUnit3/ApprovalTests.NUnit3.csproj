@@ -5,6 +5,7 @@
     <DebugType>full</DebugType>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="JunitXml.TestLogger" Version="6.1.0" />
     <Using Remove="System.Net.Http" />
     <PackageReference Include="NUnit" Version="3.14.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="5.0.0" />
