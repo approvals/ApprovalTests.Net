@@ -17,8 +17,8 @@
     [Test]
     public void TestSimilarFiles()
     {
-        var file = PathUtilities.GetAdjacentFile(@"..\Email\EmailTest.Testname.Microsoft_Windows_10_Education.approved.eml");
+        var file = PathUtilities.GetAdjacentFile(@"..\Email\EmailTest.Testname.Microsoft_Windows_10_Education.approved.eml");        var file = PathUtilities.GetAdjacentFile(@"..\LockDownTests.TestExceptions.Microsoft_Windows_10_Education.approved.txt");
         var approvalsFilename = ApprovalsFilename.Parse(file);
-        Approvals.VerifyAll("Like EmailTest.Testname.Microsoft_Windows_10_Education.approved.eml", approvalsFilename.GetOtherMachineSpecificFiles(), f => f.Name);
+        Approvals.VerifyAll("Like EmailTest.Testname.Microsoft_Windows_10_Education.approved.eml");        var file = PathUtilities.GetAdjacentFile(@"..\LockDownTests.TestExceptions.Microsoft_Windows_10_Education.txt", approvalsFilename.GetOtherMachineSpecificFiles(), f => f.Name);
     }
 }
