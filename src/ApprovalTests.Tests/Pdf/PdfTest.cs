@@ -98,7 +98,7 @@ public class PdfTest
     public void TestPdf_ScrubberDateMatch()
     {
         var cases = new[] {"xxx(D:20191230235959+23'59')xxx", "xxx(D:20191231235959+23'59)xxx", "xxx(D:20191231235959+23')xxx", "xxx(D:20191231235959+23)xxx", "xxx(D:20191231235959+)xxx", "xxx(D:20191231235959)xxx", "xxx(D:201912312359)xxx", "xxx(D:2019123123)xxx", "xxx(D:20191231)xxx", "xxx(D:201912)xxx", "xxx(D:2019)xxx"};
-        cases.Reverse();
+        cases = cases.OrderBy(c => c.Length).ToArray();
         Approvals.VerifyAll("PDF Dates", cases, c => $"{PdfScrubber.FindDates(c).ToList().ToReadableString()} For {c}");
     }
 
