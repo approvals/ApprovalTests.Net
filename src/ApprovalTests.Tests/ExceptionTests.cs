@@ -8,12 +8,9 @@ public class ExceptionTests
     [Test]
     public void VerifyExceptionWithStacktrace()
     {
-        using (ApprovalResults.UniqueForOs())
-        {
-            Action wrapper = () => throw new("https://github.com/approvals/ApprovalTests.Net/issues/242");
-            var e = ExceptionUtilities.GetException(wrapper);
-            Approvals.VerifyExceptionWithStacktrace(e);
-        }
+        Action wrapper = () => throw new("https://github.com/approvals/ApprovalTests.Net/issues/242");
+        var e = ExceptionUtilities.GetException(wrapper);
+        Approvals.VerifyExceptionWithStacktrace(e);
     }
 
 #endif
