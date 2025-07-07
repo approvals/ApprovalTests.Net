@@ -1,4 +1,5 @@
 # Migrate from Appveyor to GitHub Actions
+STARTER_CHARACTER = 🧰
 
 Go step by step. Check in with me after the steps and verify task is completed whenever possible.
 
