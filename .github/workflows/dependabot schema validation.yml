@@ -1,0 +1,13 @@
+name: dependabot schema validation
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: marocchino/validate-dependabot@v3
